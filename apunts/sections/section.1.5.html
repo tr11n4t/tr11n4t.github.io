@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Observables</title>
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+<main>
+
+<div class="p noindent"> <span class="bfseries Large" >1.5  Observables</span>
+</div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;1&rang;</span> <span class="sffamily" >Un
+</span><span class="itshape sffamily" >observable</span><span class="sffamily"
+> és una propietat física del sistema que es pot mesurar.</span> </div>
+
+<div class="content"><div class="p"> <span>Exemples d’observables són la
+posició d’una partícula, la seva velocitat, el moment dipolar d’una molècula,
+la seva energia</span>. </div>
+
+<div class="p"> <span>Com a excepció, la massa i la càrrega d’una partícula,
+encara que puguin ser mesurades, es consideren </span><span class="itshape"
+>paràmetres</span><span>, ja que el seu valor és constant</span>. </div>
+
+</div></div>
+
+<div class="foldable prop">
+<div class="p" id="ref::pos:opr:obs"> <span>&vert;2&rang;</span> <span
+class="sffamily" >La mecànica quàntica assigna un operador hermitià a cada
+observable.</span> </div>
+
+<div class="content"><div class="law">
+<div class="p"> <span class="bfseries sffamily redfg" >Postulat II de la
+mecànica quàntica.</span> <span class="sffamily bluefg" >A cada observable
+<span class="inlinemath"><svg
+viewBox="-.2 -7.01 7.87 7.21"
+style="width:  0.79em; height:  0.72em; vertical-align: -0.02em;"> <use
+xlink:href="images/img370.svg#page362"> </use> </svg></span> se li associa un
+operador hermitià <span class="inlinemath"><svg
+viewBox="-.2 -9.58 7.87 9.78"
+style="width:  0.79em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img371.svg#page363"> </use> </svg></span> de manera que les
+propietats físiques de l’observable es poden deduir de les propietats
+matemàtiques de l’operador.</span> </div>
+
+</div>
+
+<div class="foldable prop">
+<div class="p" id="ref::pos:opr:recepta"> <span>&vert;2.1&rang;</span> <span
+class="sffamily" >Hi ha una ‘recepta’ per a construir l’operador corresponent a
+un observable.</span> </div>
+
+<div class="content"><div class="law">
+<div class="p"> <span class="bfseries sffamily redfg" >Recepta per a
+operadors.</span> </div>
+
+<div class="itemize">
+<div class="p item"> <span class="sffamily bluefg" >•</span> <span
+class="sffamily bluefg" >L’operador corresponent a una coordenada cartesiana és
+justament la mateixa coordenada, </span> </div>
+
+<div class="p center"><table class="eqnarray bluefg"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -7.06 6.09 7.26"
+style="width:  0.61em; height:  0.73em; vertical-align: -0.02em;"> <use
+xlink:href="images/img372.svg#page364"> </use> </svg></span></span>
+</td><td class="c">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -4.82 8.15 5.02"
+style="width:  0.82em; height:  0.50em; vertical-align: -0.02em;"> <use
+xlink:href="images/img373.svg#page365"> </use> </svg></span></span>
+</td><td class="l">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -4.49 6.09 4.69"
+style="width:  0.61em; height:  0.47em; vertical-align: -0.02em;"> <use
+xlink:href="images/img374.svg#page366"> </use> </svg></span></span>
+</td><td class="r">
+ <span class="sffamily bluefg" >(1.75)</span>
+</td></tr>
+<tr><td class="r">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -7.06 5.64 9.2"
+style="width:  0.57em; height:  0.92em; vertical-align: -0.21em;"> <use
+xlink:href="images/img375.svg#page367"> </use> </svg></span></span>
+</td><td class="c">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -4.82 8.15 5.02"
+style="width:  0.82em; height:  0.50em; vertical-align: -0.02em;"> <use
+xlink:href="images/img376.svg#page368"> </use> </svg></span></span>
+</td><td class="l">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -4.49 5.64 6.63"
+style="width:  0.57em; height:  0.67em; vertical-align: -0.21em;"> <use
+xlink:href="images/img377.svg#page369"> </use> </svg></span></span>
+</td><td class="r" id="ref::pos:opr:hatx">
+ <span class="sffamily bluefg" >(1.76)</span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -14.98 3.17 15.18"
+style="width:  0.32em; height:  1.52em; vertical-align: -0.02em;"> <use
+xlink:href="images/img378.svg#page370"> </use> </svg></span></span>
+</td><td class="l">
+
+</td><td class="r">
+ <span class="sffamily bluefg" >(1.77)</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p item"> <span class="sffamily bluefg" >•</span> <span
+class="sffamily bluefg" >L’operador corresponent a un component del moment
+lineal és </span> </div>
+
+<div class="p center"><table class="eqnarray bluefg"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -7.06 10.43 9.2"
+style="width:  1.05em; height:  0.92em; vertical-align: -0.21em;"> <use
+xlink:href="images/img379.svg#page371"> </use> </svg></span></span>
+</td><td class="c">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -4.82 8.15 5.02"
+style="width:  0.82em; height:  0.50em; vertical-align: -0.02em;"> <use
+xlink:href="images/img380.svg#page372"> </use> </svg></span></span>
+</td><td class="l">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -13.86 35.68 20.89"
+style="width:  3.58em; height:  2.10em; vertical-align: -0.71em;"> <use
+xlink:href="images/img381.svg#page373"> </use> </svg></span></span>
+</td><td class="r" id="ref::pos:opr:hatxdots">
+ <span class="sffamily bluefg" >(1.78)</span>
+</td></tr>
+<tr><td class="r">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -7.06 10.2 10.11"
+style="width:  1.02em; height:  1.01em; vertical-align: -0.31em;"> <use
+xlink:href="images/img382.svg#page374"> </use> </svg></span></span>
+</td><td class="c">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -4.82 8.15 5.02"
+style="width:  0.82em; height:  0.50em; vertical-align: -0.02em;"> <use
+xlink:href="images/img383.svg#page375"> </use> </svg></span></span>
+</td><td class="l">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -13.86 35.22 22.83"
+style="width:  3.54em; height:  2.29em; vertical-align: -0.90em;"> <use
+xlink:href="images/img384.svg#page376"> </use> </svg></span></span>
+</td><td class="r" id="ref::pos:opr:hatpx">
+ <span class="sffamily bluefg" >(1.79)</span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span class="sffamily bluefg" ><span class="inlinemath"><svg
+viewBox="-.2 -14.98 3.17 15.18"
+style="width:  0.32em; height:  1.52em; vertical-align: -0.02em;"> <use
+xlink:href="images/img385.svg#page377"> </use> </svg></span></span>
+</td><td class="l">
+
+</td><td class="r">
+ <span class="sffamily bluefg" >(1.80)</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span class="sffamily bluefg" >on
+<span class="inlinemath"><svg
+viewBox="-.2 -7.67 41.16 10.36"
+style="width:  4.13em; height:  1.04em; vertical-align: -0.27em;"> <use
+xlink:href="images/img386.svg#page378"> </use> </svg></span> és la </span><span
+class="itshape sffamily bluefg" >constant de Planck reduïda</span><span
+class="sffamily bluefg" >, ‘h tallada’, o ‘h-barra.’</span> </div>
+
+<div class="p item"> <span class="sffamily bluefg" >•</span> <span
+class="sffamily bluefg" >Per a qualsevol altre observable, l’operador s’obté de
+la següent manera.</span> </div>
+
+<div class="enumerate">
+<div class="p item"> <span class="sffamily bluefg" >1.</span> <span
+class="sffamily bluefg" >S’escriu l’expressió clàssica del observable en funció
+de les coordenades cartesianes <span class="inlinemath">(<svg
+viewBox="-.2 -4.49 6.09 4.69"
+style="width:  0.61em; height:  0.47em; vertical-align: -0.02em;"> <use
+xlink:href="images/img387.svg#page379"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="-.2 -4.49 5.64 6.63"
+style="width:  0.57em; height:  0.67em; vertical-align: -0.21em;"> <use
+xlink:href="images/img388.svg#page380"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="-.2 -4.49 5.47 4.69"
+style="width:  0.55em; height:  0.47em; vertical-align: -0.02em;"> <use
+xlink:href="images/img389.svg#page381"> </use> </svg></span>, &hellip;) i dels
+moments lineals <span class="inlinemath">(<svg
+viewBox="-.2 -4.49 10.43 6.63"
+style="width:  1.05em; height:  0.67em; vertical-align: -0.21em;"> <use
+xlink:href="images/img390.svg#page382"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="-.2 -4.49 10.2 7.54"
+style="width:  1.02em; height:  0.76em; vertical-align: -0.31em;"> <use
+xlink:href="images/img391.svg#page383"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="-.2 -4.49 10 6.63"
+style="width:  1.00em; height:  0.67em; vertical-align: -0.21em;"> <use
+xlink:href="images/img392.svg#page384"> </use> </svg></span>, &hellip;).</span>
+</div>
+
+<div class="p item"> <span class="sffamily bluefg" >2.</span> <span
+class="sffamily bluefg" >Se substitueix cada coordenada cartesiana i cada
+component del moment lineal pel corresponent operador
+<span class="inlinemath">(<svg
+viewBox="-.2 -7.06 27.28 7.26"
+style="width:  2.74em; height:  0.73em; vertical-align: -0.02em;"> <use
+xlink:href="images/img393.svg#page385"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="-.2 -7.06 35.95 9.2"
+style="width:  3.61em; height:  0.92em; vertical-align: -0.21em;"> <use
+xlink:href="images/img394.svg#page386"> </use> </svg></span>, &hellip;).</span>
+</div>
+
+<div class="p item"> <span class="sffamily bluefg" >3.</span> <span
+class="sffamily bluefg" >Finalment, se simplifica l’expressió obtinguda prenent
+en compte les Eqs. (</span><a class="sffamily bluefg"
+href="sections/section.1.5.html#ref::pos:opr:hatx" >1.76</a><span
+class="sffamily bluefg" >)&ndash;(</span><a class="sffamily bluefg"
+href="sections/section.1.5.html#ref::pos:opr:hatpxdots" >1.81</a><span
+class="sffamily bluefg" >).</span> </div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="p noindent"> <span>Per conveni, els símbols dels
+<span class="inlinemath">operadors <svg
+viewBox="-.2 -7.06 37.83 9.2"
+style="width:  3.80em; height:  0.92em; vertical-align: -0.21em;"> <use
+xlink:href="images/img395.svg#page387"> </use> </svg></span> s’escriuen amb
+lletra minúscula, i tots els demés amb lletra majúscula</span>. </div>
+
+</div></div>
+
+<div class="p"> <span>Il·lustrarem la construcció d’operadors amb uns quants
+exemples</span>. </div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;2.2&rang;</span> <span class="sffamily" >L’operador
+energia cinètica per a una partícula és <span class="inlinemath"><svg
+viewBox="-.2 -10.27 57.55 13.9"
+style="width:  5.78em; height:  1.40em; vertical-align: -0.36em;"> <use
+xlink:href="images/img396.svg#page388"> </use> </svg></span>.</span> </div>
+
+<div class="content"><div class="p"> <span>Construirem l’operador energia
+cinètica (que se sol representar per <span class="inlinemath"><svg
+viewBox="-.2 -9.58 7.6 9.78"
+style="width:  0.76em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img397.svg#page389"> </use> </svg></span>) per a una
+partícula unidimensional amb massa <span class="inlinemath"><svg
+viewBox="-.2 -4.49 9.15 4.69"
+style="width:  0.92em; height:  0.47em; vertical-align: -0.02em;"> <use
+xlink:href="images/img398.svg#page390"> </use> </svg></span></span>. </div>
+
+<div class="enumerate">
+<div class="p item"> <span>1.</span> <span>L’expressió clàssica és </span>
+</div>
+
+<table class="equation" id="ref::pos:opr:hatpxdots"><tr><td><svg
+class="equation" viewBox="-.2 -15.05 39.77 22.08"
+style="width:  3.99em;"> <use xlink:href="images/img399.svg#page391"> </use>
+</svg></td><td>(1.81)</td></tr></table>
+
+<div class="p item"> <span>2.</span> <span>Fem la substitució
+<span class="inlinemath"><svg
+viewBox="-.2 -7.06 35.95 9.2"
+style="width:  3.61em; height:  0.92em; vertical-align: -0.21em;"> <use
+xlink:href="images/img400.svg#page392"> </use> </svg></span>, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -15.05 39.77 22.08"
+style="width:  3.99em;"> <use xlink:href="images/img401.svg#page393"> </use>
+</svg></td><td>(1.82)</td></tr></table>
+
+<div class="p item"> <span>3.</span> <span>Simplifiquem utilitzant
+<span class="inlinemath"><svg
+viewBox="-.2 -8.31 50.96 10.97"
+style="width:  5.12em; height:  1.10em; vertical-align: -0.27em;"> <use
+xlink:href="images/img402.svg#page394"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.2 -7.67 62.99 10.36"
+style="width:  6.32em; height:  1.04em; vertical-align: -0.27em;"> <use
+xlink:href="images/img403.svg#page395"> </use> </svg></span>, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -15.89 189.68 25.6"
+style="width: 19.04em;"> <use xlink:href="images/img404.svg#page396"> </use>
+</svg></td><td>(1.83)</td></tr></table>
+
+</div>
+
+</div></div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;2.3&rang;</span> <span class="sffamily" >L’operador
+energia potencial de l’oscil·lador harmònic és <span class="inlinemath"><svg
+viewBox="-.2 -9.58 43.73 13.22"
+style="width:  4.39em; height:  1.33em; vertical-align: -0.36em;"> <use
+xlink:href="images/img405.svg#page397"> </use> </svg></span>.</span> </div>
+
+<div class="content"><div class="p"> <span>Construirem ara l’operador energia
+potencial (que se sol representar per <span class="inlinemath"><svg
+viewBox="-.2 -9.58 8.42 9.78"
+style="width:  0.85em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img406.svg#page398"> </use> </svg></span>) per a
+l’oscil·lador harmònic</span>. </div>
+
+<div class="enumerate">
+<div class="p item"> <span>1.</span> <span>L’expressió clàssica és </span>
+</div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -13.21 47.51 20.25"
+style="width:  4.77em;"> <use xlink:href="images/img407.svg#page399"> </use>
+</svg></td><td>(1.84)</td></tr></table>
+
+<div class="p item"> <span>2.</span> <span>Fem la substitució
+<span class="inlinemath"><svg
+viewBox="-.2 -7.06 27.28 7.26"
+style="width:  2.74em; height:  0.73em; vertical-align: -0.02em;"> <use
+xlink:href="images/img408.svg#page400"> </use> </svg></span>, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -13.21 47.51 20.25"
+style="width:  4.77em;"> <use xlink:href="images/img409.svg#page401"> </use>
+</svg></td><td>(1.85)</td></tr></table>
+
+<div class="p item"> <span>3.</span> <span>Simplifiquem utilitzant
+<span class="inlinemath"><svg
+viewBox="-.2 -7.06 25.07 7.26"
+style="width:  2.52em; height:  0.73em; vertical-align: -0.02em;"> <use
+xlink:href="images/img410.svg#page402"> </use> </svg></span>, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -13.21 47.51 20.25"
+style="width:  4.77em;"> <use xlink:href="images/img411.svg#page403"> </use>
+</svg></td><td>(1.86)</td></tr></table>
+
+</div>
+
+<div class="p noindent"> <span>Queda clar que si l’expressió clàssica d’un
+observable depèn només de les coordenades cartesianes i no dels components del
+moment lineal, aleshores l’operador és igual a l’expressió clàssica</span>.
+</div>
+
+</div></div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;2.4&rang;</span> <span class="sffamily" >L’operador
+més important és el </span><span class="itshape sffamily"
+>Hamiltonià</span><span class="sffamily" >, <span class="inlinemath"><svg
+viewBox="-.2 -9.58 50.18 10.61"
+style="width:  5.04em; height:  1.06em; vertical-align: -0.10em;"> <use
+xlink:href="images/img412.svg#page404"> </use> </svg></span>.</span> </div>
+
+<div class="content"><div class="p"> <span>L’operador més important és el
+corresponent a l’energia total del sistema</span>. <span>S’anomena </span><span
+class="itshape" >operador Hamiltonià</span><span> i es representa pel símbol
+<span class="inlinemath"><svg
+viewBox="-.2 -9.58 9.49 9.78"
+style="width:  0.95em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img413.svg#page405"> </use> </svg></span></span>. <span>És
+igual a la suma dels operadors </span><span class="itshape" >energia
+cinètica</span><span> <span class="inlinemath">(<svg
+viewBox="-.2 -9.58 7.6 9.78"
+style="width:  0.76em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img414.svg#page406"> </use> </svg></span>) i </span><span
+class="itshape" >energia potencial</span><span> <span class="inlinemath">(<svg
+viewBox="-.2 -9.58 8.42 9.78"
+style="width:  0.85em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img415.svg#page407"> </use> </svg></span>) del sistema,
+</span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -9.58 52.95 10.61"
+style="width:  5.31em;"> <use xlink:href="images/img416.svg#page408"> </use>
+</svg></td><td>(1.87)</td></tr></table>
+
+</div></div>
+
+</div></div>
+
+</main>
+
+<footer>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span><img class="includebox" src="images/img10.svg" alt="included image"
+style="width: 9.00em; height: 3.15em;"></span>
+</td><td class="l">
+ <span>Aquesta obra està subjecta a una llicència de </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Reconeixement-CompartirIgual
+4.0 Internacional de Creative Commons</a><span>.</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</footer>
+
+</body>
+</html>

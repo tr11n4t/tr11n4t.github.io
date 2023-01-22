@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Principi variacional</title>
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+<main>
+
+<div class="p noindent"> <span class="bfseries large" >5.2.1  Principi
+variacional</span> </div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;1&rang;</span> <span class="sffamily" >Utilitzarem
+una </span><span class="itshape sffamily" >funció de prova</span><span
+class="sffamily" > <span class="inlinemath"><svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2222.svg#page2204"> </use> </svg></span> per aproximar
+una autofunció desconeguda.</span> </div>
+
+<div class="content"><div class="p"> <span>El mètode variacional es basa en
+l’ús d’una </span><span class="itshape" >funció de prova</span><span> que depèn
+d’un nombre de </span><span class="itshape" >paràmetres</span>. <span>Aquests
+paràmetres van optimitzant-se per fer que la funció de prova vagi acostant-se
+més i més a l’autofunció de l’estat fonamental del hamiltonià
+<span class="inlinemath"><svg
+viewBox="-.2 -9.58 9.49 9.78"
+style="width:  0.95em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2223.svg#page2205"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Ens referirem a la funció de prova pel símbol
+<span class="inlinemath"><svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2224.svg#page2206"> </use> </svg></span></span>.
+<span>Donarem un exemple, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -7.12 71.82 9.25"
+style="width:  7.21em;"> <use xlink:href="images/img2225.svg#page2207"> </use>
+</svg></td><td>(5.1)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="-.2 -7.12 10.8 9.25"
+style="width:  1.08em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2226.svg#page2208"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.2 -7.12 10.8 9.25"
+style="width:  1.08em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2227.svg#page2209"> </use> </svg></span> són dues
+funcions fixes i <span class="inlinemath"><svg
+viewBox="-.2 -4.49 9.18 6.18"
+style="width:  0.92em; height:  0.62em; vertical-align: -0.17em;"> <use
+xlink:href="images/img2228.svg#page2210"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.2 -4.49 9.18 6.18"
+style="width:  0.92em; height:  0.62em; vertical-align: -0.17em;"> <use
+xlink:href="images/img2229.svg#page2211"> </use> </svg></span> són els
+paràmetres a optimitzar</span>. </div>
+
+</div></div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;2&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="-.2 -7.67 18.73 10.36"
+style="width:  1.88em; height:  1.04em; vertical-align: -0.27em;"> <use
+xlink:href="images/img2230.svg#page2212"> </use> </svg></span> és el valor
+esperat de l’energia de <span class="inlinemath"><svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2231.svg#page2213"> </use> </svg></span>.</span> </div>
+
+<div class="content"><div class="p"> <span>Utilitzarem el símbol
+<span class="inlinemath"><svg
+viewBox="-.2 -7.67 18.73 10.36"
+style="width:  1.88em; height:  1.04em; vertical-align: -0.27em;"> <use
+xlink:href="images/img2232.svg#page2214"> </use> </svg></span> per referir-nos
+al </span><span class="itshape" >valor esperat de l’energia</span>.
+<span>Segons els postulats de la mecànica quàntica, aquest valor esperat serà
+</span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -16.32 69.18 25.84"
+style="width:  6.94em;"> <use xlink:href="images/img2233.svg#page2215"> </use>
+</svg></td><td>(5.2)</td></tr></table>
+
+</div></div>
+
+<div class="blob">
+<div class="p center"> <span><svg class="displaymath"
+viewBox="-.2 -16.32 66.41 25.84"
+style="width:  6.67em;"> <use xlink:href="images/img2234.svg#page2216"> </use>
+</svg></span> </div>
+
+</div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;3&rang;</span> <span class="sffamily" >El
+</span><span class="itshape sffamily" >principi variacional</span><span
+class="sffamily" > ens diu que la millor funció de prova és la de menor
+energia.</span> </div>
+
+<div class="content"><div class="law">
+<div class="p"> <span class="bfseries sffamily redfg" >Principi
+variacional.</span> <span class="sffamily bluefg" >Cap funció de prova pot
+tindre una energia més baixa que la de l’estat fonamental.</span> <span
+class="sffamily bluefg" >Per a una funció de prova
+<span class="inlinemath"><svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2235.svg#page2217"> </use> </svg></span>, el valor
+<span class="inlinemath"><svg
+viewBox="-.2 -7.67 18.73 10.36"
+style="width:  1.88em; height:  1.04em; vertical-align: -0.27em;"> <use
+xlink:href="images/img2236.svg#page2218"> </use> </svg></span> és un límit
+superior a l’energia de l’estat fonamental <span class="inlinemath">(<svg
+viewBox="-.2 -7.01 12.22 8.7"
+style="width:  1.23em; height:  0.87em; vertical-align: -0.17em;"> <use
+xlink:href="images/img2237.svg#page2219"> </use> </svg></span>), </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -7.67 46.6 10.36"
+style="width:  4.68em;"> <use xlink:href="images/img2238.svg#page2220"> </use>
+</svg></td><td>(5.3)</td></tr></table>
+
+<div class="p noindent"> <span class="sffamily bluefg" >La igualtat en aquesta
+relació només es produirà quan <span class="inlinemath"><svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2239.svg#page2221"> </use> </svg></span> sigui
+l’autofunció de l’estat fonamental <span class="inlinemath">(<svg
+viewBox="-.2 -7.06 12.62 8.76"
+style="width:  1.27em; height:  0.88em; vertical-align: -0.17em;"> <use
+xlink:href="images/img2240.svg#page2222"> </use> </svg></span>), </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -7.67 54 10.36"
+style="width:  5.42em;"> <use xlink:href="images/img2241.svg#page2223"> </use>
+</svg></td><td>(5.4)</td></tr></table>
+
+</div>
+
+<div class="p noindent"> <span>Utilitat del principi variacional</span>:
+<span>si utilitzem dues funcions de <span class="inlinemath">prova <svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2242.svg#page2224"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="-.2 -7.69 8.01 9.83"
+style="width:  0.80em; height:  0.99em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2243.svg#page2225"> </use> </svg></span> per aproximar
+l’estat fonamental del hamiltonià d’un sistema, la millor de les dues
+aproximacions serà aquella que done l’energia més baixa</span>. </div>
+
+<div class="p"> <span>Per demostrar el principi variacional, escriurem la
+funció de prova com una combinació lineal de les autofuncions de
+<span class="inlinemath"><svg
+viewBox="-.2 -9.58 9.49 9.78"
+style="width:  0.95em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2244.svg#page2226"> </use> </svg></span>, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -10.66 56.01 23.61"
+style="width:  5.62em;"> <use xlink:href="images/img2245.svg#page2227"> </use>
+</svg></td><td>(5.5)</td></tr></table>
+
+<div class="p noindent"> <span>(Sabem, per les propietats del operadors
+hermitians, que qualsevol funció d’ona pot escriure’s com a combinació lineal
+de les autofuncions d’un operador hermitià com <span class="inlinemath"><svg
+viewBox="-.2 -9.58 9.49 9.78"
+style="width:  0.95em; height:  0.98em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2246.svg#page2228"> </use> </svg></span></span>.
+<span>Consulteu </span><a class="sffamily small"
+href="sections/section.1.4.2.html#ref::pos:opr:complet"
+>§1.4.2&vert;8&rang;</a>.) </div>
+
+<div class="p"> <span>Amb aquesta expressió per a <span class="inlinemath"><svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2247.svg#page2229"> </use> </svg></span>, i d’acord
+amb §</span><a
+href="sections/section.1.6.1.html#ref::pos:mes:res">1.6.1</a><span>,
+<span class="inlinemath"><svg
+viewBox="-.2 -7.67 18.73 10.36"
+style="width:  1.88em; height:  1.04em; vertical-align: -0.27em;"> <use
+xlink:href="images/img2248.svg#page2230"> </use> </svg></span> quedaria com
+</span> </div>
+
+<table class="equation" id="ref::apr:var:ExiLineal"><tr><td><svg
+class="equation" viewBox="-.2 -15.5 80.97 25.52"
+style="width:  8.13em;"> <use xlink:href="images/img2249.svg#page2231"> </use>
+</svg></td><td>(5.6)</td></tr></table>
+
+<div class="p noindent"> <span>L’estat fonamental és el que té menor energia,
+de manera que per a qualsevol estat (fonamental o no), s’ha de complir que
+</span> </div>
+
+<table class="equation" id="ref::E_iE_0"><tr><td><svg class="equation"
+viewBox="-.2 -7.01 38.94 9.14"
+style="width:  3.91em;"> <use xlink:href="images/img2250.svg#page2232"> </use>
+</svg></td><td>(5.7)</td></tr></table>
+
+<div class="p noindent"> <span>on la igualtat només es produirà (assumint
+absència de degeneració) per a l’estat fonamental,
+<span class="inlinemath"><svg
+viewBox="-.2 -6.77 22.1 6.97"
+style="width:  2.22em; height:  0.70em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2251.svg#page2233"> </use> </svg></span></span>. <span>Si
+prenem en compte aquesta desigualtat obtindrem que </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -15.5 228.98 25.52"
+style="width: 22.98em;"> <use xlink:href="images/img2252.svg#page2234"> </use>
+</svg></td><td>(5.8)</td></tr></table>
+
+<div class="p noindent"> <span>La igualtat només es produirà quan la funció de
+prova sigui l’estat fonamental, <span class="inlinemath"><svg
+viewBox="-.2 -7.12 30.72 9.25"
+style="width:  3.08em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2253.svg#page2235"> </use> </svg></span></span>. <span>Ho
+demostrem a continuació</span>. <span>Si </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -7.67 46.6 10.36"
+style="width:  4.68em;"> <use xlink:href="images/img2254.svg#page2236"> </use>
+</svg></td><td>(5.9)</td></tr></table>
+
+<div class="p noindent"> <span>tindrem que </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -15.5 74.46 25.52"
+style="width:  7.47em;"> <use xlink:href="images/img2255.svg#page2237"> </use>
+</svg></td><td>(5.10)</td></tr></table>
+
+<div class="p noindent"> <span>de manera que </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -10.66 106.31 23.61"
+style="width: 10.67em;"> <use xlink:href="images/img2256.svg#page2238"> </use>
+</svg></td><td>(5.11)</td></tr></table>
+
+<div class="p noindent"> <span>o </span> </div>
+
+<div class="p center"><table class="eqnarray"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -10.66 78.16 23.61"
+style="width:  7.85em; height:  2.37em; vertical-align: -1.30em;"> <use
+xlink:href="images/img2257.svg#page2239"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -3.99 8.15 4.19"
+style="width:  0.82em; height:  0.42em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2258.svg#page2240"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -6.47 5.38 6.67"
+style="width:  0.54em; height:  0.67em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2259.svg#page2241"> </use> </svg></span></span>
+</td><td class="r">
+
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -10.66 151.04 25.19"
+style="width: 15.16em; height:  2.53em; vertical-align: -1.46em;"> <use
+xlink:href="images/img2260.svg#page2242"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -3.99 8.15 4.19"
+style="width:  0.82em; height:  0.42em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2261.svg#page2243"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -6.47 5.38 6.67"
+style="width:  0.54em; height:  0.67em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2262.svg#page2244"> </use> </svg></span></span>
+</td><td class="r">
+
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -10.66 78.16 25.19"
+style="width:  7.85em; height:  2.53em; vertical-align: -1.46em;"> <use
+xlink:href="images/img2263.svg#page2245"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -3.99 8.15 4.19"
+style="width:  0.82em; height:  0.42em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2264.svg#page2246"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="-.2 -6.47 8.15 8.61"
+style="width:  0.82em; height:  0.86em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2265.svg#page2247"> </use> </svg></span></span>
+</td><td class="r">
+ <span>(5.12)</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>cosa que, per l’Eq. (</span><a
+href="sections/section.5.2.1.html#ref::E_iE_0">5.7</a><span>), implica
+necessàriament que </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -7.12 65.15 9.25"
+style="width:  6.54em;"> <use xlink:href="images/img2266.svg#page2248"> </use>
+</svg></td><td>(5.13)</td></tr></table>
+
+<div class="p noindent"> <span>és a dir, <span class="inlinemath"><svg
+viewBox="-.2 -7.12 39.5 9.25"
+style="width:  3.96em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2267.svg#page2249"> </use> </svg></span></span>.
+<span>Si, a més a més, requerim <span class="inlinemath">que <svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2268.svg#page2250"> </use> </svg></span> estiga
+normalitzada, <span class="inlinemath"><svg
+viewBox="-.2 -4.49 9.18 6.18"
+style="width:  0.92em; height:  0.62em; vertical-align: -0.17em;"> <use
+xlink:href="images/img2269.svg#page2251"> </use> </svg></span> ha de
+<span class="inlinemath">valdre <svg
+viewBox="-.2 -6.47 5.38 6.67"
+style="width:  0.54em; height:  0.67em; vertical-align: -0.02em;"> <use
+xlink:href="images/img2270.svg#page2252"> </use> </svg></span>, cosa que
+demostra <span class="inlinemath">que <svg
+viewBox="-.2 -7.12 30.72 9.25"
+style="width:  3.08em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2271.svg#page2253"> </use> </svg></span></span>. </div>
+
+</div></div>
+
+<div class="foldable prop">
+<div class="p"> <span>&vert;4&rang;</span> <span class="sffamily" >Una funció
+de prova mediocre pot donar una energia excel·lent.</span> </div>
+
+<div class="content"><div class="p"> <span>És possible obtindre una energia
+bastant precisa a partir d’una funció de prova no massa bona</span>. <span>Per
+exemple, suposem que prenem com a funció de prova l’autofunció de l’estat
+fonamental, però contaminada amb un 10% del primer estat excitat</span>. </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -7.12 70.61 9.25"
+style="width:  7.09em;"> <use xlink:href="images/img2272.svg#page2254"> </use>
+</svg></td><td>(5.14)</td></tr></table>
+
+<div class="p noindent"> <span>Hom esperaria que l’energia de l’estat
+fonamental aproximada amb <span class="inlinemath"><svg
+viewBox="-.2 -7.67 18.73 10.36"
+style="width:  1.88em; height:  1.04em; vertical-align: -0.27em;"> <use
+xlink:href="images/img2273.svg#page2255"> </use> </svg></span> també estarà
+contaminada amb un 10% de l’energia del primer estat excitat</span>.
+<span>Sorprenentment, però, la qualitat del resultat és molt més bona, com
+veiem a continuació</span>. </div>
+
+<div class="p"> <span>D’acord amb l’Eq. (</span><a
+href="sections/section.5.2.1.html#ref::apr:var:ExiLineal">5.6</a><span>),
+l’energia corresponent a aquesta <span class="inlinemath"><svg
+viewBox="-.2 -7.12 5.22 9.25"
+style="width:  0.52em; height:  0.93em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2274.svg#page2256"> </use> </svg></span> és </span>
+</div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -13.75 90.71 21.61"
+style="width:  9.11em;"> <use xlink:href="images/img2275.svg#page2257"> </use>
+</svg></td><td>(5.15)</td></tr></table>
+
+<div class="p noindent"> <span>i d’ací deduïm que </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="-.2 -7.67 106.03 10.36"
+style="width: 10.64em;"> <use xlink:href="images/img2276.svg#page2258"> </use>
+</svg></td><td>(5.16)</td></tr></table>
+
+<div class="p noindent"> <span>És a dir, la contaminació amb l’energia del
+primer estat excitat és només d’un 1%</span>. </div>
+
+<div class="p"> <span>Compte que aquesta qualitat extraordinària no és produeix
+per a altres observables distints de l’energia</span>. </div>
+
+</div></div>
+
+</main>
+
+<footer>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span><img class="includebox" src="images/img10.svg" alt="included image"
+style="width: 9.00em; height: 3.15em;"></span>
+</td><td class="l">
+ <span>Aquesta obra està subjecta a una llicència de </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Reconeixement-CompartirIgual
+4.0 Internacional de Creative Commons</a><span>.</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</footer>
+
+</body>
+</html>

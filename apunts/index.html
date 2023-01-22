@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Apunts de química quàntica i espectroscòpia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+<main>
+
+<div class="p center"> <span class="LARGE" >Apunts de química quàntica i
+espectroscòpia</span><br>
+<br>
+ <span class="large" >Curs 2022&ndash;2023</span><br>
+<br>
+<br>
+</div>
+
+<br>
+<br>
+<div class="epigraph">
+<div class="p noindent"> <span class="small" >Su pregunta de si se podrá
+estudiar en catalan, perdone que se lo diga, es tonta.</span> <span
+class="small" >Encuéntreme, primero, unos profesores que puedan enseñar la
+química nuclear en catalan.</span> <span class="small" >Seamos
+serios&hellip;</span> </div>
+
+<div class="p right"> <span class="small" >Adolfo Suarez</span> </div>
+
+</div>
+
+<br><hr class="partsep"><br>
+
+<br><hr class="chaptersep"><br>
+
+<div class="p noindent"> <span class="bfseries Huge" >Índex</span> </div>
+
+<br>
+<div class="p noindent"> <span class="bfseries parttoc large" >I  Química
+Quàntica</span><br>
+<a class="bfseries chaptertoc" href="sections/section.1.html" >1  Fonaments de
+la mecànica quàntica</a><br>
+<a class="sectiontoc" href="sections/section.1.1.html"
+>1.1  Introducció</a><br>
+<a class="sectiontoc" href="sections/section.1.2.html" >1.2  Dualitat
+ona-partícula</a><br>
+<a class="sectiontoc" href="sections/section.1.3.html" >1.3  Funcions
+d’onda</a><br>
+<a class="sectiontoc" href="sections/section.1.4.html" >1.4  Operadors</a><br>
+<a class="subsectiontoc" href="sections/section.1.4.1.html" >1.4.1  Notació de
+Dirac</a><br>
+<a class="subsectiontoc" href="sections/section.1.4.2.html" >1.4.2  Operadors
+hermitians</a><br>
+<a class="sectiontoc" href="sections/section.1.5.html"
+>1.5  Observables</a><br>
+<a class="sectiontoc" href="sections/section.1.6.html" >1.6  Mesures</a><br>
+<a class="subsectiontoc" href="sections/section.1.6.1.html" >1.6.1  Resultat
+d’una mesura</a><br>
+<a class="subsectiontoc" href="sections/section.1.6.2.html" >1.6.2  Col·lapse
+de la funció d’ona</a><br>
+<a class="subsectiontoc" href="sections/section.1.6.3.html"
+>1.6.3  Commutadors</a><br>
+<a class="subsectiontoc" href="sections/section.1.6.4.html" >1.6.4  Principi
+d’incertesa de Heisenberg</a><br>
+<a class="sectiontoc" href="sections/section.1.7.html" >1.7  Evolució
+temporal</a><br>
+<a class="bfseries chaptertoc" href="sections/section.2.html" >2  Aplicació de
+la mecànica quàntica a sistemes model</a><br>
+<a class="sectiontoc" href="sections/section.2.1.html"
+>2.1  Introducció</a><br>
+<a class="sectiontoc" href="sections/section.2.2.html" >2.2  La partícula en
+una caixa</a><br>
+<a class="sectiontoc" href="sections/section.2.3.html" >2.3  L’oscil·lador
+harmònic</a><br>
+<a class="subsectiontoc" href="sections/section.2.3.1.html"
+>2.3.1  L’oscil·lador harmònic clàssic</a><br>
+<a class="subsectiontoc" href="sections/section.2.3.2.html"
+>2.3.2  L’oscil·lador harmònic quàntic</a><br>
+<a class="sectiontoc" href="sections/section.2.4.html" >2.4  Moviment en dues o
+més dimensions</a><br>
+<a class="bfseries chaptertoc" href="sections/section.3.html" >3  Moment
+angular</a><br>
+<a class="sectiontoc" href="sections/section.3.1.html"
+>3.1  Introducció</a><br>
+<a class="sectiontoc" href="sections/section.3.2.html" >3.2  Moment angular
+orbital</a><br>
+<a class="sectiontoc" href="sections/section.3.3.html" >3.3  Definició general
+de moment angular</a><br>
+<a class="sectiontoc" href="sections/section.3.4.html" >3.4  Autofuncions i
+autovalors del moment angular orbital</a><br>
+<a class="sectiontoc" href="sections/section.3.5.html" >3.5  L’espín de
+l’electró</a><br>
+<a class="sectiontoc" href="sections/section.3.6.html" >3.6  Suma de moments
+angulars</a><br>
+<a class="bfseries chaptertoc" href="sections/section.4.html" >4  Àtoms
+hidrogenoides</a><br>
+<a class="sectiontoc" href="sections/section.4.1.html"
+>4.1  Introducció</a><br>
+<a class="sectiontoc" href="sections/section.4.2.html" >4.2  El problema de dos
+cossos</a><br>
+<a class="sectiontoc" href="sections/section.4.3.html" >4.3  El rotor rígid de
+dues partícules</a><br>
+<a class="sectiontoc" href="sections/section.4.4.html" >4.4  Partícula sotmesa
+a una força central</a><br>
+<a class="sectiontoc" href="sections/section.4.5.html" >4.5  Orbitals i
+energies dels àtoms hidrogenoides</a><br>
+<a class="sectiontoc" href="sections/section.4.6.html" >4.6  Unitats
+atòmiques</a><br>
+<a class="bfseries chaptertoc" href="sections/section.5.html" >5  Mètodes
+aproximats</a><br>
+<a class="sectiontoc" href="sections/section.5.1.html"
+>5.1  Introducció</a><br>
+<a class="sectiontoc" href="sections/section.5.2.html" >5.2  Mètodes
+variacionals</a><br>
+<a class="subsectiontoc" href="sections/section.5.2.1.html" >5.2.1  Principi
+variacional</a><br>
+<a class="subsectiontoc" href="sections/section.5.2.2.html" >5.2.2  Mètode
+variacional lineal</a><br>
+<a class="subsectiontoc" href="sections/section.5.2.3.html"
+>5.2.3  Exemple:</a> <a class="subsectiontoc"
+href="sections/section.5.2.3.html" >Mètode variacional lineal per a dues
+funcions de base</a><br>
+<a class="sectiontoc" href="sections/section.5.3.html" >5.3  Teoria de
+pertorbacions</a><br>
+<a class="bfseries chaptertoc" href="sections/section.6.html" >6  Àtoms
+polielectrònics</a><br>
+<a class="sectiontoc" href="sections/section.6.1.html" >6.1  Principi
+d’exclusió de Pauli</a><br>
+<a class="subsectiontoc" href="sections/section.6.1.1.html" >6.1.1  Bescanvi de
+partícules idèntiques</a><br>
+<a class="subsectiontoc" href="sections/section.6.1.2.html" >6.1.2  Principi
+d’antisimetria</a><br>
+<a class="subsectiontoc" href="sections/section.6.1.3.html"
+>6.1.3  Determinants de Slater</a><br>
+<a class="sectiontoc" href="sections/section.6.2.html" >6.2  El mètode de
+Hartree-Fock</a><br>
+<a class="sectiontoc" href="sections/section.6.3.html" >6.3  La taula
+periòdica</a><br>
+<a class="sectiontoc" href="sections/section.6.4.html" >6.4  Termes espectrals
+atòmics</a><br>
+<a class="sectiontoc" href="sections/section.6.5.html" >6.5  Nivells
+espectrals</a><br>
+<a class="sectiontoc" href="sections/section.6.6.html" >6.6  Interacció
+espín-òrbita</a><br>
+<a class="bfseries chaptertoc" href="sections/section.7.html" >7  Introducció a
+l’estudi de molècules</a><br>
+<a class="sectiontoc" href="sections/section.7.1.html"
+>7.1  Introducció</a><br>
+<a class="sectiontoc" href="sections/section.7.2.html" >7.2  Aproximació de
+Born-Oppenheimer</a><br>
+<a class="sectiontoc" href="sections/section.7.3.html" >7.3  Corbes d’energia
+potencial</a><br>
+<a class="sectiontoc" href="sections/section.7.4.html" >7.4  La molècula-ió
+d’hidrogen</a><br>
+<a class="subsectiontoc" href="sections/section.7.4.1.html" >7.4.1  Tractament
+exacte del hamiltonià electrònic</a><br>
+<a class="subsectiontoc" href="sections/section.7.4.2.html" >7.4.2  Tractament
+aproximat del hamiltonià electrònic:</a> <a class="subsectiontoc"
+href="sections/section.7.4.2.html" >mètode CLOA</a><br>
+<a class="sectiontoc" href="sections/section.7.5.html" >7.5  La molècula
+d’hidrogen</a><br>
+<a class="subsectiontoc" href="sections/section.7.5.1.html" >7.5.1  Mètode
+d’orbitals moleculars (OM)</a><br>
+<a class="subsectiontoc" href="sections/section.7.5.2.html" >7.5.2  Mètode de
+l’enllaç de valència (EV)</a><br>
+<a class="subsectiontoc" href="sections/section.7.5.3.html" >7.5.3  Comparativa
+i millora dels mètodes OM i EV</a><br>
+<a class="bfseries chaptertoc" href="sections/section.8.html" >8  Simetria
+molecular</a><br>
+<a class="sectiontoc" href="sections/section.8.1.html" >8.1  Elements i
+operacions de simetria</a><br>
+<a class="subsectiontoc" href="sections/section.8.1.1.html" >8.1.1  Producte
+d’operacions de simetria</a><br>
+<a class="sectiontoc" href="sections/section.8.2.html" >8.2  Classificació de
+les molècules per simetria</a><br>
+<br>
+<span class="bfseries parttoc large" >II  Espectroscòpia</span><br>
+<a class="bfseries chaptertoc" href="sections/section.9.html"
+>9  Característiques generals de l’espectroscòpia</a><br>
+<a class="sectiontoc" href="sections/section.9.1.html" >9.1  Concepte
+d’espectroscòpia</a><br>
+<a class="sectiontoc" href="sections/section.9.2.html" >9.2  Coeficients
+d’Einstein</a><br>
+<a class="sectiontoc" href="sections/section.9.3.html" >9.3  Moments dipolars
+de transició</a><br>
+<a class="sectiontoc" href="sections/section.9.4.html" >9.4  Regles de
+selecció</a><br>
+<a class="sectiontoc" href="sections/section.9.5.html" >9.5  Forma i amplada de
+les ratlles espectrals</a><br>
+<a class="sectiontoc" href="sections/section.9.6.html" >9.6  Comparació amb
+dades experimentals</a><br>
+<a class="bfseries chaptertoc" href="sections/section.10.html" >10  Espectres
+de rotació de molècules diatòmiques</a><br>
+<a class="sectiontoc" href="sections/section.10.1.html"
+>10.1  Introducció</a><br>
+<a class="sectiontoc" href="sections/section.10.2.html" >10.2  Rotacions i
+moment dipolar</a><br>
+<a class="sectiontoc" href="sections/section.10.3.html" >10.3  Espectroscòpia
+del rotor rígid</a><br>
+<a class="sectiontoc" href="sections/section.10.4.html" >10.4  Espectroscòpia
+del rotor no rígid</a><br>
+<a class="sectiontoc" href="sections/section.10.5.html" >10.5  L’efecte
+Stark</a><br>
+<a class="sectiontoc" href="sections/section.10.6.html" >10.6  Espectroscòpia
+Raman</a><br>
+<a class="bfseries chaptertoc" href="sections/section.11.html" >11  Espectres
+de rotació de molècules poliatòmiques</a><br>
+<a class="sectiontoc" href="sections/section.11.1.html" >11.1  Mecànica
+clàssica de la rotació de sòlids rígids</a><br>
+<a class="sectiontoc" href="sections/section.11.2.html" >11.2  Mecànica
+quàntica de la rotació de sòlids rígids</a><br>
+<a class="subsectiontoc" href="sections/section.11.2.1.html" >11.2.1  Operadors
+de moment angular</a><br>
+<a class="subsectiontoc" href="sections/section.11.2.2.html" >11.2.2  Operador
+hamiltonià</a><br>
+<a class="sectiontoc" href="sections/section.11.3.html" >11.3  Rotors
+lineals</a><br>
+<a class="sectiontoc" href="sections/section.11.4.html" >11.4  Rotors
+esfèrics</a><br>
+<a class="sectiontoc" href="sections/section.11.5.html" >11.5  Rotors
+simètrics</a><br>
+<a class="sectiontoc" href="sections/section.11.6.html" >11.6  Rotors
+asimètrics</a><br>
+<a class="sectiontoc" href="sections/section.11.7.html" >11.7  Distorsió
+centrífuga</a><br>
+<a class="sectiontoc" href="sections/section.11.8.html" >11.8  Substitució
+isotòpica</a><br>
+<a class="bfseries chaptertoc" href="sections/section.12.html" >12  Espectres
+de vibració de molècules diatòmiques</a><br>
+<a class="sectiontoc" href="sections/section.12.1.html" >12.1  Aproximació
+harmònica</a><br>
+<a class="sectiontoc" href="sections/section.12.2.html" >12.2  Aproximació
+anharmònica</a><br>
+<a class="sectiontoc" href="sections/section.12.3.html" >12.3  Espectres de
+vibració-rotació</a><br>
+<a class="subsectiontoc" href="sections/section.12.3.1.html" >12.3.1  Espectres
+d’infrarojos</a><br>
+<a class="subsectiontoc" href="sections/section.12.3.2.html" >12.3.2  Espectres
+Raman</a><br>
+<a class="bfseries chaptertoc" href="sections/section.13.html" >13  Espectres
+de vibració de molècules poliatòmiques</a><br>
+<a class="sectiontoc" href="sections/section.13.1.html" >13.1  Mecànica
+clàssica de la vibració</a><br>
+<a class="sectiontoc" href="sections/section.13.2.html" >13.2  Mecànica
+quàntica de la vibració</a><br>
+<a class="sectiontoc" href="sections/section.13.3.html" >13.3  Transicions
+espectroscòpiques vibracionals</a><br>
+<a class="sectiontoc" href="sections/section.13.4.html" >13.4  Espectres de
+vibració-rotació</a><br>
+<a class="sectiontoc" href="sections/section.13.5.html" >13.5  Simetria i
+vibracions moleculars</a><br>
+<a class="subsectiontoc" href="sections/section.13.5.1.html"
+>13.5.1  Representacions d’operacions de simetria</a><br>
+<a class="subsectiontoc" href="sections/section.13.5.2.html"
+>13.5.2  Representacions irreductibles (RI)</a><br>
+<a class="subsectiontoc" href="sections/section.13.5.3.html"
+>13.5.3  Representacions reductibles</a><br>
+<a class="subsectiontoc" href="sections/section.13.5.4.html" >13.5.4  Simetria
+i modes actius</a><br>
+<a class="subsectiontoc" href="sections/section.13.5.5.html"
+>13.5.5  Classificació dels modes normals</a><br>
+<a class="bfseries chaptertoc" href="sections/section.14.html" >14  Enllaç i
+espectroscòpia electrònica de molècules diatòmiques</a><br>
+<a class="sectiontoc" href="sections/section.14.1.html" >14.1  Transicions
+electròniques</a><br>
+<a class="sectiontoc" href="sections/section.14.2.html" >14.2  L’enllaç en
+molècules diatòmiques</a><br>
+<a class="subsectiontoc" href="sections/section.14.2.1.html"
+>14.2.1  Configuracions electròniques</a><br>
+<a class="subsectiontoc" href="sections/section.14.2.2.html" >14.2.2  Molècules
+diatòmiques homonuclears</a><br>
+<a class="subsectiontoc" href="sections/section.14.2.3.html" >14.2.3  Molècules
+diatòmiques heteronuclears</a><br>
+<a class="sectiontoc" href="sections/section.14.3.html" >14.3  Termes
+electrònics per a molècules diatòmiques</a><br>
+<a class="sectiontoc" href="sections/section.14.4.html" >14.4  Regles de
+selecció electròniques</a><br>
+<a class="sectiontoc" href="sections/section.14.5.html" >14.5  Regles de
+selecció rotacionals i vibracionals</a><br>
+<a class="sectiontoc" href="sections/section.14.6.html" >14.6  Estructura
+vibracional dels espectres electrònics</a><br>
+<a class="bfseries chaptertoc" href="sections/section.15.html" >15  Enllaç i
+espectroscòpia electrònica de molècules poliatòmiques</a><br>
+<a class="sectiontoc" href="sections/section.15.1.html" >15.1  Termes
+electrònics</a><br>
+<a class="sectiontoc" href="sections/section.15.2.html" >15.2  Regles de
+selecció electròniques</a><br>
+<a class="sectiontoc" href="sections/section.15.3.html" >15.3  Grups
+cromòfors</a><br>
+<a class="sectiontoc" href="sections/section.15.4.html" >15.4  El destí dels
+estats excitats</a><br>
+<br>
+<a class="bfseries chaptertoc" href="sections/biblio.html"
+>Bibliografia</a><br>
+</div>
+
+<br><hr class="partsep"><br>
+
+<div class="p center"> <span class="bfseries huge" >Part I</span><br>
+<br>
+ <span class="bfseries Huge" >Química Quàntica</span> </div>
+
+<br>
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.1.html" >Capítol 1.  Fonaments de la mecànica
+quàntica</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.2.html" >Capítol 2.  Aplicació de la mecànica quàntica a
+sistemes model</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.3.html" >Capítol 3.  Moment angular</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.4.html" >Capítol 4.  Àtoms hidrogenoides</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.5.html" >Capítol 5.  Mètodes aproximats</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.6.html" >Capítol 6.  Àtoms polielectrònics</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.7.html" >Capítol 7.  Introducció a l’estudi de
+molècules</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.8.html" >Capítol 8.  Simetria molecular</a> </div>
+
+<br><hr class="partsep"><br>
+
+<div class="p center"> <span class="bfseries huge" >Part II</span><br>
+<br>
+ <span class="bfseries Huge" >Espectroscòpia</span> </div>
+
+<br>
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.9.html" >Capítol 9.  Característiques generals de
+l’espectroscòpia</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.10.html" >Capítol 10.  Espectres de rotació de molècules
+diatòmiques</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.11.html" >Capítol 11.  Espectres de rotació de molècules
+poliatòmiques</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.12.html" >Capítol 12.  Espectres de vibració de
+molècules diatòmiques</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.13.html" >Capítol 13.  Espectres de vibració de
+molècules poliatòmiques</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.14.html" >Capítol 14.  Enllaç i espectroscòpia
+electrònica de molècules diatòmiques</a> </div>
+
+<div class="p noindent"> <a class="bfseries LARGE"
+href="sections/section.15.html" >Capítol 15.  Enllaç i espectroscòpia
+electrònica de molècules poliatòmiques</a> </div>
+
+<br><hr class="partsep"><br>
+
+<br>
+<div class="p noindent"> <a class="bfseries LARGE" href="sections/biblio.html"
+>Bibliografia</a> </div>
+
+</main>
+
+<footer>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span><img class="includebox" src="images/img10.svg" alt="included image"
+style="width: 9.00em; height: 3.15em;"></span>
+</td><td class="l">
+ <span>Aquesta obra està subjecta a una llicència de </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Reconeixement-CompartirIgual
+4.0 Internacional de Creative Commons</a><span>.</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</footer>
+
+</body>
+</html>
