@@ -116,6 +116,12 @@ body {
 /* Rule for large text size */
 .large {font-size: 117%;}
 
+/* Default rules for links */
+div.p a {word-spacing: normal;}
+div.p a:link {color: blue; text-decoration: none;}
+div.p a:visited {color: #551A8B; text-decoration: none;}
+div.p a:hover {color: blue; text-decoration: underline;}
+
 /* Rule for non-indented text */
 .noindent {text-indent: 0em;}
 
@@ -165,12 +171,6 @@ br + .subsectiontoc {margin-left: 4em;}
 
 /* Rule for huge text size */
 .huge {font-size: 191%;}
-
-/* Default rules for links */
-div.p a {word-spacing: normal;}
-div.p a:link {color: blue; text-decoration: none;}
-div.p a:visited {color: #551A8B; text-decoration: none;}
-div.p a:hover {color: blue; text-decoration: underline;}
 
 /* Rule for Large text size */
 .Large {font-size: 140%;}
@@ -363,28 +363,16 @@ table.tabular > tbody > tr > td.r {text-align: right; }
 /* Rule for inline ‘math’ */
 .inlinemath {white-space: nowrap; fill: currentColor;}
 
-/* Rules for ‘hline’ and ‘cline’ commands in ‘tabular’ environments */
-table.tabular > tbody > tr.hrule {border-top: 0px; height: 0px; }
-table.tabular > tbody > tr.hrule > td {padding: 0.0em; border-top: 1px solid;
-  height: 0px; }
-table.tabular > tbody > tr.hrule + tr.hrule > td { border-top: 0px;
-  border-bottom: 1px solid; height: 1px; }
-table.tabular > tbody > tr.hrule > td.noline {border-top: 1px none; }
-
-/* Rules for vertical rules in ‘tabular’ environments */
-table.tabular > tbody > tr > td.vrule {padding: 0.0em;
-  border-left: 1px solid; width: 0px; height: 0px; }
-table.tabular > tbody > tr > td.vrule + td.vrule {border-left: 0px solid;
-  border-right: 1px solid; width: 2px; }
-
 /* Rule for ‘includebox’ content */
 img.includebox {vertical-align: baseline;
   font-size: var(--graphics-font-size);}
 
 /* Rule for footers */
-footer {font-size: 60%; margin-top: 2px; margin-bottom: 2px;}
-footer img.includebox {font-size: 50%;}
-footer > div.p.center {margin-bottom: 0;}
+footer {text-align: center;}
+footer > div.p {display: inline-block; font-size: 60%;
+  margin: 2px auto; text-align: center; text-indent: 0;
+  word-spacing: normal; border: 1px solid black; padding: 0.2em;}
+footer img.includebox {font-size: 50%; vertical-align: -1.0em;}
 
 /* Rule for ‘picture’ environment */
 .picture {vertical-align: -0.2pt; fill: currentColor; max-width: 100%;
@@ -467,6 +455,20 @@ div.enumerate {text-indent: 0em; margin-left: 4.0em; margin-right: 0em;}
 div.enumerate > div.item {position: relative; text-indent: 0em;}
 div.enumerate > div.item > span:first-child {position: absolute;
   overflow: hidden; text-align: left; left: -2.0em; width: 2.0em;}
+
+/* Rules for ‘hline’ and ‘cline’ commands in ‘tabular’ environments */
+table.tabular > tbody > tr.hrule {border-top: 0px; height: 0px; }
+table.tabular > tbody > tr.hrule > td {padding: 0.0em; border-top: 1px solid;
+  height: 0px; }
+table.tabular > tbody > tr.hrule + tr.hrule > td { border-top: 0px;
+  border-bottom: 1px solid; height: 1px; }
+table.tabular > tbody > tr.hrule > td.noline {border-top: 1px none; }
+
+/* Rules for vertical rules in ‘tabular’ environments */
+table.tabular > tbody > tr > td.vrule {padding: 0.0em;
+  border-left: 1px solid; width: 0px; height: 0px; }
+table.tabular > tbody > tr > td.vrule + td.vrule {border-left: 0px solid;
+  border-right: 1px solid; width: 2px; }
 
 /* Rule for footnotesize text size */
 .footnotesize {font-size: 84%;}
