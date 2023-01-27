@@ -476,12 +476,6 @@ table.tabular > tbody > tr > td.vrule + td.vrule {border-left: 0px solid;
 /* Rule for underlined text */
 .underline {text-decoration: underline;}
 
-/* Rule for ‘scalebox’ content */
-span.scalebox {vertical-align: baseline; text-indent: 0.0em;
-  display: inline-block; white-space: nowrap; position: relative;
-  font-size: var(--graphics-font-size);}
-span.scalebox > span {position: absolute; left: 50%;}
-
 /* Rules for ‘thebibliography’ environments */
 div.thebibliography {text-indent: 0em; margin-left: 3.5em; margin-right: 0em;}
 div.thebibliography > div.item {text-indent: -1.5em;}
