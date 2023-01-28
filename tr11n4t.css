@@ -60,16 +60,3 @@ nav li {
 nav > ul > li {
     padding-left: 0.5em;
 }
-
-/* Style buttons */
-nav li > button {
-    font-size: inherit;
-    font-family: inherit;
-    margin-bottom: 0.2em;
-    text-decoration: underline;
-    color: #0000EE;
-}
-
-/* Style folded and unfolded lists */
-nav li > button + ul { display: none; }
-nav li > button.unfolded + ul { display: block; }
