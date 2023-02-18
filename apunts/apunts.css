@@ -7,6 +7,7 @@
 :root {
   --font-size: 16px;
   --body-lateral-padding: 0.5em;
+  --body-text-align: left;
 }
 
 /* Set some custom properties (for screens larger than 360px) */
@@ -21,6 +22,7 @@
     /* Increases font-size from 16px (medium) to 26px (xlarge) */
     /* Computed approximately as 100*16/640 or 100*26/1024 */
     --font-size: 2.5vw;
+    --body-text-align: justify;
   }
 }
 
@@ -44,7 +46,8 @@
 }
 
 /* Text default rules */
-body {text-indent: 1.5em; word-spacing: 0.6em; text-align: justify;
+body {text-indent: 1.5em; word-spacing: 0.6em; text-align:
+var(--body-text-align);
   font-family: "MLModern Serif",
   "Latin Modern Roman", "Times New Roman", serif;
   font-weight: normal; font-style: normal; font-variant: normal;
@@ -63,7 +66,6 @@ br + hr.partsep + br + br + hr.chaptersep + br {display: none;}
 body {
   width: calc(100% - 2*var(--body-lateral-padding));
   padding: 0 var(--body-lateral-padding);
-  text-align: left;
 }
 
 /* Responsive rules for screens larger than 360px */
@@ -76,9 +78,6 @@ body {
 @media only screen and (min-width: 641px)
 {
   /* Customize ‘body’ */
-  body {
-    text-align: justify;
-  }
 }
 
 /* Responsive rules for screens larger than 1024px */
@@ -299,26 +298,33 @@ html {scroll-behavior: smooth;}
   font-style: italic;
 }
 
+/* Custom properties for responsive margins */
+:root {--medium-lateral-margin: 0.5em;} /* Small screens */
+:root {--large-lateral-margin: 0.5em;} /* Small screens */
+@media only screen and (min-width: 361px) /* Medium screens */
+  { :root {--medium-lateral-margin: 1em;}
+    :root {--large-lateral-margin: 1em;}}
+@media only screen and (min-width: 641px) /* Large screens */
+  { :root {--large-lateral-margin: 2em;}}
+:root {--medium-margin: 0 var(--medium-lateral-margin) 0.5em
+  var(--medium-lateral-margin);} /* All four margins, medium screen */
+:root {--large-margin: 0 var(--large-lateral-margin) 0.5em
+  var(--large-lateral-margin);} /* All four margins, large screen */
+
+/* Custom properties for ‘float’ environments */
+.figure, .table {--float-margin: var(--medium-margin);}
+
 /* Rule for ’float’ (’figure’ and ’table’) environments */
-:root {--float-lateral-margin: 0.5em;}
-@media only screen and (min-width: 361px) {
-  :root {--float-lateral-margin: 1.0em;}
-}
-@media only screen and (min-width: 641px) {
-  :root {--float-lateral-margin: 2.0em;}
-}
 .figure, .table {text-indent: 0; text-align: center; background-color: white;
   border: black double 3px; padding: 1em 0 0 0.5em;
-  margin-bottom: 0.5em; margin-left: var(--float-lateral-margin);
-  margin-right: var(--float-lateral-margin)}
-div.p.caption > span:first-child {color: red;}
+  margin: var(--float-margin);}
+div.p.caption > span:first-child {color: hsl(7,100%,34%);}
 
 /* Rule for ‘caption’ */
-.caption {display: inline-block; margin-left: 2em; margin-right: 2em;
-  text-align: justify;}
+.caption {font-size: 90%; text-align: var(--body-text-align);}
 
 /* Rule for ‘displaymath’ environment */
-.displaymath {max-width: 100%; height: auto; vertical-align: middle;}
+.displaymath {max-width: 100%; vertical-align: middle; fill: currentColor;}
 
 /* Rules for copyrighted images */
 span.includeimg > a {display: inline-block; position: relative; width: 0.9em;}
@@ -375,8 +381,7 @@ footer > div.p {display: inline-block; font-size: 60%;
 footer img.includebox {font-size: 50%; vertical-align: -1.0em;}
 
 /* Rule for ‘picture’ environment */
-.picture {vertical-align: -0.2pt; fill: currentColor; max-width: 100%;
-  height: auto;}
+.picture {fill: currentColor; max-width: 100%;}
 
 /* Directive for sans bold upright font */
 @font-face{
@@ -386,17 +391,18 @@ footer img.includebox {font-size: 50%; vertical-align: -1.0em;}
   font-style: normal;
 }
 
+/* Custom properties for ‘law’ environment */
+div.law {--law-margin: var(--large-margin);}
+
 /* Rule for ‘law’ environment */
-div.law {text-indent: 0em; margin-left: 3em; margin-right: 3em;
-  margin-bottom:1em; padding: 1em 1em 0 1em; border: 2px solid black;
-  background-color: hsl(60,100%,95%); box-shadow: 3px 3px 4px 4px gray;
-  border-radius: 1em;}
+div.law {text-indent: 0em; color: hsl(204,100%,29%); padding: 0.5em 1em 0 1em;
+  margin: var(--law-margin);
+  background-color: hsl(60,100%,95%); border: 2px solid black;
+  box-shadow: 3px 3px 4px 4px gray; border-radius: 1em;}
+div.law > :last-child {margin-bottom: 0.5em;}
 
-/* Rule for red foreground */
-.redfg {color: red;}
-
-/* Rule for blue foreground */
-.bluefg {color: blue;}
+/* Rule for the law’s name color foreground */
+.lawnamefg {color: hsl(7,100%,34%);}
 
 /* Rules for ‘equation’ environment */
 table.equation {vertical-align: middle; width: 100%; margin-bottom: 1em;}
@@ -404,7 +410,7 @@ table.equation tr td {text-align: center;}
 table.equation tr td + td {text-align: right; width: 0; padding-left: 0.5em;
   white-space: nowrap; direction: ltr;}
 table.equation + div.p:not(.noindent) {margin-top: 2em;}
-svg.equation {max-width: 100%; height: auto;}
+svg.equation {max-width: 100%; fill: currentColor;}
 
 /* Rule for ‘blob’ command */
 div.blob {text-align: center; margin: 0 auto; overflow-x: hidden;
