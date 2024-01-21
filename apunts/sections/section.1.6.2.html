@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Col·lapse de la funció d’ona</title>
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.html"><span>1 Fonaments de la mecànica quàntica
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.6.html"><span>1.6 Mesures </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>1.6.2 Col·lapse de la funció d’ona
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img463.svg#page455"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<div class="p noindent"> <span class="bfseries" >1.6.2  Col·lapse de la funció
+d’ona</span> </div>
+
+<details open class="foldable prop">
+<summary id="ref::pos:mes:collapse"> <span>&vert;1&rang;</span> <span
+class="sffamily" >Alerta!</span> <span class="sffamily" >Mesurar un observable
+modifica el sistema.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Postulat V de la mecànica
+quàntica</span></strong>. <span>Si en mesurar l’observable
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img464.svg#page456"> </use> </svg></span> s’obté
+<span class="inlinemath">l’autovalor <svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img465.svg#page457"> </use> </svg></span>, aleshores
+immediatament després de la mesura la funció d’ona del sistema serà igual a
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img466.svg#page458"> </use> </svg></span>, l’autofunció
+corresponent a <span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img467.svg#page459"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Mesurar causa el
+</span><span class="itshape sffamily" >col·lapse</span><span class="sffamily" >
+o </span><span class="itshape sffamily" >reducció</span><span class="sffamily"
+> de la funció d’ona.</span></summary>
+
+<div class="content"><div class="figure" id="ref::mesuraAA">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -188.94 257.57 184.85"
+style="width: 25.85em; height: 19.08em;"> <use
+xlink:href="images/img468.svg#page460"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 1.11</span>: <span>Dos mesures successives
+de l’observable <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img469.svg#page461"> </use> </svg></span></span>.
+<span><span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img470.svg#page462"> </use> </svg></span> és la funció d’ona
+que descriu el sistema i <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img471.svg#page463"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.57 49.82 8.51"
+style="width:  5.00em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img472.svg#page464"> </use> </svg></span>) és l’autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img473.svg#page465"> </use> </svg></span> corresponent a
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img474.svg#page466"> </use> </svg></span> (suposem que no hi
+ha degeneració)</span>. <span>Després de la primera mesura s’obté un dels
+autovalors <span class="inlinemath">d’<svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img475.svg#page467"> </use> </svg></span> (no podem predir
+quin), per exemple el <span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img476.svg#page468"> </use> </svg></span>,
+<span class="inlinemath">i <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img477.svg#page469"> </use> </svg></span> col·lapsa a
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img478.svg#page470"> </use> </svg></span></span>. <span>Si
+tornem a mesurar <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img479.svg#page471"> </use> </svg></span> de forma
+immediata, ara sí podrem predir el resultat</span>:
+<span><span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img480.svg#page472"> </use> </svg></span> (vegeu </span><a
+class="sffamily small" href="sections/section.1.6.1.html#ref::pos:mes:certesa"
+>§1.6.1&vert;3.3&rang;</a><span>)</span>. </div>
+
+</div>
+
+<div class="p"> <span>El postulat V implica que el fet de mesurar modifica la
+funció d’ona que descriu el sistema</span>. <span>És produeix un canvi sobtat
+de la funció d’ona immediatament després de la mesura, canvi que s’anomena
+</span><span class="itshape" >col·lapse</span><span> o </span><span
+class="itshape" >reducció</span><span> de la funció d’ona</span>. <span>Ho
+il·lustrem en la figura </span><a
+href="sections/section.1.6.2.html#ref::mesuraAA">1.11</a>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.1.6.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+</body>
+</html>
