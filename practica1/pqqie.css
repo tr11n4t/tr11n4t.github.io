@@ -1,0 +1,340 @@
+/* 
+   Mobile-first design used.  Breakpoints:
+     - 360px width
+     - 768px width
+*/
+
+/******************************  Width <= 360px  *****************************/
+
+/* CSS reset */
+* {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0; }
+
+/* Normalize some control elements in forms */
+input, button, select {
+    font-size: inherit;
+    font-family: sans-serif;
+}
+
+/* Generic style for `body' */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 100%;
+    text-decoration: none;
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+
+/* Style the page title */
+body > h1 {
+    font-size: 1.6em;
+    text-align: center;
+    color: green;
+}
+
+/* Set the text color for error class and `input' childs */
+.error, .error > input {
+    color: red;
+}
+
+/* Style the paragraph used for error messages */
+main > p.error {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Collapse cell borders in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Remove arrows/spinners from input type number */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    /* Chrome, Safari, Edge, Opera */
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    /* Firefox */
+    -moz-appearance: textfield;
+}
+
+/*-----------------------------  Navigation bar  ----------------------------*/
+
+/* Style the `nav' element, allowing a scrollbar if necessary */
+body > nav {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: SteelBlue;
+    overflow-x: scroll;
+}
+
+/* Item's list: use flexbox, remove bullets from items */
+body > nav > ul {
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+}
+
+/* Style the menu's items */
+body > nav > ul > li {
+    /* Set the flexbox */
+    flex-basis: 5em;  /* Minimal item width */
+    flex-shrink: 0;   /* Items don't shrink */
+    flex-grow: 1;     /* All items grow at the same rate */
+    max-width: 10em;  /* Maximal item width */
+
+    /* Add a border to the right of each item */
+    border-right: 0.2em solid white;
+}
+
+/* Remove the border of the last item in the menu */
+body > nav > ul > li:last-child {
+    border-right: 0;
+}
+
+/* Deal with anchors in the navigation bar */
+body > nav > ul > li > a {
+
+    /* Style the anchor's box */
+    display: block;
+    padding: 0.3em 0 0.5em 0;
+    margin-top: 0.2em;
+
+    /* Set anchor's overflow behaviour */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    /* Remove underline from link */
+    text-decoration: none;
+
+    /* Style text and colors */
+    text-align: center;
+    font-weight: bold;
+    background-color: SteelBlue;
+    color: white;
+}
+
+/* For current item, run an animation */
+body > nav > ul > li.current > a {
+    animation-name: current;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+/* Current item animation */
+@keyframes current {
+    from {
+        background-image: linear-gradient(to bottom, SteelBlue, SteelBlue);
+        color: White;
+    }
+    to {
+        background-image: linear-gradient(to bottom, SteelBlue, 5%, White);
+        color: SteelBlue;
+    }
+}
+
+/*------------------------------  Main element  -----------------------------*/
+
+/* Headers for sections */
+body > main > section h2 {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+/* Headers for subsections */
+body > main > section h3 {
+    font-size: 1.2em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: MediumBlue;
+}
+
+/* Hidden section */
+body > main > section {
+    display: none; }
+
+/* Unhide the current section */
+body > main > section.current {
+    display: block;
+}
+
+/* Tables in section */
+body > main > section > table {
+    margin: 1em auto 0 auto;
+}
+body > main > section > table td {
+    padding: 0.2em 0.2em 0.3em 0.2em;
+    text-align: right;
+}
+
+/* Hightlight rows near a minimum, maximum, or zero */
+tr.near {
+    background-color: pink;
+}
+
+/*----------------------------------  Forms  --------------------------------*/
+
+/* General style for forms */
+form {
+    padding: 0.2em 0.5em 0.5em 0.5em;
+    margin: 1em auto;
+    border: 2px solid Purple;
+    width: calc(100% - 1.5em - 4px);
+    background-color: Lavender;
+    font-size: 1em;
+    overflow-x: scroll;
+}
+
+/* Style headers in forms */
+body > main > section > form > h3 {
+    margin-top: 0.3em;
+    padding-top: 0;
+}
+
+/* Style generic buttons in a form */
+form button {
+    display: block;
+    position: relative; /* To position an overlay relative to the button */
+    font-weight: bold;
+    text-align: center;
+    line-height: normal;
+    margin: 1.5em auto 0.5em auto;
+    padding: 0.3em 1.2em;
+    border-radius: 3px;
+    color: Black;
+    background-image: linear-gradient(OrangeRed,Orange);
+    box-shadow: 4px 4px gray;
+    transition: transform 150ms linear; /* Will shrink the button */
+}
+
+/* Shrink the button when active (used by the above `transition') */
+form button:active {
+    transform: scale(0.95);
+}
+
+/* Semitransparent overlay to get glass-like aspect */
+/* See https://simplestepscode.com/css-glass-button-tutorial/ */
+form button:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 50%;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+
+/* Style small buttons inside a form */
+form button.small {
+    display: inline;
+    min-width: 2.0em;
+    padding: 0.1em 0.3em;
+    margin: 0;
+}
+
+/* Style a `remove' button inside a form */
+form button.remove {
+    color: White;
+    background-image: linear-gradient(DarkRed,Crimson);
+}
+
+/* Style input fields of type `number' */
+form input[type=number] {
+    font-family: monospace,monospace;
+    width: 5em;
+    margin-right: 0.0em;
+    padding-right: 0;
+    padding-bottom: 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed Purple;
+}
+
+/* Tables in forms: center them and add some top margin */
+form table {
+    margin: 1em auto 0 auto;
+}
+
+/*
+  For cells in tables inside a form:
+  - Add some padding
+  - Center the text in all cells but those in the header
+*/
+form table td {
+    padding: 0.2em 0.2em 0.3em 0.2em;
+    text-align: right;
+}
+form > table tr:first-child > td {
+    text-align: center;
+}
+
+/**************************  360px < Width <= 768px  *************************/
+
+@media only screen and (min-width: 361px) {
+
+    /* Don't allow scrollbar for the navigation menu */
+    body > nav {
+        overflow-x: visible;
+    }
+
+    /* Center items in the navigation menu */
+    body > nav > ul {
+        justify-content: center;
+    }
+
+    /* Increase the minimal item width in the navigation menu */
+    body > nav > ul > li {
+        flex-basis: 7em;
+    }
+
+    /* Add borders before the first item and after the last one */
+    body > nav > ul > li:first-child {
+        border-left: 0.2em solid white;
+    }
+    body > nav > ul > li:last-child {
+        border-right: 0.2em solid white;
+    }
+
+    /* Set the width of forms, prevent scrollbar */
+    body > main > section > form {
+        width: 25em;
+        max-width: calc(100% - 1.5em - 4px);
+        overflow-x: auto;
+    }
+}
+
+/******************************  768px < Width  ******************************/
+
+@media only screen and (min-width: 769px) {
+
+    /* Color the screen outside `body' */
+    html {
+        background-color: SandyBrown;
+    }
+
+    /* Limit the size of `body' to 768px and style a little */
+    body {
+        width: 768px;
+        margin: 2em auto;
+        border: 1px solid black;
+        box-shadow: 4px 4px gray;
+        border-radius: 1em;
+        background-color: white;
+    }
+
+    /* Increase padding in table cells inside a form */
+    form table td {
+        padding: 0.3em 0.3em 0.4em 0.3em;
+    }
+}

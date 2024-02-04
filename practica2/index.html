@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Potential energy curves | hydrogen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="H2qchem.css">
+    <script defer src="H2qchem.js"></script>
+    <script defer src="pqqie.js"></script>
+    <script defer src="handlers.js"></script>
+  </head>
+  <body>
+
+    <h1>Potential energy curves for the hydrogen molecule</h1>
+
+    <!-- ******************************************************************
+         * Navegation
+         ****************************************************************** -->
+
+    <nav>
+      <ul>
+        <li><a href="#EvsR">E/R table</a></li>
+        <li><a href="#Ropt"
+               title="Manual R optimization">R optimization</a></li>
+        <li><a href="#Aopt"
+               title="Manual &xi; optimization">&xi; optimization</a></li>
+      </ul>
+    </nav>
+    
+    <!-- ******************************************************************
+         * E/R table generation
+         ****************************************************************** -->
+
+    <main>
+      <section id="EvsR">
+
+        <h2>E/R table</h2>
+
+        <form>
+          <label for="EvsR-alpha">&xi;=</label><!--
+       --><input type="number" id="EvsR-alpha" min="0" step="any"><br>
+          <label for="EvsR-min">R<sub>min</sub>=</label><!-- 
+       --><input type="number" id="EvsR-min" min="0" step="any"><!--
+       --><label for="EvsR-max">, R<sub>max</sub>=</label><!--
+       --><input type="number" id="EvsR-max" min="0" step="any"><!--
+       --><label for="EvsR-inc">, &#x2206;R=</label><!--
+       --><input type="number" id="EvsR-inc" min="0" step="any">
+          <button id="EvsR-button" type="button">Get table</button>
+        </form>
+
+      </section>
+
+      <!-- ****************************************************************
+           * R optimization
+           **************************************************************** -->
+
+      <section id="Ropt">
+
+        <h2>Manual R optimization</h2>
+
+        <form>
+          <fieldset>
+            <legend>Select method:</legend>
+            <input type="radio" name="Ropt-method" id="Ropt-MO" value="MO">
+            <label for="Ropt-MO">MO</label>
+            <input type="radio" name="Ropt-method" id="Ropt-VB" value="VB">
+            <label for="Ropt-VB">VB</label>
+            <input type="radio" name="Ropt-method" id="Ropt-CF" value="CF">
+            <label for="Ropt-CF">CF</label>
+          </fieldset>
+          <label for="Ropt-alpha">&xi;=</label>
+          <input type="number" id="Ropt-alpha" min="0" step="any">
+        </form>
+
+        <form>
+          <label for="Ropt-R">R=</label>
+          <input type="number" id="Ropt-R" min="0" step="any">
+          <button id="Ropt-button" type="button">Get energy</button>
+        </form>
+
+      </section>
+
+      <!-- ****************************************************************
+           * alpha optimization
+           ** ************************************************************* -->
+
+      <section id="Aopt">
+
+        <h2>Manual &xi; optimization</h2>
+
+        <form>
+          <fieldset>
+            <legend>Select method:</legend>
+            <input type="radio" name="Aopt-method" id="Aopt-MO" value="MO">
+            <label for="Aopt-MO">MO</label>
+            <input type="radio" name="Aopt-method" id="Aopt-VB" value="VB">
+            <label for="Aopt-VB">VB</label>
+            <input type="radio" name="Aopt-method" id="Aopt-CF" value="CF">
+            <label for="Aopt-CF">CF</label>
+          </fieldset>
+          <label for="Aopt-R">R=</label>
+          <input type="number" id="Aopt-R" min="0" step="any">
+        </form>
+
+        <form>
+          <label for="Aopt-alpha">&xi;=</label>
+          <input type="number" id="Aopt-alpha" min="0" step="any">
+          <button id="Aopt-button" type="button">Get energy</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
