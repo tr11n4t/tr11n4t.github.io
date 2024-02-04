@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /grupals/
+Disallow: /practica1/
+Disallow: /practica2/
 
 Sitemap: https://tr11n4t.github.io/sitemap.xml

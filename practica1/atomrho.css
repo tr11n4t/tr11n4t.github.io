@@ -1,0 +1,272 @@
+@import "pqqie.css";
+
+/* 
+   Mobile-first design used.  Breakpoints:
+     - 360px width
+     - 768px width
+*/
+
+/* -------------------------------- Basis form ----------------------------- */
+
+/* Vertical line after third column */
+#basis tr > td:nth-child(3) {
+    border-right: 2px solid black;
+}
+
+/* Vertical line before and after first column.  Pad its cells a bit */
+#basis tr > td:nth-child(1) {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 0 0.5em;
+}
+
+/* Draw borders above and below the first three cells in the first row,
+   and hightligth them */
+#basis > thead > tr > td:nth-child(-n+3) {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: Plum;
+    font-size: 1.1em;
+}
+
+/* Border below the first three cells in the last row */
+#basis > tbody > tr:last-child > td:nth-child(-n+3) {
+    border-bottom: 2px solid black;
+}
+
+/* ------------------------------ Subshells form --------------------------- */
+
+/* Style the `new' button */
+#Inp-subshells-new {
+    float: left;
+    margin: 0.3em 0 0 0.3em;
+}
+
+/* Main table .............................................................. */
+
+/* No border in cells */
+#subshells > tbody > tr > td {
+    border: 0;
+}
+
+/* Style unfolded cells */
+#subshells > tbody > tr > td.unfolded {
+    white-space: nowrap;
+    border: 2px solid black;
+    background-color: PaleTurquoise;
+}
+
+/* Style the paragraphs inside unfolded cells */
+#subshells > tbody > tr > td.unfolded > p {
+    clear: both;
+    margin-top: 0.7em;
+    text-align: left;
+    line-height: 1.0;
+}
+
+/* Align content of cells */
+#subshells > tbody > tr > td {
+    vertical-align: top;
+    text-align: center;
+}
+
+/* Hide the content of cells but the fold/unfold button */
+#subshells > tbody > tr > td > * {
+    display: none;
+}
+#subshells > tbody > tr > td > :first-child {
+    display: block;
+}
+
+/* Show the content of unfolded cells */
+#subshells > tbody > tr > td.unfolded > * {
+    display: block;
+}
+
+/* Float fold/unfold button when unfolded */
+#subshells > tbody > tr > td.unfolded > button:nth-child(1) {
+    float: left;
+}
+
+/* Style dropdown `nl' menu */
+#subshells > tbody > tr > td.unfolded > select:nth-child(2) {
+    display: inline;
+    margin: 0 auto;
+}
+
+/* Style remove button */
+#subshells > tbody > tr > td.unfolded > :nth-child(3) {
+    display: inline;
+    float: right;
+}
+
+/* Style the core/valence radio buttons */
+#subshells > tbody > tr > td.unfolded p:nth-child(4) > input {
+    margin-top: 0.4em;
+    margin-left: 1.0em;
+    margin-right: 0.3em;
+}
+
+/* Style the number of electrons input field */
+#subshells > tbody > tr > td.unfolded p:nth-child(5) > input {
+    width: 2em;
+    margin-left: 0.5em;
+    margin-bottom: 0.8em;
+}
+
+/* Coeficients' table ...................................................... */
+
+/* Center the table */
+#subshells > tbody > tr > td.unfolded > table {
+    display: inline;
+    text-align: center;
+}
+
+/* Style the header */
+#subshells table > thead > tr > td {
+    margin-top: 2em;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: Plum;
+    font-size: 1.1em;
+}
+
+/* Add borders and padding at both sides of first column */
+#subshells table tr > td:first-child {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 0 0.5em;
+}
+
+/* Add border after last column and set witdth */
+#subshells table tr > td:last-child {
+    width: 4.5em;
+    border-right: 2px solid black;
+}
+
+/* Add border at the bottom of the table */
+#subshells table > tbody {
+    border-bottom: 2px solid black;
+}
+
+/* Hide body rows in class `hidden' */
+#subshells table > tbody > tr.hidden {
+    display: none;
+}
+
+/* Align the cells in the body's first column to the left */
+#subshells table > tbody > tr > td:first-child {
+    text-align: left;
+}
+
+/* ------------------------------ Radii section ---------------------------- */
+
+/* Expectation value table: higlight header */
+#Rad-expect > thead > tr {
+    background-color: Plum;
+}
+
+/* Expectation value table: padding and cell border */
+#Rad-expect > tbody > tr > td,
+#Rad-expect > thead > tr > th {
+    border: 2px solid black;
+    padding: 0.2em 0.8em;
+}
+
+/* Style form */
+#Rad > form {
+    line-height: 2.0;
+}
+
+/* Style charge percentage field in percentage form */
+#Rad > form > input[type=number]:first-of-type {
+    width: 3em;
+}
+
+/* Set margins for R/Q table */
+#Rad-percent {
+    margin: 2em auto 1em auto;
+}
+
+/* Highlight header in R/Q table */
+#Rad-percent tr:first-child {
+    background-color: LightGray;
+}
+
+/* Add some padding to all cells in R/Q table */
+#Rad-percent td {
+    padding: 0.2em 0.5em;
+}
+
+/* Center header cells in R/Q table */
+#Rad-percent tr:first-child > td {
+    text-align: center;
+}
+
+/* ---------------------------- Densities section -------------------------- */
+
+/* Add some margin to the radio buttons */
+#Rho > form > fieldset > input[type=radio] {
+    margin: 0.3em 0.4em 0.1em 2em;
+}
+
+/* Style the SVG density graphics */
+#Rho > svg {
+    display: none;  /* By default, hide the graphic */
+    margin: 1em auto;
+    overflow-x: scroll;
+    font-size: 1.2em; /* Set width and font size for small devices */
+    width: 360px;
+}
+
+/* Unhide the current graphic */
+#Rho > svg.current {
+    display: block;
+}
+
+/* Style line element inside SVG */
+#Rho > svg line {
+    stroke: black;
+    stroke-width: 2;
+}
+
+/* Style the grid lines in the graphics */
+#Rho > svg line.grid {
+    stroke: Gainsboro;
+    stroke: LightGray;
+    stroke: Silver;
+    stroke-width: 1;
+}
+
+/* Style the path used to draw the densities */
+#Rho > svg path {
+    stroke: black;
+    stroke-width: 2;
+    fill: white;
+    fill-opacity: 0.0;
+}
+
+/**************************  360px < Width <= 768px  *************************/
+
+@media only screen and (min-width: 361px) {
+
+     /* Set SVG graphic width and font size for medium devices */
+    #Rho > svg {
+        font-size: 1.08em;
+        width: 400px;
+    }
+}
+
+/******************************  768px < Width  ******************************/
+
+@media only screen and (min-width: 769px) {
+
+    /* Style SVG graphics */
+    #Rho > svg {
+        overflow-x: auto;
+        padding: 1em;
+        border: 2px solid black;
+        font-size: 0.9em; /* Set width and font size for large devices */
+        width: 500px;
+    }
+}

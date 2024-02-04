@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Atomic densities and radii</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="atomrho.css">
+    <script defer src="atomrho.js"></script>
+    <script defer src="splines.js"></script>
+    <script defer src="pqqie.js"></script>
+    <script defer src="handlers.js"></script>
+  </head>
+  <body>
+
+    <h1>Atomic densities and radii</h1>
+
+    <!-- ******************************************************************
+         * Navegation
+         ****************************************************************** -->
+
+    <nav>
+      <ul>
+        <li><a href="#Inp" title="Atomic data input">Input</a></li>
+        <li><a href="#Rad" title="Atomic radii">Radii</a></li>
+        <li><a href="#Rho" title="Atomic densities">Densities</a></li>
+      </ul>
+    </nav>
+    
+    <!-- ******************************************************************
+         * Atomic data input
+         ****************************************************************** -->
+
+    <main>
+      <section id="Inp">
+
+        <h2>Atomic data input</h2>
+
+        <!-- Basis form -->
+        <form>
+          <h3>Basis functions</h3>
+          <table id="basis">
+            <thead>
+              <tr>
+                <td>&chi;</td>
+                <td>Type</td>
+                <td>&xi;</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </form>
+
+        <!-- Subshells form -->
+        <form>
+          <button id="Inp-subshells-new" type="button" class="small"
+                  title="Add a new subshell">New</button>
+          <h3>Subshells</h3>
+          <table id="subshells">
+            <tbody>
+              <tr><td></td></tr>
+            </tbody>
+          </table>
+        </form>
+
+      </section>
+
+      <!-- ****************************************************************
+           * Atomic radii
+           **************************************************************** -->
+
+      <section id="Rad">
+
+        <h2>Atomic radii</h2>
+
+        <h3>Expectation values</h3>
+
+        <table id="Rad-expect">
+          <thead>
+            <tr>
+              <th>&lang;r<sub>c</sub>&rang;</th>
+              <th>&lang;r<sub>v</sub>&rang;</th>
+              <th>&lang;r<sub></sub>&rang;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.11</td>
+              <td>2.22</td>
+              <td>3.33</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+        <h3>Radius of sphere with % of charge</h3>
+
+        <form>
+          <label for="Rad-Q">Charge:</label>
+          <input type="number" id="Rad-Q" min="0" max="100" step="any"
+                 value="99.0">%<br>
+          <label for="Rad-R">R<sub>%</sub>=</label>
+          <input type="number" id="Rad-R" min="0" step="any">
+          <button id="Rad-button" type="button">Get charge %</button>
+        </form>
+
+      </section>
+
+      <!-- ****************************************************************
+           * Atomic densities
+           ** ************************************************************* -->
+
+      <section id="Rho">
+
+        <h2>Atomic densities</h2>
+
+        <form>
+          <fieldset>
+            <legend>Select density:</legend>
+            <input type="radio" name="Rho-kind" id="Rho-total" value="t">
+            <label for="Rho-total">Total</label><br>
+            <input type="radio" name="Rho-kind" id="Rho-cv" value="cv">
+            <label for="Rho-cv">Core/Valence</label><br>
+            <input type="radio" name="Rho-kind" id="Rho-ss" value="ss">
+            <label for="Rho-ss">Subshell</label>
+          </fieldset>
+        </form>
+
+      </section>
+    </main>
+  </body>
+</html>

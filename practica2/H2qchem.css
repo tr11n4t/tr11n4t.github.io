@@ -1,0 +1,98 @@
+@import "pqqie.css";
+
+/* 
+   Mobile-first design used.  Breakpoints:
+     - 360px width
+     - 768px width
+*/
+
+/******************************  Width <= 360px  *****************************/
+
+/* CSS reset */
+* {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0; }
+
+/*----------------------------------  Forms  --------------------------------*/
+
+/* General style for forms */
+body > main > section > form {
+    padding: 0.5em;
+    line-height: 2.0; 
+}
+
+/* Float legends in fieldsets to the left */
+body > main > section > form > fieldset > legend {
+    float: left;
+    margin-right: 1em;
+}
+
+/* Increase the space between a radio button and its legend */
+input[type=radio] + label {
+    margin-right: 1em;
+}
+
+/* Particularize input fields of type `number' for ID `EvsR' */
+#EvsR input[type=number] {
+    width: 3em;
+}
+
+/* Increase word spacing in `EvsR' forms */
+#EvsR form {
+    word-spacing: 1.5em
+}
+
+/*----------------------------------  Tables  -------------------------------*/
+
+/* Center tables with no border between cells */
+body > main > section > table {
+    margin: 2em auto;
+}
+
+/* Color header */
+table tr:first-child {
+    background-color: LightGray;
+}
+
+/* Align text in cells to the right */
+body > main > section > table td {
+    padding: 0.2em 0.5em;
+    text-align: right;
+}
+
+/* Text in header cells should be centered */
+table tr:first-child > td {
+    text-align: center;
+}
+
+/* Particularize for ID=EvsR: Highlight every second row */
+#EvsR table tr:nth-child(even) {
+    background-color: aquamarine;
+}
+
+/* Particularize for ID=EvsR: vertical line after first column */
+#EvsR table tr > td:first-child {
+    border-right: 2px solid black;
+}
+
+/* Hightlight the row containing the minimum */
+tr.minimum {
+    background-color: coral;
+}
+
+/* Hightlight rows near the minimum */
+tr.near {
+    background-color: pink;
+}
+
+/**************************  360px < Width <= 768px  *************************/
+
+@media only screen and (min-width: 361px) {
+}
+
+/******************************  768px < Width  ******************************/
+
+@media only screen and (min-width: 769px) {
+}
