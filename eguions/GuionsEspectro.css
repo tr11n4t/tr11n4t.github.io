@@ -1,0 +1,520 @@
+@charset "UTF-8";
+/*********************************************************************
+* CSS file for job `GuionsEspectro'
+*********************************************************************/
+
+/* Variables for lengths of different magnitude */
+@media only screen and (min-width: 0px) { /* Small screens or larger */
+  :root {
+    --xsmall-length: 0.125em; --small-length: 0.25em;
+    --medium-length: 0.50em; --large-length: 1.00em;
+    --xlarge-length: 1.50em; --xxlarge-length: 2.00em;}}
+@media only screen and (min-width: 361px) { /* Medium screens or larger */
+  :root {
+    --xsmall-length: 0.25em; --small-length: 0.50em;
+    --medium-length: 1.00em; --large-length: 1.50em;
+    --xlarge-length: 2.00em; --xxlarge-length: 3.00em;}}
+@media only screen and (min-width: 641px) { /* Large screens or larger */
+  :root {
+    --xsmall-length: 0.50em; --small-length: 1.00em;
+    --medium-length: 1.50em; --large-length: 2.00em;
+    --xlarge-length: 3.00em; --xxlarge-length: 4.00em;}}
+
+/* Colors for hoverable elements */
+:root {
+  --hoverable-fgcolor: var(--color-A-dark);
+  --hoverable-bgcolor: var(--color-A-light);}
+.duskmode {
+  --hoverable-fgcolor: var(--color-A-black);
+  --hoverable-bgcolor: var(--color-A-gray);}
+
+/* Set some CSS variables */
+@media only screen and (min-width: 0px) { /* Small screens or larger */
+  :root {
+    --font-size: 16px;
+    --text-align: left;
+    --body-width: 100%;}}
+@media only screen and (min-width: 641px) { /* Large screens or larger */
+  :root {
+    --font-size: 2.5vw;
+    --text-align: justify;}}
+@media only screen and (min-width: 1025px) { /* Xlarge screens or larger */
+  :root {
+    --font-size: 26px;
+    --body-width: 1024px;}}
+
+/* Some CSS reset */
+* {outline: 0; padding: 0; margin: 0; border: 0;}
+
+/* Directive for roman medium upright font */
+@font-face{
+  font-family: "MLModern Serif";
+  src: url("fonts/mlmr10.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Custom styling of scroll bars */
+:root {--scrollbar-foreground: var(--hoverable-fgcolor);
+  --scrollbar-background: var(--hoverable-bgcolor);
+  --scrollbar-padding: 5px;}
+* { /* Works with Firefox */
+  scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);}
+*::-webkit-scrollbar-thumb { /* Foreground (Chrome, Edge, and Safari) */
+  background: var(--scrollbar-foreground);}
+*::-webkit-scrollbar-track { /* Background (Chrome, Edge, and Safari) */
+  background: var(--scrollbar-background);}
+*::-webkit-scrollbar { /* Width of bars (Chrome, Edge, and Safari) */
+  width: 10px; height: 10px;}
+
+/* Custom properties for ‘A’ color shades (day/dusk/night modes) */
+:root { /* Day mode */
+  --color-A-white: white;
+  --color-A-transparent: hsla(345,100%,100%,0.2); /* transparent white */
+  --color-A-light: hsl(345,100%,78.2%); /* light crimson */
+  --color-A-gray: hsl(345,100%,46.0%); /* gray crimson */
+  --color-A-dark: hsl(345,100%,27.5%); /* dark crimson */
+  --color-A-black: black;}
+.duskmode { /* Dusk mode */
+  --color-A-white: hsl(345,100%,46.0%); /* gray crimson */
+  --color-A-transparent: hsla(345,100%,46.0%,0.2); /* transparent crimson */
+  --color-A-light: hsl(345,100%,46.0%); /* gray crimson */
+  --color-A-gray: white;
+  --color-A-dark: white;
+  --color-A-black: black;}
+.nightmode { /* Night mode */
+  --color-A-white: black;
+  --color-A-transparent: hsla(345,100%,0%,0.2); /* transparent black */
+  --color-A-light: hsl(345,100%,27.5%); /* dark crimson */
+  --color-A-gray: hsl(345,100%,46.0%); /* gray crimson */
+  --color-A-dark: hsl(345,100%,78.2%); /* light crimson */
+  --color-A-black: white;}
+
+/* <body> and <html> elements rules */
+html {background-color: var(--color-B-gray);}
+body {width: var(--body-width); margin: 0 0 0 calc(100% - var(--body-width));
+  text-indent: 1em; word-spacing: 0.6em;
+  text-align: var(--text-align);
+  font-family: "MLModern Serif",
+  "Latin Modern Roman", "Times New Roman", serif;
+  font-weight: normal; font-style: normal; font-variant: normal;
+  font-size: var(--font-size); text-decoration: none;
+  background-color: var(--color-A-white);}
+
+/* <header>, <main>, <footer> elements rules */
+header {background-image: linear-gradient(to top, var(--color-A-transparent),
+  var(--color-A-white) 1em);}
+main, footer {background-color: var(--color-A-white);
+  color: var(--color-A-black); padding: 0 var(--medium-length);}
+
+/* Sentence and paragraph rules */
+div.p {line-height: 1.2; margin-top: 0em; margin-bottom: 1em;}
+div.p > span {word-spacing: normal;}
+
+/* Custom properties for ‘B’ color shades (day/dusk/night modes) */
+:root { /* Day mode */
+  --color-B-white: white;
+  --color-B-transparent: hsla(165,100%,100%,0.2); /* transparent white */
+  --color-B-light: hsl(165,100%,39.5%); /* light aquamarine */
+  --color-B-gray: hsl(165,100%,26.3%); /* gray aquamarine */
+  --color-B-dark: hsl(165,100%,15.3%); /* dark aquamarine */
+  --color-B-black: black;}
+.duskmode { /* Dusk mode */
+  --color-B-white: hsl(165,100%,26.3%); /* gray aquamarine */
+  --color-B-transparent: hsla(165,100%,26.3%,0.2); /* transparent aquamarine */
+  --color-B-light: hsl(165,100%,26.3%); /* gray aquamarine */
+  --color-B-gray: white;
+  --color-B-dark: white;
+  --color-B-black: black;}
+.nightmode { /* Night mode */
+  --color-B-white: black;
+  --color-B-transparent: hsla(165,100%,0%,0.2); /* transparent black */
+  --color-B-light: hsl(165,100%,15.3%); /* dark aquamarine */
+  --color-B-gray: hsl(165,100%,26.3%); /* gray aquamarine */
+  --color-B-dark: hsl(165,100%,39.5%); /* light aquamarine */
+  --color-B-black: white;}
+
+/* Rules for logo */
+.logo {max-width: calc(5.0*1.5em); overflow: hidden; white-space: nowrap;
+  font-style: normal; font-variant: small-caps; font-size: calc(0.75*1.5em);
+  font-weight: bolder; text-indent: 0; height: calc(1em/0.75);
+  line-height: calc(1/0.75);}
+.logo > a {display: inline-block; padding: 0 0.5em; text-decoration: none;}
+.logo > a:link, .logo > a:visited {color: var(--color-B-gray);
+  background-color: var(--color-B-white);}
+.logo > a:hover {color: var(--color-B-white);
+  background-color: var(--color-B-gray);}
+
+/* Rules for SVG icons */
+svg.iconsdefs {display: none;}
+svg.icon {width: 1.5em;}
+
+/* Rules for icon bar */
+ul.iconbar {margin: 0; display: flex; flex-wrap: wrap; justify-content: center;
+  height: 2em; color: var(--color-B-black);
+  background-color: var(--color-B-white);}
+ul.iconbar {width: calc(100% - 1.5em);}
+header.front ul.iconbar {width: 100%;}
+ul.iconbar > li {display: inline-block; margin-right: 0.8em;}
+ul.iconbar > li:first-child {margin-left: 0; margin-right: auto;}
+ul.iconbar > li:last-child {margin-right: auto;}
+ul.iconbar > li:not(.logo) > a {display: inline-block; line-height: 0;}
+ul.iconbar > li:not(.logo) a:link,
+  ul.iconbar > li:not(.logo) a:visited {color: var(--color-B-gray);
+  background-color: var(--color-B-white);}
+ul.iconbar > li:not(.logo) a:hover {color: var(--color-B-white);
+  background-color: var(--color-B-gray);}
+
+/* Common CSS rules for headers (both front and notfront pages) */
+header {position: -webkit-sticky; position: sticky; top: 0; right: 0;
+  z-index: 10;}
+
+/* Rules for header in the front page */
+header.front {border-bottom: 1px solid var(--color-A-black);}
+
+/* Miscellaneous rules for QQiE */
+span.includeimg > img {font-size: 0.8em;}
+div.figure > div.displaymath > span > svg {font-size: 0.8em;}
+footer {margin-top: 1em;}
+.logo {font-variant: normal;}
+
+/* Rule for center alignment */
+.center {text-indent: 0em; text-align: center;}
+
+/* Rule for LARGE text size */
+.LARGE {font-size: 157%;}
+
+/* Rule for large text size */
+.large {font-size: 117%;}
+
+/* Rule for non-indented text */
+.noindent {text-indent: 0em;}
+
+/* Custom properties for table of contents */
+nav.toc {--toc-font-size: 1em; --toc-width: calc(100% - 2*var(--small-length));
+--toc-indent: 0.5em;}
+
+/* Rules for table of contents */
+nav.toc {font-size: var(--toc-font-size); line-height: 1.2;
+  word-spacing: 0.6em; border: 2px solid var(--color-B-black);
+  color: var(--color-B-black); background-color: var(--color-B-white);
+  width: var(--toc-width); margin: 1em auto; text-indent: 0; text-align: left;}
+nav.toc span {word-spacing: normal;}
+nav.toc details {margin: 0.5em 0;}
+nav.toc > details {margin: 0.5em;}
+/* Hide summary’s marker */
+  nav.toc summary {list-style: none;}
+  nav.toc summary::-webkit-details-marker {display: none}
+nav.toc summary {padding:0.2em 0.5em; display: inline-block; width: 100%;
+  box-sizing: border-box; font-weight: normal; color: var(--color-B-gray);
+  border: 1px solid var(--color-B-gray);}
+nav.toc summary:hover {color: var(--color-B-white);
+  background-color: var(--color-B-gray);
+  border: 1px solid var(--color-B-gray);}
+nav.toc > details > summary {color: var(--color-B-black);
+  border: 0; font-weight: bolder; padding-left:0;}
+nav.toc > details > summary:hover {color: var(--color-B-black);
+  background-color: var(--color-B-white); border: 0;}
+nav.toc details > summary > svg {float: right; width: 1em;
+  margin: 0.1em 0 0 1em; cursor: pointer;}
+nav.toc details:not([open]) > summary > svg.fold,
+  nav.toc details[open] > summary > svg.unfold {display: none;}
+nav.toc ul {margin: 0; margin-left: var(--toc-indent); text-indent: 0;
+  list-style-type: none;}
+nav.toc > details > ul {margin-left: 0;}
+nav.toc a {word-spacing: normal;}
+nav.toc a:link, nav.toc a:visited, nav.toc a:hover
+  {color: var(--color-B-gray);}
+nav.toc details > summary:hover a:link,
+  nav.toc details > summary:hover a:visited,
+  nav.toc details > summary:hover a:hover {color: var(--color-B-white);
+  background-color: var(--color-B-gray);}
+
+/* Default rules for links */
+div.p a {word-spacing: normal;}
+a {text-decoration: underline; text-decoration-thickness: 0.07em;
+  text-underline-offset: 2.5px;}
+a:link, a:visited {color: var(--color-A-gray);}
+a:hover {color: var(--color-A-dark);}
+a:active {color: var(--color-A-light);}
+header a:link, header a:visited, nav.toc a:link, nav.toc a:visited {
+  color: var(--color-B-gray);}
+header a:hover, nav.toc a:hover {color: var(--color-B-dark);}
+header a:active, nav.toc a:active {color: var(--color-B-light);}
+
+/* Rules for header in pages different from the front page */
+header.notfront > details > nav {display: flex; width: 100%;
+  flex-direction: column-reverse;}
+header.notfront > details {height: 0; overflow-y: visible; text-indent: 0;
+  padding: 0 0.5em 0 0;}
+header.notfront > details[open] {height: calc(100% - 1em); overflow-y: hidden;
+  color: var(--color-B-black); background-color: var(--color-B-white);
+  margin: 0 0 calc(1em - 1px) 0; border-style: solid;
+  border-color: var(--color-B-black); border-width: 0 0 1px 0;}
+/* Hide summary’s marker */
+  header.notfront > details > summary {list-style: none;}
+  header.notfront > details > summary::-webkit-details-marker {display: none}
+header.notfront > details > summary {display: block; float: right;
+  text-indent: 0; line-height: 0; height: 0; word-spacing: 0;}
+header.notfront > details > summary > svg.menu {color:
+var(--hoverable-fgcolor);
+  background-color: var(--hoverable-bgcolor);}
+header.notfront > details > summary > svg.contract {color: var(--color-B-gray);
+  background-color: var(--color-B-white);}
+header.notfront > details:not([open]) > summary > svg.contract,
+  header.notfront > details[open] > summary > svg.menu {display: none;}
+header.notfront > details > summary > svg.contract:hover {
+  color: var(--color-B-white); background-color: var(--color-B-gray);}
+header.notfront > details > summary > svg.menu:hover {
+  color: var(--hoverable-bgcolor); background-color: var(--hoverable-fgcolor);}
+header.notfront > details > summary > svg.contract:hover,
+  header.notfront > details > summary > svg.menu:hover {cursor: pointer;}
+
+/* CSS variables for breadcrumbs */
+ul.breadcrumbs {--breadcrumbs-font-size: 1.0em;}
+
+/* Rules for breadcrumbs */
+ul.breadcrumbs {font-size: var(--breadcrumbs-font-size);
+  padding: 0.5em 0 0.5em 0.5em; list-style-type: none; word-spacing: 0.6em;
+  color: var(--color-B-black); background-color: var(--color-B-white);}
+ul.breadcrumbs svg.downright {width: 1em; margin: 0; padding: 0 0.2em 0 0;}
+ul.breadcrumbs span {word-spacing: normal;}
+ul.breadcrumbs > li:nth-child(2) {margin-left: calc(0.2em + 0*1.5em);}
+ul.breadcrumbs > li:nth-child(3) {margin-left: calc(0.2em + 1*1.5em);}
+ul.breadcrumbs > li:nth-child(4) {margin-left: calc(0.2em + 2*1.5em);}
+ul.breadcrumbs > li:nth-child(5) {margin-left: calc(0.2em + 3*1.5em);}
+ul.breadcrumbs > li:nth-child(6) {margin-left: calc(0.2em + 4*1.5em);}
+ul.breadcrumbs > li:nth-child(7) {margin-left: calc(0.2em + 5*1.5em);}
+ul.breadcrumbs > li:nth-child(8) {margin-left: calc(0.2em + 6*1.5em);}
+ul.breadcrumbs > li:first-child > *:first-child,
+  ul.breadcrumbs > li:not(:first-child) > *:nth-child(2) {padding-left: 0.2em;}
+ul.breadcrumbs > li > *:last-child {padding-right: 0.2em;}
+ul.breadcrumbs a:link, ul.breadcrumbs a:visited {color: var(--color-B-gray);}
+ul.breadcrumbs a:hover {color: var(--color-B-dark);}
+ul.breadcrumbs a:active {color: var(--color-B-light);}
+
+/* Directive for roman bold upright font */
+@font-face{
+  font-family: "MLModern Serif";
+  src: url("fonts/mlmbx10.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Rule for boldface series */
+.bfseries {font-weight: bolder;}
+
+/* Rules for ‘foldable@backend’ */
+details.foldable
+{
+  --fldbl-left-margin: 2.0em;
+  --fldbl-right-margin: 2.0em;
+  --fldbl-transfnt: ease-out;
+  --fldbl-transtime: 0.5s;
+  --fldbl-transition:
+      border var(--fldbl-transtime) var(--fldbl-transfnt),
+      color var(--fldbl-transtime) var(--fldbl-transfnt),
+      background-color var(--fldbl-transtime) var(--fldbl-transfnt),
+      height var(--fldbl-transtime) var(--fldbl-transfnt),
+      padding-top var(--fldbl-transtime) var(--fldbl-transfnt),
+      padding-bottom var(--fldbl-transtime) var(--fldbl-transfnt),
+      margin-top var(--fldbl-transtime) var(--fldbl-transfnt),
+      margin-bottom var(--fldbl-transtime) var(--fldbl-transfnt);
+  --fldbl-icon-side: 1.0em;
+}
+html {scroll-behavior: smooth;}
+/* Hide summary’s marker */
+  details.foldable > summary {list-style: none;}
+  details.foldable > summary::-webkit-details-marker {display: none}
+details.foldable > summary {
+  --fldbl-focused-fgcolor: white;
+  --fldbl-unfocused-fgcolor: var(--color-A-black);
+  overflow: hidden; padding-right: 0.5em; cursor: pointer;
+  transition:var(--fldbl-transition); color: var(--fldbl-unfocused-fgcolor);
+  margin-bottom: 0.5em; padding-right: calc(2.5 * var(--fldbl-icon-side));
+  position: relative; line-height: 1.2;}
+details.foldable > summary > span {word-spacing: normal;}
+details.foldable .foldable {margin-left: var(--fldbl-left-margin);
+  margin-right: var(--fldbl-right-margin);}
+details.foldable.empty > summary {cursor: default;}
+details.foldable.focus.unfolded:not(.empty) {padding-top:0;}
+details.foldable.focus.unfolded:not(.empty) > summary {
+  background-color: var(--fldbl-unfocused-fgcolor);
+  z-index: 20; margin-bottom: 0.5em; padding-bottom: 0.5em;
+  padding-top: 0.5em;}
+details.foldable.focus.unfolded:not(.empty) > summary > span {
+  color: var(--fldbl-focused-fgcolor);}
+details.foldable.notransition > *:not(summary) {transition: none !important;}
+details.foldable > *:not(summary) {height: 0; overflow:hidden;
+  transition: var(--fldbl-transition);}
+details.foldable.unfolded > *:not(summary) {height: auto;
+  --fldbl-transfnt: ease-in; transition: var(--fldbl-transition);}
+details.foldable.focus.unfolded > summary {position:-webkit-sticky;
+  position:sticky; top: 0;}
+
+/* Rules for ‘foldable@backend’ icons */
+details.foldable > summary > button {font-family: inherit; font-size: 100%;
+  line-height: 0; border: 0; border-style: none; cursor: default;
+  background-color: transparent; position: absolute;
+  right: calc(0.5 * var(--fldbl-icon-side)); top:0;
+  transition: top var(--fldbl-transtime) var(--fldbl-transfnt);}
+details.foldable.focus.unfolded > summary > button {top: 0.5em;}
+details.foldable > summary > button > svg {
+  border: calc(0.1 * var(--fldbl-icon-side)) solid
+  var(--fldbl-unfocused-fgcolor); border-radius: 50%; margin: 0;
+  width: var(--fldbl-icon-side); height: var(--fldbl-icon-side);
+  transition: transform 250ms linear;}
+details.foldable.focus > summary > button > svg {
+  border: calc(0.1 * var(--fldbl-icon-side)) solid
+  var(--fldbl-focused-fgcolor);}
+details.foldable:not(.unfolded) > summary > button > svg {
+  border: calc(0.1 * var(--fldbl-icon-side)) solid
+  var(--fldbl-unfocused-fgcolor);}
+details.foldable > summary > button:active > svg {transform: scale(0.70);}
+details.foldable > summary > button > svg > * {stroke-width: 10%;
+  transition: stroke 250ms linear;}
+details.foldable:not(.unfolded) > summary > button > svg > *.folded
+  {stroke: var(--fldbl-unfocused-fgcolor);}
+details.foldable.unfolded > summary > button > svg > *.unfolded
+  {stroke: var(--fldbl-unfocused-fgcolor);}
+details.foldable.unfolded.focus > summary > button > svg > *.unfolded
+  {stroke: var(--fldbl-focused-fgcolor);}
+
+/* CSS variables for ‘prop’ envs */
+details.prop {--fldbl-left-margin: var(--medium-length);
+  --fldbl-right-margin: 0;}
+
+/* Rules for ‘prop’ environments */
+details.prop {text-indent: 0em; margin-right: 0; margin-left: 0;
+  padding: 0.5em 0 0 0; border: transparent solid 2px;
+  transition: var(--fldbl-transition);}
+details.prop > summary {
+  --fldbl-focused-fgcolor: var(--color-B-white);
+  --fldbl-unfocused-fgcolor: var(--color-B-gray);}
+details.prop > summary > span {transition: var(--fldbl-transition);}
+details.prop > summary > span:first-child {margin-right: -0.5em;
+  color: var(--color-B-gray);}
+details.prop.unfolded:not(.empty) > summary {padding-bottom: 0.5em;}
+details.prop > summary {padding-left: 0.5em;}
+details.prop > *:not(summary) > :not(details.prop) {padding-right: 0.5em;
+  padding-left: 0.5em;}
+details.prop.focus {background-color: var(--color-A-white); margin-bottom: 0;
+  border: var(--color-B-gray) solid 2px;}
+details.prop.focus > summary > span:first-child {color: var(--color-B-gray);}
+
+/* Directive for sans medium upright font */
+@font-face{
+  font-family: "MLModern Sans Serif";
+  src: url("fonts/mlmss10.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Rule for sans-serif family */
+.sffamily {font-family: "MLModern Sans Serif",
+  "Latin Modern Sans", Arial, sans-serif;}
+
+/* Directive for sans medium italic font */
+@font-face{
+  font-family: "MLModern Sans Serif";
+  src: url("fonts/mlmsso10.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Rule for italic shape */
+.itshape {font-style: italic; font-variant: normal;}
+
+/* Rule for inline ‘math’ */
+.inlinemath {white-space: nowrap; fill: currentColor;}
+
+/* Directive for roman medium italic font */
+@font-face{
+  font-family: "MLModern Serif";
+  src: url("fonts/mlmri10.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Rule for ‘displaymath’ environment */
+div.displaymath {margin-bottom: 0.5em; padding-left: 0; padding-right: 0;
+  text-indent: 0; text-align: center;
+  /* Allow horizontal scroll bar */
+  display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden;
+  white-space: nowrap; padding-bottom: var(--scrollbar-padding);
+  box-sizing: border-box;}
+div.displaymath > span:first-child {text-indent: 0em; text-align: center;
+  display: inline-block;
+  padding-bottom: calc(0.5em - var(--scrollbar-padding));}
+div.displaymath > span > svg {vertical-align: middle; fill: currentColor;}
+
+/* Rules for ‘itemize’ environments */
+ul.itemize {text-indent: 0em; margin-left: 1.3em; margin-right: 0;}
+ul.itemize > li {padding-left: 0.5em;}
+ul.itemize li {--item-marker: "●";}
+ul.itemize ul.itemize li {--item-marker: "★";}
+ul.itemize ul.itemize ul.itemize li {--item-marker: "■";}
+ul.itemize ul.itemize ul.itemize ul.itemize li {--item-marker: "◆";}
+ul.itemize > li::marker {content: var(--item-marker);}
+
+/* Rule for ‘caption’ */
+.caption {font-size: 90%; text-align: var(--text-align)}
+div.p.caption > span:first-child {font-weight: bold;}
+
+/* Rule for ’float’ (’figure’ and ’table’) environments */
+.figure, .table {text-indent: 0; text-align: center;
+  background-color: var(--color-A-white);
+  border: ridge 4px var(--color-B-gray);
+  border-radius: 12px;
+  padding: 1em 0.5em 0 0.5em;
+  margin: 0 var(--medium-length) 1em var(--medium-length);}
+
+/* Rule for ‘blob’ command */
+div.blob {text-align: center; margin: 0 auto; text-indent: 0;
+  transition: all 0.5s linear, font-size 0s;}
+details.prop.focus + div.blob {margin: 0.5em auto 0 auto;}
+details.prop.unfolded + div:not(details.prop) {display: none;}
+div.blob > div.p {background-color: var(--color-B-white);
+  color: var(--color-B-gray); border: 1px solid var(--color-B-gray);
+  padding: 0 0.5em 0.5em 0.5em; max-width: 100%;}
+details.prop + div.blob > div.p {background-color: transparent;
+  color: var(--color-A-black); border: 0; margin: 0.5em 0 0 0; display: block;}
+div.blob > div.p::before {content: "Recordeu!"; display: block;
+  padding: 0 0 1em 0; color: var(--color-B-gray); font-weight: bold;
+  font-size: larger;}
+details.prop + div.blob > div.p::before {content: ""; padding: 0;}
+div.blob > div:first-child {margin-bottom: 0.5em;}
+div.blob svg.displaymath, div.blob table.eqnarraystar {
+  margin-right: 0.25em; margin-left: 0.25em;}
+div.blob span.includeimg img {margin-right: 0.5em;}
+
+/* Rules for ‘eqnarray*’ environments */
+table.eqnarraystar {vertical-align: middle; border-collapse: collapse;
+  text-indent: 0.0em;
+  /* Allow horizontal scroll bar */
+  display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden;
+  white-space: nowrap; padding-bottom: var(--scrollbar-padding);
+  box-sizing: border-box;}
+table.eqnarraystar > tbody {display: inline-block; text-align: center;
+  line-height: 0;}
+table.eqnarraystar > tbody > tr > td {padding: 0.3em; vertical-align: 0;}
+table.eqnarraystar > tbody > tr > td > span {word-spacing: normal; }
+table.eqnarraystar > tbody > tr > td.c {text-align: center; }
+table.eqnarraystar > tbody > tr > td.l {text-align: left; }
+table.eqnarraystar > tbody > tr > td.r {text-align: right; }
+table.eqnarraystar > tbody > tr > td span.inlinemath > svg {height: auto;
+  vertical-align: middle;}
+div.p.eqnarraystar {text-indent: 0; text-align: center; margin-bottom: 0.5em;}
+
+/* Rules for back-to-top button */
+body {display: grid; grid-template-columns: minmax(0, 1fr) 0px;}
+header {grid-column: 1 / span 1;}
+main {grid-column: 1 / span 1; grid-row: 2 / span 1;}
+footer {grid-column: 1 / span 1; grid-row: 3 / span 1;}
+div.back2top {text-indent: 0; position: sticky; bottom: 0; place-self: end;
+  margin: 100vh 0.5em 0 0; grid-column: 2 / span 1; grid-row: 1 / span 3;}
+footer + div.back2top {grid-row: 1 / span 4;}
+div.back2top svg.top {color: var(--hoverable-fgcolor);
+  background-color: var(--hoverable-bgcolor)}
+div.back2top svg.top:hover {color: var(--hoverable-bgcolor);
+  background-color: var(--hoverable-fgcolor)}
