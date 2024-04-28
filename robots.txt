@@ -3,5 +3,6 @@ Disallow: /grupals/
 Disallow: /practica1/
 Disallow: /practica2/
 Disallow: /guions/
+Disallow: /eguions/
 
 Sitemap: https://tr11n4t.github.io/sitemap.xml
