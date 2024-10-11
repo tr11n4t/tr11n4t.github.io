@@ -175,6 +175,10 @@ header.front {border-bottom: 1px solid var(--color-A-black);}
 /* Rule for inline ‘math’ */
 .inlinemath {white-space: nowrap; fill: currentColor;}
 
+/* Rules for PDF icon */
+ul.iconbar > li.pdf {margin-right: 0.8em;}
+ul.iconbar > li.pdf > a {text-indent: 0;}
+
 /* Miscellaneous rules for QQiE */
 span.includeimg > img {font-size: 0.8em;}
 div.figure > div.displaymath > span > svg {font-size: 0.8em;}
