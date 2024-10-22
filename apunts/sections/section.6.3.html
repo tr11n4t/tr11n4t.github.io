@@ -66,6 +66,14 @@ stroke-linejoin="round" stroke-width="32">
 <path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
 </g>
 
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
 <g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
 stroke-linejoin="round" stroke-width="48">
 <title>Top</title>
@@ -124,6 +132,15 @@ xlink:href="#icon-home"/></svg> </a> </li>
 
 <li> <a href="sections/section.6.4.html"> <svg class="icon next" viewBox="0 0
 512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<input type="text" placeholder="Search tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
 
 </ul>
 
@@ -921,6 +938,17 @@ href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-Compart
 
 <div class="back2top"><a href="sections/section.6.3.html#top"> <svg class="icon
 top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.firstElementChild.value);
+  });
+</script>
 
 </body>
 </html>

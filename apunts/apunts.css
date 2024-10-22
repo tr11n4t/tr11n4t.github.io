@@ -135,10 +135,10 @@ div.p > span {word-spacing: normal;}
   --color-B-black: white;}
 
 /* Rules for logo */
-.logo {max-width: calc(5.0*1.5em); overflow: hidden; white-space: nowrap;
-  font-style: normal; font-variant: small-caps; font-size: calc(0.75*1.5em);
-  font-weight: bolder; text-indent: 0; height: calc(1em/0.75);
-  line-height: calc(1/0.75);}
+.logo {max-width: calc(4.0*1.4em); overflow: hidden; white-space: nowrap;
+  font-style: normal; font-variant: small-caps; font-size: calc(0.70*1.4em);
+  font-weight: bolder; text-indent: 0; height: calc(1em/0.70);
+  line-height: calc(1/0.70);}
 .logo > a {display: inline-block; padding: 0 0.5em; text-decoration: none;}
 .logo > a:link, .logo > a:visited {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
@@ -147,15 +147,15 @@ div.p > span {word-spacing: normal;}
 
 /* Rules for SVG icons */
 svg.iconsdefs {display: none;}
-svg.icon {width: 1.5em;}
+svg.icon {width: 1.4em;}
 
 /* Rules for icon bar */
 ul.iconbar {margin: 0; display: flex; flex-wrap: wrap; justify-content: center;
   height: 2em; color: var(--color-B-black);
   background-color: var(--color-B-white);}
-ul.iconbar {width: calc(100% - 1.5em);}
+ul.iconbar {width: calc(100% - 1.4em);}
 header.front ul.iconbar {width: 100%;}
-ul.iconbar > li {display: inline-block; margin-right: 0.8em;}
+ul.iconbar > li {display: inline-block; margin-right: 0.5em;}
 ul.iconbar > li:first-child {margin-left: 0; margin-right: auto;}
 ul.iconbar > li:last-child {margin-right: auto;}
 ul.iconbar > li:not(.logo) > a {display: inline-block; line-height: 0;}
@@ -175,9 +175,27 @@ header.front {border-bottom: 1px solid var(--color-A-black);}
 /* Rule for inline ‘math’ */
 .inlinemath {white-space: nowrap; fill: currentColor;}
 
+/* Rules for search bar */
+ul.iconbar > li.searchbar {margin-left: auto; margin-right: 0;}
+ul.iconbar > li.searchbar > details {text-indent: 0;}
+ul.iconbar > li.searchbar > details > summary {display: inline-block;
+  margin-right: 0.5em;}
+ul.iconbar > li.searchbar > details > form {display: inline-block;
+  vertical-align: top; margin-left: 0.2em;}
+ul.iconbar > li.searchbar > details > form > input {max-width: 15em;
+  width: calc(100vw - 24.5em); height: calc(1.4em/0.8 - 5px);
+  border: 1px solid var(--color-B-black); margin-top: 2px;
+  padding: 0 0.1em; font-size: 80%;}
+.searchbar svg.search {color: var(--color-B-gray);
+  background-color: var(--color-B-white);}
+.searchbar svg.search:hover {color: var(--color-B-white);
+  background-color: var(--color-B-gray);}
+/* Hide summary’s marker */
+  li.searchbar > details > summary {list-style: none;}
+  li.searchbar > details > summary::-webkit-details-marker {display: none}
+
 /* Rules for PDF icon */
-ul.iconbar > li.pdf {margin-right: 0.8em;}
-ul.iconbar > li.pdf > a {text-indent: 0;}
+ul.iconbar > li.pdf {margin-right: 0.5em; text-indent: 0;}
 
 /* Miscellaneous rules for QQiE */
 span.includeimg > img {font-size: 0.8em;}
@@ -569,7 +587,7 @@ div.ccnotice:after { /* The ’clearfix’ hack */
 /* Rules for footers and ’back2top’ */
 html {height: 100%;}
 body {grid-template-rows: auto 1fr auto; min-height:100%;}
-footer {padding-bottom: 1.5em;}
+footer {padding-bottom: 1.4em;}
 div.back2top {line-height: 0;}
 div.back2top > a {display: block;}
 
