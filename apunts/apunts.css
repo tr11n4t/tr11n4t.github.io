@@ -134,16 +134,26 @@ div.p > span {word-spacing: normal;}
   --color-B-dark: hsl(165,100%,39.5%); /* light aquamarine */
   --color-B-black: white;}
 
+/* Rules for "radio buttons" in the settings menu */
+li.settings > details > div > fieldset {direction: ltr; text-indent: 0;
+  display: grid; grid-template: auto / 1fr 1fr; grid-gap: 0.5em;
+  margin: 0 1em 1em 1em; padding: 0.5em; word-spacing: 0;
+  background-color: var(--color-B-white); color: var(--color-B-gray);
+  border: 2px solid var(--color-B-black);}
+li.settings > details > div > fieldset > legend {padding: 0 0.5em;}
+
 /* Rules for logo */
 .logo {max-width: calc(4.0*1.4em); overflow: hidden; white-space: nowrap;
   font-style: normal; font-variant: small-caps; font-size: calc(0.70*1.4em);
   font-weight: bolder; text-indent: 0; height: calc(1em/0.70);
-  line-height: calc(1/0.70);}
+  line-height: calc(1/0.70); word-spacing: normal;}
 .logo > a {display: inline-block; padding: 0 0.5em; text-decoration: none;}
 .logo > a:link, .logo > a:visited {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
-.logo > a:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  .logo > a:hover {color: var(--color-B-white);
+    background-color: var(--color-B-gray);}
+}
 
 /* Rules for SVG icons */
 svg.iconsdefs {display: none;}
@@ -151,19 +161,25 @@ svg.icon {width: 1.4em;}
 
 /* Rules for icon bar */
 ul.iconbar {margin: 0; display: flex; flex-wrap: wrap; justify-content: center;
-  height: 2em; color: var(--color-B-black);
-  background-color: var(--color-B-white);}
+  color: var(--color-B-black); background-color: var(--color-B-white);}
 ul.iconbar {width: calc(100% - 1.4em);}
 header.front ul.iconbar {width: 100%;}
-ul.iconbar > li {display: inline-block; margin-right: 0.5em;}
-ul.iconbar > li:first-child {margin-left: 0; margin-right: auto;}
-ul.iconbar > li:last-child {margin-right: auto;}
-ul.iconbar > li:not(.logo) > a {display: inline-block; line-height: 0;}
-ul.iconbar > li:not(.logo) a:link,
-  ul.iconbar > li:not(.logo) a:visited {color: var(--color-B-gray);
+ul.iconbar > li {display: inline-block; text-indent: 0; margin-right: 0.8em;}
+header.front ul.iconbar > li:last-child {margin-right: 0.5em;}
+header.front ul.iconbar > li:first-child,
+  header.notfront ul.iconbar > li:first-child {margin-right: auto;}
+header.notfront ul.iconbar > li:nth-child(5) {margin-right: auto;}
+ul.iconbar > li > details {text-indent: 0}
+ul.iconbar > li > details > summary {display: inline-block;}
+/* Hide <summary>’s marker for <details> in icon bar */
+  ul.iconbar > li > details > summary {list-style: none;}
+  ul.iconbar > li > details > summary::-webkit-details-marker {display: none}
+ul.iconbar svg.icon {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
-ul.iconbar > li:not(.logo) a:hover {color: var(--color-B-white);
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  ul.iconbar svg.icon:hover {color: var(--color-B-white);
   background-color: var(--color-B-gray);}
+}
 
 /* Common CSS rules for headers (both front and notfront pages) */
 header {position: -webkit-sticky; position: sticky; top: 0; right: 0;
@@ -176,26 +192,31 @@ header.front {border-bottom: 1px solid var(--color-A-black);}
 .inlinemath {white-space: nowrap; fill: currentColor;}
 
 /* Rules for search bar */
-ul.iconbar > li.searchbar {margin-left: auto; margin-right: 0;}
-ul.iconbar > li.searchbar > details {text-indent: 0;}
-ul.iconbar > li.searchbar > details > summary {display: inline-block;
-  margin-right: 0.5em;}
+ul.iconbar > li.searchbar > details {width: 1.4em; height: 1.4em;
+  direction: rtl; white-space: nowrap;}
 ul.iconbar > li.searchbar > details > form {display: inline-block;
-  vertical-align: top; margin-left: 0.2em;}
-ul.iconbar > li.searchbar > details > form > input {max-width: 15em;
-  width: calc(100vw - 24.5em); height: calc(1.4em/0.8 - 5px);
-  border: 1px solid var(--color-B-black); margin-top: 2px;
-  padding: 0 0.1em; font-size: 80%;}
-.searchbar svg.search {color: var(--color-B-gray);
-  background-color: var(--color-B-white);}
-.searchbar svg.search:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);}
-/* Hide summary’s marker */
-  li.searchbar > details > summary {list-style: none;}
-  li.searchbar > details > summary::-webkit-details-marker {display: none}
+  vertical-align: top; margin: 0.1em 0.2em 0 0; font-size: 80%; direction: ltr;
+  line-height: 0; word-spacing: 0; background-color: var(--color-B-white);
+  border: 1px solid var(--color-B-black);}
+ul.iconbar > li.searchbar > details > form > svg {color: var(--color-B-black);
+  opacity: 0.5;}
+ul.iconbar > li.searchbar > details > form:focus-within > svg {opacity: 1;}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  ul.iconbar > li.searchbar > details > form > svg.icon.search:hover {
+    color: var(--color-B-black); background-color: var(--color-B-white);}
+}
+ul.iconbar > li.searchbar > details > form > input {width: 16em;
+  vertical-align: top; margin-top: 0.1em; font-size: 100%;}
+ul.iconbar > li.searchbar > details > form > input::placeholder {
+  opacity: 0.5}
 
-/* Rules for PDF icon */
-ul.iconbar > li.pdf {margin-right: 0.5em; text-indent: 0;}
+/* Rules for settings menu */
+li.settings > details {width: 1.4em; height: 1.4em; direction: rtl;}
+li.settings > details[open] > div {position: absolute; width: 17em;
+  margin-top: 0.5em; padding-top: 0.6em;
+  background-color: var(--color-B-white);
+  border: 2px solid var(--color-A-black);
+  box-shadow:-5px 5px 0 0 var(--color-B-gray);}
 
 /* Miscellaneous rules for QQiE */
 span.includeimg > img {font-size: 0.8em;}
@@ -214,11 +235,15 @@ div.p a {word-spacing: normal;}
 a {text-decoration: underline; text-decoration-thickness: 0.07em;
   text-underline-offset: 2.5px;}
 a:link, a:visited {color: var(--color-A-gray);}
-a:hover {color: var(--color-A-dark);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  a:hover {color: var(--color-A-dark);}
+}
 a:active {color: var(--color-A-light);}
 header a:link, header a:visited, nav.toc a:link, nav.toc a:visited {
   color: var(--color-B-gray);}
-header a:hover, nav.toc a:hover {color: var(--color-B-dark);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  header a:hover, nav.toc a:hover {color: var(--color-B-dark);}
+}
 header a:active, nav.toc a:active {color: var(--color-B-light);}
 
 /* Rule for small text size */
@@ -257,13 +282,17 @@ nav.toc > details {margin: 0.5em;}
 nav.toc summary {padding:0.2em 0.5em; display: inline-block; width: 100%;
   box-sizing: border-box; font-weight: normal; color: var(--color-B-gray);
   border: 1px solid var(--color-B-gray);}
-nav.toc summary:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);
-  border: 1px solid var(--color-B-gray);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  nav.toc summary:hover {color: var(--color-B-white);
+    background-color: var(--color-B-gray);
+    border: 1px solid var(--color-B-gray);}
+}
 nav.toc > details > summary {color: var(--color-B-black);
   border: 0; font-weight: bolder; padding-left:0;}
-nav.toc > details > summary:hover {color: var(--color-B-black);
-  background-color: var(--color-B-white); border: 0;}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  nav.toc > details > summary:hover {color: var(--color-B-black);
+    background-color: var(--color-B-white); border: 0;}
+}
 nav.toc details > summary > svg {float: right; width: 1em;
   margin: 0.1em 0 0 1em; cursor: pointer;}
 nav.toc details:not([open]) > summary > svg.fold,
@@ -272,19 +301,21 @@ nav.toc ul {margin: 0; margin-left: var(--toc-indent); text-indent: 0;
   list-style-type: none;}
 nav.toc > details > ul {margin-left: 0;}
 nav.toc a {word-spacing: normal;}
-nav.toc a:link, nav.toc a:visited, nav.toc a:hover
+nav.toc a:link, nav.toc a:visited
   {color: var(--color-B-gray);}
-nav.toc details > summary:hover a:link,
-  nav.toc details > summary:hover a:visited,
-  nav.toc details > summary:hover a:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  nav.toc details > summary:hover a:link,
+    nav.toc details > summary:hover a:visited,
+    nav.toc details > summary:hover a:hover {color: var(--color-B-white);
+      background-color: var(--color-B-gray);}
+}
 
 /* Rules for header in pages different from the front page */
 header.notfront > details > nav {display: flex; width: 100%;
   flex-direction: column-reverse;}
 header.notfront > details {height: 0; overflow-y: visible; text-indent: 0;
   padding: 0 0.5em 0 0;}
-header.notfront > details[open] {height: calc(100% - 1em); overflow-y: hidden;
+header.notfront > details[open] {height: calc(100% - 1em);
   color: var(--color-B-black); background-color: var(--color-B-white);
   margin: 0 0 calc(1em - 1px) 0; border-style: solid;
   border-color: var(--color-B-black); border-width: 0 0 1px 0;}
@@ -300,12 +331,15 @@ header.notfront > details > summary > svg.contract {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
 header.notfront > details:not([open]) > summary > svg.contract,
   header.notfront > details[open] > summary > svg.menu {display: none;}
-header.notfront > details > summary > svg.contract:hover {
-  color: var(--color-B-white); background-color: var(--color-B-gray);}
-header.notfront > details > summary > svg.menu:hover {
-  color: var(--hoverable-bgcolor); background-color: var(--hoverable-fgcolor);}
-header.notfront > details > summary > svg.contract:hover,
-  header.notfront > details > summary > svg.menu:hover {cursor: pointer;}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  header.notfront > details > summary > svg.contract:hover {
+    color: var(--color-B-white); background-color: var(--color-B-gray);}
+  header.notfront > details > summary > svg.menu:hover {
+    color: var(--hoverable-bgcolor); background-color:
+var(--hoverable-fgcolor);}
+  header.notfront > details > summary > svg.contract:hover,
+    header.notfront > details > summary > svg.menu:hover {cursor: pointer;}
+}
 
 /* CSS variables for breadcrumbs */
 ul.breadcrumbs {--breadcrumbs-font-size: 1.0em;}
@@ -327,7 +361,9 @@ ul.breadcrumbs > li:first-child > *:first-child,
   ul.breadcrumbs > li:not(:first-child) > *:nth-child(2) {padding-left: 0.2em;}
 ul.breadcrumbs > li > *:last-child {padding-right: 0.2em;}
 ul.breadcrumbs a:link, ul.breadcrumbs a:visited {color: var(--color-B-gray);}
-ul.breadcrumbs a:hover {color: var(--color-B-dark);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  ul.breadcrumbs a:hover {color: var(--color-B-dark);}
+}
 ul.breadcrumbs a:active {color: var(--color-B-light);}
 
 /* Rule for Large text size */
@@ -383,7 +419,7 @@ details.foldable.empty > summary {cursor: default;}
 details.foldable.focus.unfolded:not(.empty) {padding-top:0;}
 details.foldable.focus.unfolded:not(.empty) > summary {
   background-color: var(--fldbl-unfocused-fgcolor);
-  z-index: 20; margin-bottom: 0.5em; padding-bottom: 0.5em;
+  z-index: 5; margin-bottom: 0.5em; padding-bottom: 0.5em;
   padding-top: 0.5em;}
 details.foldable.focus.unfolded:not(.empty) > summary > span {
   color: var(--fldbl-focused-fgcolor);}
@@ -601,8 +637,10 @@ div.back2top {text-indent: 0; position: sticky; bottom: 0; place-self: end;
 footer + div.back2top {grid-row: 1 / span 4;}
 div.back2top svg.top {color: var(--hoverable-fgcolor);
   background-color: var(--hoverable-bgcolor)}
-div.back2top svg.top:hover {color: var(--hoverable-bgcolor);
-  background-color: var(--hoverable-fgcolor)}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  div.back2top svg.top:hover {color: var(--hoverable-bgcolor);
+    background-color: var(--hoverable-fgcolor)}
+}
 
 /* Directive for sans bold upright font */
 @font-face{
