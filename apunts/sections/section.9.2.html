@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Coeficients d’Einstein | Absorció i emissió de radiació</title>
+<meta name="description" content="Els coeficients d’Einstein quantifiquen la
+velocitat amb què es produeixen les transicions d’emissió i d’absorció.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.9.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.9.html"><span>9 Característiques generals de
+l’espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>9.2 Coeficients d’Einstein
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4639.svg#page4607"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.1.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>9.2  Coeficients d’Einstein</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >L’emissió d’un
+fotó pot ser </span><span class="itshape sffamily" >espontània</span><span
+class="sffamily" > o </span><span class="itshape sffamily"
+>estimulada.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >És espontània si
+l’emissor no interactua amb res.</span></summary>
+
+<div class="content"><div class="p"> <span>En la figura </span><a
+href="sections/section.9.1.html#ref::transicio">9.5</a><span> s’esquematitzaven
+els processos d’absorció i d’emissió d’un fotó</span>. <span>Més acuradament,
+el procés d’emissió representat en la figura </span><a
+href="sections/section.9.1.html#ref::transicio">9.5</a><span> hauríem
+d’anomenar-lo </span><span class="itshape" >emissió espontània</span><span>,
+per a distingir-lo d’un altre procés paral·lel, l’</span><span class="itshape"
+>emissió estimulada</span><span> (també es pot dir </span><span class="itshape"
+>emissió induïda</span><span> en comptes d’emissió estimulada)</span>. </div>
+
+<div class="p"> <span>Durant l’</span><span class="itshape" >emissió
+espontània</span><span>, una molècula en un estat excitat decau espontàniament
+(és a dir, sense cap ajuda ni interacció amb altra molècula o amb un fotó) a un
+estat d’energia inferior</span>. <span>La transició del estat de més energia
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4640.svg#page4608"> </use> </svg></span>) al de menys
+energia <span class="inlinemath">(<svg
+viewBox="0 -6.81 14.42 8.3"
+style="width:  1.45em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4641.svg#page4609"> </use> </svg></span>) va acompanyada
+de l’emissió d’un fotó de freqüència <span class="inlinemath"><svg
+viewBox="0 -7.47 77.19 9.96"
+style="width:  7.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4642.svg#page4610"> </use> </svg></span></span>. <span>La
+direcció del fotó emès és aleatòria</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >És estimulada si
+l’emissor interactua amb un fotó.</span></summary>
+
+<div class="content"><div class="p"> <span>D’altra banda (figura </span><a
+href="sections/section.9.2.html#ref::estimulada">9.6</a><span>), si haguérem
+il·luminat la molècula anterior amb radiació d’una freqüència igual a
+<span class="inlinemath"><svg
+viewBox="0 -7.47 77.19 9.96"
+style="width:  7.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4643.svg#page4611"> </use> </svg></span>, podria haver-se
+produït l’</span><span class="itshape" >emissió estimulada</span><span> d’un
+fotó, fotó que tindria la mateixa freqüència i direcció que la radiació
+estimulant</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.3&rang;</span> <span class="sffamily" >Els dos tipus
+d’emissió es produeixen alhora.</span></summary>
+
+<div class="content"><div class="p"> <span>En presència de radiació estimulant,
+els dos tipus d’emissió s’observen alhora</span>. <span>En absència de radiació
+estimulant, només es produeix l’emissió espontània</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4&rang;</span> <span class="sffamily" >La absorció
+sempre és estimulada.</span></summary>
+
+<div class="content"><div class="p"> <span>L’absorció d’un fotó no es pot
+produir ‘espontàniament’</span>: <span>el mateix fotó fa de radiació
+estimulant</span>. <span>Tot i això, per simplicitat parlarem únicament
+d’</span><span class="itshape" >absorció</span><span> i no d’absorció
+estimulada</span>. </div>
+
+</div></details>
+
+<div class="figure" id="ref::estimulada">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="8.61 -129.92 352.2 129.92"
+style="width: 35.35em; height: 13.16em;"> <use
+xlink:href="images/img4644.svg#page4612"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 9.6</span>: <span>Absorció, emissió
+espontània i emissió estimulada de radiació</span>. <span>El símbol
+<span class="inlinemath">‘<svg
+viewBox="0 -6.92 11.3 6.92"
+style="width:  1.13em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4645.svg#page4613"> </use> </svg></span>’ indica un fotó
+de freqüència <span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4646.svg#page4614"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:ein:coeficients"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Hi ha tres coeficients d’Einstein:</span> <span
+class="sffamily" >absorció, emissió espontània i emissió
+estimulada.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::rad:ein:mecanisme"> <span>&vert;2.1&rang;</span> <span
+class="sffamily" >Absorció/emissió semblen un </span><span class="itshape
+sffamily" >mecanisme de reacció</span><span class="sffamily"
+>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="10.73 -116.93 316.98 116.93"
+style="width: 31.82em; height: 11.86em;"> <use
+xlink:href="images/img4647.svg#page4615"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Els tres processos esquematitzats en la figura </span><a
+href="sections/section.9.2.html#ref::estimulada">9.6</a><span> constitueixen el
+mecanisme pel qual la matèria absorbeix o emet radiació</span>. <span>Podem
+escriure’ls com si fossin les </span><span class="itshape" >reaccions
+elementals</span><span> del </span><span class="itshape" >mecanisme de
+reacció</span><span> d’una reacció química</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 32.61 7.75"
+style="width:  3.27em; height:  0.90em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4648.svg#page4616"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 16.05 6.64"
+style="width:  1.61em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4649.svg#page4617"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 66.93 9.96"
+style="width:  6.72em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4650.svg#page4618"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.36 13.21 7.36"
+style="width:  1.33em; height:  0.86em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4651.svg#page4619"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 16.05 6.64"
+style="width:  1.61em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4652.svg#page4620"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 131.29 9.96"
+style="width: 13.18em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4653.svg#page4621"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.36 37.19 8.19"
+style="width:  3.73em; height:  0.94em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4654.svg#page4622"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 16.05 6.64"
+style="width:  1.61em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4655.svg#page4623"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 139.32 9.96"
+style="width: 13.98em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4656.svg#page4624"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>El símbol <span class="inlinemath"><svg
+viewBox="0 -6.86 9.13 6.86"
+style="width:  0.92em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4657.svg#page4625"> </use> </svg></span> representa una
+molècula en un estat descrit per la funció d’ona <span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4658.svg#page4626"> </use> </svg></span> i amb energia
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.42 8.3"
+style="width:  1.45em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4659.svg#page4627"> </use> </svg></span>, mentre que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 13.21 6.86"
+style="width:  1.33em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4660.svg#page4628"> </use> </svg></span> representa una
+molècula en l’estat <span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4661.svg#page4629"> </use> </svg></span> i amb energia
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4662.svg#page4630"> </use> </svg></span></span>.
+<span>Per acabar, el símbol <span class="inlinemath"><svg
+viewBox="0 -6.92 11.3 6.92"
+style="width:  1.13em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4663.svg#page4631"> </use> </svg></span> representa un
+fotó de freqüència <span class="inlinemath"><svg
+viewBox="0 -7.47 77.19 9.96"
+style="width:  7.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4664.svg#page4632"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:ein:constants"> <span>&vert;2.2&rang;</span> <span
+class="sffamily" >Els </span><span class="itshape sffamily" >coeficients
+d’Einstein</span><span class="sffamily" > fan de </span><span class="itshape
+sffamily" >constants de velocitat</span><span class="sffamily"
+>.</span></summary>
+
+<div class="content"><div class="p"> <span>Introduirem primer dos conceptes
+relacionats amb l’energia de la radiació electromagnètica</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Densitat d’energia radiant</span></strong>.
+<span>La </span><span class="itshape" >densitat d’energia radiant</span><span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.15 6.23"
+style="width:  0.52em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4665.svg#page4633"> </use> </svg></span>, és la quantitat
+d’energia de la radiació electromagnètica per unitat de volum</span>. </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Densitat d’energia radiant
+espectral</span></strong>. <span>La </span><span class="itshape" >densitat
+d’energia radiant espectral</span><span>, <span class="inlinemath"><svg
+viewBox="0 -4.29 9.61 6.23"
+style="width:  0.97em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4666.svg#page4634"> </use> </svg></span>, és la densitat
+d’energia radiant per unitat de freqüència, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 39.29 20.49"
+style="width:  3.94em; height:  2.18em;"> <use
+xlink:href="images/img4667.svg#page4635"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 32.61 7.75"
+style="width:  3.27em; height:  0.90em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4668.svg#page4636"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 16.05 6.64"
+style="width:  1.61em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4669.svg#page4637"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 66.93 9.96"
+style="width:  6.72em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4670.svg#page4638"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.36 13.21 7.36"
+style="width:  1.33em; height:  0.86em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4671.svg#page4639"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 16.05 6.64"
+style="width:  1.61em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4672.svg#page4640"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 131.29 9.96"
+style="width: 13.18em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4673.svg#page4641"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.36 37.19 8.19"
+style="width:  3.73em; height:  0.94em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4674.svg#page4642"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 16.05 6.64"
+style="width:  1.61em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4675.svg#page4643"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 136.55 9.96"
+style="width: 13.71em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4676.svg#page4644"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>Continuant amb l’analogia amb la cinètica
+química, podem pensar que els </span><span class="itshape" >coeficients
+d’Einstein</span><span> fan el mateix paper que les </span><span
+class="itshape" >constants de velocitat</span><span> en les reaccions
+químiques</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Coeficients d’Einstein
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4677.svg#page4645"> </use> </svg></span>, d’absorció;
+<span class="inlinemath"><svg
+viewBox="0 -6.81 19.47 8.3"
+style="width:  1.95em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4678.svg#page4646"> </use> </svg></span>, d’emissió
+espontània; <span class="inlinemath"><svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4679.svg#page4647"> </use> </svg></span>, d’emissió
+estimulada)</span></strong>. <span>Els coeficients d’Einstein són constants de
+proporcionalitat entre el nombre de transicions <span class="inlinemath">(<svg
+viewBox="0 -6.92 40.97 8.86"
+style="width:  4.11em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4680.svg#page4648"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.92 40.97 8.86"
+style="width:  4.11em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4681.svg#page4649"> </use> </svg></span>) per unitat de
+temps i per unitat de volum i la concentració (o densitat) de
+<span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4682.svg#page4650"> </use> </svg></span>, de
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4683.svg#page4651"> </use> </svg></span> i de
+fotons</span>. <span>Més concretament, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 82.73 25.32"
+style="width:  8.30em; height:  2.66em; vertical-align: -1.15em;"> <use
+xlink:href="images/img4684.svg#page4652"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4685.svg#page4653"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 54.42 9.96"
+style="width:  5.46em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4686.svg#page4654"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 83.22 25.32"
+style="width:  8.35em; height:  2.66em; vertical-align: -1.15em;"> <use
+xlink:href="images/img4687.svg#page4655"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4688.svg#page4656"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -7.47 49.22 9.96"
+style="width:  4.94em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4689.svg#page4657"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 102.43 25.32"
+style="width: 10.28em; height:  2.66em; vertical-align: -1.15em;"> <use
+xlink:href="images/img4690.svg#page4658"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4691.svg#page4659"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -7.47 72.72 9.96"
+style="width:  7.30em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4692.svg#page4660"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.47 11.95 9.96"
+style="width:  1.20em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4693.svg#page4661"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 19.3 9.96"
+style="width:  1.94em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4694.svg#page4662"> </use> </svg></span> són les
+concentracions de <span class="inlinemath"><svg
+viewBox="0 -6.86 9.13 6.86"
+style="width:  0.92em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4695.svg#page4663"> </use> </svg></span> (molècula en
+l’estat <span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4696.svg#page4664"> </use> </svg></span>) i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 13.21 6.86"
+style="width:  1.33em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4697.svg#page4665"> </use> </svg></span> (molècula en
+l’estat <span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4698.svg#page4666"> </use> </svg></span>), i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 16.92 5.78"
+style="width:  1.70em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4699.svg#page4667"> </use> </svg></span> és la freqüència
+que correspon a la transició, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 75.73 20.38"
+style="width:  7.60em; height:  2.17em;"> <use
+xlink:href="images/img4700.svg#page4668"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>El signe negatiu que apareix en la definició de
+dos dels tres coeficients d’Einstein es degut al següent criteri</span>:
+<span>si la derivada <span class="inlinemath"><svg
+viewBox="0 -7.47 38.25 9.96"
+style="width:  3.84em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4701.svg#page4669"> </use> </svg></span> és positiva,
+posem signe positiu, en cas contrari, negatiu</span>. <span>Com per a l’emissió
+(espontània o estimulada), la concentració de <span class="inlinemath"><svg
+viewBox="0 -6.86 13.21 6.86"
+style="width:  1.33em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4702.svg#page4670"> </use> </svg></span> disminueix,
+tindrem una derivada negativa</span>. <span>El trellat d’aquest criteri és que
+fa que tots tres coeficients d’Einstein siguen positius</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >Els coeficients
+d’Einstein també s’anomenen </span><span class="itshape sffamily"
+>probabilitats de transició d’Einstein.</span></summary>
+
+<div class="content"><div class="p"> <span>Els coeficients d’Einstein
+quantifiquen la velocitat amb que es produeixen les transicions d’emissió i
+d’absorció</span>. <span>Com aquestes transicions tenen naturalesa
+mecanoquàntica, seran fenòmens probabilístics</span>: <span>els coeficients
+d’Einstein quantifiquen la probabilitat que es produeixi la transició
+corresponent</span>. <span>Per això se’ls anomena també </span><span
+class="itshape" >probabilitats de transició d’Einstein</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:ein:tercer"> <span>&vert;3&rang;</span> <span
+class="sffamily" >Dos dels coeficients d’Einstein es poden calcular a partir
+del tercer.</span></summary>
+
+<div class="content"><div class="p"> <span>Els coeficients d’Einstein estan
+relacionats entre ells</span>. <span>Es pot demostrar que </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4703.svg#page4671"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4704.svg#page4672"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4705.svg#page4673"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 19.47 8.3"
+style="width:  1.95em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4706.svg#page4674"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4707.svg#page4675"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.85 58.18 21.68"
+style="width:  5.84em; height:  2.30em; vertical-align: -0.75em;"> <use
+xlink:href="images/img4708.svg#page4676"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Podem, mitjançant aquestes relacions, calcular
+dos dels coeficients d’Einstein a partir del tercer</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Els coeficients
+d’Einstein quantifiquen les intensitats de les transicions.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Els coeficients
+d’Einstein es poden obtindre de manera teòrica o de manera
+experimental.</span></summary>
+
+<div class="content"><div class="p"> <span>Tal com hem vist, no és necessari
+estudiar independentment els tres processos d’absorció, emissió espontània i
+emissió estimulada, ja que els coeficients d’Einstein respectius estan
+relacionats</span>. </div>
+
+<div class="p"> <span>Com veurem, els coeficients d’Einstein es poden calcular
+a partir de les funcions d’ona <span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4709.svg#page4677"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4710.svg#page4678"> </use> </svg></span>, o es poden
+obtindre a partir dels espectres experimentals d’absorció o
+d’emissió</span>.</div> </div>
+
+</details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.9.2.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

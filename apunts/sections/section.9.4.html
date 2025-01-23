@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Regles de selecció | Transicions permeses i prohibides</title>
+<meta name="description" content="Una regla de selecció és un seguit de
+condicions que ha de complir una transició perquè estiga permesa.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.9.4.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.9.html"><span>9 Característiques generals de
+l’espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>9.4 Regles de selecció </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4857.svg#page4825"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.3.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.5.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>9.4  Regles de selecció</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4858.svg#page4826"> </use> </svg></span>, la transició no
+es produeix.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::rad:reg:BmnZero"> <span>&vert;1.1&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4859.svg#page4827"> </use> </svg></span>, els coeficients
+d’Einstein són zero.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.38 71.12 26.04"
+style="width:  7.14em; height:  2.73em;"> <use
+xlink:href="images/img4860.svg#page4828"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Com hem vist en </span><a class="sffamily small"
+href="sections/section.9.3.html#ref::rad:mom:BmnMmn"
+>§9.3&vert;6&rang;</a><span>, els coeficients d’Einstein, que quantifiquen les
+transicions espectroscòpiques, són proporcionals
+<span class="inlinemath">a <svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4861.svg#page4829"> </use> </svg></span>, el mòdul al
+quadrat del vector </span><span class="itshape" >moment dipolar de
+transició</span><span> <span class="inlinemath"><svg
+viewBox="0 -9.64 21.66 11.13"
+style="width:  2.17em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4862.svg#page4830"> </use> </svg></span></span>.
+<span>Aleshores, és clar que cap transició espectroscòpica (ni d’absorció, ni
+d’emissió estimulada, ni d’emissió espontània) entre els estats
+<span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4863.svg#page4831"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4864.svg#page4832"> </use> </svg></span> no és produirà
+si <span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4865.svg#page4833"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4866.svg#page4834"> </use> </svg></span>, la transició
+està </span><span class="itshape sffamily" >prohibida.</span></summary>
+
+<div class="content"><div class="p"> <span>Si, per a una determinada transició,
+<span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4867.svg#page4835"> </use> </svg></span>, podem dir que
+la transició està </span><span class="itshape" >prohibida</span>.
+<span>Altrament, direm que la transició està </span><span class="itshape"
+>permesa</span>. </div>
+
+<div class="p"> <span>Estrictament parlant, val a dir que, com que la relació
+de proporcionalitat <span class="inlinemath">entre <svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4868.svg#page4836"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4869.svg#page4837"> </use> </svg></span> és aproximada,
+<span class="inlinemath">un <svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4870.svg#page4838"> </use> </svg></span> nul només
+implica <span class="inlinemath">que <svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4871.svg#page4839"> </use> </svg></span> és
+aproximadament zero, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 111.43 12.13"
+style="width: 11.18em; height:  1.34em;"> <use
+xlink:href="images/img4872.svg#page4840"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, que la transició, encara que no estiga
+completament prohibida, serà molt feble</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 108.67 12.13"
+style="width: 10.91em; height:  1.34em;"> <use
+xlink:href="images/img4873.svg#page4841"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Alerta!</span>
+<span class="sffamily" >Les transicions ‘prohibides’ poden produir-se però molt
+lentament.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Les transicions
+amb <span class="inlinemath"><svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4874.svg#page4842"> </use> </svg></span> no nul
+s’anomenen </span><span class="itshape sffamily" >de dipol
+elèctric.</span></summary>
+
+<div class="content"><div class="p"> <span>En </span><a class="sffamily small"
+href="sections/section.9.3.html#ref::rad:mom:aprox"
+>§9.3&vert;5&rang;</a><span> hem explicat un seguit d’aproximacions per
+simplificar l’expressió de la pertorbació de la radiació electromagnètica al
+Hamiltonià molecular</span>. </div>
+
+<div class="p"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4875.svg#page4843"> </use> </svg></span> és no nul, la
+magnitud dels efectes negligits en </span><a class="sffamily small"
+href="sections/section.9.3.html#ref::rad:mom:aprox"
+>§9.3&vert;5&rang;</a><span> és molt petita i la qualitat dels coeficients
+d’Einstein calculats a partir de <span class="inlinemath"><svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4876.svg#page4844"> </use> </svg></span> és
+excel·lent</span>. </div>
+
+<div class="p"> <span>Aquestes transicions amb <span class="inlinemath"><svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4877.svg#page4845"> </use> </svg></span> no nul
+s’anomenen </span><span class="itshape" >transicions de dipol elèctric.</span>
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4878.svg#page4846"> </use> </svg></span>, els efectes
+negligits sí que es detecten.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.2.1&rang;</span> <span class="sffamily" >Les
+‘prohibides’ es poden produir, encara que molt lentament.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 108.67 12.13"
+style="width: 10.91em; height:  1.34em;"> <use
+xlink:href="images/img4879.svg#page4847"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Hem vist en </span><a class="sffamily small"
+href="sections/section.9.4.html#ref::rad:reg:BmnZero"
+>§9.4&vert;1.1&rang;</a><span> que una transició
+<span class="inlinemath">amb <svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4880.svg#page4848"> </use> </svg></span> serà molt feble
+però no estarà completament prohibida</span>. <span>Això és degut a les
+aproximacions que hem fet (negligint el camp magnètic i la dependència
+espacial) durant el càlcul <span class="inlinemath">de <svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4881.svg#page4849"> </use> </svg></span> en </span><a
+class="sffamily small" href="sections/section.9.3.html#ref::rad:mom:aprox"
+>§9.3&vert;5&rang;</a>. </div>
+
+<div class="p"> <span>El cas d’aquestes transicions ‘prohibides’ (amb
+<span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4882.svg#page4850"> </use> </svg></span>) es pot corregir
+<span class="inlinemath">recalculant <svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4883.svg#page4851"> </use> </svg></span> però ara sense
+negligir el camp magnètic ni la dependència espacial, i comprovant després si
+el nou valor obtingut és zero o no</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2.2&rang;</span> <span class="sffamily" >Les
+</span><span class="itshape sffamily" >transicions de dipol
+magnètic</span><span class="sffamily" > es deuen a
+<span class="inlinemath"><svg
+viewBox="0 -9.64 8.12 9.64"
+style="width:  0.82em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4884.svg#page4852"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si en una transició amb
+<span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4885.svg#page4853"> </use> </svg></span> no negligim el
+component magnètic <span class="inlinemath"><svg
+viewBox="0 -9.64 8.12 9.64"
+style="width:  0.82em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4886.svg#page4854"> </use> </svg></span> de la radiació
+electromagnètica (al contrari del que hem fet en </span><a class="sffamily
+small" href="sections/section.9.3.html#ref::rad:mom:noB"
+>§9.3&vert;5.1&rang;</a><span>), i obtenim un valor no nul del coeficient
+<span class="inlinemath">d’Einstein <svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4887.svg#page4855"> </use> </svg></span>, aleshores es
+tractarà d’una </span><span class="itshape" >transició de dipol
+magnètic</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2.3&rang;</span> <span class="sffamily" >Les
+</span><span class="itshape sffamily" >de quadrupol elèctric</span><span
+class="sffamily" > es deuen a la variació espacial
+<span class="inlinemath">de <svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4888.svg#page4856"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si en una transició amb
+<span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4889.svg#page4857"> </use> </svg></span> no negligim la
+dependència espacial del component elèctric <span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4890.svg#page4858"> </use> </svg></span> de la radiació
+electromagnètica (al contrari del que hem fet en </span><a class="sffamily
+small" href="sections/section.9.3.html#ref::rad:mom:noz"
+>§9.3&vert;5.2&rang;</a><span>), i obtenim un valor no nul de del coeficient
+<span class="inlinemath">d’Einstein <svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4891.svg#page4859"> </use> </svg></span>, aleshores es
+tractarà d’una </span><span class="itshape" >transició de quadrupol
+elèctric</span>. </div>
+
+</div></details>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Les regles de
+selecció especifiquen per a quines transicions <span class="inlinemath"><svg
+viewBox="0 -9.64 54.85 12.13"
+style="width:  5.51em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4892.svg#page4860"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Regles de selecció</span></strong>. <span>Una
+</span><span class="itshape" >regla de selecció</span><span> és un seguit de
+condicions que ha de complir una transició perquè el corresponent </span><span
+class="itshape" >moment dipolar de transició</span><span> sigui distint de zero
+i, per tant, la transició estigui permesa</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Per a la
+partícula en una caixa <span class="inlinemath">(<svg
+viewBox="0 -4.29 30.22 4.29"
+style="width:  3.03em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4893.svg#page4861"> </use> </svg></span>),
+<span class="inlinemath"><svg
+viewBox="0 -7.13 130.85 9.07"
+style="width: 13.13em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4894.svg#page4862"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Il·lustrarem l’obtenció de les
+regles de selecció per a la partícula en una caixa unidimensional</span>.
+<span>Recordem que la partícula està restringida a moure’s sobre l’eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.04 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4895.svg#page4863"> </use> </svg></span> en l’interval
+<span class="inlinemath"><svg
+viewBox="0 -6.81 44.02 8.16"
+style="width:  4.42em; height:  0.94em; vertical-align: -0.20em;"> <use
+xlink:href="images/img4896.svg#page4864"> </use> </svg></span>, on
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.78 6.81"
+style="width:  0.68em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4897.svg#page4865"> </use> </svg></span> és la longitud
+de la caixa</span>. <span>Les autofuncions del sistema tenen l’expressió
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.11 98.28 24"
+style="width:  9.87em; height:  2.53em;"> <use
+xlink:href="images/img4898.svg#page4866"> </use> </svg></span> </div>
+
+<div class="p"> <span>Hem de calcular el moment dipolar de transició </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 97.03 10.32"
+style="width:  9.74em; height:  1.16em;"> <use
+xlink:href="images/img4899.svg#page4867"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.86 34.8 8.8"
+style="width:  3.49em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4900.svg#page4868"> </use> </svg></span></span>. <span>El
+resultat és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 247.83 24"
+style="width: 24.88em; height:  2.53em;"> <use
+xlink:href="images/img4901.svg#page4869"> </use> </svg></span> </div>
+
+<div class="p"> <span>Ara ja podem formular la regla de selecció per a la
+partícula en un caixa</span>. <span>Atès que per a
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.5 6.92"
+style="width:  0.55em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4902.svg#page4870"> </use> </svg></span> parell
+<span class="inlinemath"><svg
+viewBox="0 -7.47 50.89 9.96"
+style="width:  5.11em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4903.svg#page4871"> </use> </svg></span>, tindrem que
+<span class="inlinemath"><svg
+viewBox="0 -6.81 28.54 9.66"
+style="width:  2.86em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4904.svg#page4872"> </use> </svg></span> serà nul·la si
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.75 4.29"
+style="width:  0.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4905.svg#page4873"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4906.svg#page4874"> </use> </svg></span> són ambdós
+parells o ambdós imparells (cosa que farà que tant
+<span class="inlinemath"><svg
+viewBox="0 -5.81 26.9 6.64"
+style="width:  2.70em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4907.svg#page4875"> </use> </svg></span> com
+<span class="inlinemath"><svg
+viewBox="0 -5.81 26.9 6.64"
+style="width:  2.70em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4908.svg#page4876"> </use> </svg></span> siguin
+parells)</span>. <span>Si <span class="inlinemath"><svg
+viewBox="0 -4.29 8.75 4.29"
+style="width:  0.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4909.svg#page4877"> </use> </svg></span> és parell i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4910.svg#page4878"> </use> </svg></span> imparell (o a
+l’inrevés), és fàcil veure que <span class="inlinemath"><svg
+viewBox="0 -6.81 28.54 9.66"
+style="width:  2.86em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4911.svg#page4879"> </use> </svg></span> serà no
+nul·la</span>. <span>Podem doncs escriure la regla de selecció de la següent
+manera</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Partícula en una caixa</span></strong>. <span>Per
+a la partícula en una caixa, les transicions de <span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4912.svg#page4880"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4913.svg#page4881"> </use> </svg></span> estaran permeses
+únicament si <span class="inlinemath"><svg
+viewBox="0 -5.81 26.9 6.64"
+style="width:  2.70em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4914.svg#page4882"> </use> </svg></span> (o,
+equivalentment, <span class="inlinemath"><svg
+viewBox="0 -5.81 26.9 6.64"
+style="width:  2.70em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4915.svg#page4883"> </use> </svg></span>) és
+imparell</span>. <span>Dit d’altra manera, les transicions estaran permeses si
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 130.85 9.07"
+style="width: 13.13em; height:  1.03em;"> <use
+xlink:href="images/img4916.svg#page4884"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.9.4.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

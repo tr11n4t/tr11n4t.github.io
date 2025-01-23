@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Hartree-Fock: el determinant de Slater de més baixa energia</title>
+<meta name="description" content="El mètode de Hartree-Fock proporciona el
+determinant de Slater de més baixa energia. Operador de Fock.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.6.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.html"><span>6 Àtoms polielectrònics </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>6.2 El mètode de Hartree-Fock
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img2747.svg#page2725"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.3.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>6.2  El mètode de Hartree-Fock</span> </h4>
+
+<details open class="foldable prop">
+<summary id="ref::ato:foc:Hatoms"> <span>&vert;1&rang;</span> <span
+class="sffamily" >El hamiltonià atòmic conté </span><span class="itshape
+sffamily" >repulsió interelectrònica</span><span class="sffamily"
+>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador hamiltonià d’un àtom de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2748.svg#page2726"> </use> </svg></span> electrons pot
+escriure’s com una suma de components, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -34.06 204.87 47.17"
+style="width: 20.56em; height:  4.86em;"> <use
+xlink:href="images/img2749.svg#page2727"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -9.38 13.06 9.38"
+style="width:  1.31em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2750.svg#page2728"> </use> </svg></span> representa el
+hamiltonià d’un </span><span class="itshape" >sistema de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2751.svg#page2729"> </use> </svg></span> electrons
+independents</span><span> i <span class="inlinemath"><svg
+viewBox="0 -6.81 13.37 8.3"
+style="width:  1.34em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2752.svg#page2730"> </use> </svg></span> la </span><span
+class="itshape" >repulsió interelectrònica</span><span> entre ells</span>.
+<span>Assumim massa infinita del nucli, cosa que ens permet negligir la seua
+energia cinètica</span>. <span>Els punts suspensius representen diverses
+contribucions com ara correccions relativistes o camps magnètics</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >Per a àtoms,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 55.45 9.96"
+style="width:  5.57em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2753.svg#page2731"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a un àtom de nombre atòmic
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.51 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2754.svg#page2732"> </use> </svg></span>, el potencial
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2755.svg#page2733"> </use> </svg></span> que apareix en
+l’expressió de <span class="inlinemath"><svg
+viewBox="0 -9.38 13.06 9.38"
+style="width:  1.31em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2756.svg#page2734"> </use> </svg></span> representa
+l’atracció entre un electró i el nucli, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 51.41 20.38"
+style="width:  5.16em; height:  2.17em;"> <use
+xlink:href="images/img2757.svg#page2735"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Per a molècules veurem
+<span class="inlinemath">que <svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2758.svg#page2736"> </use> </svg></span> conté més d’un
+nucli</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >La repulsió
+interelectrònica <span class="inlinemath"><svg
+viewBox="0 -9.38 13.37 10.88"
+style="width:  1.34em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2759.svg#page2737"> </use> </svg></span> complica
+</span><span class="itshape sffamily" >molt</span><span class="sffamily" > el
+problema.</span></summary>
+
+<div class="content"><div class="p"> <span>Si el terme de repulsió
+interelectrònica <span class="inlinemath"><svg
+viewBox="0 -9.38 13.37 10.88"
+style="width:  1.34em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2760.svg#page2738"> </use> </svg></span> no existís, les
+autofuncions dels hamiltonians atòmics i moleculars serien determinants de
+Slater, construïts, per a àtoms, amb orbitals d’àtoms hidrogenoides</span>.
+<span>Malauradament no és així, cosa que complica molt l’obtenció de les
+autofuncions atòmiques i moleculars</span>. </div>
+
+<div class="p"> <span>No obstant això, encara que no és exacte, es poden
+aproximar aquestes autofuncions mitjançant un únic determinant de Slater, cosa
+en què es basa l’anomenat </span><span class="itshape" >mètode de
+Hartree-Fock</span><span> que estudiarem a continuació</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -34.06 204.87 47.17"
+style="width: 20.56em; height:  4.86em;"> <use
+xlink:href="images/img2761.svg#page2739"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Mètode
+Hartree-Fock:</span> <span class="sffamily" >el determinant de </span><span
+class="itshape sffamily" >mínima</span><span class="sffamily" >
+energia.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >S’aplica el
+mètode variacional a una <span class="inlinemath"><svg
+viewBox="0 -6.92 4.82 8.86"
+style="width:  0.48em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2762.svg#page2740"> </use> </svg></span> que és un
+determinant.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Mètode de Hartree-Fock</span></strong>. <span>El
+</span><span class="itshape" >mètode de Hartree-Fock</span><span> és un mètode
+variacional que fa servir una funció de prova <span class="inlinemath"><svg
+viewBox="0 -6.92 4.82 8.86"
+style="width:  0.48em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2763.svg#page2741"> </use> </svg></span> restringida a
+ser un determinant de Slater construït a partir de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2764.svg#page2742"> </use> </svg></span> </span><span
+class="itshape" >espín-orbitals</span><span> ortonormals, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 161.23 10.32"
+style="width: 16.18em; height:  1.16em;"> <use
+xlink:href="images/img2765.svg#page2743"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Els orbitals <span class="inlinemath"><svg
+viewBox="0 -7.47 19.77 9.96"
+style="width:  1.98em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2766.svg#page2744"> </use> </svg></span> que donen el
+determinant de mínima energia s’anomenen </span><span class="itshape" >orbitals
+de Hartree-Fock</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >És una
+aproximació:</span> <span class="sffamily" >un únic determinant no és
+suficient.</span></summary>
+
+<div class="content"><div class="p"> <span>El mètode de Hartree-Fock no és
+exacte</span>: <span>una autofunció del hamiltonià d’un àtom o molècula no pot
+escriure’s com un únic determinant de Slater (una excepció serien els sistemes
+amb només un electró, on únic determinant sí que dona el resultat
+exacte)</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 157.96 10.32"
+style="width: 15.86em; height:  1.16em;"> <use
+xlink:href="images/img2767.svg#page2745"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Els </span><span
+class="itshape sffamily" >orbitals de Hartree-Fock</span><span class="sffamily"
+> són les autofuncions de l’</span><span class="itshape sffamily" >operador de
+Fock.</span></summary>
+
+<div class="content"><div class="p"> <span>Pot demostrar-se que els orbitals de
+Hartree-Fock són autofuncions d’un operadors hermitià anomenat </span><span
+class="itshape" >operador de Fock</span><span>, <span class="inlinemath"><svg
+viewBox="0 -9.38 7.79 9.38"
+style="width:  0.78em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2768.svg#page2746"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 54.13 11.32"
+style="width:  5.43em; height:  1.26em;"> <use
+xlink:href="images/img2769.svg#page2747"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>L’operador de <span class="inlinemath">Fock <svg
+viewBox="0 -9.38 7.79 9.38"
+style="width:  0.78em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2770.svg#page2748"> </use> </svg></span> és un operador
+hermitià monoelectrònic, és a dir, que depèn de les coordenades d’un únic
+electró</span>. <span>Té la següent expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 156.2 28.97"
+style="width: 15.68em; height:  3.03em;"> <use
+xlink:href="images/img2771.svg#page2749"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -9.38 8.34 10.88"
+style="width:  0.84em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2772.svg#page2750"> </use> </svg></span> és
+l’</span><span class="itshape" >operador de Coulomb</span><span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.28 10.88"
+style="width:  1.13em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2773.svg#page2751"> </use> </svg></span> l’</span><span
+class="itshape" >operador de bescanvi</span><span> (no confondre amb els
+operadors de <span class="inlinemath">bescanvi <svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2774.svg#page2752"> </use> </svg></span> que hem vist
+en §</span><a href="sections/section.6.1.1.html#ref::ato:pau">6.1.1</a><span>),
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 32.05 12.23"
+style="width:  3.22em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2775.svg#page2753"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2776.svg#page2754"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -17.48 119.55 29.98"
+style="width: 12.00em; height:  3.13em; vertical-align: -1.31em;"> <use
+xlink:href="images/img2777.svg#page2755"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 34.99 12.23"
+style="width:  3.51em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2778.svg#page2756"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2779.svg#page2757"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -17.48 122.32 29.98"
+style="width: 12.28em; height:  3.13em; vertical-align: -1.31em;"> <use
+xlink:href="images/img2780.svg#page2758"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >L’operador de
+Fock és ‘artificial’.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador de Fock
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.79 9.38"
+style="width:  0.78em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2781.svg#page2759"> </use> </svg></span> és un operador
+artificial, és a dir, que l’utilitzem per la seva utilitat matemàtica, encara
+que no tingui associat cap observable</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >L’operador de
+Fock depèn de les seves autofuncions!</span></summary>
+
+<div class="content"><div class="p"> <span>Una cosa curiosa de l’expressió de
+l’operador de Fock és que depèn (a través de les definicions de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.34 10.88"
+style="width:  0.84em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2782.svg#page2760"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.28 10.88"
+style="width:  1.13em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2783.svg#page2761"> </use> </svg></span>) de les seves
+<span class="inlinemath">autofuncions <svg
+viewBox="0 -6.92 9.31 8.86"
+style="width:  0.93em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2784.svg#page2762"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >Els
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2785.svg#page2763"> </use> </svg></span> orbitals de
+menor energia són els orbitals </span><span class="itshape sffamily"
+>ocupats.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador de Fock té infinits
+orbitals</span>. <span>Els <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2786.svg#page2764"> </use> </svg></span> orbitals de
+menor energia són els que s’utilitzen per estudiar l’estat fonamental</span>.
+<span>S’anomenen orbitals </span><span class="itshape" >ocupats</span><span>
+(vegeu la figura </span><a
+href="sections/section.6.2.html#ref::ato:foc:ocupats">6.2</a><span>)</span>.
+</div>
+
+<div class="p"> <span>Els orbitals ocupats són els que s’utilitzen per
+construir el determinant de Hartree-Fock</span>. </div>
+
+<div class="figure" id="ref::ato:foc:ocupats">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox=".34 -188.98 177.43 188.98"
+style="width: 17.81em; height: 19.09em;"> <use
+xlink:href="images/img2787.svg#page2765"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 6.2</span>: <span>Orbitals </span><span
+class="itshape" >ocupats</span><span> (amb un electró
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2788.svg#page2766"> </use> </svg></span> i un de
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2789.svg#page2767"> </use> </svg></span>) i </span><span
+class="itshape" >virtuals</span><span> (sense electrons), ordenats d’acord amb
+el seu <span class="inlinemath">autovalor <svg
+viewBox="0 -6.81 10.17 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2790.svg#page2768"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4&rang;</span> <span class="sffamily" >Els orbitals no
+ocupats s’anomenen </span><span class="itshape sffamily"
+>virtuals.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador de Fock té un nombre
+infinit de autofuncions, però només necessitem <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2791.svg#page2769"> </use> </svg></span> (els ocupats)
+per a l’estat fonamental</span>. <span>Els orbitals restants no contribueixen a
+l’operador de Fock</span>. <span>Se’ls anomena </span><span class="itshape"
+>orbitals virtuals</span><span>, i poden tindre utilitat per a estats excitats
+(vegeu la figura </span><a
+href="sections/section.6.2.html#ref::ato:foc:ocupats">6.2</a><span>)</span>.
+</div>
+
+</div></details>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 50.86 11.32"
+style="width:  5.10em; height:  1.26em;"> <use
+xlink:href="images/img2792.svg#page2770"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Per a un nombre
+parell d’electrons, tindrem un sistema en </span><span class="itshape sffamily"
+>capa tancada.</span></summary>
+
+<div class="content"><div class="p"> <span>Una variant simplificada del mètode
+Hartree-Fock s’utilitza en sistemes amb un nombre parell d’electrons quan tots
+els electrons estan aparellats, és a dir, que el determinant de Slater es
+construeix amb només <span class="inlinemath"><svg
+viewBox="0 -7.47 18.22 9.96"
+style="width:  1.83em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2793.svg#page2771"> </use> </svg></span> orbitals
+espacials doblement ocupats (és a dir, per cada orbital espacial tindrem un
+<span class="inlinemath">orbital <svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2794.svg#page2772"> </use> </svg></span> i un
+<span class="inlinemath">altre <svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2795.svg#page2773"> </use> </svg></span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.9 143.11 12.45"
+style="width: 14.37em; height:  1.37em;"> <use
+xlink:href="images/img2796.svg#page2774"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Un sistema d’aquestes característiques és un
+sistema en </span><span class="itshape" >capa tancada</span>. <span>El mètode
+Hartree-Fock aplicat a sistemes en capa tancada s’anomena, en anglès,
+</span><span class="itshape" >Restricted Hartree-Fock</span><span> (RHF), i té
+l’avantatge que només necessita la mitat d’orbitals espacials</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.9 140.34 12.45"
+style="width: 14.09em; height:  1.37em;"> <use
+xlink:href="images/img2797.svg#page2775"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ato:foc:campcentral"> <span>&vert;5&rang;</span> <span
+class="sffamily" >En àtoms, s’utilitza l’</span><span class="itshape sffamily"
+>aproximació del camp central</span><span class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a àtoms sol utilitzar-se una
+variant simplificada del mètode de Hartree-Fock anomenada </span><span
+class="itshape" >aproximació del camp central</span><span>, on els orbitals
+s’escriuen com el producte d’un factor radial (que depèn únicament de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2798.svg#page2776"> </use> </svg></span>) i d’un harmònic
+esfèric, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 94.21 10.15"
+style="width:  9.46em; height:  1.14em;"> <use
+xlink:href="images/img2799.svg#page2777"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La forma d’aquests orbitals es la mateixa que la
+dels orbitals de l’àtom d’hidrogen (vegeu </span><a class="sffamily small"
+href="sections/section.4.2.html#ref::hid:cen:RYlm"
+>§4.2&vert;6&rang;</a><span>)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 91.45 10.15"
+style="width:  9.18em; height:  1.14em;"> <use
+xlink:href="images/img2800.svg#page2778"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >L’aproximació de
+Hartree-Fock és el primer pas.</span> <span class="sffamily" >Podem anar més
+lluny.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;6.1&rang;</span> <span class="sffamily" >L’error del
+mètode de Hartree-Fock és l’</span><span class="itshape sffamily" >energia de
+correlació.</span></summary>
+
+<div class="content"><div class="p"> <span>El mètode de Hartree-Fock és un
+mètode aproximat</span>. <span>L’error de l’energia Hartree-Fock s’anomena
+</span><span class="itshape" >energia de correlació</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Energia de correlació</span></strong>.
+<span>L’energia de correlació <span class="inlinemath"><svg
+viewBox="0 -6.81 10.91 8.3"
+style="width:  1.10em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2801.svg#page2779"> </use> </svg></span> és la diferència
+entre l’energia exacta <span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2802.svg#page2780"> </use> </svg></span> i l’energia
+Hartree-Fock <span class="inlinemath"><svg
+viewBox="0 -6.81 20.54 8.3"
+style="width:  2.06em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2803.svg#page2781"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 68.6 8.3"
+style="width:  6.89em; height:  0.95em;"> <use
+xlink:href="images/img2804.svg#page2782"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>L’energia de correlació sempre és negativa, o, a
+tot estirar, zero</span>. <span>Això és degut a que l’energia
+<span class="inlinemath">Hartree-Fock <svg
+viewBox="0 -6.81 20.54 8.3"
+style="width:  2.06em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2805.svg#page2783"> </use> </svg></span> és una
+aproximació a l’energia <span class="inlinemath">exacta <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2806.svg#page2784"> </use> </svg></span>, i per tant,
+d’acord amb el principi variacional, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 45.02 8.74"
+style="width:  4.52em; height:  1.00em;"> <use
+xlink:href="images/img2807.svg#page2785"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>de manera que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 86.87 8.3"
+style="width:  8.72em; height:  0.95em;"> <use
+xlink:href="images/img2808.svg#page2786"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>En el cas de sistemes amb només un electró (com
+l’àtom d’hidrogen), en no haver-hi repulsió interelectrònica, l’energia de
+correlació és zero</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ato:foc:ci"> <span>&vert;6.2&rang;</span> <span
+class="sffamily" >La </span><span class="itshape sffamily" >interacció de
+configuracions</span><span class="sffamily" > utilitza més d’un determinant de
+Slater.</span></summary>
+
+<div class="content"><div class="p"> <span>Si volem més qualitat que la que ens
+dóna el mètode Hartree-Fock, podem utilitzar el mètode d’</span><span
+class="itshape" >interacció de configuracions</span><span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.6.1.3.html#ref::ato:pau:CI" >§6.1.3&vert;6.2&rang;</a>:
+<span>construïm una funció de prova <span class="inlinemath"><svg
+viewBox="0 -6.92 4.82 8.86"
+style="width:  0.48em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2809.svg#page2787"> </use> </svg></span> com una
+combinació lineal de determinants de Slater <span class="inlinemath"><svg
+viewBox="0 -6.86 10.01 8.36"
+style="width:  1.01em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2810.svg#page2788"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 55.06 22.22"
+style="width:  5.53em; height:  2.35em;"> <use
+xlink:href="images/img2811.svg#page2789"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Els coeficients <span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2812.svg#page2790"> </use> </svg></span> es calculen pel
+mètode variacional, mentre que els determinants <span class="inlinemath"><svg
+viewBox="0 -6.86 10.01 8.36"
+style="width:  1.01em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2813.svg#page2791"> </use> </svg></span> es construeixen
+a partir dels orbitals Hartree-Fock, tant ocupats com virtuals</span>. </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.6.2.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Grups cromòfors</title>
+<meta name="description" content="Els grups cromòfors experimenten transicions
+electròniques amb freqüències similars en tots els compostos que contenen el
+grup.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.15.3.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.15.html"><span>15 Enllaç i espectroscòpia electrònica de
+molècules poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>15.3 Grups cromòfors </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img8983.svg#page8946"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.2.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.4.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>15.3  Grups cromòfors</span> </h4>
+
+<details open class="foldable prop">
+<summary id="ref::ele:cro:deslocalitzat"> <span>&vert;1&rang;</span> <span
+class="sffamily" >En general, una transició electrònica </span><span
+class="itshape sffamily" >no</span><span class="sffamily" > està localitzada en
+un únic enllaç.</span></summary>
+
+<div class="content"><div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="1.99 -54.69 56.29 50.7"
+style="width:  5.65em; height:  5.61em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8984.svg#page8947"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" ><span class="inlinemath"><svg
+viewBox="0 -4.8 14.96 5.8"
+style="width:  1.90em; height:  0.89em; vertical-align: -0.20em;"> <use
+xlink:href="images/img8985.svg#page8948"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="p"> <span>Considerem per exemple la molècula de metà</span>.
+<span>Com el quatre enllaços <span class="inlinemath"><svg
+viewBox="0 -6.86 26.84 7.69"
+style="width:  2.69em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img8986.svg#page8949"> </use> </svg></span> són equivalents,
+el electrons estaran deslocalitzats entre ells, tant en l’estat fonamental com
+en els estats excitats</span>. <span>En produir-se una transició electrònica,
+el canvi de densitat electrònica afectarà tots quatre enllaços</span>. </div>
+
+<div class="p"> <span>En general, doncs, no es exacte pensar que una transició
+electrònica excita només un enllaç de la molècula</span>: <span>tots els
+enllaços poden ser afectats</span>.</div></div>
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -54.69 56.29 50.7"
+style="width:  5.65em; height:  5.61em;"> <use
+xlink:href="images/img8987.svg#page8950"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >De vegades una
+transició electrònica està </span><span class="itshape sffamily"
+>localitzada</span><span class="sffamily" > en un grup.</span></summary>
+
+<div class="content"><div class="p"> <span>No obstant el que hem vist
+en </span><a class="sffamily small"
+href="sections/section.15.3.html#ref::ele:cro:deslocalitzat"
+>§15.3&vert;1&rang;</a><span>, de vegades passa que una transició electrònica
+està aproximadament localitzada en un únic enllaç o grup funcional</span>.
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >El grup carbonil
+té un enllaç <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8988.svg#page8951"> </use> </svg></span>, un
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.04 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8989.svg#page8952"> </use> </svg></span>, i dos parells
+solitaris <span class="inlinemath">(<svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8990.svg#page8953"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="-1.44 -53.39 62.89 43.63"
+style="width:  6.31em; height:  5.48em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8991.svg#page8954"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" >Grup carbonil</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="p"> <span>Considerem el grup carbonil</span>. <span>El doble enllaç
+<span class="inlinemath"><svg
+viewBox="0 -6.86 14.94 6.86"
+style="width:  1.50em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8992.svg#page8955"> </use> </svg></span> està constituït
+per un enllaç (orbital) <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8993.svg#page8956"> </use> </svg></span> i un altre
+enllaç (orbital) <span class="inlinemath"><svg
+viewBox="0 -4.29 6.04 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8994.svg#page8957"> </use> </svg></span></span>. <span>A
+més a més hi ha dos parells solitaris d’electrons localitzats sobre l’oxigen
+<span class="inlinemath">(<svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8995.svg#page8958"> </use>
+</svg></span>)</span>.</div></div>
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-1.44 -53.39 62.89 43.63"
+style="width:  6.31em; height:  5.48em;"> <use
+xlink:href="images/img8996.svg#page8959"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >Les transicions
+<span class="inlinemath"><svg
+viewBox="0 -6.86 32.09 6.86"
+style="width:  3.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8997.svg#page8960"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 32.11 6.86"
+style="width:  3.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8998.svg#page8961"> </use> </svg></span> són similars en
+tots els carbonils.</span></summary>
+
+<div class="content"><div class="p"> <span>En exposar un compost carbonílic a
+radiació de freqüència adequada es produeixen les següents transicions
+electròniques, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 34.86 8.8"
+style="width:  3.50em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img8999.svg#page8962"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.92 49.61 6.92"
+style="width:  4.98em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9000.svg#page8963"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 34.87 8.8"
+style="width:  3.50em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9001.svg#page8964"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.92 52.38 6.92"
+style="width:  5.26em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9002.svg#page8965"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p"> <span>Els orbitals excitats <span class="inlinemath"><svg
+viewBox="0 -6.86 10.13 6.86"
+style="width:  1.02em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9003.svg#page8966"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.12 6.86"
+style="width:  1.02em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9004.svg#page8967"> </use> </svg></span> també estan
+localitzats en el grup carbonil, entre el <span class="inlinemath"><svg
+viewBox="0 -6.86 7.2 6.86"
+style="width:  0.72em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9005.svg#page8968"> </use> </svg></span> i
+<span class="inlinemath">l’<svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9006.svg#page8969"> </use> </svg></span></span>.
+<span>Això fa que la transició electrònica estigui localitzada en el grup
+carbonil, i que no es vegi afectada per la resta de la molècula</span>.
+<span>Com a conseqüència, tots els compostos carbonílics experimentaran
+aquestes transicions a aproximadament les mateixes freqüències</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 34.86 8.8"
+style="width:  3.50em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9007.svg#page8970"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.92 49.61 6.92"
+style="width:  4.98em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9008.svg#page8971"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 34.87 8.8"
+style="width:  3.50em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9009.svg#page8972"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.92 49.61 6.92"
+style="width:  4.98em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9010.svg#page8973"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Grups </span><span
+class="itshape sffamily" >cromòfors:</span> <span class="sffamily" >transicions
+electròniques amb freqüències característiques.</span></summary>
+
+<div class="content"><div class="p"> <span>Els grups funcionals que es
+comporten com el carbonil s’anomenen </span><span class="itshape" >grups
+cromòfors</span>. <span>Es caracteritzen per experimentar transicions
+electròniques localitzades en el grup funcional, i que per tant es produeixen a
+freqüències molt similars en tots els compostos que contenen el grup</span>.
+<span>La taula </span><a
+href="sections/section.15.3.html#ref::ele:cro:TaulaCromofors">15.1</a><span>
+mostra les longituds d’ona característiques d’alguns grups cromòfors</span>.
+</div>
+
+<div class="table" id="ref::ele:cro:TaulaCromofors">
+<div class="p caption"> <span>Taula 15.1</span>: <span>Longituds d’ona
+característiques d’alguns grups cromòfors</span>. </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span>Cromòfor</span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span>Transició</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 16.33 6.92"
+style="width:  1.64em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9011.svg#page8974"> </use> </svg></span> (en
+<span class="inlinemath"><svg
+viewBox="1.66 -4.29 13.91 4.29"
+style="width:  1.40em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9012.svg#page8975"> </use> </svg></span>)</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 27.67 6.86"
+style="width:  2.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9013.svg#page8976"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9014.svg#page8977"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>180</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 27.67 6.86"
+style="width:  2.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9015.svg#page8978"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9016.svg#page8979"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>190</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 48.15 6.86"
+style="width:  4.83em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9017.svg#page8980"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9018.svg#page8981"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>225</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span>Benzè</span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9019.svg#page8982"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>260</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 28.23 6.86"
+style="width:  2.83em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9020.svg#page8983"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.09 6.86"
+style="width:  3.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9021.svg#page8984"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>300</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 28.23 6.86"
+style="width:  2.83em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9022.svg#page8985"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.11 6.86"
+style="width:  3.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9023.svg#page8986"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>190</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 26.57 7.69"
+style="width:  2.67em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img9024.svg#page8987"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.18 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9025.svg#page8988"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>150</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 26.84 7.69"
+style="width:  2.69em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img9026.svg#page8989"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.18 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9027.svg#page8990"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>150</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Els grups cromòfors són els responsables del color de
+moltes molècules, encara que algunes de les transicions electròniques d’aquests
+grups corresponen a la regió ultraviolada de l’espectre</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span>Cromòfor</span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span>Transició</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 16.33 6.92"
+style="width:  1.64em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9028.svg#page8991"> </use> </svg></span> (en
+<span class="inlinemath"><svg
+viewBox="1.66 -4.29 13.91 4.29"
+style="width:  1.40em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9029.svg#page8992"> </use> </svg></span>)</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 27.67 6.86"
+style="width:  2.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9030.svg#page8993"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9031.svg#page8994"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>180</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 27.67 6.86"
+style="width:  2.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9032.svg#page8995"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9033.svg#page8996"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>190</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 48.15 6.86"
+style="width:  4.83em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9034.svg#page8997"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9035.svg#page8998"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>225</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span>Benzè</span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.15 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9036.svg#page8999"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>260</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 28.23 6.86"
+style="width:  2.83em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9037.svg#page9000"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.09 6.86"
+style="width:  3.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9038.svg#page9001"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>300</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 28.23 6.86"
+style="width:  2.83em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9039.svg#page9002"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.11 6.86"
+style="width:  3.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9040.svg#page9003"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>190</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 26.57 7.69"
+style="width:  2.67em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img9041.svg#page9004"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.18 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9042.svg#page9005"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>150</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 26.84 7.69"
+style="width:  2.69em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img9043.svg#page9006"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 32.18 6.86"
+style="width:  3.23em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9044.svg#page9007"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>150</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Els grups
+cromòfors són útils en </span><span class="itshape sffamily" >química
+analítica.</span></summary>
+
+<div class="content"><div class="p"> <span>Els grups cromòfors tenen moltes
+aplicacions en </span><span class="itshape" >química analítica</span><span>, on
+s’utilitzen per identificar compostos</span>. <span>Per exemple, la
+</span><span class="itshape" >ninhidrina</span><span> reacciona amb els
+aminoàcids produint un producte, els grups cromòfors del qual li donen un color
+porpra molt intens, que serveix per detectar empremtes dactilars, ja que
+aquestes contenen traces d’aminoàcids procedents de la suor (vegeu la
+figura </span><a
+href="sections/section.15.3.html#ref::ele:cro:Empremta">15.2</a><span>)</span>.
+</div>
+
+<div class="figure" id="ref::ele:cro:Empremta">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Ninhydrin_staining_thumbprint.png"
+><span>commons.wikimedia</span></a><img src="images/img9045.png" alt="included
+image" style="width: 17.65em; height: 16.99em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 15.2</span>: <span>Empremta dactilar
+detectada mitjançant reacció amb ninhidrina</span>. </div>
+
+</div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.15.3.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

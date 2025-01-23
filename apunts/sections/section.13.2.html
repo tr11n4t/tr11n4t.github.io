@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Mecànica quàntica de la vibració | Molècules poliatòmiques</title>
+<meta name="description" content="S’escriu el hamiltonià de la vibració d’una
+poliatòmica com a suma de hamiltonians unidimensionals dependents de cada una
+de les coordenades normals.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.13.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.13.html"><span>13 Espectres de vibració de molècules
+poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>13.2 Mecànica quàntica de la
+vibració </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img7228.svg#page7193"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>13.2  Mecànica quàntica de la vibració</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >El hamiltonià
+s’expressa en </span><span class="itshape sffamily" >coordenades
+normals.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >L’</span><span
+class="itshape sffamily" >energia cinètica</span><span class="sffamily" > és
+com la de <span class="inlinemath"><svg
+viewBox="0 -6.81 31.23 7.64"
+style="width:  3.14em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7229.svg#page7194"> </use> </svg></span> partícules de
+massa unitat.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7230.svg#page7195"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7231.svg#page7196"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -17.22 68.13 28.97"
+style="width:  6.84em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7232.svg#page7197"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 8.03 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7233.svg#page7198"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7234.svg#page7199"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -17.22 51.08 28.97"
+style="width:  5.13em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7235.svg#page7200"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Sabem, pels fonaments de la mecànica quàntica, que, per a
+una partícula unidimensional, la correspondència entre l’energia cinètica
+clàssica i l’operador energia cinètica és la següent, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -16.52 70.18 26.03"
+style="width:  7.04em; height:  2.73em; vertical-align: -1.01em;"> <use
+xlink:href="images/img7236.svg#page7201"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7237.svg#page7202"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -15.69 61.56 22.52"
+style="width:  6.18em; height:  2.38em; vertical-align: -0.75em;"> <use
+xlink:href="images/img7238.svg#page7203"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Per analogia, no resulta gens estrany (es pot
+demostrar de manera rigorosa[<a
+href="sections/biblio.html#bib::LEVINE1980">19</a>]) que la correspondència
+entre l’energia cinètica clàssica per a la vibració molecular que hem vist
+en </span><a class="sffamily small"
+href="sections/section.13.1.html#ref::vi2:cla:TUenQPoli"
+>§13.1&vert;5.1&rang;</a><span> i l’operador energia cinètica sigui la següent,
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 86.5 28.97"
+style="width:  8.68em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7239.svg#page7204"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="-1.66 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7240.svg#page7205"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 87.07 28.97"
+style="width:  8.74em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7241.svg#page7206"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>L’operador <span class="inlinemath"><svg
+viewBox="0 -9.38 7.21 9.38"
+style="width:  0.72em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7242.svg#page7207"> </use> </svg></span> és anàleg al
+d’un sistema de <span class="inlinemath"><svg
+viewBox="0 -6.81 31.23 7.64"
+style="width:  3.14em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7243.svg#page7208"> </use> </svg></span> partícules amb
+massa unitat</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 86.5 28.97"
+style="width:  8.68em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7244.svg#page7209"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="-1.66 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7245.svg#page7210"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 83.11 28.97"
+style="width:  8.34em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7246.svg#page7211"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:qua:hatV"> <span>&vert;1.2&rang;</span> <span
+class="sffamily" >L’</span><span class="itshape sffamily" >energia
+potencial</span><span class="sffamily" > és una suma de potencials harmònics
+unidimensionals.</span></summary>
+
+<div class="content"><div class="p"> <span>La correspondència entre l’energia
+potencial clàssica i el seu operador és més fàcil de trobar que per a l’energia
+cinètica (ja que, per exemple, <span class="inlinemath"><svg
+viewBox="0 -6.86 24.67 6.86"
+style="width:  2.48em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7247.svg#page7212"> </use> </svg></span>)</span>.
+<span>Recordant l’expressió clàssica que hem vist en </span><a class="sffamily
+small" href="sections/section.13.1.html#ref::vi2:cla:TUenQPoli"
+>§13.1&vert;5.1&rang;</a><span> tindrem </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 73.58 28.97"
+style="width:  7.39em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7248.svg#page7213"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7249.svg#page7214"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 76.85 28.97"
+style="width:  7.71em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7250.svg#page7215"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 73.58 28.97"
+style="width:  7.39em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7251.svg#page7216"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7252.svg#page7217"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 73.58 28.97"
+style="width:  7.39em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7253.svg#page7218"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.3&rang;</span> <span class="sffamily" >L’operador
+hamiltonià serà la suma de <span class="inlinemath"><svg
+viewBox="0 -9.38 7.21 9.38"
+style="width:  0.72em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7254.svg#page7219"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.03 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7255.svg#page7220"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador hamiltonià per a la
+vibració d’una molècula poliatòmica serà la suma dels operadors energia
+cinètica i energia potencial que acabem de veure, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 157.22 28.97"
+style="width: 15.78em; height:  3.03em;"> <use
+xlink:href="images/img7256.svg#page7221"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 153.96 28.97"
+style="width: 15.45em; height:  3.03em;"> <use
+xlink:href="images/img7257.svg#page7222"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 153.96 28.97"
+style="width: 15.45em; height:  3.03em;"> <use
+xlink:href="images/img7258.svg#page7223"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7259.svg#page7224"> </use> </svg></span> és la suma de
+hamiltonians unidimensionals, un per cada mode.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 153.96 28.97"
+style="width: 15.45em; height:  3.03em;"> <use
+xlink:href="images/img7260.svg#page7225"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>El hamiltonià vibracional pot expressar-se com una suma
+de hamiltonians unidimensionals, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 180.23 28.97"
+style="width: 18.09em; height:  3.03em;"> <use
+xlink:href="images/img7261.svg#page7226"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si comparem amb el hamiltonià per a
+l’oscil·lador harmònic unidimensional, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 80.25 22.52"
+style="width:  8.05em; height:  2.38em;"> <use
+xlink:href="images/img7262.svg#page7227"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>veiem que cada <span class="inlinemath"><svg
+viewBox="0 -9.38 11.1 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7263.svg#page7228"> </use> </svg></span> correspon a un
+oscil·lador harmònic unidimensional, depenent de la coordenada
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.69 8.74"
+style="width:  1.07em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7264.svg#page7229"> </use> </svg></span>, amb massa
+unitat i constant de força <span class="inlinemath"><svg
+viewBox="0 -6.92 8.01 8.41"
+style="width:  0.80em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7265.svg#page7230"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 176.96 28.97"
+style="width: 17.76em; height:  3.03em;"> <use
+xlink:href="images/img7266.svg#page7231"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >L’obtenció de les
+autofuncions i autovalors de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7267.svg#page7232"> </use> </svg></span> és
+immediata.</span></summary>
+
+<div class="content"><div class="p"> <span>Cada hamiltonià
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.1 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7268.svg#page7233"> </use> </svg></span> depèn d’una
+coordenada <span class="inlinemath"><svg
+viewBox="0 -6.81 10.69 8.74"
+style="width:  1.07em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7269.svg#page7234"> </use> </svg></span> diferent,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 58.19 11.87"
+style="width:  5.84em; height:  1.31em;"> <use
+xlink:href="images/img7270.svg#page7235"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Com cada <span class="inlinemath"><svg
+viewBox="0 -9.38 11.1 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7271.svg#page7236"> </use> </svg></span> depèn d’una
+coordenada diferent, el hamiltonià vibracional <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7272.svg#page7237"> </use> </svg></span> serà una suma de
+hamiltonians </span><span class="itshape" >independents</span><span>, de manera
+que les autofuncions de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7273.svg#page7238"> </use> </svg></span> seran un
+producte de les autofuncions dels <span class="inlinemath"><svg
+viewBox="0 -9.38 11.1 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7274.svg#page7239"> </use> </svg></span>, mentre que els
+autovalors de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7275.svg#page7240"> </use> </svg></span> seran la suma
+dels autovalors dels <span class="inlinemath"><svg
+viewBox="0 -9.38 11.1 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7276.svg#page7241"> </use> </svg></span> (vegeu </span><a
+href="sections/section.2.4.html#ref::mod:dim">2.4</a><span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.18 271.5 44.68"
+style="width: 27.25em; height:  4.61em;"> <use
+xlink:href="images/img7277.svg#page7242"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Cada <span class="inlinemath"><svg
+viewBox="0 -9.38 11.1 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7278.svg#page7243"> </use> </svg></span> correspon a un
+oscil·lador harmònic amb massa unitat i constant de força
+<span class="inlinemath"><svg
+viewBox="0 -6.92 8.01 8.41"
+style="width:  0.80em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7279.svg#page7244"> </use> </svg></span>, les
+autofuncions <span class="inlinemath">(<svg
+viewBox="0 -6.86 19.58 9.71"
+style="width:  1.96em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7280.svg#page7245"> </use> </svg></span>) i autovalors
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 19.18 9.66"
+style="width:  1.93em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7281.svg#page7246"> </use> </svg></span>) del qual són
+coneguts</span>. <span>En particular, per als autovalors, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.03 214.49 24.54"
+style="width: 21.53em; height:  2.58em;"> <use
+xlink:href="images/img7282.svg#page7247"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.18 267.74 44.68"
+style="width: 26.87em; height:  4.61em;"> <use
+xlink:href="images/img7283.svg#page7248"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Necessitarem
+<span class="inlinemath"><svg
+viewBox="0 -6.81 31.23 7.64"
+style="width:  3.14em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7284.svg#page7249"> </use> </svg></span> nombres
+quàntics, un per cada </span><span class="itshape sffamily" >mode
+normal.</span></summary>
+
+<div class="content"><div class="p"> <span>Com, en l’aproximació harmònica, un
+estat vibracional d’una molècula poliatòmica està constituït per
+<span class="inlinemath"><svg
+viewBox="0 -6.81 31.23 7.64"
+style="width:  3.14em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7285.svg#page7250"> </use> </svg></span> </span><span
+class="itshape" >modes normals</span><span>, necessitarem
+<span class="inlinemath"><svg
+viewBox="0 -6.81 31.23 7.64"
+style="width:  3.14em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7286.svg#page7251"> </use> </svg></span> nombres quàntics
+<span class="inlinemath"><svg
+viewBox="0 -4.29 7.65 5.78"
+style="width:  0.77em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7287.svg#page7252"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 75.07 8.74"
+style="width:  7.53em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7288.svg#page7253"> </use> </svg></span>) per especificar
+l’estat vibracional</span>. <span>La notació utilitzada dóna aquests nombres
+quàntics entre parèntesis, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 77.81 9.96"
+style="width:  7.81em; height:  1.12em;"> <use
+xlink:href="images/img7289.svg#page7254"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>L’energia d’aquest estat serà </span> </div>
+
+<table class="equation" id="ref::vi2:cla:QiHarmonic"><tr><td><svg
+class="equation" viewBox="0 -17.22 152.58 28.97"
+style="width: 15.32em; height:  3.03em;"> <use
+xlink:href="images/img7290.svg#page7255"> </use>
+</svg></td><td>(13.3)</td></tr></table>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 75.04 9.96"
+style="width:  7.53em; height:  1.12em;"> <use
+xlink:href="images/img7291.svg#page7256"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >L’energia del
+</span><span class="itshape sffamily" >punt zero</span><span class="sffamily" >
+és la suma de les energies de tots els modes.</span></summary>
+
+<div class="content"><div class="p"> <span>L’energia del </span><span
+class="itshape" >punt zero</span><span> per a la vibració d’una molècula
+poliatòmica és la suma de les energies del punt zero de tots els modes normals,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 93.44 28.97"
+style="width:  9.38em; height:  3.03em;"> <use
+xlink:href="images/img7292.svg#page7257"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 90.17 28.97"
+style="width:  9.05em; height:  3.03em;"> <use
+xlink:href="images/img7293.svg#page7258"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >valor del terme vibracional</span><span
+class="sffamily" > és <span class="inlinemath"><svg
+viewBox="0 -7.47 151.44 11.1"
+style="width: 15.20em; height:  1.23em; vertical-align: -0.42em;"> <use
+xlink:href="images/img7294.svg#page7259"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>En espectroscòpia, sovint ens
+interessa utilitzar el </span><span class="itshape" >nombre
+d’ona</span><span><span class="inlinemath"> <svg
+viewBox="0 -6.27 5.56 6.27"
+style="width:  0.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7295.svg#page7260"> </use> </svg></span> en comptes de
+<span class="inlinemath">l’energia <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7296.svg#page7261"> </use> </svg></span></span>. <span>La
+relació entre ambdues magnituds és la següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 34.05 20.38"
+style="width:  3.42em; height:  2.17em;"> <use
+xlink:href="images/img7297.svg#page7262"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>L’energia dels estats vibracionals de
+l’Eq. (</span><a
+href="sections/section.13.2.html#ref::vi2:qua:Ev">13.4</a><span>), expressats
+en nombre d’ones, pren la forma següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 162.01 28.97"
+style="width: 16.26em; height:  3.03em;"> <use
+xlink:href="images/img7298.svg#page7263"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.47 39.05 9.96"
+style="width:  3.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7299.svg#page7264"> </use> </svg></span></span>. <span>El
+símbol <span class="inlinemath"><svg
+viewBox="0 -7.47 69.15 9.96"
+style="width:  6.94em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7300.svg#page7265"> </use> </svg></span> representa el
+</span><span class="itshape" >valor del terme vibracional</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 157.58 28.97"
+style="width: 15.82em; height:  3.03em;"> <use
+xlink:href="images/img7301.svg#page7266"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Si els modes
+normals no estan degenerats, els estats de la molècula tampoc.</span></summary>
+
+<div class="content"><div class="p"> <span>Si els modes normals d’una molècula
+poliatòmica no estan degenerats, aleshores, llevat del cas de degeneració
+</span><span class="itshape" >accidental</span><span> (molt improbable), els
+estats vibracionals de la molècula tampoc estaran degenerats</span>. <span>És,
+per exemple, el cas de l’aigua, els modes normals de la qual hem il·lustrat en
+la figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesHHO">13.1</a>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >Si els modes estan
+degenerats, alguns estats també ho estaran.</span></summary>
+
+<div class="content"><div class="p"> <span>Si una molècula poliatòmica presenta
+modes normals degenerats, alguns estats vibracionals de la molècula poden estar
+degenerats</span>. <span>Per exemple, hem vist en la figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesCOO">13.2</a><span> que el
+diòxid de carboni té dos modes normals degenerats (el
+<span class="inlinemath"><svg
+viewBox="0 -4.29 13.21 5.78"
+style="width:  1.33em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7302.svg#page7267"> </use> </svg></span> i el
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.4 5.78"
+style="width:  1.24em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7303.svg#page7268"> </use> </svg></span>)</span>.
+<span>Si escrivim un estat vibracional del <span class="inlinemath"><svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7304.svg#page7269"> </use> </svg></span> com
+<span class="inlinemath"><svg
+viewBox="0 -7.47 66.05 9.96"
+style="width:  6.63em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7305.svg#page7270"> </use> </svg></span>, aleshores els
+tres estats </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 188.63 9.96"
+style="width: 18.93em; height:  1.12em;"> <use
+xlink:href="images/img7306.svg#page7271"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>estan degenerats, com podem comprovar fàcilment
+si avaluem les respectives expressions <span class="inlinemath">de <svg
+viewBox="0 -6.81 7.83 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7307.svg#page7272"> </use> </svg></span></span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 57.42 9.96"
+style="width:  5.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7308.svg#page7273"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7309.svg#page7274"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -14.49 253.98 24"
+style="width: 25.49em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img7310.svg#page7275"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 57.42 9.96"
+style="width:  5.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7311.svg#page7276"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7312.svg#page7277"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -14.49 253.98 24"
+style="width: 25.49em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img7313.svg#page7278"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 57.42 9.96"
+style="width:  5.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7314.svg#page7279"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7315.svg#page7280"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -14.49 253.98 24"
+style="width: 25.49em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img7316.svg#page7281"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>(recordeu que el <span class="inlinemath"><svg
+viewBox="0 -4.29 13.21 5.78"
+style="width:  1.33em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7317.svg#page7282"> </use> </svg></span> i el
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.4 5.78"
+style="width:  1.24em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7318.svg#page7283"> </use> </svg></span> estan degenerats
+i per tant <span class="inlinemath"><svg
+viewBox="0 -4.29 39.39 5.78"
+style="width:  3.95em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7319.svg#page7284"> </use> </svg></span>)</span>.</div>
+</div>
+
+</details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.13.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

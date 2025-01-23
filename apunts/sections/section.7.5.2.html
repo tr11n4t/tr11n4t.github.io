@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Mètode de l’enllaç de valència (EV) | Enllaç covalent</title>
+<meta name="description" content="El mètode de l’enllaç de valència dóna una
+descripció quàntica de l’enllaç covalent. S’aplica a la molècula d’hidrogen.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.7.5.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.7.html"><span>7 Introducció a l’estudi de molècules
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.7.5.html"><span>7.5 La molècula d’hidrogen
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>7.5.2 Mètode de l’enllaç de valència
+(EV) </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4099.svg#page4075"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.5.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.5.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.5.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>7.5.2  Mètode de l’enllaç de valència (EV)</span>
+</h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >enllaç covalent</span><span class="sffamily" > és un
+parell d’electrons compartits.</span></summary>
+
+<div class="content"><div class="p"> <span>El concepte d’</span><span
+class="itshape" >enllaç covalent</span><span> va ser proposat per Lewis</span>.
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Enllaç covalent</span></strong>. <span>Un enllaç
+covalent és un parell d’electrons compartits entre dos àtoms</span>. </div>
+
+</div>
+
+<div class="p"> <span>El </span><span class="itshape" >mètode de l’enllaç de
+valència</span><span> (EV), desenvolupat per Linus Pauling, estudia l’enllaç
+covalent des del punt de vist quàntic</span>. <span>Ho aplicarem al l’enllaç
+covalent més simple, el de la molècula d’hidrogen <span class="inlinemath"><svg
+viewBox="0 -6.86 11.44 8.36"
+style="width:  1.15em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4100.svg#page4076"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Per a
+<span class="inlinemath">l’<svg
+viewBox="0 -6.86 11.44 8.36"
+style="width:  1.15em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4101.svg#page4077"> </use> </svg></span>, el mètode EV
+posa un electró en cada nucli.</span></summary>
+
+<div class="content"><div class="p"> <span>La funció d’ona utilitzada pel
+mètode EV situa l’electró 1 sobre el nucli <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4102.svg#page4078"> </use> </svg></span> i l’electró 2
+sobre el <span class="inlinemath">nucli <svg
+viewBox="0 -6.92 4.28 6.92"
+style="width:  0.43em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4103.svg#page4079"> </use> </svg></span> (o a l’inrevés),
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 214.37 30.74"
+style="width: 21.52em; height:  3.21em;"> <use
+xlink:href="images/img4104.svg#page4080"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.27 13.97 7.77"
+style="width:  1.40em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4105.svg#page4081"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.27 13.15 7.77"
+style="width:  1.32em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4106.svg#page4082"> </use> </svg></span> són el mateixos
+orbitals atòmics que van utilitzar en </span><a class="sffamily small"
+href="sections/section.7.5.1.html#ref::mol:hmo:OMsigmagProp"
+>§7.5.1&vert;3&rang;</a><span> per al mètode OM, i </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 70.78 9.96"
+style="width:  7.10em; height:  1.12em;"> <use
+xlink:href="images/img4107.svg#page4083"> </use> </svg></span> </div>
+
+<div class="p"> <span>La funció d’ona <span class="inlinemath"><svg
+viewBox="0 -6.86 18.98 8.36"
+style="width:  1.91em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4108.svg#page4084"> </use> </svg></span> constitueix la
+descripció quàntica d’un enllaç covalent</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 209.94 30.74"
+style="width: 21.07em; height:  3.21em;"> <use
+xlink:href="images/img4109.svg#page4085"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::mol:hmo:PsiEVCov"> <span>&vert;3&rang;</span> <span
+class="sffamily" >EV </span><span class="itshape sffamily" >no</span><span
+class="sffamily" > té termes iònics:</span> <span class="sffamily" >dissociarà
+correctament.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 209.94 30.74"
+style="width: 21.07em; height:  3.21em;"> <use
+xlink:href="images/img4110.svg#page4086"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 46.26 9.96"
+style="width:  4.64em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4111.svg#page4087"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4112.svg#page4088"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 119.35 9.96"
+style="width: 11.98em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4113.svg#page4089"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 57.96 9.96"
+style="width:  5.82em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4114.svg#page4090"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4115.svg#page4091"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 119.35 9.96"
+style="width: 11.98em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4116.svg#page4092"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Si comparem la funció d’ona EV amb l’OM que hem vist
+en </span><a class="sffamily small"
+href="sections/section.7.5.1.html#ref::mol:hmo:MOIonCov"
+>§7.5.1&vert;6.2&rang;</a><span>, veiem que l’EV no té termes iònics, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 144.08 30.74"
+style="width: 14.46em; height:  3.21em;"> <use
+xlink:href="images/img4117.svg#page4093"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>L’absència de termes iònics fa que el mètode EV
+dissocie correctament</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 141.31 30.74"
+style="width: 14.18em; height:  3.21em;"> <use
+xlink:href="images/img4118.svg#page4094"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Per a
+<span class="inlinemath">l’<svg
+viewBox="0 -6.86 11.44 8.36"
+style="width:  1.15em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4119.svg#page4095"> </use> </svg></span>, EV és un mica
+millors que OM.</span></summary>
+
+<div class="content"><div class="p"> <span>En la taula </span><a
+href="sections/section.7.5.2.html#ref::mol:hmo:taulaev">7.4</a><span> comparem
+els mètodes OM i EV per a la molècula d’hidrogen</span>. <span>El mètode EV és
+una mica millor, tot i que la qualitat tampoc és excessiva</span>. </div>
+
+<div class="table" id="ref::mol:hmo:taulaev">
+<div class="p caption"> <span>Taula 7.4</span>: <span>Distància d’equilibri
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4120.svg#page4096"> </use> </svg></span> i energia
+potencial nuclear <span class="inlinemath"><svg
+viewBox="0 -7.47 27.48 9.96"
+style="width:  2.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4121.svg#page4097"> </use> </svg></span> calculades amb
+els mètodes OM i EV (en unitats atòmiques) per a l’estat fonamental de
+<span class="inlinemath">l’<svg
+viewBox="0 -6.86 11.44 8.36"
+style="width:  1.15em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4122.svg#page4098"> </use> </svg></span></span>. </div>
+
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>Mètode</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4123.svg#page4099"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 27.48 9.96"
+style="width:  2.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4124.svg#page4100"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>OM</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 22.69 6.27"
+style="width:  2.28em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4125.svg#page4101"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 30.44 7.1"
+style="width:  3.06em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4126.svg#page4102"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>EV</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 17.71 6.27"
+style="width:  1.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4127.svg#page4103"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 30.44 7.1"
+style="width:  3.06em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4128.svg#page4104"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>Referència</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 17.71 6.27"
+style="width:  1.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4129.svg#page4105"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 30.44 7.1"
+style="width:  3.06em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4130.svg#page4106"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.7.5.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>El rotor rígid de dues partícules | Autofuncions i autovalors</title>
+<meta name="description" content="El rotor rígid de dues partícules és un
+problema de dos cossos amb energia potencial zero. Les autofuncions són els
+harmònics esfèrics.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.3.5.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.3.html"><span>3 Moment angular </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>3.5 El rotor rígid de dues
+partícules </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img1638.svg#page1622"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.4.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.6.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section" id="ref::ang:rot">  <span>3.5  El rotor rígid de dues
+partícules</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="itshape sffamily" >Rotor
+rígid de dues partícules:</span> <span class="sffamily" >dues partícules en
+rotació a distància constant.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Rotor rígid de dues partícules</span></strong>.
+<span>Un </span><span class="itshape" >rotor rígid de dues
+partícules</span><span> és un sistema de dues partícules en rotació al voltant
+del seu centre de masses, però que mantenen una distància constant entre
+elles</span>. </div>
+
+<div class="p"> <span>L’energia potencial d’aquest sistema és zero</span>:
+<span><span class="inlinemath"><svg
+viewBox="0 -6.81 26.29 6.81"
+style="width:  2.64em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1639.svg#page1623"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Com exemple tindríem un molècula diatòmica, que
+en primera aproximació, i si no rota molt de pressa, podem considerar
+rígida</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >El rotor rígid de
+dues partícules és un problema de dos cossos.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >És un cas
+particular del </span><span class="itshape sffamily" >problema de dos
+cossos.</span></summary>
+
+<div class="content"><div class="p"> <span>El rotor rígid de dues partícules és
+un cas particular del </span><span class="itshape" >problema de dos
+cossos</span><span> que hem estudiat §</span><a
+href="sections/section.2.5.html#ref::mod:cos">2.5</a><span>, i que vam separar
+en dos components</span>: <span>el </span><span class="itshape" >centre de
+masses</span><span> (que es mou com una partícula lliure), i una </span><span
+class="itshape" >partícula reduïda</span><span> (que haurem de resoldre per a
+cada cas particular)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ang:cos:red"> <span>&vert;2.2&rang;</span> <span
+class="sffamily" >La partícula reduïda, millor en coordenades
+esfèriques.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 88.99 24.46"
+style="width:  8.93em; height:  2.58em;"> <use
+xlink:href="images/img1640.svg#page1624"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>El hamiltonià de la partícula reduïda el varem veure
+en </span><a class="sffamily small"
+href="sections/section.2.5.html#ref::mod:cos:Hr" >§2.5&vert;9&rang;</a><span>,
+però és convenient reescriure’l en coordenades esfèriques</span>. <span>Per fer
+això, expressem <span class="inlinemath"><svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1641.svg#page1625"> </use> </svg></span> en aquestes
+coordenades, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.32 -7.47 52.85 9.96"
+style="width:  5.30em; height:  1.12em;"> <use
+xlink:href="images/img1642.svg#page1626"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>de manera que el potencial quedaria com </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 76.33 9.96"
+style="width:  7.66em; height:  1.12em;"> <use
+xlink:href="images/img1643.svg#page1627"> </use> </svg></span> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 120.85 23.02"
+style="width: 12.13em; height:  2.43em;"> <use
+xlink:href="images/img1644.svg#page1628"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Ara substituïm l’expressió de l’</span><span
+class="itshape" >operador laplacià</span><span><span class="inlinemath"> <svg
+viewBox="0 -8.11 12.27 8.11"
+style="width:  1.23em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1645.svg#page1629"> </use> </svg></span> en coordenades
+esfèriques (vegeu </span><a class="sffamily small"
+href="sections/section.3.4.html#ref::ang:fnt:lapla"
+>§3.4&vert;2.5&rang;</a><span>) en el hamiltonià de la partícula reduïda i
+obtenim finalment </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 205.65 25.2"
+style="width: 20.64em; height:  2.65em;"> <use
+xlink:href="images/img1646.svg#page1630"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >L’energia
+potencial és zero.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 202.89 25.2"
+style="width: 20.37em; height:  2.65em;"> <use
+xlink:href="images/img1647.svg#page1631"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Un rotor rígid no té energia potencial, només té energia
+cinètica, de manera que podem considerar que és un problema de dos cossos com
+el definit en </span><a class="sffamily small"
+href="sections/section.2.5.html#ref::mod:cos:definicio"
+>§2.5&vert;1&rang;</a><span>, però amb la particularitat que el potencial és
+nul, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 60.77 9.96"
+style="width:  6.10em; height:  1.12em;"> <use
+xlink:href="images/img1648.svg#page1632"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>cosa que ens simplifica el hamiltonià de la
+partícula reduïda vist en </span><a class="sffamily small"
+href="sections/section.3.5.html#ref::ang:cos:red"
+>§3.5&vert;2.2&rang;</a><span> a </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 155.4 25.2"
+style="width: 15.60em; height:  2.65em;"> <use
+xlink:href="images/img1649.svg#page1633"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 150.97 25.2"
+style="width: 15.15em; height:  2.65em;"> <use
+xlink:href="images/img1650.svg#page1634"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4&rang;</span> <span class="sffamily" >La funció d’ona
+no dependrà de <span class="inlinemath"><svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1651.svg#page1635"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 150.97 25.2"
+style="width: 15.15em; height:  2.65em;"> <use
+xlink:href="images/img1652.svg#page1636"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>En coordenades esfèriques, les funcions d’ona que
+descriuen el sistema només dependran <span class="inlinemath">de <svg
+viewBox="0 -6.92 4.95 6.92"
+style="width:  0.50em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1653.svg#page1637"> </use> </svg></span> i
+<span class="inlinemath">de <svg
+viewBox="0 -6.92 5.94 8.86"
+style="width:  0.60em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1654.svg#page1638"> </use> </svg></span>, però no
+<span class="inlinemath">de <svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1655.svg#page1639"> </use> </svg></span>, ja
+<span class="inlinemath">que <svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1656.svg#page1640"> </use> </svg></span> és constant i no
+té sentit considerar-la una coordenada variable, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 54.62 9.96"
+style="width:  5.48em; height:  1.12em;"> <use
+xlink:href="images/img1657.svg#page1641"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, si <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1658.svg#page1642"> </use> </svg></span> no depèn de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1659.svg#page1643"> </use> </svg></span>, les següents
+derivades seran nul·les, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.66 42.63 20.49"
+style="width:  4.28em; height:  2.18em; vertical-align: -0.75em;"> <use
+xlink:href="images/img1660.svg#page1644"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1661.svg#page1645"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1662.svg#page1646"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.85 47.09 21.68"
+style="width:  4.73em; height:  2.30em; vertical-align: -0.75em;"> <use
+xlink:href="images/img1663.svg#page1647"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1664.svg#page1648"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 7.75 6.27"
+style="width:  0.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1665.svg#page1649"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Això implica que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 225.79 25.2"
+style="width: 22.66em; height:  2.65em;"> <use
+xlink:href="images/img1666.svg#page1650"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 59.01 21.78"
+style="width:  5.92em; height:  2.31em;"> <use
+xlink:href="images/img1667.svg#page1651"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 55.74 21.78"
+style="width:  5.60em; height:  2.31em;"> <use
+xlink:href="images/img1668.svg#page1652"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.5&rang;</span> <span class="sffamily" >L’operador
+hamiltonià és <span class="inlinemath"><svg
+viewBox="0 -9.95 62.64 12.44"
+style="width:  6.29em; height:  1.37em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1669.svg#page1653"> </use> </svg></span>, on
+<span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1670.svg#page1654"> </use> </svg></span> és el
+</span><span class="itshape sffamily" >moment d’inèrcia.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a aquest sistema, la quantitat
+<span class="inlinemath"><svg
+viewBox="0 -8.11 14.75 10.05"
+style="width:  1.48em; height:  1.13em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1671.svg#page1655"> </use> </svg></span> correspon al
+</span><span class="itshape" >moment d’inèrcia</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1672.svg#page1656"> </use> </svg></span></span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 36.46 10.54"
+style="width:  3.66em; height:  1.18em;"> <use
+xlink:href="images/img1673.svg#page1657"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>de manera que l’operador hamiltonià per al rotor
+rígid quedarà finalment com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 50.59 19.85"
+style="width:  5.08em; height:  2.11em;"> <use
+xlink:href="images/img1674.svg#page1658"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Vegeu la taula </span><a
+href="sections/section.3.2.html#ref::ang:orb:lineal-angular">3.1</a><span> per
+a una equivalència simbòlica entre moviments lineals i angulars</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 47.32 19.85"
+style="width:  4.75em; height:  2.11em;"> <use
+xlink:href="images/img1675.svg#page1659"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Les autofuncions
+de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1676.svg#page1660"> </use> </svg></span> són els
+harmònics esfèrics <span class="inlinemath"><svg
+viewBox="0 -6.81 15.07 9.99"
+style="width:  1.51em; height:  1.12em; vertical-align: -0.38em;"> <use
+xlink:href="images/img1677.svg#page1661"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 26.32 12.06"
+style="width:  2.64em; height:  1.33em; vertical-align: -0.33em;"> <use
+xlink:href="images/img1678.svg#page1662"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1679.svg#page1663"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.95 132.69 11.63"
+style="width: 13.32em; height:  1.29em; vertical-align: -0.33em;"> <use
+xlink:href="images/img1680.svg#page1664"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 26.44 12.06"
+style="width:  2.65em; height:  1.33em; vertical-align: -0.33em;"> <use
+xlink:href="images/img1681.svg#page1665"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1682.svg#page1666"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.12 166.6 9.8"
+style="width: 16.72em; height:  1.10em; vertical-align: -0.33em;"> <use
+xlink:href="images/img1683.svg#page1667"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Com, per al rotor rígid, el moment d’inèrcia
+<span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1684.svg#page1668"> </use> </svg></span> és constant,
+tindrem que el hamiltonià és proporcional a <span class="inlinemath"><svg
+viewBox="0 -9.38 10.75 9.38"
+style="width:  1.08em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1685.svg#page1669"> </use> </svg></span>, cosa que fa que
+les autofuncions de <span class="inlinemath"><svg
+viewBox="0 -9.38 10.75 9.38"
+style="width:  1.08em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1686.svg#page1670"> </use> </svg></span> (els harmònics
+esfèrics que hem vist en </span><a class="sffamily small"
+href="sections/section.3.4.html#ref::ang:fnt:Ylm" >§3.4&vert;9&rang;</a><span>)
+també siguin autofuncions de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1687.svg#page1671"> </use> </svg></span></span>. <span>Ho
+comprovarem</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 238.91 22.52"
+style="width: 23.98em; height:  2.38em;"> <use
+xlink:href="images/img1688.svg#page1672"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ang:rot:El"> <span>&vert;4&rang;</span> <span
+class="sffamily" >Els autovalors de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1689.svg#page1673"> </use> </svg></span> són
+<span class="inlinemath"><svg
+viewBox="0 -8.95 88.02 11.44"
+style="width:  8.83em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1690.svg#page1674"> </use> </svg></span>, i estan
+degenerats.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem vist que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 101.78 22.52"
+style="width: 10.22em; height:  2.38em;"> <use
+xlink:href="images/img1691.svg#page1675"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, que l’autovalor corresponent a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 15.07 9.99"
+style="width:  1.51em; height:  1.12em; vertical-align: -0.38em;"> <use
+xlink:href="images/img1692.svg#page1676"> </use> </svg></span> és </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 70.31 22.52"
+style="width:  7.06em; height:  2.38em;"> <use
+xlink:href="images/img1693.svg#page1677"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Noteu que els autovalors no depenen del nombre
+quàntic <span class="inlinemath"><svg
+viewBox="0 -4.29 8.75 4.29"
+style="width:  0.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1694.svg#page1678"> </use> </svg></span>, cosa que
+provoca </span><span class="itshape" >degeneració</span>. <span>El </span><span
+class="itshape" >grau de degeneració</span><span> és
+<span class="inlinemath"><svg
+viewBox="0 -6.92 25.31 7.75"
+style="width:  2.54em; height:  0.90em; vertical-align: -0.14em;"> <use
+xlink:href="images/img1695.svg#page1679"> </use> </svg></span> (per a un
+determinat <span class="inlinemath"><svg
+viewBox="0 -6.92 3.17 6.92"
+style="width:  0.32em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1696.svg#page1680"> </use> </svg></span>, hi ha
+<span class="inlinemath"><svg
+viewBox="0 -6.92 25.31 7.75"
+style="width:  2.54em; height:  0.90em; vertical-align: -0.14em;"> <use
+xlink:href="images/img1697.svg#page1681"> </use> </svg></span> possibles valors
+de <span class="inlinemath"><svg
+viewBox="0 -4.29 8.75 4.29"
+style="width:  0.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1698.svg#page1682"> </use> </svg></span></span>:
+<span><span class="inlinemath"><svg
+viewBox="0 -6.92 93.48 8.86"
+style="width:  9.38em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1699.svg#page1683"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.3.5.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

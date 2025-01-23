@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Transicions espectroscòpiques vibracionals | Molècules
+poliatòmiques</title>
+<meta name="description" content="S’expliquen les regles de selecció en el
+infraroig. Modes actius. Sobretons, bandes de combinació i de diferència.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.13.3.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.13.html"><span>13 Espectres de vibració de molècules
+poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>13.3 Transicions espectroscòpiques
+vibracionals </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img7320.svg#page7285"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.2.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.4.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>13.3  Transicions espectroscòpiques
+vibracionals</span> </h4>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:vib:Mgeneral"> <span>&vert;1&rang;</span> <span
+class="sffamily" >Hem de calcular el moment dipolar de transició
+<span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7321.svg#page7286"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que volem estudiar la
+següent transició espectroscòpica entre dos estats vibracionals, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 195.72 11.42"
+style="width: 19.64em; height:  1.27em;"> <use
+xlink:href="images/img7322.svg#page7287"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>El corresponent </span><span class="itshape"
+>moment dipolar de transició</span><span> és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 267.66 28.97"
+style="width: 26.87em; height:  3.03em;"> <use
+xlink:href="images/img7323.svg#page7288"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.86 19.58 11.47"
+style="width:  1.96em; height:  1.27em; vertical-align: -0.52em;"> <use
+xlink:href="images/img7324.svg#page7289"> </use> </svg></span> és l’autofunció
+de l’oscil·lador harmònic (mode normal) unidimensional
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7325.svg#page7290"> </use> </svg></span>-èsim
+corresponent a l’estat amb nombre quàntic <span class="inlinemath"><svg
+viewBox="0 -7.49 7.65 10.44"
+style="width:  0.77em; height:  1.17em; vertical-align: -0.36em;"> <use
+xlink:href="images/img7326.svg#page7291"> </use> </svg></span>, amb una
+definició anàloga per a <span class="inlinemath"><svg
+viewBox="0 -6.86 21.56 11.47"
+style="width:  2.16em; height:  1.27em; vertical-align: -0.52em;"> <use
+xlink:href="images/img7327.svg#page7292"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 264.89 28.97"
+style="width: 26.59em; height:  3.03em;"> <use
+xlink:href="images/img7328.svg#page7293"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:vib:muhar"> <span>&vert;2&rang;</span> <span
+class="sffamily" >En l’aproximació harmònica, <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7329.svg#page7294"> </use> </svg></span> s’expressa en
+sèrie de Taylor.</span></summary>
+
+<div class="content"><div class="p"> <span>En l’aproximació harmònica, el
+moment dipolar permanent de la molècula s’expressa com una expansió de Taylor
+de primer ordre, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 118.62 28.97"
+style="width: 11.91em; height:  3.03em;"> <use
+xlink:href="images/img7330.svg#page7295"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on el subíndex <span class="inlinemath"><svg
+viewBox="0 -4.29 4.64 4.29"
+style="width:  0.47em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7331.svg#page7296"> </use> </svg></span> ens indica que
+tant <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7332.svg#page7297"> </use> </svg></span> com les seves
+derivades han d’avaluar-se en la geometria d’equilibri,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 113.83 8.74"
+style="width: 11.43em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7333.svg#page7298"> </use> </svg></span></span>.</div>
+</div>
+
+</details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 115.36 28.97"
+style="width: 11.58em; height:  3.03em;"> <use
+xlink:href="images/img7334.svg#page7299"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:vib:Mdmu"> <span>&vert;3&rang;</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7335.svg#page7300"> </use> </svg></span> no depèn de
+<span class="inlinemath"><svg
+viewBox="0 -7.12 9.78 9.05"
+style="width:  0.98em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7336.svg#page7301"> </use> </svg></span>, sinó de les
+derivades de <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7337.svg#page7302"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 115.36 28.97"
+style="width: 11.58em; height:  3.03em;"> <use
+xlink:href="images/img7338.svg#page7303"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Per a calcular el moment dipolar de transició, hi
+substituïm la aproximació harmònica per a <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7339.svg#page7304"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.13.3.html#ref::vi2:vib:muhar"
+>§13.3&vert;2&rang;</a><span> </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7340.svg#page7305"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7341.svg#page7306"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.99 42.67 10.48"
+style="width:  4.28em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7342.svg#page7307"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7343.svg#page7308"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -17.48 149.29 29.98"
+style="width: 14.98em; height:  3.13em; vertical-align: -1.31em;"> <use
+xlink:href="images/img7344.svg#page7309"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7345.svg#page7310"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -17.22 184.85 28.97"
+style="width: 18.55em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7346.svg#page7311"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7347.svg#page7312"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.22 166.59 28.97"
+style="width: 16.72em; height:  3.03em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7348.svg#page7313"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p"> <span>Ara bé, <span class="inlinemath"><svg
+viewBox="0 -7.49 10.05 7.49"
+style="width:  1.01em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7349.svg#page7314"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 12.34 7.49"
+style="width:  1.24em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7350.svg#page7315"> </use> </svg></span> són autofuncions
+de l’operador hamiltonià utilitzat en l’aproximació harmònica, i per tant són
+ortogonals, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 54.93 10.48"
+style="width:  5.51em; height:  1.17em;"> <use
+xlink:href="images/img7351.svg#page7316"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>cosa que ens permet simplificar
+<span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7352.svg#page7317"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 153.49 28.97"
+style="width: 15.41em; height:  3.03em;"> <use
+xlink:href="images/img7353.svg#page7318"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 149.06 28.97"
+style="width: 14.96em; height:  3.03em;"> <use
+xlink:href="images/img7354.svg#page7319"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Mode </span><span
+class="itshape sffamily" >actiu:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7355.svg#page7320"> </use> </svg></span> canvia durant la
+vibració del mode.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Mode actiu</span></strong>. <span>Es diu que un
+mode normal de vibració amb <span class="inlinemath">coordenada <svg
+viewBox="0 -6.81 10.69 8.74"
+style="width:  1.07em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7356.svg#page7321"> </use> </svg></span> és </span><span
+class="itshape" >actiu</span><span> en l’infraroig si la vibració d’eixe mode
+normal fa canviar el moment <span class="inlinemath">dipolar (<svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7357.svg#page7322"> </use> </svg></span>) de la molècula,
+cosa que implica que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 59.4 24.5"
+style="width:  5.96em; height:  2.58em;"> <use
+xlink:href="images/img7358.svg#page7323"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 149.06 28.97"
+style="width: 14.96em; height:  3.03em;"> <use
+xlink:href="images/img7359.svg#page7324"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Observacions</span>: </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>En l’aproximació harmònica, i segons hem vist
+en </span><a class="sffamily small"
+href="sections/section.13.3.html#ref::vi2:vib:Mdmu"
+>§13.3&vert;3&rang;</a><span>, només els modes actius contribuiran al moment
+dipolar de <span class="inlinemath">transició <svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7360.svg#page7325"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>No importa si la molècula és polar o apolar</span>:
+<span>allò que importa és si la vibració </span><span class="itshape" >fa
+canviar</span><span> el moment dipolar</span>:
+<span><span class="inlinemath"><svg
+viewBox="0 -7.47 52.13 9.96"
+style="width:  5.23em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7361.svg#page7326"> </use> </svg></span></span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:vib:ReglaHarmonica"> <span>&vert;5&rang;</span> <span
+class="sffamily" >Regles de selecció:</span> <span class="sffamily" >només un
+mode, <span class="inlinemath"><svg
+viewBox="0 -7.13 42.46 8.63"
+style="width:  4.26em; height:  0.99em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7362.svg#page7327"> </use> </svg></span>,
+actiu.</span></summary>
+
+<div class="content"><div class="p"> <span>Enunciem a continuació les regles de
+selecció, per a molècules poliatòmiques i dins de l’aproximació harmònica, de
+les transicions vibracionals en l’infraroig</span>. <span>La demostració podeu
+trobar-la en la bibliografia[<a
+href="sections/biblio.html#bib::LEVINE1980">19</a>, <a
+href="sections/biblio.html#bib::REQUENA2004">27</a>]</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Regles de selecció de poliatòmiques en l’infraroig
+(aproximació harmònica)</span></strong>. <span>Considereu una transició
+vibracional en l’</span><span class="itshape" >infraroig</span><span> d’una
+molècula poliatòmica</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 195.72 11.42"
+style="width: 19.64em; height:  1.27em;"> <use
+xlink:href="images/img7363.svg#page7328"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Segons l’</span><span class="itshape"
+>aproximació harmònica</span><span>, aquesta transició estarà permesa únicament
+si es compleixen les tres condicions següents</span>: </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>La transició afecta a </span><span class="itshape" >un i
+només a un mode</span><span> normal, per exemple,
+<span class="inlinemath">l’<svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7364.svg#page7329"> </use> </svg></span>-èsim</span>:
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 124.5 11.81"
+style="width: 12.50em; height:  1.30em;"> <use
+xlink:href="images/img7365.svg#page7330"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>El nombre quàntic del mode afectat canvia en una
+unitat</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 89.11 10.45"
+style="width:  8.95em; height:  1.17em;"> <use
+xlink:href="images/img7366.svg#page7331"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>El mode <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7367.svg#page7332"> </use> </svg></span>-èsim és
+</span><span class="itshape" >actiu</span>. </div>
+
+</li></ol>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.1&rang;</span> <span class="sffamily" >Compte!</span>
+<span class="sffamily" >Fora de l’aproximació harmònica pot canviar més d’un
+<span class="inlinemath"><svg
+viewBox="0 -4.29 7.65 5.78"
+style="width:  0.77em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7368.svg#page7333"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Compte que el fet que només pugui
+canviar un <span class="inlinemath"><svg
+viewBox="0 -4.29 7.65 5.78"
+style="width:  0.77em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7369.svg#page7334"> </use> </svg></span> i amb la regla
+de selecció <span class="inlinemath"><svg
+viewBox="0 -7.13 42.46 8.63"
+style="width:  4.26em; height:  0.99em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7370.svg#page7335"> </use> </svg></span> ja no és
+rigorosament cert fora de l’aproximació harmònica</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Les bandes
+</span><span class="itshape sffamily" >fonamentals</span><span class="sffamily"
+> són les més intenses.</span></summary>
+
+<div class="content"><div class="figure" id="ref::vi1:vib:Bandes">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox=".68 -97.11 274.18 93.84"
+style="width: 27.52em; height:  9.87em;"> <use
+xlink:href="images/img7371.svg#page7336"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 13.3</span>: <span>Esquema dels diversos
+tipus de bandes que apareixen en l’espectre d’infrarojos d’una molècula amb
+tres modes normals</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.1&rang;</span> <span class="sffamily" >Les </span><span
+class="itshape sffamily" >bandes fonamentals</span><span class="sffamily" >
+parteixen de l’estat fonamental i exciten un mode.</span></summary>
+
+<div class="content"><div class="p"> <span>Una </span><span class="itshape"
+>banda fonamental</span><span> correspon una transició espectroscòpica que
+parteix de l’estat fonamental i passa a un estat de major energia, però
+excitant només un mode normal al seu primer estat excitat</span>. <span>Per
+exemple, una molècula que tinga modes normals amb freqüències
+<span class="inlinemath">respectives <svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7372.svg#page7337"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7373.svg#page7338"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7374.svg#page7339"> </use> </svg></span> mostrarà tres
+bandes fonamentals corresponents a les següents transicions, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7375.svg#page7340"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7376.svg#page7341"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7377.svg#page7342"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>(la freqüència de cada transició ve indicada
+damunt de la fletxa)</span>. <span>Ho il·lustrem en la figura </span><a
+href="sections/section.13.3.html#ref::vi1:vib:Bandes">13.3</a>. </div>
+
+<div class="p"> <span>Atès que, a temperatures no massa elevades, la majoria de
+les molècules es troben en l’estat vibracional fonamental, i que aquest tipus
+de transicions està permès per l’aproximació harmònica, resulta que les bandes
+fonamentals són les més intenses d’un espectre d’infrarojos</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7378.svg#page7343"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7379.svg#page7344"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7380.svg#page7345"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.2&rang;</span> <span class="sffamily" >Les </span><span
+class="itshape sffamily" >bandes calentes</span><span class="sffamily" >
+parteixen d’un estat excitat, i són poc intenses.</span></summary>
+
+<div class="content"><div class="p"> <span>La transició </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em;"> <use
+xlink:href="images/img7381.svg#page7346"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>que mostrem en la figura </span><a
+href="sections/section.13.3.html#ref::vi1:vib:Bandes">13.3</a><span> és una
+</span><span class="itshape" >banda calenta</span><span> que parteix d’un estat
+excitat i excita només un mode normal (cosa que està permesa dins l’aproximació
+harmònica)</span>. <span>Aquestes bandes només tenen una intensitat apreciable
+a temperatures elevades, perquè a temperatures baixes l’estat de partida estarà
+molt poc poblat</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.76 78.59 11.25"
+style="width:  7.89em; height:  1.25em;"> <use
+xlink:href="images/img7382.svg#page7347"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.3&rang;</span> <span class="sffamily" >L’</span><span
+class="itshape sffamily" >anharmonicitat</span><span class="sffamily" > explica
+</span><span class="itshape sffamily" >sobretons</span><span class="sffamily"
+>, bandes de </span><span class="itshape sffamily" >combinació</span><span
+class="sffamily" >, &hellip;.</span></summary>
+
+<div class="content"><div class="p"> <span>A més de les bandes fonamentals i
+bandes calentes que hem vist en la figura </span><a
+href="sections/section.13.3.html#ref::vi1:vib:Bandes">13.3</a><span>, també hi
+troben les següents bandes, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.25 83.25 12.74"
+style="width:  8.36em; height:  1.40em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7383.svg#page7348"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.86 31.63 6.86"
+style="width:  3.17em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7384.svg#page7349"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.07 93.28 12.56"
+style="width:  9.36em; height:  1.38em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7385.svg#page7350"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.86 91.6 6.86"
+style="width:  9.19em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7386.svg#page7351"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.08 93.39 12.57"
+style="width:  9.37em; height:  1.38em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7387.svg#page7352"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.86 87.75 6.86"
+style="width:  8.81em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7388.svg#page7353"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Aquestes bandes estan prohibides per
+l’aproximació harmònica, i la seva aparició s’explica afegint </span><span
+class="itshape" >correccions d’anharmonicitat</span>. <span>La intensitat
+d’aquestes bandes és petita</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.25 83.25 12.74"
+style="width:  8.36em; height:  1.40em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7389.svg#page7354"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.86 31.63 6.86"
+style="width:  3.17em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7390.svg#page7355"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.07 93.28 12.56"
+style="width:  9.36em; height:  1.38em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7391.svg#page7356"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.86 91.6 6.86"
+style="width:  9.19em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7392.svg#page7357"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.08 93.39 12.57"
+style="width:  9.37em; height:  1.38em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7393.svg#page7358"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="9.96 -6.86 85.09 6.86"
+style="width:  8.54em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7394.svg#page7359"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Exemple:</span>
+<span class="sffamily" >les triatòmiques </span><span class="itshape sffamily"
+>lineals</span><span class="sffamily" > tipus <span class="inlinemath"><svg
+viewBox="0 -6.86 22.45 6.86"
+style="width:  2.25em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7395.svg#page7360"> </use> </svg></span> tenen un mode
+</span><span class="itshape sffamily" >inactiu.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;7.1&rang;</span> <span class="sffamily" >Classifiquem les
+triatòmiques en </span><span class="itshape sffamily" >angulars</span><span
+class="sffamily" >, </span><span class="itshape sffamily" >lineals</span><span
+class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -6.86 22.45 6.86"
+style="width:  2.25em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7396.svg#page7361"> </use> </svg></span> i </span><span
+class="itshape sffamily" >lineals</span><span class="sffamily" >
+<span class="inlinemath"><svg
+viewBox="0 -6.86 21.03 6.86"
+style="width:  2.11em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7397.svg#page7362"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Pel que fa a l’espectroscòpia
+infraroja, podem classificar les molècules triatòmiques en tres grups</span>:
+<span class="itshape" >angulars</span><span> (per exemple, l’aigua
+<span class="inlinemath"><svg
+viewBox="0 -6.86 19.69 8.36"
+style="width:  1.98em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7398.svg#page7363"> </use> </svg></span>), </span><span
+class="itshape" >lineals</span><span> del tipus <span class="inlinemath"><svg
+viewBox="0 -6.86 22.45 6.86"
+style="width:  2.25em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7399.svg#page7364"> </use> </svg></span> (per exemple, el
+diòxid de carboni <span class="inlinemath"><svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7400.svg#page7365"> </use> </svg></span>), i lineals del
+tipus <span class="inlinemath"><svg
+viewBox="0 -6.86 21.03 6.86"
+style="width:  2.11em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7401.svg#page7366"> </use> </svg></span> (per exemple, el
+cianur d’hidrogen <span class="inlinemath"><svg
+viewBox="0 -6.86 22.14 6.86"
+style="width:  2.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7402.svg#page7367"> </use> </svg></span>)</span>. </div>
+
+<div class="p"> <span>Discutirem a continuació l’espectre d’infrarojos
+d’aquestes tres molècules</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.2&rang;</span> <span class="sffamily" >Tots tres modes
+de l’aigua són actius.</span> <span class="sffamily" >Observem tres
+bandes.</span></summary>
+
+<div class="content"><div class="p"> <span>En la figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesHHO">13.1</a><span> hem
+mostrat els modes de vibració de la molècula d’aigua</span>. <span>És fàcil
+veure, examinant el moviment dels nuclis, que la vibració de qualsevol dels
+tres modes canvia el moment dipolar permanent de la molècula</span>. <span>Per
+tant, tots tres modes seran actius, i l’espectre d’infrarojos presentarà tres
+bandes fonamentals</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="2.73 -67.67 233.16 68.03"
+style="width: 23.40em; height:  6.95em;"> <use
+xlink:href="images/img7403.svg#page7368"> </use> </svg> </span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.3&rang;</span> <span class="sffamily" >El
+<span class="inlinemath"><svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7404.svg#page7369"> </use> </svg></span> té un mode
+inactiu.</span> <span class="sffamily" >Observem dues bandes.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem veure en la figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesCOO">13.2</a><span> que la
+</span><span class="itshape" >tensió simètrica</span><span> del diòxid de
+carboni no canvia el moment dipolar permanent de la molècula, cosa que fa que
+sigui un mode inactiu</span>. <span>Els altres tres modes del
+<span class="inlinemath"><svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7405.svg#page7370"> </use> </svg></span> són
+actius</span>. <span>Ara bé, com dos modes <span class="inlinemath">(<svg
+viewBox="0 -4.29 13.21 5.78"
+style="width:  1.33em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7406.svg#page7371"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.4 5.78"
+style="width:  1.24em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7407.svg#page7372"> </use> </svg></span>) estan
+degenerats, en l’espectre d’infrarojos només observarem dues bandes
+fonamentals</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="0 -146.23 207.06 127.09"
+style="width: 20.78em; height: 14.80em;"> <use
+xlink:href="images/img7408.svg#page7373"> </use> </svg> </span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.4&rang;</span> <span class="sffamily" >Tots quatre
+modes de <span class="inlinemath">l’<svg
+viewBox="0 -6.86 22.14 6.86"
+style="width:  2.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7409.svg#page7374"> </use> </svg></span> són
+actius.</span> <span class="sffamily" >Observem tres bandes.</span></summary>
+
+<div class="content"><div class="figure" id="ref::vi2:vib:ModesHCN">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -127.34 192.89 127.09"
+style="width: 19.36em; height: 12.90em;"> <use
+xlink:href="images/img7410.svg#page7375"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 13.4</span>: <span>Esquema dels modes
+normals de vibració del cianur d’hidrogen <span class="inlinemath">(<svg
+viewBox="0 -6.86 22.14 6.86"
+style="width:  2.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7411.svg#page7376"> </use> </svg></span>)</span>.
+<span>Les freqüències <span class="inlinemath"><svg
+viewBox="0 -4.29 13.21 5.78"
+style="width:  1.33em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7412.svg#page7377"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.4 5.78"
+style="width:  1.24em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7413.svg#page7378"> </use> </svg></span> son
+iguals</span>. </div>
+
+</div>
+
+<div class="p"> <span>Mostrem un esquema dels modes normals de vibració de la
+molècula de cianur <span class="inlinemath">d’hidrogen (<svg
+viewBox="0 -6.86 22.14 6.86"
+style="width:  2.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7414.svg#page7379"> </use> </svg></span>) en la
+figura </span><a
+href="sections/section.13.3.html#ref::vi2:vib:ModesHCN">13.4</a><span>, on és
+fàcil veure, examinant el moviment dels nuclis, que la vibració de qualsevol
+dels quatre modes canvia el moment dipolar permanent de la molècula</span>.
+<span>Per tant, tots quatre modes seran actius</span>. <span>Ara bé, com dos
+modes <span class="inlinemath">(<svg
+viewBox="0 -4.29 13.21 5.78"
+style="width:  1.33em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7415.svg#page7380"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.4 5.78"
+style="width:  1.24em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7416.svg#page7381"> </use> </svg></span>) estan
+degenerats, en l’espectre d’infrarojos només observarem tres bandes
+fonamentals</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="0 -127.34 192.89 127.09"
+style="width: 19.36em; height: 12.90em;"> <use
+xlink:href="images/img7417.svg#page7382"> </use> </svg> </span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.5&rang;</span> <span class="sffamily" >Les freqüències
+de les tensions són més grans que les de les flexions.</span></summary>
+
+<div class="content"><div class="p"> <span>Quantitativament, les freqüències
+del modes de tensió són més grans que les dels modes de flexió</span>.
+<span>Per exemple, per a l’aigua, les freqüències son </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.65 254.43 24.31"
+style="width: 25.54em; height:  2.56em;"> <use
+xlink:href="images/img7418.svg#page7383"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.65 251.67 24.31"
+style="width: 25.26em; height:  2.56em;"> <use
+xlink:href="images/img7419.svg#page7384"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >Els grups
+funcionals orgànics tenen freqüències característiques.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;8.1&rang;</span> <span class="sffamily" >La vibració pot
+estar localitzada en una part de la molècula.</span></summary>
+
+<div class="content"><div class="p"> <span>En general, un mode normal fa
+vibrar, poc o molt, tots els nuclis d’una molècula</span>. <span>Ara bé, de
+vegades la vibració està localitzada, principalment, en només una part de la
+molècula</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.2&rang;</span> <span class="sffamily" >Exemple:</span>
+<span class="sffamily" >la freqüència del grup <span class="inlinemath"><svg
+viewBox="0 -6.86 35.15 7.69"
+style="width:  3.53em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7420.svg#page7385"> </use> </svg></span> és similar en
+tots els alcohols.</span></summary>
+
+<div class="content"><div class="p"> <span>Com exemple considerem un grup
+<span class="inlinemath"><svg
+viewBox="0 -6.86 35.15 7.69"
+style="width:  3.53em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7421.svg#page7386"> </use> </svg></span> en un alcohol
+<span class="inlinemath"><svg
+viewBox="0 -6.86 47.14 7.69"
+style="width:  4.73em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7422.svg#page7387"> </use> </svg></span></span>. <span>La
+massa del nucli d’hidrogen és molt petita comparada amb la de l’oxigen, que
+podem considerar, per comparació, infinita</span>. <span>Aleshores, la massa de
+la resta de la molècula (R) no afectarà la vibració de l’hidrogen, que dependrà
+només de la constant de força de l’enllaç <span class="inlinemath"><svg
+viewBox="0 -6.86 27.4 7.69"
+style="width:  2.75em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7423.svg#page7388"> </use> </svg></span>, enllaç que és,
+si fa no fa, igual en tots els alcohols</span>. </div>
+
+<div class="p"> <span>La conclusió és que la freqüència de vibració del grup
+<span class="inlinemath"><svg
+viewBox="0 -6.86 35.15 7.69"
+style="width:  3.53em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7424.svg#page7389"> </use> </svg></span> serà
+aproximadament la mateixa en tots els alcohols <span class="inlinemath"><svg
+viewBox="0 -6.86 47.14 7.69"
+style="width:  4.73em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7425.svg#page7390"> </use> </svg></span>, independentment
+de la naturalesa de R. </span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.3&rang;</span> <span class="sffamily" >Molts grups
+funcionals:</span> <span class="sffamily" >freqüències paregudes en
+</span><span class="itshape sffamily" >totes</span><span class="sffamily" > les
+molècules.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a altres grups funcionals, la
+situació és similar a la que acabem de descriure per al
+<span class="inlinemath"><svg
+viewBox="0 -6.86 35.15 7.69"
+style="width:  3.53em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7426.svg#page7391"> </use> </svg></span></span>:
+<span>les freqüències vibracionals dels grups funcionals orgànics varien d’una
+molècula a un altra, però la variació és molt petita</span>. <span>En la
+figura </span><a
+href="sections/section.13.3.html#ref::vi2:vib:Groups">13.5</a><span> mostrem
+les freqüències IR característiques de diversos grups funcionals</span>. </div>
+
+<div class="figure" id="ref::vi2:vib:Groups">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:IR_summary_version_2.svg"
+><span>commons.wikimedia</span></a><img src="images/img7427.png" alt="included
+image" style="width: 44.12em; height: 9.38em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 13.5</span>: <span>Freqüències de vibració
+de diversos grups funcionals</span>. </div>
+
+</div>
+
+<div class="p"> <span>Aquest fet fa que l’espectroscòpia d’infrarojos sigui
+molt útil com a eina analítica, ja que permet determinar els grups funcionals
+presents en un compost desconegut</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:IR_summary_version_2.svg"
+><span>commons.wikimedia</span></a><img src="images/img7427.png" alt="included
+image" style="width: 44.12em; height: 9.38em;"></span></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.4&rang;</span> <span class="sffamily" >La vibració de
+</span><span class="itshape sffamily" >tot</span><span class="sffamily" >
+l’esquelet molecular dóna l’</span><span class="itshape sffamily" >empremta
+dactilar.</span></summary>
+
+<div class="content"><div class="p"> <span>A més de les freqüències associades
+a la vibració de grups funcionals particulars, hi d’altres freqüències que
+causen la vibració de tot l’esquelet molecular</span>. <span>Aquestes
+freqüències són diferents per a cada molècula i constitueixen una mena de
+</span><span class="itshape" >empremta dactilar</span><span> que ens permet
+identificar-la</span>. </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.13.3.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

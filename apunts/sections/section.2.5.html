@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>El problema de dos cossos en mecànica quàntica</title>
+<meta name="description" content="S’estudia com el moviment del centre de
+masses i el moviment relatiu de les partícules. El hamiltonià pot
+simplificar-se molt.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.2.5.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.2.html"><span>2 Aplicació a sistemes model
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>2.5 El problema de dos cossos
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img1081.svg#page1065"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.4.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.html"> <svg class="icon next" viewBox="0 0 512
+512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section" id="ref::mod:cos">  <span>2.5  El problema de dos
+cossos</span> </h4>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cos:definicio"> <span>&vert;1&rang;</span> <span
+class="itshape sffamily" >Problema de dos cossos:</span> <span class="sffamily"
+>dues partícules interactuants i aïllades.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Problema de dos cossos
+(partícules)</span></strong>. <span>L’estudi d’un sistema compost per dues
+partícules puntuals que només interactuen l’una amb l’altra, sense cap força
+externa, s’anomena </span><span class="itshape" >problema de dos cossos</span>.
+</div>
+
+<div class="p"> <span>L’energia potencial d’un sistema d’aquest tipus depèn
+només de la posició relativa de les dues partícules, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 69.96 9.96"
+style="width:  7.02em; height:  1.12em;"> <use
+xlink:href="images/img1082.svg#page1066"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="-.32 -7.12 8.78 8.61"
+style="width:  0.88em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1083.svg#page1067"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.32 -7.12 8.78 8.61"
+style="width:  0.88em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1084.svg#page1068"> </use> </svg></span> són les
+posicions de les dues partícules</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Un exemple de problema de dos cossos seria
+l’àtom d’hidrogen, que té dues partícules (un electró i un nucli)</span>.
+</div>
+
+<div class="p"> <span>L’operador hamiltonià per al problema de dos cossos és el
+següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 169.84 24.02"
+style="width: 17.05em; height:  2.53em;"> <use
+xlink:href="images/img1085.svg#page1069"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 12.72 5.78"
+style="width:  1.28em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1086.svg#page1070"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.72 5.78"
+style="width:  1.28em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1087.svg#page1071"> </use> </svg></span> són les masses
+respectives de les partícules</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 167.08 24.02"
+style="width: 16.77em; height:  2.53em;"> <use
+xlink:href="images/img1088.svg#page1072"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cos:Rr"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Farem servir la </span><span class="itshape sffamily"
+>posició relativa</span><span class="sffamily" > <span class="inlinemath">(<svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1089.svg#page1073"> </use> </svg></span>) i la del
+</span><span class="itshape sffamily" >centre de masses</span><span
+class="sffamily" ><span class="inlinemath"> (<svg
+viewBox="0 -9.64 7.91 9.64"
+style="width:  0.79em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1090.svg#page1074"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>Un problema de dos cossos pot
+resoldre’s més fàcilment utilitzant les coordenades del </span><span
+class="itshape" >centre de masses</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.86 82.62 22.19"
+style="width:  8.29em; height:  2.35em;"> <use
+xlink:href="images/img1091.svg#page1075"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i les anomenades </span><span class="itshape"
+>coordenades relatives</span><span> (o </span><span class="itshape"
+>internes</span><span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.32 -7.12 51.24 8.61"
+style="width:  5.14em; height:  0.98em;"> <use
+xlink:href="images/img1092.svg#page1076"> </use> </svg></span> </div>
+
+<div class="p"> <span>La relació entre les coordenades cartesianes de
+<span class="inlinemath"><svg
+viewBox="0 -9.64 59.86 12.13"
+style="width:  6.01em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1093.svg#page1077"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.32 -7.47 50.98 9.96"
+style="width:  5.12em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1094.svg#page1078"> </use> </svg></span> i les
+coordenades cartesianes de <span class="inlinemath"><svg
+viewBox="-.32 -7.47 67.79 9.96"
+style="width:  6.80em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1095.svg#page1079"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.32 -7.47 67.79 9.96"
+style="width:  6.80em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1096.svg#page1080"> </use> </svg></span> és la següent,
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.04 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1097.svg#page1081"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1098.svg#page1082"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -12.55 58.94 20.88"
+style="width:  5.92em; height:  2.22em; vertical-align: -0.90em;"> <use
+xlink:href="images/img1099.svg#page1083"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 8 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1100.svg#page1084"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1101.svg#page1085"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -12.55 57.32 20.88"
+style="width:  5.75em; height:  2.22em; vertical-align: -0.90em;"> <use
+xlink:href="images/img1102.svg#page1086"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.51 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1103.svg#page1087"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1104.svg#page1088"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -12.55 56.81 20.88"
+style="width:  5.70em; height:  2.22em; vertical-align: -0.90em;"> <use
+xlink:href="images/img1105.svg#page1089"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1106.svg#page1090"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1107.svg#page1091"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 32 7.31"
+style="width:  3.21em; height:  0.85em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1108.svg#page1092"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 5.24 6.23"
+style="width:  0.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1109.svg#page1093"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1110.svg#page1094"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 30.39 7.75"
+style="width:  3.05em; height:  0.90em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1111.svg#page1095"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1112.svg#page1096"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1113.svg#page1097"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 33.15 7.31"
+style="width:  3.33em; height:  0.85em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1114.svg#page1098"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Farem servir la
+</span><span class="itshape sffamily" >massa total</span><span class="sffamily"
+> <span class="inlinemath">(<svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1115.svg#page1099"> </use> </svg></span>) i la
+</span><span class="itshape sffamily" >massa reduïda</span><span
+class="sffamily" > <span class="inlinemath">(<svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1116.svg#page1100"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>Dos conceptes molt útils en l’estudi
+del problema de dos cossos són els de </span><span class="itshape" >massa
+total</span><span> <span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1117.svg#page1101"> </use> </svg></span> i </span><span
+class="itshape" >massa reduïda</span><span> <span class="inlinemath"><svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1118.svg#page1102"> </use> </svg></span>, que definim a
+continuació</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Massa total i massa reduïda</span></strong>.
+<span>Per a un sistema de dues partícules amb
+<span class="inlinemath">masses <svg
+viewBox="0 -4.29 12.72 5.78"
+style="width:  1.28em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1119.svg#page1103"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -4.29 12.72 5.78"
+style="width:  1.28em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1120.svg#page1104"> </use> </svg></span>, la </span><span
+class="itshape" >massa total</span><span><span class="inlinemath"> (<svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1121.svg#page1105"> </use> </svg></span>) i la
+</span><span class="itshape" >massa reduïda</span><span> es defineixen
+com</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1122.svg#page1106"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1123.svg#page1107"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 38.11 7.3"
+style="width:  3.83em; height:  0.85em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1124.svg#page1108"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1125.svg#page1109"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1126.svg#page1110"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -11.03 42.57 19.36"
+style="width:  4.27em; height:  2.06em; vertical-align: -0.90em;"> <use
+xlink:href="images/img1127.svg#page1111"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>És fàcil veure que la massa reduïda compleix la
+següent relació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.01 66.64 21.78"
+style="width:  6.69em; height:  2.31em;"> <use
+xlink:href="images/img1128.svg#page1112"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Canvi de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 30.1 9.96"
+style="width:  3.02em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1129.svg#page1113"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -9.64 24.59 12.13"
+style="width:  2.47em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1130.svg#page1114"> </use> </svg></span>:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="1.2 -8.42 133.76 13.21"
+style="width: 13.43em; height:  1.45em; vertical-align: -0.54em;"> <use
+xlink:href="images/img1131.svg#page1115"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Utilitzant les coordenades
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.91 9.64"
+style="width:  0.79em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1132.svg#page1116"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1133.svg#page1117"> </use> </svg></span>, i les masses
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1134.svg#page1118"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1135.svg#page1119"> </use> </svg></span>, és pot
+demostrar que els laplacians poden reescriure’s en les noves coordenades com
+</span> </div>
+
+<table class="equation" id="ref::mod:dim:HHxHy"><tr><td><svg class="equation"
+viewBox="1.2 -13.01 145.11 21.78"
+style="width: 14.57em; height:  2.31em;"> <use
+xlink:href="images/img1136.svg#page1120"> </use>
+</svg></td><td>(2.11)</td></tr></table>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1137.svg#page1121"> </use> </svg></span> és una suma de
+dos operadors </span><span class="itshape sffamily" >independents:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -9.38 61.56 10.88"
+style="width:  6.18em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1138.svg#page1122"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 167.08 24.02"
+style="width: 16.77em; height:  2.53em;"> <use
+xlink:href="images/img1139.svg#page1123"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.01 141.85 21.78"
+style="width: 14.24em; height:  2.31em;"> <use
+xlink:href="images/img1140.svg#page1124"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Si combinem l’expressió del hamiltonià del problema de
+dos cossos donada en </span><a class="sffamily small"
+href="sections/section.2.5.html#ref::mod:cos:definicio"
+>§2.5&vert;1&rang;</a><span> amb l’Eq. (</span><a
+href="sections/section.2.5.html#ref::mod:cos:LaplaRr">2.12</a><span>) obtindrem
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1141.svg#page1125"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1142.svg#page1126"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -15.69 146.92 24.02"
+style="width: 14.75em; height:  2.53em; vertical-align: -0.90em;"> <use
+xlink:href="images/img1143.svg#page1127"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -15.69 165.88 25.2"
+style="width: 16.65em; height:  2.65em; vertical-align: -1.01em;"> <use
+xlink:href="images/img1144.svg#page1128"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -15.69 132.94 25.2"
+style="width: 13.34em; height:  2.65em; vertical-align: -1.01em;"> <use
+xlink:href="images/img1145.svg#page1129"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -15.69 116.74 24.46"
+style="width: 11.72em; height:  2.58em; vertical-align: -0.94em;"> <use
+xlink:href="images/img1146.svg#page1130"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p"> <span>Podem descompondre aquest hamiltonià en suma de dos
+hamiltonians, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 64.83 11.32"
+style="width:  6.51em; height:  1.26em;"> <use
+xlink:href="images/img1147.svg#page1131"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>amb </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 14.32 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1148.svg#page1132"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1149.svg#page1133"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -15.69 42.43 22.52"
+style="width:  4.26em; height:  2.38em; vertical-align: -0.75em;"> <use
+xlink:href="images/img1150.svg#page1134"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 12.2 10.88"
+style="width:  1.22em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1151.svg#page1135"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1152.svg#page1136"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -15.69 71.6 24.46"
+style="width:  7.19em; height:  2.58em; vertical-align: -0.94em;"> <use
+xlink:href="images/img1153.svg#page1137"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Els hamiltonians <span class="inlinemath"><svg
+viewBox="0 -9.38 14.32 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1154.svg#page1138"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.2 10.88"
+style="width:  1.22em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1155.svg#page1139"> </use> </svg></span> són dos
+hamiltonians </span><span class="itshape" >independents</span><span>, ja que
+depenen de coordenades diferents</span>: <span><span class="inlinemath"><svg
+viewBox="0 -9.38 14.32 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1156.svg#page1140"> </use> </svg></span> depèn només de
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.91 9.64"
+style="width:  0.79em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1157.svg#page1141"> </use> </svg></span>, i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.2 10.88"
+style="width:  1.22em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1158.svg#page1142"> </use> </svg></span> només de
+<span class="inlinemath"><svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1159.svg#page1143"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Les autofuncions
+de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1160.svg#page1144"> </use> </svg></span> són
+<span class="inlinemath"><svg
+viewBox="0 -6.86 46.98 8.36"
+style="width:  4.72em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1161.svg#page1145"> </use> </svg></span>, els autovalors
+<span class="inlinemath"><svg
+viewBox="0 -6.81 58.55 8.3"
+style="width:  5.88em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1162.svg#page1146"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Les autofuncions i autovalors de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 14.32 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1163.svg#page1147"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.2 10.88"
+style="width:  1.22em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1164.svg#page1148"> </use> </svg></span> han de complir
+les següents equacions, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 28.6 10.88"
+style="width:  2.87em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1165.svg#page1149"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1166.svg#page1150"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 27.68 8.36"
+style="width:  2.78em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1167.svg#page1151"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 24.36 10.88"
+style="width:  2.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1168.svg#page1152"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1169.svg#page1153"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.43 8.36"
+style="width:  2.35em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1170.svg#page1154"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Per al operador suma
+<span class="inlinemath"><svg
+viewBox="0 -9.38 61.56 10.88"
+style="width:  6.18em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1171.svg#page1155"> </use> </svg></span> tindrem </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 45.8 9.38"
+style="width:  4.60em; height:  1.06em;"> <use
+xlink:href="images/img1172.svg#page1156"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Com que <span class="inlinemath"><svg
+viewBox="0 -9.38 14.32 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1173.svg#page1157"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.2 10.88"
+style="width:  1.22em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1174.svg#page1158"> </use> </svg></span> són
+independents, ha de complir-se, segons </span><a class="sffamily small"
+href="sections/section.2.4.html#ref::mod:dim:independents"
+>§2.4&vert;2&rang;</a><span>, que </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1175.svg#page1159"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1176.svg#page1160"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 25.95 8.36"
+style="width:  2.60em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1177.svg#page1161"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1178.svg#page1162"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1179.svg#page1163"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 40.6 8.3"
+style="width:  4.08em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1180.svg#page1164"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Ara tenim dos
+parts </span><span class="itshape sffamily" >independents:</span> <span
+class="itshape sffamily" >centre de masses</span><span class="sffamily" > i
+</span><span class="itshape sffamily" >partícula reduïda.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem aconseguit descompondre un
+problema de dues partícules en dos problemes </span><span class="itshape"
+>independents</span><span> d’una partícula</span>: <span>el </span><span
+class="itshape" >centre de masses</span><span> (amb massa
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1181.svg#page1165"> </use> </svg></span> i posició
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.91 9.64"
+style="width:  0.79em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1182.svg#page1166"> </use> </svg></span>), i una
+</span><span class="itshape" >partícula reduïda</span><span> (amb massa
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1183.svg#page1167"> </use> </svg></span> i posició
+<span class="inlinemath"><svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1184.svg#page1168"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >El centre de
+masses és una </span><span class="itshape sffamily" >partícula
+lliure.</span></summary>
+
+<div class="content"><div class="p"> <span>El problema de la partícula amb
+massa <span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1185.svg#page1169"> </use> </svg></span> i posició
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.91 9.64"
+style="width:  0.79em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1186.svg#page1170"> </use> </svg></span> representa el
+moviment del centre de masses del sistema</span>. <span>El seu hamiltonià,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 71.58 22.52"
+style="width:  7.18em; height:  2.38em;"> <use
+xlink:href="images/img1187.svg#page1171"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és equivalent al d’una </span><span
+class="itshape" >partícula lliure</span><span> (no té energia potencial), i la
+seva solució l’hem estudiat en </span><a class="sffamily small"
+href="sections/section.2.2.html#ref::mod:cai:lliure" >§2.2&vert;10.4&rang;</a>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cos:Hr"> <span>&vert;9&rang;</span> <span
+class="sffamily" >Només ens falta resoldre la partícula
+reduïda.</span></summary>
+
+<div class="content"><div class="p"> <span>El segon problema representa una
+partícula reduïda de massa <span class="inlinemath"><svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1188.svg#page1172"> </use> </svg></span> i posició
+<span class="inlinemath"><svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1189.svg#page1173"> </use> </svg></span></span>. <span>El
+seu hamiltonià és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 95.36 24.46"
+style="width:  9.57em; height:  2.58em;"> <use
+xlink:href="images/img1190.svg#page1174"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i representa el moviment d’una partícula de
+massa <span class="inlinemath"><svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1191.svg#page1175"> </use> </svg></span> sotmesa a un
+potencial <span class="inlinemath"><svg
+viewBox="0 -6.81 8.03 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1192.svg#page1176"> </use> </svg></span> que depèn
+<span class="inlinemath">de <svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1193.svg#page1177"> </use> </svg></span></span>. <span>Si
+som capaços de trobar les seves autofuncions i autovalors tindrem la solució
+completa al problema de dos cossos</span>. </div>
+
+<div class="p"> <span>Farem servir aquest hamiltonià més endavant, però per
+simplificar, eliminarem el subíndex <span class="inlinemath"><svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1194.svg#page1178"> </use> </svg></span> de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.2 10.88"
+style="width:  1.22em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1195.svg#page1179"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -8.11 12.27 10.57"
+style="width:  1.23em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1196.svg#page1180"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 91.76 24.46"
+style="width:  9.21em; height:  2.58em;"> <use
+xlink:href="images/img1197.svg#page1181"> </use> </svg></span> </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.2.5.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

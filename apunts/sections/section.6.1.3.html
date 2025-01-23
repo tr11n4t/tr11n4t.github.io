@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Determinants de Slater: el bescanvi d’electrons canvia el signe</title>
+<meta name="description" content="En un determinant de Slater, bescanviar dos
+electrons equival a bescanviar dues files. Dos electrons no poden ocupar el
+mateix orbital.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.6.1.3.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.html"><span>6 Àtoms polielectrònics </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.1.html"><span>6.1 Principi d’exclusió de Pauli
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>6.1.3 Determinants de Slater
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img2722.svg#page2700"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.2.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection" id="ref::ato:pau:SlaterDet">  <span>6.1.3  Determinants
+de Slater</span> </h5>
+
+<details open class="foldable prop">
+<summary id="ref::ato:pau:SlaterDetDef"> <span>&vert;1&rang;</span> <span
+class="sffamily" >Amb <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2723.svg#page2701"> </use> </svg></span> electrons i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2724.svg#page2702"> </use> </svg></span> orbitals, podem
+construir un </span><span class="itshape sffamily" >determinant de
+Slater</span><span class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a un sistema de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2725.svg#page2703"> </use> </svg></span> partícules
+idèntiques (amb coordenades <span class="inlinemath"><svg
+viewBox="-.13 -7.12 45.19 9.05"
+style="width:  4.54em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2726.svg#page2704"> </use> </svg></span>), i a partir
+d’un conjunt de <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2727.svg#page2705"> </use> </svg></span> </span><span
+class="itshape" >espín-orbitals</span><span> <span class="inlinemath"><svg
+viewBox="0 -8.38 32.68 11.33"
+style="width:  3.28em; height:  1.26em; vertical-align: -0.36em;"> <use
+xlink:href="images/img2728.svg#page2706"> </use> </svg></span>, definim el
+corresponent </span><span class="itshape" >determinant de Slater</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.2 6.86"
+style="width:  0.72em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2729.svg#page2707"> </use> </svg></span> com, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.38 250.92 59.78"
+style="width: 25.19em; height:  6.12em;"> <use
+xlink:href="images/img2730.svg#page2708"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -9.01 30.12 11.5"
+style="width:  3.02em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2731.svg#page2709"> </use> </svg></span> és un factor de
+normalització</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.38 246.49 59.78"
+style="width: 24.74em; height:  6.12em;"> <use
+xlink:href="images/img2732.svg#page2710"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Un determinant de
+Slater és antisimètric.</span></summary>
+
+<div class="content"><div class="p"> <span>És fàcil veure que el determinant de
+Slater <span class="inlinemath"><svg
+viewBox="0 -6.86 7.2 6.86"
+style="width:  0.72em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2733.svg#page2711"> </use> </svg></span> és
+antisimètric</span>: <span>el bescanvi de les partícules
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.5 6.92"
+style="width:  0.55em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2734.svg#page2712"> </use> </svg></span>-èsima i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 3.17 6.92"
+style="width:  0.32em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2735.svg#page2713"> </use> </svg></span>-èsima és
+equivalent al bescanvi de les files <span class="inlinemath"><svg
+viewBox="0 -6.92 5.5 6.92"
+style="width:  0.55em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2736.svg#page2714"> </use> </svg></span>-èsima i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 3.17 6.92"
+style="width:  0.32em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2737.svg#page2715"> </use> </svg></span>-èsima del
+determinant, i, en qualsevol determinant, el bescanvi de dues files (o dues
+columnes) qualsevol canvia el signe del determinant</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Hi ha una notació
+abreujada &hellip;</span></summary>
+
+<div class="content"><div class="p"> <span>El determinant
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.2 6.86"
+style="width:  0.72em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2738.svg#page2716"> </use> </svg></span> mostrat en
+l’Eq. (</span><a
+href="sections/section.6.1.3.html#ref::ato:pau:SlaterDet">6.1.3</a><span>) pot
+escriure’s en forma abreujada com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.38 215.03 59.78"
+style="width: 21.58em; height:  6.12em;"> <use
+xlink:href="images/img2739.svg#page2717"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.38 210.6 59.78"
+style="width: 21.14em; height:  6.12em;"> <use
+xlink:href="images/img2740.svg#page2718"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >&hellip; i una
+altra de més abreujada:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -7.47 91.59 10.32"
+style="width:  9.19em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2741.svg#page2719"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >En un determinant
+de Slater, no pot haver-hi dos espín-orbitals iguals.</span></summary>
+
+<div class="content"><div class="p"> <span>Si, en un determinant de Slater com
+el que hem vist en </span><a class="sffamily small"
+href="sections/section.6.1.3.html#ref::ato:pau:SlaterDetDef"
+>§6.1.3&vert;1&rang;</a><span>, dos dels espín-orbitals són iguals, el
+determinant tindrà dues columnes iguals i per tant serà igual a zero</span>.
+<span>Això és el fonament del </span><span class="itshape" >principi
+d’exclusió</span><span> de Pauli</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Principi d’exclusió (Pauli)</span></strong>.
+<span>Dos electrons no poden ocupar el mateix espín-orbital</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>El principi d’exclusió és crucial en l’obtenció
+de les configuracions electròniques dels àtoms, i per tant responsable en gran
+part de l’estructura de la taula periòdica</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Una funció d’ona
+s’escriu com una combinació lineal de determinants.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;6.1&rang;</span> <span class="sffamily" >Per a partícules
+</span><span class="itshape sffamily" >interactuants</span><span
+class="sffamily" >, un determinant </span><span class="bfseries sffamily"
+>no</span><span class="sffamily" > és autofunció.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a sistemes de partícules
+idèntiques </span><span class="itshape" >interactuants</span><span> (açò és,
+que s’atrauen o es repel·leixen, com els electrons en àtoms i molècules), els
+determinants de Slater no són autofuncions del hamiltonià</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ato:pau:CI"> <span>&vert;6.2&rang;</span> <span
+class="itshape sffamily" >Interacció de configuracions:</span> <span
+class="sffamily" >combinació lineal de determinants.</span></summary>
+
+<div class="content"><div class="p"> <span>Ara bé, podem construir una funció
+de prova <span class="inlinemath"><svg
+viewBox="0 -6.92 4.82 8.86"
+style="width:  0.48em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2742.svg#page2720"> </use> </svg></span> com a combinació
+lineal d’un conjunt de determinants de <span class="inlinemath">Slater <svg
+viewBox="0 -7.47 20.47 9.96"
+style="width:  2.06em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2743.svg#page2721"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 55.06 22.22"
+style="width:  5.53em; height:  2.35em;"> <use
+xlink:href="images/img2744.svg#page2722"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i desprès calcular els coeficients
+<span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2745.svg#page2723"> </use> </svg></span> mitjançant el
+</span><span class="itshape" >mètode variacional lineal</span><span> vist
+en §</span><a
+href="sections/section.5.2.2.html#ref::apr:var:lineal">5.2.2</a><span>, on els
+determinants de Slater fan el paper de funcions de base</span>. <span>Aquest
+procediment s’anomena </span><span class="itshape" >interacció de
+configuracions</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 51.79 22.22"
+style="width:  5.20em; height:  2.35em;"> <use
+xlink:href="images/img2746.svg#page2724"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.6.1.3.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

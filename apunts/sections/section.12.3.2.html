@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Espectres de vibració-rotació | Diatòmiques | Raman</title>
+<meta name="description" content="Es dedueix l’estructura dels espectres Raman
+deguts a la vibració-rotació de les molècules diatòmiques.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.12.3.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.12.html"><span>12 Espectres de vibració de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.12.3.html"><span>12.3 Espectres de vibració-rotació
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>12.3.2 Espectres Raman </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img7032.svg#page6997"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.3.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.3.html"> <svg class="icon up" viewBox="0 0
+512 512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>12.3.2  Espectres Raman</span> </h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Les regles de
+selecció són <span class="inlinemath"><svg
+viewBox="0 -7.13 72.71 9.07"
+style="width:  7.30em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7033.svg#page6998"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.13 50.21 9.07"
+style="width:  5.04em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7034.svg#page6999"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a espectroscòpia Raman de
+vibració-rotació, les regles de selecció són </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.13 13.49 7.13"
+style="width:  1.35em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7035.svg#page7000"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7036.svg#page7001"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -6.27 48.15 8.21"
+style="width:  4.83em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7037.svg#page7002"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.13 14.78 7.13"
+style="width:  1.48em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7038.svg#page7003"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7039.svg#page7004"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 24.91 8.21"
+style="width:  2.50em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7040.svg#page7005"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Per simplicitat ens restringirem a l’aproximació
+harmònica, <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7041.svg#page7006"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >La banda
+</span><span class="itshape sffamily" >anti-Stokes</span><span class="sffamily"
+> correspon a <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7042.svg#page7007"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La banda anti-Stokes correspon a
+transicions amb <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7043.svg#page7008"> </use> </svg></span></span>. <span>És
+poc intensa ja que l’estat de partida és un estat vibracional excitat
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7044.svg#page7009"> </use> </svg></span>) que a
+temperatures no gaire altes està poc poblat</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >La banda
+</span><span class="itshape sffamily" >Stokes</span><span class="sffamily" >
+correspon a <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7045.svg#page7010"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La banda Stokes correspon a
+<span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7046.svg#page7011"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7047.svg#page7012"> </use> </svg></span>) i és més
+intensa que la banda anti-Stokes</span>. <span>Mostrem un esquema d’aquesta
+banda en la figura </span><a
+href="sections/section.12.3.2.html#ref::vi1:rot:espectreRaman">12.8</a>. </div>
+
+<div class="figure" id="ref::vi1:rot:espectreRaman">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.29 -141.73 361.85 136.28"
+style="width: 36.32em; height: 14.35em;"> <use
+xlink:href="images/img7048.svg#page7013"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 12.8</span>: <span>Esquema de la banda
+vibracional Stokes Raman <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7049.svg#page7014"> </use> </svg></span> d’una molècula
+diatòmica</span>. <span>Damunt de cada ratlla s’indica la transició rotacional
+<span class="inlinemath">(<svg
+viewBox="0 -7.49 35.85 7.49"
+style="width:  3.60em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7050.svg#page7015"> </use> </svg></span>) i el símbol de
+la ratlla, <span class="inlinemath"><svg
+viewBox="0 -7.49 27.2 9.98"
+style="width:  2.73em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7051.svg#page7016"> </use> </svg></span> per a la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7052.svg#page7017"> </use> </svg></span>, o
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.01 9.98"
+style="width:  2.61em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7053.svg#page7018"> </use> </svg></span> per a la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7054.svg#page7019"> </use> </svg></span></span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >L’espectre té
+tres branques:</span> <span class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7055.svg#page7020"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7056.svg#page7021"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7057.svg#page7022"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >La branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7058.svg#page7023"> </use> </svg></span> correspon a
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7059.svg#page7024"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Compte, que ara la branca amb
+<span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.52"
+style="width:  3.32em; height:  0.88em; vertical-align: -0.10em;"> <use
+xlink:href="images/img7060.svg#page7025"> </use> </svg></span> és a la dreta de
+la branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7061.svg#page7026"> </use> </svg></span> (en l’espectre
+d’infrarojos, anava a l’esquerra)</span>. <span>Això és degut al fet que la
+molècula perd energia rotacional, energia que va a parar al fotó Raman
+dispersat</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >La branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7062.svg#page7027"> </use> </svg></span> correspon a
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7063.svg#page7028"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La branca amb
+<span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.52"
+style="width:  3.32em; height:  0.88em; vertical-align: -0.10em;"> <use
+xlink:href="images/img7064.svg#page7029"> </use> </svg></span> va ara a
+l’esquerra de la branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7065.svg#page7030"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4&rang;</span> <span class="sffamily" >La branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7066.svg#page7031"> </use> </svg></span> correspon a
+<span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7067.svg#page7032"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>A diferència dels espectres
+d’infrarojos, els espectres Raman de molècules diatòmiques sempre mostren una
+branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7068.svg#page7033"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.5&rang;</span> <span class="sffamily" >L’espaiat entre
+ratlles de la mateixa branca és, aproximadament, <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7069.svg#page7034"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’espaiat entre ratlles de la
+mateixa branca és, aproximadament, <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7070.svg#page7035"> </use> </svg></span> (negligint la
+distorsió centrífuga i assumint que <span class="inlinemath"><svg
+viewBox="0 -6.81 58.18 8.3"
+style="width:  5.84em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7071.svg#page7036"> </use> </svg></span>)</span>. </div>
+
+<div class="p"> <span>La distancia entre la primera ratlla de la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7072.svg#page7037"> </use> </svg></span> (o de la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7073.svg#page7038"> </use> </svg></span>) i la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7074.svg#page7039"> </use> </svg></span> és,
+aproximadament, <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7075.svg#page7040"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >La </span><span
+class="itshape sffamily" >combinació de diferències</span><span
+class="sffamily" > també pot aplicar-se als espectres Raman.</span></summary>
+
+<div class="content"><div class="p"> <span>El mètode de la </span><span
+class="itshape" >combinació de diferències</span><span> que hem explicat per a
+l’espectroscòpia d’infrarojos també pot aplicar-se a l’espectroscòpia
+Raman</span>. <span>Ens limitarem a donar els resultats, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 27 11.1"
+style="width:  2.71em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7076.svg#page7041"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7077.svg#page7042"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 178.46 9.96"
+style="width: 17.91em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7078.svg#page7043"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 27 11.1"
+style="width:  2.71em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7079.svg#page7044"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7080.svg#page7045"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 146.91 9.96"
+style="width: 14.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7081.svg#page7046"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 27 11.1"
+style="width:  2.71em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7082.svg#page7047"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7083.svg#page7048"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 178.46 9.96"
+style="width: 17.91em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7084.svg#page7049"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 27 11.1"
+style="width:  2.71em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7085.svg#page7050"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7086.svg#page7051"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 144.14 9.96"
+style="width: 14.47em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7087.svg#page7052"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.12.3.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

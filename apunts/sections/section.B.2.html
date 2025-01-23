@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Representacions reductibles | Suma directa</title>
+<meta name="description" content="S’explica com reduir una representació
+reductible i escriure-la com a suma directa de les representacions
+irreductibles del grup.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.B.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.III.html"><span>Apèndixs </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.B.html"><span>B Simetria (suplement) </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>B.2 Representacions reductibles
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img9271.svg#page9233"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.B.1.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.B.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.B.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section" id="ref::app:sim:RR">  <span>B.2  Representacions
+reductibles</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Les
+representacions </span><span class="itshape sffamily" >reductibles</span><span
+class="sffamily" > es podem reduir.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Representació reductible</span></strong>.
+<span>Una representació </span><span class="itshape" >reductible</span><span>
+de les operacions de simetria d’un grup <span class="inlinemath">(<svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9272.svg#page9234"> </use> </svg></span>) es pot reduir i
+escriure’s com a </span><span class="itshape" >suma directa</span><span> de les
+representacions </span><span class="itshape" >irreductibles</span><span> del
+grup</span>. <span>Simbòlicament</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 135.81 9.71"
+style="width: 13.63em; height:  1.09em;"> <use
+xlink:href="images/img9273.svg#page9235"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">on <svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9274.svg#page9236"> </use> </svg></span> és la
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9275.svg#page9237"> </use> </svg></span>-èsima
+representació irreductible del grup, i els nombres
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.8 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9276.svg#page9238"> </use> </svg></span> són enters
+positius o zeros</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Observacions</span>: </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>El <span class="inlinemath">símbol <svg
+viewBox="0 -5.81 7.75 6.64"
+style="width:  0.78em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img9277.svg#page9239"> </use> </svg></span> representa una
+</span><span class="itshape" >suma directa</span><span>, els detalls matemàtics
+de la qual són prescindibles per als objectius del present curs</span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath">Cada <svg
+viewBox="0 -4.29 8.8 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9278.svg#page9240"> </use> </svg></span> representa el
+nombre de vegades <span class="inlinemath">que <svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9279.svg#page9241"> </use> </svg></span> apareix en la
+representació reductible</span>. <span><span class="inlinemath">Si <svg
+viewBox="0 -6.27 27.56 7.77"
+style="width:  2.77em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9280.svg#page9242"> </use> </svg></span>, no cal posar
+<span class="inlinemath">ni <svg
+viewBox="0 -4.29 8.8 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9281.svg#page9243"> </use> </svg></span> ni
+<span class="inlinemath"><svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9282.svg#page9244"> </use> </svg></span> en la suma
+directa, i si <span class="inlinemath"><svg
+viewBox="0 -6.27 27.56 7.77"
+style="width:  2.77em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9283.svg#page9245"> </use> </svg></span>, es posa
+<span class="inlinemath"><svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9284.svg#page9246"> </use> </svg></span> però no cal
+<span class="inlinemath">posar <svg
+viewBox="0 -4.29 8.8 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9285.svg#page9247"> </use> </svg></span></span>.
+<span>Per exemple, per al <span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9286.svg#page9248"> </use> </svg></span>, l’expressió
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 102.17 8.36"
+style="width: 10.26em; height:  0.96em;"> <use
+xlink:href="images/img9287.svg#page9249"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>se simplifica a </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 70.86 8.36"
+style="width:  7.11em; height:  0.96em;"> <use
+xlink:href="images/img9288.svg#page9250"> </use> </svg></span> </div>
+
+</li></ul>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 131.39 9.71"
+style="width: 13.19em; height:  1.09em;"> <use
+xlink:href="images/img9289.svg#page9251"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Podem passar de
+caràcters a suma directa i a l’inrevés.</span></summary>
+
+<div class="content"><div class="figure" id="ref::app:sim:chiredchi">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -27.4 200.42 30.75"
+style="width: 20.12em; height:  3.21em;"> <use
+xlink:href="images/img9290.svg#page9252"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura B.1</span>: <span>Esquema que il·lustra la
+possibilitat d’obtindre la suma directa d’una representació reductible a partir
+dels seus caràcters, i a l’inrevés</span>. </div>
+
+</div>
+
+<div class="p"> <span>A l’hora de manipular representacions reductibles, és
+possible (i molt útil) calcular els caràcters que corresponen a una suma
+directa, i, a l’inrevés, obtindre la suma directa a partir dels
+caràcters</span>. <span>La idea s’esquematitza en la figura </span><a
+href="sections/section.B.2.html#ref::app:sim:chiredchi">B.1</a><span>, i el
+procediment detallat l’expliquem a continuació</span>.</div> </div>
+
+</details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -27.4 200.42 30.75"
+style="width: 20.12em; height:  3.21em;"> <use
+xlink:href="images/img9291.svg#page9253"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:c3vExemple"> <span>&vert;3&rang;</span> <span
+class="sffamily" >És fàcil obtindre els caràcters d’una
+<span class="inlinemath"><svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9292.svg#page9254"> </use> </svg></span>
+reduïda.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Caràcters <span class="inlinemath">d’una <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9293.svg#page9255"> </use> </svg></span>
+reduïda</span></strong>. <span>El caràcter d’una operació de
+<span class="inlinemath">simetria <svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9294.svg#page9256"> </use> </svg></span> en una
+representació <span class="inlinemath">reductible <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9295.svg#page9257"> </use> </svg></span> escrita en forma
+reduïda com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 131.39 9.71"
+style="width: 13.19em; height:  1.09em;"> <use
+xlink:href="images/img9296.svg#page9258"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 177.58 12.23"
+style="width: 17.82em; height:  1.35em;"> <use
+xlink:href="images/img9297.svg#page9259"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9298.svg#page9260"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9299.svg#page9261"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">2<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9300.svg#page9262"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">3<svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9301.svg#page9263"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9302.svg#page9264"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9303.svg#page9265"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 43.04 8.66"
+style="width:  4.32em; height:  0.99em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9304.svg#page9266"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 14.56 5.78"
+style="width:  1.46em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9305.svg#page9267"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9306.svg#page9268"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9307.svg#page9269"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9308.svg#page9270"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 33.63 10.32"
+style="width:  3.38em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9309.svg#page9271"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 37.11 10.32"
+style="width:  3.73em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9310.svg#page9272"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 71.39 10.32"
+style="width:  7.17em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9311.svg#page9273"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 42.91 10.32"
+style="width:  4.31em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9312.svg#page9274"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>Per exemple, per a la següent representació
+reductible del <span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9313.svg#page9275"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 70.86 8.8"
+style="width:  7.11em; height:  1.00em;"> <use
+xlink:href="images/img9314.svg#page9276"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>els caràcters són </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 33.46 11.87"
+style="width:  3.36em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9315.svg#page9277"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9316.svg#page9278"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 143.95 11.87"
+style="width: 14.45em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9317.svg#page9279"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 37.13 11.87"
+style="width:  3.73em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9318.svg#page9280"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9319.svg#page9281"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 174.52 11.87"
+style="width: 17.52em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9320.svg#page9282"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 35.96 9.96"
+style="width:  3.61em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9321.svg#page9283"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9322.svg#page9284"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 151.72 9.96"
+style="width: 15.23em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9323.svg#page9285"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Els caràcters d’operacions de la mateixa classe,
+per <span class="inlinemath">exemple <svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9324.svg#page9286"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.38 11.8 12.21"
+style="width:  1.19em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img9325.svg#page9287"> </use> </svg></span>, son
+iguals</span>. </div>
+
+<div class="p"> <span>Hem vist com obtindre els caràcters d’una representació
+expressada com a suma directa</span>. <span>A continuació farem a l’inrevés i
+explicarem com reduir una representació si coneixem els seus
+caràcters</span>.</div> </div>
+
+</details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 177.58 12.23"
+style="width: 17.82em; height:  1.35em;"> <use
+xlink:href="images/img9326.svg#page9288"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:reduccio"> <span>&vert;4&rang;</span> <span
+class="sffamily" >Podem reduir una representació a partir dels
+caràcters.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >Dos casos,
+segons les operacions de les classes.</span></summary>
+
+<div class="content"><div class="p"> <span>L’estratègia a seguir per a reduir
+una representació reductible depèn de quantes operacions de simetria tenen les
+classes del grup</span>. <span>Distingirem dos casos</span>: <span>totes les
+classes tenen </span><span class="itshape" >només una</span><span> operació, o
+bé, alguna classe té </span><span class="itshape" >més d’una</span><span>
+operació</span>. <span>Estudiarem els dos casos per separat</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:redcas1"> <span>&vert;4.2&rang;</span> <span
+class="sffamily" >Classes amb </span><span class="bfseries sffamily" >només
+una</span><span class="sffamily" > operació.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Reducció <span class="inlinemath">d’una <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9327.svg#page9289"> </use> </svg></span> (classes amb una
+operació)</span></strong>. <span>Suposem que tenim els
+<span class="inlinemath">caràcters <svg
+viewBox="0 -4.29 17.29 6.23"
+style="width:  1.74em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9328.svg#page9290"> </use> </svg></span> d’una
+representació <span class="inlinemath">reductible <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9329.svg#page9291"> </use> </svg></span>, representació
+que volem expressar com a la següent suma directa, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 135.81 9.71"
+style="width: 13.63em; height:  1.09em;"> <use
+xlink:href="images/img9330.svg#page9292"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">on <svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9331.svg#page9293"> </use> </svg></span> és la
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9332.svg#page9294"> </use> </svg></span>-èsima
+representació irreductible del grup</span>. <span>Els nombres
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.8 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9333.svg#page9295"> </use> </svg></span> es poden
+calcular amb la fórmula </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 122 26.72"
+style="width: 12.25em; height:  2.80em;"> <use
+xlink:href="images/img9334.svg#page9296"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on </span> </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -6.92 5.74 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9335.svg#page9297"> </use> </svg></span> és l’ordre del
+grup (nombre d’operacions de simetria del grup)</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>La suma es fa sobre totes les operacions de
+<span class="inlinemath">simetria <svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9336.svg#page9298"> </use> </svg></span> del grup</span>.
+</div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -9.38 35.97 12.23"
+style="width:  3.61em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9337.svg#page9299"> </use> </svg></span> és el caràcter
+corresponent <span class="inlinemath">a <svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9338.svg#page9300"> </use> </svg></span> per
+<span class="inlinemath">a <svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9339.svg#page9301"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -9.38 33.18 11.87"
+style="width:  3.33em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9340.svg#page9302"> </use> </svg></span> és el caràcter
+corresponent <span class="inlinemath">a <svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9341.svg#page9303"> </use> </svg></span> per
+<span class="inlinemath">a <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9342.svg#page9304"> </use> </svg></span></span>. </div>
+
+</li></ul>
+
+</div>
+
+<div class="p"> <span>Il·lustrarem el procediment per a una representació
+<span class="inlinemath">reductible <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9343.svg#page9305"> </use> </svg></span> del
+<span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9344.svg#page9306"> </use> </svg></span>, la taula de
+caràcters del qual es mostra en la taula </span><a
+href="sections/section.B.2.html#ref::app:sim:C2v">B.2</a>. <span>Observeu com
+totes les classes d’aquest grup només tenen una operació de simetria</span>.
+</div>
+
+<div class="table" id="ref::app:sim:C2v">
+<div class="p caption"> <span>Taula B.2</span>: <span>Taula de caràcters del
+grup <span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9345.svg#page9307"> </use> </svg></span></span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -38.26 228.45 71.53"
+style="width: 22.93em; height:  7.30em;"> <use
+xlink:href="images/img9346.svg#page9308"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Suposem que coneixem els caràcters de la
+<span class="inlinemath"><svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9347.svg#page9309"> </use> </svg></span> problema, els
+valor dels quals posem, per conveniència, en una fila al final de la taula de
+caràcters del grup</span>: </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9348.svg#page9310"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9349.svg#page9311"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9350.svg#page9312"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 28.94 9.96"
+style="width:  2.91em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9351.svg#page9313"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 28.49 9.96"
+style="width:  2.86em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9352.svg#page9314"> </use> </svg></span></span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9353.svg#page9315"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9354.svg#page9316"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>-1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9355.svg#page9317"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9356.svg#page9318"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9357.svg#page9319"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>9</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>3</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 119.23 26.72"
+style="width: 11.97em; height:  2.80em;"> <use
+xlink:href="images/img9358.svg#page9320"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Ara apliquem la fórmula explicada abans, tenint
+en compte que el <span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9359.svg#page9321"> </use> </svg></span> té quatre
+operacions de <span class="inlinemath">simetria (<svg
+viewBox="0 -6.92 24 6.92"
+style="width:  2.41em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9360.svg#page9322"> </use> </svg></span>), </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 15.36 6.78"
+style="width:  1.54em; height:  0.80em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9361.svg#page9323"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9362.svg#page9324"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 150.69 19.85"
+style="width: 15.12em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img9363.svg#page9325"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 15.36 6.78"
+style="width:  1.54em; height:  0.80em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9364.svg#page9326"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9365.svg#page9327"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 177.35 19.85"
+style="width: 17.80em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img9366.svg#page9328"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 15.39 6.78"
+style="width:  1.54em; height:  0.80em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9367.svg#page9329"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9368.svg#page9330"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 177.35 19.85"
+style="width: 17.80em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img9369.svg#page9331"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 15.39 6.78"
+style="width:  1.54em; height:  0.80em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9370.svg#page9332"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9371.svg#page9333"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 180.12 19.85"
+style="width: 18.08em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img9372.svg#page9334"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>cosa que ens dona</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 133.24 8.36"
+style="width: 13.37em; height:  0.96em;"> <use
+xlink:href="images/img9373.svg#page9335"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Alerta</span>! <span>Els valors que obtinguts
+per <span class="inlinemath">als <svg
+viewBox="0 -4.29 8.8 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9374.svg#page9336"> </use> </svg></span> han de ser
+enters positius o zeros</span>. <span>En cas contrari, el procediment s’ha
+aplicat incorrectament, o bé els caràcters de <span class="inlinemath">la <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9375.svg#page9337"> </use> </svg></span> són
+erronis</span>. </div>
+
+<div class="p"> <span>Si alguna de les classes té més d’una operació es pot
+aplicar una fórmula més eficient i que expliquem a continuació</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 119.23 26.72"
+style="width: 11.97em; height:  2.80em;"> <use
+xlink:href="images/img9376.svg#page9338"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:redcas2"> <span>&vert;4.3&rang;</span> <span
+class="sffamily" >Classes amb </span><span class="bfseries sffamily" >més
+d’una</span><span class="sffamily" > operació.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Reducció <span class="inlinemath">d’una <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9377.svg#page9339"> </use> </svg></span> (classes amb més
+d’una operació)</span></strong>. <span>Suposem que tenim els
+<span class="inlinemath">caràcters <svg
+viewBox="0 -4.29 17.29 6.23"
+style="width:  1.74em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9378.svg#page9340"> </use> </svg></span> d’una
+representació <span class="inlinemath">reductible <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9379.svg#page9341"> </use> </svg></span>, representació
+que volem expressar com a la següent suma directa, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 135.81 9.71"
+style="width: 13.63em; height:  1.09em;"> <use
+xlink:href="images/img9380.svg#page9342"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">on <svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9381.svg#page9343"> </use> </svg></span> és la
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9382.svg#page9344"> </use> </svg></span>-èsima
+representació irreductible del grup</span>. <span>Els nombres
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.8 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9383.svg#page9345"> </use> </svg></span> es poden
+calcular amb la fórmula </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 126.02 24.47"
+style="width: 12.65em; height:  2.58em;"> <use
+xlink:href="images/img9384.svg#page9346"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on </span> </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -6.92 5.74 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9385.svg#page9347"> </use> </svg></span> és l’ordre del
+grup (nombre d’operacions de simetria del grup)</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>El <span class="inlinemath">subíndex <svg
+viewBox="0 -4.29 4.43 4.29"
+style="width:  0.44em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9386.svg#page9348"> </use> </svg></span> corre sobre
+totes les classes d’operacions de simetria del grup</span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -4.29 8.29 6.23"
+style="width:  0.83em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9387.svg#page9349"> </use> </svg></span> és el nombre
+d’operacions de simetria en la <span class="inlinemath">classe <svg
+viewBox="0 -4.29 4.43 4.29"
+style="width:  0.44em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9388.svg#page9350"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.47 32.76 10.32"
+style="width:  3.29em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9389.svg#page9351"> </use> </svg></span> és el caràcter
+corresponent a les operacions de simetria de la
+<span class="inlinemath">classe <svg
+viewBox="0 -4.29 4.43 4.29"
+style="width:  0.44em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9390.svg#page9352"> </use> </svg></span> per
+<span class="inlinemath">a <svg
+viewBox="0 -6.86 20.07 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9391.svg#page9353"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.47 29.96 9.96"
+style="width:  3.01em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9392.svg#page9354"> </use> </svg></span> és el caràcter
+corresponent a les operacions de simetria de la
+<span class="inlinemath">classe <svg
+viewBox="0 -4.29 4.43 4.29"
+style="width:  0.44em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9393.svg#page9355"> </use> </svg></span> per
+<span class="inlinemath">a <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9394.svg#page9356"> </use> </svg></span></span>. </div>
+
+</li></ul>
+
+</div>
+
+<div class="p noindent"> <span>Observeu que aquesta fórmula és equivalent a
+l’explicada en </span><a class="sffamily small"
+href="sections/section.B.2.html#ref::app:sim:redcas1"
+>§B.2&vert;4.2&rang;</a><span> si totes les classes del grup tenen només una
+operació de simetria</span>. </div>
+
+<div class="p"> <span>Ho il·lustrarem amb l’exemple de la
+<span class="inlinemath">representació <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9395.svg#page9357"> </use> </svg></span> del
+<span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9396.svg#page9358"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.B.2.html#ref::app:sim:c3vExemple"
+>§B.2&vert;3&rang;</a>. <span>Posem els caràcters
+<span class="inlinemath">de <svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9397.svg#page9359"> </use> </svg></span> en una fila al
+final de la taula de caràcters del grup</span>: </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9398.svg#page9360"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9399.svg#page9361"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">2<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9400.svg#page9362"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">3<svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9401.svg#page9363"> </use> </svg></span></span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9402.svg#page9364"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9403.svg#page9365"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9404.svg#page9366"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>0</span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 17.28 8.36"
+style="width:  1.74em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9405.svg#page9367"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>5</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 123.26 24.47"
+style="width: 12.37em; height:  2.58em;"> <use
+xlink:href="images/img9406.svg#page9368"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Ara apliquem la fórmula explicada abans, tenint
+en compte que el <span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9407.svg#page9369"> </use> </svg></span> té sis
+operacions de <span class="inlinemath">simetria (<svg
+viewBox="0 -6.92 24 6.92"
+style="width:  2.41em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9408.svg#page9370"> </use> </svg></span>), </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 15.36 6.78"
+style="width:  1.54em; height:  0.80em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9409.svg#page9371"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9410.svg#page9372"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 157.88 19.85"
+style="width: 15.85em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img9411.svg#page9373"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 15.36 6.78"
+style="width:  1.54em; height:  0.80em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9412.svg#page9374"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9413.svg#page9375"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 167.34 19.85"
+style="width: 16.80em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img9414.svg#page9376"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 12.21 5.78"
+style="width:  1.23em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9415.svg#page9377"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9416.svg#page9378"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 170.11 19.85"
+style="width: 17.07em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img9417.svg#page9379"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>cosa que ens dona</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 70.86 8.8"
+style="width:  7.11em; height:  1.00em;"> <use
+xlink:href="images/img9418.svg#page9380"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>en total acord amb el que hem vist en </span><a
+class="sffamily small" href="sections/section.B.2.html#ref::app:sim:c3vExemple"
+>§B.2&vert;3&rang;</a>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 123.26 24.47"
+style="width: 12.37em; height:  2.58em;"> <use
+xlink:href="images/img9419.svg#page9381"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:gammaTransRot"> <span>&vert;5&rang;</span> <span
+class="sffamily" >Necessitem les representacions <span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9420.svg#page9382"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9421.svg#page9383"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Representacions <span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9422.svg#page9384"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9423.svg#page9385"> </use> </svg></span></span></strong>.
+<span>Les representacions <span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9424.svg#page9386"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9425.svg#page9387"> </use> </svg></span> contenen
+respectivament els components de les translacions i de les rotacions que
+apareixen en la penúltima columna de les taules de caràcters</span>. <span>Els
+components podem aparèixer en les taules de tres maneres distintes i en
+cadascun dels tres casos l’expressió <span class="inlinemath">de <svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9426.svg#page9388"> </use> </svg></span> i
+<span class="inlinemath">de <svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9427.svg#page9389"> </use> </svg></span> serà
+diferent</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9428.svg#page9390"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9429.svg#page9391"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -20.42 165.42 36.04"
+style="width: 16.60em; height:  3.74em; vertical-align: -1.63em;"> <use
+xlink:href="images/img9430.svg#page9392"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9431.svg#page9393"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9432.svg#page9394"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -20.42 174.54 36.04"
+style="width: 17.52em; height:  3.74em; vertical-align: -1.63em;"> <use
+xlink:href="images/img9433.svg#page9395"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.1&rang;</span> <span class="sffamily" >Exemple:</span>
+<span class="sffamily" >cas <span class="inlinemath"><svg
+viewBox="0 -6.81 10.34 8.3"
+style="width:  1.04em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9434.svg#page9396"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.11 9.66"
+style="width:  1.02em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9435.svg#page9397"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9436.svg#page9398"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.08 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9437.svg#page9399"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.86 9.66"
+style="width:  1.19em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9438.svg#page9400"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9439.svg#page9401"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="table" id="ref::app:sim:Cs">
+<div class="p caption"> <span>Taula B.3</span>: <span>Taula de caràcters del
+grup <span class="inlinemath"><svg
+viewBox="0 -6.81 9.01 8.3"
+style="width:  0.90em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9440.svg#page9402"> </use> </svg></span></span>. </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.01 8.3"
+style="width:  0.90em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9441.svg#page9403"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9442.svg#page9404"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 24.56 9.96"
+style="width:  2.47em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9443.svg#page9405"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="l">
+
+</td><td class="vrule"></td>
+<td class="l">
+
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+<tr><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.49 9.77 7.49"
+style="width:  0.98em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9444.svg#page9406"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 41.96 9.66"
+style="width:  4.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9445.svg#page9407"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 74.88 7.14"
+style="width:  7.52em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9446.svg#page9408"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.49 12.07 7.49"
+style="width:  1.21em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9447.svg#page9409"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 43.7 9.66"
+style="width:  4.39em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9448.svg#page9410"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 34.67 7.14"
+style="width:  3.48em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9449.svg#page9411"> </use> </svg></span></span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Per al <span class="inlinemath">grup <svg
+viewBox="0 -6.81 9.01 8.3"
+style="width:  0.90em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9450.svg#page9412"> </use> </svg></span>, els components
+de la translació i de la rotació apareixen individualment en la taula de
+caràcters (taula </span><a
+href="sections/section.B.2.html#ref::app:sim:Cs">B.3</a><span>)</span>.
+<span>Tots els components pertanyen a representacions irreductibles
+</span><span class="itshape" >no degenerades</span><span>
+<span class="inlinemath">(símbols <svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9451.svg#page9413"> </use> </svg></span>
+<span class="inlinemath">o <svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9452.svg#page9414"> </use> </svg></span>)</span>.
+<span>Les representacions són</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9453.svg#page9415"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9454.svg#page9416"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 124.29 11.45"
+style="width: 12.48em; height:  1.27em; vertical-align: -0.41em;"> <use
+xlink:href="images/img9455.svg#page9417"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9456.svg#page9418"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9457.svg#page9419"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 131.44 11.45"
+style="width: 13.19em; height:  1.27em; vertical-align: -0.41em;"> <use
+xlink:href="images/img9458.svg#page9420"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Els respectius caràcters poden obtindre’s com
+hem explicat en </span><a class="sffamily small"
+href="sections/section.B.2.html#ref::app:sim:c3vExemple"
+>§B.2&vert;3&rang;</a>: </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.01 8.3"
+style="width:  0.90em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9459.svg#page9421"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9460.svg#page9422"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 24.56 9.96"
+style="width:  2.47em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9461.svg#page9423"> </use> </svg></span></span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.49 9.77 7.49"
+style="width:  0.98em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9462.svg#page9424"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.49 12.07 7.49"
+style="width:  1.21em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9463.svg#page9425"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9464.svg#page9426"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9465.svg#page9427"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="c">
+ <span>-1</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2&rang;</span> <span class="sffamily" >Exemple:</span>
+<span class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9466.svg#page9428"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 33.63 10.32"
+style="width:  3.38em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9467.svg#page9429"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9468.svg#page9430"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 37.11 10.32"
+style="width:  3.73em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9469.svg#page9431"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9470.svg#page9432"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9471.svg#page9433"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">2<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9472.svg#page9434"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">3<svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9473.svg#page9435"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9474.svg#page9436"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9475.svg#page9437"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 43.04 8.66"
+style="width:  4.32em; height:  0.99em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9476.svg#page9438"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 14.56 5.78"
+style="width:  1.46em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9477.svg#page9439"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9478.svg#page9440"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9479.svg#page9441"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9480.svg#page9442"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 33.63 10.32"
+style="width:  3.38em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9481.svg#page9443"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 37.11 10.32"
+style="width:  3.73em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9482.svg#page9444"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 71.39 10.32"
+style="width:  7.17em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9483.svg#page9445"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 42.91 10.32"
+style="width:  4.31em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9484.svg#page9446"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Per al <span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9485.svg#page9447"> </use> </svg></span>, els
+<span class="inlinemath">components <svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9486.svg#page9448"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9487.svg#page9449"> </use> </svg></span> apareixen
+individualment en la taula de caràcters (taula </span><a
+href="sections/section.B.1.html#ref::app:sim:C3v">B.1</a><span>) i pertanyen a
+representacions irreductibles </span><span class="itshape" >no
+degenerades</span><span> <span class="inlinemath">(símbols <svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9488.svg#page9450"> </use> </svg></span>
+<span class="inlinemath">o <svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9489.svg#page9451"> </use> </svg></span>)</span>.
+<span>Els altres components, en canvi, apareixen
+<span class="inlinemath">com <svg
+viewBox="0 -7.47 33.63 10.32"
+style="width:  3.38em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9490.svg#page9452"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -7.47 37.11 10.32"
+style="width:  3.73em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9491.svg#page9453"> </use> </svg></span> i pertanyen a
+representacions </span><span class="itshape" >doblement
+degenerades</span><span> <span class="inlinemath">(símbol <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9492.svg#page9454"> </use> </svg></span>)</span>.
+<span>Les representacions són</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9493.svg#page9455"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9494.svg#page9456"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 106.54 10.63"
+style="width: 10.69em; height:  1.19em; vertical-align: -0.44em;"> <use
+xlink:href="images/img9495.svg#page9457"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9496.svg#page9458"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9497.svg#page9459"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 113.19 10.63"
+style="width: 11.36em; height:  1.19em; vertical-align: -0.44em;"> <use
+xlink:href="images/img9498.svg#page9460"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Els respectius caràcters poden obtindre’s com
+hem explicat en </span><a class="sffamily small"
+href="sections/section.B.2.html#ref::app:sim:c3vExemple"
+>§B.2&vert;3&rang;</a>: </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9499.svg#page9461"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9500.svg#page9462"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">2<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9501.svg#page9463"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">3<svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9502.svg#page9464"> </use> </svg></span></span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9503.svg#page9465"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9504.svg#page9466"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9505.svg#page9467"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>0</span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9506.svg#page9468"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="c">
+ <span>1</span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9507.svg#page9469"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="c">
+ <span>-1</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.3&rang;</span> <span class="sffamily" >Exemple:</span>
+<span class="sffamily" >cas <span class="inlinemath"><svg
+viewBox="0 -7.47 48.47 10.32"
+style="width:  4.87em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9508.svg#page9470"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -7.47 53.69 10.32"
+style="width:  5.39em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9509.svg#page9471"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="table" id="ref::app:sim:Td">
+<div class="p caption"> <span>Taula B.4</span>: <span>Taula de caràcters del
+grup <span class="inlinemath"><svg
+viewBox="0 -6.81 9.57 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9510.svg#page9472"> </use> </svg></span></span>. </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.57 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9511.svg#page9473"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9512.svg#page9474"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">8<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9513.svg#page9475"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">3<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9514.svg#page9476"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">6<svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9515.svg#page9477"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">6<svg
+viewBox="0 -4.29 9.84 5.78"
+style="width:  0.99em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9516.svg#page9478"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9517.svg#page9479"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 70.27 8.66"
+style="width:  7.05em; height:  0.99em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9518.svg#page9480"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9519.svg#page9481"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9520.svg#page9482"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 131.46 10.32"
+style="width: 13.20em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9521.svg#page9483"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.79 8.3"
+style="width:  0.98em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9522.svg#page9484"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 53.69 10.32"
+style="width:  5.39em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9523.svg#page9485"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.79 8.3"
+style="width:  0.98em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9524.svg#page9486"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 48.47 10.32"
+style="width:  4.87em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9525.svg#page9487"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 63.02 10.32"
+style="width:  6.33em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9526.svg#page9488"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Per al <span class="inlinemath">grup <svg
+viewBox="0 -6.81 9.57 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9527.svg#page9489"> </use> </svg></span>, els components
+de les translacions i rotacions apareixen agrupats
+<span class="inlinemath">com <svg
+viewBox="0 -7.47 48.47 10.32"
+style="width:  4.87em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9528.svg#page9490"> </use> </svg></span>
+<span class="inlinemath">o <svg
+viewBox="0 -7.47 53.69 10.32"
+style="width:  5.39em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9529.svg#page9491"> </use> </svg></span> en la taula de
+caràcters (taula </span><a
+href="sections/section.B.2.html#ref::app:sim:Td">B.4</a><span>) i pertanyen a
+representacions irreductibles </span><span class="itshape" >triplement
+degenerades</span><span> <span class="inlinemath">(símbol <svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9530.svg#page9492"> </use> </svg></span>)</span>.
+<span>Les representacions són</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9531.svg#page9493"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9532.svg#page9494"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 67.75 10.63"
+style="width:  6.80em; height:  1.19em; vertical-align: -0.44em;"> <use
+xlink:href="images/img9533.svg#page9495"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9534.svg#page9496"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9535.svg#page9497"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 74.9 10.63"
+style="width:  7.52em; height:  1.19em; vertical-align: -0.44em;"> <use
+xlink:href="images/img9536.svg#page9498"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>En aquest cas no cal calcular els respectius
+caràcters, ja que venen directament en la taula de caràcters</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.4&rang;</span> <span class="sffamily" >Hi ha una
+fórmula alternativa per a <span class="inlinemath"><svg
+viewBox="0 -4.29 23.99 6.23"
+style="width:  2.41em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9537.svg#page9499"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 16.43 6.23"
+style="width:  1.65em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9538.svg#page9500"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>A banda del procediment que acabem
+de fer servir per obtindre els caràcters <span class="inlinemath">de <svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9539.svg#page9501"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9540.svg#page9502"> </use> </svg></span>, existeix una
+alternativa [<a href="sections/biblio.html#bib::BISHOP1993">36</a>, secció 9-6]
+que ens els dona sense necessitat de consultar les taules de caràcters, i que
+és vàlid per a qualsevol grup puntual</span>. <span>La indiquem a
+continuació</span>: </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="l">
+
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9541.svg#page9503"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 6.05 6.86"
+style="width:  0.61em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9542.svg#page9504"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="-.77 -9.14 4.98 9.14"
+style="width:  0.50em; height:  1.04em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9543.svg#page9505"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 12.24 11.84"
+style="width:  1.23em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9544.svg#page9506"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 11.09 11.84"
+style="width:  1.11em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9545.svg#page9507"> </use> </svg></span></span>
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+<tr><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 23.98 8.36"
+style="width:  2.41em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9546.svg#page9508"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>-3</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.77 63.61 12.3"
+style="width:  6.38em; height:  1.35em; vertical-align: -0.41em;"> <use
+xlink:href="images/img9547.svg#page9509"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.77 63.61 12.3"
+style="width:  6.38em; height:  1.35em; vertical-align: -0.41em;"> <use
+xlink:href="images/img9548.svg#page9510"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.42 8.36"
+style="width:  1.65em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9549.svg#page9511"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>3</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.77 63.61 12.3"
+style="width:  6.38em; height:  1.35em; vertical-align: -0.41em;"> <use
+xlink:href="images/img9550.svg#page9512"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.77 71.36 12.3"
+style="width:  7.16em; height:  1.35em; vertical-align: -0.41em;"> <use
+xlink:href="images/img9551.svg#page9513"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Recordeu <span class="inlinemath">que <svg
+viewBox="0 -9.38 37.87 11.84"
+style="width:  3.80em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9552.svg#page9514"> </use> </svg></span>, i
+<span class="inlinemath">que <svg
+viewBox="0 -9.38 35.85 11.84"
+style="width:  3.60em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9553.svg#page9515"> </use> </svg></span></span>.</div>
+</div>
+
+</details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.B.2.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

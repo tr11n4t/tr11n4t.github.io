@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Partícula en una caixa unidimensional (versió quàntica)</title>
+<meta name="description" content="Obtenció de les autofuncions i autovalors del
+operador hamiltonià de la partícula en una caixa unidimensional. Partícula
+lliure.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.2.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.2.html"><span>2 Aplicació a sistemes model
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>2.2 La partícula en una caixa
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img729.svg#page717"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.1.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section" id="ref::mod:cai">  <span>2.2  La partícula en una
+caixa</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Situem la
+partícula en una </span><span class="itshape sffamily" >caixa
+unidimensional.</span></summary>
+
+<div class="content"><div class="p"> <span>Situem la partícula en una
+</span><span class="itshape" >caixa unidimensional</span><span> al llarg de,
+per exemple, <span class="inlinemath">l’eix <svg
+viewBox="0 -6.81 9.04 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img730.svg#page718"> </use> </svg></span></span>. <span>La
+posició de la partícula estarà limitada</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 46.79 8.74"
+style="width:  4.70em; height:  1.00em;"> <use
+xlink:href="images/img731.svg#page719"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.81 6.78 6.81"
+style="width:  0.68em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img732.svg#page720"> </use> </svg></span> és la longitud de
+la caixa</span>.</div> </div>
+
+</details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 44.02 8.16"
+style="width:  4.42em; height:  0.94em;"> <use
+xlink:href="images/img733.svg#page721"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cai:proppou"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Confinem la partícula amb un pou de potencial
+infinit.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem impedir que la partícula
+s’escape de la caixa amb un pou de potencial, com il·lustrem en la
+figura </span><a href="sections/section.2.2.html#ref::mod:cai:pou">2.1</a>.
+<span>Mentre que dins la caixa el potencial és zero, fora és
+<span class="inlinemath"><svg
+viewBox="0 -5.81 17.71 6.64"
+style="width:  1.78em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img734.svg#page722"> </use> </svg></span>, cosa que fa que
+sortir de la caixa sigui, energèticament, infinitament desfavorable</span>.
+</div>
+
+<div class="p"> <span>En tocar la paret, la partícula experimenta una força de
+repulsió infinita que la fa recular</span>. <span>Aquesta força, en separar-se
+la partícula de la paret, deixa d’actuar</span>. </div>
+
+<div class="figure" id="ref::mod:cai:pou">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -129.92 141.73 115.47"
+style="width: 14.23em; height: 13.16em;"> <use
+xlink:href="images/img735.svg#page723"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 2.1</span>: <span>Pou de potencial infinit
+que confina una partícula unidimensional entre <span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img736.svg#page724"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.81 6.78 6.81"
+style="width:  0.68em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img737.svg#page725"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>Matemàticament, el potencial podem expressar-lo com
+</span> </div>
+
+<table class="equation" id="ref::mod:cai:V"><tr><td><svg class="equation"
+viewBox="0 -20.42 179.35 35.87"
+style="width: 18.00em; height:  3.72em;"> <use
+xlink:href="images/img738.svg#page726"> </use>
+</svg></td><td>(2.1)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.81 6.78 6.81"
+style="width:  0.68em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img739.svg#page727"> </use> </svg></span> és la longitud de
+la caixa</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >L’operador
+hamiltonià és <span class="inlinemath"><svg
+viewBox="0 -9.38 49.78 10.21"
+style="width:  5.00em; height:  1.15em; vertical-align: -0.14em;"> <use
+xlink:href="images/img740.svg#page728"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador hamiltonià
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img741.svg#page729"> </use> </svg></span> correspon a
+l’observable energia total, és a dir, a la suma de l’energia cinètica i la
+potencial</span>. <span>L’operador energia cinètica és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 64.86 22.52"
+style="width:  6.51em; height:  2.38em;"> <use
+xlink:href="images/img742.svg#page730"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 8.75 4.29"
+style="width:  0.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img743.svg#page731"> </use> </svg></span> és la massa de la
+partícula</span>. <span>Per obtindre el hamiltonià, afegirem a
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.21 9.38"
+style="width:  0.72em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img744.svg#page732"> </use> </svg></span> l’operador energia
+potencial, </span> </div>
+
+<table class="equation" id="ref::mod:cai:Hcaixa"><tr><td><svg class="equation"
+viewBox="0 -15.69 100.39 22.52"
+style="width: 10.08em; height:  2.38em;"> <use
+xlink:href="images/img745.svg#page733"> </use>
+</svg></td><td>(2.2)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.47 21.47 9.96"
+style="width:  2.16em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img746.svg#page734"> </use> </svg></span> és el pou de
+potencial donat per l’Eq. (</span><a
+href="sections/section.2.2.html#ref::mod:cai:V">2.1</a><span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Hem d’obtindre les
+autofuncions i autovalors de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img747.svg#page735"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per obtindre les autofuncions i
+autovalors de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img748.svg#page736"> </use> </svg></span> hem de resoldre
+l’equació d’autovalors <span class="inlinemath">de <svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img749.svg#page737"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 48.57 9.38"
+style="width:  4.88em; height:  1.06em;"> <use
+xlink:href="images/img750.svg#page738"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 45.8 9.38"
+style="width:  4.60em; height:  1.06em;"> <use
+xlink:href="images/img751.svg#page739"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Les autofuncions
+han de valdre zero fora de la caixa.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -20.42 168.74 35.87"
+style="width: 16.94em; height:  3.72em;"> <use
+xlink:href="images/img752.svg#page740"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Per a qualsevol funció d’ona normalitzada, el valor
+esperat de l’energia és </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 15.68 9.96"
+style="width:  1.57em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img753.svg#page741"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img754.svg#page742"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.38 136.13 11.87"
+style="width: 13.66em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img755.svg#page743"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img756.svg#page744"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.1 108.34 24.01"
+style="width: 10.88em; height:  2.53em; vertical-align: -1.05em;"> <use
+xlink:href="images/img757.svg#page745"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img758.svg#page746"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -15.86 250.58 25.77"
+style="width: 25.15em; height:  2.71em; vertical-align: -1.05em;"> <use
+xlink:href="images/img759.svg#page747"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Fora de la caixa la funció d’ona ha de valdre
+zero, perquè si no el valor esperat de l’energia seria infinit</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cai:contorn"> <span>&vert;6&rang;</span> <span
+class="itshape sffamily" >Condicions de contorn:</span> <span class="sffamily"
+>les autofuncions han de valdre zero en les parets.</span></summary>
+
+<div class="content"><div class="p"> <span>Ara bé, com que les funcions d’ona
+ha de ser contínues, resulta que també ha de ser zero en les parets de la
+caixa, és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 77.07 9.96"
+style="width:  7.74em; height:  1.12em;"> <use
+xlink:href="images/img760.svg#page748"> </use> </svg></span> </div>
+
+<div class="p"> <span>Les dos igualtats de la relació anterior constitueixen
+les </span><span class="itshape" >condicions de contorn</span><span> del
+problema</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Condicions de contorn</span></strong>. <span>La
+resolució de les equacions diferencials que apareixen en mecànica quàntica (i
+en altres camps) requereix una descripció del limit exterior del problema
+estudiat</span>. <span>Aquesta descripció es fa mitjançant les </span><span
+class="itshape" >condicions de contorn</span><span>, és a dir, un conjunt de
+relacions matemàtiques que han de complir les solucions al problema en el seu
+limit exterior</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Les solucions són
+del tipus <span class="inlinemath"><svg
+viewBox="0 -7.47 117.41 9.96"
+style="width: 11.79em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img761.svg#page749"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -8.95 61.01 11.44"
+style="width:  6.12em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img762.svg#page750"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 45.8 9.38"
+style="width:  4.60em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img763.svg#page751"> </use> </svg></span></span>
+</td><td class="c">
+
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -15.69 97.63 22.52"
+style="width:  9.80em; height:  2.38em; vertical-align: -0.75em;"> <use
+xlink:href="images/img764.svg#page752"> </use> </svg></span></span>
+</td><td class="c">
+
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -20.42 168.74 35.87"
+style="width: 16.94em; height:  3.72em; vertical-align: -1.61em;"> <use
+xlink:href="images/img765.svg#page753"> </use> </svg></span></span>
+</td><td class="c">
+
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Una vegada aclarit que les autofuncions han de ser zero
+fora de la caixa, ens centrarem en el seu comportament dins la caixa</span>.
+<span>Com que el potencial val zero dins la caixa, el hamiltonià de
+l’Eq. (</span><a
+href="sections/section.2.2.html#ref::mod:cai:Hcaixa">2.2</a><span>) només
+tindrà el component de l’energia cinètica, i l’equació d’autovalors de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img766.svg#page754"> </use> </svg></span> quedarà com
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 75.39 22.52"
+style="width:  7.57em; height:  2.38em;"> <use
+xlink:href="images/img767.svg#page755"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>que podem reescriure com </span> </div>
+
+<table class="equation" id="ref::mod:cai:segonPsi"><tr><td><svg
+class="equation" viewBox="1.2 -14.85 74.2 23.02"
+style="width:  7.45em; height:  2.43em;"> <use
+xlink:href="images/img768.svg#page756"> </use>
+</svg></td><td>(2.3)</td></tr></table>
+
+<div class="p"> <span>Segons l’última relació, la derivada segona de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img769.svg#page757"> </use> </svg></span> ha de ser
+proporcional a <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img770.svg#page758"> </use> </svg></span></span>. <span>Això
+ens recorda el </span><span class="itshape" >sinus</span><span>, perquè la
+derivada segona del sinus és proporcional al sinus (el </span><span
+class="itshape" >cosinus</span><span>, també)</span>. <span>Sembla doncs
+raonable escriure la solució com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 133.62 9.96"
+style="width: 13.41em; height:  1.12em;"> <use
+xlink:href="images/img771.svg#page759"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img772.svg#page760"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img773.svg#page761"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img774.svg#page762"> </use> </svg></span> són constants a
+determinar</span>. <span>Calculem ara la derivada segona d’aquesta
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img775.svg#page763"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.85 17.4 21.68"
+style="width:  1.75em; height:  2.30em; vertical-align: -0.75em;"> <use
+xlink:href="images/img776.svg#page764"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img777.svg#page765"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.85 111.61 21.68"
+style="width: 11.20em; height:  2.30em; vertical-align: -0.75em;"> <use
+xlink:href="images/img778.svg#page766"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img779.svg#page767"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.21 119.96 21.05"
+style="width: 12.04em; height:  2.23em; vertical-align: -0.75em;"> <use
+xlink:href="images/img780.svg#page768"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img781.svg#page769"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 131.47 11.1"
+style="width: 13.20em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img782.svg#page770"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img783.svg#page771"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -8.61 125.57 11.1"
+style="width: 12.60em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img784.svg#page772"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -14.85 61.03 21.68"
+style="width:  6.13em; height:  2.30em;"> <use
+xlink:href="images/img785.svg#page773"> </use> </svg></span> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -14.85 71.43 23.02"
+style="width:  7.17em; height:  2.43em;"> <use
+xlink:href="images/img786.svg#page774"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Comparant aquesta relació amb l’Eq. (</span><a
+href="sections/section.2.2.html#ref::mod:cai:segonPsi">2.3</a><span>), veiem
+que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.55 49.78 21.71"
+style="width:  5.00em; height:  2.30em;"> <use
+xlink:href="images/img787.svg#page775"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>de manera <span class="inlinemath">que <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img788.svg#page776"> </use> </svg></span> sí és autofunció,
+amb autovalor </span> </div>
+
+<table class="equation" id="ref::mod:cai:Ealpha"><tr><td><svg class="equation"
+viewBox="0 -15.69 47.46 22.52"
+style="width:  4.76em; height:  2.38em;"> <use
+xlink:href="images/img789.svg#page777"> </use>
+</svg></td><td>(2.4)</td></tr></table>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >Imposants les
+condicions de contorn obtenim <span class="inlinemath"><svg
+viewBox="0 -6.81 26.32 6.81"
+style="width:  2.64em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img790.svg#page778"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.93 86.05 10.36"
+style="width:  8.64em; height:  1.16em; vertical-align: -0.40em;"> <use
+xlink:href="images/img791.svg#page779"> </use> </svg></span></span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 130.85 9.96"
+style="width: 13.13em; height:  1.12em;"> <use
+xlink:href="images/img792.svg#page780"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Podem fixar el valor de <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img793.svg#page781"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img794.svg#page782"> </use> </svg></span> imposant les
+condicions de contorn que hem vist en </span><a class="sffamily small"
+href="sections/section.2.2.html#ref::mod:cai:contorn"
+>§2.2&vert;6&rang;</a><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 149.74 9.96"
+style="width: 15.03em; height:  1.12em;"> <use
+xlink:href="images/img795.svg#page783"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Com que <span class="inlinemath"><svg
+viewBox="0 -6.27 37.21 6.27"
+style="width:  3.74em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img796.svg#page784"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.27 38.25 6.27"
+style="width:  3.84em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img797.svg#page785"> </use> </svg></span>, tindrem que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 29.09 8.74"
+style="width:  2.92em; height:  1.00em;"> <use
+xlink:href="images/img798.svg#page786"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<table class="equation" id="ref::mod:cai:PsiAalpha"><tr><td><svg
+class="equation" viewBox="0 -7.47 78.53 9.96"
+style="width:  7.88em; height:  1.12em;"> <use
+xlink:href="images/img799.svg#page787"> </use>
+</svg></td><td>(2.5)</td></tr></table>
+
+<div class="p"> <span>Per altra banda, la segona condició de contorn
+de </span><a class="sffamily small"
+href="sections/section.2.2.html#ref::mod:cai:contorn"
+>§2.2&vert;6&rang;</a><span> ens diu que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 98.97 9.96"
+style="width:  9.93em; height:  1.12em;"> <use
+xlink:href="images/img800.svg#page788"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>relació que només es complira si </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 102.59 8.74"
+style="width: 10.30em; height:  1.00em;"> <use
+xlink:href="images/img801.svg#page789"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(aclarim que un valor de
+<span class="inlinemath"><svg
+viewBox="0 -6.27 24.24 6.27"
+style="width:  2.43em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img802.svg#page790"> </use> </svg></span> no és acceptable,
+ja que faria que <span class="inlinemath"><svg
+viewBox="0 -6.27 24.67 6.27"
+style="width:  2.48em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img803.svg#page791"> </use> </svg></span>, i per tant que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img804.svg#page792"> </use> </svg></span> fos
+nul·la)</span>. <span>Finalment, aïllem <span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img805.svg#page793"> </use> </svg></span>, </span> </div>
+
+<table class="equation" id="ref::mod:cai:alphan"><tr><td><svg class="equation"
+viewBox="0 -11.03 98.2 17.86"
+style="width:  9.86em; height:  1.91em;"> <use
+xlink:href="images/img806.svg#page794"> </use>
+</svg></td><td>(2.6)</td></tr></table>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cai:propPsin"> <span>&vert;9&rang;</span> <span
+class="sffamily" >Les autofuncions </span><span class="itshape sffamily"
+>normalitzades</span><span class="sffamily" > són <span class="inlinemath"><svg
+viewBox="0 -9.06 153.06 12.04"
+style="width: 15.36em; height:  1.33em; vertical-align: -0.36em;"> <use
+xlink:href="images/img807.svg#page795"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 75.76 9.96"
+style="width:  7.60em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img808.svg#page796"> </use> </svg></span></span>
+</td><td class="c">
+
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -11.03 98.2 17.86"
+style="width:  9.86em; height:  1.91em; vertical-align: -0.75em;"> <use
+xlink:href="images/img809.svg#page797"> </use> </svg></span></span>
+</td><td class="c">
+
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Si combinen les Eqs. (</span><a
+href="sections/section.2.2.html#ref::mod:cai:PsiAalpha">2.5</a><span>)
+i (</span><a
+href="sections/section.2.2.html#ref::mod:cai:alphan">2.6</a><span>) tindrem
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -11.5 165.18 18.34"
+style="width: 16.58em; height:  1.96em;"> <use
+xlink:href="images/img810.svg#page798"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img811.svg#page799"> </use> </svg></span> és la constant de
+normalització, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.11 42.66 24"
+style="width:  4.28em; height:  2.53em;"> <use
+xlink:href="images/img812.svg#page800"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.11 172.41 24"
+style="width: 17.31em; height:  2.53em;"> <use
+xlink:href="images/img813.svg#page801"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cai:propEn"> <span>&vert;10&rang;</span> <span
+class="sffamily" >Els autovalors són <span class="inlinemath"><svg
+viewBox="0 -8.11 130.81 10.6"
+style="width: 13.13em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img814.svg#page802"> </use> </svg></span></span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.07 39.92 13.5"
+style="width:  4.01em; height:  1.47em; vertical-align: -0.40em;"> <use
+xlink:href="images/img815.svg#page803"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.93 96.01 10.36"
+style="width:  9.64em; height:  1.16em; vertical-align: -0.40em;"> <use
+xlink:href="images/img816.svg#page804"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Substituïm el valor <span class="inlinemath">d’<svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img817.svg#page805"> </use> </svg></span> donat per
+l’Eq. (</span><a
+href="sections/section.2.2.html#ref::mod:cai:alphan">2.6</a><span>) en
+l’expressió dels autovalors, Eq. (</span><a
+href="sections/section.2.2.html#ref::mod:cai:Ealpha">2.4</a><span>), </span>
+</div>
+
+<table class="equation" id="ref::mod:cai:En"><tr><td><svg class="equation"
+viewBox="0 -15.69 164.36 22.52"
+style="width: 16.50em; height:  2.38em;"> <use
+xlink:href="images/img818.svg#page806"> </use>
+</svg></td><td>(2.7)</td></tr></table>
+
+<details open class="foldable prop">
+<summary> <span>&vert;10.1&rang;</span> <span class="sffamily" >Els nombres
+quàntics etiqueten els estats.</span></summary>
+
+<div class="content"><div class="p"> <span>El nombre enter
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img819.svg#page807"> </use> </svg></span> és el que
+s’anomena un </span><span class="itshape" >nombre quàntic</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Nombre quàntic</span></strong>. <span>El nombres
+quàntics s’utilitzen en mecànica quàntica per a etiquetar les autofuncions i
+autovalors d’un sistema</span>. <span>Freqüentment són nombres enters o
+semienters, i apareixen com a conseqüència d’imposar les condicions de
+contorn</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cai:quantificacio"> <span>&vert;10.2&rang;</span> <span
+class="sffamily" >La partícula en una caixa il·lustra la </span><span
+class="itshape sffamily" >quantificació de l’energia</span><span
+class="sffamily" >.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 164.36 22.52"
+style="width: 16.50em; height:  2.38em;"> <use
+xlink:href="images/img820.svg#page808"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>La mecànica quàntica deu el seu nom a la propietat
+anomenada </span><span class="itshape" >quantificació de
+l’energia</span><span>, propietat que es manifesta en la majoria dels sistemes
+quàntics</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Quantificació de l’energia</span></strong>.
+<span>Només per a alguns valors de l’energia és possible construir autofuncions
+que compleixen les condicions de contorn</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Per a la partícula en una caixa, com hem vist,
+només les energies donades per l’Eq (</span><a
+href="sections/section.2.2.html#ref::mod:cai:En">2.7</a><span>) són compatibles
+amb autofuncions que siguin zero en les parets de la caixa</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cai:puntzero"> <span>&vert;10.3&rang;</span> <span
+class="sffamily" >L’</span><span class="itshape sffamily" >energia del punt
+zero</span><span class="sffamily" > </span><span class="bfseries sffamily"
+>no</span><span class="sffamily" > és zero.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Energia del punt zero</span></strong>.
+<span>L’</span><span class="itshape" >energia del punt zero</span><span> és
+l’energia més baixa que pot tindre un sistema mecanoquàntic</span>. </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Estat fonamental</span></strong>.
+<span>L’</span><span class="itshape" >estat fonamental</span><span> és l’estat
+amb l’energia més baixa d’un sistema mecanoquàntic</span>. <span>Òbviament,
+l’energia de l’estat fonamental és l’</span><span class="itshape" >energia del
+punt zero</span>. </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Estat excitat</span></strong>. <span>Un
+</span><span class="itshape" >estat excitat</span><span> és qualsevol estat
+d’un sistema mecanoquàntic amb una energia més gran que la del estat
+fonamental</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>En aquestes definicions, quan parlem
+d’</span><span class="itshape" >estat</span><span> es referim a estats descrits
+per autofuncions del hamiltonià</span>. </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 164.36 22.52"
+style="width: 16.50em; height:  2.38em;"> <use
+xlink:href="images/img821.svg#page809"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Per a la partícula en una caixa, l’estat fonamental
+correspon a <span class="inlinemath"><svg
+viewBox="0 -6.27 24.24 6.27"
+style="width:  2.43em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img822.svg#page810"> </use> </svg></span>, i la seva energia
+és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 55.24 21.68"
+style="width:  5.54em; height:  2.30em;"> <use
+xlink:href="images/img823.svg#page811"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Hom pensaria que, atès que la partícula en una
+caixa només té energia cinètica (l’energia potencial és zero dins la caixa),
+hauria d’haver un estat amb energia zero, que seria la partícula </span><span
+class="itshape" >immòbil</span>. <span>Malgrat tot, però, l’energia del punt
+zero <span class="inlinemath">(<svg
+viewBox="0 -6.81 11.33 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img824.svg#page812"> </use> </svg></span>) és major que
+zero</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:cai:lliure"> <span>&vert;10.4&rang;</span> <span
+class="sffamily" >Si la caixa és molt gran, tindrem una </span><span
+class="itshape sffamily" >partícula lliure</span><span class="sffamily"
+>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Partícula lliure</span></strong>. <span>Una
+</span><span class="itshape" >partícula lliure</span><span> es mou per l’espai
+sense estar sotmesa a cap potencial</span>. <span>Podem imaginar-la com una
+partícula en una caixa </span><span class="itshape" >infinitament</span><span>
+gran</span>. </div>
+
+</div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 164.36 22.52"
+style="width: 16.50em; height:  2.38em;"> <use
+xlink:href="images/img825.svg#page813"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>La partícula lliure no experimenta la </span><span
+class="itshape" >quantificació de l’energia</span><span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.2.2.html#ref::mod:cai:quantificacio"
+>§2.2&vert;10.2&rang;</a><span>, és a dir, qualsevol energia és
+acceptable</span>. <span>Ho demostrarem</span>. </div>
+
+<div class="p"> <span>Calculem primer la diferencia d’energia entre dos estats
+consecutius de la partícula en una caixa, </span> </div>
+
+<table class="equation" id="ref::mod:cai:DeltaEn"><tr><td><svg class="equation"
+viewBox="0 -14.85 247.49 21.68"
+style="width: 24.84em; height:  2.30em;"> <use
+xlink:href="images/img826.svg#page814"> </use>
+</svg></td><td>(2.8)</td></tr></table>
+
+<div class="p noindent"> <span>Veiem que la diferencia </span><span
+class="itshape" >no</span><span> és zero, cosa que és conseqüència de la
+quantificació de l’energia</span>. <span>Ara bé, si la caixa és molt gran,
+aquesta diferencia serà negligible, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 149.89 21.68"
+style="width: 15.04em; height:  2.30em;"> <use
+xlink:href="images/img827.svg#page815"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Que la diferència sigui zero implica que
+qualsevol energia és possible</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;10.5&rang;</span> <span class="sffamily" >Si la massa és
+molt gran, tindrem una </span><span class="itshape sffamily" >partícula
+clàssica.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 243.52 21.68"
+style="width: 24.44em; height:  2.30em;"> <use
+xlink:href="images/img828.svg#page816"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Si la massa és molt gran, la partícula tindrà un
+comportament </span><span class="itshape" >clàssic</span><span>, és a dir, que
+no experimentarà la </span><span class="itshape" >quantificació de
+l’energia</span><span> que hem vist en </span><a class="sffamily small"
+href="sections/section.2.2.html#ref::mod:cai:quantificacio"
+>§2.2&vert;10.2&rang;</a><span>, i per tant qualsevol energia serà
+acceptable</span>. <span>És fàcil de demostrar</span>: <span>segons
+l’Eq. (</span><a
+href="sections/section.2.2.html#ref::mod:cai:DeltaEn">2.8</a><span>), </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 153.09 21.68"
+style="width: 15.37em; height:  2.30em;"> <use
+xlink:href="images/img829.svg#page817"> </use> </svg></span> </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;11&rang;</span> <span class="sffamily" >Les autofuncions
+poden presentar </span><span class="itshape sffamily" >nodes.</span></summary>
+
+<div class="content"><div class="p"> <span>En la figura </span><a
+href="sections/section.2.2.html#ref::mod:cai:Psis">2.2</a><span> es mostren
+algunes autofuncions de la partícula en una caixa</span>. </div>
+
+<div class="figure" id="ref::mod:cai:Psis">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Particle_in_a_box_wavefunctions.png"
+><span>commons.wikimedia</span></a><img src="images/img830.png" alt="included
+image" style="width: 30.61em; height: 24.71em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 2.2</span>: <span>Gràfica d’algunes
+autofuncions de la partícula en una caixa unidimensional</span>. <span>Per
+claredat, les autofuncions estan desplaçades verticalment amb una quantia
+proporcional a la seva energia</span>. </div>
+
+</div>
+
+<div class="p"> <span>La naturalesa oscil·lant d’aquestes autofuncions fa que
+mostren </span><span class="itshape" >nodes</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Node</span></strong>. <span>Un </span><span
+class="itshape" >node</span><span> és un punt on una autofunció és zero</span>.
+<span>La probabilitat de trobar la partícula en un node és nul·la</span>.
+</div>
+
+</div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.2.2.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

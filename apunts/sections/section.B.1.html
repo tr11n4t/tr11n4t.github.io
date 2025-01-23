@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Representacions irreductibles (RI) | Taules de caràcters</title>
+<meta name="description" content="Es descriu el format de les taules de
+caràcters, en particular allò relacionat amb les representacions
+irreductibles.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.B.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.III.html"><span>Apèndixs </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.B.html"><span>B Simetria (suplement) </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>B.1 Representacions irreductibles
+(RI) </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img9124.svg#page9086"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.B.html"> <svg class="icon previous" viewBox="0 0
+512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.B.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.B.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section" id="ref::app:sim:RI">  <span>B.1  Representacions
+irreductibles (RI)</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Abreujarem
+</span><span class="itshape sffamily" >representació irreductible</span><span
+class="sffamily" > com </span><span class="itshape sffamily"
+>RI.</span></summary>
+
+<div class="content"><div class="p"> <span>El concepte </span><span
+class="itshape" >representació irreductible</span><span> pot abreujar-se com
+</span><span class="itshape" >RI</span><span> (en plural, RIs)</span>.</div>
+</div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Podem dir
+</span><span class="itshape sffamily" >RI</span><span class="sffamily" > o
+també </span><span class="itshape sffamily" >espècie de
+simetria.</span></summary>
+
+<div class="content"><div class="p"> <span>En alguns llibres, les
+representacions irreductibles s’anomenen </span><span class="itshape" >espècies
+de simetria</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Cada </span><span
+class="itshape sffamily" >grup puntual</span><span class="sffamily" > té la
+seva </span><span class="itshape sffamily" >taula de
+caràcters.</span></summary>
+
+<div class="content"><div class="p"> <span>La informació sobre la simetria
+d’una molècula està resumida en l’anomenada </span><span class="itshape" >taula
+de caràcters</span><span> del grup puntual a què pertany la molècula</span>.
+<span>Podeu trobar una selecció de taules de caràcters en </span><a
+href="sections/section.B.4.html#ref::app:sim:Taules">B.4</a>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Els caràcters de
+les RIs són a la </span><span class="itshape sffamily" >taula de
+caràcters.</span></summary>
+
+<div class="content"><div class="p"> <span>Els caràcters de les representacions
+irreductibles d’un grup puntual es troben en la </span><span class="itshape"
+>taula de caràcters</span><span> del grup</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Ho il·lustrarem
+per al grup <span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9125.svg#page9087"> </use> </svg></span> (el de
+l’amoníac).</span></summary>
+
+<div class="content"><div class="p"> <span>Il·lustrarem el format de les taules
+de caràcters amb la taula de caràcters </span><a
+href="sections/section.B.1.html#ref::app:sim:C3v">B.1</a><span>, que correspon
+al grup <span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9126.svg#page9088"> </use> </svg></span>, grup a què
+pertany, per exemple, la molècula d’amoníac <span class="inlinemath">(<svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9127.svg#page9089"> </use> </svg></span>)</span>. </div>
+
+<div class="table" id="ref::app:sim:C3v">
+<div class="p caption"> <span>Taula B.1</span>: <span>Taula de caràcters del
+grup <span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9128.svg#page9090"> </use> </svg></span></span>. </div>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9129.svg#page9091"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9130.svg#page9092"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">2<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9131.svg#page9093"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">3<svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9132.svg#page9094"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9133.svg#page9095"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9134.svg#page9096"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 43.04 8.66"
+style="width:  4.32em; height:  0.99em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9135.svg#page9097"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 14.56 5.78"
+style="width:  1.46em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9136.svg#page9098"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9137.svg#page9099"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9138.svg#page9100"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9139.svg#page9101"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 33.63 10.32"
+style="width:  3.38em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9140.svg#page9102"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 37.11 10.32"
+style="width:  3.73em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9141.svg#page9103"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 71.39 10.32"
+style="width:  7.17em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9142.svg#page9104"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 42.91 10.32"
+style="width:  4.31em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9143.svg#page9105"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9144.svg#page9106"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9145.svg#page9107"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">2<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9146.svg#page9108"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath">3<svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9147.svg#page9109"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr class="hrule">
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+</tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9148.svg#page9110"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9149.svg#page9111"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.81 43.04 8.66"
+style="width:  4.32em; height:  0.99em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9150.svg#page9112"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 14.56 5.78"
+style="width:  1.46em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9151.svg#page9113"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9152.svg#page9114"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>1</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9153.svg#page9115"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+
+</td></tr>
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9154.svg#page9116"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span>2</span>
+</td><td class="c">
+ <span>-1</span>
+</td><td class="c">
+ <span>0</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 33.63 10.32"
+style="width:  3.38em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9155.svg#page9117"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 37.11 10.32"
+style="width:  3.73em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9156.svg#page9118"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 71.39 10.32"
+style="width:  7.17em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9157.svg#page9119"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 42.91 10.32"
+style="width:  4.31em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9158.svg#page9120"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >El símbol del grup
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9159.svg#page9121"> </use> </svg></span>) és al cantó
+superior esquerre.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9160.svg#page9122"> </use> </svg></span> té tres
+classes:</span> <span class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9161.svg#page9123"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9162.svg#page9124"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9163.svg#page9125"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;7.1&rang;</span> <span class="sffamily" >Les operacions
+de simetria s’agrupen en </span><span class="itshape sffamily"
+>classes.</span></summary>
+
+<div class="content"><div class="p"> <span>Les operacions de simetria d’un grup
+es distribueixen en </span><span class="itshape" >classes</span>. <span>La
+definició rigorosa de classe és complicada, i, com que les classes que té cada
+grup apareixen en la corresponen taula de caràcters, no cal, per als objectius
+del present curs, donar detalls</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.2&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9164.svg#page9126"> </use> </svg></span> té sis
+operacions de simetria.</span></summary>
+
+<div class="content"><div class="p"> <span>Visualitzarem els elements de
+simetria del grup <span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9165.svg#page9127"> </use> </svg></span> amb l’ajut de
+l’amoníac, que pertany a aquest grup, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -40.05 60.55 40.05"
+style="width:  6.08em; height:  4.14em;"> <use
+xlink:href="images/img9166.svg#page9128"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>L’amoníac té un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9167.svg#page9129"> </use> </svg></span> (que travessa
+l’àtom de nitrogen) i tres plans <span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9168.svg#page9130"> </use> </svg></span> (tots tres
+contenen l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9169.svg#page9131"> </use> </svg></span>, però cadascun
+d’ells és situat sobre un àtom d’hidrogen diferent)</span>. </div>
+
+<div class="p"> <span>Amb l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9170.svg#page9132"> </use> </svg></span> podem definir
+dues operacions de simetria <span class="inlinemath">(<svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9171.svg#page9133"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.8 12.21"
+style="width:  1.19em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img9172.svg#page9134"> </use> </svg></span>), mentre que
+cadascun dels tres plans ens dóna una operació <span class="inlinemath"><svg
+viewBox="0 -6.86 9.93 8.36"
+style="width:  1.00em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9173.svg#page9135"> </use> </svg></span></span>. <span>A
+més a més, hem d’afegir l’</span><span class="itshape" >operació
+identitat</span><span> <span class="inlinemath"><svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9174.svg#page9136"> </use> </svg></span>, que està
+present en totes les molècules</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -40.05 56.29 39.1"
+style="width:  5.65em; height:  4.14em;"> <use
+xlink:href="images/img9175.svg#page9137"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.3&rang;</span> <span class="sffamily" >Les classes
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9176.svg#page9138"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9177.svg#page9139"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9178.svg#page9140"> </use> </svg></span>) són a la
+primera fila.</span></summary>
+
+<div class="content"><div class="p"> <span>El símbol per a cadascuna de les
+classes es posa en la primera fila de la taula de caràcters, a la dreta del
+símbol del grup</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Classe <span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9179.svg#page9141"> </use> </svg></span></span>: <span>Té
+només una operació de simetria, l’</span><span class="itshape" >operació
+identitat</span><span> <span class="inlinemath"><svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9180.svg#page9142"> </use> </svg></span></span>.
+<span>Tots el grups puntuals tenen una classe <span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9181.svg#page9143"> </use> </svg></span> com
+aquesta</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Classe <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9182.svg#page9144"> </use> </svg></span></span>:
+<span>Conté les dues rotacions <span class="inlinemath"><svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9183.svg#page9145"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.8 12.21"
+style="width:  1.19em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img9184.svg#page9146"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Classe <span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9185.svg#page9147"> </use> </svg></span></span>:
+<span>Conté les tres reflexions <span class="inlinemath"><svg
+viewBox="0 -6.86 9.93 8.36"
+style="width:  1.00em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9186.svg#page9148"> </use> </svg></span></span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.4&rang;</span> <span class="sffamily" >Quantes
+operacions té cada classe?:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 16.07 8.3"
+style="width:  1.61em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9187.svg#page9149"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.27 14.91 7.77"
+style="width:  1.50em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9188.svg#page9150"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si la classe té més d’una operació,
+posem el nombre d’operacions davant del símbol de la classe</span>. <span>Per
+exemple, <span class="inlinemath">escriurem <svg
+viewBox="0 -6.81 16.07 8.3"
+style="width:  1.61em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9189.svg#page9151"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.27 14.91 7.77"
+style="width:  1.50em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9190.svg#page9152"> </use> </svg></span></span>. <span>Si
+la classe només té una operació de simetria (per exemple, la
+<span class="inlinemath">classe <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9191.svg#page9153"> </use> </svg></span>) no cal posar
+res</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >Les </span><span
+class="itshape sffamily" >RIs</span><span class="sffamily" >
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9192.svg#page9154"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9193.svg#page9155"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9194.svg#page9156"> </use> </svg></span>) són a la
+primera columna.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;8.1&rang;</span> <span class="sffamily" >Cada grup té un
+cert nombre de </span><span class="itshape sffamily" >RIs.</span></summary>
+
+<div class="content"><div class="p"> <span>Els símbols utilitzats per a
+designar les representacions irreductibles del grup puntual apareixen en la
+primera columna de la taula de caràcters, baix del símbol del grup</span>:
+<span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9195.svg#page9157"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9196.svg#page9158"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9197.svg#page9159"> </use> </svg></span></span>.
+<span>Estrictament parlant (vegeu </span><a class="sffamily small"
+href="sections/section.13.5.1.html#ref::vi2:sim:representacions"
+>§13.5.1&vert;1&rang;</a><span>), hauríem d’utilitzar els
+<span class="inlinemath">símbols <svg
+viewBox="0 -6.86 15.61 9.35"
+style="width:  1.57em; height:  1.06em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9198.svg#page9160"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 15.61 9.35"
+style="width:  1.57em; height:  1.06em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9199.svg#page9161"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 12.46 8.36"
+style="width:  1.25em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9200.svg#page9162"> </use> </svg></span>, però és
+habitual, en el cas de representacions irreductibles, de no fer servir la
+<span class="inlinemath">lletra <svg
+viewBox="0 -6.86 6.23 6.86"
+style="width:  0.62em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9201.svg#page9163"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Alerta</span>! <span>No confoneu la representació
+<span class="inlinemath">irreductible <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9202.svg#page9164"> </use> </svg></span> amb l’operació
+<span class="inlinemath">identitat <svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9203.svg#page9165"> </use> </svg></span> ni amb la
+<span class="inlinemath">classe <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9204.svg#page9166"> </use> </svg></span></span>.</div>
+</div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.2&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >nombre de RIs</span><span class="sffamily" > és igual
+al </span><span class="itshape sffamily" >nombre de classes.</span></summary>
+
+<div class="content"><div class="p"> <span>Cada grup puntual té un nombre
+limitat de representacions irreductibles</span>: <span>el mateix nombre que el
+de classes d’operacions de simetria</span>. <span>Per exemple, el grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9205.svg#page9167"> </use> </svg></span> té tres classes
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9206.svg#page9168"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9207.svg#page9169"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9208.svg#page9170"> </use> </svg></span>) i tres
+representacions irreductibles <span class="inlinemath">(<svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9209.svg#page9171"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9210.svg#page9172"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9211.svg#page9173"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:OMSim"> <span>&vert;8.3&rang;</span> <span
+class="sffamily" >Cadascun dels </span><span class="itshape sffamily"
+>orbitals</span><span class="sffamily" > ha de pertànyer a una
+RI.</span></summary>
+
+<div class="content"><div class="p"> <span>Cadascun dels orbitals moleculars
+d’una molècula amb simetria ha de pertànyer a una de les representacions
+irreductibles del grup puntual de la molècula</span>. </div>
+
+<div class="p"> <span>En el cas de l’amoníac, els orbitals moleculars
+pertanyeran, bé a la representació irreductible <span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9212.svg#page9174"> </use> </svg></span>, bé a la
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9213.svg#page9175"> </use> </svg></span>, bé a
+<span class="inlinemath">l’<svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9214.svg#page9176"> </use> </svg></span></span>.
+<span>Per exemple, direm que un orbital <span class="inlinemath">molecular <svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9215.svg#page9177"> </use> </svg></span> “pertany a la
+representació irreductible <span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9216.svg#page9178"> </use> </svg></span>”, o,
+simbòlicament, <span class="inlinemath"><svg
+viewBox="0 -6.92 30.47 8.86"
+style="width:  3.06em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9217.svg#page9179"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.4&rang;</span> <span class="sffamily" >Els </span><span
+class="itshape sffamily" >estats electrònics</span><span class="sffamily" > han
+de pertànyer a una RI.</span></summary>
+
+<div class="content"><div class="p"> <span>Els estats electrònics (autofuncions
+del hamiltonià electrònic) també han de pertànyer a alguna de les
+representacions irreductibles del grup puntual de la molècula</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.5&rang;</span> <span class="sffamily" >Els </span><span
+class="itshape sffamily" >modes normals</span><span class="sffamily" > han de
+pertànyer a una RI.</span></summary>
+
+<div class="content"><div class="p"> <span>Cadascun dels modes normals de
+vibració i les corresponents coordenades <span class="inlinemath">normals <svg
+viewBox="0 -6.81 10.69 8.74"
+style="width:  1.07em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9218.svg#page9180"> </use> </svg></span> han de pertànyer
+a una representació irreductible</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;9&rang;</span> <span class="sffamily" >La intersecció
+RI/classe ens dona els caràcters.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Caràcters d’una RI</span></strong>. <span>Siga
+<span class="inlinemath"><svg
+viewBox="0 -6.86 14.89 8.36"
+style="width:  1.49em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9219.svg#page9181"> </use> </svg></span> una
+representació irreductible d’un determinat grup,
+<span class="inlinemath">i <svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9220.svg#page9182"> </use> </svg></span> una operació de
+simetria d’una de les classes del grup</span>. <span>El caràcter
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9221.svg#page9183"> </use> </svg></span>
+<span class="inlinemath">en <svg
+viewBox="0 -6.86 14.89 8.36"
+style="width:  1.49em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9222.svg#page9184"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 30.78 11.87"
+style="width:  3.09em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9223.svg#page9185"> </use> </svg></span>, es troba en la
+intersecció entre la fila <span class="inlinemath">de <svg
+viewBox="0 -6.86 14.89 8.36"
+style="width:  1.49em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9224.svg#page9186"> </use> </svg></span> i la columna de
+la classe</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Per exemple, per al
+<span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9225.svg#page9187"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 32.3 11.87"
+style="width:  3.24em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img9226.svg#page9188"> </use> </svg></span> (el caràcter
+<span class="inlinemath">de <svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9227.svg#page9189"> </use> </svg></span> en la
+<span class="inlinemath">representació <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9228.svg#page9190"> </use> </svg></span>) és -1</span>.
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;9.1&rang;</span> <span class="sffamily" >Totes
+<span class="inlinemath">les <svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9229.svg#page9191"> </use> </svg></span> d’una classe
+tenen el mateix caràcter.</span></summary>
+
+<div class="content"><div class="p"> <span>Per exemple, en la
+<span class="inlinemath">representació <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9230.svg#page9192"> </use> </svg></span> del
+<span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9231.svg#page9193"> </use> </svg></span>, tant el
+caràcter <span class="inlinemath">de <svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9232.svg#page9194"> </use> </svg></span> com el
+<span class="inlinemath">de <svg
+viewBox="0 -9.38 11.8 12.21"
+style="width:  1.19em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img9233.svg#page9195"> </use> </svg></span> són -1</span>.
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;10&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9234.svg#page9196"> </use> </svg></span> és la RI
+</span><span class="itshape sffamily" >totalment simètrica.</span></summary>
+
+<div class="content"><div class="p"> <span>Tots els grups puntuals tenen una
+representació irreductible amb tots els caràcters igual a 1</span>.
+<span>Aquesta representació irreductible s’anomena la representació
+</span><span class="itshape" >totalment simètrica</span>. </div>
+
+<div class="p"> <span>Per al grup <span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9235.svg#page9197"> </use> </svg></span>, la
+representació totalment simètrica és la <span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9236.svg#page9198"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:AB"> <span>&vert;11&rang;</span> <span
+class="sffamily" >Les RIs amb símbols <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9237.svg#page9199"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9238.svg#page9200"> </use> </svg></span> </span><span
+class="itshape sffamily" >no</span><span class="sffamily" > estan
+degenerades.</span></summary>
+
+<div class="content"><div class="p"> <span>Utilitzarem, com a símbol per a una
+representació irreductible </span><span class="itshape" >no
+degenerada</span><span>, les lletres <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9239.svg#page9201"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9240.svg#page9202"> </use> </svg></span> (que la
+representació no estigui degenerada implica que els orbitals moleculars o el
+modes normals de vibració que pertanyen a aquesta representació no estaran
+degenerats)</span>. </div>
+
+<div class="p"> <span>Si el caràcter de les rotacions al voltant de l’eix
+principal <span class="inlinemath">(<svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9241.svg#page9203"> </use> </svg></span> per al
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9242.svg#page9204"> </use> </svg></span>)
+<span class="inlinemath">és <svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9243.svg#page9205"> </use> </svg></span>,
+<span class="inlinemath">utilitzarem <svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9244.svg#page9206"> </use> </svg></span>, i, en cas
+contrari, <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9245.svg#page9207"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:E"> <span>&vert;12&rang;</span> <span
+class="sffamily" >Les RIs amb símbol <span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9246.svg#page9208"> </use> </svg></span> estan
+</span><span class="itshape sffamily" >doblement degenerades</span><span
+class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>Els orbitals moleculars o el modes
+normals de vibració que pertanyen a una representació
+<span class="inlinemath">irreductible <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9247.svg#page9209"> </use> </svg></span> estaran
+doblement degenerats</span>. </div>
+
+<div class="p"> <span>Alerta</span>! <span>No s’ha de confondre el símbol d’una
+RI doblement degenerada amb l’operació <span class="inlinemath">identitat <svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9248.svg#page9210"> </use> </svg></span> ni amb la
+<span class="inlinemath">classe <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9249.svg#page9211"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::app:sim:T"> <span>&vert;13&rang;</span> <span
+class="sffamily" >Les RIs amb símbol <span class="inlinemath"><svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9250.svg#page9212"> </use> </svg></span> estan
+</span><span class="itshape sffamily" >triplement degenerades</span><span
+class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>Els orbitals moleculars o el modes
+normals de vibració que pertanyen a una representació
+<span class="inlinemath">irreductible <svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9251.svg#page9213"> </use> </svg></span> estaran
+triplement degenerats</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;14&rang;</span> <span class="sffamily" >Amb </span><span
+class="itshape sffamily" >centre d’inversió</span><span class="sffamily" >, les
+RIs són </span><span class="itshape sffamily" >gerade</span><span
+class="sffamily" > o </span><span class="itshape sffamily"
+>ungerade.</span></summary>
+
+<div class="content"><div class="p"> <span>Si el grup puntual té centre
+d’inversió, aleshores les representacions irreductibles podran ser de tipus
+</span><span class="itshape" >gerade</span><span> o </span><span
+class="itshape" >ungerade</span><span>, cosa que indicarem afegint
+respectivament un subíndex <span class="inlinemath"><svg
+viewBox="0 -4.29 5.11 6.23"
+style="width:  0.51em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9252.svg#page9214"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.7 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9253.svg#page9215"> </use> </svg></span> darrere del
+símbol de la representació</span>. </div>
+
+<div class="p"> <span>Serà gerade si el caràcter del centre d’inversió és
+positiu, i ungerade si és negatiu</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;15&rang;</span> <span class="sffamily" >Si cal, es posen
+sub- (1, &hellip;) o superíndexs <span class="inlinemath">(<svg
+viewBox="0 -7.49 2.3 3.87"
+style="width:  0.23em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9254.svg#page9216"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.49 4.59 3.87"
+style="width:  0.46em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9255.svg#page9217"> </use> </svg></span>,
+&hellip;).</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;16&rang;</span> <span class="sffamily" >Translacions i
+rotacions són a la penúltima columna.</span></summary>
+
+<div class="content"><div class="p"> <span>La penúltima columna ens diu les
+representacions irreductibles a què pertanyen els components de les
+translacions <span class="inlinemath">(<svg
+viewBox="0 -6.81 10.34 8.3"
+style="width:  1.04em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9256.svg#page9218"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.11 9.66"
+style="width:  1.02em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9257.svg#page9219"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9258.svg#page9220"> </use> </svg></span>) i els de les
+rotacions <span class="inlinemath">(<svg
+viewBox="0 -6.81 12.08 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9259.svg#page9221"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.86 9.66"
+style="width:  1.19em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9260.svg#page9222"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.66 8.3"
+style="width:  1.17em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9261.svg#page9223"> </use> </svg></span>)</span>.
+<span>Alerta que, en alguns llibres, s’utilitzen els símbols
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9262.svg#page9224"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.24 6.23"
+style="width:  0.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img9263.svg#page9225"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9264.svg#page9226"> </use> </svg></span> en comptes de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.34 8.3"
+style="width:  1.04em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9265.svg#page9227"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.11 9.66"
+style="width:  1.02em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img9266.svg#page9228"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9267.svg#page9229"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Té aplicacions en espectroscòpia d’infrarojos i
+Raman</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;17&rang;</span> <span class="sffamily" >La
+polaritzabilitat és a l’última columna.</span></summary>
+
+<div class="content"><div class="p"> <span>L’última columna ens diu les
+representacions irreductibles a que pertanyen els components de la
+polaritzabilitat <span class="inlinemath">(<svg
+viewBox="0 -4.29 15.41 5.78"
+style="width:  1.55em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9268.svg#page9230"> </use> </svg></span>,
+&hellip;)</span>. <span>Alerta que, en alguns llibres, s’utilitzen els símbols
+<span class="inlinemath"><svg
+viewBox="0 -4.29 11.39 4.29"
+style="width:  1.14em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9269.svg#page9231"> </use> </svg></span>, &hellip;en
+comptes de <span class="inlinemath"><svg
+viewBox="0 -4.29 15.41 5.78"
+style="width:  1.55em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img9270.svg#page9232"> </use> </svg></span>, &hellip;</span>
+</div>
+
+<div class="p"> <span>Té aplicacions en espectroscòpia Raman</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.B.1.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

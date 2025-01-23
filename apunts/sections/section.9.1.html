@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Espectroscòpia | Introducció i conceptes bàsics</title>
+<meta name="description" content="Breu descripció de què és l’espectroscòpia.
+Radiació electromagnètica i fotons. Transicions entre estats moleculars.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.9.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.9.html"><span>9 Característiques generals de
+l’espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>9.1 Concepte d’espectroscòpia
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4557.svg#page4530"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.html"> <svg class="icon previous" viewBox="0 0
+512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>9.1  Concepte d’espectroscòpia</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Què és
+l’espectroscòpia?</span> <span class="sffamily" >L’estudi de la interacció
+entre radiació electromagnètica i matèria.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Què és la radiació
+electromagnètica?</span> <span class="sffamily" >Pot ser dues coses, ona i
+partícula.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Dualitat
+ona-partícula:</span> <span class="sffamily" >ona </span><span class="bfseries
+sffamily" >i</span><span class="sffamily" > partícula.</span></summary>
+
+<div class="content"><div class="p"> <span>La radiació electromagnètica
+experimenta l’anomenada </span><span class="itshape" >dualitat
+ona-partícula</span><span>, és a dir, que segons per a què és més fàcil
+d’entendre si es considera que és un </span><span class="itshape" >fenomen
+ondulatori</span><span>, mentre que per a altres coses és més convenient
+considerar-la un </span><span class="itshape" >fenomen
+corpuscular</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:con:ona"> <span>&vert;2.2&rang;</span> <span
+class="sffamily" >Com a </span><span class="itshape sffamily" >ona</span><span
+class="sffamily" > amb components elèctrics i magnètics.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Radiació electromagnètica (ona)</span></strong>.
+<span>La radiació electromagnètica és una forma d’energia (</span><span
+class="itshape" >energia radiant</span><span>) que es mou per l’espai com una
+ona</span>. <span>L’ona està composta per dos vectors perpendiculars</span>:
+<span>un camp elèctric <span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4558.svg#page4531"> </use> </svg></span> i un camp
+magnètic <span class="inlinemath"><svg
+viewBox="0 -9.64 8.12 9.64"
+style="width:  0.82em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4559.svg#page4532"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Vegeu la figura </span><a
+href="sections/section.9.1.html#ref::rad:con:emwave">9.1</a>. </div>
+
+<div class="figure" id="ref::rad:con:emwave">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:EM-Wave.gif"
+><span>commons.wikimedia</span></a><img src="images/img4560.gif" alt="included
+image" style="width: 22.13em; height: 18.42em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 9.1</span>: <span>Esquema d’una ona
+electromagnètica</span>. <span><span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4561.svg#page4533"> </use> </svg></span> és el camp
+elèctric, <span class="inlinemath"><svg
+viewBox="0 -9.64 8.12 9.64"
+style="width:  0.82em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4562.svg#page4534"> </use> </svg></span> el camp
+magnètic</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2.1&rang;</span> <span class="sffamily" >Quantifiquem
+una ona amb la seua freqüència i longitud d’ona.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Freqüència <span class="inlinemath">(<svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4563.svg#page4535"> </use> </svg></span>) i longitud
+d’ona <span class="inlinemath">(<svg
+viewBox="0 -6.92 5.81 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4564.svg#page4536"> </use>
+</svg></span>)</span></strong>. <span>La </span><span class="itshape"
+>freqüència</span><span> d’una <span class="inlinemath">ona (<svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4565.svg#page4537"> </use> </svg></span>) és el nombre
+d’oscil·lacions completes que fa per unitat de temps</span>. <span>La
+</span><span class="itshape" >longitud
+d’ona</span><span><span class="inlinemath"> (<svg
+viewBox="0 -6.92 5.81 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4566.svg#page4538"> </use> </svg></span>) és la longitud
+d’una oscil·lació completa, és a dir, la distància entre dues crestes (o dues
+valls) consecutives</span>. </div>
+
+</div>
+
+<div class="p"> <span>Els dos conceptes s’il·lustren en la figura </span><a
+href="sections/section.9.1.html#ref::rad:con:wlengthfreq">9.2</a>. <span>En el
+Sistema Internacional, les unitats de <span class="inlinemath"><svg
+viewBox="0 -6.92 5.81 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4567.svg#page4539"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4568.svg#page4540"> </use> </svg></span> són
+respectivament <span class="inlinemath">metre (<svg
+viewBox="0 -4.29 8.38 4.29"
+style="width:  0.84em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4569.svg#page4541"> </use> </svg></span>) i
+<span class="inlinemath">hertz (<svg
+viewBox="0 -8.11 40.05 8.11"
+style="width:  4.02em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4570.svg#page4542"> </use> </svg></span>)</span>. </div>
+
+<div class="figure" id="ref::rad:con:wlengthfreq">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Sine_wavelength.svg"
+><span>commons.wikimedia</span></a><img src="images/img4571.png" alt="included
+image" style="width: 15.25em; height: 10.63em;"></span></span>
+</td><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:ลูกตุ้มธรรมชาติ.gif"
+><span>commons.wikimedia</span></a><img src="images/img4572.gif" alt="included
+image" style="width: 14.23em; height: 10.67em;"></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p caption"> <span>Figura 9.2</span>: <span>Longitud d’ona (a
+l’esquerra) i freqüència (a la dreta) d’una ona</span>. <span>En l’animació,
+una oscil·lació completa de l’ona coincideix amb una oscil·lació completa del
+pèndol, i com es fan 25 oscil·lacions completes en un minut, la freqüència
+<span class="inlinemath">serà <svg
+viewBox="0 -7.47 38.47 9.96"
+style="width:  3.86em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4573.svg#page4543"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2.2&rang;</span> <span class="sffamily" >Es mou a la
+velocitat de la llum.</span></summary>
+
+<div class="content"><div class="p"> <span>La velocitat de qualsevol ona de
+radiació electromagnètica es igual a la velocitat de la llum,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4574.svg#page4544"> </use> </svg></span></span>. <span>Si
+la longitud d’una oscil·lació completa <span class="inlinemath">és <svg
+viewBox="0 -6.92 5.81 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4575.svg#page4545"> </use> </svg></span> (longitud d’ona)
+i l’ona <span class="inlinemath">fa <svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4576.svg#page4546"> </use> </svg></span> (freqüència)
+oscil·lacions completes per unitat de temps, és evident que el producte
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.37 6.92"
+style="width:  1.14em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4577.svg#page4547"> </use> </svg></span> és la velocitat
+de l’ona</span>. <span>Per tant, per a la radiació electromagnètica s’ha de
+complir que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.92 31.18 6.92"
+style="width:  3.13em; height:  0.81em;"> <use
+xlink:href="images/img4578.svg#page4548"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.92 28.96 6.92"
+style="width:  2.91em; height:  0.81em;"> <use
+xlink:href="images/img4579.svg#page4549"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::rad:con:tildenu"> <span>&vert;2.2.3&rang;</span> <span
+class="sffamily" >El </span><span class="itshape sffamily" >nombre
+d’ona</span><span class="sffamily" > <span class="inlinemath">(<svg
+viewBox="0 -6.27 5.56 6.27"
+style="width:  0.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4580.svg#page4550"> </use> </svg></span>) és l’invers de
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.81 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4581.svg#page4551"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Nombre d’ona <span class="inlinemath">(<svg
+viewBox="0 -6.27 5.56 6.27"
+style="width:  0.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4582.svg#page4552"> </use>
+</svg></span>)</span></strong>. <span>El </span><span class="itshape" >nombre
+d’ona</span><span><span class="inlinemath"> (<svg
+viewBox="0 -6.27 5.56 6.27"
+style="width:  0.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4583.svg#page4553"> </use> </svg></span>) és l’invers de
+la longitud <span class="inlinemath">d’ona (<svg
+viewBox="0 -6.92 5.81 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4584.svg#page4554"> </use> </svg></span>)</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 29.81 19.85"
+style="width:  2.99em; height:  2.11em;"> <use
+xlink:href="images/img4585.svg#page4555"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Els espectroscopistes sovint utilitzen el nombre d’ona en
+lloc de la freqüència o la longitud d’ona</span>. <span>La relació entre
+aquestes tres magnituds és</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -13.01 25.85 19.85"
+style="width:  2.59em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img4586.svg#page4556"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4587.svg#page4557"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -13.01 25.85 19.85"
+style="width:  2.59em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img4588.svg#page4558"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -11.03 25.59 17.86"
+style="width:  2.57em; height:  1.91em; vertical-align: -0.75em;"> <use
+xlink:href="images/img4589.svg#page4559"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4590.svg#page4560"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 31.47 6.27"
+style="width:  3.16em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4591.svg#page4561"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Fixeu-vos com la freqüència és proporcional al
+nombre d’ona</span>. </div>
+
+<div class="p"> <span>En el Sistema Internacional, la unitat
+<span class="inlinemath">de <svg
+viewBox="0 -6.27 5.56 6.27"
+style="width:  0.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4592.svg#page4562"> </use> </svg></span> és
+<span class="inlinemath">el <svg
+viewBox="0 -8.11 18.57 8.11"
+style="width:  1.86em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4593.svg#page4563"> </use> </svg></span>, encara que en
+la pràctica s’utilitza sobretot <span class="inlinemath">el <svg
+viewBox="1.66 -8.11 23 8.11"
+style="width:  2.31em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4594.svg#page4564"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Compte, que de vegades els espectroscopistes parlen de
+‘freqüència’ en referir-se al nombre d’ona</span>. <span>Nosaltres també ho
+farem (al capdavall, són dues magnituds proporcionals entre si!)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 25.85 19.85"
+style="width:  2.59em; height:  2.11em;"> <use
+xlink:href="images/img4595.svg#page4565"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2.4&rang;</span> <span class="sffamily" >L’</span><span
+class="itshape sffamily" >espectre electromagnètic</span><span class="sffamily"
+> és el conjunt de totes les ones electromagnètics possibles.</span></summary>
+
+<div class="content"><div class="p"> <span>Les principals regions o
+</span><span class="itshape" >bandes espectrals</span><span> de l’espectre
+electromagnètic es mostren en la figura </span><a
+href="sections/section.9.1.html#ref::rad:con:bandesEspectre">9.3</a>. <span>La
+regió visible correspon a allò que anomenem </span><span class="itshape"
+>llum</span>. </div>
+
+<div class="figure" id="ref::rad:con:bandesEspectre">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+<span class="picture"><svg class="picture"
+viewBox="-6.38 -175.32 174.76 175.52"
+style="width: 17.54em; height: 17.74em;"> <use
+xlink:href="images/img4596.svg#page4566"> </use> </svg></span>
+</td><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Light_spectrum_(precise_colors).svg"
+><span>commons.wikimedia</span></a><img src="images/img4597.png" alt="included
+image" style="width: 16.01em; height: 19.85em;"></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p caption"> <span>Figura 9.3</span>: <span>A l’esquerra, les
+regions o </span><span class="itshape" >bandes espectrals</span><span> de tot
+l’espectre electromagnètic</span>. <span>A la dreta, regions visible (VIS),
+ultraviolada (UV) i infraroja (IR) de l’espectre</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:con:espectre"> <span>&vert;2.2.5&rang;</span> <span
+class="itshape sffamily" >Espectre:</span> <span class="sffamily" >emissió o
+absorció de radiació.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Intensitat</span></strong>. <span>La </span><span
+class="itshape" >intensitat</span><span> (o </span><span class="itshape"
+>irradiància</span><span>) de la radiació electromagnètica és l’energia que
+travessa una superfície per unitat d’àrea i per unitat de temps</span>. </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Espectre d’emissió o d’absorció</span></strong>.
+<span>És la descomposició de la radiació electromagnètica que emet o absorbeix
+un objecte (molècula, dissolució, &hellip;) en funció de la freqüència o de la
+longitud d’ona</span>. </div>
+
+</div>
+
+<div class="p"> <span>Per exemple, la part visible de l’espectre d’emissió del
+Sol es pot obtindre mitjançant un prisma que descompon la llum solar en els
+seus colors constituents (figura </span><a
+href="sections/section.9.1.html#ref::prisma">9.4</a><span>)</span>. </div>
+
+<div class="figure" id="ref::prisma">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Light_dispersion_conceptual.gif"
+><span>commons.wikimedia</span></a><img src="images/img4598.gif" alt="included
+image" style="width: 15.44em; height: 9.60em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 9.4</span>: <span>Descomposició de la llum
+solar amb un prisma</span>. </div>
+
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >Com a feix de
+</span><span class="itshape sffamily" >fotons.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Fotó</span></strong>. <span>Un </span><span
+class="itshape" >fotó</span><span> és una partícula sense massa que es mou a la
+velocitat de la llum i que té una energia <span class="inlinemath">de <svg
+viewBox="0 -6.92 11.3 6.92"
+style="width:  1.13em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4599.svg#page4567"> </use> </svg></span>,
+<span class="inlinemath">on <svg
+viewBox="0 -6.92 5.74 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4600.svg#page4568"> </use> </svg></span> és la constant
+de Planck <span class="inlinemath">i <svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4601.svg#page4569"> </use> </svg></span> la freqüència
+del fotó</span>. </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Radiació electromagnètica
+(fotons)</span></strong>. <span>D’acord amb la dualitat ona-partícula, la
+radiació electromagnètica també pot comportar-se com si fos un feix de
+</span><span class="itshape" >fotons</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3.1&rang;</span> <span class="sffamily" >Un fotó és com
+un ‘àtom’ de radiació.</span></summary>
+
+<div class="content"><div class="p"> <span>La mínima quantitat que es pot
+tindre d’un element és un àtom d’eixe element</span>. <span>Anàlogament, la
+mínima quantitat que es pot tindre de radiació electromagnètica de freqüència
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4602.svg#page4570"> </use> </svg></span> és un fotó
+d’eixa freqüència</span>.</div> </div>
+
+</details>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Quina mena
+d’interacció?</span> <span class="sffamily" >Emissió o absorció de fotons amb
+transicions entre estats.</span></summary>
+
+<div class="content"><div class="figure" id="ref::transicio">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -118.11 191.34 118.11"
+style="width: 19.21em; height: 11.97em;"> <use
+xlink:href="images/img4603.svg#page4571"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 9.5</span>: <span>Transicions entre
+estats</span>: <span>absorció o emissió d’un fotó (simbolitzat per
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.3 6.92"
+style="width:  1.13em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4604.svg#page4572"> </use> </svg></span>) amb freqüència
+<span class="inlinemath"><svg
+viewBox="0 -7.47 77.19 9.96"
+style="width:  7.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4605.svg#page4573"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>La interacció entre radiació i matèria es fa mitjançant
+l’emissió o l’absorció de fotons, procés que va acompanyat de transicions entre
+dos estats d’una molècula (figura </span><a
+href="sections/section.9.1.html#ref::transicio">9.5</a><span>)</span>. </div>
+
+<div class="p"> <span>Durant un procés d’absorció, una molècula en un estat
+inicial d’energia <span class="inlinemath"><svg
+viewBox="0 -6.81 14.42 8.3"
+style="width:  1.45em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4606.svg#page4574"> </use> </svg></span> absorbeix un
+fotó, cosa que causa la transició de la molècula a un estat final amb una
+energia <span class="inlinemath"><svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4607.svg#page4575"> </use> </svg></span> superior a la
+inicial</span>. <span>La freqüència del fotó absorbit ha de ser igual a
+<span class="inlinemath"><svg
+viewBox="0 -7.47 77.19 9.96"
+style="width:  7.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4608.svg#page4576"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Durant un procés d’emissió, la molècula en l’estat
+inicial (amb energia <span class="inlinemath"><svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4609.svg#page4577"> </use> </svg></span>) emet un fotó i
+experimenta una transició a un estat final d’energia més baixa
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 14.42 8.3"
+style="width:  1.45em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4610.svg#page4578"> </use> </svg></span>)</span>.
+<span>La freqüència del fotó emès també ha de ser igual a
+<span class="inlinemath"><svg
+viewBox="0 -7.47 77.19 9.96"
+style="width:  7.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4611.svg#page4579"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Quins
+estats?</span> <span class="itshape sffamily" >Rotacionals</span><span
+class="sffamily" >, </span><span class="itshape sffamily"
+>vibracionals</span><span class="sffamily" > o </span><span class="itshape
+sffamily" >electrònics.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >La
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4612.svg#page4580"> </use> </svg></span> s’aproxima com
+<span class="inlinemath"><svg
+viewBox="0 -6.92 80.65 8.86"
+style="width:  8.10em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4613.svg#page4581"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Les transicions es produiran entre
+autoestats moleculars, és a dir, entre estats la funció d’ona dels quals
+<span class="inlinemath">(<svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4614.svg#page4582"> </use> </svg></span>) és autofunció
+del hamiltonià molecular</span>. <span>Aquesta funció es pot aproximar com
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.92 80.65 8.86"
+style="width:  8.10em; height:  1.01em;"> <use
+xlink:href="images/img4615.svg#page4583"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(vegeu </span><a class="sffamily small"
+href="sections/section.7.3.html#ref::mod:cor:QuatreFactors"
+>§7.3&vert;3.7&rang;</a><span>), on la funció <span class="inlinemath"><svg
+viewBox="0 -6.92 12.72 8.86"
+style="width:  1.28em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4616.svg#page4584"> </use> </svg></span> descriu la
+</span><span class="itshape" >translació</span><span> molecular,
+<span class="inlinemath"><svg
+viewBox="0 -6.92 16.69 8.86"
+style="width:  1.68em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4617.svg#page4585"> </use> </svg></span> descriu la
+</span><span class="itshape" >rotació</span><span> molecular,
+<span class="inlinemath"><svg
+viewBox="0 -6.92 17.33 8.86"
+style="width:  1.74em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4618.svg#page4586"> </use> </svg></span> la </span><span
+class="itshape" >vibració</span><span> molecular i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 12.29 8.86"
+style="width:  1.23em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4619.svg#page4587"> </use> </svg></span> és la funció
+d’ona </span><span class="itshape" >electrònica</span><span> de la
+molècula</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2&rang;</span> <span class="sffamily" >L’espectroscòpia
+de microones estudia la rotació molecular <span class="inlinemath">(<svg
+viewBox="0 -6.92 16.69 8.86"
+style="width:  1.68em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4620.svg#page4588"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>Les transicions entre estats
+corresponents a la rotació d’una molècula (funció <span class="inlinemath"><svg
+viewBox="0 -6.92 16.69 8.86"
+style="width:  1.68em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4621.svg#page4589"> </use> </svg></span>) emeten o
+absorbeixen fotons amb freqüència de la regió de microones de l’espectre
+electromagnètic</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >L’espectroscòpia
+infraroja estudia la vibració molecular <span class="inlinemath">(<svg
+viewBox="0 -6.92 17.33 8.86"
+style="width:  1.74em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4622.svg#page4590"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>Les transicions entre estats
+vibracionals d’una molècula (funció <span class="inlinemath"><svg
+viewBox="0 -6.92 17.33 8.86"
+style="width:  1.74em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4623.svg#page4591"> </use> </svg></span>) emeten o
+absorbeixen fotons de la regió infraroja de l’espectre
+electromagnètic</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="sffamily" >L’espectroscòpia
+ultraviolada-visible estudia les transicions electròniques
+<span class="inlinemath">(<svg
+viewBox="0 -6.92 12.29 8.86"
+style="width:  1.23em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4624.svg#page4592"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>Els fotons emesos o absorbits per
+les transicions entre estats electrònics d’una molècula (funció
+<span class="inlinemath"><svg
+viewBox="0 -6.92 12.29 8.86"
+style="width:  1.23em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4625.svg#page4593"> </use> </svg></span>) corresponen a
+la regió ultraviolada i visible de l’espectre electromagnètic</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:con:IUPAC"> <span>&vert;5&rang;</span> <span
+class="sffamily" >La IUPAC recomana una notació per a les
+transicions.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Notació IUPAC</span></strong>. <span>Les diferents
+transicions entre els estats <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4626.svg#page4594"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4627.svg#page4595"> </use> </svg></span> s’escriuen
+posant primer l’estat d’energia més alta, al final el d’energia més baixa, i
+entremig una fletxa indicadora del tipus de transició</span>. <span>Per exemple
+si <span class="inlinemath"><svg
+viewBox="0 -6.81 40.84 8.3"
+style="width:  4.10em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4628.svg#page4596"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4629.svg#page4597"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4630.svg#page4598"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 60.69 9.96"
+style="width:  6.09em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4631.svg#page4599"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4632.svg#page4600"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4633.svg#page4601"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 56.29 9.96"
+style="width:  5.65em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4634.svg#page4602"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4635.svg#page4603"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4636.svg#page4604"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 113.93 9.96"
+style="width: 11.44em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4637.svg#page4605"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>Els estats d’energia més alta i més baixa també
+poden indicar-se, respectivament, per una prima i una doble prima</span>.
+<span>Per exemple, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 94.31 10.48"
+style="width:  9.47em; height:  1.17em;"> <use
+xlink:href="images/img4638.svg#page4606"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Consulteu la bibliografia[<a
+href="sections/biblio.html#bib::IUPAC2008">26</a>]</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >L’espectroscòpia
+dona dades d’estructura molecular.</span></summary>
+
+<div class="content"><div class="p"> <span>Per exemple, l’espectroscòpia de
+microones permet de mesurar la longitud d’enllaç d’una molècula
+diatòmica</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >L’espectroscòpia,
+eina bàsica en </span><span class="itshape sffamily" >química
+analítica.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;7.1&rang;</span> <span class="sffamily" >Espècies
+diferents tenen espectres diferents.</span></summary>
+
+<div class="content"><div class="p"> <span>L’espectroscòpia és fonamental per a
+la </span><span class="itshape" >química analítica</span><span>, ja que permet
+d’identificar quines espècies estan presents en una barreja i en quina
+quantitat</span>. <span>Això és possible perquè dos espècies diferents tenen
+espectres d’absorció i d’emissió diferents, i, a més a més, la intensitat de la
+radiació electromagnètica absorbida o emesa és proporcional a la quantitat
+d’espècie present</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.2&rang;</span> <span class="sffamily" >Podem fer una
+anàlisi química sense cap mostra!</span></summary>
+
+<div class="content"><div class="p"> <span>És especialment interessant en
+</span><span class="itshape" >astrofísica</span><span>, ja que l’anàlisi de la
+llum emesa per galàxies, estels o planetes permet d’esbrinar la seva
+composició, encara que no tinguem cap mostra de l’objecte estudiat</span>.
+<span>Per exemple, l’element heli es va ‘trobar’ per primera vegada al
+Sol</span>.</div> </div>
+
+</details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.9.1.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

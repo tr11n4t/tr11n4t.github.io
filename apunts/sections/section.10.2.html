@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Rotacions i moment dipolar | Transicions en molècules polars</title>
+<meta name="description" content="El moment dipolar de transició rotacional
+depèn del moment dipolar permanent. Les molècules apolars no tenen espectre de
+microones.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.10.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.10.html"><span>10 Espectres de rotació de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>10.2 Rotacions i moment dipolar
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img5164.svg#page5131"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>10.2  Rotacions i moment dipolar</span> </h4>
+
+<details open class="foldable prop">
+<summary id="ref::ro1:dip:Minicial"> <span>&vert;1&rang;</span> <span
+class="sffamily" >Hem de calcular el </span><span class="itshape sffamily"
+>moment dipolar de transició</span><span class="sffamily" >
+<span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5165.svg#page5132"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Considerem la següent transició
+rotacional, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 168.18 11.81"
+style="width: 16.88em; height:  1.30em;"> <use
+xlink:href="images/img5166.svg#page5133"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Per fer-ne un estudi espectroscòpic hem de
+calcular el seu </span><span class="itshape" >moment dipolar de
+transició</span><span>, l’expressió del qual és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 211.91 13.51"
+style="width: 21.27em; height:  1.48em;"> <use
+xlink:href="images/img5167.svg#page5134"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -9.69 6.54 11.63"
+style="width:  0.66em; height:  1.29em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5168.svg#page5135"> </use> </svg></span> és l’operador
+</span><span class="itshape" >moment dipolar</span><span>, que té la següent
+expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -26.49 118.69 38.24"
+style="width: 11.91em; height:  3.96em;"> <use
+xlink:href="images/img5169.svg#page5136"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 4.64 4.29"
+style="width:  0.47em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5170.svg#page5137"> </use> </svg></span> és la càrrega de
+l’electró, <span class="inlinemath"><svg
+viewBox="0 -6.81 11.12 8.3"
+style="width:  1.12em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5171.svg#page5138"> </use> </svg></span> el nombre atòmic
+del nucli <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5172.svg#page5139"> </use> </svg></span>-èsim, i
+<span class="inlinemath"><svg
+viewBox="-.32 -7.12 7.63 8.61"
+style="width:  0.77em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5173.svg#page5140"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.32 -7.12 9.13 8.61"
+style="width:  0.92em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5174.svg#page5141"> </use> </svg></span> les posicions de
+l’electró <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5175.svg#page5142"> </use> </svg></span>-èsim i el nucli
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5176.svg#page5143"> </use> </svg></span>-èsim</span>.
+</div>
+
+<div class="p"> <span>Noteu que tant els electrons com els nuclis contribueixen
+a l’operador moment dipolar</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 207.49 13.51"
+style="width: 20.83em; height:  1.48em;"> <use
+xlink:href="images/img5177.svg#page5144"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ro1:dip:notranslation"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Per a una transició rotacional, <span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5178.svg#page5145"> </use> </svg></span> no depèn de
+<span class="inlinemath"><svg
+viewBox="0 -7.49 13.98 10.13"
+style="width:  1.40em; height:  1.14em; vertical-align: -0.33em;"> <use
+xlink:href="images/img5179.svg#page5146"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que, per a una
+transició rotacional (o vibracional o electrònica), el moment dipolar de
+transició no depèn del factor translacional <span class="inlinemath"><svg
+viewBox="0 -6.86 13.98 8.36"
+style="width:  1.40em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5180.svg#page5147"> </use> </svg></span>, </span> </div>
+
+<table class="equation" id="ref::ro1:dip:MmnRotVibEle"><tr><td><svg
+class="equation" viewBox="0 -9.69 182.97 13.51"
+style="width: 18.37em; height:  1.48em;"> <use
+xlink:href="images/img5181.svg#page5148"> </use>
+</svg></td><td>(10.1)</td></tr></table>
+
+<div class="p noindent"> <span>Tampoc no depèn de les coordenades del centre de
+masses <span class="inlinemath"><svg
+viewBox="0 -4.29 10.58 5.78"
+style="width:  1.06em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5182.svg#page5149"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 178.54 13.51"
+style="width: 17.92em; height:  1.48em;"> <use
+xlink:href="images/img5183.svg#page5150"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ro1:dip:muelec"> <span>&vert;3&rang;</span> <span
+class="sffamily" >Necessitem el </span><span class="itshape sffamily" >moment
+dipolar permanent</span><span class="sffamily" > <span class="inlinemath">(<svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5184.svg#page5151"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Moment dipolar permanent
+<span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5185.svg#page5152"> </use> </svg></span></span></strong>.
+<span>El </span><span class="itshape" >moment dipolar permanent</span><span>
+d’una molècula es pot obtindre com el valor esperat o mitjana de l’operador
+moment dipolar sobre la <span class="inlinemath">vibració (<svg
+viewBox="0 -6.86 18.59 8.36"
+style="width:  1.87em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5186.svg#page5153"> </use> </svg></span>) i el moviment
+<span class="inlinemath">electrònic (<svg
+viewBox="0 -6.86 21.96 9.71"
+style="width:  2.20em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5187.svg#page5154"> </use> </svg></span>)</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 28.8 9.96"
+style="width:  2.89em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5188.svg#page5155"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5189.svg#page5156"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.69 103.37 12.54"
+style="width: 10.38em; height:  1.38em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5190.svg#page5157"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5191.svg#page5158"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 162.85 22.14"
+style="width: 16.35em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img5192.svg#page5159"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>Observacions</span>: </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Representarem el moment dipolar permanent
+<span class="inlinemath">com <svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5193.svg#page5160"> </use> </svg></span>, sense fer
+servir el <span class="inlinemath">símbol <svg
+viewBox="2.03 -9.38 4.98 6.86"
+style="width:  0.50em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5194.svg#page5161"> </use> </svg></span>, per a poder
+distingir-lo de l’operador moment <span class="inlinemath">dipolar <svg
+viewBox="0 -9.69 6.54 11.63"
+style="width:  0.66em; height:  1.29em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5195.svg#page5162"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>La rotació molecular és </span><span class="bfseries"
+>molt</span><span> més lenta que la vibració i que el moviment
+electrònic</span>. <span>Per això, durant una transició rotacional, no cal
+considerar el moviment instantani dels electrons ni de la vibració molecular, i
+obtindrem bons resultats amb només la respectiva mitjana, mitjana que
+correspon, segons els postulats de la mecànica quàntica, al valor esperat de
+l’observable moment dipolar</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Una vegada feta la mitjana sobre electrons i vibració, el
+resultat només dependrà de les coordenades de rotació</span>. <span>Això vol
+dir que el moment dipolar permanent serà rígid, però que girarà a mesura que la
+molècula gire</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Compte que, en presència d’un camp elèctric, hi apareix
+un moment dipolar </span><span class="itshape" >induït</span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 28.8 9.96"
+style="width:  2.89em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5196.svg#page5163"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5197.svg#page5164"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.69 103.37 12.54"
+style="width: 10.38em; height:  1.38em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5198.svg#page5165"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5199.svg#page5166"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 159.58 22.14"
+style="width: 16.02em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img5200.svg#page5167"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ro1:dip:Mnmmu"> <span>&vert;4&rang;</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5201.svg#page5168"> </use> </svg></span> depèn del moment
+dipolar permanent <span class="inlinemath">(<svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5202.svg#page5169"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 178.54 13.51"
+style="width: 17.92em; height:  1.48em;"> <use
+xlink:href="images/img5203.svg#page5170"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Traurem una expressió més simple per al moment dipolar de
+transició, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5204.svg#page5171"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5205.svg#page5172"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 216.71 22.14"
+style="width: 21.75em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img5206.svg#page5173"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5207.svg#page5174"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -29.14 233.46 38.65"
+style="width: 23.43em; height:  4.00em; vertical-align: -1.01em;"> <use
+xlink:href="images/img5208.svg#page5175"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 28.8 9.96"
+style="width:  2.89em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5209.svg#page5176"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5210.svg#page5177"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.69 103.37 12.54"
+style="width: 10.38em; height:  1.38em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5211.svg#page5178"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5212.svg#page5179"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 159.58 22.14"
+style="width: 16.02em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img5213.svg#page5180"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>Ara bé, per la definició que hem donat
+en </span><a class="sffamily small"
+href="sections/section.10.2.html#ref::ro1:dip:muelec"
+>§10.2&vert;3&rang;</a><span> podem simplificar l’expressió a </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 134.77 22.14"
+style="width: 13.53em; height:  2.34em;"> <use
+xlink:href="images/img5214.svg#page5181"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>o, en forma de bracket, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 98.88 12.13"
+style="width:  9.93em; height:  1.34em;"> <use
+xlink:href="images/img5215.svg#page5182"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 94.46 12.13"
+style="width:  9.48em; height:  1.34em;"> <use
+xlink:href="images/img5216.svg#page5183"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ro1:dip:munul"> <span>&vert;5&rang;</span> <span
+class="sffamily" >Una molècula </span><span class="itshape sffamily"
+>sense</span><span class="sffamily" ><span class="inlinemath"> <svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5217.svg#page5184"> </use> </svg></span> </span><span
+class="itshape sffamily" >no</span><span class="sffamily" > té transicions
+rotacionals.</span></summary>
+
+<div class="content"><div class="p"> <span>Sabem que si el moment dipolar de
+transició <span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5218.svg#page5185"> </use> </svg></span> és zero, la
+transició corresponent estarà prohibida</span>. <span>De l’expressió de
+<span class="inlinemath"><svg
+viewBox="0 -9.64 24.5 11.13"
+style="width:  2.46em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5219.svg#page5186"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.10.2.html#ref::ro1:dip:Mnmmu"
+>§10.2&vert;4&rang;</a><span> concloem que les transicions rotacionals estaran
+prohibides si el moment dipolar permanent <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5220.svg#page5187"> </use> </svg></span> és nul</span>.
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Regla de selecció per a transicions
+rotacionals</span></strong>. <span>Una transició </span><span class="itshape"
+>rotacional</span><span> de </span><span class="itshape" >dipol
+elèctric</span><span> no estarà permesa si el </span><span class="itshape"
+>moment dipolar permanent</span><span> <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5221.svg#page5188"> </use> </svg></span> de la molècula
+és nul</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>És a dir, les molècules apolars no
+experimentaran transicions espectroscòpiques rotacionals</span>. <span>Això no
+obstant, val a dir que en molècules polars no totes les transicions rotacionals
+estaran permeses, ja que hi ha altres regles de selecció que estudiarem més
+endavant</span>. </div>
+
+<div class="p"> <span>Compte que aquesta regla de selecció només afecta les
+transicions de </span><span class="itshape" >dipol elèctric</span>.
+<span>Altres transicions, com ara les de </span><span class="itshape"
+>quadrupol elèctric</span><span>, no s’hi veuen afectades</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.10.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Suma de moments angulars</title>
+<meta name="description" content="La suma de moments angulars independents és
+també un moment angular. Calen quatre nombres quàntics per especificar l’estat
+suma.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.3.7.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.3.html"><span>3 Moment angular </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>3.7 Suma de moments angulars
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img1862.svg#page1846"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.6.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.4.html"> <svg class="icon next" viewBox="0 0 512
+512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>3.7  Suma de moments angulars</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Suma
+<span class="inlinemath"><svg
+viewBox="0 -9.64 8.16 9.64"
+style="width:  0.82em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1863.svg#page1847"> </use> </svg></span> de dos moments
+angulars </span><span class="itshape sffamily" >independents:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -9.64 51.43 11.13"
+style="width:  5.16em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1864.svg#page1848"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Volem estudiar la suma de dos
+moments angulars </span><span class="itshape" >independents</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1865.svg#page1849"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1866.svg#page1850"> </use> </svg></span>, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="0 -9.64 54.7 11.13"
+style="width:  5.49em; height:  1.24em;"> <use
+xlink:href="images/img1867.svg#page1851"> </use>
+</svg></td><td>(3.8)</td></tr></table>
+
+<div class="p noindent"> <span>Per independents volem dir que depenen de
+coordenades diferents, com per exemple la suma de moments angulars d’electrons
+diferents, o la suma de <span class="inlinemath"><svg
+viewBox="0 -9.64 6.92 9.64"
+style="width:  0.70em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1868.svg#page1852"> </use> </svg></span> (que depèn de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1869.svg#page1853"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.24 6.23"
+style="width:  0.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1870.svg#page1854"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1871.svg#page1855"> </use> </svg></span>) i
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1872.svg#page1856"> </use> </svg></span> (que depèn de la
+variable d’espín <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1873.svg#page1857"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >La suma
+<span class="inlinemath"><svg
+viewBox="0 -9.64 51.43 11.13"
+style="width:  5.16em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1874.svg#page1858"> </use> </svg></span> compleix la
+definició general de moment angular.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a <span class="inlinemath"><svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1875.svg#page1859"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1876.svg#page1860"> </use> </svg></span> independents,
+pot demostrar-se[<a href="sections/biblio.html#bib::LEVINE2000">6</a>] que la
+suma <span class="inlinemath"><svg
+viewBox="0 -9.64 8.16 9.64"
+style="width:  0.82em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1877.svg#page1861"> </use> </svg></span> compleix la
+definició general de moment angular que hem vist en </span><a class="sffamily
+small" href="sections/section.3.3.html#ref::ang:gen:definition"
+>§3.3&vert;1&rang;</a><span>, i per tant <span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1878.svg#page1862"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.62 10.88"
+style="width:  0.97em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1879.svg#page1863"> </use> </svg></span> han de seguir
+les relacions esmentades en </span><a class="sffamily small"
+href="sections/section.3.3.html#ref::ang:gen:jmj" >§3.3&vert;4&rang;</a>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ang:sum:JJ1J2"> <span>&vert;3&rang;</span> <span
+class="sffamily" >El nombre quàntic <span class="inlinemath">(<svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1880.svg#page1864"> </use> </svg></span>) de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1881.svg#page1865"> </use> </svg></span> va de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 34.86 9.96"
+style="width:  3.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1882.svg#page1866"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -6.57 28.82 8.51"
+style="width:  2.89em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1883.svg#page1867"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar el següent[<a
+href="sections/biblio.html#bib::LEVINE2000">6</a>]</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Suma de dos moments angulars
+independents</span></strong>. <span>Si </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 51.43 11.13"
+style="width:  5.16em; height:  1.24em;"> <use
+xlink:href="images/img1884.svg#page1868"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és la suma de dos moments angulars
+<span class="inlinemath">independents <svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1885.svg#page1869"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1886.svg#page1870"> </use> </svg></span> amb respectives
+equacions d’autovalors </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 22.37 11.84"
+style="width:  2.25em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1887.svg#page1871"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1888.svg#page1872"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.95 62.02 11.44"
+style="width:  6.22em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1889.svg#page1873"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 22.37 11.84"
+style="width:  2.25em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1890.svg#page1874"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1891.svg#page1875"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.95 65.28 11.44"
+style="width:  6.55em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1892.svg#page1876"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>aleshores les equacions d’autovalors
+<span class="inlinemath">de <svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1893.svg#page1877"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.38 9.62 10.88"
+style="width:  0.97em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1894.svg#page1878"> </use> </svg></span> són les
+següents</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.95 9.38"
+style="width:  1.90em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1895.svg#page1879"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1896.svg#page1880"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.95 225.4 11.44"
+style="width: 22.62em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1897.svg#page1881"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.11 10.88"
+style="width:  1.82em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1898.svg#page1882"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1899.svg#page1883"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 173.44 9.77"
+style="width: 17.41em; height:  1.10em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1900.svg#page1884"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">on <svg
+viewBox="0 -6.81 8 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1901.svg#page1885"> </use> </svg></span> (no confondre
+amb un harmònic esfèric) representa les autofuncions comunes
+<span class="inlinemath">de <svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1902.svg#page1886"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.38 9.62 10.88"
+style="width:  0.97em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1903.svg#page1887"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Els operadors
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 12.21"
+style="width:  1.05em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1904.svg#page1888"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 12.21"
+style="width:  1.05em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1905.svg#page1889"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1906.svg#page1890"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.62 10.88"
+style="width:  0.97em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1907.svg#page1891"> </use> </svg></span> commuten entre
+si.</span></summary>
+
+<div class="content"><div class="p"> <span>És fàcil demostrar que els quatre
+operadors <span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 12.21"
+style="width:  1.05em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1908.svg#page1892"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 12.21"
+style="width:  1.05em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1909.svg#page1893"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1910.svg#page1894"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.62 10.88"
+style="width:  0.97em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1911.svg#page1895"> </use> </svg></span> commuten entre
+si, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="14.94 -21.94 177.1 37.81"
+style="width: 17.78em; height:  3.91em;"> <use
+xlink:href="images/img1912.svg#page1896"> </use>
+</svg></td><td>(3.9)</td></tr></table>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Els observables
+<span class="inlinemath"><svg
+viewBox="0 -8.11 10.45 10.94"
+style="width:  1.05em; height:  1.22em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1913.svg#page1897"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -8.11 10.45 10.94"
+style="width:  1.05em; height:  1.22em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1914.svg#page1898"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -8.11 10.45 8.11"
+style="width:  1.05em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1915.svg#page1899"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.62 8.3"
+style="width:  0.97em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1916.svg#page1900"> </use> </svg></span> poden mesurar-se
+exactament i simultània.</span></summary>
+
+<div class="content"><div class="p"> <span>Com els operadors
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 12.21"
+style="width:  1.05em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1917.svg#page1901"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 12.21"
+style="width:  1.05em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img1918.svg#page1902"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1919.svg#page1903"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.62 10.88"
+style="width:  0.97em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1920.svg#page1904"> </use> </svg></span> commuten entre
+si, tindran autofuncions comunes i els corresponents observables podran
+mesurar-se exactament i simultània</span>. <span>Això vol dir que podrem
+utilitzar els quatre nombres quàntics <span class="inlinemath"><svg
+viewBox="0 -6.57 8.07 8.51"
+style="width:  0.81em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1921.svg#page1905"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.57 8.07 8.51"
+style="width:  0.81em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1922.svg#page1906"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1923.svg#page1907"> </use> </svg></span> y
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.45 7.14"
+style="width:  1.25em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1924.svg#page1908"> </use> </svg></span> per especificar
+les autofuncions comunes del sistema corresponent a la suma de
+<span class="inlinemath"><svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1925.svg#page1909"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.64 9.5 11.13"
+style="width:  0.95em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1926.svg#page1910"> </use> </svg></span>, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="0 -10.01 48.4 14.5"
+style="width:  4.86em; height:  1.58em;"> <use
+xlink:href="images/img1927.svg#page1911"> </use>
+</svg></td><td>(3.10)</td></tr></table>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Resumim tots els
+tipus de moment angular en una taula</span></summary>
+
+<div class="content"><div class="table" id="ref::ang:sum:resum">
+<div class="p caption"> <span>Taula 3.3</span>: <span>Taula resum dels diferent
+tipus de moment angular</span>. </div>
+
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span class="small" >Tipus</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" >Autofuncions i autovalors</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" >Nombres quàntics</span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span class="small" >General <span class="inlinemath">(<svg
+viewBox="0 -11 7.5 11"
+style="width:  0.82em; height:  1.33em; vertical-align: -0.07em;"> <use
+xlink:href="images/img1928.svg#page1912"> </use> </svg></span>)</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -13.97 93.03 22.33"
+style="width: 10.15em; height:  2.57em; vertical-align: -0.98em;"> <use
+xlink:href="images/img1929.svg#page1913"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -13.06 106.23 20.64"
+style="width: 11.59em; height:  2.38em; vertical-align: -0.89em;"> <use
+xlink:href="images/img1930.svg#page1914"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span class="small" >Orbital <span class="inlinemath">(<svg
+viewBox="0 -11 6.38 11"
+style="width:  0.70em; height:  1.33em; vertical-align: -0.07em;"> <use
+xlink:href="images/img1931.svg#page1915"> </use> </svg></span>)</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -13.97 104.32 22.47"
+style="width: 11.38em; height:  2.58em; vertical-align: -0.99em;"> <use
+xlink:href="images/img1932.svg#page1916"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -11.76 98.69 18.93"
+style="width: 10.77em; height:  2.20em; vertical-align: -0.85em;"> <use
+xlink:href="images/img1933.svg#page1917"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span class="small" >Espín <span class="inlinemath">(<svg
+viewBox="0 -11 6.83 11"
+style="width:  0.75em; height:  1.33em; vertical-align: -0.07em;"> <use
+xlink:href="images/img1934.svg#page1918"> </use> </svg></span>)</span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -13.97 90.76 21.17"
+style="width:  9.90em; height:  2.44em; vertical-align: -0.85em;"> <use
+xlink:href="images/img1935.svg#page1919"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -13.06 51.22 21.53"
+style="width:  5.59em; height:  2.48em; vertical-align: -0.99em;"> <use
+xlink:href="images/img1936.svg#page1920"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="0 -11 47.44 12"
+style="width:  5.18em; height:  1.44em; vertical-align: -0.17em;"> <use
+xlink:href="images/img1937.svg#page1921"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -15.5 122.91 26.53"
+style="width: 13.41em; height:  3.02em; vertical-align: -1.27em;"> <use
+xlink:href="images/img1938.svg#page1922"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="c">
+ <span class="small" ><span class="inlinemath"><svg
+viewBox="4.98 -12.25 118.41 19.84"
+style="width: 12.92em; height:  2.30em; vertical-align: -0.89em;"> <use
+xlink:href="images/img1939.svg#page1923"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>La taula </span><a
+href="sections/section.3.7.html#ref::ang:sum:resum">3.3</a><span> mostra el
+resum de tots el operadors de moment angular que hem vist en aquest
+tema</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.3.7.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

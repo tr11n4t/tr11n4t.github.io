@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Elements de simetria | Rotació, reflexió, inversió,
+rotació-reflexió</title>
+<meta name="description" content="Definicions d’operació i d’element de
+simetria. Tipus d’elements de simetria: rotació, reflexió, inversió,
+rotació-reflexió.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.8.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.8.html"><span>8 Simetria molecular </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>8.1 Elements i operacions de
+simetria </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4180.svg#page4156"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.html"> <svg class="icon previous" viewBox="0 0
+512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.1.1.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>8.1  Elements i operacions de simetria</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Una </span><span
+class="itshape sffamily" >operació de simetria</span><span class="sffamily" >
+deixa un cos indistingible de l’original.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Operació de simetria</span></strong>. <span>Una
+</span><span class="itshape" >operació de simetria</span><span> és una
+transformació d’un cos que preserva les distàncies entre dos punts qualsevol
+del cos i el deixa en una posició indistingible de l’original</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>‘Preservar les distàncies’ equival a no
+distorsionar el cos i mantenir-ne la forma</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >Un ‘cos’ és la
+distribució de nuclis de la molècula.</span></summary>
+
+<div class="content"><div class="p"> <span>En el context de la química
+quàntica, per ‘cos’ volem dir la distribució dels nuclis que resulta en aplicar
+l’aproximació de Born-Oppenheimer a una molècula</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >Una operació de
+simetria no canvia el hamiltonià electrònic.</span></summary>
+
+<div class="content"><div class="p"> <span>Com la distribució dels nuclis
+determina el hamiltonià electrònic, concloem que una operació de simetria deixa
+inalterat el hamiltonià electrònic</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::sim:ele:BFFF"> <span>&vert;1.3&rang;</span> <span
+class="sffamily" >Ho il·lustrarem per al trifluorur de bor
+<span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4181.svg#page4157"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Il·lustrarem el concepte d’operació
+de simetria per a la molècula de trifluorur de bor
+<span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4182.svg#page4158"> </use> </svg></span></span>.
+<span>Aquesta molècula és plana, amb el bor al centre d’un triangle equilàter,
+i un àtom de fluor en cadascuns dels vèrtexs</span>. </div>
+
+<div class="p"> <span>Suposem ara que fem la següent operació de simetria sobre
+el <span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4183.svg#page4159"> </use> </svg></span></span>:
+<span>rotació de <span class="inlinemath"><svg
+viewBox="0 -6.86 19.03 6.86"
+style="width:  1.91em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4184.svg#page4160"> </use> </svg></span> en sentit horari
+(sentit de les busques del rellotge) al voltant d’un eix que travessa
+perpendicularment el pla de la molècula per l’àtom de bor, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.37 -25.99 177.76 43.63"
+style="width: 17.84em; height:  4.50em;"> <use
+xlink:href="images/img4185.svg#page4161"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Noteu que hem afegits subíndexs als àtoms de
+fluor per facilitar-ne la comprensió, però que en realitat els tres àtoms de
+fluor són idèntics i no es poden distingir</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.37 -25.99 167.53 43.63"
+style="width: 16.82em; height:  4.50em;"> <use
+xlink:href="images/img4186.svg#page4162"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Per definir una
+operació de simetria necessitem un </span><span class="itshape sffamily"
+>element de simetria.</span></summary>
+
+<div class="content"><div class="p"> <span>Les operacions de simetria es
+defineixen mitjançant </span><span class="itshape" >elements de
+simetria</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Element de simetria</span></strong>. <span>Un
+</span><span class="itshape" >element de simetria</span><span> és una entitat
+geomètrica (punt, eix, pla) respecte a la qual s’efectua una operació de
+simetria</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>En l’exemple que hem vist en </span><a
+class="sffamily small" href="sections/section.8.1.html#ref::sim:ele:BFFF"
+>§8.1&vert;1.3&rang;</a><span> per al <span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4187.svg#page4163"> </use> </svg></span>, l’eix al
+voltant del qual hem fet la rotació de <span class="inlinemath"><svg
+viewBox="0 -6.86 19.03 6.86"
+style="width:  1.91em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4188.svg#page4164"> </use> </svg></span> és un element de
+simetria</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Hi ha quatre tipus
+d’elements de simetria.</span></summary>
+
+<div class="content"><div class="p"> <span>Els elements de simetria que podem
+trobar en una molècula han de ser d’un dels quatre tipus següents</span>.
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4189.svg#page4165"> </use> </svg></span> representa un
+</span><span class="itshape sffamily" >eix de rotació</span><span
+class="sffamily" > d’ordre <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4190.svg#page4166"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Eix de rotació <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4191.svg#page4167"> </use> </svg></span></span></strong>.
+<span>Diem que un eix és un </span><span class="itshape" >eix de
+rotació</span><span> <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4192.svg#page4168"> </use> </svg></span> si una rotació
+de <span class="inlinemath"><svg
+viewBox="0 -7.47 30.49 9.96"
+style="width:  3.06em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4193.svg#page4169"> </use> </svg></span> al voltant de
+l’eix deixa la molècula indistingible de l’original</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1.1&rang;</span> <span class="sffamily" >També pot
+dir-se </span><span class="itshape sffamily" >eix de rotació
+pròpia.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1.2&rang;</span> <span class="sffamily" >Per a un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4194.svg#page4170"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4195.svg#page4171"> </use> </svg></span> s’anomena
+l’</span><span class="itshape sffamily" >ordre</span><span class="sffamily" >
+de l’eix.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1.3&rang;</span> <span class="sffamily" >Una molècula
+pot tindre més d’un eix de rotació.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1.4&rang;</span> <span class="sffamily" >L’eix de
+rotació amb l’ordre màxim s’anomena </span><span class="itshape sffamily" >eix
+principal.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1.5&rang;</span> <span class="sffamily"
+>Exemple:</span> <span class="sffamily" >el <span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4196.svg#page4172"> </use> </svg></span> té un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4197.svg#page4173"> </use> </svg></span> (principal) i
+tres <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4198.svg#page4174"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La molècula de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4199.svg#page4175"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.8.1.html#ref::sim:ele:BFFF"
+>§8.1&vert;1.3&rang;</a><span> té un eix de rotació
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4200.svg#page4176"> </use> </svg></span> perpendicular al
+pla molecular (l’eix principal), i també té 3 eixos de rotació
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4201.svg#page4177"> </use> </svg></span> situats sobre el
+pla molecular, on cadascun d’ells travessa un d’els àtoms de fluor i l’àtom de
+bor</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.37 -25.99 167.53 43.63"
+style="width: 16.82em; height:  4.50em;"> <use
+xlink:href="images/img4202.svg#page4178"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >pla de reflexió</span><span class="sffamily" > de
+reflexió es representa per <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4203.svg#page4179"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.2.1&rang;</span> <span class="sffamily" >La reflexió en
+un pla és com la reflexió en un espill.</span></summary>
+
+<div class="content"><div class="p"> <span>La reflexió d’un cos en un pla mou
+cada punt del cos a l’altre costat del pla de manera que les posicions inicial
+i final del punt són a la mateixa distància del pla</span>. <span>Tot plegat
+sembla la reflexió d’un objecte en un espill</span>. <span>Ho il·lustrem en la
+figura </span><a
+href="sections/section.8.1.html#ref::sim:ele:reflection">8.1</a>. </div>
+
+<div class="figure" id="ref::sim:ele:reflection">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -128.68 128.68 128.68"
+style="width: 12.92em; height: 13.04em;"> <use
+xlink:href="images/img4204.svg#page4180"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 8.1</span>: <span>Reflexió d’un punt
+<span class="inlinemath"><svg
+viewBox="0 -7.47 32.61 9.96"
+style="width:  3.27em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4205.svg#page4181"> </use> </svg></span> sobre el pla
+<span class="inlinemath"><svg
+viewBox="0 -6.81 17.03 6.81"
+style="width:  1.71em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4206.svg#page4182"> </use> </svg></span> per donar el
+punt <span class="inlinemath"><svg
+viewBox="0 -7.47 40.36 9.96"
+style="width:  4.05em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4207.svg#page4183"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -128.68 128.68 128.68"
+style="width: 12.92em; height: 13.04em;"> <use
+xlink:href="images/img4208.svg#page4184"> </use> </svg></span> </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Pla de reflexió</span></strong>. <span>Diem que un
+pla és un </span><span class="itshape" >pla de reflexió</span><span> si la
+reflexió de la molècula en el pla la deixa indistingible de l’original</span>.
+</div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2.2&rang;</span> <span class="sffamily" >Simbolitzarem
+un pla de reflexió amb la lletra <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4209.svg#page4185"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem afegir un subíndex a la
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4210.svg#page4186"> </use> </svg></span> per distingir
+entre tipus de plans de reflexió</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2.3&rang;</span> <span class="sffamily" >Pla de
+reflexió perpendicular a l’eix principal:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4211.svg#page4187"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2.4&rang;</span> <span class="sffamily" >Pla de
+reflexió que conté l’eix principal:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4212.svg#page4188"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2.5&rang;</span> <span class="sffamily"
+>Exemple:</span> <span class="sffamily" >el <span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4213.svg#page4189"> </use> </svg></span> té un
+<span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4214.svg#page4190"> </use> </svg></span> i tres
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4215.svg#page4191"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La molècula de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4216.svg#page4192"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.8.1.html#ref::sim:ele:BFFF"
+>§8.1&vert;1.3&rang;</a><span> té un pla <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4217.svg#page4193"> </use> </svg></span> (el pla
+molecular) i tres plans <span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4218.svg#page4194"> </use> </svg></span> perpendiculars
+al pla molecular, cadascun d’ells contenint un dels àtoms de fluor i l’àtom de
+bor</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.37 -25.99 167.53 43.63"
+style="width: 16.82em; height:  4.50em;"> <use
+xlink:href="images/img4219.svg#page4195"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >centre d’inversió</span><span class="sffamily" > es
+representa per <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4220.svg#page4196"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.3.1&rang;</span> <span class="sffamily" >Una inversió
+mou un punt de <span class="inlinemath"><svg
+viewBox="0 -7.47 32.61 9.96"
+style="width:  3.27em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4221.svg#page4197"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -7.47 55.86 9.96"
+style="width:  5.61em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4222.svg#page4198"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La inversió d’un cos sobre un punt
+(centre) transforma cada punt del cos segons l’esquema de la figura </span><a
+href="sections/section.8.1.html#ref::sim:ele:inversion">8.2</a><span> (la
+figura il·lustra el cas on el centre està en l’origen de coordenades, però no
+té perquè ser així)</span>. </div>
+
+<div class="figure" id="ref::sim:ele:inversion">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="2 -128.68 130.97 128.68"
+style="width: 13.15em; height: 13.04em;"> <use
+xlink:href="images/img4223.svg#page4199"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 8.2</span>: <span>Inversió d’un punt
+<span class="inlinemath"><svg
+viewBox="0 -7.47 32.61 9.96"
+style="width:  3.27em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4224.svg#page4200"> </use> </svg></span> sobre l’origen
+de coordenades per donar el punt <span class="inlinemath"><svg
+viewBox="0 -7.47 55.86 9.96"
+style="width:  5.61em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4225.svg#page4201"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2 -128.68 130.97 128.68"
+style="width: 13.15em; height: 13.04em;"> <use
+xlink:href="images/img4226.svg#page4202"> </use> </svg></span> </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Centre d’inversió <span class="inlinemath">(<svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4227.svg#page4203"> </use>
+</svg></span>)</span></strong>. <span>Diem que un punt és un </span><span
+class="itshape" >centre d’inversió</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4228.svg#page4204"> </use> </svg></span>) si la inversió
+de la molècula sobre el punt la deixa indistingible de l’original</span>.
+</div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3.2&rang;</span> <span class="sffamily"
+>Exemple:</span> <span class="sffamily" >el benzè té un centre
+d’inversió.</span></summary>
+
+<div class="content"><div class="p"> <span>Un exemple de molècula amb centre
+d’inversió és el benzè, que en té un al bell mig de l’anell, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox=".8 -77.7 89.65 77.7"
+style="width:  9.00em; height:  7.92em;"> <use
+xlink:href="images/img4229.svg#page4205"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox=".8 -77.7 86.68 75.91"
+style="width:  8.70em; height:  7.92em;"> <use
+xlink:href="images/img4230.svg#page4206"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4231.svg#page4207"> </use> </svg></span> representa un
+</span><span class="itshape sffamily" >eix de rotació-reflexió</span><span
+class="sffamily" > d’ordre <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4232.svg#page4208"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Eix de rotació-reflexió
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4233.svg#page4209"> </use> </svg></span></span></strong>.
+<span>Diem que un eix és un </span><span class="itshape" >eix de
+rotació-reflexió</span><span> <span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4234.svg#page4210"> </use> </svg></span> si una rotació
+de <span class="inlinemath"><svg
+viewBox="0 -7.47 30.49 9.96"
+style="width:  3.06em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4235.svg#page4211"> </use> </svg></span> al voltant de
+l’eix seguida d’una reflexió sobre un pla perpendicular a l’eix deixa la
+molècula indistingible de l’original</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4236.svg#page4212"> </use> </svg></span> també pot
+definir-se fent primer la reflexió i després la rotació</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4.1&rang;</span> <span class="sffamily" >També pot
+dir-se </span><span class="itshape sffamily" >eix de rotació
+impròpia.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4.2&rang;</span> <span class="sffamily" >Per a un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4237.svg#page4213"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4238.svg#page4214"> </use> </svg></span> s’anomena
+l’</span><span class="itshape sffamily" >ordre</span><span class="sffamily" >
+de l’eix.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4.3&rang;</span> <span class="sffamily"
+>Exemple:</span> <span class="sffamily" >el metà <span class="inlinemath"><svg
+viewBox="0 -6.86 18.64 8.36"
+style="width:  1.87em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4239.svg#page4215"> </use> </svg></span> té un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4240.svg#page4216"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Un exemple de molècula amb un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4241.svg#page4217"> </use> </svg></span> és el metà
+<span class="inlinemath">(<svg
+viewBox="0 -6.86 18.64 8.36"
+style="width:  1.87em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4242.svg#page4218"> </use> </svg></span>)</span>.
+<span>Una rotació de <span class="inlinemath"><svg
+viewBox="0 -7.47 56.81 9.96"
+style="width:  5.70em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4243.svg#page4219"> </use> </svg></span> al voltant d’un
+eix perpendicular al paper seguida d’una reflexió sobre el pla del paper deixa
+el metà indistingible de l’original, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2 -25.42 228.29 46.45"
+style="width: 22.91em; height:  4.78em;"> <use
+xlink:href="images/img4244.svg#page4220"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(els subíndexs dels àtoms d’hidrogen s’han
+afegit només per claredat)</span>. </div>
+
+<div class="p"> <span>Es recomana visitar la pàgina web “Symmetry resources”[<a
+href="sections/biblio.html#bib::OTTERBEIN">23</a>], que permet visualitzar de
+manera interactiva l’efecte d’una rotació-reflexió sobre diverses
+molècules</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2.51 -31.77 285.36 58.06"
+style="width: 28.64em; height:  5.95em;"> <use
+xlink:href="images/img4245.svg#page4221"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4.4&rang;</span> <span class="sffamily" >Alerta!</span>
+<span class="sffamily" >Un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4246.svg#page4222"> </use> </svg></span> </span><span
+class="itshape sffamily" >no</span><span class="sffamily" > implica eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4247.svg#page4223"> </use> </svg></span> o pla
+<span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4248.svg#page4224"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Compte, que l’existència d’un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4249.svg#page4225"> </use> </svg></span> en una molècula
+no vol dir que la molècula també tingui un <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4250.svg#page4226"> </use> </svg></span>, o un
+<span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4251.svg#page4227"> </use> </svg></span> perpendicular al
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4252.svg#page4228"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Per exemple, el metà té un <span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4253.svg#page4229"> </use> </svg></span> però no té ni un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4254.svg#page4230"> </use> </svg></span>, ni un pla
+perpendicular al <span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4255.svg#page4231"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::sim:ele:S1sigma"> <span>&vert;3.4.5&rang;</span> <span
+class="sffamily" >Un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4256.svg#page4232"> </use> </svg></span> equival a un pla
+de reflexió <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4257.svg#page4233"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4258.svg#page4234"> </use> </svg></span> és equivalent a
+un pla de reflexió <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4259.svg#page4235"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 32.13 8.74"
+style="width:  3.23em; height:  1.00em;"> <use
+xlink:href="images/img4260.svg#page4236"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>ja que una de rotació de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 29.49 9.96"
+style="width:  2.96em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4261.svg#page4237"> </use> </svg></span> seguida d’una
+reflexió és simplement una reflexió</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::sim:ele:S2i"> <span>&vert;3.4.6&rang;</span> <span
+class="sffamily" >Un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4262.svg#page4238"> </use> </svg></span> equival a un
+centre <span class="inlinemath">d’inversió <svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4263.svg#page4239"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4264.svg#page4240"> </use> </svg></span> és equivalent a
+un centre d’inversió <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4265.svg#page4241"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 30.06 8.3"
+style="width:  3.02em; height:  0.95em;"> <use
+xlink:href="images/img4266.svg#page4242"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La demostració és fàcil</span>. <span>Imaginem
+que l’eix coincideix amb l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 7.51 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4267.svg#page4243"> </use> </svg></span>, cosa que fa que
+una rotació de <span class="inlinemath"><svg
+viewBox="0 -7.47 61.8 9.96"
+style="width:  6.20em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4268.svg#page4244"> </use> </svg></span> al voltant de
+l’eix (eix <span class="inlinemath"><svg
+viewBox="0 -6.81 7.51 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4269.svg#page4245"> </use> </svg></span>) canvie els
+signes de les coordenades <span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4270.svg#page4246"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.24 6.23"
+style="width:  0.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4271.svg#page4247"> </use> </svg></span> de qualsevol
+punt, mentre que una reflexió sobre un pla perpendicular a l’eix (pla
+<span class="inlinemath"><svg
+viewBox="0 -6.81 17.03 6.81"
+style="width:  1.71em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4272.svg#page4248"> </use> </svg></span>) canvia només el
+signe de <span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4273.svg#page4249"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -12.51 211.63 15"
+style="width: 21.24em; height:  1.63em;"> <use
+xlink:href="images/img4274.svg#page4250"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquest resultat és equivalent a la definició de
+centre d’inversió que hem vist en la figura </span><a
+href="sections/section.8.1.html#ref::sim:ele:inversion">8.2</a>. </div>
+
+<div class="p"> <span class="underline" >Important</span>: <span>qualsevol eix
+que passe per un centre d’inversió <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4275.svg#page4251"> </use> </svg></span> (no cal que
+coincidisca amb l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 7.51 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4276.svg#page4252"> </use> </svg></span>) és un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4277.svg#page4253"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4.7&rang;</span> <span class="sffamily" >Una molècula
+amb un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4278.svg#page4254"> </use> </svg></span> és òpticament
+</span><span class="itshape sffamily" >inactiva.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar[<a
+href="sections/biblio.html#bib::LEVINE2000">6</a>] que una molècula amb un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4279.svg#page4255"> </use> </svg></span> no pot tindre
+activitat òptica</span>. </div>
+
+</div></details>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Operacions de
+simetria i elements de simetria </span><span class="itshape sffamily"
+>no</span><span class="sffamily" > són el mateix.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >A l’element de
+simetria <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4280.svg#page4256"> </use> </svg></span> li correspon
+l’operació de simetria <span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4281.svg#page4257"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Encara que relacionats, elements de
+simetria i operacions de simetria no són la mateixa cosa</span>. <span>Per
+exemple, un eix de rotació no és el mateix que una rotació al voltant d’aquest
+eix</span>. </div>
+
+<div class="p"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4282.svg#page4258"> </use> </svg></span> és un element de
+simetria, utilitzarem el símbol <span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4283.svg#page4259"> </use> </svg></span> per referir-nos
+a la corresponent operació de simetria</span>.
+<span><span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4284.svg#page4260"> </use> </svg></span> transforma el
+punt <span class="inlinemath"><svg
+viewBox="0 -7.47 32.61 9.96"
+style="width:  3.27em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4285.svg#page4261"> </use> </svg></span> en el punt
+<span class="inlinemath"><svg
+viewBox="0 -7.49 41 9.98"
+style="width:  4.12em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4286.svg#page4262"> </use> </svg></span>, cosa que
+escriurem simbòlicament com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 105.6 11.87"
+style="width: 10.60em; height:  1.31em;"> <use
+xlink:href="images/img4287.svg#page4263"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 102.84 11.87"
+style="width: 10.32em; height:  1.31em;"> <use
+xlink:href="images/img4288.svg#page4264"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2&rang;</span> <span class="sffamily" >En molècules
+podem trobar <span class="inlinemath"><svg
+viewBox="0 -9.38 12.05 10.88"
+style="width:  1.21em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4289.svg#page4265"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 6.05 6.86"
+style="width:  0.61em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4290.svg#page4266"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="-.77 -9.14 4.98 9.14"
+style="width:  0.50em; height:  1.04em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4291.svg#page4267"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.03 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4292.svg#page4268"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’equivalència entre els elements de
+simetria que hem vist abans i les corresponents operacions de simetria són
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4293.svg#page4269"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4294.svg#page4270"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 12.05 10.88"
+style="width:  1.21em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4295.svg#page4271"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 35.14 6.23"
+style="width:  3.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4296.svg#page4272"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4297.svg#page4273"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 35.69 8.8"
+style="width:  3.58em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4298.svg#page4274"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4299.svg#page4275"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4300.svg#page4276"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="-.77 -9.14 4.98 9.14"
+style="width:  0.50em; height:  1.04em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4301.svg#page4277"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4302.svg#page4278"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4303.svg#page4279"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 14.3 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4304.svg#page4280"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4305.svg#page4281"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4306.svg#page4282"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 12.05 10.88"
+style="width:  1.21em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4307.svg#page4283"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 35.14 6.23"
+style="width:  3.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4308.svg#page4284"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4309.svg#page4285"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 35.69 8.8"
+style="width:  3.58em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4310.svg#page4286"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4311.svg#page4287"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4312.svg#page4288"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="-.77 -9.14 4.98 9.14"
+style="width:  0.50em; height:  1.04em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4313.svg#page4289"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4314.svg#page4290"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4315.svg#page4291"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 11.03 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4316.svg#page4292"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Necessitarem també
+l’</span><span class="itshape sffamily" >operació identitat</span><span
+class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4317.svg#page4293"> </use> </svg></span>, que no fa
+res.</span></summary>
+
+<div class="content"><div class="p"> <span>L’estudi de la simetria molecular
+aconsella la introducció d’una operació de simetria que no fa res</span>:
+<span>l’</span><span class="itshape" >operació identitat</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4318.svg#page4294"> </use> </svg></span></span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Operació identitat <span class="inlinemath">(<svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4319.svg#page4295"> </use>
+</svg></span>)</span></strong>. <span>L’efecte de l’operació identitat sobre
+qualsevol punt de l’espai <span class="inlinemath"><svg
+viewBox="0 -7.47 32.61 9.96"
+style="width:  3.27em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4320.svg#page4296"> </use> </svg></span> és deixar-lo
+inalterat, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 97.51 11.87"
+style="width:  9.79em; height:  1.31em;"> <use
+xlink:href="images/img4321.svg#page4297"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span class="itshape" >Totes</span><span> les
+molècules tenen una </span><span class="itshape" >operació identitat</span>.
+</div>
+
+</div></details>
+
+<div class="p noindent"> <a class="bfseries" href="sections/section.8.1.1.html"
+>8.1.1  Producte d’operacions de simetria</a> </div>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.8.1.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

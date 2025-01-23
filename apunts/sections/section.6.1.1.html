@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Partícules idèntiques | Funcions simètriques i antisimètriques</title>
+<meta name="description" content="Operador de bescanvi i definició de sistema
+de partícules idèntiques. Les autofuncions han de ser simètriques o
+antisimètriques.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.6.1.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.html"><span>6 Àtoms polielectrònics </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.1.html"><span>6.1 Principi d’exclusió de Pauli
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>6.1.1 Bescanvi de partícules
+idèntiques </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img2601.svg#page2580"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection" id="ref::ato:pau">  <span>6.1.1  Bescanvi de partícules
+idèntiques</span> </h5>
+
+<details open class="foldable prop">
+<summary id="ref::ato:pau:Hheli"> <span>&vert;1&rang;</span> <span
+class="sffamily" >L’àtom d’heli té dos electrons.</span></summary>
+
+<div class="content"><div class="p"> <span>Considerem com exemple el hamiltonià
+de l’àtom d’heli en unitats atòmiques, assumint massa nuclear infinita (és a
+dir, que l’energia cinètica del nucli serà zero, per la qual cosa no la
+incloem) </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 192.42 21.34"
+style="width: 19.32em; height:  2.26em;"> <use
+xlink:href="images/img2602.svg#page2581"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on el subíndex 1 es refereix al primer electró i
+el subíndex 2 al segon, de manera que <span class="inlinemath"><svg
+viewBox="0 -4.29 8.47 5.78"
+style="width:  0.85em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2603.svg#page2582"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.47 5.78"
+style="width:  0.85em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2604.svg#page2583"> </use> </svg></span> són les
+distàncies dels respectius electrons al nucli, i <span class="inlinemath"><svg
+viewBox="0 -4.29 12.44 5.78"
+style="width:  1.25em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2605.svg#page2584"> </use> </svg></span> la distància
+entre els electrons</span>. </div>
+
+<div class="p"> <span>Recordeu, com vam veure en </span><a class="sffamily
+small" href="sections/section.3.6.html#ref::ang:esp:xyzs"
+>§3.6&vert;6.4&rang;</a><span>, que descrivim els electrons amb quatre
+coordenades (3 espacials més la variable d’espín), </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="-.13 -7.12 9.8 8.61"
+style="width:  0.98em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2606.svg#page2585"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2607.svg#page2586"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 108.83 9.96"
+style="width: 10.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2608.svg#page2587"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="-.13 -7.12 9.8 8.61"
+style="width:  0.98em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2609.svg#page2588"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2610.svg#page2589"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 111.59 9.96"
+style="width: 11.20em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2611.svg#page2590"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 188.46 21.34"
+style="width: 18.92em; height:  2.26em;"> <use
+xlink:href="images/img2612.svg#page2591"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Els dos electrons
+de l’heli són </span><span class="bfseries sffamily"
+>idèntics.</span></summary>
+
+<div class="content"><div class="p"> <span>Els dos electrons de l’àtom d’heli
+són </span><span class="bfseries" >idèntics</span>. <span>Això implica que,
+malgrat que utilitzem subíndexs per distingir-los matemàticament, físicament no
+els podrem distingir</span>. <span>Per exemple, no podem mesurar la posició de
+l’electró 1, com a molt podem mesurar la posició d’un electró, que pot ser l’1
+o el 2</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >bescanvi</span><span class="sffamily" > d’electrons
+no modifica el hamiltonià.</span></summary>
+
+<div class="content"><div class="p"> <span>L’expressió del hamiltonià de l’heli
+que hem vist en </span><a class="sffamily small"
+href="sections/section.6.1.1.html#ref::ato:pau:Hheli"
+>§6.1.1&vert;1&rang;</a><span> ens permet concloure que el </span><span
+class="itshape" >bescanvi</span><span> o intercanvi dels dos electrons no el
+modifica, és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 99.24 11.87"
+style="width:  9.96em; height:  1.31em;"> <use
+xlink:href="images/img2613.svg#page2592"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 96.47 11.87"
+style="width:  9.68em; height:  1.31em;"> <use
+xlink:href="images/img2614.svg#page2593"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Fem el bescanvi
+amb un </span><span class="itshape sffamily" >operador de bescanvi</span><span
+class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2615.svg#page2594"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Operador de bescanvi (o
+intercanvi)</span></strong>. <span>L’acció de l’operador de </span><span
+class="itshape" >bescanvi</span><span> <span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2616.svg#page2595"> </use> </svg></span> sobre una funció
+d’ona <span class="inlinemath"><svg
+viewBox="0 -7.47 40.25 9.96"
+style="width:  4.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2617.svg#page2596"> </use> </svg></span> és el bescanvi
+de les coordenades <span class="inlinemath"><svg
+viewBox="-.13 -7.12 9.8 8.61"
+style="width:  0.98em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2618.svg#page2597"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.13 -7.12 9.8 8.61"
+style="width:  0.98em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2619.svg#page2598"> </use> </svg></span></span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 111.39 11.87"
+style="width: 11.18em; height:  1.31em;"> <use
+xlink:href="images/img2620.svg#page2599"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Pot demostrar-se que
+<span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2621.svg#page2600"> </use> </svg></span> és
+hermitià</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 108.62 11.87"
+style="width: 10.90em; height:  1.31em;"> <use
+xlink:href="images/img2622.svg#page2601"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2623.svg#page2602"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2624.svg#page2603"> </use> </svg></span>
+commuten.</span></summary>
+
+<div class="content"><div class="p"> <span>És fàcil veure que l’operador de
+bescanvi <span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2625.svg#page2604"> </use> </svg></span> i el hamiltonià
+de l’heli que hem vist en </span><a class="sffamily small"
+href="sections/section.6.1.1.html#ref::ato:pau:Hheli"
+>§6.1.1&vert;1&rang;</a><span> commuten</span>. <span>Considerem una funció
+<span class="inlinemath"><svg
+viewBox="0 -7.47 61.28 9.96"
+style="width:  6.15em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2626.svg#page2605"> </use> </svg></span> qualsevol, i
+actuem sobre ella amb <span class="inlinemath"><svg
+viewBox="0 -9.38 23.93 10.88"
+style="width:  2.40em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2627.svg#page2606"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 149.99 11.87"
+style="width: 15.06em; height:  1.31em;"> <use
+xlink:href="images/img2628.svg#page2607"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, l’efecte de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2629.svg#page2608"> </use> </svg></span> és bescanviar
+<span class="inlinemath"><svg
+viewBox="-.13 -7.12 9.8 8.61"
+style="width:  0.98em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2630.svg#page2609"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.13 -7.12 9.8 8.61"
+style="width:  0.98em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2631.svg#page2610"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 129.57 11.87"
+style="width: 13.01em; height:  1.31em;"> <use
+xlink:href="images/img2632.svg#page2611"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Però com el bescanvi d’electrons no modifica el
+hamiltonià, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 121.61 11.87"
+style="width: 12.21em; height:  1.31em;"> <use
+xlink:href="images/img2633.svg#page2612"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>tindrem que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 97.07 11.87"
+style="width:  9.74em; height:  1.31em;"> <use
+xlink:href="images/img2634.svg#page2613"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>D’altra banda, per la definició de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2635.svg#page2614"> </use> </svg></span> sabem que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 111.39 11.87"
+style="width: 11.18em; height:  1.31em;"> <use
+xlink:href="images/img2636.svg#page2615"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>podem escriure finalment </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 162.45 11.87"
+style="width: 16.31em; height:  1.31em;"> <use
+xlink:href="images/img2637.svg#page2616"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Com <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2638.svg#page2617"> </use> </svg></span> pot ser
+qualsevol funció d’ona, tindrem que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 63.91 11.32"
+style="width:  6.42em; height:  1.26em;"> <use
+xlink:href="images/img2639.svg#page2618"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 54.97 11.87"
+style="width:  5.52em; height:  1.31em;"> <use
+xlink:href="images/img2640.svg#page2619"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Podem generalitzar
+<span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2641.svg#page2620"> </use> </svg></span> per a més de
+dues partícules.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador
+<span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2642.svg#page2621"> </use> </svg></span> pot
+generalitzar-se per a sistemes amb més de dues partícules</span>.
+<span>Parlarem del bescanvi de les partícules <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2643.svg#page2622"> </use> </svg></span>-èsima i
+<span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2644.svg#page2623"> </use> </svg></span>-èsima, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 280.29 12.23"
+style="width: 28.13em; height:  1.35em;"> <use
+xlink:href="images/img2645.svg#page2624"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 277.52 12.23"
+style="width: 27.86em; height:  1.35em;"> <use
+xlink:href="images/img2646.svg#page2625"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ato:pau:OPij"> <span>&vert;7&rang;</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2647.svg#page2626"> </use> </svg></span> ens permet
+definir un </span><span class="itshape sffamily" >sistema de partícules
+idèntiques</span><span class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem vist que l’àtom d’heli té dos
+electrons idèntics, i que <span class="inlinemath"><svg
+viewBox="0 -9.38 14.34 10.88"
+style="width:  1.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2648.svg#page2627"> </use> </svg></span> commuta amb el
+hamiltonià <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2649.svg#page2628"> </use> </svg></span></span>. <span>La
+generalització a qualsevol observable ens dóna la definició de </span><span
+class="itshape" >sistema de partícules idèntiques</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Sistema de partícules idèntiques</span></strong>.
+<span>Les partícules d’un sistema són idèntiques si, per a qualsevol observable
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2650.svg#page2629"> </use> </svg></span>, el corresponent
+operador <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2651.svg#page2630"> </use> </svg></span> commuta amb
+qualsevol operador de bescanvi de dues partícules, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 83.83 12.23"
+style="width:  8.42em; height:  1.35em;"> <use
+xlink:href="images/img2652.svg#page2631"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2653.svg#page2632"> </use> </svg></span> només té dos
+autovalors, <span class="inlinemath"><svg
+viewBox="0 -6.27 31.03 8.21"
+style="width:  3.11em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2654.svg#page2633"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Trobarem ara els autovalors d’un
+operador de bescanvi <span class="inlinemath"><svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2655.svg#page2634"> </use> </svg></span></span>.
+<span>Comencem escrivint l’equació d’autovalors, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 49.97 12.23"
+style="width:  5.02em; height:  1.35em;"> <use
+xlink:href="images/img2656.svg#page2635"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 5.01 6.23"
+style="width:  0.50em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2657.svg#page2636"> </use> </svg></span> és un dels
+autovalors que estem buscant</span>. <span>Ara multipliquem els dos costats per
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2658.svg#page2637"> </use> </svg></span>, </span> </div>
+
+<table class="equation" id="ref::ato:pau:PijPijPsi"><tr><td><svg
+class="equation" viewBox="0 -9.38 54.44 13.2"
+style="width:  5.46em; height:  1.44em;"> <use
+xlink:href="images/img2659.svg#page2638"> </use>
+</svg></td><td>(6.1)</td></tr></table>
+
+<div class="p noindent"> <span>D’altra banda, atès que l’acció de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2660.svg#page2639"> </use> </svg></span> és bescanviar
+les partícules <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2661.svg#page2640"> </use> </svg></span>-èsima i
+<span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2662.svg#page2641"> </use> </svg></span>-èsima, tindrem
+que </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 21.16 13.2"
+style="width:  2.12em; height:  1.44em; vertical-align: -0.44em;"> <use
+xlink:href="images/img2663.svg#page2642"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2664.svg#page2643"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 103.71 13.2"
+style="width: 10.41em; height:  1.44em; vertical-align: -0.44em;"> <use
+xlink:href="images/img2665.svg#page2644"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2666.svg#page2645"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 122.71 12.23"
+style="width: 12.32em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2667.svg#page2646"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2668.svg#page2647"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 103.71 12.23"
+style="width: 10.41em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2669.svg#page2648"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2670.svg#page2649"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 114.1 10.32"
+style="width: 11.45em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2671.svg#page2650"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Ara combinem aquest resultat amb
+l’Eq. (</span><a
+href="sections/section.6.1.1.html#ref::ato:pau:PijPijPsi">6.1</a><span>),
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 41.03 10.54"
+style="width:  4.12em; height:  1.18em;"> <use
+xlink:href="images/img2672.svg#page2651"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Deduïm que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 30.51 10.54"
+style="width:  3.06em; height:  1.18em;"> <use
+xlink:href="images/img2673.svg#page2652"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.27 33.79 8.21"
+style="width:  3.39em; height:  0.94em;"> <use
+xlink:href="images/img2674.svg#page2653"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Per tant, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 95.39 12.23"
+style="width:  9.57em; height:  1.35em;"> <use
+xlink:href="images/img2675.svg#page2654"> </use> </svg></span> </div>
+
+<div class="p"> <span>Alerta</span>! <span>El fet que
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.01 6.23"
+style="width:  0.50em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2676.svg#page2655"> </use> </svg></span> només puga
+prendre dos valors no implica que <span class="inlinemath"><svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2677.svg#page2656"> </use> </svg></span> només tinga dos
+autofuncions</span>. <span>Poden haver-hi moltes, d’autofuncions, que
+comparteixen el mateix valor <span class="inlinemath">de <svg
+viewBox="0 -4.29 5.01 6.23"
+style="width:  0.50em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2678.svg#page2657"> </use> </svg></span>, és a dir, que
+estan degenerades respecte <span class="inlinemath">a <svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2679.svg#page2658"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 92.62 12.23"
+style="width:  9.30em; height:  1.35em;"> <use
+xlink:href="images/img2680.svg#page2659"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;9&rang;</span> <span class="sffamily" >Les autofuncions
+són </span><span class="itshape sffamily" >simètriques</span><span
+class="sffamily" > o </span><span class="itshape sffamily"
+>antisimètriques.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Funcions simètriques i
+antisimètriques</span></strong>. <span>Les autofuncions de l’operador
+<span class="inlinemath"><svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2681.svg#page2660"> </use> </svg></span> es classifiquen
+d’acord amb el seu <span class="inlinemath">autovalor <svg
+viewBox="0 -4.29 5.01 6.23"
+style="width:  0.50em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2682.svg#page2661"> </use> </svg></span></span>: <span
+class="itshape" >simètriques</span><span> per <span class="inlinemath">a <svg
+viewBox="0 -6.27 31.03 8.21"
+style="width:  3.11em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2683.svg#page2662"> </use> </svg></span>, o </span><span
+class="itshape" >antisimètriques</span><span> per
+<span class="inlinemath">a <svg
+viewBox="0 -6.27 31.03 8.21"
+style="width:  3.11em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2684.svg#page2663"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>D’acord amb l’equació d’autovalors que acabem de veure,
+podem escriure que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 217.82 12.23"
+style="width: 21.86em; height:  1.35em;"> <use
+xlink:href="images/img2685.svg#page2664"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on el <span class="inlinemath">signe <svg
+viewBox="0 -5.81 7.75 6.64"
+style="width:  0.78em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img2686.svg#page2665"> </use> </svg></span> correspon al cas
+simètric <span class="inlinemath">i <svg
+viewBox="0 -5.81 7.75 6.64"
+style="width:  0.78em; height:  0.79em; vertical-align: -0.14em;"> <use
+xlink:href="images/img2687.svg#page2666"> </use> </svg></span> al
+antisimètric</span>. <span>En actuar <span class="inlinemath">amb <svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2688.svg#page2667"> </use> </svg></span>
+<span class="inlinemath">sobre <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2689.svg#page2668"> </use> </svg></span> obtenim </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 204.4 10.32"
+style="width: 20.52em; height:  1.16em;"> <use
+xlink:href="images/img2690.svg#page2669"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Concloem que una funció simètrica no canvia en
+res si bescanviem les partícules <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2691.svg#page2670"> </use> </svg></span>-èsima i
+<span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2692.svg#page2671"> </use> </svg></span>-èsima, mentre
+que una funció antisimètrica canvia de signe, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 276.71 24"
+style="width: 27.77em; height:  2.53em;"> <use
+xlink:href="images/img2693.svg#page2672"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 276.71 24"
+style="width: 27.77em; height:  2.53em;"> <use
+xlink:href="images/img2694.svg#page2673"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;10&rang;</span> <span class="sffamily" >Les autofuncions
+d’un sistema de partícules idèntiques han de ser o </span><span class="itshape
+sffamily" >simètriques</span><span class="sffamily" > o </span><span
+class="itshape sffamily" >antisimètriques.</span></summary>
+
+<div class="content"><div class="figure" id="ref::ato:pau:SimOAnti">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="5.98 -95.47 139.67 171.92"
+style="width: 14.02em; height: 17.38em;"> <use
+xlink:href="images/img2695.svg#page2674"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 6.1</span>: <span>En un sistema de
+partícules idèntiques, qualsevol <span class="inlinemath">observable <svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2696.svg#page2675"> </use> </svg></span> ha de commutar
+amb qualsevol operador de <span class="inlinemath">bescanvi <svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2697.svg#page2676"> </use> </svg></span>, cosa que
+implica <span class="inlinemath">que <svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2698.svg#page2677"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.38 12.91 12.23"
+style="width:  1.30em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2699.svg#page2678"> </use> </svg></span> han de compartir
+autofuncions, cosa que implica que les autofuncions
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2700.svg#page2679"> </use> </svg></span> han de ser
+simètriques o antisimètriques</span>. </div>
+
+</div>
+
+<div class="p"> <span>Com hem vist en §</span><a
+href="sections/section.1.6.3.html#ref::pos:mes:ABBA">1.6.3</a><span>, dos
+operadors hermitians que commuten comparteixen autofuncions</span>. <span>Atès
+que, d’acord amb la definició de sistema de partícules idèntiques que hem vist
+en </span><a class="sffamily small"
+href="sections/section.6.1.1.html#ref::ato:pau:OPij"
+>§6.1.1&vert;7&rang;</a><span>, l’operador de qualsevol observable del sistema
+commuta amb qualsevol operador de bescanvi, hem de concloure que les
+autofuncions de qualsevol observable d’un sistema de partícules idèntiques
+</span><span class="itshape" >han de ser simètriques o
+antisimètriques</span><span> respecte al bescanvi de dues de les
+partícules</span>. <span>Ho esquematitzem en la figura </span><a
+href="sections/section.6.1.1.html#ref::ato:pau:SimOAnti">6.1</a>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ato:pau:PsiSA"> <span>&vert;11&rang;</span> <span
+class="sffamily" >Simètriques per a alguns bescanvis i antisimètriques per a
+altres?</span> <span class="sffamily" >No.</span></summary>
+
+<div class="content"><div class="p"> <span>Si el sistema té més de dues
+partícules idèntiques, podríem preguntar-nos si les funcions d’ona del sistema
+poden ser simètriques per a alguns bescanvis i antisimètriques per a
+altres</span>. <span>La resposta és que no, que les funcions d’ona, o són
+simètriques per a tots els bescanvis, o són antisimètriques per a tots els
+bescanvis</span>. </div>
+
+<div class="p"> <span>Podem entendre-ho si pensem que si el bescanvi d’un
+parell de partícules fora simètric i el d’un altre parell antisimètric,
+aleshores les partícules no serien idèntiques</span>. <span>Es pot fer una
+demostració rigorosa mitjançant la teoria de grups</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.6.1.1.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

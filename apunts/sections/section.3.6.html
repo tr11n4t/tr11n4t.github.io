@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>L’espín de l’electró és un moment angular</title>
+<meta name="description" content="L’espín de l’electró s’introdueix mitjançant
+un postulat. Per a un electró, tenim dues autofuncions: ’alfa’ i ’beta’.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.3.6.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.3.html"><span>3 Moment angular </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>3.6 L’espín de l’electró
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img1700.svg#page1684"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.5.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.3.7.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>3.6  L’espín de l’electró</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Stern i Gerlach
+van trobar un nou moment angular:</span> <span class="sffamily" >el
+d’</span><span class="itshape sffamily" >espín</span><span class="sffamily" >
+<span class="inlinemath">(<svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1701.svg#page1685"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >Una carrega en
+moviment genera un camp magnètic.</span></summary>
+
+<div class="content"><div class="p"> <span>Una càrrega elèctrica en moviment
+(com ara un electró) genera un camp magnètic, camp que pot ser detectat i
+mesurat</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >El camp magnètic
+causat per la rotació és proporcional al moment angular.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.3&rang;</span> <span class="sffamily" >Sabem que els
+electrons tenen un </span><span class="itshape sffamily" >moment angular
+orbital</span><span class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -9.64 6.92 9.64"
+style="width:  0.70em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1702.svg#page1686"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Sabem que, en un àtom, els electrons
+tenen un moment angular que resulta de la seva rotació al voltant del nucli i
+que hem estudiat en §</span><a
+href="sections/section.3.2.html#ref::ang:orb">3.2</a>: <span>és el que anomenem
+</span><span class="itshape" >moment angular orbital</span><span> i que hem
+representat per <span class="inlinemath"><svg
+viewBox="0 -9.64 6.92 9.64"
+style="width:  0.70em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1703.svg#page1687"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4&rang;</span> <span class="sffamily" >Stern i
+Gerlach:</span> <span class="sffamily" >els àtoms amb
+<span class="inlinemath"><svg
+viewBox="0 -9.64 25.05 9.64"
+style="width:  2.51em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1704.svg#page1688"> </use> </svg></span> generen camp
+magnètic!</span></summary>
+
+<div class="content"><div class="p"> <span>En àtoms amb
+<span class="inlinemath"><svg
+viewBox="0 -9.64 25.05 9.64"
+style="width:  2.51em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1705.svg#page1689"> </use> </svg></span>, com ara l’àtom
+d’hidrogen, no hauria de detectar-se cap camp magnètic</span>. <span>Malgrat
+tot, Stern i Gerlach, en 1920, van demostrar que aquests àtoms mostraven un
+camp magnètic</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.5&rang;</span> <span class="sffamily"
+>Explicació:</span> <span class="sffamily" >hi ha d’haver un moment angular
+distint de <span class="inlinemath"><svg
+viewBox="0 -9.64 6.92 9.64"
+style="width:  0.70em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1706.svg#page1690"> </use> </svg></span>, el
+d’</span><span class="itshape sffamily" >espín</span><span class="sffamily" >
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1707.svg#page1691"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’experiment de Stern i Gerlach ens
+diu que ha d’haver un altre moment angular distint
+<span class="inlinemath">de <svg
+viewBox="0 -9.64 6.92 9.64"
+style="width:  0.70em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1708.svg#page1692"> </use> </svg></span></span>.
+<span>Aquest nou moment angular s’anomena </span><span class="itshape" >moment
+angular d’espín</span><span> i es representa pel
+<span class="inlinemath">símbol <svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1709.svg#page1693"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.6&rang;</span> <span class="sffamily" >Per a un
+electró, <span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1710.svg#page1694"> </use> </svg></span> només té dues
+orientacions possibles.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a un únic electró,
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1711.svg#page1695"> </use> </svg></span> només mostrava
+dues orientacions, és a dir, només </span><span class="itshape"
+>dos</span><span> valors són possibles per al
+<span class="inlinemath">component <svg
+viewBox="0 -6.81 10.2 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1712.svg#page1696"> </use> </svg></span></span>. <span>Un
+vídeo il·lustratiu sobre l’experiment de Stern i Gerlach pot trobar-se en la
+bibliografia[<a href="sections/biblio.html#bib::STERNGERLACH">13</a>]</span>.
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >moment angular d’espín</span><span class="sffamily" >
+és un efecte relativista.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >És
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1713.svg#page1697"> </use> </svg></span> causat per la
+rotació de l’electró sobre si mateix?</span></summary>
+
+<div class="content"><div class="p"> <span>Podríem pensar que l’electró és un
+petita esfera que, a més d’orbitar al voltant del nucli, gira sobre si mateix,
+tal com fa la Terra, que té un moviment de translació al voltant de Sol i un
+altre de rotació sobre el seu propi eix</span>. </div>
+
+<div class="p"> <span>Aquest hipotètic moviment de rotació de l’electró podria
+ser l’origen del misteriós moment angular d’espín</span>. <span>De fet, la
+paraula </span><span class="itshape" >espín</span><span> ve de l’anglès “spin”,
+que significa </span><span class="itshape" >gir</span>. </div>
+
+<div class="p"> <span>Malgrat tot, l’explicació no pot ser tan simple</span>:
+<span>per justificar la magnitud de <span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1714.svg#page1698"> </use> </svg></span>, la superfície
+de l’electró hauria de moure’s a una velocitat superior a la de la llum, cosa
+que està prohibida per la </span><span class="itshape" >teoria de la
+relativitat</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >No
+elucubrarem:</span> <span class="sffamily" >l’electró té un moment angular
+d’espín, intrínsec.</span></summary>
+
+<div class="content"><div class="p"> <span>Evitarem elucubrar sobre l’origen de
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1715.svg#page1699"> </use> </svg></span>, i ens limitarem
+a acceptar-ho</span>: <span>un electró (qualsevol electró) té un </span><span
+class="itshape" >moment angular d’espín</span><span> intrínsec (per intrínsec
+volem dir que un electró el té pel fet de ser un electró, no es necessita cap
+altra condició)</span>. <span>que només pot orientar-se de dues maneres
+respecte a un camp magnètic extern</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >La mecànica
+quàntica </span><span class="itshape sffamily" >relativista</span><span
+class="sffamily" > prediu l’existència de l’espín.</span></summary>
+
+<div class="content"><div class="p"> <span>En aquest curs ens hem dedicat, i
+ens dedicarem, a estudiar la versió </span><span class="itshape" >no
+relativista</span><span> de la mecànica quàntica, versió que, com hem vist, no
+pot explicar l’espín</span>. </div>
+
+<div class="p"> <span>Per altra banda, la </span><span class="itshape"
+>mecànica quàntica relativista</span><span>, tal com va demostrar Dirac el
+1928, sí prediu i pot explicar l’espín</span>. <span>La formidable complexitat
+d’aquesta teoria, però, aconsella no entrar massa en detalls</span>. <span>El
+que farem és afegir l’espín a la mecànica quàntica no relativista com un
+postulat addicional</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >En mecànica
+quàntica </span><span class="itshape sffamily" >no relativista</span><span
+class="sffamily" >, l’espín s’inclou com un postulat.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Postulat VII de la mecànica
+quàntica</span></strong>. <span>Un electró té un </span><span class="itshape"
+>moment angular d’espín</span><span> intrínsec representat per un
+<span class="inlinemath">vector <svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1716.svg#page1700"> </use> </svg></span> amb
+<span class="inlinemath">components <svg
+viewBox="0 -6.81 10.63 8.3"
+style="width:  1.07em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1717.svg#page1701"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.4 9.66"
+style="width:  1.04em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1718.svg#page1702"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.81 10.2 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1719.svg#page1703"> </use> </svg></span>, on cada
+component és un observable amb dos possibles
+<span class="inlinemath">autovalors: <svg
+viewBox="0 -8.42 19.85 11.85"
+style="width:  1.99em; height:  1.31em; vertical-align: -0.40em;"> <use
+xlink:href="images/img1720.svg#page1704"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Els operadors <span class="inlinemath"><svg
+viewBox="0 -9.38 10.63 10.88"
+style="width:  1.07em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1721.svg#page1705"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.4 12.23"
+style="width:  1.04em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1722.svg#page1706"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1723.svg#page1707"> </use> </svg></span> no commuten
+entre ells però commuten amb tots els operadors associats a observables
+“clàssics”</span>. </div>
+
+</div>
+
+<div class="p"> <span>Per observables “clàssics” volem dir observables que
+trobem, a més d’en mecànica quàntica, en mecànica clàssica</span>:
+<span>energia cinètica <span class="inlinemath"><svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1724.svg#page1708"> </use> </svg></span>, moment angular
+orbital <span class="inlinemath"><svg
+viewBox="0 -6.81 6.78 6.81"
+style="width:  0.68em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1725.svg#page1709"> </use> </svg></span>, etc</span>.
+<span>(l’expressió de l’operador corresponent a un observable clàssic l’obtenim
+mitjançant la recepta que hem vist en </span><a class="sffamily small"
+href="sections/section.1.5.html#ref::pos:obs:recepta"
+>§1.5&vert;2.1&rang;</a><span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >El moment angular
+d’espín </span><span class="itshape sffamily" >és</span><span class="sffamily"
+> un moment angular.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar[<a
+href="sections/biblio.html#bib::MCWEENY1972">7</a>] que els components del
+moment angular d’espín commuten d’acord a la definició general que hem donat
+en </span><a class="sffamily small"
+href="sections/section.3.3.html#ref::ang:gen:definition"
+>§3.3&vert;1&rang;</a><span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 32.04 12.23"
+style="width:  3.22em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1726.svg#page1710"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1727.svg#page1711"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.37 10.88"
+style="width:  1.94em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1728.svg#page1712"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.61 12.23"
+style="width:  3.17em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1729.svg#page1713"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1730.svg#page1714"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.8 10.88"
+style="width:  1.99em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1731.svg#page1715"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.84 11.87"
+style="width:  3.20em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1732.svg#page1716"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1733.svg#page1717"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 22.84 12.23"
+style="width:  2.29em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1734.svg#page1718"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>és obvi, per tant, que l’espín compleix la
+definició general de moment angular</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 32.04 12.23"
+style="width:  3.22em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1735.svg#page1719"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1736.svg#page1720"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.37 10.88"
+style="width:  1.94em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1737.svg#page1721"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.61 12.23"
+style="width:  3.17em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1738.svg#page1722"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1739.svg#page1723"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.8 10.88"
+style="width:  1.99em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1740.svg#page1724"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.84 11.87"
+style="width:  3.20em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1741.svg#page1725"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1742.svg#page1726"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.57 12.23"
+style="width:  1.96em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img1743.svg#page1727"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Els nombres
+quàntics que quantifiquen <span class="inlinemath"><svg
+viewBox="0 -8.11 10.65 8.11"
+style="width:  1.07em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1744.svg#page1728"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.2 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1745.svg#page1729"> </use> </svg></span> són:</span>
+<span class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -7.47 32.9 9.96"
+style="width:  3.30em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1746.svg#page1730"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 48.98 9.96"
+style="width:  4.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1747.svg#page1731"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com <span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1748.svg#page1732"> </use> </svg></span> compleix la
+definició general de moment angular, els autovalors de
+<span class="inlinemath"><svg
+viewBox="0 -8.11 10.65 8.11"
+style="width:  1.07em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1749.svg#page1733"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.2 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1750.svg#page1734"> </use> </svg></span> han d’estar
+restringits per les relacions que hem vist en </span><a class="sffamily small"
+href="sections/section.3.3.html#ref::ang:gen:jmj" >§3.3&vert;4&rang;</a>.
+<span>Ara bé, com segons l’experiment de Stern i Gerlach només hi ha dues
+orientacions possibles per a <span class="inlinemath"><svg
+viewBox="0 -6.81 10.2 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1751.svg#page1735"> </use> </svg></span>, arribem a
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.45 9.38"
+style="width:  1.95em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1752.svg#page1736"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1753.svg#page1737"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -13.01 91.28 19.85"
+style="width:  9.16em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img1754.svg#page1738"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19 10.88"
+style="width:  1.91em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1755.svg#page1739"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1756.svg#page1740"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -13.01 85.62 19.85"
+style="width:  8.59em; height:  2.11em; vertical-align: -0.75em;"> <use
+xlink:href="images/img1757.svg#page1741"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>El nombre quàntic <span class="inlinemath"><svg
+viewBox="0 -4.29 4.67 4.29"
+style="width:  0.47em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1758.svg#page1742"> </use> </svg></span> correspon a
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.65 9.38"
+style="width:  1.07em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1759.svg#page1743"> </use> </svg></span> i només pot
+valdre <span class="inlinemath"><svg
+viewBox="0 -7.47 14.94 9.96"
+style="width:  1.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1760.svg#page1744"> </use> </svg></span>, mentre que el
+nombre quàntic <span class="inlinemath"><svg
+viewBox="0 -4.29 12.51 5.78"
+style="width:  1.26em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1761.svg#page1745"> </use> </svg></span> correspon a
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1762.svg#page1746"> </use> </svg></span> i pot valdre
+<span class="inlinemath"><svg
+viewBox="0 -7.47 22.69 9.96"
+style="width:  2.28em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1763.svg#page1747"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>El símbol <span class="inlinemath"><svg
+viewBox="0 -6.86 6.64 6.86"
+style="width:  0.67em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1764.svg#page1748"> </use> </svg></span> representa les
+autofuncions comunes de <span class="inlinemath"><svg
+viewBox="0 -9.38 10.65 9.38"
+style="width:  1.07em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1765.svg#page1749"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1766.svg#page1750"> </use> </svg></span>, funcions que
+tractarem a continuació</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Hi ha dues
+autofuncions comunes de <span class="inlinemath"><svg
+viewBox="0 -9.38 10.65 9.38"
+style="width:  1.07em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1767.svg#page1751"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1768.svg#page1752"> </use> </svg></span>:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1769.svg#page1753"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1770.svg#page1754"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;6.1&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1771.svg#page1755"> </use> </svg></span> només té dues
+autofuncions:</span> <span class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1772.svg#page1756"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.47 48.98 9.96"
+style="width:  4.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1773.svg#page1757"> </use> </svg></span>) i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1774.svg#page1758"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.47 48.98 9.96"
+style="width:  4.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1775.svg#page1759"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>Atès que
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.51 5.78"
+style="width:  1.26em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1776.svg#page1760"> </use> </svg></span> només pot valdre
+<span class="inlinemath"><svg
+viewBox="0 -7.47 22.69 9.96"
+style="width:  2.28em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1777.svg#page1761"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -7.47 22.69 9.96"
+style="width:  2.28em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1778.svg#page1762"> </use> </svg></span>, deduïm que
+només pot haver-hi dues autofuncions comunes per als operadors
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.65 9.38"
+style="width:  1.07em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1779.svg#page1763"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1780.svg#page1764"> </use> </svg></span></span>. <span>A
+l’autofunció corresponent a <span class="inlinemath"><svg
+viewBox="0 -7.47 48.98 9.96"
+style="width:  4.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1781.svg#page1765"> </use> </svg></span> l’anomenarem
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1782.svg#page1766"> </use> </svg></span>, i a l’altra
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1783.svg#page1767"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 109.77 24"
+style="width: 11.02em; height:  2.53em;"> <use
+xlink:href="images/img1784.svg#page1768"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.2&rang;</span> <span class="sffamily" >Les autofuncions
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1785.svg#page1769"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1786.svg#page1770"> </use> </svg></span> són
+ortonormals.</span></summary>
+
+<div class="content"><div class="p"> <span>Atès que
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1787.svg#page1771"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1788.svg#page1772"> </use> </svg></span> són autofuncions
+dels operadors hermitians <span class="inlinemath"><svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1789.svg#page1773"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.65 9.38"
+style="width:  1.07em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1790.svg#page1774"> </use> </svg></span>, sabem que han
+de ser ortonormals</span>. </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 23.34 9.96"
+style="width:  2.34em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1791.svg#page1775"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1792.svg#page1776"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1793.svg#page1777"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 22.84 9.96"
+style="width:  2.29em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1794.svg#page1778"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1795.svg#page1779"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1796.svg#page1780"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 23.09 9.96"
+style="width:  2.32em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1797.svg#page1781"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1798.svg#page1782"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1799.svg#page1783"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 23.09 9.96"
+style="width:  2.32em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1800.svg#page1784"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1801.svg#page1785"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 7.75 6.27"
+style="width:  0.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1802.svg#page1786"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.3&rang;</span> <span class="sffamily" >Podem suposar
+que <span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1803.svg#page1787"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1804.svg#page1788"> </use> </svg></span> depenen d’una
+variable d’espín <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1805.svg#page1789"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Quina és l’expressió
+<span class="inlinemath">d’<svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1806.svg#page1790"> </use> </svg></span> i de
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1807.svg#page1791"> </use> </svg></span></span>? <span>No
+la podem saber sense endinsar-nos en mecànica quàntica </span><span
+class="itshape" >relativista</span>. <span>Ara bé, per als objectius d’aquest
+curs, ens serà suficient assumir que ambdues <span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1808.svg#page1792"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1809.svg#page1793"> </use> </svg></span> depenen d’una
+</span><span class="itshape" >variable d’espín</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1810.svg#page1794"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1811.svg#page1795"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1812.svg#page1796"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 20.21 9.96"
+style="width:  2.03em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1813.svg#page1797"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1814.svg#page1798"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1815.svg#page1799"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 22.73 9.96"
+style="width:  2.28em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1816.svg#page1800"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p"> <span>L’ús d’aquesta variable d’espín
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1817.svg#page1801"> </use> </svg></span> ens permet
+escriure els brackets entre les funcions <span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1818.svg#page1802"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1819.svg#page1803"> </use> </svg></span> en la forma
+habitual, és a dir, com a integrals sobre <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1820.svg#page1804"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 23.34 9.96"
+style="width:  2.34em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1821.svg#page1805"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1822.svg#page1806"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 89.44 22.14"
+style="width:  8.98em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img1823.svg#page1807"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 22.84 9.96"
+style="width:  2.29em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1824.svg#page1808"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1825.svg#page1809"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 88.94 22.14"
+style="width:  8.93em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img1826.svg#page1810"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 23.09 9.96"
+style="width:  2.32em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1827.svg#page1811"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1828.svg#page1812"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 89.19 22.14"
+style="width:  8.95em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img1829.svg#page1813"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 23.09 9.96"
+style="width:  2.32em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1830.svg#page1814"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1831.svg#page1815"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 91.96 22.14"
+style="width:  9.23em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img1832.svg#page1816"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ang:esp:xyzs"> <span>&vert;6.4&rang;</span> <span
+class="sffamily" >Necessitarem 4 coordenades per a un electró amb espín:</span>
+<span class="sffamily" ><span class="inlinemath"><svg
+viewBox="-.13 -7.47 44.32 9.96"
+style="width:  4.45em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1833.svg#page1817"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si incloem
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1834.svg#page1818"> </use> </svg></span>, necessitarem
+quatre coordenades per estudiar un electró</span>: <span>les tres coordenades
+espacials <span class="inlinemath"><svg
+viewBox="-.32 -7.47 50.98 9.96"
+style="width:  5.12em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1835.svg#page1819"> </use> </svg></span>, i, a més a més,
+la variable d’espín <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1836.svg#page1820"> </use> </svg></span></span>.
+<span>Ens referirem al conjunt d’aquestes quatre coordenades pel signe
+<span class="inlinemath"><svg
+viewBox="-.13 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1837.svg#page1821"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.13 -7.47 105.68 9.96"
+style="width: 10.61em; height:  1.12em;"> <use
+xlink:href="images/img1838.svg#page1822"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.5&rang;</span> <span class="sffamily" >Els operadors
+“clàssics” no depenen de <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1839.svg#page1823"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Els operadors “clàssics” que hem
+esmentat en el Postulat VII no depenen de la variable d’espín
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1840.svg#page1824"> </use> </svg></span></span>.
+<span>Els <span class="inlinemath">operador <svg
+viewBox="0 -9.38 10.65 9.38"
+style="width:  1.07em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1841.svg#page1825"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.38 10.2 10.88"
+style="width:  1.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img1842.svg#page1826"> </use> </svg></span>, en canvi, sí
+que en depenen</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.6&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >espín-orbital</span><span class="sffamily" > té una
+part espacial i una d’espín:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -7.47 75.94 9.96"
+style="width:  7.62em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1843.svg#page1827"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Sabem que un </span><span
+class="itshape" >orbital</span><span> <span class="inlinemath"><svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1844.svg#page1828"> </use> </svg></span> és una funció
+d’ona per a un únic electró, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 42.27 9.96"
+style="width:  4.24em; height:  1.12em;"> <use
+xlink:href="images/img1845.svg#page1829"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Podem incloure-hi la dependència en la variable
+d’espín mitjançant el concepte de </span><span class="itshape"
+>espín-orbital</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Espín-orbital</span></strong>. <span>Un
+</span><span class="itshape" >espín-orbital</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1846.svg#page1830"> </use> </svg></span> és el producte
+entre un </span><span class="itshape" >orbital espacial</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -7.47 39.5 9.96"
+style="width:  3.96em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1847.svg#page1831"> </use> </svg></span> (que depèn només
+de <span class="inlinemath"><svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1848.svg#page1832"> </use> </svg></span>) i una
+autofunció d’espín <span class="inlinemath"><svg
+viewBox="0 -7.47 20.44 9.96"
+style="width:  2.05em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1849.svg#page1833"> </use> </svg></span> (que pot ser
+<span class="inlinemath">l’<svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1850.svg#page1834"> </use> </svg></span> o la
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1851.svg#page1835"> </use> </svg></span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 78.71 9.96"
+style="width:  7.90em; height:  1.12em;"> <use
+xlink:href="images/img1852.svg#page1836"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>L’operador <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1853.svg#page1837"> </use> </svg></span> d’un observable
+“clàssic” (és a dir, que no depengui de la variable d’espín
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1854.svg#page1838"> </use> </svg></span>) actua sobre un
+espín-orbital com si la part d’espín fossi una constant, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 117.71 11.87"
+style="width: 11.82em; height:  1.31em;"> <use
+xlink:href="images/img1855.svg#page1839"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.7&rang;</span> <span class="sffamily" >Utilitzarem la
+notació <span class="inlinemath"><svg
+viewBox="0 -8.9 61.12 11.39"
+style="width:  6.13em; height:  1.26em; vertical-align: -0.31em;"> <use
+xlink:href="images/img1856.svg#page1840"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per indicar que un espín-orbital és
+de tipus <span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1857.svg#page1841"> </use> </svg></span>, podem posar una
+barra sobre el símbol de l’espín-orbital i estalviar-nos la
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img1858.svg#page1842"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.9 63.89 11.39"
+style="width:  6.41em; height:  1.26em;"> <use
+xlink:href="images/img1859.svg#page1843"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Per a un espín-orbital de tipus
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img1860.svg#page1844"> </use> </svg></span>, no s’ha de
+posar la barra, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 64.13 9.96"
+style="width:  6.44em; height:  1.12em;"> <use
+xlink:href="images/img1861.svg#page1845"> </use> </svg></span> </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.3.6.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Classificació dels modes normals</title>
+<meta name="description" content="S’explica com determinar, a partir de la seua
+coordinada normal, a quina representació irreductible pertany un mode normal.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.13.5.3.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.13.html"><span>13 Espectres de vibració de molècules
+poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.13.5.html"><span>13.5 Simetria i vibracions moleculars
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>13.5.3 Classificació dels modes
+normals </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img7815.svg#page7779"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.5.2.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.5.html"> <svg class="icon up" viewBox="0 0
+512 512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.14.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>13.5.3  Classificació dels modes normals</span>
+</h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Cada </span><span
+class="itshape sffamily" >mode normal de vibració</span><span class="sffamily"
+> pertany a una RI.</span></summary>
+
+<div class="content"><div class="p"> <span>Com hem esmentat abans en </span><a
+class="sffamily small" href="sections/section.13.5.2.html#ref::vi2:sim:QinRI"
+>§13.5.2&vert;2&rang;</a><span>, cada </span><span class="itshape" >mode normal
+de vibració</span><span> pertany a una </span><span class="itshape"
+>representació irreductible</span><span> (RI) del grup</span>. <span>Expliquem
+a continuació com assignar cada mode normal a la seua RI a partir de la
+informació que ens donen les coordenades <span class="inlinemath">normals <svg
+viewBox="0 -6.81 10.69 8.74"
+style="width:  1.07em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7816.svg#page7780"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Qualsevol
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7817.svg#page7781"> </use> </svg></span> ha de deixar
+invariable el potencial <span class="inlinemath"><svg
+viewBox="0 -9.38 8.03 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7818.svg#page7782"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Qualsevol operació de simetria deixa
+invariant l’esquelet nuclear de la molècula, i per tant també ha de deixar
+invariant <span class="inlinemath">l’operador <svg
+viewBox="0 -9.38 8.03 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7819.svg#page7783"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.13.2.html#ref::vi2:qua:hatV"
+>§13.2&vert;1.2&rang;</a><span>, operador que correspon a l’energia potencial
+de la vibració harmònica</span>. <span>És a dir, que si
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7820.svg#page7784"> </use> </svg></span> representa una
+operació de simetria de la molècula, aleshores ha de complir-se que </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 39.74 9.38"
+style="width:  3.99em; height:  1.06em;"> <use
+xlink:href="images/img7821.svg#page7785"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 15.67 9.38"
+style="width:  1.57em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7822.svg#page7786"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7823.svg#page7787"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -17.48 148.43 29.98"
+style="width: 14.90em; height:  3.13em; vertical-align: -1.31em;"> <use
+xlink:href="images/img7824.svg#page7788"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 8.03 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7825.svg#page7789"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7826.svg#page7790"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 47.5 24.77"
+style="width:  4.77em; height:  2.61em; vertical-align: -1.24em;"> <use
+xlink:href="images/img7827.svg#page7791"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>i si igualem obtenim </span> </div>
+
+<table class="equation" id="ref::vi2:qua:Ev"><tr><td><svg class="equation"
+viewBox="0 -10.46 108.56 22.22"
+style="width: 10.90em; height:  2.35em;"> <use
+xlink:href="images/img7828.svg#page7792"> </use>
+</svg></td><td>(13.4)</td></tr></table>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 105.29 22.22"
+style="width: 10.57em; height:  2.35em;"> <use
+xlink:href="images/img7829.svg#page7793"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:sim:RQpmQ"> <span>&vert;3&rang;</span> <span
+class="sffamily" >Per a modes no degenerats, <span class="inlinemath"><svg
+viewBox="0 -9.38 50.56 11.32"
+style="width:  5.08em; height:  1.26em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7830.svg#page7794"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 105.29 22.22"
+style="width: 10.57em; height:  2.35em;"> <use
+xlink:href="images/img7831.svg#page7795"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Suposem que el mode normal de vibració
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7832.svg#page7796"> </use> </svg></span>-ièsim és no
+degenerat</span>. <span>Això implica que cap
+<span class="inlinemath">altre <svg
+viewBox="0 -6.92 8.89 9.77"
+style="width:  0.89em; height:  1.10em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7833.svg#page7797"> </use> </svg></span> dels que
+apareixen en l’Eq. (</span><a
+href="sections/section.13.5.3.html#ref::vi2:sim:RVV">13.5</a><span>) és igual a
+<span class="inlinemath"><svg
+viewBox="0 -6.92 8.01 8.41"
+style="width:  0.80em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7834.svg#page7798"> </use> </svg></span>, i té com a
+conseqüència que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 59.45 11.87"
+style="width:  5.97em; height:  1.31em;"> <use
+xlink:href="images/img7835.svg#page7799"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si ara traiem l’arrel quadrada obtenim </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 53.83 11.32"
+style="width:  5.40em; height:  1.26em;"> <use
+xlink:href="images/img7836.svg#page7800"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>resultat que implica que l’acció d’una operació
+de simetria <span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7837.svg#page7801"> </use> </svg></span> sobre una
+coordenada normal, o bé la deixa invariant, o bé li canvia el signe</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Els modes
+</span><span class="bfseries sffamily" >no degenerats</span><span
+class="sffamily" > pertanyen a RIs de tipus <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7838.svg#page7802"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7839.svg#page7803"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Els modes </span><span
+class="itshape" >no degenerats</span><span> pertanyen a RIs no degenerades, que
+es caracteritzen per tindre símbols que comencen amb les lletres
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7840.svg#page7804"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7841.svg#page7805"> </use> </svg></span> (vegeu </span><a
+class="sffamily small" href="sections/section.B.1.html#ref::app:sim:AB"
+>§B.1&vert;11&rang;</a><span>)</span>. <span>En l’exemple </span><a
+href="sections/section.13.5.3.html#ref::vi2:sim:waterQi">13.3</a><span>
+il·lustrem com es fa l’assignació dels modes no degenerats a les seues
+RIs</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Els modes
+</span><span class="bfseries sffamily" >degenerats</span><span class="sffamily"
+> pertanyen a RIs de tipus <span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7842.svg#page7806"> </use> </svg></span> (doble) o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7843.svg#page7807"> </use> </svg></span>
+(triple).</span></summary>
+
+<div class="content"><div class="p"> <span>Els modes </span><span
+class="itshape" >degenerats</span><span> pertanyen a RIs degenerades</span>.
+<span>En cas de </span><span class="itshape" >doble degeneració</span><span>,
+la RI corresponent a un mode té un símbol que comença amb la
+<span class="inlinemath">lletra <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7844.svg#page7808"> </use> </svg></span> (vegeu </span><a
+class="sffamily small" href="sections/section.B.1.html#ref::app:sim:E"
+>§B.1&vert;12&rang;</a><span>), mentre que per a </span><span class="itshape"
+>triple degeneració</span><span>, el símbol comença amb la
+<span class="inlinemath">lletra <svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7845.svg#page7809"> </use> </svg></span> (vegeu </span><a
+class="sffamily small" href="sections/section.B.1.html#ref::app:sim:T"
+>§B.1&vert;13&rang;</a><span>)</span>. <span>Per a modes degenerats
+l’assignació a les RI corresponents és més complicada que per al cas no
+degenerat, però no entrarem en detalls (consulteu, si de cas, la
+bibliografia[<a href="sections/biblio.html#bib::LEVINE1980">19</a>, <a
+href="sections/biblio.html#bib::REQUENA2004">27</a>])</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:sim:Qnumeracio"> <span>&vert;6&rang;</span> <span
+class="sffamily" >Les freqüències es numeren segons les seves
+RIs.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.32 -32.78 259.68 62.67"
+style="width: 26.06em; height:  6.41em;"> <use
+xlink:href="images/img7846.svg#page7810"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2.73 -67.67 233.16 68.03"
+style="width: 23.40em; height:  6.95em;"> <use
+xlink:href="images/img7847.svg#page7811"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>S’ha establert un criteri[<a
+href="sections/biblio.html#bib::LEVINE1980">19</a>] per numerar les freqüències
+dels modes vibracionals de les molècules amb simetria, criteri que exposem a
+continuació, i que hem aplicat al cas de l’aigua en l’exemple </span><a
+href="sections/section.13.5.3.html#ref::vi2:sim:waterQi">13.3</a>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Les freqüències s’agrupen segons la seva RI, i aquests
+grups de freqüències s’ordenen en l’ ordre en què apareixen les RIs en la taula
+de caràcters</span>. <span>Per exemple, per a l’aigua, les freqüències
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7848.svg#page7812"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7849.svg#page7813"> </use> </svg></span> (que pertanyen a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7850.svg#page7814"> </use> </svg></span>) es numeren
+abans que la <span class="inlinemath"><svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7851.svg#page7815"> </use> </svg></span> (que pertany a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7852.svg#page7816"> </use> </svg></span>)</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Pel que fa a les freqüències que pertanyen a la mateixa
+RI, les ordenem en ordre decreixent (primer les més grans)</span>. <span>Per
+exemple, per a les dues freqüències <span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7853.svg#page7817"> </use> </svg></span> de l’aigua, ha
+de complir-se que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -5.37 34.83 6.87"
+style="width:  3.50em; height:  0.81em;"> <use
+xlink:href="images/img7854.svg#page7818"> </use> </svg></span> </div>
+
+</li><li>
+
+<div class="p"> <span>Si no coneixem les magnituds de les freqüències, potser
+ens ajude saber que les tensions d’enllaços tenen una freqüència més gran que
+les flexions d’angles</span>. <span>Per això la </span><span class="itshape"
+>tensió simètrica</span><span> de l’aigua <span class="inlinemath">(<svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7855.svg#page7819"> </use> </svg></span>) és més gran que
+la </span><span class="itshape" >flexió simètrica</span><span>
+<span class="inlinemath">(<svg
+viewBox="0 -4.29 8.89 5.78"
+style="width:  0.89em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7856.svg#page7820"> </use> </svg></span>)</span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<details class="question"
+id="ref::vi2:sim:waterQi"><summary><span>⊕ </span><span>⊖ </span><span>Exemple
+13.3 (vibracions de l’aigua)</span></summary>
+<div class="p"> <span>Els modes normals de vibració de la molècula d’aigua es
+mostren esquemàticament en la figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesHHO">13.1</a>.
+<span>Classifiqueu-los i numereu-los d’acord amb la simetria de la
+molècula</span>. </div>
+
+<details
+class="answer"><summary><span>⊕ </span><span>⊖ </span><span>Resposta</span></summary>
+<div
+class="p"> <span>La molècula d’aigua </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2.89 -33.46 51.41 22.21"
+style="width:  5.16em; height:  3.48em;"> <use
+xlink:href="images/img7857.svg#page7821"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>té un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7858.svg#page7822"> </use> </svg></span> (en el pla del
+paper, travessant l’oxigen i a igual distància dels hidrògens) i dos plans
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7859.svg#page7823"> </use> </svg></span> (un, el pla del
+paper, l’altre, perpendicular)</span>. <span>El grup puntual de l’aigua serà,
+per tant, el <span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7860.svg#page7824"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Una vegada classificada la molècula, necessitem la
+corresponent taula de caràcters, que podeu trobar en §</span><a
+href="sections/section.B.4.html#ref::app:sim:Taules">B.4</a><span>, i que ara
+reproduïm ací, tot indicant el criteri estàndard que se segueix per a orientar
+la molècula i poder distingir així entre els dos plans de reflexió (es fa
+coincidir l’eix principal <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7861.svg#page7825"> </use> </svg></span> amb l’eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.51 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7862.svg#page7826"> </use> </svg></span>, i el pla de la
+molècula amb el <span class="inlinemath">pla <svg
+viewBox="0 -6.81 15.51 6.81"
+style="width:  1.56em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7863.svg#page7827"> </use> </svg></span>)</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.32 -32.78 259.68 62.67"
+style="width: 26.06em; height:  6.41em;"> <use
+xlink:href="images/img7864.svg#page7828"> </use> </svg></span> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 50.56 11.32"
+style="width:  5.08em; height:  1.26em;"> <use
+xlink:href="images/img7865.svg#page7829"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Les RIs del <span class="inlinemath">grup <svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7866.svg#page7830"> </use> </svg></span> totes comencen
+<span class="inlinemath">per <svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7867.svg#page7831"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7868.svg#page7832"> </use> </svg></span>, cosa que vol
+dir que els modes de vibració seran </span><span class="itshape" >no
+degenerats</span><span>, i per tant, com hem vist en </span><a class="sffamily
+small" href="sections/section.13.5.3.html#ref::vi2:sim:RQpmQ"
+>§13.5.3&vert;3&rang;</a><span>, l’acció d’una operació de simetria sobre una
+coordenada normal, o bé la deixa invariant, o bé li canvia el signe</span>.
+</div>
+
+<div class="p"> <span>Com a exemple, estudiarem l’efecte de
+<span class="inlinemath">l’operació <svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7869.svg#page7833"> </use> </svg></span> sobre la
+</span><span class="itshape" >tensió asimètrica</span><span> de la molècula
+d’aigua (vegeu la figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesHHO">13.1</a><span>)</span>:
+</div>
+
+<div class="blob">
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="2.73 -67.67 233.16 68.03"
+style="width: 23.40em; height:  6.95em;"> <use
+xlink:href="images/img7870.svg#page7834"> </use> </svg> </span> </div>
+
+</div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="3.04 -28.12 78.2 49.59"
+style="width:  7.85em; height:  5.10em; vertical-align: -2.22em;"> <use
+xlink:href="images/img7871.svg#page7835"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -12.33 16.05 13.16"
+style="width:  1.61em; height:  1.44em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7872.svg#page7836"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="17.08 -28.12 77.64 49.59"
+style="width:  7.79em; height:  5.10em; vertical-align: -2.22em;"> <use
+xlink:href="images/img7873.svg#page7837"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Hem aplicat l’operació
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7874.svg#page7838"> </use> </svg></span> a cadascun dels
+vector del mode, i el resultat global és que el mode ha quedat capgirat, cosa
+que podem escriure simbòlicament com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 61.74 11.32"
+style="width:  6.20em; height:  1.26em;"> <use
+xlink:href="images/img7875.svg#page7839"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Podem estudiar la resta d’operacions de simetria
+del grup de manera similar</span>. <span>Tot plegat ens dóna </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 21.44 11.32"
+style="width:  2.15em; height:  1.26em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7876.svg#page7840"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7877.svg#page7841"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -6.81 21.81 8.74"
+style="width:  2.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7878.svg#page7842"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 25.1 11.32"
+style="width:  2.52em; height:  1.26em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7879.svg#page7843"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7880.svg#page7844"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -6.81 21.81 8.74"
+style="width:  2.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7881.svg#page7845"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 42.45 9.96"
+style="width:  4.26em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7882.svg#page7846"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7883.svg#page7847"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -6.81 21.81 8.74"
+style="width:  2.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7884.svg#page7848"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 42 9.96"
+style="width:  4.21em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7885.svg#page7849"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7886.svg#page7850"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -6.81 21.81 8.74"
+style="width:  2.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7887.svg#page7851"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p"> <span>L’efecte de totes les operacions de simetria sobre
+cadascun del tres modes normals de la molècula d’aigua (vegeu la
+figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesHHO">13.1</a><span>) es pot
+resumir en la següent taula, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -27.11 227.73 49.23"
+style="width: 22.86em; height:  5.06em;"> <use
+xlink:href="images/img7888.svg#page7852"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on un ‘1’ implica que l’operació de simetria
+deixa inalterada la coordenada <span class="inlinemath"><svg
+viewBox="0 -6.81 10.69 8.74"
+style="width:  1.07em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7889.svg#page7853"> </use> </svg></span>, mentre que un
+‘-1’ li canvia el signe</span>. </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.32 -32.78 259.68 62.67"
+style="width: 26.06em; height:  6.41em;"> <use
+xlink:href="images/img7890.svg#page7854"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Si comparem aquesta taula amb la taula de caràcters del
+grup veiem que, per exemple, la fila corresponent a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7891.svg#page7855"> </use> </svg></span> coincideix amb
+els caràcters de la RI <span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7892.svg#page7856"> </use> </svg></span></span>.
+<span>Això podem expressar-ho simbòlicament com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 39.32 8.74"
+style="width:  3.95em; height:  1.00em;"> <use
+xlink:href="images/img7893.svg#page7857"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i llegir-ho com <span class="inlinemath">“<svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7894.svg#page7858"> </use> </svg></span> pertany a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7895.svg#page7859"> </use> </svg></span>”</span>.
+<span>Els altres dos modes normals <span class="inlinemath">(<svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7896.svg#page7860"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7897.svg#page7861"> </use> </svg></span>) pertanyen a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7898.svg#page7862"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7899.svg#page7863"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.37 6.64 5.76"
+style="width:  0.67em; height:  0.70em; vertical-align: -0.10em;"> <use
+xlink:href="images/img7900.svg#page7864"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7901.svg#page7865"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7902.svg#page7866"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.37 6.64 5.76"
+style="width:  0.67em; height:  0.70em; vertical-align: -0.10em;"> <use
+xlink:href="images/img7903.svg#page7867"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7904.svg#page7868"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7905.svg#page7869"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -5.37 6.64 5.76"
+style="width:  0.67em; height:  0.70em; vertical-align: -0.10em;"> <use
+xlink:href="images/img7906.svg#page7870"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 14.79 8.3"
+style="width:  1.48em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7907.svg#page7871"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>(aquesta classificació es consistent amb el
+<span class="inlinemath">resultat <svg
+viewBox="0 -6.86 71.48 8.36"
+style="width:  7.17em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7908.svg#page7872"> </use> </svg></span> obtingut
+en </span><a class="sffamily small"
+href="sections/section.B.3.html#ref::app:sim:GammaVibAigua"
+>§B.3&vert;5&rang;</a><span>)</span>. </div>
+
+<div class="p"> <span>Finalment, numerarem els modes de vibració d’acord amb
+els criteris que hem vist en </span><a class="sffamily small"
+href="sections/section.13.5.3.html#ref::vi2:sim:Qnumeracio"
+>§13.5.3&vert;6&rang;</a>. <span>Primer numerem els modes que pertanyen
+<span class="inlinemath">a <svg
+viewBox="0 -6.81 11.44 8.3"
+style="width:  1.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7909.svg#page7873"> </use> </svg></span> (tensió
+simètrica i flexió simètrica), perquè aquesta RI apareix, en la taula de
+caràcters, abans que <span class="inlinemath">la <svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7910.svg#page7874"> </use> </svg></span></span>. <span>La
+tensió simètrica anirà davant de la flexió simètrica perquè les tensions tenen
+una freqüència més gran que les flexions</span>. <span>La tensió asimètrica
+serà, per eliminació, l’última</span>. <span>És a dir</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 70.81 6.86"
+style="width:  7.11em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7911.svg#page7875"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7912.svg#page7876"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7913.svg#page7877"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 69.51 6.86"
+style="width:  6.98em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7914.svg#page7878"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7915.svg#page7879"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.85 8.74"
+style="width:  1.19em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7916.svg#page7880"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 75.8 6.86"
+style="width:  7.61em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7917.svg#page7881"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7918.svg#page7882"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 15.11 8.74"
+style="width:  1.52em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7919.svg#page7883"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</details>
+</details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.13.5.3.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Apunts de Química Quàntica i Espectroscòpia | Índex</title>
+<meta name="description" content="Índex dels ’Apunts de Química Quàntica i
+Espectroscòpia’: Química Quàntica, Espectroscòpia, Apèndixs i Bibliografia.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://tr11n4t.github.io/apunts/">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-fold" fill="none" stroke="currentColor" stroke-width="32">
+<title>Fold</title>
+<path stroke-miterlimit="10" d="M448 256c0-106-86-192-192-192S64 150 64 256s86
+192 192 192 192-86 192-192z"/>
+<path stroke-linecap="round" stroke-linejoin="round" d="M336 256H176"/>
+</g>
+
+<g id="icon-unfold" fill="none" stroke="currentColor" stroke-width="32">
+<title>Unfold</title>
+<path stroke-miterlimit="10" d="M448 256c0-106-86-192-192-192S64 150 64 256s86
+192 192 192 192-86 192-192z"/>
+<path stroke-linecap="round" stroke-linejoin="round" d="M256 176v160M336
+256H176"/>
+</g>
+
+<g id="icon-pdf" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>PDF</title>
+<path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0
+0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" />
+<path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" />
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="front">
+
+<nav>
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img1.svg#page1"> </use> </svg></span></a></li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<li class="pdf"> <a href="apunts.pdf"> <svg class="icon pdf" viewBox="0 0 512
+512"> <use xlink:href="#icon-pdf"/></svg> </a> </li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+</nav>
+
+</header>
+
+<main>
+
+<h1 class="title large"> <span>Apunts de Química Quàntica i
+Espectroscòpia</span></h1>
+
+<address class="author normalsize"><a rel="author"
+href="https://tr11n4t.github.io">tr11n4t.github.io</a></address>
+
+<div class="date small"> <span>Versió 0.0.2</span></div>
+
+<br>
+<div class="epigraph">
+<div class="p noindent"> <span class="small" >Su pregunta de si se podrá
+estudiar en catalan, perdone que se lo diga, es tonta.</span> <span
+class="small" >Encuéntreme, primero, unos profesores que puedan enseñar la
+química nuclear en catalan.</span> <span class="small" >Seamos
+serios&hellip;</span> </div>
+
+<div class="p right"> <span class="small" >Adolfo Suarez</span> </div>
+
+</div>
+
+<br><hr class="partsep"><br>
+
+<nav class="toc">
+<details open><summary>Índex
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.I.html">I Química Quàntica</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.1.html">1 Fonaments de la mecànica quàntica</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.1.1.html">1.1 Introducció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.2.html">1.2 Dualitat ona-partícula</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.3.html">1.3 Funcions d’onda</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.4.html">1.4 Operadors</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.1.4.1.html">1.4.1 Notació de Dirac</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.4.2.html">1.4.2 Operadors hermitians</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.1.5.html">1.5 Observables</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.6.html">1.6 Mesures</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.1.6.1.html">1.6.1 Resultat d’una mesura</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.6.2.html">1.6.2 Col·lapse de la funció d’ona</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.6.3.html">1.6.3 Commutadors</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.1.6.4.html">1.6.4 Principi d’incertesa de
+Heisenberg</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.1.7.html">1.7 Evolució temporal</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.2.html">2 Aplicació a sistemes model</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.2.1.html">2.1 Introducció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.2.2.html">2.2 La partícula en una caixa</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.2.3.html">2.3 L’oscil·lador harmònic</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.2.3.1.html">2.3.1 L’oscil·lador harmònic clàssic</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.2.3.2.html">2.3.2 L’oscil·lador harmònic quàntic</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.2.4.html">2.4 Moviment en dues o més dimensions</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.2.5.html">2.5 El problema de dos cossos</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.3.html">3 Moment angular</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.3.1.html">3.1 Introducció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.3.2.html">3.2 Moment angular orbital</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.3.3.html">3.3 Definició general de moment
+angular</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.3.4.html">3.4 Autofuncions del moment angular
+orbital</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.3.5.html">3.5 El rotor rígid de dues partícules</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.3.6.html">3.6 L’espín de l’electró</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.3.7.html">3.7 Suma de moments angulars</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.4.html">4 Àtoms hidrogenoides</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.4.1.html">4.1 Introducció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.4.2.html">4.2 Partícula sotmesa a una força
+central</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.4.3.html">4.3 Orbitals i energies dels àtoms
+hidrogenoides</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.4.4.html">4.4 Unitats atòmiques</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.5.html">5 Mètodes aproximats</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.5.1.html">5.1 Introducció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.5.2.html">5.2 Mètodes variacionals</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.5.2.1.html">5.2.1 Principi variacional</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.5.2.2.html">5.2.2 Mètode variacional lineal</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.5.2.3.html">5.2.3 Exemple per a dues funcions de
+base</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.5.3.html">5.3 Teoria de pertorbacions</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.6.html">6 Àtoms polielectrònics</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.6.1.html">6.1 Principi d’exclusió de Pauli</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.6.1.1.html">6.1.1 Bescanvi de partícules
+idèntiques</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.6.1.2.html">6.1.2 Principi d’antisimetria</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.6.1.3.html">6.1.3 Determinants de Slater</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.6.2.html">6.2 El mètode de Hartree-Fock</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.6.3.html">6.3 La taula periòdica</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.6.4.html">6.4 Termes espectrals atòmics</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.6.5.html">6.5 Nivells espectrals</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.6.6.html">6.6 Interacció espín-òrbita</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.7.html">7 Introducció a l’estudi de molècules</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.7.1.html">7.1 Introducció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.7.2.html">7.2 Aproximació de Born-Oppenheimer</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.7.3.html">7.3 Corbes d’energia potencial</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.7.4.html">7.4 La molècula-ió d’hidrogen</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.7.4.1.html">7.4.1 Tractament exacte del hamiltonià
+electrònic</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.7.4.2.html">7.4.2 Tractament aproximat del
+hamiltonià electrònic</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.7.5.html">7.5 La molècula d’hidrogen</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.7.5.1.html">7.5.1 Mètode d’orbitals moleculars
+(OM)</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.7.5.2.html">7.5.2 Mètode de l’enllaç de valència
+(EV)</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.7.5.3.html">7.5.3 Comparativa i millora dels mètodes
+OM i EV</a>
+
+</summary></details></li></ul></details></li>
+</ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.8.html">8 Simetria molecular</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.8.1.html">8.1 Elements i operacions de simetria</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.8.1.1.html">8.1.1 Producte d’operacions de
+simetria</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.8.2.html">8.2 Classificació de les molècules per
+simetria</a>
+
+</summary></details></li></ul></details></li>
+</ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.II.html">II Espectroscòpia</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.9.html">9 Característiques generals de
+l’espectroscòpia</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.9.1.html">9.1 Concepte d’espectroscòpia</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.9.2.html">9.2 Coeficients d’Einstein</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.9.3.html">9.3 Moments dipolars de transició</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.9.4.html">9.4 Regles de selecció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.9.5.html">9.5 Forma i amplada de les ratlles
+espectrals</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.9.6.html">9.6 Comparació amb dades experimentals</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.10.html">10 Espectres de rotació de molècules
+diatòmiques</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.10.1.html">10.1 Introducció</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.10.2.html">10.2 Rotacions i moment dipolar</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.10.3.html">10.3 Espectroscòpia del rotor rígid</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.10.4.html">10.4 Espectroscòpia del rotor no
+rígid</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.10.5.html">10.5 L’efecte Stark</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.10.6.html">10.6 Espectroscòpia Raman</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.11.html">11 Espectres de rotació de molècules
+poliatòmiques</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.11.1.html">11.1 Mecànica clàssica de la rotació de
+sòlids rígids</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.11.2.html">11.2 Mecànica quàntica de la rotació de
+sòlids rígids</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.11.2.1.html">11.2.1 Operadors de moment angular</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.11.2.2.html">11.2.2 Operador hamiltonià</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.11.3.html">11.3 Rotors lineals</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.11.4.html">11.4 Rotors esfèrics</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.11.5.html">11.5 Rotors simètrics</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.11.6.html">11.6 Rotors asimètrics</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.11.7.html">11.7 Distorsió centrífuga</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.11.8.html">11.8 Substitució isotòpica</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.12.html">12 Espectres de vibració de molècules
+diatòmiques</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.12.1.html">12.1 Aproximació harmònica</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.12.2.html">12.2 Aproximació anharmònica</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.12.3.html">12.3 Espectres de vibració-rotació</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.12.3.1.html">12.3.1 Espectres d’infrarojos</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.12.3.2.html">12.3.2 Espectres Raman</a>
+
+</summary></details></li></ul></details></li>
+</ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.13.html">13 Espectres de vibració de molècules
+poliatòmiques</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.13.1.html">13.1 Mecànica clàssica de la vibració</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.13.2.html">13.2 Mecànica quàntica de la vibració</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.13.3.html">13.3 Transicions espectroscòpiques
+vibracionals</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.13.4.html">13.4 Espectres de vibració-rotació</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.13.5.html">13.5 Simetria i vibracions moleculars</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.13.5.1.html">13.5.1 Representacions d’operacions de
+simetria</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.13.5.2.html">13.5.2 Simetria i modes actius</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.13.5.3.html">13.5.3 Classificació dels modes
+normals</a>
+
+</summary></details></li></ul></details></li>
+</ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.14.html">14 Enllaç i espectroscòpia electrònica de
+molècules diatòmiques</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.14.1.html">14.1 Transicions electròniques</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.14.2.html">14.2 L’enllaç en molècules
+diatòmiques</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.14.2.1.html">14.2.1 Configuracions electròniques</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.14.2.2.html">14.2.2 Molècules diatòmiques
+homonuclears</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.14.2.3.html">14.2.3 Molècules diatòmiques
+heteronuclears</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.14.3.html">14.3 Termes electrònics per a molècules
+diatòmiques</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.14.4.html">14.4 Regles de selecció electròniques</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.14.5.html">14.5 Regles de selecció rotacionals i
+vibracionals</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.14.6.html">14.6 Estructura vibracional dels
+espectres electrònics</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.15.html">15 Enllaç i espectroscòpia electrònica de
+molècules poliatòmiques</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.15.1.html">15.1 Termes electrònics</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.15.2.html">15.2 Regles de selecció electròniques</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.15.3.html">15.3 Grups cromòfors</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.15.4.html">15.4 El destí dels estats excitats</a>
+
+</summary></details></li></ul></details></li>
+</ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.III.html">Apèndixs</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.A.html">A Matemàtiques (recordatori)</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.A.1.html">A.1 Nombres complexos</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.A.2.html">A.2 Sumatoris</a>
+
+</summary></details></li></ul></details></li>
+
+<li><details><summary>
+ <a href="sections/section.B.html">B Simetria (suplement)</a>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/section.B.1.html">B.1 Representacions irreductibles (RI)</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.B.2.html">B.2 Representacions reductibles</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.B.3.html">B.3 Regles de selecció vibracional</a>
+
+</summary></details></li>
+<li><details><summary>
+ <a href="sections/section.B.4.html">B.4 Taules de caràcters</a>
+
+</summary></details></li></ul></details></li>
+</ul></details></li>
+
+<li><details><summary>
+ <span>&ctdot;</span>
+
+<svg class="icon unfold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-unfold"/> </svg>
+<svg class="icon fold" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-fold"/> </svg>
+</summary>
+
+<ul>
+<li><details><summary>
+ <a href="sections/biblio.html">Bibliografia</a>
+
+</summary></details></li></ul></details>
+</ul></details>
+</nav>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="#top"> <svg class="icon top" viewBox="0 0 512
+512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

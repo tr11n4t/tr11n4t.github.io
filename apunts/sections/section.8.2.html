@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Grups puntuals de simetria | Classificació de les molècules</title>
+<meta name="description" content="Cada molècula pertany a un i només un grup
+puntual de simetria. Fem servir un diagrama de flux per determinar el grup de
+cada molècula.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.8.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.8.html"><span>8 Simetria molecular </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>8.2 Classificació de les molècules
+per simetria </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4365.svg#page4341"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.1.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.II.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>8.2  Classificació de les molècules per
+simetria</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >La simetria d’una
+molècula ens permet assignar-la a un </span><span class="itshape sffamily"
+>grup puntual.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >El conjunt
+d’operacions de simetria d’una molècula és un </span><span class="itshape
+sffamily" >grup.</span></summary>
+
+<div class="content"><div class="p"> <span>En matemàtiques, un </span><span
+class="itshape" >grup</span><span> és un conjunt d’elements (en el nostre cas,
+les operacions de simetria d’una molècula) que compleix una serie de
+propietats</span>. </div>
+
+<div class="p"> <span>No entrarem en detalls</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >Per molècules
+utilitzarem </span><span class="itshape sffamily" >grups
+puntuals.</span></summary>
+
+<div class="content"><div class="p"> <span>Sempre hi ha, com a mínim, un punt
+de l’espai que cap operació de simetria de la molècula fa canviar de
+posició</span>. </div>
+
+<div class="p"> <span>Per això, a aquesta mena de grups se’ls anomena
+</span><span class="itshape" >grups puntuals</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.3&rang;</span> <span class="sffamily" >Cada molècula
+pertany a un grup puntual.</span></summary>
+
+<div class="content"><div class="p"> <span>El conjunt d’elements de simetria
+que té una molècula ens permet classificar-la com pertanyent a un determinat
+</span><span class="itshape" >grup puntual</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4&rang;</span> <span class="sffamily" >Exemple:</span>
+<span class="sffamily" >el <span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4366.svg#page4342"> </use> </svg></span> pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 16.32 8.3"
+style="width:  1.64em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4367.svg#page4343"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per exemple, el trifluorur de bor
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="3.86 -27.65 49.47 42.13"
+style="width:  4.97em; height:  4.35em;"> <use
+xlink:href="images/img4368.svg#page4344"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>pertany a un grup anomenat
+<span class="inlinemath"><svg
+viewBox="0 -6.81 16.32 8.3"
+style="width:  1.64em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4369.svg#page4345"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.5&rang;</span> <span class="sffamily" >Hi ha molta
+informació de cada grup puntual.</span></summary>
+
+<div class="content"><div class="p"> <span>L’avantatge de classificar les
+molècules en grups puntuals és que, si sabem el grup al que pertany una
+molècula, disposem de molta informació sobre les seves propietats de
+simetria</span>. </div>
+
+<div class="p"> <span>Per exemple, dir que el <span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4370.svg#page4346"> </use> </svg></span> pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 16.32 8.3"
+style="width:  1.64em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4371.svg#page4347"> </use> </svg></span> implica dir que
+aquesta molècula té un eix de rotació <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4372.svg#page4348"> </use> </svg></span>, un pla
+<span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4373.svg#page4349"> </use> </svg></span>, tres plans
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4374.svg#page4350"> </use> </svg></span> i tres eixos
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4375.svg#page4351"> </use> </svg></span> perpendiculars a
+l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4376.svg#page4352"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="3.86 -27.65 49.47 42.13"
+style="width:  4.97em; height:  4.35em;"> <use
+xlink:href="images/img4377.svg#page4353"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Classificarem les
+molècules amb un </span><span class="itshape sffamily" >diagrama de
+flux.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem esbrinar a quin grup pertany
+una molècula utilitzant el diagrama de flux que apareix en la figura </span><a
+href="sections/section.8.2.html#ref::sim:cla:flowchart">8.3</a>. </div>
+
+<div class="figure" id="ref::sim:cla:flowchart">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.98 -404.91 340.43 392.06"
+style="width: 34.17em; height: 40.76em;"> <use
+xlink:href="images/img4378.svg#page4354"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 8.3</span>: <span>Diagrama de flux per
+determinar el grup puntual d’una molècula</span>. </div>
+
+</div>
+
+<div class="p"> <span>Es recomana visitar la pàgina web “Symmetry resources”[<a
+href="sections/biblio.html#bib::OTTERBEIN">23</a>], que permet practicar l’ús
+del diagrama de flux sobre diverses molècules</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Els grups
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.22 8.3"
+style="width:  0.93em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4379.svg#page4355"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.01 8.3"
+style="width:  0.90em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4380.svg#page4356"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 8.3"
+style="width:  0.81em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4381.svg#page4357"> </use> </svg></span> no tenen cap
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4382.svg#page4358"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Els grups sense
+eixos de rotació poden tindre un <span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4383.svg#page4359"> </use> </svg></span> o un
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4384.svg#page4360"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Una molècula sense eixos de rotació
+pot tindre un </span><span class="itshape" >pla de
+reflexió</span><span><span class="inlinemath"> <svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4385.svg#page4361"> </use> </svg></span> o un
+</span><span class="itshape" >centre
+d’inversió</span><span><span class="inlinemath"> <svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4386.svg#page4362"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.22 8.3"
+style="width:  0.93em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4387.svg#page4363"> </use> </svg></span> no té cap
+simetria.</span></summary>
+
+<div class="content"><div class="p"> <span>El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.22 8.3"
+style="width:  0.93em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4388.svg#page4364"> </use> </svg></span> no té cap
+element de simetria</span>. <span>Un exemple de molècula pertanyent a aquest
+grup és la següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2.96 -54.69 59.59 54.69"
+style="width:  5.98em; height:  5.61em;"> <use
+xlink:href="images/img4389.svg#page4365"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2.96 -54.69 58.81 50.7"
+style="width:  5.90em; height:  5.61em;"> <use
+xlink:href="images/img4390.svg#page4366"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.01 8.3"
+style="width:  0.90em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4391.svg#page4367"> </use> </svg></span> només té un pla
+de reflexió.</span></summary>
+
+<div class="content"><div class="p"> <span>L’únic element de simetria de les
+molècules del grup <span class="inlinemath"><svg
+viewBox="0 -6.81 9.01 8.3"
+style="width:  0.90em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4392.svg#page4368"> </use> </svg></span> és un
+</span><span class="itshape" >pla de reflexió</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4393.svg#page4369"> </use> </svg></span></span>.
+<span>Com exemple, tenim la molècula de l’àcid hipoclorós
+<span class="inlinemath">(<svg
+viewBox="0 -6.86 25.23 6.86"
+style="width:  2.53em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4394.svg#page4370"> </use> </svg></span>)</span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.18 -33.46 56.37 33.46"
+style="width:  5.66em; height:  3.48em;"> <use
+xlink:href="images/img4395.svg#page4371"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.18 -33.46 48.17 23.8"
+style="width:  4.83em; height:  3.48em;"> <use
+xlink:href="images/img4396.svg#page4372"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 8.3"
+style="width:  0.81em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4397.svg#page4373"> </use> </svg></span> només té un
+centre d’inversió.</span></summary>
+
+<div class="content"><div class="p"> <span>L’únic element de simetria del grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 8.3"
+style="width:  0.81em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4398.svg#page4374"> </use> </svg></span> és un
+</span><span class="itshape" >centre d’inversió</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4399.svg#page4375"> </use> </svg></span></span>.
+<span>Com exemple tenim la conformació alternada de la següent molècula,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.5 -81.59 67.03 81.59"
+style="width:  6.73em; height:  8.31em;"> <use
+xlink:href="images/img4400.svg#page4376"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.5 -81.59 61.32 80.64"
+style="width:  6.15em; height:  8.31em;"> <use
+xlink:href="images/img4401.svg#page4377"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Els grups
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.17 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4402.svg#page4378"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.83 8.3"
+style="width:  1.49em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4403.svg#page4379"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.41 8.3"
+style="width:  1.45em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4404.svg#page4380"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.96 8.3"
+style="width:  1.10em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4405.svg#page4381"> </use> </svg></span> tenen un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4406.svg#page4382"> </use> </svg></span> amb
+<span class="inlinemath"><svg
+viewBox="0 -6.34 24.24 7.69"
+style="width:  2.43em; height:  0.89em; vertical-align: -0.20em;"> <use
+xlink:href="images/img4407.svg#page4383"> </use> </svg></span> (només
+un).</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.17 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4408.svg#page4384"> </use> </svg></span> només té un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4409.svg#page4385"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’únic element de simetria que té un
+grup <span class="inlinemath"><svg
+viewBox="0 -6.81 10.17 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4410.svg#page4386"> </use> </svg></span> és un eix de
+rotació <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4411.svg#page4387"> </use> </svg></span></span>. <span>El
+peròxid <span class="inlinemath">d’hidrogen (<svg
+viewBox="0 -6.86 23.66 8.36"
+style="width:  2.38em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4412.svg#page4388"> </use> </svg></span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -66.95 60.55 68.89"
+style="width:  6.08em; height:  7.03em;"> <use
+xlink:href="images/img4413.svg#page4389"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és un exemple de molècula que pertany a un grup
+d’aquest tipus, el <span class="inlinemath"><svg
+viewBox="0 -6.81 9.22 8.3"
+style="width:  0.93em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4414.svg#page4390"> </use> </svg></span></span>.
+<span>L’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4415.svg#page4391"> </use> </svg></span> està situat
+sobre el paper i és perpendicular a l’enllaç <span class="inlinemath"><svg
+viewBox="0 -6.86 27.67 7.69"
+style="width:  2.78em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4416.svg#page4392"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -66.95 38.06 48.02"
+style="width:  3.82em; height:  6.84em;"> <use
+xlink:href="images/img4417.svg#page4393"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.83 8.3"
+style="width:  1.49em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4418.svg#page4394"> </use> </svg></span> té un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4419.svg#page4395"> </use> </svg></span> i un
+<span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4420.svg#page4396"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.2.1&rang;</span> <span class="sffamily" >A més de l’eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4421.svg#page4397"> </use> </svg></span>, té un pla de
+reflexió <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4422.svg#page4398"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2.2&rang;</span> <span class="sffamily" >També té un
+eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.03 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4423.svg#page4399"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -9.38 47.72 10.88"
+style="width:  4.79em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4424.svg#page4400"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary id="ref::sim:cla:nparell"> <span>&vert;4.2.3&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4425.svg#page4401"> </use> </svg></span> és parell, també
+tindrà un </span><span class="itshape sffamily" >centre d’inversió</span><span
+class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4426.svg#page4402"> </use> </svg></span> és parell,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 15.94 9.96"
+style="width:  1.60em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4427.svg#page4403"> </use> </svg></span>
+<span class="inlinemath">rotacions <svg
+viewBox="0 -9.38 12.05 10.88"
+style="width:  1.21em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4428.svg#page4404"> </use> </svg></span> són equivalents
+a una <span class="inlinemath">rotació <svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4429.svg#page4405"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.6 76.84 20.43"
+style="width:  7.71em; height:  2.17em;"> <use
+xlink:href="images/img4430.svg#page4406"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>És a dir, que el grup tindrà una
+<span class="inlinemath">rotació <svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4431.svg#page4407"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.41 48.95 11.93"
+style="width:  4.91em; height:  1.32em;"> <use
+xlink:href="images/img4432.svg#page4408"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, com el grup té un
+<span class="inlinemath">pla <svg
+viewBox="0 -6.86 10.36 8.36"
+style="width:  1.04em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4433.svg#page4409"> </use> </svg></span>, les molècules
+d’aquest grup també tindran un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4434.svg#page4410"> </use> </svg></span> atès que </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 49.07 10.88"
+style="width:  4.93em; height:  1.21em;"> <use
+xlink:href="images/img4435.svg#page4411"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Però com, segons </span><a class="sffamily
+small" href="sections/section.8.1.html#ref::sim:ele:S2i"
+>§8.1&vert;3.4.6&rang;</a><span>, <span class="inlinemath"><svg
+viewBox="0 -6.81 27.29 8.3"
+style="width:  2.74em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4436.svg#page4412"> </use> </svg></span>, aleshores, per
+a <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4437.svg#page4413"> </use> </svg></span> parell, la
+molècula tindrà </span><span class="itshape" >centre d’inversió</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2.4&rang;</span> <span class="sffamily"
+>Exemple:</span> <span class="sffamily" >el </span><span class="itshape
+sffamily" >trans</span><span class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -6.86 55.62 6.86"
+style="width:  5.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4438.svg#page4414"> </use> </svg></span> pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.88 8.3"
+style="width:  1.39em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4439.svg#page4415"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.18 -50.4 76.3 50.4"
+style="width:  7.66em; height:  5.18em;"> <use
+xlink:href="images/img4440.svg#page4416"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.18 -50.4 68.55 40.74"
+style="width:  6.88em; height:  5.18em;"> <use
+xlink:href="images/img4441.svg#page4417"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.18 -50.4 68.55 40.74"
+style="width:  6.88em; height:  5.18em;"> <use
+xlink:href="images/img4442.svg#page4418"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.41 8.3"
+style="width:  1.45em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4443.svg#page4419"> </use> </svg></span> té un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4444.svg#page4420"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4445.svg#page4421"> </use> </svg></span>
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4446.svg#page4422"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Les molècules del grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.41 8.3"
+style="width:  1.45em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4447.svg#page4423"> </use> </svg></span> tenen un eix de
+rotació <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4448.svg#page4424"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4449.svg#page4425"> </use> </svg></span> plans de
+reflexió <span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4450.svg#page4426"> </use> </svg></span> (plans que
+contenen l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4451.svg#page4427"> </use> </svg></span>)</span>.
+<span>Com exemple tenim la molècula d’amoníac, que pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4452.svg#page4428"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -40.05 60.55 40.05"
+style="width:  6.08em; height:  4.14em;"> <use
+xlink:href="images/img4453.svg#page4429"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -40.05 56.29 39.1"
+style="width:  5.65em; height:  4.14em;"> <use
+xlink:href="images/img4454.svg#page4430"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.93 8.3"
+style="width:  1.50em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4455.svg#page4431"> </use> </svg></span> té un eix de
+rotació-reflexió d’ordre <span class="inlinemath"><svg
+viewBox="0 -6.81 15.01 8.3"
+style="width:  1.51em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4456.svg#page4432"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>És difícil trobar exemples de
+molècules d’aquest grup</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Grups
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.61 8.3"
+style="width:  1.27em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4457.svg#page4433"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 17.27 8.3"
+style="width:  1.73em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4458.svg#page4434"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 16.76 8.3"
+style="width:  1.68em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4459.svg#page4435"> </use> </svg></span>:</span> <span
+class="sffamily" >un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4460.svg#page4436"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4461.svg#page4437"> </use> </svg></span> eixos
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4462.svg#page4438"> </use> </svg></span> (perpendiculars
+al <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4463.svg#page4439"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;5.1&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.61 8.3"
+style="width:  1.27em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4464.svg#page4440"> </use> </svg></span> només té el
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4465.svg#page4441"> </use> </svg></span> i els
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4466.svg#page4442"> </use> </svg></span>
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4467.svg#page4443"> </use> </svg></span> perpendiculars
+al <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4468.svg#page4444"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>És difícil trobar exemples de
+molècules d’aquest grup</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 17.27 8.3"
+style="width:  1.73em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4469.svg#page4445"> </use> </svg></span> té, a més a més,
+un pla de reflexió <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4470.svg#page4446"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;5.2.1&rang;</span> <span class="sffamily" >La presència
+del pla <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4471.svg#page4447"> </use> </svg></span> implica
+l’existència de <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4472.svg#page4448"> </use> </svg></span> plans
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4473.svg#page4449"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que el producte de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.36 8.36"
+style="width:  1.04em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4474.svg#page4450"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4475.svg#page4451"> </use> </svg></span> es equivalent a
+una reflexió <span class="inlinemath"><svg
+viewBox="0 -6.86 9.93 8.36"
+style="width:  1.00em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4476.svg#page4452"> </use> </svg></span> en un pla
+perpendicular a <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4477.svg#page4453"> </use> </svg></span> i que conté
+l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4478.svg#page4454"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 48.92 10.88"
+style="width:  4.91em; height:  1.21em;"> <use
+xlink:href="images/img4479.svg#page4455"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Això fa que per cada eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4480.svg#page4456"> </use> </svg></span> tinguem un pla
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4481.svg#page4457"> </use> </svg></span>, cosa que dóna
+un total de <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4482.svg#page4458"> </use> </svg></span> plans
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.93 5.78"
+style="width:  1.00em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4483.svg#page4459"> </use> </svg></span> perpendiculars
+al <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4484.svg#page4460"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 45.66 10.88"
+style="width:  4.58em; height:  1.21em;"> <use
+xlink:href="images/img4485.svg#page4461"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2.2&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4486.svg#page4462"> </use> </svg></span> és parell, la
+molècula també té un centre d’inversió <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4487.svg#page4463"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4488.svg#page4464"> </use> </svg></span> és parell, com
+<span class="inlinemath"><svg
+viewBox="0 -10.41 45.68 11.93"
+style="width:  4.59em; height:  1.32em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4489.svg#page4465"> </use> </svg></span> i la molècula té
+un pla <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4490.svg#page4466"> </use> </svg></span>, concloem que
+també ha de tindre un centre d’inversió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.41 109.24 11.93"
+style="width: 10.96em; height:  1.32em;"> <use
+xlink:href="images/img4491.svg#page4467"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(vegeu la discussió en </span><a class="sffamily
+small" href="sections/section.8.2.html#ref::sim:cla:nparell"
+>§8.2&vert;4.2.3&rang;</a><span>)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.41 109.24 11.93"
+style="width: 10.96em; height:  1.32em;"> <use
+xlink:href="images/img4492.svg#page4468"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2.3&rang;</span> <span class="sffamily"
+>Exemple:</span> <span class="sffamily" >la molècula de benzè pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 16.32 8.3"
+style="width:  1.64em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4493.svg#page4469"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com exemple tenim el benzè, que
+pertany al grup <span class="inlinemath"><svg
+viewBox="0 -6.81 16.32 8.3"
+style="width:  1.64em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4494.svg#page4470"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox=".8 -77.7 89.65 77.7"
+style="width:  9.00em; height:  7.92em;"> <use
+xlink:href="images/img4495.svg#page4471"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox=".8 -77.7 86.68 75.91"
+style="width:  8.70em; height:  7.92em;"> <use
+xlink:href="images/img4496.svg#page4472"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.3&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 16.76 8.3"
+style="width:  1.68em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4497.svg#page4473"> </use> </svg></span> té, a més a més,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4498.svg#page4474"> </use> </svg></span> plans de
+reflexió diedres <span class="inlinemath">(<svg
+viewBox="0 -4.29 9.84 5.78"
+style="width:  0.99em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4499.svg#page4475"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;5.3.1&rang;</span> <span class="sffamily" >El plans
+diedres <span class="inlinemath"><svg
+viewBox="0 -4.29 9.84 5.78"
+style="width:  0.99em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4500.svg#page4476"> </use> </svg></span> són a la
+bisectriu de dos eixos <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4501.svg#page4477"> </use> </svg></span>
+consecutius.</span></summary>
+
+<div class="content"><div class="p"> <span>Aquest grup té, a més de l’eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4502.svg#page4478"> </use> </svg></span> i dels
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4503.svg#page4479"> </use> </svg></span> eixos
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4504.svg#page4480"> </use> </svg></span>, un conjunt de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4505.svg#page4481"> </use> </svg></span> plans
+</span><span class="itshape" >diagonals</span><span> o </span><span
+class="itshape" >diedres</span><span> <span class="inlinemath">(<svg
+viewBox="0 -4.29 9.84 5.78"
+style="width:  0.99em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4506.svg#page4482"> </use> </svg></span>), situats
+cadascun d’ells a la bisectriu de dos eixos <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4507.svg#page4483"> </use> </svg></span>
+consecutius</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.3.2&rang;</span> <span class="sffamily" >L’eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4508.svg#page4484"> </use> </svg></span> és també un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 15.01 8.3"
+style="width:  1.51em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4509.svg#page4485"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.3.3&rang;</span> <span class="sffamily"
+>Exemple:</span> <span class="sffamily" >la molècula d’al·lè
+<span class="inlinemath">(<svg
+viewBox="0 -6.86 71.54 8.36"
+style="width:  7.18em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4510.svg#page4486"> </use> </svg></span>) pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 15.8 8.3"
+style="width:  1.59em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4511.svg#page4487"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p center"> <span class="ttfamily tiny" ><span
+class="includeimg"><a
+href="https://www.staff.ncl.ac.uk/j.p.goss/symmetry/D2d.html" ><span>Uni. of
+Newcastle</span></a><img src="images/img4512.gif" alt="included image"
+style="width: 11.03em; height: 11.03em;"></span></span> </div>
+
+<div class="p"> <span>Un exemple el tindríem en la molècula d’al·lè
+<span class="inlinemath">(<svg
+viewBox="0 -6.86 71.54 8.36"
+style="width:  7.18em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4513.svg#page4488"> </use> </svg></span>), que pertany al
+grup <span class="inlinemath"><svg
+viewBox="0 -6.81 15.8 8.3"
+style="width:  1.59em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4514.svg#page4489"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox=".5 -46.72 96.92 46.72"
+style="width:  9.73em; height:  4.81em;"> <use
+xlink:href="images/img4515.svg#page4490"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Les posicions del plans diedres i dels
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4516.svg#page4491"> </use> </svg></span> (2) eixos
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4517.svg#page4492"> </use> </svg></span> de l’al·lè poden
+veure’s amb l’ajut de la figura </span><a
+href="sections/section.8.2.html#ref::sim:cla:alle">8.4</a>. </div>
+
+<div class="figure" id="ref::sim:cla:alle">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="3.31 -85.65 83.48 85.51"
+style="width:  8.38em; height:  8.72em;"> <use
+xlink:href="images/img4518.svg#page4493"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 8.4</span>: <span>Elements de simetria de
+la molècula d’al·lè <span class="inlinemath">(<svg
+viewBox="0 -6.86 71.54 8.36"
+style="width:  7.18em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4519.svg#page4494"> </use> </svg></span>)</span>.
+<span>Els tres àtoms de carboni estan alineats amb l’observador i enfilats en
+l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4520.svg#page4495"> </use> </svg></span>
+principal</span>. <span>Mostrem els dos eixos <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4521.svg#page4496"> </use> </svg></span>, que travessen,
+ambdós, l’àtom central de carboni</span>. <span>Els plans diedres estan situats
+en la bisectriu dels dos eixos <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4522.svg#page4497"> </use> </svg></span>, i cadascun
+d’ells conté els dos àtoms d’hidrogen enllaçats a un dels carbonis
+terminals</span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://www.staff.ncl.ac.uk/j.p.goss/symmetry/D2d.html" ><span>Uni. of
+Newcastle</span></a><img src="images/img4512.gif" alt="included image"
+style="width: 11.03em; height: 11.03em;"></span></span> </div>
+
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Els grups
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.57 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4523.svg#page4498"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.6 8.3"
+style="width:  1.26em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4524.svg#page4499"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.09 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4525.svg#page4500"> </use> </svg></span> tenen més d’un
+eix <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4526.svg#page4501"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 24.24 6.66"
+style="width:  2.43em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img4527.svg#page4502"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;6.1&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.57 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4528.svg#page4503"> </use> </svg></span> no té centre
+d’inversió.</span></summary>
+
+<div class="content"><div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="1.99 -54.69 56.29 50.7"
+style="width:  5.65em; height:  5.61em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4529.svg#page4504"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" ><span class="inlinemath"><svg
+viewBox="0 -4.8 14.96 5.8"
+style="width:  1.90em; height:  0.89em; vertical-align: -0.20em;"> <use
+xlink:href="images/img4530.svg#page4505"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="p"> <span>La molècula de metà <span class="inlinemath">(<svg
+viewBox="0 -6.86 18.64 8.36"
+style="width:  1.87em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4531.svg#page4506"> </use> </svg></span>) pertany a
+aquest grup</span>. <span>Entre d’altres elements de simetria, el metà té
+quatre eixos <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4532.svg#page4507"> </use> </svg></span> (cadascun d’ells
+travessa un dels hidrògens i el carboni)</span>. <span>No té, en canvi, centre
+d’inversió</span>.</div></div>
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -54.69 56.29 50.7"
+style="width:  5.65em; height:  5.61em;"> <use
+xlink:href="images/img4533.svg#page4508"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.2&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.6 8.3"
+style="width:  1.26em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4534.svg#page4509"> </use> </svg></span> té centre
+d’inversió, però no té eix de rotació <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4535.svg#page4510"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Sulfur-hexafluoride-2D-dimensions.png"
+><span>commons.wikimedia</span></a><img src="images/img4536.png" alt="included
+image" style="width: 12.49em; height: 13.21em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" ><span class="inlinemath"><svg
+viewBox="0 -4.8 12.93 5.8"
+style="width:  1.64em; height:  0.89em; vertical-align: -0.20em;"> <use
+xlink:href="images/img4537.svg#page4511"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="p"> <span>Un exemple de molècula que pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.6 8.3"
+style="width:  1.26em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4538.svg#page4512"> </use> </svg></span> és l’hexafluorur
+de sofre <span class="inlinemath">(<svg
+viewBox="0 -6.86 16.01 8.36"
+style="width:  1.61em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4539.svg#page4513"> </use> </svg></span>)</span>.
+<span>Entre d’altres elements de simetria, el <span class="inlinemath"><svg
+viewBox="0 -6.86 16.01 8.36"
+style="width:  1.61em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4540.svg#page4514"> </use> </svg></span> té tres eixos
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4541.svg#page4515"> </use> </svg></span> i també un
+centre d’inversió</span>. <span>No té, en canvi, cap eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4542.svg#page4516"> </use>
+</svg></span></span>.</div></div>
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Sulfur-hexafluoride-2D-dimensions.png"
+><span>commons.wikimedia</span></a><img src="images/img4536.png" alt="included
+image" style="width: 12.49em; height: 13.21em;"></span></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.3&rang;</span> <span class="sffamily" >El grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.09 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4543.svg#page4517"> </use> </svg></span> té centre
+d’inversió, i també eix de rotació <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4544.svg#page4518"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Buckminsterfullerene-perspective-3D-balls.png"
+><span>commons.wikimedia</span></a><img src="images/img4545.png" alt="included
+image" style="width: 11.65em; height: 12.13em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" >Bucksminsterful·lerè</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="p"> <span>El </span><span class="itshape"
+>bucksminsterful·lerè</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.86 15.14 8.36"
+style="width:  1.52em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4546.svg#page4519"> </use> </svg></span>, no confondre
+amb un eix de rotació d’ordre 60) pertany a aquest grup</span>. <span>Entre
+d’altres elements de simetria, el <span class="inlinemath"><svg
+viewBox="0 -6.86 15.14 8.36"
+style="width:  1.52em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4547.svg#page4520"> </use> </svg></span> té eixos
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4548.svg#page4521"> </use> </svg></span> i també centre
+d’inversió</span>.</div></div>
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Buckminsterfullerene-perspective-3D-balls.png"
+><span>commons.wikimedia</span></a><img src="images/img4545.png" alt="included
+image" style="width: 11.65em; height: 12.13em;"></span></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Els grups
+<span class="inlinemath"><svg
+viewBox="0 -6.81 15.06 8.3"
+style="width:  1.51em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4549.svg#page4522"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 22.66 9.66"
+style="width:  2.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4550.svg#page4523"> </use> </svg></span> corresponen a
+molècules lineals.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;7.1&rang;</span> <span class="sffamily" >Les molècules
+lineals tenen un eix de rotació d’ordre infinit <span class="inlinemath">(<svg
+viewBox="0 -6.81 15.06 8.3"
+style="width:  1.51em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4551.svg#page4524"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>En una molècula lineal, una rotació
+infinitesimal al voltant de l’eix de la molècula la deixa inalterada, per la
+qual cosa podem considerar que la molècula té un eix de rotació d’ordre
+<span class="inlinemath">infinit (<svg
+viewBox="0 -6.81 15.06 8.3"
+style="width:  1.51em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4552.svg#page4525"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.2&rang;</span> <span class="sffamily" >Una molècula
+lineal </span><span class="itshape sffamily" >amb</span><span class="sffamily"
+> centre d’inversió pertany al grup <span class="inlinemath"><svg
+viewBox="0 -6.81 22.66 9.66"
+style="width:  2.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4553.svg#page4526"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com exemple tindrem les molècules
+diatòmiques homonuclears</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.3&rang;</span> <span class="sffamily" >Una molècula
+lineal </span><span class="itshape sffamily" >sense</span><span
+class="sffamily" > centre d’inversió pertany al grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 19.79 9.66"
+style="width:  1.99em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4554.svg#page4527"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com exemple tindrem les molècules
+diatòmiques heteronuclears</span>. </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.8.2.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

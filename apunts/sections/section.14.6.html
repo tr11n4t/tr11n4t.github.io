@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Estructura vibracional dels espectres electrònics en molècules
+diatòmiques</title>
+<meta name="description" content="Es far servir el principi de Franck-Condon
+per explicar la estructura vibracional dels espectres electrònics.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.14.6.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.14.html"><span>14 Enllaç i espectroscòpia electrònica de
+molècules diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>14.6 Estructura vibracional dels
+espectres electrònics </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img8669.svg#page8633"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.14.5.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.14.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>14.6  Estructura vibracional dels espectres
+electrònics</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily"
+>Franck-Condon:</span> <span class="sffamily" >els nuclis no canvien de lloc
+durant una transició electrònica.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Principi de Franck-Condon</span></strong>.
+<span>Com les transicions electròniques són molt més ràpides que el moviment de
+vibració, una transició electrònica pràcticament no canvia les posicions i
+velocitats nuclears</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>A continuació justifiquem aquest
+principi</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >Els electrons
+són molt més ràpids que els nuclis.</span></summary>
+
+<div class="content"><div class="p"> <span>Sabem que els electrons es mouen
+molt més de pressa que els nuclis, cosa en què es fonamenta l’aproximació de
+Born-Oppenheimer</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >La transició
+<span class="inlinemath"><svg
+viewBox="0 -7.49 60.41 11.31"
+style="width:  6.06em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8670.svg#page8634"> </use> </svg></span> és molt més
+ràpida que el moviment nuclear.</span></summary>
+
+<div class="content"><div class="p"> <span>Com a conseqüència de la gran
+velocitat dels electrons respecte als nuclis, la transició electrònica </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 60.41 11.81"
+style="width:  6.06em; height:  1.30em;"> <use
+xlink:href="images/img8671.svg#page8635"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>serà molt més ràpida que el moviment de vibració
+nuclear</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.3&rang;</span> <span class="sffamily" >Els nuclis es
+queden ‘congelats’ durant la transició electrònica.</span></summary>
+
+<div class="content"><div class="p"> <span>La celeritat de la transició
+electrònica fa que els nuclis queden com ‘congelats’ durant la transició,
+conservant la posició i velocitat que tenien abans</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4&rang;</span> <span class="sffamily" >Després de la
+transició, els nuclis vibraran en una altra corba.</span></summary>
+
+<div class="content"><div class="figure" id="ref::el1:esp:FranckCondonCurve1">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="1.63 -276.19 187.61 262.85"
+style="width: 18.83em; height: 27.84em;"> <use
+xlink:href="images/img8672.svg#page8636"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 14.5</span>: <span>Corbes d’energia
+potencial per als estat electrònics de la transició
+<span class="inlinemath"><svg
+viewBox="0 -7.49 60.41 11.31"
+style="width:  6.06em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8673.svg#page8637"> </use> </svg></span></span>. <span>La
+distància d’equilibri dels dos estats és similar, <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8674.svg#page8638"> </use> </svg></span></span>. <span>La
+fletxa senyala la transició vibrònica de l’estat amb
+<span class="inlinemath"><svg
+viewBox="0 -7.49 28.54 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8675.svg#page8639"> </use> </svg></span> a l’estat amb
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.49"
+style="width:  2.63em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8676.svg#page8640"> </use> </svg></span></span>.
+<span>S’hi mostren també les intensitats relatives per a les bandes vibròniques
+<span class="inlinemath"><svg
+viewBox="0 -7.49 33.26 7.49"
+style="width:  3.34em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8677.svg#page8641"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>Una vegada finalitzada la transició, els nuclis vibraran
+d’acord amb la corba d’energia potencial del nou estat, com il·lustrem en la
+figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:FranckCondonCurve1">14.5</a>.
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::el1:esp:maxims"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Vibració:</span> <span class="sffamily" >els nuclis són al
+voltant de <span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8678.svg#page8642"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8679.svg#page8643"> </use> </svg></span>), o cap a les
+vores <span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.66"
+style="width:  2.35em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img8680.svg#page8644"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>Ens interessa, per tal d’aplicar el
+principi de Franck-Condon, saber la distribució de probabilitat del nuclis
+durant el seu moviment de vibració</span>. <span>Ho il·lustrem en la
+figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:RhoHarmonic">14.6</a><span> per a
+alguns estats de l’oscil·lador harmònic</span>. </div>
+
+<div class="figure" id="ref::el1:esp:RhoHarmonic">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Aufenthaltswahrscheinlichkeit_harmonischer_Oszillator.png"
+><span>commons.wikimedia</span></a><img src="images/img8681.png" alt="included
+image" style="width: 30.88em; height: 19.46em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 14.6</span>: <span>Densitat de
+probabilitat <span class="inlinemath"><svg
+viewBox="0 -8.11 28.59 10.6"
+style="width:  2.87em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8682.svg#page8645"> </use> </svg></span> per a alguns
+estats de l’oscil·lador harmònic</span>. <span>L’eix vertical representa
+l’energia dels estats</span>. <span>La paràbola és l’energia potencial (corba
+d’energia potencial)</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Per a l’estat
+fonamental, la probabilitat és màxima al voltant de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8683.svg#page8646"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a l’estat de vibració fonamental
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8684.svg#page8647"> </use> </svg></span>), veiem en la
+figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:RhoHarmonic">14.6</a><span> que
+el màxim de probabilitat se situa sobre la posició d’equilibri
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8685.svg#page8648"> </use> </svg></span>, mínim de la
+paràbola d’energia potencial), cosa que clàssicament correspon a un oscil·lador
+(molla) en repòs</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >Per als estats
+excitats, la probabilitat és màxima cap a les vores.</span></summary>
+
+<div class="content"><div class="p"> <span>D’altra banda, els estats excitats
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.66"
+style="width:  2.35em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img8686.svg#page8649"> </use> </svg></span>) mostrem la
+posició de màxima probabilitat cap a les vores, prop del límit (però encara
+dins) de la regió clàssicament permesa</span>. <span>Clàssicament això
+correspon a un oscil·lador (molla) que frena i comença a recular, per la qual
+cosa la seva velocitat és petita i serà fàcil trobar-lo en eixe punt</span>.
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >El principi de
+Franck-Condon ens permet estimar <span class="inlinemath"><svg
+viewBox="0 -7.49 48.69 10.63"
+style="width:  4.89em; height:  1.19em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8687.svg#page8650"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -8.11 28.59 11.25"
+style="width:  2.87em; height:  1.25em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8688.svg#page8651"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -8.11 28.59 11.25"
+style="width:  2.87em; height:  1.25em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8689.svg#page8652"> </use> </svg></span> són ambdós
+grans, <span class="inlinemath"><svg
+viewBox="0 -7.49 48.69 10.63"
+style="width:  4.89em; height:  1.19em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8690.svg#page8653"> </use> </svg></span> també serà
+gran.</span></summary>
+
+<div class="content"><div class="p"> <span>Si, per a qualsevol valor de la
+distància internuclear <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8691.svg#page8654"> </use> </svg></span>, o bé
+<span class="inlinemath"><svg
+viewBox="0 -7.49 18.59 10.63"
+style="width:  1.87em; height:  1.19em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8692.svg#page8655"> </use> </svg></span> o bé
+<span class="inlinemath"><svg
+viewBox="0 -7.49 18.59 10.63"
+style="width:  1.87em; height:  1.19em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8693.svg#page8656"> </use> </svg></span> (o ambdós) són
+zero o molt petits, aleshores el producte </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 37.68 10.63"
+style="width:  3.78em; height:  1.19em;"> <use
+xlink:href="images/img8694.svg#page8657"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>també ho serà</span>. <span>Això farà que el
+corresponent factor de Franck-Condon sigui negligible, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 69.73 10.63"
+style="width:  7.00em; height:  1.19em;"> <use
+xlink:href="images/img8695.svg#page8658"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i implica que la intensitat de la transició
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 53.18 10.63"
+style="width:  5.34em; height:  1.19em;"> <use
+xlink:href="images/img8696.svg#page8659"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>sigui molt baixa</span>. </div>
+
+<div class="p"> <span>D’altra banda, i ben al contrari, si existeix algun
+interval de <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8697.svg#page8660"> </use> </svg></span> on ambdós
+<span class="inlinemath"><svg
+viewBox="0 -7.49 18.59 10.63"
+style="width:  1.87em; height:  1.19em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8698.svg#page8661"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 18.59 10.63"
+style="width:  1.87em; height:  1.19em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8699.svg#page8662"> </use> </svg></span> siguin grans
+(preferiblement màxims), aleshores el factor de Franck-Condon i la intensitat
+de la transició també seran grans</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >Per a la més
+intensa, <span class="inlinemath"><svg
+viewBox="0 -8.11 28.59 11.25"
+style="width:  2.87em; height:  1.25em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8700.svg#page8663"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -8.11 28.59 11.25"
+style="width:  2.87em; height:  1.25em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8701.svg#page8664"> </use> </svg></span> tenen màxims
+superposats.</span></summary>
+
+<div class="content"><div class="p"> <span>El raonament anterior ens permet
+introduir una regla per esbrinar quina serà la transició més intensa</span>.
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Transició vibrònica més intensa</span></strong>.
+<span>La transició vibrònica més intensa (més probable) serà la que presente
+els màxims de probabilitat de l’estat inicial <span class="inlinemath"><svg
+viewBox="0 -8.11 28.59 11.25"
+style="width:  2.87em; height:  1.25em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8702.svg#page8665"> </use> </svg></span> i de l’estat
+final <span class="inlinemath"><svg
+viewBox="0 -8.11 28.59 11.25"
+style="width:  2.87em; height:  1.25em; vertical-align: -0.38em;"> <use
+xlink:href="images/img8703.svg#page8666"> </use> </svg></span> a la mateixa
+distància internuclear <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8704.svg#page8667"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Estudiarem a continuació alguns exemples</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::el1:esp:ReeqRe"> <span>&vert;3.3&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8705.svg#page8668"> </use> </svg></span>, la transició
+més intensa serà la <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8706.svg#page8669"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.63 -276.19 187.61 262.85"
+style="width: 18.83em; height: 27.84em;"> <use
+xlink:href="images/img8707.svg#page8670"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Estudiarem primer el cas il·lustrat en la
+figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:FranckCondonCurve1">14.5</a><span>,
+on l’estat inicial i el final tenen una distància de equilibri semblant,
+<span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8708.svg#page8671"> </use> </svg></span></span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>A temperatures no gaire elevades, la majoria de les
+molècules estaran en l’estat fonamental de vibració, amb
+<span class="inlinemath"><svg
+viewBox="0 -7.49 28.54 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8709.svg#page8672"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Aquest estat fonamental, segons hem vist en </span><a
+class="sffamily small" href="sections/section.14.6.html#ref::el1:esp:maxims"
+>§14.6&vert;2&rang;</a><span>, presentarà el màxim de probabilitat a la
+distància de equilibri <span class="inlinemath"><svg
+viewBox="0 -7.49 12.24 9.95"
+style="width:  1.23em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8710.svg#page8673"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Ara hem de buscar, entre els estats de la corba
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.07 9.98"
+style="width:  2.62em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8711.svg#page8674"> </use> </svg></span>, quin de tots té
+un màxim que coincideixi amb el màxim de l’estat anterior</span>. <span>Com
+<span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8712.svg#page8675"> </use> </svg></span>, la coincidència
+de màxims es produirà per a <span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.49"
+style="width:  2.63em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8713.svg#page8676"> </use> </svg></span>, ja que,
+segons </span><a class="sffamily small"
+href="sections/section.14.6.html#ref::el1:esp:maxims"
+>§14.6&vert;2&rang;</a><span>, els estats amb <span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.88"
+style="width:  2.63em; height:  0.91em; vertical-align: -0.10em;"> <use
+xlink:href="images/img8714.svg#page8677"> </use> </svg></span> tenen els màxims
+cap a les vores, lluny de <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8715.svg#page8678"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Concloem doncs que la banda vibrònica més intensa serà la
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8716.svg#page8679"> </use> </svg></span></span>. <span>La
+resta de bandes <span class="inlinemath"><svg
+viewBox="0 -7.49 28.46 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8717.svg#page8680"> </use> </svg></span> seran
+progressivament més febles a mesura que augmenta <span class="inlinemath"><svg
+viewBox="0 -7.49 7.48 7.49"
+style="width:  0.75em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8718.svg#page8681"> </use> </svg></span>, tal com mostrem
+en la figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:FranckCondonCurve1">14.5</a>.
+</div>
+
+</li></ul>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::el1:esp:RegtRe"> <span>&vert;3.4&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8719.svg#page8682"> </use> </svg></span>, la transició
+més intensa serà una <span class="inlinemath"><svg
+viewBox="0 -7.49 28.46 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8720.svg#page8683"> </use> </svg></span>, amb
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.88"
+style="width:  2.63em; height:  0.91em; vertical-align: -0.10em;"> <use
+xlink:href="images/img8721.svg#page8684"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Estudiarem ara el cas il·lustrat en
+la figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:FranckCondonCurve2">14.7</a><span>,
+on l’estat final té una distància d’equilibri més gran que la de l’estat
+inicial, <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8722.svg#page8685"> </use> </svg></span></span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>A diferència del cas <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8723.svg#page8686"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.14.6.html#ref::el1:esp:ReeqRe"
+>§14.6&vert;3.3&rang;</a><span>, la transició vibrònica més intensa (més
+probable) ja no serà la <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8724.svg#page8687"> </use> </svg></span>, ja que els
+màxims dels estats fonamentals vibracionals de les corbes
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.07 9.98"
+style="width:  2.62em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8725.svg#page8688"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 28.37 9.98"
+style="width:  2.85em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8726.svg#page8689"> </use> </svg></span> ara no
+coincideixen (el superior està una mica desplaçat cap a la dreta)</span>.
+</div>
+
+</li><li>
+
+<div class="p"> <span>Descartat l’estat fonamental de
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.07 9.98"
+style="width:  2.62em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8727.svg#page8690"> </use> </svg></span>, haurem de
+buscar quin dels estats excitats <span class="inlinemath">(<svg
+viewBox="0 -7.49 26.25 7.88"
+style="width:  2.63em; height:  0.91em; vertical-align: -0.10em;"> <use
+xlink:href="images/img8728.svg#page8691"> </use> </svg></span>) té un màxim que
+coincideix amb <span class="inlinemath"><svg
+viewBox="0 -7.49 12.24 9.95"
+style="width:  1.23em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8729.svg#page8692"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Segons </span><a class="sffamily small"
+href="sections/section.14.6.html#ref::el1:esp:maxims"
+>§14.6&vert;2&rang;</a><span>, els estats amb <span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.88"
+style="width:  2.63em; height:  0.91em; vertical-align: -0.10em;"> <use
+xlink:href="images/img8730.svg#page8693"> </use> </svg></span> tenen els màxims
+cap a les vores</span>. <span>La inspecció visual de la figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:FranckCondonCurve2">14.7</a><span>
+ens fa concloure que l’estat amb <span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.49"
+style="width:  2.63em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8731.svg#page8694"> </use> </svg></span> tindrà el màxim
+de l’esquerra situat <span class="inlinemath">sobre <svg
+viewBox="0 -7.49 12.24 9.95"
+style="width:  1.23em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8732.svg#page8695"> </use> </svg></span>, cosa que
+implica que la banda vibrònica més intensa serà la
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8733.svg#page8696"> </use> </svg></span></span>. </div>
+
+</li></ul>
+
+<div class="p noindent"> <span>Afegirem que una corba superior desplaçada cap a
+l’esquerra (amb <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8734.svg#page8697"> </use> </svg></span>), encara que
+possible, no és massa freqüent, ja que l’estat fonamental de les molècules sol
+tindre la distancia d’enllaç més curta que la dels estats excitats</span>.
+</div>
+
+<div class="figure" id="ref::el1:esp:FranckCondonCurve2">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="1.63 -276.19 187.61 262.85"
+style="width: 18.83em; height: 27.84em;"> <use
+xlink:href="images/img8735.svg#page8698"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 14.7</span>: <span>Corbes d’energia
+potencial per als estat electrònics de la transició
+<span class="inlinemath"><svg
+viewBox="0 -7.49 60.41 11.31"
+style="width:  6.06em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8736.svg#page8699"> </use> </svg></span>, amb distàncies
+de equilibri diferents, <span class="inlinemath"><svg
+viewBox="0 -7.49 37.36 9.95"
+style="width:  3.75em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8737.svg#page8700"> </use> </svg></span></span>. <span>La
+fletxa senyala la transició vibrònica de l’estat amb
+<span class="inlinemath"><svg
+viewBox="0 -7.49 28.54 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8738.svg#page8701"> </use> </svg></span> a l’estat amb
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.49"
+style="width:  2.63em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8739.svg#page8702"> </use> </svg></span></span>.
+<span>S’hi mostren també les intensitats relatives per a les bandes vibròniques
+<span class="inlinemath"><svg
+viewBox="0 -7.49 33.26 7.49"
+style="width:  3.34em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8740.svg#page8703"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.5&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -7.49 39.58 9.95"
+style="width:  3.97em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8741.svg#page8704"> </use> </svg></span>, la molècula es
+dissocia.</span></summary>
+
+<div class="content"><div class="p"> <span>Finalment mostrem en la
+figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:FranckCondonCurve3">14.8</a><span>
+un cas similar a l’anterior però amb la corba superior encara més desplaçada
+cap a la dreta, <span class="inlinemath"><svg
+viewBox="0 -7.49 39.58 9.95"
+style="width:  3.97em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8742.svg#page8705"> </use> </svg></span></span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>La discussió és similar a la feta en </span><a
+class="sffamily small" href="sections/section.14.6.html#ref::el1:esp:RegtRe"
+>§14.6&vert;3.4&rang;</a><span>, però ara la transició més probable és de
+l’estat amb <span class="inlinemath"><svg
+viewBox="0 -7.49 28.54 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8743.svg#page8706"> </use> </svg></span> a un estat del
+continu de <span class="inlinemath"><svg
+viewBox="0 -7.49 26.07 9.98"
+style="width:  2.62em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8744.svg#page8707"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>(Recordem que els estats del continu estan per damunt de
+<span class="inlinemath"><svg
+viewBox="0 -7.49 28.4 9.98"
+style="width:  2.85em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8745.svg#page8708"> </use> </svg></span>, i s’anomenen
+així perquè l’energia d’aquests estats no està quantificada, és a dir, que pot
+prendre qualsevol valor</span>.) </div>
+
+</li><li>
+
+<div class="p"> <span>L’espectre corresponent mostrarà una regió d’</span><span
+class="itshape" >espectre continu</span><span>, sense bandes aïllades</span>.
+</div>
+
+</li><li>
+
+<div class="p"> <span>A més a més, con després de la transició la molècula
+tindrà una energia superior <span class="inlinemath">a <svg
+viewBox="0 -7.49 28.4 9.98"
+style="width:  2.85em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8746.svg#page8709"> </use> </svg></span>, es produirà la
+seva dissociació en els dos àtoms que la formen</span>. </div>
+
+</li></ul>
+
+<div class="figure" id="ref::el1:esp:FranckCondonCurve3">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="1.63 -276.19 218.65 262.85"
+style="width: 21.95em; height: 27.84em;"> <use
+xlink:href="images/img8747.svg#page8710"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 14.8</span>: <span>Corbes d’energia
+potencial per als estat electrònics de la transició
+<span class="inlinemath"><svg
+viewBox="0 -7.49 60.41 11.31"
+style="width:  6.06em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8748.svg#page8711"> </use> </svg></span>, amb distàncies
+de equilibri </span><span class="itshape" >molt</span><span> diferents,
+<span class="inlinemath"><svg
+viewBox="0 -7.49 39.58 9.95"
+style="width:  3.97em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8749.svg#page8712"> </use> </svg></span></span>. <span>La
+fletxa senyala la transició vibrònica de l’estat amb
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.25 7.49"
+style="width:  2.63em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8750.svg#page8713"> </use> </svg></span> a un estat del
+continu</span>. <span>S’hi mostren també les intensitats relatives per a les
+bandes vibròniques <span class="inlinemath"><svg
+viewBox="0 -7.49 33.26 7.49"
+style="width:  3.34em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8751.svg#page8714"> </use> </svg></span> i per a
+l’espectre continu</span>. </div>
+
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -7.49 69.49 9.98"
+style="width:  6.97em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8752.svg#page8715"> </use> </svg></span> contribueix a la
+freqüència de les bandes vibròniques.</span></summary>
+
+<div class="content"><div class="p"> <span>La freqüència d’una transició
+vibrònica ens la dóna la diferència entre els valors dels termes electrònics i
+vibracionals, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 28.42 7.77"
+style="width:  2.85em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8753.svg#page8716"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8754.svg#page8717"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.99 127.41 10.48"
+style="width: 12.79em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8755.svg#page8718"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8756.svg#page8719"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 126.76 10.48"
+style="width: 12.72em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8757.svg#page8720"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Si ara definim </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 68.93 10.45"
+style="width:  6.92em; height:  1.17em;"> <use
+xlink:href="images/img8758.svg#page8721"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>quantitat que representa la diferència d’energia
+entre els mínims de les respectives corbes d’energia potencial, tindrem </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 145.44 10.48"
+style="width: 14.60em; height:  1.17em;"> <use
+xlink:href="images/img8759.svg#page8722"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>En la aproximació </span><span class="itshape"
+>anharmònica</span><span>, l’expressió dels termes vibracionals és </span>
+</div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 30.95 10.48"
+style="width:  3.11em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8760.svg#page8723"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8761.svg#page8724"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -16.52 141.08 26.03"
+style="width: 14.16em; height:  2.73em; vertical-align: -1.01em;"> <use
+xlink:href="images/img8762.svg#page8725"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 26.36 10.48"
+style="width:  2.65em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img8763.svg#page8726"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8764.svg#page8727"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -16.52 137.7 26.03"
+style="width: 13.82em; height:  2.73em; vertical-align: -1.01em;"> <use
+xlink:href="images/img8765.svg#page8728"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 142.67 10.48"
+style="width: 14.32em; height:  1.17em;"> <use
+xlink:href="images/img8766.svg#page8729"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >L’estructura
+vibracional presenta </span><span class="itshape sffamily"
+>progressions</span><span class="sffamily" > i </span><span class="itshape
+sffamily" >seqüències.</span></summary>
+
+<div class="content"><div class="p"> <span>Per assignar les bandes vibròniques,
+és convenient classificar-les en </span><span class="itshape"
+>progressions</span><span> i </span><span class="itshape"
+>seqüències</span><span>, tal com il·lustrem en la figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:progressions">14.9</a>. </div>
+
+<div class="figure" id="ref::el1:esp:progressions">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="-.2 -161.15 264.89 159.61"
+style="width: 26.59em; height: 16.30em;"> <use
+xlink:href="images/img8767.svg#page8730"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 14.9</span>: <span>Progressions i
+seqüències vibracionals en l’espectre electrònic d’una molècula
+diatòmica</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.1&rang;</span> <span class="sffamily" >Les progressions
+tenen el mateix estat inferior o superior.</span></summary>
+
+<div class="content"><div class="p"> <span>Les </span><span class="itshape"
+>progressions</span><span> són conjunts de transicions vibròniques amb el
+mateix estat inferior o superior</span>. <span>Per a un espectre d’absorció
+s’observa sobretot la progressió <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8768.svg#page8731"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8769.svg#page8732"> </use> </svg></span>, &hellip;, ja
+que l’estat <span class="inlinemath"><svg
+viewBox="0 -7.49 28.54 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8770.svg#page8733"> </use> </svg></span> és el més
+poblat</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2&rang;</span> <span class="sffamily" >Les seqüències
+tenen <span class="inlinemath"><svg
+viewBox="0 -7.49 56.71 8.32"
+style="width:  5.69em; height:  0.95em; vertical-align: -0.14em;"> <use
+xlink:href="images/img8771.svg#page8734"> </use> </svg></span>
+constant.</span></summary>
+
+<div class="content"><div class="p"> <span>Les </span><span class="itshape"
+>seqüències</span><span> son conjunts de transicions vibròniques amb un valor
+constant de la <span class="inlinemath">diferència <svg
+viewBox="0 -7.49 56.71 8.32"
+style="width:  5.69em; height:  0.95em; vertical-align: -0.14em;"> <use
+xlink:href="images/img8772.svg#page8735"> </use> </svg></span></span>.
+<span>Una seqüència requereix l’ocupació de diversos estats de partida, per la
+qual cosa les trobem sobretot en espectres d’emissió, ja que en absorció sol
+haver-hi només un estat de partida poblat, el fonamental</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >L’estructura
+vibracional ens dóna les energies de dissociació dels dos
+estats.</span></summary>
+
+<div class="content"><div class="p"> <span>La figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:BirgeSponerElectronic">14.10</a><span>
+il·lustra l’obtenció de les energies de dissociació dels dos estats electrònics
+que participen en una transició electrònica</span>. </div>
+
+<div class="figure" id="ref::el1:esp:BirgeSponerElectronic">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox=".82 -276.19 193.86 262.85"
+style="width: 19.46em; height: 27.84em;"> <use
+xlink:href="images/img8773.svg#page8736"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 14.10</span>: <span>Determinació
+d’energies de dissociació a partir de l’estructura vibracional d’un espectre
+electrònic</span>. <span><span class="inlinemath"><svg
+viewBox="0 -7.49 13.12 10.32"
+style="width:  1.32em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img8774.svg#page8737"> </use> </svg></span> és l’energia de
+dissociació de l’estat inferior i <span class="inlinemath"><svg
+viewBox="0 -7.49 12.22 10.32"
+style="width:  1.23em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img8775.svg#page8738"> </use> </svg></span> la de l’estat
+superior</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.1&rang;</span> <span class="sffamily" >El límit de la
+progressió <span class="inlinemath"><svg
+viewBox="0 -7.49 28.54 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8776.svg#page8739"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 15.98 7.77"
+style="width:  1.60em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8777.svg#page8740"> </use> </svg></span>) pot obtindre’s
+pel mètode de Birge-Sponer.</span></summary>
+
+<div class="content"><div class="p"> <span>El límit de la progressió
+<span class="inlinemath"><svg
+viewBox="0 -7.49 28.54 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8778.svg#page8741"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 90.22 15.39"
+style="width:  9.06em; height:  1.67em;"> <use
+xlink:href="images/img8779.svg#page8742"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>es pot obtindre de l’estructura vibracional d’un
+espectre electrònic</span>. <span>En cas que no totes les transicions
+vibròniques necessàries apareguessin en l’espectre, es pot aplicar
+l’extrapolació de Birge-Sponer (que vam veure en </span><a class="sffamily
+small" href="sections/section.12.2.html#ref::vi1:anh:BirgeSponerMethod"
+>§12.2&vert;6.3&rang;</a><span>)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 86.96 15.39"
+style="width:  8.73em; height:  1.67em;"> <use
+xlink:href="images/img8780.svg#page8743"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.2&rang;</span> <span class="sffamily" >El límit
+<span class="inlinemath"><svg
+viewBox="0 -6.27 15.98 7.77"
+style="width:  1.60em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8781.svg#page8744"> </use> </svg></span> ens permet
+calcular les energies de dissociació <span class="inlinemath"><svg
+viewBox="0 -7.49 12.22 10.32"
+style="width:  1.23em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img8782.svg#page8745"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 13.12 10.32"
+style="width:  1.32em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img8783.svg#page8746"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La figura </span><a
+href="sections/section.14.6.html#ref::el1:esp:BirgeSponerElectronic">14.10</a><span>
+justifica la següent relació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 130.31 10.45"
+style="width: 13.08em; height:  1.17em;"> <use
+xlink:href="images/img8784.svg#page8747"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.27 20.81 7.77"
+style="width:  2.09em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8785.svg#page8748"> </use> </svg></span> és la freqüència
+de la transició vibrònica <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8786.svg#page8749"> </use> </svg></span> (que podem
+obtindre del mateix espectre), i <span class="inlinemath"><svg
+viewBox="0 -6.27 12.01 7.77"
+style="width:  1.21em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8787.svg#page8750"> </use> </svg></span> és la diferència
+de les energies dels àtoms en què dissocien els respectius estats moleculars
+(energies que podem trobar en la bibliografia especialitzada)</span>.
+<span>D’aquesta relació podem aïllar tant <span class="inlinemath"><svg
+viewBox="0 -7.49 12.22 10.32"
+style="width:  1.23em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img8788.svg#page8751"> </use> </svg></span> com
+<span class="inlinemath"><svg
+viewBox="0 -7.49 13.12 10.32"
+style="width:  1.32em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img8789.svg#page8752"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 127.04 10.45"
+style="width: 12.75em; height:  1.17em;"> <use
+xlink:href="images/img8790.svg#page8753"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.14.6.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

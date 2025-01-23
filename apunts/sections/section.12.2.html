@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Aproximació anharmònica | Espectres d’infrarojos i Raman</title>
+<meta name="description" content="S’inclouen correccions anharmòniques a la
+vibració de les molècules diatòmiques. Regles de selecció d’espectres
+d’infrarojos i Raman.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.12.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.12.html"><span>12 Espectres de vibració de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>12.2 Aproximació anharmònica
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img6698.svg#page6663"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>12.2  Aproximació anharmònica</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Les </span><span
+class="itshape sffamily" >corbes d’energia potencial</span><span
+class="sffamily" > no són </span><span class="itshape sffamily"
+>paràboles.</span></summary>
+
+<div class="content"><div class="p"> <span>Les corbes d’energia potencial no
+són exactament paràboles, de manera que, com es pot deduir de la
+figura </span><a
+href="sections/section.12.1.html#ref::vi1:har:pot">12.1</a><span>,
+l’</span><span class="itshape" >aproximació harmònica</span><span> només serà
+bona a prop de la distància d’equilibri <span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6699.svg#page6664"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>A distancies més llargues que
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6700.svg#page6665"> </use> </svg></span>, l’aproximació
+harmònica no serà suficient i caldrà millorar-la, afegint correccions
+</span><span class="itshape" >anharmòniques</span><span> a la paràbola</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Podem afegir-hi
+</span><span class="itshape sffamily" >correccions
+anharmòniques.</span></summary>
+
+<div class="content"><div class="p"> <span>La corba d’energia potencial
+<span class="inlinemath"><svg
+viewBox="0 -7.47 23.28 9.96"
+style="width:  2.34em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6701.svg#page6666"> </use> </svg></span> pot expandir-se
+en sèrie de Taylor al voltant de <span class="inlinemath"><svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6702.svg#page6667"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.04 261.3 35.88"
+style="width: 26.23em; height:  3.72em;"> <use
+xlink:href="images/img6703.svg#page6668"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Hem ignorat els termes
+<span class="inlinemath"><svg
+viewBox="0 -7.47 27.48 9.96"
+style="width:  2.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6704.svg#page6669"> </use> </svg></span> (perquè és
+constant i no afecta la física del sistema) i <span class="inlinemath"><svg
+viewBox="0 -7.49 10.19 7.49"
+style="width:  1.02em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6705.svg#page6670"> </use> </svg></span> (ja que la
+derivada primera és nul·la en el mínim)</span>. <span>El primer terme de la
+sèrie, com hem vist en </span><a class="sffamily small"
+href="sections/section.12.1.html#ref::vi1:har:haraprox"
+>§12.1&vert;2&rang;</a><span>, ens dóna l’aproximació harmònica</span>.
+<span>Els termes posteriors són </span><span class="itshape" >correccions
+anharmòniques</span>. <span>Si els incloem en la sèrie (no necessàriament
+tots), aleshores tindrem l’</span><span class="itshape" >aproximació
+anharmònica</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.04 261.3 35.88"
+style="width: 26.23em; height:  3.72em;"> <use
+xlink:href="images/img6706.svg#page6671"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Les correccions
+</span><span class="itshape sffamily" >anharmòniques</span><span
+class="sffamily" > milloren l’energia dels estats
+vibracionals.</span></summary>
+
+<div class="content"><div class="p"> <span>Mostrem en la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>
+una corba d’energia potencial, amb correccions anharmòniques incloses</span>.
+</div>
+
+<div class="figure" id="ref::vi1:anh:CorbaAnharmonica">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="4.08 -221.55 218.33 215.84"
+style="width: 21.91em; height: 22.36em;"> <use
+xlink:href="images/img6707.svg#page6672"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 12.3</span>: <span>Corba d’energia
+potencial amb </span><span class="itshape" >correccions anharmòniques</span>.
+<span>Per simplicitat, assumim <span class="inlinemath">que <svg
+viewBox="0 -7.47 45.74 9.96"
+style="width:  4.59em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6708.svg#page6673"> </use> </svg></span></span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >El nombre
+d’estats </span><span class="itshape sffamily" >lligats</span><span
+class="sffamily" > és finit.</span></summary>
+
+<div class="content"><div class="p"> <span>Veiem en la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>
+que, a diferència de l’oscil·lador harmònic, el nombre d’estats vibracionals
+lligats és finit</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >L’espaiat de
+l’energia dels estats </span><span class="itshape sffamily" >no</span><span
+class="sffamily" > es constant.</span></summary>
+
+<div class="content"><div class="p"> <span>Una altra diferència amb
+l’oscil·lador harmònic que s’evidència en la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>
+és que l’espaiat en l’energia dels estats ja no és constant</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6709.svg#page6674"> </use> </svg></span> és l’energia de
+dissociació, però des de l’estat <span class="inlinemath"><svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6710.svg#page6675"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>En la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>
+mostrem gràficament el significat de la quantitat <span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6711.svg#page6676"> </use> </svg></span>, que és una mena
+d’energia de dissociació, però mesurada des de l’estat fonamental
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6712.svg#page6677"> </use> </svg></span>)</span>.
+<span>Recordem que l’energia de dissociació <span class="inlinemath"><svg
+viewBox="0 -6.81 12.03 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6713.svg#page6678"> </use> </svg></span> es mesura des de
+l’energia corresponent a la distància d’equilibri <span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6714.svg#page6679"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Les quantitats <span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6715.svg#page6680"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.03 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6716.svg#page6681"> </use> </svg></span> són diferents
+perquè l’</span><span class="itshape" >energia del punt zero</span><span>, per
+a la vibració, no és zero</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:anh:Gvanharmonic"> <span>&vert;3.4&rang;</span> <span
+class="sffamily" >La </span><span class="itshape sffamily" >constant
+d’anharmonicitat</span><span class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -6.27 19.21 8.21"
+style="width:  1.93em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6717.svg#page6682"> </use> </svg></span> quantifica
+l’anharmonicitat.</span></summary>
+
+<div class="content"><div class="p"> <span>En l’aproximació anharmònica, el
+valor del terme vibracional (energia dels estats vibracionals) té la següent
+expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.55 267.65 42.06"
+style="width: 26.87em; height:  4.34em;"> <use
+xlink:href="images/img6718.svg#page6683"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Veiem que l’aproximació anharmònica afegeix
+correccions a les energies de l’oscil·lador harmònic</span>. <span>La constant
+<span class="inlinemath"><svg
+viewBox="0 -6.27 19.21 8.21"
+style="width:  1.93em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6719.svg#page6684"> </use> </svg></span> s’anomena
+</span><span class="itshape" >constant d’anharmonicitat</span><span>, i,
+típicament, és molt més petita que la freqüència d’equilibri
+<span class="inlinemath"><svg
+viewBox="0 -6.27 8.7 7.77"
+style="width:  0.87em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6720.svg#page6685"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Hi ha d’altres correccions d’anharmonicitat
+(representades pels punts suspensius), però quantitativament són menys
+importants</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.55 267.65 42.06"
+style="width: 26.87em; height:  4.34em;"> <use
+xlink:href="images/img6721.svg#page6686"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.55 267.65 42.06"
+style="width: 26.87em; height:  4.34em;"> <use
+xlink:href="images/img6722.svg#page6687"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >L’</span><span
+class="itshape sffamily" >anharmonicitat</span><span class="sffamily" > canvia
+les regles de selecció, <span class="inlinemath"><svg
+viewBox="0 -7.13 89.87 9.07"
+style="width:  9.02em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6723.svg#page6688"> </use> </svg></span></span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >En l’aproximació
+anharmònica, el moment dipolar també és anharmònic.</span></summary>
+
+<div class="content"><div class="p"> <span>El moment dipolar pot expandir-se en
+sèrie de Taylor al voltant de <span class="inlinemath"><svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6724.svg#page6689"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.04 246.22 35.88"
+style="width: 24.71em; height:  3.72em;"> <use
+xlink:href="images/img6725.svg#page6690"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Els dos primers termes de l’expansió
+constitueixen l’aproximació harmònica que hem vist en </span><a class="sffamily
+small" href="sections/section.12.1.html#ref::vi1:har:mufirst"
+>§12.1&vert;4.1&rang;</a>. <span>En l’estudi de l’oscil·lador anharmònic, hem
+d’afegir més termes, que constituiran la correcció anharmònica al moment
+dipolar</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.04 246.22 35.88"
+style="width: 24.71em; height:  3.72em;"> <use
+xlink:href="images/img6726.svg#page6691"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2&rang;</span> <span class="sffamily" >La part
+harmònica ens donava la regla de selecció <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6727.svg#page6692"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com hem vist en </span><a
+class="sffamily small"
+href="sections/section.12.1.html#ref::vi1:har:ReglaHarmonic"
+>§12.1&vert;4.2&rang;</a><span>, la part harmònica del moment dipolar ens dóna
+la regla de <span class="inlinemath">selecció <svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6728.svg#page6693"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >La part
+</span><span class="itshape sffamily" >anharmònica</span><span class="sffamily"
+> dóna noves regles de selecció:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -7.13 72.71 9.07"
+style="width:  7.30em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6729.svg#page6694"> </use> </svg></span></span></summary>
+
+<div class="content"><div class="p"> <span>En afegir la correcció anharmònica a
+la sèrie de Taylor, apareixen noves regles de selecció,
+<span class="inlinemath"><svg
+viewBox="0 -7.13 72.71 9.07"
+style="width:  7.30em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6730.svg#page6695"> </use> </svg></span>, corresponents a
+correccions d’anharmonicitat d’ordre elevat</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="itshape sffamily"
+>Espectroscòpia infraroja:</span> <span class="sffamily" >les regles de
+selecció són <span class="inlinemath"><svg
+viewBox="0 -7.13 89.87 9.07"
+style="width:  9.02em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6731.svg#page6696"> </use> </svg></span></span></summary>
+
+<div class="content"><div class="p"> <span>Tot plegat fa que, per a
+l’oscil·lador anharmònic, les regles de seleccions siguin </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 89.87 9.07"
+style="width:  9.02em; height:  1.03em;"> <use
+xlink:href="images/img6732.svg#page6697"> </use> </svg></span> </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4.1&rang;</span> <span class="sffamily" >A més a més,
+<span class="inlinemath"><svg
+viewBox="0 -7.49 46.65 9.98"
+style="width:  4.68em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6733.svg#page6698"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.5&rang;</span> <span class="itshape sffamily"
+>Raman:</span> <span class="sffamily" >les regles de selecció també són
+<span class="inlinemath"><svg
+viewBox="0 -7.13 89.87 9.07"
+style="width:  9.02em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6734.svg#page6699"> </use> </svg></span></span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que l’</span><span
+class="itshape" >espectroscòpia Raman</span><span> té les mateixes regles de
+selecció que l’espectroscòpia infraroja</span>. </div>
+
+<div class="p"> <span>A més a més, la molècula ha de tindre polaritzabilitat
+</span><span class="itshape" >anisòtropa</span>. <span>Les molècules
+diatòmiques apolars sí experimenten espectroscòpia Raman</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >L’aproximació
+</span><span class="itshape sffamily" >anharmònica</span><span class="sffamily"
+> explica la presència de </span><span class="itshape sffamily"
+>sobretons.</span></summary>
+
+<div class="content"><div class="p"> <span>Mostrem, en la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:sobretons">12.4</a><span>, un
+esquema de l’espectre d’infrarojos de vibració d’una molècula diatòmica</span>.
+<span>Per simplicitat, ignorem, de moment, l’estructura rotacional de les
+bandes</span>. </div>
+
+<div class="figure" id="ref::vi1:anh:sobretons">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="1.98 -106.3 222.43 103.13"
+style="width: 22.33em; height: 10.79em;"> <use
+xlink:href="images/img6735.svg#page6700"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 12.4</span>: <span>Esquema de l’espectre
+d’infrarojos de vibració ‘pura’ d’una molècula diatòmica</span>. <span>Les
+transicions corresponen a canvis en el nombre quàntic
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6736.svg#page6701"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.49 28.46 7.49"
+style="width:  2.86em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6737.svg#page6702"> </use> </svg></span></span>.
+<span>L’estructura rotacional de les bandes ha estat ignorada</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.1&rang;</span> <span class="sffamily" >La freqüència
+corresponent a la transició <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6738.svg#page6703"> </use> </svg></span> s’anomena
+</span><span class="itshape sffamily" >fonamental.</span></summary>
+
+<div class="content"><div class="p"> <span>Aquesta freqüència és,
+aproximadament, igual a la freqüència vibracional d’equilibri
+<span class="inlinemath"><svg
+viewBox="0 -6.27 8.7 7.77"
+style="width:  0.87em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6739.svg#page6704"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2&rang;</span> <span class="sffamily" >La resta de
+freqüències s’anomenen </span><span class="itshape sffamily"
+>sobretons.</span></summary>
+
+<div class="content"><div class="p"> <span>La resta de freqüències s’anomenen
+</span><span class="itshape" >sobretons</span><span> i són, aproximadament,
+múltiples de la freqüència fonamental</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.3&rang;</span> <span class="sffamily" >Els sobretons
+són progressivament més i més febles.</span></summary>
+
+<div class="content"><div class="p"> <span>Les transicions amb
+<span class="inlinemath"><svg
+viewBox="0 -7.47 37.29 9.96"
+style="width:  3.74em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6740.svg#page6705"> </use> </svg></span> (sobretons),
+encara que permeses, són progressivament més i més febles, ja que corresponen a
+correccions d’anharmonicitat d’ordre elevat que van fent-se més i més
+petites</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.4&rang;</span> <span class="sffamily" >L’estat de
+partida és, a temperatures no gaire elevades, el fonamental.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:anh:NuMultiple"> <span>&vert;5.5&rang;</span> <span
+class="sffamily" >Les freqüències són, aproximadament, múltiples de
+<span class="inlinemath"><svg
+viewBox="0 -6.27 8.7 7.77"
+style="width:  0.87em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6741.svg#page6706"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.55 267.65 42.06"
+style="width: 26.87em; height:  4.34em;"> <use
+xlink:href="images/img6742.svg#page6707"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Utilitzant l’expressió del valor del terme vibracional de
+l’oscil·lador anharmònic que hem vist en </span><a class="sffamily small"
+href="sections/section.12.2.html#ref::vi1:anh:Gvanharmonic"
+>§12.2&vert;3.4&rang;</a><span>, podem calcular la freqüència de les
+transicions, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 21.07 7.77"
+style="width:  2.11em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6743.svg#page6708"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6744.svg#page6709"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 53.51 9.96"
+style="width:  5.37em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6745.svg#page6710"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6746.svg#page6711"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -17.48 148.71 29.98"
+style="width: 14.93em; height:  3.13em; vertical-align: -1.31em;"> <use
+xlink:href="images/img6747.svg#page6712"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 66.35 24"
+style="width:  6.66em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img6748.svg#page6713"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6749.svg#page6714"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 164.97 24"
+style="width: 16.56em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img6750.svg#page6715"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 66.35 24"
+style="width:  6.66em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img6751.svg#page6716"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6752.svg#page6717"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 83.81 11.1"
+style="width:  8.41em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6753.svg#page6718"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 119.17 9.96"
+style="width: 11.96em; height:  1.12em;"> <use
+xlink:href="images/img6754.svg#page6719"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, com la constant d’anharmonicitat
+<span class="inlinemath"><svg
+viewBox="0 -6.27 19.21 8.21"
+style="width:  1.93em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6755.svg#page6720"> </use> </svg></span> és molt petita
+tindrem que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 146.84 9.96"
+style="width: 14.74em; height:  1.12em;"> <use
+xlink:href="images/img6756.svg#page6721"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 144.08 9.96"
+style="width: 14.46em; height:  1.12em;"> <use
+xlink:href="images/img6757.svg#page6722"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Podem calcular
+l’</span><span class="itshape sffamily" >energia de dissociació</span><span
+class="sffamily" > a partir de l’espectre vibracional.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::vi1:anh:Delta"> <span>&vert;6.1&rang;</span> <span
+class="sffamily" >La diferència d’energia entre estats consecutius no és
+constant.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 144.08 9.96"
+style="width: 14.46em; height:  1.12em;"> <use
+xlink:href="images/img6758.svg#page6723"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>En l’aproximació anharmònica, com es pot veure en la
+figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>,
+la diferencia d’energia entre dos estats consecutius no és constant</span>.
+<span>Ens referirem a aquesta diferència amb el
+<span class="inlinemath">símbol <svg
+viewBox="0 -7.13 38.51 10.68"
+style="width:  3.86em; height:  1.19em; vertical-align: -0.42em;"> <use
+xlink:href="images/img6759.svg#page6724"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 125.93 11.01"
+style="width: 12.64em; height:  1.23em;"> <use
+xlink:href="images/img6760.svg#page6725"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Per obtindre’n l’expressió, farem servir la
+<span class="inlinemath"><svg
+viewBox="0 -6.27 21.07 7.77"
+style="width:  2.11em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6761.svg#page6726"> </use> </svg></span> que hem trobat
+abans, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.13 38.51 10.68"
+style="width:  3.86em; height:  1.19em; vertical-align: -0.42em;"> <use
+xlink:href="images/img6762.svg#page6727"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6763.svg#page6728"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -22.07 146.41 24.56"
+style="width: 14.70em; height:  2.59em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6764.svg#page6729"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6765.svg#page6730"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 236.27 9.96"
+style="width: 23.71em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6766.svg#page6731"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6767.svg#page6732"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 168.86 9.96"
+style="width: 16.95em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6768.svg#page6733"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 215.38 11.01"
+style="width: 21.62em; height:  1.23em;"> <use
+xlink:href="images/img6769.svg#page6734"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 212.61 11.01"
+style="width: 21.34em; height:  1.23em;"> <use
+xlink:href="images/img6770.svg#page6735"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.2&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6771.svg#page6736"> </use> </svg></span> es pot obtindre
+sumant <span class="inlinemath"><svg
+viewBox="0 -7.13 38.51 10.68"
+style="width:  3.86em; height:  1.19em; vertical-align: -0.42em;"> <use
+xlink:href="images/img6772.svg#page6737"> </use> </svg></span> per a tots els
+estats.</span></summary>
+
+<div class="content"><div class="p"> <span>La quantitat
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6773.svg#page6738"> </use> </svg></span> (una mena
+d’energia de dissociació mesurada des de l’estat fonamental, vegeu la
+figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>)
+es pot obtindre sumant totes les diferències d’energia entre estats, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 83.83 21.92"
+style="width:  8.41em; height:  2.32em;"> <use
+xlink:href="images/img6774.svg#page6739"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 80.56 21.92"
+style="width:  8.09em; height:  2.32em;"> <use
+xlink:href="images/img6775.svg#page6740"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:anh:BirgeSponerMethod"> <span>&vert;6.3&rang;</span>
+<span class="sffamily" >La suma de diferències d’energia es fa amb el mètode de
+Birge-Sponer.</span></summary>
+
+<div class="content"><div class="p"> <span>La suma de diferències d’energia que
+acabem d’esmentar no sempre es pot fer directament, per falta d’informació
+sobre els estats més excitats, els sobretons associats als quals poden ser
+massa febles per ser mesurats</span>. </div>
+
+<div class="p"> <span>La suma sol fer-se indirectament amb el mètode de
+Birge-Sponer, que representa (extrapola) <span class="inlinemath"><svg
+viewBox="0 -7.13 20.37 8.63"
+style="width:  2.04em; height:  0.99em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6776.svg#page6741"> </use> </svg></span> en funció de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6777.svg#page6742"> </use> </svg></span>, de manera que
+la suma buscada és l’àrea situada sota la gràfica</span>. <span>Ho
+esquematitzem en la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:BirgeSponer">12.5</a>. </div>
+
+<div class="figure" id="ref::vi1:anh:BirgeSponer">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="4.08 -221.55 218.33 215.84"
+style="width: 21.91em; height: 22.36em;"> <use
+xlink:href="images/img6778.svg#page6743"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 12.5</span>: <span>Extrapolació de
+Birge-Sponer</span>. <span>L’àrea situada sota la gràfica ens dóna
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6779.svg#page6744"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>Compte que, per a estats molt excitats, les dades reals
+poden desviar-se de la recta extrapolada, cosa que causaria una sobreestimació
+de <span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6780.svg#page6745"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:anh:DeD0"> <span>&vert;6.4&rang;</span> <span
+class="sffamily" >Podem calcular <span class="inlinemath"><svg
+viewBox="0 -6.81 12.03 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6781.svg#page6746"> </use> </svg></span> sumant l’energia
+de l’estat fonamental a <span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6782.svg#page6747"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.55 267.65 42.06"
+style="width: 26.87em; height:  4.34em;"> <use
+xlink:href="images/img6783.svg#page6748"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Si hem mesurar <span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6784.svg#page6749"> </use> </svg></span> amb el mètode de
+Birge-Sponer, podem calcular l’</span><span class="itshape" >energia de
+dissociació</span><span><span class="inlinemath"> <svg
+viewBox="0 -6.81 12.03 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6785.svg#page6750"> </use> </svg></span></span>:
+<span>simplement sumem l’energia de l’estat fonamental a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.22 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6786.svg#page6751"> </use> </svg></span> (vegeu la
+figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>)
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 168.04 19.85"
+style="width: 16.87em; height:  2.11em;"> <use
+xlink:href="images/img6787.svg#page6752"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 164.78 19.85"
+style="width: 16.54em; height:  2.11em;"> <use
+xlink:href="images/img6788.svg#page6753"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6.5&rang;</span> <span class="sffamily" >L’energia de
+dissociació <span class="inlinemath"><svg
+viewBox="0 -6.81 12.03 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6789.svg#page6754"> </use> </svg></span> pot aproximar-se
+a partir de <span class="inlinemath"><svg
+viewBox="0 -6.27 8.7 7.77"
+style="width:  0.87em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6790.svg#page6755"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.27 19.21 8.21"
+style="width:  1.93em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6791.svg#page6756"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 212.61 11.01"
+style="width: 21.34em; height:  1.23em;"> <use
+xlink:href="images/img6792.svg#page6757"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>L’energia de dissociació pot aproximar-se a partir de
+<span class="inlinemath"><svg
+viewBox="0 -6.27 8.7 7.77"
+style="width:  0.87em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6793.svg#page6758"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.27 19.21 8.21"
+style="width:  1.93em; height:  0.94em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6794.svg#page6759"> </use> </svg></span></span>.
+<span>Partim del fet que per a l’últim estat lligat la diferència
+<span class="inlinemath"><svg
+viewBox="0 -7.13 38.51 10.68"
+style="width:  3.86em; height:  1.19em; vertical-align: -0.42em;"> <use
+xlink:href="images/img6795.svg#page6760"> </use> </svg></span> ha de ser
+zero</span>. <span>Podem calcular el valor del nombre quàntic
+<span class="inlinemath"><svg
+viewBox="0 -4.29 38.01 5.78"
+style="width:  3.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6796.svg#page6761"> </use> </svg></span> d’aquest últim
+estat lligat amb l’expressió de <span class="inlinemath"><svg
+viewBox="0 -7.13 38.51 10.68"
+style="width:  3.86em; height:  1.19em; vertical-align: -0.42em;"> <use
+xlink:href="images/img6797.svg#page6762"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.12.2.html#ref::vi1:anh:Delta"
+>§12.2&vert;6.1&rang;</a><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 177.01 11.01"
+style="width: 17.77em; height:  1.23em;"> <use
+xlink:href="images/img6798.svg#page6763"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>d’on obtenim </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 80.33 21.78"
+style="width:  8.06em; height:  2.31em;"> <use
+xlink:href="images/img6799.svg#page6764"> </use> </svg></span> </div>
+
+<div class="p"> <span>Aproximem ara l’energia de dissociació</span>. <span>És
+fàcil deduir, a partir de la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>,
+que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 97.13 9.96"
+style="width:  9.75em; height:  1.12em;"> <use
+xlink:href="images/img6800.svg#page6765"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>cosa que, d’acord amb </span><a class="sffamily
+small" href="sections/section.12.2.html#ref::vi1:anh:DeD0"
+>§12.2&vert;6.4&rang;</a><span>, ens dóna </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 122.94 9.96"
+style="width: 12.34em; height:  1.12em;"> <use
+xlink:href="images/img6801.svg#page6766"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>A continuació substituïm el valor
+<span class="inlinemath">de <svg
+viewBox="0 -4.29 19.54 5.78"
+style="width:  1.96em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6802.svg#page6767"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 61.43 9.96"
+style="width:  6.17em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6803.svg#page6768"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6804.svg#page6769"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -16.52 156.89 26.03"
+style="width: 15.75em; height:  2.73em; vertical-align: -1.01em;"> <use
+xlink:href="images/img6805.svg#page6770"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6806.svg#page6771"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -16.52 170.98 26.03"
+style="width: 17.16em; height:  2.73em; vertical-align: -1.01em;"> <use
+xlink:href="images/img6807.svg#page6772"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6808.svg#page6773"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.85 195.98 24.36"
+style="width: 19.67em; height:  2.56em; vertical-align: -1.01em;"> <use
+xlink:href="images/img6809.svg#page6774"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6810.svg#page6775"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.85 145.76 23.62"
+style="width: 14.63em; height:  2.49em; vertical-align: -0.94em;"> <use
+xlink:href="images/img6811.svg#page6776"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6812.svg#page6777"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -14.85 62.93 23.62"
+style="width:  6.32em; height:  2.49em; vertical-align: -0.94em;"> <use
+xlink:href="images/img6813.svg#page6778"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>i finalment, com <span class="inlinemath"><svg
+viewBox="0 -7.47 29.67 9.96"
+style="width:  2.98em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6814.svg#page6779"> </use> </svg></span> és molt petit,
+aproximem, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 51.7 23.62"
+style="width:  5.19em; height:  2.49em;"> <use
+xlink:href="images/img6815.svg#page6780"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(les unitats de <span class="inlinemath"><svg
+viewBox="0 -6.81 12.03 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6816.svg#page6781"> </use> </svg></span> en aquesta
+expressió seran de nombre d’ona)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 51.7 23.62"
+style="width:  5.19em; height:  2.49em;"> <use
+xlink:href="images/img6817.svg#page6782"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >El potencial de
+Morse aproxima la corba d’energia potencial.</span></summary>
+
+<div class="content"><div class="p"> <span>Un potencial empíric que dóna una
+bona aproximació a la corba d’energia potencial d’una molècula diatòmica és el
+</span><span class="itshape" >potencial de Morse</span>. <span>Depèn de tres
+constants espectroscòpiques, <span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6818.svg#page6783"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.03 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6819.svg#page6784"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 8.97 8.41"
+style="width:  0.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6820.svg#page6785"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -18.68 193.06 29.98"
+style="width: 19.38em; height:  3.13em;"> <use
+xlink:href="images/img6821.svg#page6786"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La corba que apareix en la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:CorbaAnharmonica">12.3</a><span>
+ha estat dibuixada amb aquest potencial</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -18.68 190.3 29.98"
+style="width: 19.10em; height:  3.13em;"> <use
+xlink:href="images/img6822.svg#page6787"> </use> </svg></span> </div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.12.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

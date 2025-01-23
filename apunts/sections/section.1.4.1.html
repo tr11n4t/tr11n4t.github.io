@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Notació de Dirac | Brakets, bras i kets</title>
+<meta name="description" content="La notació de Dirac simplifica l’expressió de
+les integrals en mecànica quàntica. Un braket és una forma abreujada d’escriure
+una integral.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.1.4.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.html"><span>1 Fonaments de la mecànica quàntica
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.4.html"><span>1.4 Operadors </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>1.4.1 Notació de Dirac </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img126.svg#page119"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.4.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.4.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.4.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>1.4.1  Notació de Dirac</span> </h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Un </span><span
+class="bfseries sffamily" >bra</span><span class="sffamily" > per un
+</span><span class="bfseries sffamily" >ket</span><span class="sffamily" > ens
+dóna un </span><span class="bfseries sffamily" >braket.</span></summary>
+
+<div class="content"><div class="p"> <span>En mecànica quàntica s’utilitza la
+</span><span class="itshape" >notació de Dirac</span><span> per a simplificar
+les integrals que hi apareixen</span>. </div>
+
+<div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Paul_Dirac,_1933.jpg"
+><span>commons.wikimedia</span></a><img src="images/img127.jpg" alt="included
+image" style="width: 11.19em; height: 16.52em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" >Paul Dirac</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="law">
+<div class="p"><strong><span>Notació de Dirac</span></strong>. <span>La notació
+de Dirac és fonamenta en la següent equivalència</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 98.91 22.14"
+style="width:  9.93em; height:  2.34em;"> <use
+xlink:href="images/img128.svg#page120"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on </span> </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.47 33.53 10.32"
+style="width:  3.36em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img129.svg#page121"> </use> </svg></span> s’anomena
+</span><span class="itshape" >braket</span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.47 18.59 10.32"
+style="width:  1.87em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img130.svg#page122"> </use> </svg></span> s’anomena
+</span><span class="itshape" >ket</span><span> i equival a
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img131.svg#page123"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.47 17.71 9.96"
+style="width:  1.78em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img132.svg#page124"> </use> </svg></span> s’anomena
+</span><span class="itshape" >bra</span><span> i equival a
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.83 9.81"
+style="width:  1.19em; height:  1.10em; vertical-align: -0.36em;"> <use
+xlink:href="images/img133.svg#page125"> </use> </svg></span></span>. </div>
+
+</li></ul>
+
+</div>
+
+</div></div>
+<div class="p"> <span>El nom ’braket’ s’explica perquè, en anglès, els brackets
+són signes de puntuació que apareixen en parells, com ara els parèntesis o els
+claudàtors</span>. <span>La integral en l’anterior definició és, com hem
+explicat en </span><a class="sffamily small"
+href="sections/section.1.3.html#ref::pos:fnt:multiple"
+>§1.3&vert;6&rang;</a><span>, una integral definida</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 96.7 22.14"
+style="width:  9.71em; height:  2.34em;"> <use
+xlink:href="images/img134.svg#page126"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Si el ket és un
+operador que actua <span class="inlinemath">sobre <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img135.svg#page127"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 59.48 11.87"
+style="width:  5.97em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img136.svg#page128"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si el ket que apareix en un braket
+és el resultat d’operar amb un operador <span class="inlinemath"><svg
+viewBox="0 -9.38 7.88 9.38"
+style="width:  0.79em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img137.svg#page129"> </use> </svg></span> sobre una funció
+d’ona <span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img138.svg#page130"> </use> </svg></span>, la notació de
+Dirac utilitza la següent abreviatura, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 72.3 12.23"
+style="width:  7.26em; height:  1.35em;"> <use
+xlink:href="images/img139.svg#page131"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aplicat a brakets, tindrem les següents
+equivalències, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 178.21 22.14"
+style="width: 17.89em; height:  2.34em;"> <use
+xlink:href="images/img140.svg#page132"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 176 22.14"
+style="width: 17.67em; height:  2.34em;"> <use
+xlink:href="images/img141.svg#page133"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >És més còmode
+expressar certes equivalències amb la notació de Dirac.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::pos:opr:bknorm"> <span>&vert;3.1&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img142.svg#page134"> </use> </svg></span> està normalitzada,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 44.28 9.96"
+style="width:  4.44em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img143.svg#page135"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Segons la definició </span><a
+class="sffamily small" href="sections/section.1.3.html#ref::pos:fnt:norm"
+>§1.3&vert;8&rang;</a><span> de funció d’ona normalitzada</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 159.35 22.14"
+style="width: 15.99em; height:  2.34em;"> <use
+xlink:href="images/img144.svg#page136"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:ijjistar"> <span>&vert;3.2&rang;</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -8.25 84.42 11.1"
+style="width:  8.47em; height:  1.23em; vertical-align: -0.35em;"> <use
+xlink:href="images/img145.svg#page137"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a demostrar-ho, comencem pel
+final i arribem al principi</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -8.25 37.61 11.1"
+style="width:  3.77em; height:  1.23em; vertical-align: -0.35em;"> <use
+xlink:href="images/img146.svg#page138"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img147.svg#page139"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -15.27 200.39 24.78"
+style="width: 20.11em; height:  2.61em; vertical-align: -1.01em;"> <use
+xlink:href="images/img148.svg#page140"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img149.svg#page141"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 97.81 22.14"
+style="width:  9.82em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img150.svg#page142"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.1.4.1.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

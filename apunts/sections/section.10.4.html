@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Espectroscòpia del rotor no rígid | Distorsió centrífuga</title>
+<meta name="description" content="L’espaiat de l’espectre rotacional d’una
+molècula no rígida disminuirà en augmentar J, quantificat per la constant de
+distorsió centrífuga.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.10.4.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.10.html"><span>10 Espectres de rotació de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>10.4 Espectroscòpia del rotor no
+rígid </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img5362.svg#page5328"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.3.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.5.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>10.4  Espectroscòpia del rotor no rígid</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >La força
+centrífuga de la rotació </span><span class="itshape sffamily"
+>allarga</span><span class="sffamily" > l’enllaç.</span></summary>
+
+<div class="content"><div class="p"> <span>Les molècules real no són rígides,
+de manera que la rotació d’una molècula diatòmica fa que l’enllaç
+s’allargue</span>. <span>L’allargament serà més gran a mesura que la velocitat
+de rotació augmente</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >L’allargament de
+l’enllaç redueix l’espaiat entre ratlles.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Un enllaç més
+llarg implica un <span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5363.svg#page5329"> </use> </svg></span> més
+gran.</span></summary>
+
+<div class="content"><div class="p"> <span>Per l’expressió del </span><span
+class="itshape" >moment d’inèrcia</span><span> que hem vist en </span><a
+class="sffamily small" href="sections/section.10.3.html#ref::ro1:rig:ham"
+>§10.3&vert;1.2&rang;</a><span>, <span class="inlinemath"><svg
+viewBox="0 -8.11 33.19 10.05"
+style="width:  3.33em; height:  1.13em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5364.svg#page5330"> </use> </svg></span> (on
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5365.svg#page5331"> </use> </svg></span> és la longitud
+de l’enllaç), és evident que l’allargament de l’enllaç (com a conseqüència de
+la rotació de la molècula) farà augmentar el moment d’inèrcia
+<span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5366.svg#page5332"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 33.19 10.54"
+style="width:  3.33em; height:  1.18em;"> <use
+xlink:href="images/img5367.svg#page5333"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5368.svg#page5334"> </use> </svg></span> gran implica
+</span><span class="itshape sffamily" >constant rotacional</span><span
+class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5369.svg#page5335"> </use> </svg></span>
+petita.</span></summary>
+
+<div class="content"><div class="p"> <span>Per l’expressió de la </span><span
+class="itshape" >constant rotacional</span><span> que hem vist en </span><a
+class="sffamily small" href="sections/section.10.3.html#ref::ro1:rig:FJB"
+>§10.3&vert;1.7&rang;</a><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 51.46 20.49"
+style="width:  5.17em; height:  2.18em;"> <use
+xlink:href="images/img5370.svg#page5336"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>concloem que un augment del moment d’inèrcia
+<span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5371.svg#page5337"> </use> </svg></span> implica una
+disminució de la constant rotacional <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5372.svg#page5338"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 47.5 20.49"
+style="width:  4.77em; height:  2.18em;"> <use
+xlink:href="images/img5373.svg#page5339"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >Una
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5374.svg#page5340"> </use> </svg></span> més petita
+implica un espaiat més petit.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem vist en </span><a
+class="sffamily small" href="sections/section.10.3.html#ref::ro1:rig:espaiat"
+>§10.3&vert;4&rang;</a><span> que <span class="inlinemath">l’espaiat <svg
+viewBox="0 -4.29 4.04 4.29"
+style="width:  0.41em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5375.svg#page5341"> </use> </svg></span> entre ratlles
+consecutives de l’espectre rotacional d’una molècula </span><span
+class="itshape" >rígida</span><span> és constant i igual a
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5376.svg#page5342"> </use> </svg></span></span>.
+<span>Per a una molècula </span><span class="itshape" >no rígida</span><span>,
+la disminució de la constant rotacional <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5377.svg#page5343"> </use> </svg></span> reduirà
+l’espaiat entre ratlles</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 30.37 6.81"
+style="width:  3.05em; height:  0.80em;"> <use
+xlink:href="images/img5378.svg#page5344"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4&rang;</span> <span class="sffamily" >L’espaiat
+disminuirà en augmentar <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5379.svg#page5345"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’espaiat entre les ratlles
+espectrals no només disminuirà respecte al model del rotor rígid</span>.
+<span>A més a més, l’espaiat deixarà de ser constant, ja que, quan més ràpid
+gire la molècula (valors grans de <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5380.svg#page5346"> </use> </svg></span>), més
+s’allargarà l’enllaç</span>. <span>Podem comprovar-ho en la taula </span><a
+href="sections/section.10.4.html#ref::ro1:nor:TaulaEspaiat">10.1</a><span>, on
+veiem que l’espaiat disminueix a mesura que augmenta
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5381.svg#page5347"> </use> </svg></span></span>. </div>
+
+<div class="table" id="ref::ro1:nor:TaulaEspaiat">
+<div class="p caption"> <span>Taula 10.1</span>: <span>Espaiat entre ratlles de
+l’espectre rotacional de la molècula de monòxid de carboni
+<span class="inlinemath"><svg
+viewBox="0 -6.86 14.94 6.86"
+style="width:  1.50em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5382.svg#page5348"> </use> </svg></span></span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.2 -46.92 213.33 88.87"
+style="width: 21.41em; height:  9.04em;"> <use
+xlink:href="images/img5383.svg#page5349"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Es quantifica amb
+la </span><span class="itshape sffamily" >constant de distorsió
+centrífuga.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >L’efecte de la
+distorsió centrífuga és petit.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem comprovar en la
+taula </span><a
+href="sections/section.10.4.html#ref::ro1:nor:TaulaEspaiat">10.1</a><span> que
+l’efecte de la distorsió centrífuga causada per la rotació de la molècula és,
+generalment, petit</span>: <span>l’espaiat entre les ratlles va disminuint, sí,
+però molt a poc a poc</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ro1:nor:FJ"> <span>&vert;3.2&rang;</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5384.svg#page5350"> </use> </svg></span> és la
+</span><span class="itshape sffamily" >constant de distorsió
+centrífuga</span><span class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>L’efecte de la distorsió centrífuga
+sobre el valor del terme rotacional es pot quantificar afegint un component
+proporcional a <span class="inlinemath"><svg
+viewBox="0 -8.11 46.31 10.6"
+style="width:  4.65em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5385.svg#page5351"> </use> </svg></span> a l’expressió de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 22.02 9.96"
+style="width:  2.21em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5386.svg#page5352"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.10.3.html#ref::ro1:rig:FJB"
+>§10.3&vert;1.7&rang;</a><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 151.51 11.1"
+style="width: 15.21em; height:  1.23em;"> <use
+xlink:href="images/img5387.svg#page5353"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on la constant <span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5388.svg#page5354"> </use> </svg></span>, que s’anomena
+</span><span class="itshape" >constant de distorsió centrífuga</span><span>,
+generalment té un valor molt petit, cosa que explica la magnitud relativament
+poc important d’aquest efecte</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 148.25 11.1"
+style="width: 14.88em; height:  1.23em;"> <use
+xlink:href="images/img5389.svg#page5355"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5390.svg#page5356"> </use> </svg></span> està relacionada
+amb <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5391.svg#page5357"> </use> </svg></span> i amb
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.7 5.78"
+style="width:  0.87em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5392.svg#page5358"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5393.svg#page5359"> </use> </svg></span> té la següent
+expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 53.25 24.15"
+style="width:  5.35em; height:  2.54em;"> <use
+xlink:href="images/img5394.svg#page5360"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 8.7 5.78"
+style="width:  0.87em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5395.svg#page5361"> </use> </svg></span> és la
+</span><span class="itshape" >freqüència vibracional d’equilibri</span><span>
+de la molècula</span>. <span>La vibració d’una molècula diatòmica pot
+modelar-se com un oscil·lador harmònic (una molla) de freqüència
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.7 5.78"
+style="width:  0.87em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5396.svg#page5362"> </use> </svg></span>, de manera que
+com més gran sigui la freqüència, més rígid serà l’oscil·lador (i la molècula),
+i, lògicament, més petita serà <span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5397.svg#page5363"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 49.29 24.15"
+style="width:  4.95em; height:  2.54em;"> <use
+xlink:href="images/img5398.svg#page5364"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 148.25 11.1"
+style="width: 14.88em; height:  1.23em;"> <use
+xlink:href="images/img5399.svg#page5365"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Les regles de
+selecció són les mateixes que les del rotor rígid.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Les freqüències
+també depenen de <span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5400.svg#page5366"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>A partir de l’expressió de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 22.02 9.96"
+style="width:  2.21em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5401.svg#page5367"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.10.4.html#ref::ro1:nor:FJ"
+>§10.4&vert;3.2&rang;</a><span>, i procedint com en </span><a class="sffamily
+small" href="sections/section.10.3.html#ref::ro1:rig:fre"
+>§10.3&vert;3&rang;</a><span>, és fàcil obtindre les freqüències de les ratlles
+de l’espectre rotacional, </span> </div>
+
+<table class="equation" id="ref::ro1:nor:nuBD"><tr><td><svg class="equation"
+viewBox="0 -8.61 155.6 11.1"
+style="width: 15.62em; height:  1.23em;"> <use
+xlink:href="images/img5402.svg#page5368"> </use>
+</svg></td><td>(10.2)</td></tr></table>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 152.34 11.1"
+style="width: 15.29em; height:  1.23em;"> <use
+xlink:href="images/img5403.svg#page5369"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5404.svg#page5370"> </use> </svg></span> es pot
+determinar a partir de les freqüències.</span></summary>
+
+<div class="content"><div class="p"> <span>Si dividim l’Eq. (</span><a
+href="sections/section.10.4.html#ref::ro1:nor:nuBD">10.2</a><span>) per
+<span class="inlinemath"><svg
+viewBox="0 -7.47 31.39 9.96"
+style="width:  3.15em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5405.svg#page5371"> </use> </svg></span> obtindrem la
+següent relació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.01 125.41 22.34"
+style="width: 12.59em; height:  2.36em;"> <use
+xlink:href="images/img5406.svg#page5372"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta relació ens permet obtindre la constant
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5407.svg#page5373"> </use> </svg></span>
+fàcilment</span>: <span>representem <span class="inlinemath"><svg
+viewBox="0 -7.47 69.95 9.96"
+style="width:  7.02em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5408.svg#page5374"> </use> </svg></span> en funció de
+<span class="inlinemath"><svg
+viewBox="0 -8.11 35.36 10.6"
+style="width:  3.55em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5409.svg#page5375"> </use> </svg></span> i obtindrem una
+recta, el pendent de la qual serà igual a <span class="inlinemath"><svg
+viewBox="0 -6.81 21.26 7.64"
+style="width:  2.13em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5410.svg#page5376"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.01 122.14 22.34"
+style="width: 12.26em; height:  2.36em;"> <use
+xlink:href="images/img5411.svg#page5377"> </use> </svg></span> </div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.10.4.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

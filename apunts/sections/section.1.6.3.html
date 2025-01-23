@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Commutadors | Operadors que commuten comparteixen autofuncions</title>
+<meta name="description" content="Definició de commutador. Els operadors que
+commuten comparteixen autofuncions i poden mesurar-se exactament i
+simultània.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.1.6.3.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.html"><span>1 Fonaments de la mecànica quàntica
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.6.html"><span>1.6 Mesures </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>1.6.3 Commutadors </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img495.svg#page485"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.2.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.4.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection" id="ref::pos:mes:ABBA">  <span>1.6.3  Commutadors</span>
+</h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >L’ordre
+d’aplicació de dos operadors pot ser important <span class="inlinemath">(<svg
+viewBox="0 -9.38 44.48 11.32"
+style="width:  4.46em; height:  1.26em; vertical-align: -0.25em;"> <use
+xlink:href="images/img496.svg#page486"> </use> </svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>El resultat d’aplicar successivament
+dos operadors <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img497.svg#page487"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img498.svg#page488"> </use> </svg></span> a una determinada
+funció d’ona <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img499.svg#page489"> </use> </svg></span> pot dependre de
+l’ordre d’aplicació dels operadors</span>. <span>Pot donar-se el cas que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 151.23 11.87"
+style="width: 15.18em; height:  1.31em;"> <use
+xlink:href="images/img500.svg#page490"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, que pot ser que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 47.11 11.32"
+style="width:  4.73em; height:  1.26em;"> <use
+xlink:href="images/img501.svg#page491"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La mecànica quàntica ho sistematitza mitjançant
+el concepte de </span><span class="itshape" >commutador</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 148.46 11.87"
+style="width: 14.90em; height:  1.31em;"> <use
+xlink:href="images/img502.svg#page492"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >commutador</span><span class="sffamily" >
+<span class="inlinemath"><svg
+viewBox="0 -9.38 25.54 11.87"
+style="width:  2.56em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img503.svg#page493"> </use> </svg></span> ens diu si
+<span class="inlinemath"><svg
+viewBox="0 -9.38 44.48 9.38"
+style="width:  4.46em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img504.svg#page494"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Commutador</span></strong>. <span>El </span><span
+class="itshape" >commutador</span><span> de dos operadors
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img505.svg#page495"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img506.svg#page496"> </use> </svg></span> es defineix com
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 84.83 11.87"
+style="width:  8.51em; height:  1.31em;"> <use
+xlink:href="images/img507.svg#page497"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si el commutador <span class="inlinemath"><svg
+viewBox="0 -9.38 25.54 11.87"
+style="width:  2.56em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img508.svg#page498"> </use> </svg></span> és zero, es
+compleix que <span class="inlinemath"><svg
+viewBox="0 -9.38 44.48 9.38"
+style="width:  4.46em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img509.svg#page499"> </use> </svg></span> i es diu que els
+operadors <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img510.svg#page500"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img511.svg#page501"> </use> </svg></span> </span><span
+class="itshape" >commuten</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Els operadors de
+les coordenades cartesianes commuten.</span></summary>
+
+<div class="content"><div class="p"> <span>Considerem els operadors de les
+coordenades cartesianes <span class="inlinemath"><svg
+viewBox="0 -6.86 5.69 6.86"
+style="width:  0.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img512.svg#page502"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 5.67 8.8"
+style="width:  0.57em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img513.svg#page503"> </use> </svg></span></span>. <span>És
+fàcil veure que commuten</span>. <span>Per a qualsevol funció d’ona
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img514.svg#page504"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 94.29 9.96"
+style="width:  9.46em; height:  1.12em;"> <use
+xlink:href="images/img515.svg#page505"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, segons hem vist en </span><a
+class="sffamily small" href="sections/section.1.5.html#ref::pos:obs:recepta"
+>§1.5&vert;2.1&rang;</a><span>, els operadors <span class="inlinemath"><svg
+viewBox="0 -6.86 5.69 6.86"
+style="width:  0.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img516.svg#page506"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 5.67 8.8"
+style="width:  0.57em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img517.svg#page507"> </use> </svg></span> són iguals
+respectivament a <span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img518.svg#page508"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.24 6.23"
+style="width:  0.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img519.svg#page509"> </use> </svg></span> </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 175.39 9.96"
+style="width: 17.61em; height:  1.12em;"> <use
+xlink:href="images/img520.svg#page510"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on hem pres en compte que
+<span class="inlinemath"><svg
+viewBox="0 -4.29 35.16 6.23"
+style="width:  3.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img521.svg#page511"> </use> </svg></span></span>. <span>Com
+el resultat és valid per a qualsevol <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img522.svg#page512"> </use> </svg></span>, tindrem que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 41.98 9.96"
+style="width:  4.21em; height:  1.12em;"> <use
+xlink:href="images/img523.svg#page513"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:mes:comxpx"> <span>&vert;4&rang;</span> <span
+class="sffamily" >Els operadors <span class="inlinemath"><svg
+viewBox="0 -6.86 5.69 6.86"
+style="width:  0.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img524.svg#page514"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 9.53 8.8"
+style="width:  0.96em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img525.svg#page515"> </use> </svg></span> </span><span
+class="bfseries sffamily" >no</span><span class="sffamily" > commuten:</span>
+<span class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -7.47 48.19 9.96"
+style="width:  4.84em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img526.svg#page516"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Estudiarem ara la commutació entre
+la posició <span class="inlinemath">(<svg
+viewBox="0 -6.86 5.69 6.86"
+style="width:  0.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img527.svg#page517"> </use> </svg></span>) i el moment
+lineal <span class="inlinemath">(<svg
+viewBox="0 -6.86 9.53 8.8"
+style="width:  0.96em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img528.svg#page518"> </use> </svg></span>) per a la
+coordenada <span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img529.svg#page519"> </use> </svg></span></span>.
+<span>Segons </span><a class="sffamily small"
+href="sections/section.1.5.html#ref::pos:obs:recepta"
+>§1.5&vert;2.1&rang;</a><span>, <span class="inlinemath"><svg
+viewBox="0 -6.86 24.67 6.86"
+style="width:  2.48em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img530.svg#page520"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 62.59 9.96"
+style="width:  6.28em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img531.svg#page521"> </use> </svg></span>, així que el
+commutador valdrà </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 33.48 9.96"
+style="width:  3.36em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img532.svg#page522"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img533.svg#page523"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -14.21 183.83 21.05"
+style="width: 18.45em; height:  2.23em; vertical-align: -0.75em;"> <use
+xlink:href="images/img534.svg#page524"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img535.svg#page525"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -14.21 94.35 21.05"
+style="width:  9.47em; height:  2.23em; vertical-align: -0.75em;"> <use
+xlink:href="images/img536.svg#page526"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Ara bé, la derivada del producte
+<span class="inlinemath"><svg
+viewBox="0 -6.86 13.44 6.86"
+style="width:  1.35em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img537.svg#page527"> </use> </svg></span> és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -14.21 160.14 21.05"
+style="width: 16.07em; height:  2.23em;"> <use
+xlink:href="images/img538.svg#page528"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>de manera que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 190.46 20.49"
+style="width: 19.12em; height:  2.18em;"> <use
+xlink:href="images/img539.svg#page529"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Com el resultat ha de ser vàlid per a qualsevol
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img540.svg#page530"> </use> </svg></span>, tindrem que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 50.96 9.96"
+style="width:  5.12em; height:  1.12em;"> <use
+xlink:href="images/img541.svg#page531"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -9.38 43.81 11.87"
+style="width:  4.40em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img542.svg#page532"> </use> </svg></span> i </span><span
+class="bfseries sffamily" >no</span><span class="sffamily" > hi ha degeneració,
+les autofuncions seran comunes.</span></summary>
+
+<div class="content"><div class="p"> <span>Si dos operadors hermitians
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img543.svg#page533"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img544.svg#page534"> </use> </svg></span> commuten i
+</span><span class="bfseries" >no hi ha degeneració</span><span>, aleshores
+totes les autofuncions de l’un també són autofuncions de l’altre</span>.
+<span>Ho demostrarem</span>. </div>
+
+<div class="p"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img545.svg#page535"> </use> </svg></span> és autofunció de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img546.svg#page536"> </use> </svg></span> tindrem que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 44.29 9.38"
+style="width:  4.45em; height:  1.06em;"> <use
+xlink:href="images/img547.svg#page537"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara apliquem <span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img548.svg#page538"> </use> </svg></span> als dos costats de
+l’equació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 60.4 11.32"
+style="width:  6.06em; height:  1.26em;"> <use
+xlink:href="images/img549.svg#page539"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>apliquem la relació de commutació
+<span class="inlinemath"><svg
+viewBox="0 -9.38 44.34 9.38"
+style="width:  4.45em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img550.svg#page540"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 60.4 11.32"
+style="width:  6.06em; height:  1.26em;"> <use
+xlink:href="images/img551.svg#page541"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i per la linealitat de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img552.svg#page542"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 23.28 9.38"
+style="width:  2.34em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img553.svg#page543"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img554.svg#page544"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 23.84 11.32"
+style="width:  2.39em; height:  1.26em; vertical-align: -0.25em;"> <use
+xlink:href="images/img555.svg#page545"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>relació que podem escriure com </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.03 11.87"
+style="width:  3.11em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img556.svg#page546"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img557.svg#page547"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.59 11.87"
+style="width:  3.17em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img558.svg#page548"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>És a dir, <span class="inlinemath"><svg
+viewBox="0 -9.38 15.81 9.38"
+style="width:  1.59em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img559.svg#page549"> </use> </svg></span> també és
+autofunció <span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img560.svg#page550"> </use> </svg></span> i amb </span><span
+class="itshape" >el mateix</span><span> autovalor <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img561.svg#page551"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>En resum, tenim que </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 15.22 9.38"
+style="width:  1.53em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img562.svg#page552"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img563.svg#page553"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 13.02 6.86"
+style="width:  1.31em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img564.svg#page554"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.03 11.87"
+style="width:  3.11em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img565.svg#page555"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img566.svg#page556"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 31.59 11.87"
+style="width:  3.17em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img567.svg#page557"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>i com que, per hipòtesi, no pot haver-hi
+degeneració, concloem, segons </span><a class="sffamily small"
+href="sections/section.1.4.2.html#ref::pos:opr:degenerats"
+>§1.4.2&vert;3&rang;</a><span>, que <span class="inlinemath"><svg
+viewBox="0 -9.38 15.81 9.38"
+style="width:  1.59em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img568.svg#page558"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img569.svg#page559"> </use> </svg></span> han de ser
+linealment </span><span class="itshape" >dependents</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 154.98 11.87"
+style="width: 15.56em; height:  1.31em;"> <use
+xlink:href="images/img570.svg#page560"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Podem reescriure aquesta relació com </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -11.03 58.53 19.36"
+style="width:  5.88em; height:  2.06em;"> <use
+xlink:href="images/img571.svg#page561"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>que resulta ser l’equació d’autovalors
+<span class="inlinemath">de <svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img572.svg#page562"> </use> </svg></span></span>. <span>Per
+estètica, podem designar l’autovalor <span class="inlinemath"><svg
+viewBox="0 -7.47 29.79 9.96"
+style="width:  2.99em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img573.svg#page563"> </use> </svg></span> amb el
+<span class="inlinemath">símbol <svg
+viewBox="0 -6.92 4.28 6.92"
+style="width:  0.43em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img574.svg#page564"> </use> </svg></span>, i obtenim
+finalment </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 43.88 9.38"
+style="width:  4.40em; height:  1.06em;"> <use
+xlink:href="images/img575.svg#page565"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Concloem que <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img576.svg#page566"> </use> </svg></span>, a més de ser
+autofunció <span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img577.svg#page567"> </use> </svg></span>, també és
+autofunció de <span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img578.svg#page568"> </use> </svg></span> i amb autovalor
+<span class="inlinemath"><svg
+viewBox="0 -6.92 4.28 6.92"
+style="width:  0.43em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img579.svg#page569"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>És a dir, totes les autofuncions
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img580.svg#page570"> </use> </svg></span> també són
+autofuncions <span class="inlinemath">de <svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img581.svg#page571"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >En el cas
+</span><span class="bfseries sffamily" >degenerat</span><span class="sffamily"
+>, si <span class="inlinemath"><svg
+viewBox="0 -9.38 43.81 11.87"
+style="width:  4.40em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img582.svg#page572"> </use> </svg></span> es pot trobar un
+conjunt complet d’autofuncions comunes.</span></summary>
+
+<div class="content"><div class="p"> <span>En el cas de dos operadors
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img583.svg#page573"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img584.svg#page574"> </use> </svg></span> que commuten però
+que presenten degeneració, es pot demostrar[<a
+href="sections/biblio.html#bib::COHENTANNOUDJI1977">9</a>] que existeix un
+conjunt complet d’autofuncions comunes als dos operadors</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -9.38 43.81 11.87"
+style="width:  4.40em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img585.svg#page575"> </use> </svg></span>, els seus
+observables és poden mesurar exactament i simultània.</span></summary>
+
+<div class="content"><div class="figure" id="ref::mesura_A_B">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -188.94 257.57 184.85"
+style="width: 25.85em; height: 19.08em;"> <use
+xlink:href="images/img586.svg#page576"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 1.12</span>: <span>Mesura de l’observable
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img587.svg#page577"> </use> </svg></span> seguida
+immediatament de la mesura de l’observable <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img588.svg#page578"> </use> </svg></span>, quan els
+respectius operadors <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img589.svg#page579"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img590.svg#page580"> </use> </svg></span> commuten</span>.
+<span><span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img591.svg#page581"> </use> </svg></span> és la funció d’ona
+que descriu el sistema i <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img592.svg#page582"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.57 49.82 8.51"
+style="width:  5.00em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img593.svg#page583"> </use> </svg></span>) és l’autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img594.svg#page584"> </use> </svg></span> corresponent a
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img595.svg#page585"> </use> </svg></span> (suposem que no hi
+ha degeneració)</span>. </div>
+
+</div>
+
+<div class="p"> <span>Suposem que <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img596.svg#page586"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img597.svg#page587"> </use> </svg></span> commuten i que
+mesurem <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img598.svg#page588"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img599.svg#page589"> </use> </svg></span> de manera
+simultània</span>. <span>Per ‘de manera simultània’ volem dir que primer
+mesurem un d’ells (el <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img600.svg#page590"> </use> </svg></span>, per exemple) i
+que </span><span class="itshape" >immediatament</span><span> després mesurem
+l’altre <span class="inlinemath">(<svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img601.svg#page591"> </use> </svg></span>)</span>. </div>
+
+<div class="p"> <span>Suposem que al mesurar <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img602.svg#page592"> </use> </svg></span> obtenim
+l’autovalor <span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img603.svg#page593"> </use> </svg></span></span>.
+<span>Segons el postulat V que hem vist en </span><a class="sffamily small"
+href="sections/section.1.6.2.html#ref::pos:mes:collapse"
+>§1.6.2&vert;1&rang;</a><span>, immediatament després d’aquesta mesura la
+funció d’ona del sistema serà igual a <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img604.svg#page594"> </use> </svg></span>, l’autofunció de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img605.svg#page595"> </use> </svg></span> corresponent a
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img606.svg#page596"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Com que <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img607.svg#page597"> </use> </svg></span> també és
+autofunció de <span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img608.svg#page598"> </use> </svg></span>, si ara mesurem
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img609.svg#page599"> </use> </svg></span>, el valor que
+obtindrem ha de ser necessàriament igual a <span class="inlinemath"><svg
+viewBox="0 -6.92 7.09 8.41"
+style="width:  0.71em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img610.svg#page600"> </use> </svg></span> (vegeu </span><a
+class="sffamily small" href="sections/section.1.6.1.html#ref::pos:mes:certesa"
+>§1.6.1&vert;3.3&rang;</a><span>)</span>. <span>És a dir, una vegada hem
+mesurat <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img611.svg#page601"> </use> </svg></span>, el valor de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img612.svg#page602"> </use> </svg></span> queda fixat i
+podem saber </span><span class="itshape" >exactament</span><span> el seu valor,
+fins i tot </span><span class="itshape" >abans</span><span> de
+mesurar-lo</span>. </div>
+
+<div class="p"> <span>Això és el que volem dir amb “és possible mesurar els
+observables <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img613.svg#page603"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img614.svg#page604"> </use> </svg></span> de manera
+simultània i amb exactitud</span>.” </div>
+
+<div class="p"> <span>Tot plegat s’il·lustra en la figura </span><a
+href="sections/section.1.6.3.html#ref::mesura_A_B">1.12</a>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -9.38 43.81 11.87"
+style="width:  4.40em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img615.svg#page605"> </use> </svg></span>, els seus
+observables </span><span class="bfseries sffamily" >no</span><span
+class="sffamily" > és poden mesurar exactament i simultània.</span></summary>
+
+<div class="content"><div class="figure" id="ref::mesura_A_B_no">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -188.94 257.57 184.85"
+style="width: 25.85em; height: 19.08em;"> <use
+xlink:href="images/img616.svg#page606"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 1.13</span>: <span>Mesura de l’observable
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img617.svg#page607"> </use> </svg></span> seguida
+immediatament de la mesura de l’observable <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img618.svg#page608"> </use> </svg></span>, quan els
+respectius operadors <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img619.svg#page609"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img620.svg#page610"> </use> </svg></span> </span><span
+class="bfseries" >no</span><span> commuten</span>.
+<span><span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img621.svg#page611"> </use> </svg></span> és la funció d’ona
+que descriu el sistema i <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img622.svg#page612"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.57 49.82 8.51"
+style="width:  5.00em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img623.svg#page613"> </use> </svg></span>) és l’autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img624.svg#page614"> </use> </svg></span> corresponent a
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img625.svg#page615"> </use> </svg></span> (suposem que no hi
+ha degeneració)</span>. </div>
+
+</div>
+
+<div class="p"> <span>Si els operadors <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img626.svg#page616"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img627.svg#page617"> </use> </svg></span> no commuten no és
+possible, en canvi, mesurar els observables <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img628.svg#page618"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img629.svg#page619"> </use> </svg></span> simultàniament i
+exacta</span>. <span>En aquest cas, després de mesurar
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img630.svg#page620"> </use> </svg></span> i del corresponent
+col·lapse de la funció d’ona a <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img631.svg#page621"> </use> </svg></span>, com que aquesta
+no és autofunció de <span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img632.svg#page622"> </use> </svg></span>, no és possible
+predir amb certesa quin autovalor obtindrem al mesurar
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img633.svg#page623"> </use> </svg></span></span>.
+<span>Vegeu la figura </span><a
+href="sections/section.1.6.3.html#ref::mesura_A_B_no">1.13</a>. </div>
+
+<div class="p"> <span>Aquestes restriccions en la mesura simultània
+d’observables són quantificades pel </span><span class="itshape" >principi
+d’incertesa</span><span> de Heisenberg</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.1.6.3.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

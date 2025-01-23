@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Incertesa | Principi d’incertesa de Heisenberg</title>
+<meta name="description" content="La incertesa és la desviació estàndard d’una
+sèrie de mesures. El principi d’incertesa (Heisenberg) limita el valor de les
+incerteses.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.1.6.4.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.html"><span>1 Fonaments de la mecànica quàntica
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.6.html"><span>1.6 Mesures </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>1.6.4 Principi d’incertesa de
+Heisenberg </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img634.svg#page624"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.3.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.7.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>1.6.4  Principi d’incertesa de Heisenberg</span>
+</h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >No podem fer més
+d’una mesura <span class="inlinemath">d’<svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img635.svg#page625"> </use> </svg></span> sobre el mateix
+sistema.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que tenim un sistema descrit
+per la funció d’ona <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img636.svg#page626"> </use> </svg></span> i que volem fer
+una sèrie de <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img637.svg#page627"> </use> </svg></span> mesures de
+l’observable <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img638.svg#page628"> </use> </svg></span></span>. <span>En
+la pràctica, això no és possible, ja que, segons el postulat V, després de fer
+la primera mesura la funció d’ona col·lapsarà a una altra funció diferent de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img639.svg#page629"> </use> </svg></span></span>: <span>el
+nostre sistema haurà canviat desprès de la primera mesura, i ja no serà el
+mateix, sinó un altre de diferent</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:mes:Nidentics"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Podem, però, fer una única mesura
+<span class="inlinemath">d’<svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img640.svg#page630"> </use> </svg></span> sobre una sèrie de
+còpies del sistema original.</span></summary>
+
+<div class="content"><div class="p"> <span>Ara bé, el que sí que podem fer és
+mesurar l’observable <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img641.svg#page631"> </use> </svg></span> una única vegada
+sobre cada sistema d’una sèrie de <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img642.svg#page632"> </use> </svg></span> còpies idèntiques
+al sistema original, cadascuna d’elles descrita per la mateixa funció d’ona
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img643.svg#page633"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>D’aquesta manera obtindrem <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img644.svg#page634"> </use> </svg></span> mesures de
+l’observable <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img645.svg#page635"> </use> </svg></span>, on cada mesura
+s’ha fet sobre un sistema diferent, còpia del sistema original</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >La mitjana i
+desviació estàndard d’unes mesures és poden calcular de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img646.svg#page636"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que hem fet una sèrie de
+mesures com hem descrit en </span><a class="sffamily small"
+href="sections/section.1.6.4.html#ref::pos:mes:Nidentics"
+>§1.6.4&vert;2&rang;</a>: <span>una mesura <span class="inlinemath">d’<svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img647.svg#page637"> </use> </svg></span> sobre cada còpia
+idèntica del sistema original</span>. <span>La mecànica quàntica ens permet
+obtindre els valor de la </span><span class="itshape" >mitjana</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -7.47 15.22 9.96"
+style="width:  1.53em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img648.svg#page638"> </use> </svg></span> i la </span><span
+class="itshape" >desviació estàndard</span><span> <span class="inlinemath"><svg
+viewBox="0 -4.29 11.68 5.78"
+style="width:  1.17em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img649.svg#page639"> </use> </svg></span> a partir de la
+funció d’ona del sistema <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img650.svg#page640"> </use> </svg></span> (recordeu que les
+còpies tenen la mateixa funció d’ona que l’original)</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Mitjana i desviació estàndard</span></strong>.
+<span>La </span><span class="itshape" >mitjana</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -7.47 15.22 9.96"
+style="width:  1.53em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img651.svg#page641"> </use> </svg></span> i la </span><span
+class="itshape" >desviació estàndard</span><span> <span class="inlinemath"><svg
+viewBox="0 -4.29 11.68 5.78"
+style="width:  1.17em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img652.svg#page642"> </use> </svg></span> de la mesura de
+l’observable <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img653.svg#page643"> </use> </svg></span> en un sistema
+descrit per la funció d’ona normalitzada <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img654.svg#page644"> </use> </svg></span> són </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 15.22 9.96"
+style="width:  1.53em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img655.svg#page645"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img656.svg#page646"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.38 36.25 11.87"
+style="width:  3.64em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img657.svg#page647"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 11.68 5.78"
+style="width:  1.17em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img658.svg#page648"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img659.svg#page649"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -18.5 179.73 29.98"
+style="width: 18.04em; height:  3.13em; vertical-align: -1.21em;"> <use
+xlink:href="images/img660.svg#page650"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>La mitjana ens la dóna el postulat IV. El símbol
+<span class="inlinemath"><svg
+viewBox="0 -8.11 19.69 10.6"
+style="width:  1.98em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img661.svg#page651"> </use> </svg></span> representa el
+valor esperat o mitjana de l’operador <span class="inlinemath"><svg
+viewBox="0 -9.38 11.44 9.38"
+style="width:  1.15em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img662.svg#page652"> </use> </svg></span></span>.
+<span>Recordem que la desviació estàndard mostra quanta variació o dispersió hi
+ha respecte la mitjana</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >A la desviació
+estàndard se l’anomena </span><span class="itshape sffamily"
+>incertesa</span><span class="sffamily" >, <span class="inlinemath"><svg
+viewBox="0 -7.13 40.74 8.63"
+style="width:  4.09em; height:  0.99em; vertical-align: -0.21em;"> <use
+xlink:href="images/img663.svg#page653"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>En l’estudi de la mecànica quàntica,
+a la desviació estàndard se l’anomena </span><span class="itshape"
+>incertesa</span><span>, i se la representa pel símbol
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.74 8.63"
+style="width:  4.09em; height:  0.99em; vertical-align: -0.21em;"> <use
+xlink:href="images/img664.svg#page654"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Podem escriure el resultat de la mesura de l’observable
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img665.svg#page655"> </use> </svg></span> com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 45.94 9.96"
+style="width:  4.61em; height:  1.12em;"> <use
+xlink:href="images/img666.svg#page656"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Hem de tindre clar, però, que
+<span class="inlinemath"><svg
+viewBox="0 -7.13 15.77 7.13"
+style="width:  1.58em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img667.svg#page657"> </use> </svg></span> no és un error
+experimental causat per un aparell de mesura imprecís o un becari
+maldestre</span>: <span>la mecànica quàntica limita el nostre coneixement del
+sistema</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 43.17 9.96"
+style="width:  4.33em; height:  1.12em;"> <use
+xlink:href="images/img668.svg#page658"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >La incertesa
+<span class="inlinemath"><svg
+viewBox="0 -7.13 15.77 7.13"
+style="width:  1.58em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img669.svg#page659"> </use> </svg></span> d’una autofunció
+de l’operador <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img670.svg#page660"> </use> </svg></span> és
+nul·la.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img671.svg#page661"> </use> </svg></span> és una autofunció
+normalitzada de l’operador <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img672.svg#page662"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 44.29 9.38"
+style="width:  4.45em; height:  1.06em;"> <use
+xlink:href="images/img673.svg#page663"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>És fàcil demostrar que la incertesa
+<span class="inlinemath"><svg
+viewBox="0 -7.13 15.77 7.13"
+style="width:  1.58em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img674.svg#page664"> </use> </svg></span> de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img675.svg#page665"> </use> </svg></span> és nul·la</span>.
+<span>Calculem-la</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 15.22 9.96"
+style="width:  1.53em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img676.svg#page666"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img677.svg#page667"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.38 148.36 11.87"
+style="width: 14.89em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img678.svg#page668"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -8.61 19.69 11.1"
+style="width:  1.98em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img679.svg#page669"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img680.svg#page670"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.38 165.74 11.87"
+style="width: 16.64em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img681.svg#page671"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.13 15.77 7.13"
+style="width:  1.58em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img682.svg#page672"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img683.svg#page673"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -13.54 82.55 18.02"
+style="width:  8.29em; height:  1.93em; vertical-align: -0.51em;"> <use
+xlink:href="images/img684.svg#page674"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >principi d’incertesa</span><span class="sffamily" >
+de Heisenberg relaciona la incertesa de dos observables.</span></summary>
+
+<div class="content"><div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Heisenberg,Werner_1926.jpeg"
+><span>commons.wikimedia</span></a><img src="images/img685.jpg" alt="included
+image" style="width: 13.24em; height: 14.47em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" >Werner Heisenberg</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="law">
+<div class="p"><strong><span>Principi d’incertesa de
+Heisenberg</span></strong>. <span>Dos observables <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img686.svg#page675"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img687.svg#page676"> </use> </svg></span> poden mesurar-se
+exactament i simultània únicament si els respectius operadors
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img688.svg#page677"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 8.06 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img689.svg#page678"> </use> </svg></span> commuten</span>.
+<span>Quantitativament, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 132.52 19.85"
+style="width: 13.30em; height:  2.11em;"> <use
+xlink:href="images/img690.svg#page679"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img691.svg#page680"> </use> </svg></span> és la funció d’ona
+normalitzada del sistema</span>. </div>
+
+</div>
+
+</div></div>
+<div class="p"> <span>El principi d’incertesa </span><span class="itshape"
+>no</span><span> és un postulat de la mecànica quàntica, ja que pot
+deduir-se[<a href="sections/biblio.html#bib::SHANKAR1994">2</a>] matemàticament
+a partir dels postulats que hem vist</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:mes:dxdp"> <span>&vert;7&rang;</span> <span
+class="sffamily" >No podem determinar la trajectòria d’una partícula,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 61.31 9.96"
+style="width:  6.15em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img692.svg#page681"> </use> </svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;7.1&rang;</span> <span class="sffamily" >Per a
+<span class="inlinemath"><svg
+viewBox="0 -6.86 5.69 6.86"
+style="width:  0.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img693.svg#page682"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 9.53 8.8"
+style="width:  0.96em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img694.svg#page683"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.47 61.31 9.96"
+style="width:  6.15em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img695.svg#page684"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 48.19 9.96"
+style="width:  4.84em; height:  1.12em;"> <use
+xlink:href="images/img696.svg#page685"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Hem vist en </span><a class="sffamily small"
+href="sections/section.1.6.3.html#ref::pos:mes:comxpx"
+>§1.6.3&vert;4&rang;</a><span> que el commutador per als operadors
+<span class="inlinemath"><svg
+viewBox="0 -6.86 5.69 6.86"
+style="width:  0.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img697.svg#page686"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 9.53 8.8"
+style="width:  0.96em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img698.svg#page687"> </use> </svg></span> és igual a
+<span class="inlinemath"><svg
+viewBox="0 -6.92 9.17 6.92"
+style="width:  0.92em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img699.svg#page688"> </use> </svg></span>, de manera que
+podem particularitzar el principi d’incertesa per a aquests operadors com
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 330.31 19.85"
+style="width: 33.16em; height:  2.11em;"> <use
+xlink:href="images/img700.svg#page689"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.32 157.5 12.82"
+style="width: 15.81em; height:  1.41em;"> <use
+xlink:href="images/img701.svg#page690"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>tindrem que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 56.51 20.49"
+style="width:  5.67em; height:  2.18em;"> <use
+xlink:href="images/img702.svg#page691"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.2&rang;</span> <span class="sffamily" >No podem
+determinar la trajectòria d’una partícula.</span></summary>
+
+<div class="content"><div class="p"> <span>Si mesurem la posició d’una
+partícula amb molta precisió, aleshores <span class="inlinemath"><svg
+viewBox="0 -7.13 14 7.13"
+style="width:  1.41em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img703.svg#page692"> </use> </svg></span> serà molt petit,
+però <span class="inlinemath"><svg
+viewBox="0 -7.13 17.83 9.07"
+style="width:  1.79em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img704.svg#page693"> </use> </svg></span> (la incertesa per
+al moment lineal) ha de ser molt gran, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 55.75 20.49"
+style="width:  5.60em; height:  2.18em;"> <use
+xlink:href="images/img705.svg#page694"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>En canvi, si mesurem
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.53 6.23"
+style="width:  0.96em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img706.svg#page695"> </use> </svg></span> amb molta
+precisió, <span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img707.svg#page696"> </use> </svg></span> tindrà una
+incertesa molt gran</span>. <span>És a dir, podem mesurar amb molta precisió la
+posició </span><span class="itshape" >o</span><span> el moment lineal, però no
+els dos alhora</span>. </div>
+
+<div class="p"> <span>La conseqüència és que en mecànica quàntica no podem
+parlar de trajectòries, ja que, per determinar una trajectòria, necessitem
+valors precisos d’ambdós la posició </span><span class="itshape"
+>i</span><span> la velocitat <span class="inlinemath">(<svg
+viewBox="0 -7.47 46.89 9.96"
+style="width:  4.71em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img708.svg#page697"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 51.79 20.49"
+style="width:  5.20em; height:  2.18em;"> <use
+xlink:href="images/img709.svg#page698"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.3&rang;</span> <span class="sffamily" >En mecànica
+clàssica, podem traçar una trajectòria punt a punt.</span></summary>
+
+<div class="content"><div class="figure" id="ref::HeisenbergClasic">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="2.77 -58.68 203.53 58.68"
+style="width: 20.43em; height:  6.01em;"> <use
+xlink:href="images/img710.svg#page699"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 1.14</span>: <span>Seguiment de la
+trajectòria d’una partícula clàssica</span>. </div>
+
+</div>
+
+<div class="p"> <span>Si el moviment de l’electró al voltant del nucli
+estiguera governat per la mecànica clàssica, l’electró és mouria en òrbites
+circulars o el·líptiques, i seria possible seguir la seva trajectòria mesurant
+la posició de l’electró a intervals regulars de temps, com s’il·lustra en la
+figura </span><a
+href="sections/section.1.6.4.html#ref::HeisenbergClasic">1.14</a>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.4&rang;</span> <span class="sffamily" >En mecànica
+quàntica, </span><span class="bfseries sffamily" >no</span><span
+class="sffamily" > podem traçar una trajectòria punt a punt.</span></summary>
+
+<div class="content"><div class="figure" id="ref::HeisenbergQuantic">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="2.77 -58.68 203.53 58.68"
+style="width: 20.43em; height:  6.01em;"> <use
+xlink:href="images/img711.svg#page700"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 1.15</span>: <span>No és pot seguir la
+trajectòria d’una partícula quàntica</span>. </div>
+
+</div>
+
+<div class="p"> <span>Podria pensar-se que, encara que l’electró és una
+partícula quàntica, és possible seguir la seva trajectòria mesurant la posició
+de l’electró a intervals regulars de temps</span>. <span>Malgrat tot, això és
+absurd, perquè aleshores, si férem els intervals de temps molt i molt petits,
+podríem calcular la velocitat exactament <span class="inlinemath">(<svg
+viewBox="0 -7.47 49.35 9.96"
+style="width:  4.95em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img712.svg#page701"> </use> </svg></span>), i això violaria
+el principi d’incertesa</span>. </div>
+
+<div class="p"> <span>Per entendre aquesta impossibilitat, pensem que, per
+poder ‘veure’ un electró, hem d’il·luminar-lo prèviament, igual que fem quan
+utilitzem un flaix per fer una fotografia</span>. <span>El problema és que
+l’electró és tan petit que aquesta il·luminació alteraria la trajectòria, de
+manera que només podríem fer una mesura</span>. <span>Açò és una conseqüència
+del postulat V (mesurar provoca el col·lapse de la funció d’ona)</span>. </div>
+
+<div class="p"> <span>Aleshores substituïm aquest àtom alterat per una còpia
+idèntica de l’àtom original (amb la mateixa funció d’ona), i fem una altra
+mesura de la posició, i així una i altra vegada</span>. <span>Ho il·lustrem en
+la figura </span><a
+href="sections/section.1.6.4.html#ref::HeisenbergQuantic">1.15</a><span>, on
+veiem que no hi ha trajectòria, i que com a molt podem obtindre una distribució
+estadística de la posició de l’electró en l’àtom</span>. </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.1.6.4.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

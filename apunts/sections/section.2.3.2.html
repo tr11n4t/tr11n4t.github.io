@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>L’oscil·lador harmònic unidimensional (versió quàntica)</title>
+<meta name="description" content="Operador hamiltonià de l’oscil·lador
+harmònic. Autofuncions i autovalors. El desplaçament pot ser superior a la
+amplitud.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.2.3.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.2.html"><span>2 Aplicació a sistemes model
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.2.3.html"><span>2.3 L’oscil·lador harmònic
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>2.3.2 L’oscil·lador harmònic quàntic
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img852.svg#page838"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.3.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.3.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.2.4.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>2.3.2  L’oscil·lador harmònic quàntic</span>
+</h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >L’operador
+hamiltonià és <span class="inlinemath"><svg
+viewBox="0 -9.38 63.28 12.82"
+style="width:  6.35em; height:  1.41em; vertical-align: -0.40em;"> <use
+xlink:href="images/img853.svg#page839"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador hamiltonià per a
+l’oscil·lador harmònic unidimensional és la suma dels operador energia cinètica
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.21 9.38"
+style="width:  0.72em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img854.svg#page840"> </use> </svg></span> i energia
+potencial <span class="inlinemath"><svg
+viewBox="0 -9.38 8.03 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img855.svg#page841"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 142.65 22.52"
+style="width: 14.32em; height:  2.38em;"> <use
+xlink:href="images/img856.svg#page842"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La part d’energia cinètica és idèntica a la de
+la partícula en una caixa, mentre que la part d’energia potencial la traiem de
+l’expressió clàssica que hem vist en </span><a class="sffamily small"
+href="sections/section.2.3.1.html#ref::mod:har:V" >§2.3.1&vert;4&rang;</a>.
+</div>
+
+<div class="p"> <span>A continuació estudiarem els autovalors
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.59 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img857.svg#page843"> </use> </svg></span> i les
+<span class="inlinemath">autofuncions <svg
+viewBox="0 -6.86 11.98 8.36"
+style="width:  1.20em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img858.svg#page844"> </use> </svg></span> del
+<span class="inlinemath">Hamiltonià <svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img859.svg#page845"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 62.19 10.88"
+style="width:  6.24em; height:  1.21em;"> <use
+xlink:href="images/img860.svg#page846"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:har:Ev"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Els autovalors són <span class="inlinemath"><svg
+viewBox="0 -7.47 130.06 9.96"
+style="width: 13.06em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img861.svg#page847"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Els autovalors de l’oscil·lador
+harmònic vénen donats per la següent expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 147.12 24"
+style="width: 14.77em; height:  2.53em;"> <use
+xlink:href="images/img862.svg#page848"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img863.svg#page849"> </use> </svg></span> és la freqüència
+de l’oscil·lador clàssic que hem vist en </span><a class="sffamily small"
+href="sections/section.2.3.1.html#ref::mod:har:freq"
+>§2.3.1&vert;2&rang;</a><span>, i <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img864.svg#page850"> </use> </svg></span> és un </span><span
+class="itshape" >nombre quàntic</span><span> que ha de ser un enter (positiu o
+zero)</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Per a complir
+les </span><span class="itshape sffamily" >condicions de contorn</span><span
+class="sffamily" >, <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img865.svg#page851"> </use> </svg></span> ha de ser
+enter.</span></summary>
+
+<div class="content"><div class="p"> <span>Les </span><span class="itshape"
+>condicions de contorn</span><span> de l’oscil·lador harmònic són les
+següents</span>: <span>les autofuncions han de ser zero a l’infinit (perquè si
+no, no serien de quadrat integrable)</span>. <span>En imposar aquestes
+condicions de contorn, trobem que el nombre quàntic
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img866.svg#page852"> </use> </svg></span> ha de ser enter
+(positiu o zero)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >La diferència
+d’energia entre dos estat consecutius és <span class="inlinemath"><svg
+viewBox="0 -7.13 40.81 7.13"
+style="width:  4.10em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img867.svg#page853"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La diferència d’energia entre dos
+estats consecutius és constant </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 250.08 24"
+style="width: 25.10em; height:  2.53em;"> <use
+xlink:href="images/img868.svg#page854"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >L’</span><span
+class="itshape sffamily" >energia del punt zero</span><span class="sffamily" >
+és <span class="inlinemath"><svg
+viewBox="0 -7.47 46.37 9.96"
+style="width:  4.65em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img869.svg#page855"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Segons la definició que hem vist
+en </span><a class="sffamily small"
+href="sections/section.2.2.html#ref::mod:cai:puntzero"
+>§2.2&vert;10.3&rang;</a><span>, l’</span><span class="itshape" >energia del
+punt zero</span><span> serà la de l’estat fonamental, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 107 24"
+style="width: 10.74em; height:  2.53em;"> <use
+xlink:href="images/img870.svg#page856"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquest valor distint de zero contrasta amb el
+valor mínim possible de l’energia en un oscil·lador clàssic</span>:
+<span>amplitud zero, amb ambdues l’energia cinètica i l’energia potencial
+nul·les</span>.</div> </div>
+
+</details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Les autofuncions
+són </span><span class="itshape sffamily" >no nul·les</span><span
+class="sffamily" > en la zona clàssicament no permesa.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Les autofuncions
+són un </span><span class="itshape sffamily" >polinomi d’Hermite</span><span
+class="sffamily" > per una </span><span class="itshape sffamily"
+>gaussiana.</span></summary>
+
+<div class="content"><div class="p"> <span>Les autofuncions d’un oscil·lador
+harmònic tenen la següent expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.27 247.68 24.02"
+style="width: 24.86em; height:  2.53em;"> <use
+xlink:href="images/img871.svg#page857"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 50.17 19.85"
+style="width:  5.04em; height:  2.11em;"> <use
+xlink:href="images/img872.svg#page858"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i on <span class="inlinemath"><svg
+viewBox="0 -6.81 12.52 8.3"
+style="width:  1.26em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img873.svg#page859"> </use> </svg></span> representa un
+</span><span class="itshape" >polinomi d’Hermite</span><span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 24.1 9.96"
+style="width:  2.42em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img874.svg#page860"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img875.svg#page861"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img876.svg#page862"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 24.1 9.96"
+style="width:  2.42em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img877.svg#page863"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img878.svg#page864"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 8.58 6.27"
+style="width:  0.86em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img879.svg#page865"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 25.05 9.96"
+style="width:  2.51em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img880.svg#page866"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img881.svg#page867"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 191.22 9.96"
+style="width: 19.19em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img882.svg#page868"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Aplicant aquesta relació podem calcular
+recursivament el polinomis d’Hermite</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 24.1 9.96"
+style="width:  2.42em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img883.svg#page869"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img884.svg#page870"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 136.79 11.1"
+style="width: 13.73em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img885.svg#page871"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 24.1 9.96"
+style="width:  2.42em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img886.svg#page872"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img887.svg#page873"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 145.37 11.1"
+style="width: 14.59em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img888.svg#page874"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.43 11.62 3.87"
+style="width:  1.17em; height:  0.56em; vertical-align: -0.06em;"> <use
+xlink:href="images/img889.svg#page875"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >Les autofuncions
+són </span><span class="itshape sffamily" >no nul·les</span><span
+class="sffamily" > per a <span class="inlinemath"><svg
+viewBox="0 -7.47 31.98 9.96"
+style="width:  3.21em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img890.svg#page876"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>En la figura </span><a
+href="sections/section.2.3.2.html#ref::mod:har:Psis">2.3</a><span> es mostra la
+representació d’algunes autofuncions de l’oscil·lador harmònic</span>.
+<span>Noteu que el nombre de </span><span class="itshape" >nodes</span><span>
+és igual al valor del nombre <span class="inlinemath">quàntic <svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img891.svg#page877"> </use> </svg></span></span>. </div>
+
+<div class="figure" id="ref::mod:har:Psis">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:HarmOsziFunktionen.png"
+><span>commons.wikimedia</span></a><img src="images/img892.png" alt="included
+image" style="width: 42.35em; height: 28.46em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 2.3</span>: <span>Gràfica d’algunes
+autofuncions de l’oscil·lador harmònic</span>. <span>L’eix vertical representa
+<span class="inlinemath">l’energia <svg
+viewBox="0 -6.81 11.59 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img893.svg#page878"> </use> </svg></span> de les
+autofuncions</span>. <span>Per claredat, les autofuncions estan desplaçades
+verticalment amb una quantia proporcional a la seva energia</span>. <span>La
+paràbola és l’energia potencial <span class="inlinemath"><svg
+viewBox="0 -8.42 42.84 11.85"
+style="width:  4.30em; height:  1.31em; vertical-align: -0.40em;"> <use
+xlink:href="images/img894.svg#page879"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>En la figura </span><a
+href="sections/section.2.3.2.html#ref::mod:har:Psis">2.3</a><span> s’ha
+dibuixat també l’energia potencial <span class="inlinemath"><svg
+viewBox="0 -8.42 42.84 11.85"
+style="width:  4.30em; height:  1.31em; vertical-align: -0.40em;"> <use
+xlink:href="images/img895.svg#page880"> </use> </svg></span> (paràbola)</span>.
+<span>Noteu, però, una cosa curiosa</span>: <span>fora de la paràbola, les
+autofuncions són </span><span class="itshape" >no nul·les</span><span> i podrem
+trobar-hi l’oscil·lador</span>. <span>Això, clàssicament, és impossible, ja que
+implicaria que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 34.75 9.96"
+style="width:  3.49em; height:  1.12em;"> <use
+xlink:href="images/img896.svg#page881"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i es trobaríem davant l’absurd de tindre un
+desplaçament <span class="inlinemath"><svg
+viewBox="0 -7.47 11.23 9.96"
+style="width:  1.13em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img897.svg#page882"> </use> </svg></span> més gran que la
+amplitud (desplaçament màxim) <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img898.svg#page883"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mod:har:PlusK"> <span>&vert;4&rang;</span> <span
+class="sffamily" >Afegir una constant a l’energia potencial no canvia la física
+del sistema.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que l’energia potencial d’un
+sistema ve descrita per la <span class="inlinemath">funció <svg
+viewBox="0 -6.81 8.03 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img899.svg#page884"> </use> </svg></span>, i que creem una
+nova energia potencial <span class="inlinemath"><svg
+viewBox="0 -7.49 10.32 7.49"
+style="width:  1.04em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img900.svg#page885"> </use> </svg></span> per addició d’una
+<span class="inlinemath">constant <svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img901.svg#page886"> </use> </svg></span>
+<span class="inlinemath">a <svg
+viewBox="0 -6.81 8.03 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img902.svg#page887"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 55.69 8.81"
+style="width:  5.59em; height:  1.00em;"> <use
+xlink:href="images/img903.svg#page888"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(la <span class="inlinemath">constant <svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img904.svg#page889"> </use> </svg></span> no té res a veure
+amb la constant de força de l’oscil·lador harmònic)</span>. <span>És obvi que
+els hamiltonians </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img905.svg#page890"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img906.svg#page891"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 27.41 10.21"
+style="width:  2.75em; height:  1.15em; vertical-align: -0.14em;"> <use
+xlink:href="images/img907.svg#page892"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 11.39 9.38"
+style="width:  1.14em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img908.svg#page893"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img909.svg#page894"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 29.7 10.21"
+style="width:  2.98em; height:  1.15em; vertical-align: -0.14em;"> <use
+xlink:href="images/img910.svg#page895"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>estan relacionats entre ells per </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 57.82 10.21"
+style="width:  5.80em; height:  1.15em;"> <use
+xlink:href="images/img911.svg#page896"> </use> </svg></span> </div>
+
+<div class="p"> <span><span class="inlinemath">Si <svg
+viewBox="0 -6.86 12.67 8.36"
+style="width:  1.27em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img912.svg#page897"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img913.svg#page898"> </use> </svg></span> són les
+autofuncions i autovalors del <span class="inlinemath">hamiltonià <svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img914.svg#page899"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 64.26 11.32"
+style="width:  6.45em; height:  1.26em;"> <use
+xlink:href="images/img915.svg#page900"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>resulta que les
+<span class="inlinemath">funcions <svg
+viewBox="0 -6.86 12.67 8.36"
+style="width:  1.27em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img916.svg#page901"> </use> </svg></span> també són
+autofuncions del <span class="inlinemath">hamiltonià <svg
+viewBox="0 -9.38 54.87 10.21"
+style="width:  5.51em; height:  1.15em; vertical-align: -0.14em;"> <use
+xlink:href="images/img917.svg#page902"> </use> </svg></span>, però amb
+<span class="inlinemath">autovalor <svg
+viewBox="0 -7.49 60.19 9.95"
+style="width:  6.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img918.svg#page903"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -11.5 204.24 18.02"
+style="width: 20.50em; height:  1.93em;"> <use
+xlink:href="images/img919.svg#page904"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>A més a més, la diferència d’energia entre dos
+estats no depèn de la <span class="inlinemath">constant <svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img920.svg#page905"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 95.8 10.45"
+style="width:  9.62em; height:  1.17em;"> <use
+xlink:href="images/img921.svg#page906"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Això és el que volem dir amb “afegir una
+constant a l’energia potencial no canvia la física del sistema”</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.2.3.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

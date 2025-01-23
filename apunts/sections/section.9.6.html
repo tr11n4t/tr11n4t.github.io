@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Llei de Lambert-Beer | Temperatura i intensitat de les
+transicions</title>
+<meta name="description" content="L’absorbància és proporcional a la
+concentració (llei de Lambert-Beer). La temperatura pot afectar la intensitat
+d’una transició.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.9.6.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.9.html"><span>9 Característiques generals de
+l’espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>9.6 Comparació amb dades
+experimentals </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img5023.svg#page4991"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.5.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>9.6  Comparació amb dades experimentals</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >espectrofotòmetre</span><span class="sffamily" >
+mesura un </span><span class="itshape sffamily" >espectre
+d’absorció.</span></summary>
+
+<div class="content"><div class="p"> <span>L’espectre d’absorció (vegeu
+</span><a class="sffamily small"
+href="sections/section.9.1.html#ref::rad:con:espectre"
+>§9.1&vert;2.2.5&rang;</a><span>) d’una mostra es pot mesurar mitjançant un
+</span><span class="itshape" >espectrofotòmetre</span>. <span>En presentem un
+esquema en la figura </span><a
+href="sections/section.9.6.html#ref::rad:lam:espectrofotometre">9.10</a>.
+<span>La llum emesa per una bombeta travessa un prisma que separa les
+freqüències que la componen, i una escletxa ajustable fa que només la
+freqüència que ens interessa arribe a la </span><span class="itshape"
+>cubeta</span><span> (o </span><span class="itshape" >cel·la</span><span>) amb
+la mostra</span>. <span>Un detector situat a la sortida de la cubeta mesura la
+intensitat de la llum transmesa (no absorbida)</span>. </div>
+
+<div class="figure" id="ref::rad:lam:espectrofotometre">
+<div class="p"> <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Spetrophotometer-en.svg"
+><span>commons.wikimedia</span></a><img src="images/img5024.png" alt="included
+image" style="width: 45.96em; height: 14.29em;"></span></span><span> </span>
+</div>
+
+<div class="p caption"> <span>Figura 9.10</span>: <span>Esquema d’un
+espectrofotòmetre</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Dues ratlles molt
+pròximes no sempre es poden resoldre.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >La llum incident
+mai no és </span><span class="itshape sffamily"
+>monocromàtica.</span></summary>
+
+<div class="content"><div class="p"> <span>Idealment, la llum que arriba a la
+cubeta de l’espectrofotòmetre ha de ser </span><span class="itshape"
+>monocromàtica</span><span>, és a dir, composta únicament d’una determinada
+freqüència</span>. <span>A la pràctica, però, més que una única freqüència
+tenim un interval de freqüències més o menys ample segons la qualitat de
+l’espectrofotòmetre</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >La llum no
+monocromàtica eixampla les ratlles.</span></summary>
+
+<div class="content"><div class="p"> <span>El fet d’utilitzar llum que no és
+estrictament monocromàtica causa un eixamplament de les ratlles espectrals, i
+pot fer que dues ratlles molt pròximes queden enregistrades en l’espectre com
+una única ratlla més grossa</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >poder de resolució</span><span class="sffamily" > ens
+dóna la qualitat.</span></summary>
+
+<div class="content"><div class="p"> <span>La qualitat d’un espectrofotòmetre
+es quantifica mitjançant els conceptes de </span><span class="itshape"
+>resolució</span><span> i </span><span class="itshape" >poder de
+resolució</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Resolució i poder de resolució</span></strong>.
+<span>La </span><span class="itshape" >resolució</span><span> d’un
+espectrofotòmetre a la freqüència <span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5025.svg#page4992"> </use> </svg></span> és la diferència
+mínima de freqüència <span class="inlinemath"><svg
+viewBox="0 -6.92 10.36 6.92"
+style="width:  1.04em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5026.svg#page4993"> </use> </svg></span> entre dues
+ratlles espectrals que l’espectrofotòmetre encara pot distingir
+individualment</span>. <span>El </span><span class="itshape" >poder de
+resolució</span><span> és el quocient </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -11.03 14.32 17.86"
+style="width:  1.44em; height:  1.91em;"> <use
+xlink:href="images/img5027.svg#page4994"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>La resolució i el poder de resolució també poden
+definir-se utilitzant la longitud d’ona en comptes de la freqüència</span>.
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >La </span><span
+class="itshape sffamily" >llei de Lambert-Beer</span><span class="sffamily" >
+relaciona la intensitat absorbida amb la concentració.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="itshape sffamily"
+>Absorbància</span><span class="sffamily" > i </span><span class="itshape
+sffamily" >transmitància</span><span class="sffamily" > quantifiquen
+l’absorció.</span></summary>
+
+<div class="content"><div class="p"> <span>En la figura </span><a
+href="sections/section.9.6.html#ref::rad:lam:absorcio">9.11</a><span>
+esquematitzem l’absorció de radiació per una mostra de substància</span>.
+<span>L’absorció de radiació es pot quantificar mitjançant els conceptes de
+</span><span class="itshape" >transmitància</span><span> i d’</span><span
+class="itshape" >absorbància</span>. </div>
+
+<div class="figure" id="ref::rad:lam:absorcio">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -47.64 165.36 36.84"
+style="width: 16.60em; height:  4.90em;"> <use
+xlink:href="images/img5028.svg#page4995"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 9.11</span>: <span>Esquema de l’absorció
+de radiació electromagnètica en travessar una mostra</span>. <span>La radiació
+incident té una intensitat <span class="inlinemath"><svg
+viewBox="0 -6.81 8.35 8.3"
+style="width:  0.84em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5029.svg#page4996"> </use> </svg></span>, mentre que la
+intensitat de la llum transmesa (la que travessa la mostra sense ser absorbida)
+és <span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5030.svg#page4997"> </use> </svg></span></span>. <span>La
+distancia travessada per la llum dins la mostra és
+<span class="inlinemath"><svg
+viewBox="0 -6.92 3.17 6.92"
+style="width:  0.32em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5031.svg#page4998"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Transmitància i absorbància</span></strong>.
+<span>Sigui <span class="inlinemath"><svg
+viewBox="0 -6.81 8.35 8.3"
+style="width:  0.84em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5032.svg#page4999"> </use> </svg></span> la intensitat de
+la llum incident sobre una mostra, i <span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5033.svg#page5000"> </use> </svg></span> la intensitat de
+la llum transmesa (la que travessa la mostra sense ser absorbida)</span>.
+<span>La </span><span class="itshape" >transmitància</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5034.svg#page5001"> </use> </svg></span> ve definida pel
+quocient </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 34.5 21.88"
+style="width:  3.46em; height:  2.32em;"> <use
+xlink:href="images/img5035.svg#page5002"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>L’</span><span class="itshape"
+>absorbància</span><span> <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5036.svg#page5003"> </use> </svg></span> és el logaritme
+decimal de la transmitància, però amb el signe canviat, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 198.46 24"
+style="width: 19.92em; height:  2.53em;"> <use
+xlink:href="images/img5037.svg#page5004"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >L’absorbància és
+proporcional a la concentració.</span></summary>
+
+<div class="content"><div class="p"> <span>La </span><span class="itshape"
+>llei de Lambert-Beer</span><span> ens dóna la relació entre la intensitat
+absorbida i la concentració d’espècie estudiada</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Llei de Lambert-Beer</span></strong>. <span>La
+intensitat de radiació electromagnètica absorbida per una mostra depèn de la
+distancia travessada per la llum dins la mostra <span class="inlinemath">(<svg
+viewBox="0 -6.92 3.17 6.92"
+style="width:  0.32em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5038.svg#page5005"> </use> </svg></span>), i també de la
+concentració d’espècie absorbent <span class="inlinemath">(<svg
+viewBox="0 -7.47 14.72 9.96"
+style="width:  1.48em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5039.svg#page5006"> </use> </svg></span>)</span>.
+<span>La dependència és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.34 54.24 9.34"
+style="width:  5.44em; height:  1.06em;"> <use
+xlink:href="images/img5040.svg#page5007"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(per a la transmitància), o </span> </div>
+
+<table class="equation" id="ref::rad:lam:Alambert"><tr><td><svg
+class="equation" viewBox="0 -7.47 42.69 9.96"
+style="width:  4.29em; height:  1.12em;"> <use
+xlink:href="images/img5041.svg#page5008"> </use>
+</svg></td><td>(9.9)</td></tr></table>
+
+<div class="p noindent"> <span>(per a l’absorbància), on
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.04 4.29"
+style="width:  0.41em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5042.svg#page5009"> </use> </svg></span> és el
+</span><span class="itshape" >coeficient d’absorció molar</span><span>, que
+depèn de la freqüència</span>. </div>
+
+</div>
+
+<div class="blob">
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="0 -47.64 165.36 36.84"
+style="width: 16.60em; height:  4.90em;"> <use
+xlink:href="images/img5043.svg#page5010"> </use> </svg> </span> </div>
+
+</div>
+
+<div class="p"> <span>La demostració de la llei de Lambert-Beer és molt
+simple</span>. <span>Tornem a la figura </span><a
+href="sections/section.9.6.html#ref::rad:lam:absorcio">9.11</a><span>, on es
+concentrarem en la secció marcada amb traç discontinu, d’amplada
+<span class="inlinemath"><svg
+viewBox="0 -7.13 11.47 7.13"
+style="width:  1.15em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5044.svg#page5011"> </use> </svg></span></span>.
+<span>Suposem que <span class="inlinemath"><svg
+viewBox="0 -7.13 13.46 7.13"
+style="width:  1.35em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5045.svg#page5012"> </use> </svg></span> és el canvi en
+la intensitat de la radiació després d’haver travessat aquesta secció</span>.
+<span>Sembla lògic assumir el següent</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.13 13.46 7.13"
+style="width:  1.35em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5046.svg#page5013"> </use> </svg></span> serà
+proporcional a l’amplada <span class="inlinemath"><svg
+viewBox="0 -7.13 11.47 7.13"
+style="width:  1.15em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5047.svg#page5014"> </use> </svg></span></span>.
+<span>L’absorció de radiació és un procés estadístic, cosa que fa que, com més
+grossa sigui la secció, més gran serà la probabilitat que un fotó sigui
+absorbit</span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.13 13.46 7.13"
+style="width:  1.35em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5048.svg#page5015"> </use> </svg></span> serà
+proporcional a <span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5049.svg#page5016"> </use> </svg></span>, cosa que
+equival a dir que <span class="inlinemath"><svg
+viewBox="0 -7.47 23.61 9.96"
+style="width:  2.37em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5050.svg#page5017"> </use> </svg></span> serà
+constant</span>. </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -7.13 13.46 7.13"
+style="width:  1.35em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5051.svg#page5018"> </use> </svg></span> serà
+proporcional a <span class="inlinemath"><svg
+viewBox="0 -7.47 14.72 9.96"
+style="width:  1.48em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5052.svg#page5019"> </use> </svg></span>, la concentració
+de molècules absorbents (com més molècules hi hagi, més probable serà que
+alguna absorbisca un fotó)</span>. </div>
+
+</li></ul>
+
+<div class="p noindent"> <span>Tot plegat ens permet escriure </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 74.11 9.96"
+style="width:  7.44em; height:  1.12em;"> <use
+xlink:href="images/img5053.svg#page5020"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on hem posat signe negatiu perquè la intensitat
+disminueix, de manera que la constant de proporcionalitat
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.5 6.92"
+style="width:  0.55em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5054.svg#page5021"> </use> </svg></span> serà
+positiva</span>. </div>
+
+<div class="p"> <span>En el límit de seccions d’amplada molt petita, podrem
+substituir <span class="inlinemath"><svg
+viewBox="0 -7.13 11.47 7.13"
+style="width:  1.15em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5055.svg#page5022"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.13 13.46 7.13"
+style="width:  1.35em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5056.svg#page5023"> </use> </svg></span> pels seus
+respectius diferencials <span class="inlinemath"><svg
+viewBox="0 -6.92 8.35 6.92"
+style="width:  0.84em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5057.svg#page5024"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 10.35 6.92"
+style="width:  1.04em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5058.svg#page5025"> </use> </svg></span>, </span> </div>
+
+<table class="equation" id="ref::rad:lam:dIlambert"><tr><td><svg
+class="equation" viewBox="0 -7.47 67.88 9.96"
+style="width:  6.81em; height:  1.12em;"> <use
+xlink:href="images/img5059.svg#page5026"> </use>
+</svg></td><td>(9.10)</td></tr></table>
+
+<div class="p noindent"> <span>Ara reordenem i integrem, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.94 97.64 26.01"
+style="width:  9.80em; height:  2.73em;"> <use
+xlink:href="images/img5060.svg#page5027"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i avaluem les integrals, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 142.67 24"
+style="width: 14.32em; height:  2.53em;"> <use
+xlink:href="images/img5061.svg#page5028"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Podem passar de logaritme neperià a logaritme
+decimal amb la relació <span class="inlinemath"><svg
+viewBox="0 -6.86 84.86 9.3"
+style="width:  8.52em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img5062.svg#page5029"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 98.44 24"
+style="width:  9.88em; height:  2.53em;"> <use
+xlink:href="images/img5063.svg#page5030"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si ara canviem de signe els dos costats de la
+relació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 100.1 24"
+style="width: 10.05em; height:  2.53em;"> <use
+xlink:href="images/img5064.svg#page5031"> </use> </svg></span> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 194.03 24"
+style="width: 19.48em; height:  2.53em;"> <use
+xlink:href="images/img5065.svg#page5032"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>i tenim en compte la definició d’absorbància
+obtindrem </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.21 49.3 21.05"
+style="width:  4.95em; height:  2.23em;"> <use
+xlink:href="images/img5066.svg#page5033"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta relació té la forma de la llei de
+Lambert-Beer que volíem demostrar</span>. <span>Comparant-la amb
+l’Eq. (</span><a
+href="sections/section.9.6.html#ref::rad:lam:Alambert">9.9</a><span>) podem
+identificar que </span> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 42.69 9.96"
+style="width:  4.29em; height:  1.12em;"> <use
+xlink:href="images/img5067.svg#page5034"> </use> </svg></span> </div>
+
+</div>
+
+<table class="equation" id="ref::rad:lam:kln"><tr><td><svg class="equation"
+viewBox="1.2 -13.66 41.29 20.49"
+style="width:  4.14em; height:  2.18em;"> <use
+xlink:href="images/img5068.svg#page5035"> </use>
+</svg></td><td>(9.11)</td></tr></table>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >En una mescla,
+l’absorbància total és la suma de les absorbàncies.</span></summary>
+
+<div class="content"><div class="p"> <span>En una mescla amb dos (o més)
+substàncies, la absorbància total és la suma de les absorbàncies dels
+components</span>. <span>Per exemple, per a una mescla de les espècies
+<span class="inlinemath"><svg
+viewBox="0 -6.86 13.1 8.36"
+style="width:  1.31em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5069.svg#page5036"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 13.1 8.36"
+style="width:  1.31em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5070.svg#page5037"> </use> </svg></span>, amb coeficients
+d’absorció molar respectius <span class="inlinemath"><svg
+viewBox="0 -4.29 8.01 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5071.svg#page5038"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.01 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5072.svg#page5039"> </use> </svg></span>, l’absorbància
+total serà </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 97.44 9.96"
+style="width:  9.78em; height:  1.12em;"> <use
+xlink:href="images/img5073.svg#page5040"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4&rang;</span> <span class="sffamily" >Alerta amb les
+intensitats o les concentracions massa altes!</span></summary>
+
+<div class="content"><div class="p"> <span>Si la concentració és molt gran es
+produeixen desviacions del comportament predit per la llei de
+Lambert-Beer</span>. <span>Això és degut al fet que les molècules del davant
+fan ‘ombra’ a les que són darrere, cosa que emmascara la concentració real de
+molècules</span>. </div>
+
+<div class="p"> <span>Les intensitats molt fortes, degut al fenomen de la
+saturació que hem vist en </span><a class="sffamily small"
+href="sections/section.9.5.html#ref::rad:rat:saturacio"
+>§9.5&vert;6&rang;</a><span>, també causen desviacions del comportament ideal
+de la llei de Lambert-Beer</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >La temperatura pot
+influir en la intensitat absorbida/emesa.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >Les molècules es
+distribueixen entre diversos estats.</span></summary>
+
+<div class="content"><div class="p"> <span>En una mostra d’una substància
+determinada, no sempre totes les molècules es troben en el mateix estat</span>.
+<span>En general, les molècules es distribueixen entre tots els estat de la
+molècula</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:lam:Boltzmann"> <span>&vert;4.2&rang;</span> <span
+class="sffamily" >La població depèn de la </span><span class="itshape sffamily"
+>temperatura</span><span class="sffamily" > i de la </span><span class="itshape
+sffamily" >degeneració</span><span class="sffamily" >.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Nivell d’energia</span></strong>. <span>Un
+</span><span class="itshape" >nivell d’energia</span><span> és un conjunt
+d’estat degenerats, és a dir, que tots els estats del nivell tenen la mateixa
+energia</span>. <span>El nombre d’estats del nivell és el </span><span
+class="itshape" >grau de degeneració</span>. </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Població d’un nivell d’energia</span></strong>.
+<span>La </span><span class="itshape" >població</span><span> d’un nivell
+d’energia és el nombre de molècules que ocupen els estats del nivell</span>.
+</div>
+
+</div>
+
+<div class="p"> <span>Segons la </span><span class="itshape" >mecànica
+estadística de Maxwell-Boltzmann</span><span>, la població
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.82 8.3"
+style="width:  1.09em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5074.svg#page5041"> </use> </svg></span> d’un nivell amb
+<span class="inlinemath">energia <svg
+viewBox="0 -6.81 10.17 8.3"
+style="width:  1.02em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5075.svg#page5042"> </use> </svg></span> compleix la
+següent relació de proporcionalitat, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.34 75.8 11.28"
+style="width:  7.61em; height:  1.25em;"> <use
+xlink:href="images/img5076.svg#page5043"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 7.57 6.23"
+style="width:  0.76em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5077.svg#page5044"> </use> </svg></span> és el
+</span><span class="itshape" >grau de degeneració</span><span> del nivell,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5078.svg#page5045"> </use> </svg></span> és la
+temperatura absoluta, i <span class="inlinemath"><svg
+viewBox="0 -6.92 11.55 8.41"
+style="width:  1.16em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5079.svg#page5046"> </use> </svg></span> és la constant
+de Boltzmann</span>. <span>D’aquesta fórmula podem traure les següents
+conclusions</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>La població d’un nivell és proporcional al seu grau de
+degeneració</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Per al mateix grau de degeneració, la població d’un
+nivell és més gran per als nivells d’energia més baixa</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>En augmentar la temperatura, les molècules tenen
+tendència a passar als nivells d’energia més alta</span>. </div>
+
+</li></ul>
+
+<div class="p noindent"> <span>Vegeu, com a exemple, la figura </span><a
+href="sections/section.9.6.html#ref::rad:lam:nivells">9.12</a>. </div>
+
+<div class="figure" id="ref::rad:lam:nivells">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox=".34 -82.68 200.65 82.68"
+style="width: 20.14em; height:  8.42em;"> <use
+xlink:href="images/img5080.svg#page5047"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 9.12</span>: <span>Esquema de la
+distribució de les molècules (simbolitzades per <span class="inlinemath"><svg
+viewBox="0 -4.43 4.98 3.87"
+style="width:  0.50em; height:  0.56em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5081.svg#page5048"> </use> </svg></span>) entre els
+diversos nivells</span>. <span>El primer nivell té 9 molècules, el segon 10 i
+el tercer 3</span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.34 72.54 11.28"
+style="width:  7.28em; height:  1.25em;"> <use
+xlink:href="images/img5082.svg#page5049"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >La població sol
+expressar-se en termes relatius.</span></summary>
+
+<div class="content"><div class="p"> <span>La població dels estats d’una
+molècula sol expressar-se en termes relatius (sobretot respecte a l’estat
+fonamental), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -15.59 81.72 25.92"
+style="width:  8.20em; height:  2.72em;"> <use
+xlink:href="images/img5083.svg#page5050"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -15.59 77.75 25.92"
+style="width:  7.80em; height:  2.72em;"> <use
+xlink:href="images/img5084.svg#page5051"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="sffamily" >La intensitat és
+proporcional a la </span><span class="itshape sffamily" >població</span><span
+class="sffamily" > del nivell de partida.</span></summary>
+
+<div class="content"><div class="p"> <span>La intensitat d’una determinada
+transició serà proporcional a la població de l’</span><span class="itshape"
+>nivell de partida</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.5&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -9.64 36.09 12.13"
+style="width:  3.62em; height:  1.34em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5085.svg#page5052"> </use> </svg></span> és similar, la
+intensitat relativa depèn només de la població.</span></summary>
+
+<div class="content"><div class="p"> <span>Si, per a dues transicions
+<span class="inlinemath"><svg
+viewBox="0 -7.49 25.16 7.49"
+style="width:  2.52em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5086.svg#page5053"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 27.64 9.43"
+style="width:  2.77em; height:  1.07em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5087.svg#page5054"> </use> </svg></span>, els respectius
+moments dipolars de transició són similars, aleshores la intensitat relativa
+serà aproximadament igual a la població relativa</span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.55 54.75 23.23"
+style="width:  5.50em; height:  2.45em;"> <use
+xlink:href="images/img5088.svg#page5055"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.55 50.79 23.23"
+style="width:  5.10em; height:  2.45em;"> <use
+xlink:href="images/img5089.svg#page5056"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Els coeficients
+d’Einstein, podem obtindre’ls experimentalment.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem obtindre els coeficients
+d’Einstein d’una transició a partir de dades experimentals (el coeficient
+d’absorció molar <span class="inlinemath"><svg
+viewBox="0 -4.29 4.04 4.29"
+style="width:  0.41em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5090.svg#page5057"> </use> </svg></span>) de la
+corresponent ratlla espectral</span>. </div>
+
+<div class="p"> <span>Considerarem la transició de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 9.13 6.86"
+style="width:  0.92em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5091.svg#page5058"> </use> </svg></span> (estat
+<span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5092.svg#page5059"> </use> </svg></span>) a
+<span class="inlinemath"><svg
+viewBox="0 -6.86 13.21 6.86"
+style="width:  1.33em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5093.svg#page5060"> </use> </svg></span> (estat
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5094.svg#page5061"> </use> </svg></span>)</span>.
+<span>Assumim que l’energia de <span class="inlinemath"><svg
+viewBox="0 -6.86 13.21 6.86"
+style="width:  1.33em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5095.svg#page5062"> </use> </svg></span> és major que la
+de <span class="inlinemath"><svg
+viewBox="0 -6.86 9.13 6.86"
+style="width:  0.92em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5096.svg#page5063"> </use> </svg></span>, i que la
+transició es produeix per absorció de radiació</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.1&rang;</span> <span class="sffamily" >Cada transició
+té el seu coeficient d’absorció molar.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a la transició
+<span class="inlinemath"><svg
+viewBox="0 -6.92 40.97 8.86"
+style="width:  4.11em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5097.svg#page5064"> </use> </svg></span> (o,
+equivalentment, <span class="inlinemath"><svg
+viewBox="0 -6.86 37.84 6.86"
+style="width:  3.80em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5098.svg#page5065"> </use> </svg></span>), la llei de
+Lambert-Beer pren la forma </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 57.95 9.96"
+style="width:  5.82em; height:  1.12em;"> <use
+xlink:href="images/img5099.svg#page5066"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 16.04 5.78"
+style="width:  1.61em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5100.svg#page5067"> </use> </svg></span> és el coeficient
+d’absorció molar de la ratlla espectral corresponent a l’esmentada
+transició</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 55.18 9.96"
+style="width:  5.54em; height:  1.12em;"> <use
+xlink:href="images/img5101.svg#page5068"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5102.svg#page5069"> </use> </svg></span> es pot calcular
+a partir <span class="inlinemath">d’<svg
+viewBox="0 -4.29 16.04 5.78"
+style="width:  1.61em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5103.svg#page5070"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que el coeficient
+d’Einstein d’absorció <span class="inlinemath"><svg
+viewBox="0 -6.81 19.55 8.3"
+style="width:  1.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5104.svg#page5071"> </use> </svg></span> està relacionat
+amb el corresponent coeficient d’absorció <span class="inlinemath">molar <svg
+viewBox="0 -4.29 16.04 5.78"
+style="width:  1.61em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5105.svg#page5072"> </use> </svg></span></span>. <span>La
+relació és la següent, </span> </div>
+
+<table class="equation" id="ref::rad:lam:Bmneps"><tr><td><svg class="equation"
+viewBox="0 -14.21 87.09 22.54"
+style="width:  8.74em; height:  2.38em;"> <use
+xlink:href="images/img5106.svg#page5073"> </use>
+</svg></td><td>(9.12)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.81 14 8.3"
+style="width:  1.41em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5107.svg#page5074"> </use> </svg></span> és el nombre
+d’Avogadro</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.21 83.12 22.54"
+style="width:  8.34em; height:  2.38em;"> <use
+xlink:href="images/img5108.svg#page5075"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.3&rang;</span> <span class="sffamily" >Cal prendre en
+compte tota la ratlla espectral.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.21 83.12 22.54"
+style="width:  8.34em; height:  2.38em;"> <use
+xlink:href="images/img5109.svg#page5076"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Com que totes les ratlles espectrals tenen una certa
+amplada, és millor que, en comptes d’utilitzar directament l’Eq.(</span><a
+href="sections/section.9.6.html#ref::rad:lam:Bmneps">9.12</a><span>), sumen
+(integrem) la contribució de totes les freqüències de la ratlla, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.1 116.96 23.18"
+style="width: 11.74em; height:  2.45em;"> <use
+xlink:href="images/img5110.svg#page5077"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.1 114.75 23.18"
+style="width: 11.52em; height:  2.45em;"> <use
+xlink:href="images/img5111.svg#page5078"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.9.6.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

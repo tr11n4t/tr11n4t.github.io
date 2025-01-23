@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Forma i amplada de les ratlles espectrals | Amplada natural</title>
+<meta name="description" content="El principi d’incertesa energia/temps
+determina la vida mitjana d’una molècula i l’amplada natural d’una transició.
+Efecte Doppler.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.9.5.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.9.html"><span>9 Característiques generals de
+l’espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>9.5 Forma i amplada de les ratlles
+espectrals </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4917.svg#page4885"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.4.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.9.6.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>9.5  Forma i amplada de les ratlles
+espectrals</span> </h4>
+
+<div class="law">
+<div class="p"><strong><span>Ratlla (o línia) espectral</span></strong>.
+<span>Una ratlla espectral és la representació, en funció de la freqüència (o
+de la longitud d’ona), de la intensitat de la radiació electromagnètica
+absorbida o emesa durant una determinada transició espectroscòpica</span>.
+</div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Les ratlles
+espectrals no són infinitament punxegudes.</span></summary>
+
+<div class="content"><div class="p"> <span>Els espectres moleculars (tant els
+d’absorció com els d’emissió) estan compostos per ratlles espectrals d’amplada
+no nul·la</span>. <span>És a dir, en els espectres moleculars no veurem ratlles
+com la que apareix a la part esquerra de la figura </span><a
+href="sections/section.9.5.html#ref::rad:rat:amplada">9.7</a><span>, sinó
+ratlles similars a la de la dreta</span>. </div>
+
+<div class="p"> <span>Això implica que, encara que
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4918.svg#page4886"> </use> </svg></span> no sigui
+exactament igual a <span class="inlinemath"><svg
+viewBox="0 -4.29 16.92 5.78"
+style="width:  1.70em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4919.svg#page4887"> </use> </svg></span>, es produirà una
+certa absorció o emissió de radiació</span>. </div>
+
+<div class="figure" id="ref::rad:rat:amplada">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="10.83 -86.88 339.7 160.59"
+style="width: 34.10em; height: 16.24em;"> <use
+xlink:href="images/img4920.svg#page4888"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 9.7</span>: <span>Dues ratlles espectrals
+per a la transició <span class="inlinemath"><svg
+viewBox="0 -6.92 40.97 8.86"
+style="width:  4.11em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4921.svg#page4889"> </use> </svg></span>, una,
+hipotètica, d’amplada nul·la (esquerra) i l’altra, més realista, d’amplada no
+nul·la</span>. <span>La doble fletxa representa l’</span><span class="itshape"
+>amplada a la meitat d’intensitat</span><span>, <span class="inlinemath"><svg
+viewBox="0 -7.13 18.84 7.13"
+style="width:  1.89em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4922.svg#page4890"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>L’amplada d’una ratlla espectral es quantifica mitjançant
+el següent concepte</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Amplada a la meitat d’intensitat</span></strong>.
+<span>L’</span><span class="itshape" >amplada a la meitat
+d’intensitat</span><span> d’una ratlla espectral és l’amplada de la ratlla a la
+meitat de la seva intensitat màxima</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Ho il·lustrem en la figura </span><a
+href="sections/section.9.5.html#ref::rad:rat:amplada">9.7</a><span>, per a la
+ratlla de la dreta</span>. <span>Podem escriure per a la freqüència de la
+transició que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 64.5 8.63"
+style="width:  6.47em; height:  0.99em;"> <use
+xlink:href="images/img4923.svg#page4891"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Hi ha un
+</span><span class="itshape sffamily" >principi d’incertesa</span><span
+class="sffamily" > (de Heisenberg) per a l’energia i el temps.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Els estats
+excitats experimenten </span><span class="itshape sffamily" >emissió
+espontània.</span></summary>
+
+<div class="content"><div class="p"> <span>Els estats excitats experimenten el
+procés d’emissió espontània, el qual fa que, fins i tot en absència de radiació
+electromagnètica, es produïsquen transicions espectroscòpiques cap a estats
+d’energia més baixa</span>. </div>
+
+<div class="p"> <span>L’estat fonamental, òbviament, no serà afectat per
+l’emissió espontània</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >La </span><span
+class="itshape sffamily" >vida mitjana</span><span class="sffamily" > d’un
+estat excitat és <span class="inlinemath"><svg
+viewBox="0 -7.47 47.64 9.96"
+style="width:  4.78em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4924.svg#page4892"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com hem vist en </span><a
+class="sffamily small" href="sections/section.9.2.html#ref::rad:ein:constants"
+>§9.2&vert;2.2&rang;</a><span>, l’emissió espontània és quantificada pel
+coeficient d’Einstein <span class="inlinemath"><svg
+viewBox="0 -6.81 19.47 8.3"
+style="width:  1.95em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4925.svg#page4893"> </use> </svg></span></span>. <span>En
+absència de radiació electromagnètica, la velocitat de la transició ve donada
+per l’Eq. (</span><a
+href="sections/section.9.2.html#ref::rad:ein:velocitat2">9.1</a><span>),
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -14.21 88.74 21.05"
+style="width:  8.91em; height:  2.23em;"> <use
+xlink:href="images/img4926.svg#page4894"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta equació correspon a allò que en cinètica
+química s’anomena </span><span class="itshape" >reacció de primer ordre</span>.
+<span>És molt fàcil d’integrar</span>. <span>Primer reordenem, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -14.21 79.89 23.54"
+style="width:  8.02em; height:  2.48em;"> <use
+xlink:href="images/img4927.svg#page4895"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>desprès integrem, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.42 124.18 27.24"
+style="width: 12.46em; height:  2.85em;"> <use
+xlink:href="images/img4928.svg#page4896"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>ara avaluem, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 119.35 9.96"
+style="width: 11.98em; height:  1.12em;"> <use
+xlink:href="images/img4929.svg#page4897"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i finalment obtenim </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.88 92.14 11.37"
+style="width:  9.25em; height:  1.26em;"> <use
+xlink:href="images/img4930.svg#page4898"> </use> </svg></span> </div>
+
+<div class="p"> <span>La anomenada </span><span class="itshape" >vida
+mitjana</span><span> quantifica el temps que tarda una molècula
+<span class="inlinemath"><svg
+viewBox="0 -6.86 13.21 6.86"
+style="width:  1.33em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4931.svg#page4899"> </use> </svg></span> en patir una
+emissió espontània</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Vida mitjana</span></strong>. <span>La vida
+mitjana <span class="inlinemath">(<svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4932.svg#page4900"> </use> </svg></span>) d’una molècula
+en l’estat excitat <span class="inlinemath"><svg
+viewBox="0 -6.86 13.21 6.86"
+style="width:  1.33em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4933.svg#page4901"> </use> </svg></span> és el temps que
+tarda, de mitjana, en experimentar una emissió</span>. <span>Matemàticament, és
+el temps que tarda <span class="inlinemath"><svg
+viewBox="0 -7.47 19.3 9.96"
+style="width:  1.94em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4934.svg#page4902"> </use> </svg></span> en reduir-se en
+un factor <span class="inlinemath"><svg
+viewBox="0 -7.47 14.6 9.96"
+style="width:  1.47em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4935.svg#page4903"> </use> </svg></span>, i per tant és
+igual a </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 43.89 21.34"
+style="width:  4.40em; height:  2.26em;"> <use
+xlink:href="images/img4936.svg#page4904"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>La demostració és senzilla, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -14.21 99.28 21.05"
+style="width:  9.96em; height:  2.23em;"> <use
+xlink:href="images/img4937.svg#page4905"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.01 51.23 19.87"
+style="width:  5.14em; height:  2.12em;"> <use
+xlink:href="images/img4938.svg#page4906"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>d’on concloem que <span class="inlinemath"><svg
+viewBox="0 -6.81 43.71 8.3"
+style="width:  4.39em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4939.svg#page4907"> </use> </svg></span>, i per tant
+<span class="inlinemath"><svg
+viewBox="0 -8.42 36.96 12.85"
+style="width:  3.71em; height:  1.41em; vertical-align: -0.51em;"> <use
+xlink:href="images/img4940.svg#page4908"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>La vida mitjana del estat fonamental és infinita,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 28.73 4.29"
+style="width:  2.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4941.svg#page4909"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >L’energia d’un
+estat excitat és ‘incerta’:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -7.47 52.36 9.96"
+style="width:  5.26em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4942.svg#page4910"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.3.1&rang;</span> <span class="sffamily" >La radiació
+difumina l’energia dels estats.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a un sistema aïllat i en
+absència de radiació electromagnètica, l’energia de l’estat
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4943.svg#page4911"> </use> </svg></span> és exactament
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4944.svg#page4912"> </use> </svg></span></span>. <span>En
+afegir radiació, l’energia de l’estat és pertorbada i passa a tindre un valor
+més o menys indeterminat al voltant de <span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4945.svg#page4913"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 39.1 9.07"
+style="width:  3.92em; height:  1.03em;"> <use
+xlink:href="images/img4946.svg#page4914"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.13 16.23 7.13"
+style="width:  1.63em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4947.svg#page4915"> </use> </svg></span> és la
+</span><span class="itshape" >incertesa</span><span> de l’energia de l’estat
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4948.svg#page4916"> </use> </svg></span></span>.</div>
+</div>
+
+</details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 36.34 7.96"
+style="width:  3.65em; height:  0.92em;"> <use
+xlink:href="images/img4949.svg#page4917"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3.2&rang;</span> <span class="sffamily" >L’emissió
+espontània </span><span class="itshape sffamily" >també</span><span
+class="sffamily" > difumina l’energia dels estats.</span></summary>
+
+<div class="content"><div class="p"> <span>Encara que no pertorbem el sistema
+amb radiació externa, la </span><span class="itshape" >teoria quàntica de
+camps</span><span> demostra que el fenomen de l’emissió espontània també causa
+incertesa en l’energia dels estats</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3.3&rang;</span> <span class="sffamily" >La relació
+entre <span class="inlinemath"><svg
+viewBox="0 -7.13 16.23 7.13"
+style="width:  1.63em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4950.svg#page4918"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4951.svg#page4919"> </use> </svg></span> és com el
+principi d’incertesa de Heisenberg.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que per a l’estat
+<span class="inlinemath"><svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4952.svg#page4920"> </use> </svg></span> </span> </div>
+
+<table class="equation" id="ref::rad:rat:Etau"><tr><td><svg class="equation"
+viewBox="0 -13.66 47.56 20.49"
+style="width:  4.77em; height:  2.18em;"> <use
+xlink:href="images/img4953.svg#page4921"> </use>
+</svg></td><td>(9.4)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4954.svg#page4922"> </use> </svg></span> es la vida
+mitjana de <span class="inlinemath"><svg
+viewBox="0 -6.92 6.85 8.86"
+style="width:  0.69em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4955.svg#page4923"> </use> </svg></span></span>.
+<span>Aquesta relació s’assembla molt al principi d’incertesa de Heisenberg
+(vegeu </span><a class="sffamily small"
+href="sections/section.1.6.4.html#ref::pos:mes:dxdp"
+>§1.6.4&vert;7&rang;</a><span>), encara que la demostració és diferent</span>.
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 43.59 20.49"
+style="width:  4.38em; height:  2.18em;"> <use
+xlink:href="images/img4956.svg#page4924"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3.4&rang;</span> <span class="sffamily" >Una vida
+mitjana petita implica una incertesa gran per a l’energia.</span></summary>
+
+<div class="content"><div class="p"> <span>De l’Eq. (</span><a
+href="sections/section.9.5.html#ref::rad:rat:Etau">9.4</a><span>) podem
+obtindre la relació </span> </div>
+
+<table class="equation" id="ref::rad:rat:Ehtau"><tr><td><svg class="equation"
+viewBox="0 -13.66 45.14 20.49"
+style="width:  4.53em; height:  2.18em;"> <use
+xlink:href="images/img4957.svg#page4925"> </use>
+</svg></td><td>(9.5)</td></tr></table>
+
+<div class="p noindent"> <span>relació que ens diu que, com més petita sigui la
+vida mitjana d’un estat, més gran serà la incertesa de la seva
+energia</span>.</div> </div>
+
+</details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 41.17 20.49"
+style="width:  4.13em; height:  2.18em;"> <use
+xlink:href="images/img4958.svg#page4926"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4&rang;</span> <span class="sffamily" >La incertesa de
+l’energia eixampla les ratlles espectrals.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.66 41.17 20.49"
+style="width:  4.13em; height:  2.18em;"> <use
+xlink:href="images/img4959.svg#page4927"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Com que <span class="inlinemath"><svg
+viewBox="0 -6.92 32.51 6.92"
+style="width:  3.26em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4960.svg#page4928"> </use> </svg></span>, si dividim
+l’Eq. (</span><a
+href="sections/section.9.5.html#ref::rad:rat:Ehtau">9.5</a><span>) per
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.74 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4961.svg#page4929"> </use> </svg></span> obtenim </span>
+</div>
+
+<table class="equation" id="ref::rad:rat:nugetau"><tr><td><svg class="equation"
+viewBox="0 -13.01 48.8 19.85"
+style="width:  4.90em; height:  2.11em;"> <use
+xlink:href="images/img4962.svg#page4930"> </use>
+</svg></td><td>(9.6)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.13 13.86 7.13"
+style="width:  1.39em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4963.svg#page4931"> </use> </svg></span> serà la
+incertesa de la freqüència de la transició espectroscòpica</span>.
+<span>Recordant la figura </span><a
+href="sections/section.9.5.html#ref::rad:rat:amplada">9.7</a><span>, podem
+assumir que l’</span><span class="itshape" >amplada a la meitat
+d’intensitat</span><span> és <span class="inlinemath"><svg
+viewBox="0 -7.13 18.84 7.13"
+style="width:  1.89em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4964.svg#page4932"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 106.64 19.85"
+style="width: 10.70em; height:  2.11em;"> <use
+xlink:href="images/img4965.svg#page4933"> </use> </svg></span> </div>
+
+<div class="p"> <span>Les transicions amb vides mitjanes més petites tindran
+ratlles de més amplada</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >El principi
+d’incertesa fa que les ratlles prenguin la forma d’una </span><span
+class="itshape sffamily" >lorentziana.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Les ratlles
+espectrals tenen forma de lorentziana.</span></summary>
+
+<div class="content"><div class="figure" id="ref::rad:rat:lorentziana">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="5.71 -221.55 216.7 215.02"
+style="width: 21.75em; height: 22.36em;"> <use
+xlink:href="images/img4966.svg#page4934"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 9.8</span>: <span>Representació de la
+lorentziana <span class="inlinemath"><svg
+viewBox="0 -7.47 20.22 9.96"
+style="width:  2.03em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4967.svg#page4935"> </use> </svg></span>, on
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.71 6.23"
+style="width:  0.57em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4968.svg#page4936"> </use> </svg></span> és un
+paràmetre</span>. <span>La lorentziana està normalitzada,
+<span class="inlinemath"><svg
+viewBox="0 -8.57 72.06 12.94"
+style="width:  7.23em; height:  1.42em; vertical-align: -0.50em;"> <use
+xlink:href="images/img4969.svg#page4937"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>La </span><span class="itshape" >teoria quàntica de
+camps</span><span> prediu que les ratlles espectrals (tant les d’absorció com
+les de emissió espontània i estimulada) han de tindre forma de lorentziana
+(vegeu la figura </span><a
+href="sections/section.9.5.html#ref::rad:rat:lorentziana">9.8</a><span>)</span>.
+<span>Concretament, per a una transició entre l’estat excitat
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4970.svg#page4938"> </use> </svg></span> i l’estat
+fonamental <span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4971.svg#page4939"> </use> </svg></span>, la dependència
+de la intensitat amb la <span class="inlinemath">freqüència <svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4972.svg#page4940"> </use> </svg></span> és </span>
+</div>
+
+<table class="equation" id="ref::rad:rat:ILnu"><tr><td><svg class="equation"
+viewBox="0 -16.05 144.21 29.34"
+style="width: 14.47em; height:  3.06em;"> <use
+xlink:href="images/img4973.svg#page4941"> </use>
+</svg></td><td>(9.7)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4974.svg#page4942"> </use> </svg></span> és la vida
+mitjana de l’estat <span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4975.svg#page4943"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4976.svg#page4944"> </use> </svg></span> és una
+constant</span>. <span>La ratlla espectral és doncs una lorentziana centrada en
+<span class="inlinemath"><svg
+viewBox="0 -4.29 16.92 5.78"
+style="width:  1.70em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4977.svg#page4945"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:rat:DeltanuL"> <span>&vert;3.2&rang;</span> <span
+class="sffamily" >Les ratlles amb forma de lorentziana compleixen el principi
+d’incertesa.</span></summary>
+
+<div class="content"><div class="p"> <span>És fàcil comprovar que les ratlles
+amb la forma lorentziana donada per l’Eq. (</span><a
+href="sections/section.9.5.html#ref::rad:rat:ILnu">9.7</a><span>) compleixen el
+principi d’incertesa, Eq. (</span><a
+href="sections/section.9.5.html#ref::rad:rat:nugetau">9.6</a><span>)</span>.
+</div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="5.71 -193.82 188.97 188.92"
+style="width: 18.97em; height: 19.57em;"> <use
+xlink:href="images/img4978.svg#page4946"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Considerarem que <span class="inlinemath"><svg
+viewBox="0 -7.13 13.86 7.13"
+style="width:  1.39em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4979.svg#page4947"> </use> </svg></span> és igual a la
+meitat de la </span><span class="itshape" >amplada a la meitat
+d’intensitat</span><span>, com hem il·lustrat en la figura </span><a
+href="sections/section.9.5.html#ref::rad:rat:amplada">9.7</a>. <span>Com que el
+màxim de <span class="inlinemath"><svg
+viewBox="0 -7.47 23.65 9.96"
+style="width:  2.37em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4980.svg#page4948"> </use> </svg></span> es produeix per
+a <span class="inlinemath"><svg
+viewBox="0 -4.29 35.76 5.78"
+style="width:  3.59em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4981.svg#page4949"> </use> </svg></span>, haurem d’aïllar
+<span class="inlinemath"><svg
+viewBox="0 -7.13 13.86 7.13"
+style="width:  1.39em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4982.svg#page4950"> </use> </svg></span> de la següent
+relació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 158.15 19.85"
+style="width: 15.87em; height:  2.11em;"> <use
+xlink:href="images/img4983.svg#page4951"> </use> </svg></span> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.05 140.25 29.34"
+style="width: 14.08em; height:  3.06em;"> <use
+xlink:href="images/img4984.svg#page4952"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Utilitzant l’Eq. (</span><a
+href="sections/section.9.5.html#ref::rad:rat:ILnu">9.7</a><span>) podem
+escriure que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -16.05 167.58 29.34"
+style="width: 16.82em; height:  3.06em;"> <use
+xlink:href="images/img4985.svg#page4953"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>de manera que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.52 138.66 26.03"
+style="width: 13.92em; height:  2.73em;"> <use
+xlink:href="images/img4986.svg#page4954"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>cosa que implica que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 48.8 19.85"
+style="width:  4.90em; height:  2.11em;"> <use
+xlink:href="images/img4987.svg#page4955"> </use> </svg></span> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 44.84 19.85"
+style="width:  4.50em; height:  2.11em;"> <use
+xlink:href="images/img4988.svg#page4956"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>És a dir, que la ratlla
+<span class="inlinemath"><svg
+viewBox="0 -7.47 18.47 9.96"
+style="width:  1.85em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4989.svg#page4957"> </use> </svg></span> compleix el
+principi d’incertesa, Eq. (</span><a
+href="sections/section.9.5.html#ref::rad:rat:nugetau">9.6</a><span>)</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >L’amplada de la
+lorentziana, <span class="inlinemath"><svg
+viewBox="0 -7.47 58.59 9.96"
+style="width:  5.88em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4990.svg#page4958"> </use> </svg></span>, és
+l’</span><span class="itshape sffamily" >amplada natural.</span></summary>
+
+<div class="content"><div class="p"> <span>L’amplada d’una ratlla espectral
+deguda al principi d’incertesa, que en </span><a class="sffamily small"
+href="sections/section.9.5.html#ref::rad:rat:DeltanuL"
+>§9.5&vert;3.2&rang;</a><span> hem vist que és igual a
+<span class="inlinemath"><svg
+viewBox="0 -7.47 58.59 9.96"
+style="width:  5.88em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4991.svg#page4959"> </use> </svg></span>, és el que
+s’anomena l’</span><span class="itshape" >amplada natural</span><span> d’una
+ratlla espectral</span>. </div>
+
+<div class="p"> <span>A part del principi d’incertesa, hi altres causes que
+contribueixen a l’amplada de les ratlles espectrals</span>. <span>Veurem unes
+quantes a continuació</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >L’efecte Doppler
+causa un eixamplament en forma de gaussiana.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >El moviment
+d’una molècula canvia la freqüència aparent de la radiació.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Efecte Doppler</span></strong>. <span>Suposem que
+una font de radiació electromagnètica emet a una freqüència
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4992.svg#page4960"> </use> </svg></span>, i que una
+molècula s’allunya de la font amb velocitat <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4993.svg#page4961"> </use> </svg></span></span>.
+<span>Aleshores, la molècula percep la radiació electromagnètica amb una
+freqüència <span class="inlinemath"><svg
+viewBox="0 -7.49 7.85 7.49"
+style="width:  0.79em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4994.svg#page4962"> </use> </svg></span> diferent de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4995.svg#page4963"> </use> </svg></span>, </span> </div>
+
+<table class="equation" id="ref::rad:rat:doppler"><tr><td><svg class="equation"
+viewBox="0 -11.5 69.91 18.34"
+style="width:  7.02em; height:  1.96em;"> <use
+xlink:href="images/img4996.svg#page4964"> </use>
+</svg></td><td>(9.8)</td></tr></table>
+
+</div>
+
+<div class="p noindent"> <span>Si la molècula s’allunya de la font
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.66"
+style="width:  2.35em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img4997.svg#page4965"> </use> </svg></span>) la freqüència
+<span class="inlinemath"><svg
+viewBox="0 -7.49 7.85 7.49"
+style="width:  0.79em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4998.svg#page4966"> </use> </svg></span> és menor que
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4999.svg#page4967"> </use> </svg></span>, si s’hi acosta
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.66"
+style="width:  2.35em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img5000.svg#page4968"> </use> </svg></span>), major</span>.
+<span>Esquemàticament</span>: </div>
+
+<div class="p displaymath"> <span class="LARGE" ><svg class="displaymath"
+viewBox="0 -19.62 113.83 21.06"
+style="width:  7.28em; height:  1.42em;"> <use
+xlink:href="images/img5001.svg#page4969"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.64 4.98 4.29"
+style="width:  0.50em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5002.svg#page4970"> </use> </svg></span> representa la
+font i <span class="inlinemath"><svg
+viewBox="0 -4.43 4.98 3.87"
+style="width:  0.50em; height:  0.56em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5003.svg#page4971"> </use> </svg></span> la
+molècula</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2&rang;</span> <span class="sffamily" >La distribució
+de les velocitats moleculars té forma de gaussiana.</span></summary>
+
+<div class="content"><div class="p"> <span>La distribució de la velocitat de
+les molècules en una mostra depèn de la temperatura i té forma de gaussiana
+(vegeu la figura </span><a
+href="sections/section.9.5.html#ref::rad:rat:gaussiana">9.9</a><span>)</span>.
+</div>
+
+<div class="figure" id="ref::rad:rat:gaussiana">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="4.08 -221.55 218.33 215.02"
+style="width: 21.91em; height: 22.36em;"> <use
+xlink:href="images/img5004.svg#page4972"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 9.9</span>: <span>Representació de la
+gaussiana <span class="inlinemath"><svg
+viewBox="0 -7.47 21.28 9.96"
+style="width:  2.14em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5005.svg#page4973"> </use> </svg></span>, on
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5006.svg#page4974"> </use> </svg></span> és un
+paràmetre</span>. <span>La gaussiana està normalitzada,
+<span class="inlinemath"><svg
+viewBox="0 -8.57 73.11 12.94"
+style="width:  7.34em; height:  1.42em; vertical-align: -0.50em;"> <use
+xlink:href="images/img5007.svg#page4975"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>En un gas, la distribució de velocitat ve donada per la
+distribució de Maxwell-Boltzmann, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.37 129.74 24"
+style="width: 13.02em; height:  2.53em;"> <use
+xlink:href="images/img5008.svg#page4976"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.92 11.55 8.41"
+style="width:  1.16em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5009.svg#page4977"> </use> </svg></span> és la constant
+de Boltzmann, <span class="inlinemath"><svg
+viewBox="0 -4.29 8.75 4.29"
+style="width:  0.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5010.svg#page4978"> </use> </svg></span> és la massa de
+la molècula i <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5011.svg#page4979"> </use> </svg></span> la velocitat en
+una dimensió (la de la radiació)</span>. <span>Noteu que aquesta distribució té
+forma de gaussiana</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >L’efecte Doppler
+provoca l’</span><span class="itshape sffamily" >eixamplament
+Doppler.</span></summary>
+
+<div class="content"><div class="p"> <span>Si una molècula que s’allunya de la
+font de radiació amb velocitat <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5012.svg#page4980"> </use> </svg></span> ha
+d’experimentar una transició de <span class="inlinemath"><svg
+viewBox="0 -6.92 13.56 8.86"
+style="width:  1.36em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5013.svg#page4981"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -6.92 11.41 8.86"
+style="width:  1.15em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5014.svg#page4982"> </use> </svg></span>, aleshores la
+radiació que li arriba ha de tindre freqüència <span class="inlinemath"><svg
+viewBox="0 -4.29 16.92 5.78"
+style="width:  1.70em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5015.svg#page4983"> </use> </svg></span></span>.
+<span>Prenent en compte l’efecte Doppler, Eq. (</span><a
+href="sections/section.9.5.html#ref::rad:rat:doppler">9.8</a><span>), tindrem
+que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -11.5 78.98 18.34"
+style="width:  7.93em; height:  1.96em;"> <use
+xlink:href="images/img5016.svg#page4984"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5017.svg#page4985"> </use> </svg></span> és la freqüència
+de la radiació emesa per la font</span>. </div>
+
+<div class="p"> <span>La conseqüència és que les molècules que s’allunyen de la
+font <span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.66"
+style="width:  2.35em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img5018.svg#page4986"> </use> </svg></span>) necessitaran
+una freqüència <span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5019.svg#page4987"> </use> </svg></span> major que
+<span class="inlinemath"><svg
+viewBox="0 -4.29 16.92 5.78"
+style="width:  1.70em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5020.svg#page4988"> </use> </svg></span> per a poder
+experimentar la transició, i al inrevés per a les molècules que
+s’apropen</span>. </div>
+
+<div class="p"> <span>Combinant l’efecte Doppler amb la distribució de
+Maxwell-Boltzmann, es pot demostrar que la ratlla espectral pren la següent
+forma, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.16 164.65 25.79"
+style="width: 16.53em; height:  2.71em;"> <use
+xlink:href="images/img5021.svg#page4989"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La forma d’aquesta funció és la d’una gaussiana
+centrada en <span class="inlinemath"><svg
+viewBox="0 -4.29 16.92 5.78"
+style="width:  1.70em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5022.svg#page4990"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="sffamily" >L’eixamplament
+Doppler es pot reduir amb feixos perpendiculars.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem reduir o eliminar
+l’eixamplament Doppler utilitzant feixos moleculars perpendiculars a la
+radiació incident, cosa que fa que el component de la velocitat cap a la font
+de radiació sigui nul·la</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >La presència de
+moltes molècules causa l’</span><span class="itshape sffamily" >eixamplament
+per efecte de pressió.</span></summary>
+
+<div class="content"><div class="p"> <span>En una mostra qualsevol hi ha
+quantitats immenses de molècules, i cada molècula interactua amb les veïnes
+mitjançant les </span><span class="itshape" >forces intermoleculars</span>.
+<span>La conseqüència és que les energies dels estats de cada molècula són
+pertorbades i desplaçades sense parar per aquesta interacció amb les
+veïnes</span>. <span>Apareix un eixamplament de les ratlles espectrals que
+s’anomena </span><span class="itshape" >eixamplament per efecte de
+pressió</span><span>, ja que és més intens si s’augmenta la pressió o la
+concentració</span>. </div>
+
+<div class="p"> <span>Pot reduir-se utilitzant pressions molt baixes</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::rad:rat:saturacio"> <span>&vert;6&rang;</span> <span
+class="sffamily" >Les intensitats fortes causen l’</span><span class="itshape
+sffamily" >eixamplament de saturació</span><span class="sffamily"
+>.</span></summary>
+
+<div class="content"><div class="p"> <span>Una molècula, després de absorbir un
+fotó i passar a un estat excitat, acaba, tard o d’hora, caient a l’estat
+fonamental</span>. <span>Amb intensitats no massa grans, les molècules retornen
+a l’estat fonamental a bon ritme i la majoria de fotons troben molècules a les
+quals excitar</span>. <span>Ara bé, Si s’utilitza una font de radiació molt
+intensa (per exemple, un làser), la majoria de molècules són a l’estat excitat
+(no els dóna temps a caure de tants fotons que hi arriben), de manera que molt
+fotons no troben molècules en l’estat fonamental i passen de llarg</span>.
+</div>
+
+<div class="p"> <span>Aleshores es diu que s’ha produït la </span><span
+class="itshape" >saturació</span><span> i no és produeixen més transicions
+encara que s’augmenti més la intensitat</span>. </div>
+
+<div class="p"> <span>La saturació fa decréixer la intensitat, sobretot en la
+part central de la ratlla, on l’efecte és més pronunciat, per la qual cosa
+tindrem ratlles més aplanades i per tant, més amples</span>. </div>
+
+<div class="p"> <span>Aquest efecte s’anomena </span><span class="itshape"
+>eixamplament de saturació</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.9.5.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

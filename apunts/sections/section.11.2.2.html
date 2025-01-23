@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Operador hamiltonià per a la rotació de sòlids rígids</title>
+<meta name="description" content="Per a la rotació d’un sòlid rígid, el
+hamiltonià comparteix autofuncions amb alguns operadors de moment angular.
+Constants rotacionals.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.11.2.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.11.html"><span>11 Espectres de rotació de molècules
+poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.11.2.html"><span>11.2 Mecànica quàntica de la rotació de
+sòlids rígids </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>11.2.2 Operador hamiltonià
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img5890.svg#page5855"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.11.2.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.11.2.html"> <svg class="icon up" viewBox="0 0
+512 512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.11.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection" id="ref::ro2:qua:H">  <span>11.2.2  Operador
+hamiltonià</span> </h5>
+
+<details open class="foldable prop">
+<summary id="ref::ro2:qua:T"> <span>&vert;1&rang;</span> <span class="sffamily"
+>Per a la rotació, <span class="inlinemath"><svg
+viewBox="0 -9.38 29.58 9.38"
+style="width:  2.97em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5891.svg#page5856"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.49 91.78 23.81"
+style="width:  9.21em; height:  2.51em;"> <use
+xlink:href="images/img5892.svg#page5857"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Per a la rotació molecular, en absència de camps
+elèctrics o magnètics, l’únic component de l’energia total del sistema és
+l’</span><span class="itshape" >energia cinètica</span>. <span>Aleshores,
+prenent en compte l’expressió de l’energia cinètica clàssica que hem vist
+en </span><a class="sffamily small"
+href="sections/section.11.1.html#ref::ro2:cla:KinCla"
+>§11.1&vert;4&rang;</a><span>, l’</span><span class="itshape" >operador
+hamiltonià</span><span> serà </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.76 97.63 25.09"
+style="width:  9.80em; height:  2.64em;"> <use
+xlink:href="images/img5893.svg#page5858"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.76 93.67 25.09"
+style="width:  9.40em; height:  2.64em;"> <use
+xlink:href="images/img5894.svg#page5859"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ro2:qua:HLL"> <span>&vert;2&rang;</span> <span
+class="sffamily" >El hamiltonià <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5895.svg#page5860"> </use> </svg></span> commuta amb
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.75 9.38"
+style="width:  1.08em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5896.svg#page5861"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 48.62 11.87"
+style="width:  4.88em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5897.svg#page5862"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 125.09 12.23"
+style="width: 12.56em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5898.svg#page5863"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5899.svg#page5864"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5900.svg#page5865"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 123.57 11.87"
+style="width: 12.40em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5901.svg#page5866"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5902.svg#page5867"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5903.svg#page5868"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>És fàcil demostrar-ho</span>. <span>Les relacions de
+commutació que hem vist en </span><a class="sffamily small"
+href="sections/section.11.2.1.html#ref::ro2:qua:LLLxLa"
+>§11.2.1&vert;4&rang;</a><span> ens permeten escriure </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 61.75 10.88"
+style="width:  6.20em; height:  1.21em;"> <use
+xlink:href="images/img5904.svg#page5869"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara demostrarem que
+<span class="inlinemath"><svg
+viewBox="0 -9.38 58.48 11.84"
+style="width:  5.87em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5905.svg#page5870"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 22.35 11.84"
+style="width:  2.24em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5906.svg#page5871"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5907.svg#page5872"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 33.95 10.88"
+style="width:  3.41em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5908.svg#page5873"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5909.svg#page5874"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 42.2 11.87"
+style="width:  4.24em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5910.svg#page5875"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5911.svg#page5876"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 42.2 11.87"
+style="width:  4.24em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5912.svg#page5877"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5913.svg#page5878"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 41.7 11.87"
+style="width:  4.19em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5914.svg#page5879"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5915.svg#page5880"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 41.7 11.87"
+style="width:  4.19em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5916.svg#page5881"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5917.svg#page5882"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 25.62 11.84"
+style="width:  2.57em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5918.svg#page5883"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>i, repetint el procediment per als components
+<span class="inlinemath"><svg
+viewBox="0 -6.92 4.28 6.92"
+style="width:  0.43em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5919.svg#page5884"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5920.svg#page5885"> </use> </svg></span>, obtenim </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 145.48 12.06"
+style="width: 14.60em; height:  1.33em;"> <use
+xlink:href="images/img5921.svg#page5886"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Finalment, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -11.5 34.18 18.02"
+style="width:  3.43em; height:  1.93em; vertical-align: -0.71em;"> <use
+xlink:href="images/img5922.svg#page5887"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5923.svg#page5888"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -17.48 99.79 29.98"
+style="width: 10.02em; height:  3.13em; vertical-align: -1.31em;"> <use
+xlink:href="images/img5924.svg#page5889"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5925.svg#page5890"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 206.66 21.34"
+style="width: 20.74em; height:  2.26em; vertical-align: -0.90em;"> <use
+xlink:href="images/img5926.svg#page5891"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ro2:qua:HLz"> <span>&vert;3&rang;</span> <span
+class="sffamily" >El hamiltonià <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5927.svg#page5892"> </use> </svg></span> commuta amb
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.87 10.88"
+style="width:  1.09em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5928.svg#page5893"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 48.74 11.87"
+style="width:  4.89em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5929.svg#page5894"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 125.21 11.87"
+style="width: 12.57em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5930.svg#page5895"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5931.svg#page5896"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5932.svg#page5897"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 124.53 12.23"
+style="width: 12.50em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5933.svg#page5898"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5934.svg#page5899"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5935.svg#page5900"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 123.94 11.87"
+style="width: 12.44em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5936.svg#page5901"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5937.svg#page5902"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5938.svg#page5903"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>Sabem, per les relació de commutació que hem vist
+en </span><a class="sffamily small"
+href="sections/section.11.2.1.html#ref::ro2:qua:LxLa"
+>§11.2.1&vert;5&rang;</a><span> que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 61.99 10.88"
+style="width:  6.22em; height:  1.21em;"> <use
+xlink:href="images/img5939.svg#page5904"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara demostrarem que
+<span class="inlinemath"><svg
+viewBox="0 -9.38 58.73 11.84"
+style="width:  5.90em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5940.svg#page5905"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 22.47 11.84"
+style="width:  2.26em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5941.svg#page5906"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5942.svg#page5907"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 34.07 10.88"
+style="width:  3.42em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5943.svg#page5908"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5944.svg#page5909"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 42.32 11.87"
+style="width:  4.25em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5945.svg#page5910"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5946.svg#page5911"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 42.32 11.87"
+style="width:  4.25em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5947.svg#page5912"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5948.svg#page5913"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 41.82 11.87"
+style="width:  4.20em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5949.svg#page5914"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5950.svg#page5915"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 41.82 11.87"
+style="width:  4.20em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5951.svg#page5916"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5952.svg#page5917"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 25.74 11.84"
+style="width:  2.58em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5953.svg#page5918"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Podem fer demostracions similars per als
+components <span class="inlinemath"><svg
+viewBox="0 -6.92 4.28 6.92"
+style="width:  0.43em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5954.svg#page5919"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5955.svg#page5920"> </use> </svg></span>, de manera que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -11.5 157.32 18.02"
+style="width: 15.79em; height:  1.93em;"> <use
+xlink:href="images/img5956.svg#page5921"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Finalment, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -11.5 34.3 18.02"
+style="width:  3.44em; height:  1.93em; vertical-align: -0.71em;"> <use
+xlink:href="images/img5957.svg#page5922"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5958.svg#page5923"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -17.48 99.91 29.98"
+style="width: 10.03em; height:  3.13em; vertical-align: -1.31em;"> <use
+xlink:href="images/img5959.svg#page5924"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5960.svg#page5925"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 207.03 21.34"
+style="width: 20.78em; height:  2.26em; vertical-align: -0.90em;"> <use
+xlink:href="images/img5961.svg#page5926"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::ro2:qua:HLLLz"> <span>&vert;4&rang;</span> <span
+class="sffamily" >El hamiltonià <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5962.svg#page5927"> </use> </svg></span> comparteix
+autofuncions amb <span class="inlinemath"><svg
+viewBox="0 -9.38 10.75 9.38"
+style="width:  1.08em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5963.svg#page5928"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.87 10.88"
+style="width:  1.09em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5964.svg#page5929"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Sabem, pels fonaments de la mecànica
+quàntica, que un conjunt d’operadors que commuten entre ells, com ara
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5965.svg#page5930"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.75 9.38"
+style="width:  1.08em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5966.svg#page5931"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.87 10.88"
+style="width:  1.09em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5967.svg#page5932"> </use> </svg></span>, han de tindre
+totes les autofuncions comunes, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 16.84 9.38"
+style="width:  1.69em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5968.svg#page5933"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5969.svg#page5934"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 15.68 6.86"
+style="width:  1.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5970.svg#page5935"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19 9.38"
+style="width:  1.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5971.svg#page5936"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5972.svg#page5937"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.95 131.5 11.44"
+style="width: 13.20em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5973.svg#page5938"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.12 10.88"
+style="width:  1.92em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5974.svg#page5939"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5975.svg#page5940"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 124.5 8.86"
+style="width: 12.50em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5976.svg#page5941"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 16.84 9.38"
+style="width:  1.69em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5977.svg#page5942"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5978.svg#page5943"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 15.68 6.86"
+style="width:  1.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5979.svg#page5944"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19 9.38"
+style="width:  1.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5980.svg#page5945"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5981.svg#page5946"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.95 131.5 11.44"
+style="width: 13.20em; height:  1.27em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5982.svg#page5947"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.12 10.88"
+style="width:  1.92em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5983.svg#page5948"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5984.svg#page5949"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 122.84 8.86"
+style="width: 12.33em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5985.svg#page5950"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ro2:qua:ABC"> <span>&vert;5&rang;</span> <span
+class="sffamily" >Utilitzarem les </span><span class="itshape sffamily"
+>constants rotacionals</span><span class="sffamily" >
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5986.svg#page5951"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5987.svg#page5952"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.83 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5988.svg#page5953"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com vam fer per a les molècules
+diatòmiques, utilitzarem, a l’hora d’estudiar les energies del estats
+rotacionals i les transicions entre ells, les anomenades </span><span
+class="itshape" >constants rotacionals</span>. <span>En molècules poliatòmiques
+n’hi ha tres, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5989.svg#page5954"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5990.svg#page5955"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.66 29 21.99"
+style="width:  2.91em; height:  2.33em; vertical-align: -0.90em;"> <use
+xlink:href="images/img5991.svg#page5956"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5992.svg#page5957"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5993.svg#page5958"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.66 28.18 21.99"
+style="width:  2.83em; height:  2.33em; vertical-align: -0.90em;"> <use
+xlink:href="images/img5994.svg#page5959"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.83 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5995.svg#page5960"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5996.svg#page5961"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.66 32.2 21.99"
+style="width:  3.23em; height:  2.33em; vertical-align: -0.90em;"> <use
+xlink:href="images/img5997.svg#page5962"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5998.svg#page5963"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5999.svg#page5964"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.66 29 21.99"
+style="width:  2.91em; height:  2.33em; vertical-align: -0.90em;"> <use
+xlink:href="images/img6000.svg#page5965"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6001.svg#page5966"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6002.svg#page5967"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.66 28.18 21.99"
+style="width:  2.83em; height:  2.33em; vertical-align: -0.90em;"> <use
+xlink:href="images/img6003.svg#page5968"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.83 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6004.svg#page5969"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6005.svg#page5970"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.66 28.24 21.99"
+style="width:  2.83em; height:  2.33em; vertical-align: -0.90em;"> <use
+xlink:href="images/img6006.svg#page5971"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.11.2.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Operadors hermitians | Autofuncions i autovalors | Degeneració</title>
+<meta name="description" content="Els autovalors dels operadors hermitians són
+nombres reals, i les autofuncions són ortogonals i formen un conjunt complet.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.1.4.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.html"><span>1 Fonaments de la mecànica quàntica
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.4.html"><span>1.4 Operadors </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>1.4.2 Operadors hermitians
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img151.svg#page143"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.4.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.4.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.5.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>1.4.2  Operadors hermitians</span> </h5>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:hermitia"> <span>&vert;1&rang;</span> <span
+class="sffamily" >Un </span><span class="itshape sffamily" >operador
+hermitià</span><span class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img152.svg#page144"> </use> </svg></span> compleix que
+<span class="inlinemath"><svg
+viewBox="0 -10.16 104.9 13.01"
+style="width: 10.53em; height:  1.43em; vertical-align: -0.35em;"> <use
+xlink:href="images/img153.svg#page145"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Ens interessarà sobretot un tipus
+d’operador lineal anomenat </span><span class="itshape" >hermitià</span>.
+</div>
+
+<div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://en.wikipedia.org/wiki/File:Charles_Hermite.jpg"
+><span>commons.wikimedia</span></a><img src="images/img154.jpg" alt="included
+image" style="width: 11.64em; height: 16.52em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" >Charles Hermite</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="law">
+<div class="p"><strong><span>Operador hermitià (o hermític)</span></strong>.
+<span>Un operador lineal <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img155.svg#page146"> </use> </svg></span> és </span><span
+class="itshape" >hermitià</span><span> si per a dues funcions d’ona qualsevol
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img156.svg#page147"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img157.svg#page148"> </use> </svg></span> compleix que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.16 109.83 13.01"
+style="width: 11.02em; height:  1.43em;"> <use
+xlink:href="images/img158.svg#page149"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Fixeu-vos-hi</span>: <span>si intercanviem
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img159.svg#page150"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img160.svg#page151"> </use> </svg></span>, el braket passa a
+ser el conjugat del braket original</span>. </div>
+
+</div></div>
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Els operadors
+hermitians tenen </span><span class="itshape sffamily"
+>autofuncions</span><span class="sffamily" > i </span><span class="itshape
+sffamily" >autovalors.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Autofunció i autovalor</span></strong>. <span>Siga
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img161.svg#page152"> </use> </svg></span> un operador
+hermitià</span>. <span>Direm que una funció d’ona <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img162.svg#page153"> </use> </svg></span> és una
+</span><span class="itshape" >autofunció</span><span>
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img163.svg#page154"> </use> </svg></span> si compleix que
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 44.29 11.32"
+style="width:  4.45em; height:  1.26em;"> <use
+xlink:href="images/img164.svg#page155"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img165.svg#page156"> </use> </svg></span> és una constant
+que s’anomena </span><span class="itshape" >autovalor</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Algunes observacions</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Les autofuncions i els autovalors poden anomenar-se també
+</span><span class="itshape" >funcions pròpies</span><span> i </span><span
+class="itshape" >valors propis</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>La relació <span class="inlinemath"><svg
+viewBox="0 -9.38 41.52 9.38"
+style="width:  4.17em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img166.svg#page157"> </use> </svg></span> és l’</span><span
+class="itshape" >equació d’autovalors</span><span> de l’operador hermitià
+<span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img167.svg#page158"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Pot haver-hi més d’una autofunció, i sovint n’hi ha
+infinites, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 103.61 11.32"
+style="width: 10.40em; height:  1.26em;"> <use
+xlink:href="images/img168.svg#page159"> </use> </svg></span> </div>
+
+</li><li>
+
+<div class="p"> <span><span class="inlinemath">Si <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img169.svg#page160"> </use> </svg></span> és una autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img170.svg#page161"> </use> </svg></span> amb
+<span class="inlinemath">autovalor <svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img171.svg#page162"> </use> </svg></span>,
+<span class="inlinemath">aleshores <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img172.svg#page163"> </use> </svg></span> també serà
+autofunció <span class="inlinemath">d’<svg
+viewBox="0 -9.38 11.44 9.38"
+style="width:  1.15em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img173.svg#page164"> </use> </svg></span> amb
+<span class="inlinemath">autovalor <svg
+viewBox="0 -8.11 9.24 8.11"
+style="width:  0.93em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img174.svg#page165"> </use> </svg></span></span>.
+<span>Segons </span><a class="sffamily small"
+href="sections/section.1.4.html#ref::pos:opr:OxP" >§1.4&vert;2&rang;</a><span>,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 203.81 11.87"
+style="width: 20.46em; height:  1.31em;"> <use
+xlink:href="images/img175.svg#page166"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>De manera similar, <span class="inlinemath"><svg
+viewBox="0 -9.38 52.37 9.38"
+style="width:  5.26em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img176.svg#page167"> </use> </svg></span></span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:degenerats"> <span>&vert;3&rang;</span> <span
+class="sffamily" >Les autofuncions i els autovalors poden ser </span><span
+class="itshape sffamily" >degenerats</span><span class="sffamily"
+>.</span></summary>
+
+<div class="content"><div class="p"> <span>Abans de continuar amb les
+propietats de les autofuncions i els autovalors, repassarem breument la
+definició d’</span><span class="itshape" >independència lineal</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Independència lineal</span></strong>. <span>Diem
+que un conjunt <span class="inlinemath">de <svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img177.svg#page168"> </use> </svg></span> funcions
+<span class="inlinemath"><svg
+viewBox="0 -7.47 57.49 9.96"
+style="width:  5.77em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img178.svg#page169"> </use> </svg></span> són </span><span
+class="itshape" >linealment independents</span><span> si la relació </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 98.15 8.36"
+style="width:  9.85em; height:  0.96em;"> <use
+xlink:href="images/img179.svg#page170"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>només es compleix quan tots els
+<span class="inlinemath">coeficients <svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img180.svg#page171"> </use> </svg></span> valen zero,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.27 77.74 7.77"
+style="width:  7.80em; height:  0.90em;"> <use
+xlink:href="images/img181.svg#page172"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si existeixen com a mínim dos
+<span class="inlinemath">coeficients <svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img182.svg#page173"> </use> </svg></span> diferents de zero
+fan complir la relació, direm, per contra, que les funcions són </span><span
+class="itshape" >linealment dependents</span>. </div>
+
+</div>
+
+<div class="p"> <span>Expliquem ara la degeneració d’autofuncions i
+autovalors</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Autofunció i autovalor degenerat</span></strong>.
+<span>Sigui <span class="inlinemath"><svg
+viewBox="0 -7.47 57.49 9.96"
+style="width:  5.77em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img183.svg#page174"> </use> </svg></span> un conjunt (amb
+<span class="inlinemath"><svg
+viewBox="0 -6.27 24.24 6.66"
+style="width:  2.43em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img184.svg#page175"> </use> </svg></span>) de funcions
+</span><span class="itshape" >linealment independents</span><span> que, a més a
+més, són autofuncions d’un operador hermitià <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img185.svg#page176"> </use> </svg></span> amb el
+</span><span class="itshape" >mateix</span><span> autovalor
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img186.svg#page177"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 19.19 10.88"
+style="width:  1.93em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img187.svg#page178"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img188.svg#page179"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 16.99 8.36"
+style="width:  1.71em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img189.svg#page180"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.02 2.77 9.02"
+style="width:  0.28em; height:  1.03em; vertical-align: -0.06em;"> <use
+xlink:href="images/img190.svg#page181"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 20.15 10.88"
+style="width:  2.02em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img191.svg#page182"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img192.svg#page183"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 21.21 8.36"
+style="width:  2.13em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img193.svg#page184"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Diem aleshores que <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img194.svg#page185"> </use> </svg></span> és un </span><span
+class="itshape" >autovalor degenerat</span><span>, i que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.72 8.36"
+style="width:  1.18em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img195.svg#page186"> </use> </svg></span>, &hellip;,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 12.67 8.36"
+style="width:  1.27em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img196.svg#page187"> </use> </svg></span> són </span><span
+class="itshape" >autofuncions degenerades</span>. </div>
+
+<div class="p"> <span>El nombre <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img197.svg#page188"> </use> </svg></span> de autofuncions
+degenerades corresponent a <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img198.svg#page189"> </use> </svg></span> s’anomena
+</span><span class="itshape" >grau de degeneració</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Alerta!</span>
+<span class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img199.svg#page190"> </use> </svg></span> és una autofunció,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 12.06 6.86"
+style="width:  1.21em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img200.svg#page191"> </use> </svg></span> també ho
+és.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img201.svg#page192"> </use> </svg></span> és una autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img202.svg#page193"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 41.52 9.38"
+style="width:  4.17em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img203.svg#page194"> </use> </svg></span></span>.
+<span>Aleshores, si multipliquem <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img204.svg#page195"> </use> </svg></span> per una constant
+<span class="inlinemath"><svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img205.svg#page196"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 38.66 9.93"
+style="width:  3.88em; height:  1.12em;"> <use
+xlink:href="images/img206.svg#page197"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>la funció <span class="inlinemath"><svg
+viewBox="0 -7.49 10.05 7.49"
+style="width:  1.01em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img207.svg#page198"> </use> </svg></span> també és una
+autofunció <span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img208.svg#page199"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 192.23 11.87"
+style="width: 19.29em; height:  1.31em;"> <use
+xlink:href="images/img209.svg#page200"> </use> </svg></span> </div>
+
+<div class="p"> <span>Ara bé, això no vol dir que <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img210.svg#page201"> </use> </svg></span> sigui un autovalor
+degenerat, ja que <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img211.svg#page202"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 12.06 6.86"
+style="width:  1.21em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img212.svg#page203"> </use> </svg></span> són linealment
+</span><span class="itshape" >dependents</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 35.89 7.99"
+style="width:  3.60em; height:  0.92em; vertical-align: -0.06em;"> <use
+xlink:href="images/img213.svg#page204"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 16.05 3.8"
+style="width:  1.61em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img214.svg#page205"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 87.92 10.48"
+style="width:  8.82em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img215.svg#page206"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:propiaij"> <span>&vert;3.2&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img216.svg#page207"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img217.svg#page208"> </use> </svg></span> són autofuncions
+</span><span class="itshape sffamily" >degenerades</span><span class="sffamily"
+>, <span class="inlinemath"><svg
+viewBox="0 -6.86 50.83 9.71"
+style="width:  5.10em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img218.svg#page209"> </use> </svg></span> també és
+autofunció.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img219.svg#page210"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img220.svg#page211"> </use> </svg></span> són dues
+autofuncions degenerades <span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img221.svg#page212"> </use> </svg></span></span>. </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.04 10.88"
+style="width:  1.81em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img222.svg#page213"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img223.svg#page214"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 15.83 8.36"
+style="width:  1.59em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img224.svg#page215"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.92 12.23"
+style="width:  1.90em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img225.svg#page216"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img226.svg#page217"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 19.98 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img227.svg#page218"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Aleshores, qualsevol combinació lineal de
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img228.svg#page219"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img229.svg#page220"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 77.92 10.84"
+style="width:  7.82em; height:  1.21em;"> <use
+xlink:href="images/img230.svg#page221"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>també serà autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img231.svg#page222"> </use> </svg></span> amb el mateix
+autovalor, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 17.52 9.38"
+style="width:  1.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img232.svg#page223"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img233.svg#page224"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 66.55 12.23"
+style="width:  6.68em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img234.svg#page225"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img235.svg#page226"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 219.04 12.23"
+style="width: 21.99em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img236.svg#page227"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img237.svg#page228"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 18.58 7.99"
+style="width:  1.86em; height:  0.92em; vertical-align: -0.06em;"> <use
+xlink:href="images/img238.svg#page229"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>No obstant això, cal advertir que encara que ara
+tenim tres funcions amb el mateix autovalor <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img239.svg#page230"> </use> </svg></span>, només dues de les
+tres són linealment independents</span>. </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 74.66 10.84"
+style="width:  7.49em; height:  1.21em; vertical-align: -0.35em;"> <use
+xlink:href="images/img240.svg#page231"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 16.05 3.8"
+style="width:  1.61em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img241.svg#page232"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 149.87 10.84"
+style="width: 15.04em; height:  1.21em; vertical-align: -0.35em;"> <use
+xlink:href="images/img242.svg#page233"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>És a dir, el </span><span class="itshape" >grau
+de degeneració</span><span> continuarà sent 2</span>.</div> </div>
+
+</details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Els autovalors són
+nombres </span><span class="itshape sffamily" >reals.</span></summary>
+
+<div class="content"><div class="p"> <span>Els autovalors d’un operadors
+hermitià són nombres reals</span>. <span>La demostració no és gaire
+difícil</span>. <span>Suposem que <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img243.svg#page234"> </use> </svg></span> és una funció
+pròpia <span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img244.svg#page235"> </use> </svg></span> amb autovalor
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img245.svg#page236"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 44.29 9.38"
+style="width:  4.45em; height:  1.06em;"> <use
+xlink:href="images/img246.svg#page237"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Segons la definició d’operador hermitià donada
+en </span><a class="sffamily small"
+href="sections/section.1.4.2.html#ref::pos:opr:hermitia"
+>§1.4.2&vert;1&rang;</a><span> podem escriure </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.16 94.8 12.65"
+style="width:  9.52em; height:  1.39em;"> <use
+xlink:href="images/img247.svg#page238"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>o, d’acord amb la notació de Dirac, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.16 89.26 12.65"
+style="width:  8.96em; height:  1.39em;"> <use
+xlink:href="images/img248.svg#page239"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>que, atès que <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img249.svg#page240"> </use> </svg></span> és una autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img250.svg#page241"> </use> </svg></span> amb
+<span class="inlinemath">autovalor <svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img251.svg#page242"> </use> </svg></span>, ens donarà
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.25 84.85 10.74"
+style="width:  8.52em; height:  1.20em;"> <use
+xlink:href="images/img252.svg#page243"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Com els brakets són integrals i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img253.svg#page244"> </use> </svg></span> és una constant,
+podem traure-la fora dels brakets, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.25 92.75 10.74"
+style="width:  9.31em; height:  1.20em;"> <use
+xlink:href="images/img254.svg#page245"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara bé, segons </span><a class="sffamily small"
+href="sections/section.1.4.1.html#ref::pos:opr:ijjistar"
+>§1.4.1&vert;3.2&rang;</a><span>, ha de complir-se que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 72.66 9.96"
+style="width:  7.29em; height:  1.12em;"> <use
+xlink:href="images/img255.svg#page246"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.36 31.16 7.36"
+style="width:  3.13em; height:  0.86em;"> <use
+xlink:href="images/img256.svg#page247"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Un nombre que és igual al seu complex conjugat
+ha de ser necessàriament real</span>. <span>Concloem doncs que els autovalors
+d’un operador hermitià són reals</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Les autofuncions
+són </span><span class="itshape sffamily" >ortogonals.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Funcions d’ona ortogonals</span></strong>.
+<span>Dues funcions d’ona <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img257.svg#page248"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img258.svg#page249"> </use> </svg></span> són </span><span
+class="itshape" >ortogonals</span><span> si compleixen que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 54.56 10.32"
+style="width:  5.48em; height:  1.16em;"> <use
+xlink:href="images/img259.svg#page250"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:ortogonal"> <span>&vert;5.1&rang;</span> <span
+class="sffamily" >Les autofuncions no degenerades són
+ortogonals.</span></summary>
+
+<div class="content"><div class="p"> <span>Si tenim dues autofuncions
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img260.svg#page251"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img261.svg#page252"> </use> </svg></span> d’un operador
+hermitià <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img262.svg#page253"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.04 10.88"
+style="width:  1.81em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img263.svg#page254"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img264.svg#page255"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 19.15 8.36"
+style="width:  1.92em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img265.svg#page256"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.92 12.23"
+style="width:  1.90em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img266.svg#page257"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img267.svg#page258"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 24.18 9.71"
+style="width:  2.43em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img268.svg#page259"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>i els autovalors són diferents
+<span class="inlinemath">(<svg
+viewBox="0 -6.92 30.83 9.77"
+style="width:  3.09em; height:  1.10em; vertical-align: -0.35em;"> <use
+xlink:href="images/img269.svg#page260"> </use> </svg></span>), aleshores les
+autofuncions són ortogonals</span>. <span>Ho demostrem a continuació</span>.
+</div>
+
+<div class="p"> <span>Partim de la definició d’operador hermitià donada en
+ </span><a class="sffamily small"
+href="sections/section.1.4.2.html#ref::pos:opr:hermitia"
+>§1.4.2&vert;1&rang;</a><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.16 109.83 13.01"
+style="width: 11.02em; height:  1.43em;"> <use
+xlink:href="images/img270.svg#page261"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>o, d’acord amb la notació de Dirac, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.16 104.29 13.01"
+style="width: 10.47em; height:  1.43em;"> <use
+xlink:href="images/img271.svg#page262"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Com <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img272.svg#page263"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img273.svg#page264"> </use> </svg></span> són autofuncions
+tindrem que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.25 107.4 11.1"
+style="width: 10.78em; height:  1.23em;"> <use
+xlink:href="images/img274.svg#page265"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ara traiem els autovalors
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img275.svg#page266"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.97 7.14"
+style="width:  0.90em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img276.svg#page267"> </use> </svg></span> dels brakets,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.25 111.98 11.1"
+style="width: 11.24em; height:  1.23em;"> <use
+xlink:href="images/img277.svg#page268"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>El autovalor <span class="inlinemath"><svg
+viewBox="0 -4.29 8.08 5.78"
+style="width:  0.81em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img278.svg#page269"> </use> </svg></span> és real, és a dir,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 31.21 9.81"
+style="width:  3.13em; height:  1.10em; vertical-align: -0.36em;"> <use
+xlink:href="images/img279.svg#page270"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.25 110.72 11.1"
+style="width: 11.11em; height:  1.23em;"> <use
+xlink:href="images/img280.svg#page271"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>D’altra banda, segons </span><a class="sffamily
+small" href="sections/section.1.4.1.html#ref::pos:opr:ijjistar"
+>§1.4.1&vert;3.2&rang;</a><span>, ha de complir-se que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.25 89.35 11.1"
+style="width:  8.97em; height:  1.23em;"> <use
+xlink:href="images/img281.svg#page272"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 106.14 10.32"
+style="width: 10.65em; height:  1.16em;"> <use
+xlink:href="images/img282.svg#page273"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>relació que podem reordenar com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 94.19 10.32"
+style="width:  9.46em; height:  1.16em;"> <use
+xlink:href="images/img283.svg#page274"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Atès que <span class="inlinemath"><svg
+viewBox="0 -6.92 30.83 9.77"
+style="width:  3.09em; height:  1.10em; vertical-align: -0.35em;"> <use
+xlink:href="images/img284.svg#page275"> </use> </svg></span>, concloem que
+<span class="inlinemath"><svg
+viewBox="0 -7.47 51.79 10.32"
+style="width:  5.20em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img285.svg#page276"> </use> </svg></span>, i per tant, que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img286.svg#page277"> </use> </svg></span> y
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img287.svg#page278"> </use> </svg></span> són
+ortogonals</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2&rang;</span> <span class="sffamily" >Les autofuncions
+degenerades poden fer-se ortogonals.</span></summary>
+
+<div class="content"><div class="p"> <span>En el cas d’autofuncions no
+degenerades, la demostració que hem vist en </span><a class="sffamily small"
+href="sections/section.1.4.2.html#ref::pos:opr:ortogonal"
+>§1.4.2&vert;5.1&rang;</a><span> no pot aplicar-se, però és possible forçar-ne
+l’ortogonalitat mitjançant el procediment explicat en el exemple </span><a
+href="sections/section.1.4.2.html#ref::pos:opr:ortogonalitzacio">1.1</a>.
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Si normalitzem les
+autofuncions, seran </span><span class="itshape sffamily"
+>ortonormals.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem vist que les autofuncions d’un
+operador hermitià són (o, en el cas degenerat, poden fer-se) ortogonals entre
+si</span>. <span>Si a més a més les autofuncions estan normalitzades, direm que
+són </span><span class="itshape" >ortonormals</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 61.02 10.32"
+style="width:  6.12em; height:  1.16em;"> <use
+xlink:href="images/img288.svg#page279"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on el símbol <span class="inlinemath"><svg
+viewBox="0 -6.92 10.95 9.77"
+style="width:  1.10em; height:  1.10em; vertical-align: -0.35em;"> <use
+xlink:href="images/img289.svg#page280"> </use> </svg></span> representa la
+</span><span class="itshape" >delta de Kronecker</span>. </div>
+
+<div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://en.wikipedia.org/wiki/File:Leopold_Kronecker_1865.jpg"
+><span>commons.wikimedia</span></a><img src="images/img290.jpg" alt="included
+image" style="width: 9.46em; height: 12.41em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" >Leopold Kronecker</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="law">
+<div class="p"><strong><span>Delta de Kronecker</span></strong>. <span>La
+</span><span class="itshape" >delta de Kronecker</span><span> és una funció de
+dues variables enteres que val 1 si les variables són iguals, i 0 en cas
+contrari</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 94.14 24"
+style="width:  9.45em; height:  2.53em;"> <use
+xlink:href="images/img291.svg#page281"> </use> </svg></span> </div>
+
+</div>
+
+</div></div>
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:complet"> <span>&vert;7&rang;</span> <span
+class="sffamily" >Les autofuncions formen un </span><span class="itshape
+sffamily" >conjunt complet</span><span class="sffamily" >.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Conjunt complet</span></strong>. <span>Les
+autofuncions normalitzades <span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img292.svg#page282"> </use> </svg></span> de qualsevol
+operador <span class="inlinemath">hermitià <svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img293.svg#page283"> </use> </svg></span> constitueixen un
+</span><span class="itshape" >conjunt complet</span><span>, és a dir, que
+qualsevol funció <span class="inlinemath">d’ona <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img294.svg#page284"> </use> </svg></span> pot expressar-se
+com a combinació lineal d’aquestes autofuncions, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 124.41 22.22"
+style="width: 12.49em; height:  2.35em;"> <use
+xlink:href="images/img295.svg#page285"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>La demostració, que no és fàcil, pot trobar-se
+en llibres avançats[<a href="sections/biblio.html#bib::VONNEUMANN1955">8</a>]
+de mecànica quàntica</span>. </div>
+
+<div class="p"> <span>Abans de continuar, es recomana de llegir el resum de
+l’ús de sumatoris que podeu trobar en §</span><a
+href="sections/section.A.2.html#ref::app:mat:sumatoris">A.2</a>. </div>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:completci"> <span>&vert;7.1&rang;</span> <span
+class="sffamily" >Els coeficients <span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img296.svg#page286"> </use> </svg></span> de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 54.72 10.46"
+style="width:  5.49em; height:  1.17em; vertical-align: -0.36em;"> <use
+xlink:href="images/img297.svg#page287"> </use> </svg></span> són iguals a
+<span class="inlinemath"><svg
+viewBox="0 -7.47 29.33 9.96"
+style="width:  2.94em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img298.svg#page288"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a una funció d’ona </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 121.14 22.22"
+style="width: 12.16em; height:  2.35em;"> <use
+xlink:href="images/img299.svg#page289"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>qualsevol, els coeficients
+<span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img300.svg#page290"> </use> </svg></span> són iguals a
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 54.67 9.96"
+style="width:  5.49em; height:  1.12em;"> <use
+xlink:href="images/img301.svg#page291"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La demostració és fàcil, ja que les
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img302.svg#page292"> </use> </svg></span> són autofuncions
+d’un operador hermitià, i per tant ortonormals</span>. </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 29.33 9.96"
+style="width:  2.94em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img303.svg#page293"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img304.svg#page294"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -20.42 143.3 35.87"
+style="width: 14.38em; height:  3.72em; vertical-align: -1.61em;"> <use
+xlink:href="images/img305.svg#page295"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img306.svg#page296"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -10.46 138.23 26.76"
+style="width: 13.88em; height:  2.81em; vertical-align: -1.70em;"> <use
+xlink:href="images/img307.svg#page297"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:opr:cici"> <span>&vert;7.2&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -7.47 54.72 10.46"
+style="width:  5.49em; height:  1.17em; vertical-align: -0.36em;"> <use
+xlink:href="images/img308.svg#page298"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -8.11 71.93 11.1"
+style="width:  7.22em; height:  1.23em; vertical-align: -0.36em;"> <use
+xlink:href="images/img309.svg#page299"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a una funció d’ona </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 124.41 22.22"
+style="width: 12.49em; height:  2.35em;"> <use
+xlink:href="images/img310.svg#page300"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>el braket <span class="inlinemath"><svg
+viewBox="0 -7.47 26.01 9.96"
+style="width:  2.61em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img311.svg#page301"> </use> </svg></span> es pot calcular
+fàcilment, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 26.01 9.96"
+style="width:  2.61em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img312.svg#page302"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img313.svg#page303"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -20.42 191.92 35.87"
+style="width: 19.26em; height:  3.72em; vertical-align: -1.61em;"> <use
+xlink:href="images/img314.svg#page304"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img315.svg#page305"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -23.5 280.77 42.02"
+style="width: 28.18em; height:  4.34em; vertical-align: -1.92em;"> <use
+xlink:href="images/img316.svg#page306"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img317.svg#page307"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -10.46 82.3 22.22"
+style="width:  8.26em; height:  2.35em; vertical-align: -1.24em;"> <use
+xlink:href="images/img318.svg#page308"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7.3&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -7.47 54.72 10.46"
+style="width:  5.49em; height:  1.17em; vertical-align: -0.36em;"> <use
+xlink:href="images/img319.svg#page309"> </use> </svg></span> està normalitzada,
+<span class="inlinemath"><svg
+viewBox="0 -8.11 51.39 11.1"
+style="width:  5.16em; height:  1.23em; vertical-align: -0.36em;"> <use
+xlink:href="images/img320.svg#page310"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Segons hem vist en </span><a
+class="sffamily small" href="sections/section.1.4.1.html#ref::pos:opr:bknorm"
+>§1.4.1&vert;3.1&rang;</a><span>, una funció d’ona normalitzada ha de complir
+la següent condició, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 47.05 9.96"
+style="width:  4.72em; height:  1.12em;"> <use
+xlink:href="images/img321.svg#page311"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Per tant, segons </span><a class="sffamily
+small" href="sections/section.1.4.2.html#ref::pos:opr:cici"
+>§1.4.2&vert;7.2&rang;</a><span>, per a una funció d’ona normalitzada </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 121.14 22.22"
+style="width: 12.16em; height:  2.35em;"> <use
+xlink:href="images/img322.svg#page312"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>tindrem que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -10.46 94.01 22.22"
+style="width:  9.44em; height:  2.35em;"> <use
+xlink:href="images/img323.svg#page313"> </use> </svg></span> </div>
+
+</div></details>
+
+</div></details>
+
+<details class="question"
+id="ref::pos:opr:ortogonalitzacio"><summary><span>⊕ </span><span>⊖ </span><span>Exemple
+1.1 (Ortogonalització)</span></summary>
+<div class="p"> <span>Trobeu, partint de dues autofuncions degenerades no
+ortogonals d’un operador hermitià, un altre parell d’autofuncions que sí que
+siguen ortogonals</span>. </div>
+
+<details
+class="answer"><summary><span>⊕ </span><span>⊖ </span><span>Resposta</span></summary>
+<div
+class="p"> <span>Suposem que tenim dues autofuncions degenerades
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img324.svg#page314"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img325.svg#page315"> </use> </svg></span> d’un operador
+hermitià <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img326.svg#page316"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.04 10.88"
+style="width:  1.81em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img327.svg#page317"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img328.svg#page318"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 15.83 8.36"
+style="width:  1.59em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img329.svg#page319"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 18.92 12.23"
+style="width:  1.90em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img330.svg#page320"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img331.svg#page321"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 19.98 9.71"
+style="width:  2.01em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img332.svg#page322"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>A diferència del cas no degenerat que hem vist
+en </span><a class="sffamily small"
+href="sections/section.1.4.2.html#ref::pos:opr:ortogonal"
+>§1.4.2&vert;5.1&rang;</a><span>, pot ser que les funciones
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img333.svg#page323"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img334.svg#page324"> </use> </svg></span> no siguin
+ortogonals</span>. <span>Malgrat això, sempre podem substituir una d’elles (per
+exemple, <span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img335.svg#page325"> </use> </svg></span>) per una altra
+funció </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.85 64.23 11.7"
+style="width:  6.45em; height:  1.29em;"> <use
+xlink:href="images/img336.svg#page326"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>que, segons </span><a class="sffamily small"
+href="sections/section.1.4.2.html#ref::pos:opr:propiaij"
+>§1.4.2&vert;3.2&rang;</a><span> serà autofunció
+<span class="inlinemath">d’<svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img337.svg#page327"> </use> </svg></span> amb autovalor
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img338.svg#page328"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 317.53 12.23"
+style="width: 31.87em; height:  1.35em;"> <use
+xlink:href="images/img339.svg#page329"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>És fàcil trobar el valor del
+<span class="inlinemath">coeficient <svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img340.svg#page330"> </use> </svg></span> que fa que
+<span class="inlinemath"><svg
+viewBox="0 -8.85 11.45 11.7"
+style="width:  1.15em; height:  1.29em; vertical-align: -0.35em;"> <use
+xlink:href="images/img341.svg#page331"> </use> </svg></span> sigui ortogonal
+<span class="inlinemath">a <svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img342.svg#page332"> </use> </svg></span></span>.
+<span>Primer <span class="inlinemath">forcem <svg
+viewBox="0 -8.85 11.45 11.7"
+style="width:  1.15em; height:  1.29em; vertical-align: -0.35em;"> <use
+xlink:href="images/img343.svg#page333"> </use> </svg></span> a ser ortogonal a
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img344.svg#page334"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.85 54.56 11.7"
+style="width:  5.48em; height:  1.29em;"> <use
+xlink:href="images/img345.svg#page335"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>després hi substituïm la definició de
+<span class="inlinemath"><svg
+viewBox="0 -8.85 11.45 11.7"
+style="width:  1.15em; height:  1.29em; vertical-align: -0.35em;"> <use
+xlink:href="images/img346.svg#page336"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 189.13 10.32"
+style="width: 18.98em; height:  1.16em;"> <use
+xlink:href="images/img347.svg#page337"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i finalment aïllem <span class="inlinemath"><svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img348.svg#page338"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.21 64.03 23.9"
+style="width:  6.43em; height:  2.52em;"> <use
+xlink:href="images/img349.svg#page339"> </use> </svg></span> </div>
+
+</details>
+</details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.1.4.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

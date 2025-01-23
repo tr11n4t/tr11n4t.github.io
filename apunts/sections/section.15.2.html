@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Regles de selecció electròniques de molècules poliatòmiques</title>
+<meta name="description" content="El producte directe entre l’estat inicial i
+final ens diu si la transició està permesa. A més a més, la multiplicitat no ha
+de canviar.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.15.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.15.html"><span>15 Enllaç i espectroscòpia electrònica de
+molècules poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>15.2 Regles de selecció
+electròniques </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img8878.svg#page8841"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>15.2  Regles de selecció electròniques</span> </h4>
+
+<details open class="foldable prop">
+<summary id="ref::el2:reg:DeltaSzero"> <span>&vert;1&rang;</span> <span
+class="sffamily" >La multiplicitat no ha de canviar,
+<span class="inlinemath"><svg
+viewBox="0 -7.13 33.25 7.13"
+style="width:  3.34em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8879.svg#page8842"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem vist que una regla de selecció
+per a transicions electròniques és que la multiplicitat no ha de canviar en
+passar de l’estat inicial a l’estat final</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Transició
+permesa:</span> <span class="sffamily" >l’integrand de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 30.64 9.66"
+style="width:  3.08em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8880.svg#page8843"> </use> </svg></span> ha de pertànyer
+a la RITS.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Si un component
+de <span class="inlinemath"><svg
+viewBox="0 -6.81 30.64 9.66"
+style="width:  3.08em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8881.svg#page8844"> </use> </svg></span> és distint de
+zero, estarà permesa.</span></summary>
+
+<div class="content"><div class="p"> <span>El moment dipolar de transició
+electrònic <span class="inlinemath"><svg
+viewBox="0 -6.81 30.64 9.66"
+style="width:  3.08em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8882.svg#page8845"> </use> </svg></span> és un vector els
+components del qual són </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 38.89 9.66"
+style="width:  3.90em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8883.svg#page8846"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8884.svg#page8847"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 194.69 22.14"
+style="width: 19.54em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8885.svg#page8848"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 38.66 9.66"
+style="width:  3.88em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8886.svg#page8849"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8887.svg#page8850"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 194.23 22.14"
+style="width: 19.50em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8888.svg#page8851"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 38.46 9.66"
+style="width:  3.86em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8889.svg#page8852"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8890.svg#page8853"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 197.1 22.14"
+style="width: 19.78em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8891.svg#page8854"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Si tots tres components són zero, la transició
+electrònica </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 60.41 11.81"
+style="width:  6.06em; height:  1.30em;"> <use
+xlink:href="images/img8892.svg#page8855"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>estarà prohibida</span>. <span>Si, per contra,
+com a mínim un dels tres components és distint de zero, la transició estarà
+permesa</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 38.89 9.66"
+style="width:  3.90em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8893.svg#page8856"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8894.svg#page8857"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 194.69 22.14"
+style="width: 19.54em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8895.svg#page8858"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 38.66 9.66"
+style="width:  3.88em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8896.svg#page8859"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8897.svg#page8860"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 194.23 22.14"
+style="width: 19.50em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8898.svg#page8861"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 38.46 9.66"
+style="width:  3.86em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8899.svg#page8862"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8900.svg#page8863"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 193.83 22.14"
+style="width: 19.46em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8901.svg#page8864"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::el2:reg:NullIntegrand"> <span>&vert;2.2&rang;</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -13.56 59.74 22.14"
+style="width:  6.00em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8902.svg#page8865"> </use> </svg></span> si
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.95 8.86"
+style="width:  0.60em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img8903.svg#page8866"> </use> </svg></span> pertany a la RI
+totalment simètrica.</span></summary>
+
+<div class="content"><div class="p"> <span>La teoria de grups permet demostrar
+que una integral </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 43.13 22.14"
+style="width:  4.33em; height:  2.34em;"> <use
+xlink:href="images/img8904.svg#page8867"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>serà distinta de zero únicament si la funció
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.95 8.86"
+style="width:  0.60em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img8905.svg#page8868"> </use> </svg></span> pertany a la
+representació irreductible totalment simètrica (RITS) </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 162.65 22.14"
+style="width: 16.33em; height:  2.34em;"> <use
+xlink:href="images/img8906.svg#page8869"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.86 10.89 9.71"
+style="width:  1.09em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8907.svg#page8870"> </use> </svg></span> representa la
+representació irreductible a què <span class="inlinemath">pertany <svg
+viewBox="0 -6.92 5.95 8.86"
+style="width:  0.60em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img8908.svg#page8871"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8909.svg#page8872"> </use> </svg></span> la RITS. </span>
+</div>
+
+<div class="p"> <span>(Per a grups amb representacions irreductibles
+degenerades, que estem ignorant per simplicitat, és suficient que
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.95 8.86"
+style="width:  0.60em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img8910.svg#page8873"> </use> </svg></span> </span><span
+class="itshape" >contingui</span><span> la RITS.) </span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 159.88 22.14"
+style="width: 16.05em; height:  2.34em;"> <use
+xlink:href="images/img8911.svg#page8874"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >Transició
+permesa:</span> <span class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.86 83.52 11.29"
+style="width:  8.38em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8912.svg#page8875"> </use> </svg></span>,
+&hellip;</span></summary>
+
+<div class="content"><div class="p"> <span>D’acord amb </span><a
+class="sffamily small"
+href="sections/section.15.2.html#ref::el2:reg:NullIntegrand"
+>§15.2&vert;2.2&rang;</a><span>, la transició estarà permesa únicament si
+almenys un dels integrands de <span class="inlinemath"><svg
+viewBox="0 -6.81 30.64 9.66"
+style="width:  3.08em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8913.svg#page8876"> </use> </svg></span> pertany a la
+RITS, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 308.23 11.9"
+style="width: 30.94em; height:  1.31em;"> <use
+xlink:href="images/img8914.svg#page8877"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 305.46 11.9"
+style="width: 30.66em; height:  1.31em;"> <use
+xlink:href="images/img8915.svg#page8878"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.86 156.72 11.29"
+style="width: 15.73em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8916.svg#page8879"> </use> </svg></span>,
+&hellip;</span></summary>
+
+<div class="content"><div class="p"> <span>Podem esbrinar la representació
+irreductible a què pertany cadascun dels integrands de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 30.64 9.66"
+style="width:  3.08em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8917.svg#page8880"> </use> </svg></span> mitjançant els
+corresponents productes directes, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 61.27 11.29"
+style="width:  6.15em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8918.svg#page8881"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8919.svg#page8882"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 80.67 11.29"
+style="width:  8.10em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8920.svg#page8883"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 61.15 11.29"
+style="width:  6.14em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8921.svg#page8884"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8922.svg#page8885"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 80.55 11.29"
+style="width:  8.08em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8923.svg#page8886"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 60.94 11.29"
+style="width:  6.12em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8924.svg#page8887"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8925.svg#page8888"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 84.11 11.29"
+style="width:  8.44em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8926.svg#page8889"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>on </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 127.28 11.29"
+style="width: 12.78em; height:  1.25em;"> <use
+xlink:href="images/img8927.svg#page8890"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 61.27 11.29"
+style="width:  6.15em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8928.svg#page8891"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8929.svg#page8892"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 80.67 11.29"
+style="width:  8.10em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8930.svg#page8893"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 61.15 11.29"
+style="width:  6.14em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8931.svg#page8894"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8932.svg#page8895"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 80.55 11.29"
+style="width:  8.08em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8933.svg#page8896"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 60.94 11.29"
+style="width:  6.12em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8934.svg#page8897"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8935.svg#page8898"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 80.34 11.29"
+style="width:  8.07em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8936.svg#page8899"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.5&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.86 20.67 10.32"
+style="width:  2.08em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8937.svg#page8900"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 20.54 10.32"
+style="width:  2.06em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8938.svg#page8901"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 20.34 10.32"
+style="width:  2.04em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8939.svg#page8902"> </use> </svg></span> es poden trobar
+en les taules de caràcters.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.32 -32.78 259.68 62.67"
+style="width: 26.06em; height:  6.41em;"> <use
+xlink:href="images/img8940.svg#page8903"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Necessitarem saber <span class="inlinemath"><svg
+viewBox="0 -6.86 20.67 10.32"
+style="width:  2.08em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8941.svg#page8904"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 20.54 10.32"
+style="width:  2.06em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8942.svg#page8905"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 20.34 10.32"
+style="width:  2.04em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8943.svg#page8906"> </use> </svg></span>, que són les
+representacions irreductibles a què pertanyen els components del moment
+dipolar</span>. <span>Aquesta informació la podem trobar en la penúltima
+columna de la taula de caràcters del grup puntual, i ve indicada respectivament
+pels <span class="inlinemath">símbols <svg
+viewBox="0 -6.81 10.34 8.3"
+style="width:  1.04em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8944.svg#page8907"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.11 9.66"
+style="width:  1.02em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8945.svg#page8908"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.91 8.3"
+style="width:  0.99em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8946.svg#page8909"> </use> </svg></span> (també poden
+utilitzar-se els símbols <span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8947.svg#page8910"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.24 6.23"
+style="width:  0.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img8948.svg#page8911"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8949.svg#page8912"> </use> </svg></span>)</span>.
+<span>Vegeu, per exemple, la taula mostrada en </span><a class="sffamily small"
+href="sections/section.15.1.html#ref::el2:ter:taulagrup"
+>§15.1&vert;2&rang;</a>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::el2:reg:regla"> <span>&vert;2.6&rang;</span> <span
+class="sffamily" >Regla de selecció:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.86 78.46 11.29"
+style="width:  7.88em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8950.svg#page8913"> </use> </svg></span>,
+&hellip;</span></summary>
+
+<div class="content"><div class="p"> <span>Poden resumir els punts anteriors en
+la següent regla de selecció</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Regla de selecció (electrònica)</span></strong>.
+<span>La transició electrònica <span class="inlinemath"><svg
+viewBox="0 -7.49 60.41 11.31"
+style="width:  6.06em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8951.svg#page8914"> </use> </svg></span> estarà permesa
+<span class="inlinemath">si <svg
+viewBox="0 -7.13 33.25 7.13"
+style="width:  3.34em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8952.svg#page8915"> </use> </svg></span> i, a més a més,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 305.99 11.9"
+style="width: 30.71em; height:  1.31em;"> <use
+xlink:href="images/img8953.svg#page8916"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>En el cas particular
+<span class="inlinemath">que <svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8954.svg#page8917"> </use> </svg></span> pertanyi a la
+RITS, aquesta regla se simplifica a </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 244.34 11.9"
+style="width: 24.52em; height:  1.31em;"> <use
+xlink:href="images/img8955.svg#page8918"> </use> </svg></span> </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Per a l’aigua,
+<span class="inlinemath"><svg
+viewBox="0 -8.79 64.41 10.29"
+style="width:  6.47em; height:  1.15em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8956.svg#page8919"> </use> </svg></span> està permesa,
+<span class="inlinemath"><svg
+viewBox="0 -8.79 62.21 10.29"
+style="width:  6.24em; height:  1.15em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8957.svg#page8920"> </use> </svg></span>
+prohibida.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >La transició
+<span class="inlinemath"><svg
+viewBox="0 -8.79 62.21 10.29"
+style="width:  6.24em; height:  1.15em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8958.svg#page8921"> </use> </svg></span> està prohibida
+pel canvi de multiplicitat.</span></summary>
+
+<div class="content"><div class="p"> <span>La transició entre
+<span class="inlinemath"><svg
+viewBox="0 -8.79 24.95 10.29"
+style="width:  2.50em; height:  1.15em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8959.svg#page8922"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -8.11 21.26 9.6"
+style="width:  2.13em; height:  1.08em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8960.svg#page8923"> </use> </svg></span> experimenta un
+canvi en la multiplicitat, i per tant, pel que hem vist en </span><a
+class="sffamily small"
+href="sections/section.15.2.html#ref::el2:reg:DeltaSzero"
+>§15.2&vert;1&rang;</a><span>, està prohibida, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.79 65.47 10.73"
+style="width:  6.57em; height:  1.20em;"> <use
+xlink:href="images/img8961.svg#page8924"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.79 62.21 10.73"
+style="width:  6.24em; height:  1.20em;"> <use
+xlink:href="images/img8962.svg#page8925"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >La transició
+<span class="inlinemath"><svg
+viewBox="0 -8.79 67.73 10.29"
+style="width:  6.80em; height:  1.15em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8963.svg#page8926"> </use> </svg></span> està
+permesa.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.2.1&rang;</span> <span class="sffamily" >La
+multiplicitat no canvia.</span></summary>
+
+<div class="content"><div class="p"> <span>La multiplicitat de la transició
+entre <span class="inlinemath"><svg
+viewBox="0 -8.79 24.95 10.29"
+style="width:  2.50em; height:  1.15em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8964.svg#page8927"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -8.79 23.47 10.29"
+style="width:  2.36em; height:  1.15em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8965.svg#page8928"> </use> </svg></span> no canvia, de
+manera que per esbrinar si està permesa o no haurem de trobar les
+representacions irreductibles a les que pertanyen els components de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 30.64 9.66"
+style="width:  3.08em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8966.svg#page8929"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2.2&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.86 122.07 11.29"
+style="width: 12.25em; height:  1.25em; vertical-align: -0.50em;"> <use
+xlink:href="images/img8967.svg#page8930"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Segons la regla de selecció que hem
+vist en </span><a class="sffamily small"
+href="sections/section.15.2.html#ref::el2:reg:regla"
+>§15.2&vert;2.6&rang;</a><span>, hem de calcular </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 176.71 11.29"
+style="width: 17.74em; height:  1.25em;"> <use
+xlink:href="images/img8968.svg#page8931"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Els productes directes s’obtenen fàcilment pel
+procediment que hem vist en </span><a class="sffamily small"
+href="sections/section.15.1.html#ref::el2:ter:ProducteAigua"
+>§15.1&vert;5.4.4&rang;</a><span>)</span>. <span>Ara bé, casualment hem
+calculat en </span><a class="sffamily small"
+href="sections/section.15.1.html#ref::el2:ter:BOneAOne"
+>§15.1&vert;5.4.5&rang;</a><span> aquest producte directe, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 64.22 8.3"
+style="width:  6.45em; height:  0.95em;"> <use
+xlink:href="images/img8969.svg#page8932"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2.3&rang;</span> <span class="sffamily" >Com
+<span class="inlinemath"><svg
+viewBox="0 -6.86 46.48 10.32"
+style="width:  4.67em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8970.svg#page8933"> </use> </svg></span>, la transició
+està permesa.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.32 -32.78 259.68 62.67"
+style="width: 26.06em; height:  6.41em;"> <use
+xlink:href="images/img8971.svg#page8934"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>De la taula de caràcters del grup
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.45 8.3"
+style="width:  1.35em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8972.svg#page8935"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.15.1.html#ref::el2:ter:taulagrup"
+>§15.1&vert;2&rang;</a><span> traiem que </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 20.67 10.32"
+style="width:  2.08em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8973.svg#page8936"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8974.svg#page8937"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8975.svg#page8938"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 20.54 10.32"
+style="width:  2.06em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8976.svg#page8939"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8977.svg#page8940"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img8978.svg#page8941"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 20.34 10.32"
+style="width:  2.04em; height:  1.16em; vertical-align: -0.41em;"> <use
+xlink:href="images/img8979.svg#page8942"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8980.svg#page8943"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 14.71 8.74"
+style="width:  1.48em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img8981.svg#page8944"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>de manera que, com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 107.53 11.29"
+style="width: 10.79em; height:  1.25em;"> <use
+xlink:href="images/img8982.svg#page8945"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>concloem que la transició està permesa</span>.
+</div>
+
+</div></details>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.15.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

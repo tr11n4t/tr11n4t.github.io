@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Principi d’antisimetria | Els electrons són antisimètrics</title>
+<meta name="description" content="Postulat de la mecànica quàntica: els
+electrons (fermions) han de tindre funcions d’ona antisimètriques. Repulsió de
+Pauli.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.6.1.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.html"><span>6 Àtoms polielectrònics </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.1.html"><span>6.1 Principi d’exclusió de Pauli
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>6.1.2 Principi d’antisimetria
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img2701.svg#page2680"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.1.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>6.1.2  Principi d’antisimetria</span> </h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Els electrons
+tenen espín semienter.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Fermions i bosons</span></strong>. <span>Les
+partícules subatòmiques poden classificar-se d’acord amb el valor del seu
+nombre quàntic <span class="inlinemath">d’espín <svg
+viewBox="0 -4.29 4.67 4.29"
+style="width:  0.47em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2702.svg#page2681"> </use> </svg></span></span>: <span
+class="itshape" >fermions</span><span> per <span class="inlinemath">a <svg
+viewBox="0 -4.29 4.67 4.29"
+style="width:  0.47em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2703.svg#page2682"> </use> </svg></span> semienter, o
+</span><span class="itshape" >bosons</span><span> per
+<span class="inlinemath">a <svg
+viewBox="0 -4.29 4.67 4.29"
+style="width:  0.47em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2704.svg#page2683"> </use> </svg></span> enter</span>.
+</div>
+
+</div>
+
+<div class="p noindent"> <span>Els electrons, els protons i els neutrons són
+fermions</span>. <span>Els fotons són bosons</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Principi
+d’antisimetria:</span> <span class="sffamily" >els electrons són
+antisimètrics.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem vist en </span><a
+class="sffamily small" href="sections/section.6.1.1.html#ref::ato:pau:PsiSA"
+>§6.1.1&vert;11&rang;</a><span> que les funcions d’ona d’un sistema de
+partícules idèntiques han de ser totalment simètriques o totalment
+antisimètriques</span>. <span>Passa que, de les dues possibilitats, només una
+està permesa, segons ens diu el </span><span class="itshape" >principi
+d’antisimetria de Pauli</span>. </div>
+
+<div class="move2side">
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Pauli.jpg"
+><span>commons.wikimedia</span></a><img src="images/img2705.jpg" alt="included
+image" style="width: 9.26em; height: 13.10em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="scriptsize" >Wolfgang Pauli</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div>
+<div class="law">
+<div class="p"><strong><span>Postulat VIII de la mecànica quàntica (principi
+d’antisimetria de Pauli)</span></strong>. <span>La funció d’ona d’un sistema de
+partícules idèntiques ha de ser </span><span class="itshape"
+>antisimètrica</span><span> respecte al bescanvi de partícules si les
+partícules són </span><span class="itshape" >fermions</span><span>, però
+</span><span class="itshape" >simètrica</span><span> si són </span><span
+class="itshape" >bosons</span>. </div>
+
+</div>
+
+</div></div>
+<div class="p"> <span>El principi d’antisimetria pot demostrar-se mitjançant la
+mecànica quàntica relativista</span>. <span>En mecànica quàntica no
+relativista, el principi d’antisimetria s’afegeix com un postulat
+addicional</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Dos fermions no
+poden ser al mateix ‘lloc’.</span></summary>
+
+<div class="content"><div class="p"> <span>Dos electrons
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2706.svg#page2684"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2707.svg#page2685"> </use> </svg></span> no poden ocupar
+el mateix lloc, és a dir, les seves coordenades <span class="inlinemath"><svg
+viewBox="-.13 -7.12 8.65 8.61"
+style="width:  0.87em; height:  0.98em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2708.svg#page2686"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="-.13 -7.12 9.53 9.97"
+style="width:  0.96em; height:  1.12em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2709.svg#page2687"> </use> </svg></span> han de ser
+diferents</span>. <span>La demostració és fàcil</span>. <span>Per
+l’antisimetria de la funció d’ona, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 204.4 10.32"
+style="width: 20.52em; height:  1.16em;"> <use
+xlink:href="images/img2710.svg#page2688"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si ara forcem que <span class="inlinemath"><svg
+viewBox="-.13 -7.12 31.82 9.97"
+style="width:  3.19em; height:  1.12em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2711.svg#page2689"> </use> </svg></span>, obtenim </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 202.64 9.96"
+style="width: 20.34em; height:  1.12em;"> <use
+xlink:href="images/img2712.svg#page2690"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 115.43 9.96"
+style="width: 11.59em; height:  1.12em;"> <use
+xlink:href="images/img2713.svg#page2691"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 110.45 9.96"
+style="width: 11.09em; height:  1.12em;"> <use
+xlink:href="images/img2714.svg#page2692"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Això implica que la probabilitat que les
+coordenades de l’electró <span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2715.svg#page2693"> </use> </svg></span> siguin iguals a
+les de l’electró <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2716.svg#page2694"> </use> </svg></span> és zero</span>.
+<span>Aquest fenomen s’anomena </span><span class="itshape" >repulsió de
+Pauli</span>. </div>
+
+<div class="p"> <span>Noteu que <span class="inlinemath"><svg
+viewBox="-.13 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2717.svg#page2695"> </use> </svg></span> inclou tant les
+coordenades espacials <span class="inlinemath"><svg
+viewBox="-.32 -7.12 6.51 7.12"
+style="width:  0.65em; height:  0.83em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2718.svg#page2696"> </use> </svg></span> com la d’espín
+<span class="inlinemath"><svg
+viewBox="0 -4.29 6.05 4.29"
+style="width:  0.61em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2719.svg#page2697"> </use> </svg></span></span>. <span>És
+a dir, que la repulsió de Pauli només apareix si els dos electrons que s’hi
+acosten tenen el mateix espín (els dos <span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2720.svg#page2698"> </use> </svg></span> o els
+<span class="inlinemath">dos <svg
+viewBox="0 -6.92 6.16 8.86"
+style="width:  0.62em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2721.svg#page2699"> </use> </svg></span>)</span>. </div>
+
+<div class="p"> <span>La repulsió de Pauli fa que els cossos materials ‘xoquen’
+en comptes de travessar-se, i, en química, és imprescindible per explicar
+l’estructura de la taula periòdica</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.6.1.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

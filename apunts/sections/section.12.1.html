@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Aproximació harmònica | Espectres d’infrarojos i Raman</title>
+<meta name="description" content="S’aplica l’aproximació harmònica a la
+vibració de les molècules diatòmiques. Regles de selecció d’espectres
+d’infrarojos i Raman.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.12.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.12.html"><span>12 Espectres de vibració de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>12.1 Aproximació harmònica
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img6609.svg#page6574"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>12.1  Aproximació harmònica</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Al voltant del
+mínim, la </span><span class="itshape sffamily" >corba d’energia
+potencial</span><span class="sffamily" > sembla una </span><span class="itshape
+sffamily" >paràbola.</span></summary>
+
+<div class="content"><div class="p"> <span>La vibració dels nuclis d’una
+molècula diatòmica ve determinada per la </span><span class="itshape" >corba
+d’energia potencial</span><span> de la molècula, que, típicament, té la forma
+mostrada en la figura </span><a
+href="sections/section.12.1.html#ref::vi1:har:pot">12.1</a><span> (línia
+contínua)</span>. </div>
+
+<div class="figure" id="ref::vi1:har:pot">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="4.08 -221.55 218.33 215.84"
+style="width: 21.91em; height: 22.36em;"> <use
+xlink:href="images/img6610.svg#page6575"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 12.1</span>: <span>Corba d’energia
+potencial d’una molècula (línia continua), i la seva aproximació per una
+paràbola (línia discontinua)</span>. </div>
+
+</div>
+
+<div class="p"> <span>A temperatures no gaire altes, el valor de la distancia
+internuclear <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6611.svg#page6576"> </use> </svg></span> es manté al
+voltant de la </span><span class="itshape" >distància d’equilibri</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6612.svg#page6577"> </use> </svg></span> (que correspon
+al mínim de la corba), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 35.53 8.3"
+style="width:  3.57em; height:  0.95em;"> <use
+xlink:href="images/img6613.svg#page6578"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Això fa que semble raonable expandir la funció
+<span class="inlinemath"><svg
+viewBox="0 -7.47 23.28 9.96"
+style="width:  2.34em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6614.svg#page6579"> </use> </svg></span> com una sèrie de
+Taylor al voltant del <span class="inlinemath">punt <svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6615.svg#page6580"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 265.7 19.85"
+style="width: 26.67em; height:  2.11em;"> <use
+xlink:href="images/img6616.svg#page6581"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.49 30.28 9.98"
+style="width:  3.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6617.svg#page6582"> </use> </svg></span> és la derivada
+primera <span class="inlinemath">d’<svg
+viewBox="0 -6.81 7.89 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6618.svg#page6583"> </use> </svg></span> en
+<span class="inlinemath"><svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6619.svg#page6584"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.49 32.57 9.98"
+style="width:  3.27em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6620.svg#page6585"> </use> </svg></span> la derivada
+segona, etcètera</span>. <span>Ara bé, la corba presenta un mínim en
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6621.svg#page6586"> </use> </svg></span>, de manera que
+<span class="inlinemath"><svg
+viewBox="0 -7.49 48.54 9.98"
+style="width:  4.87em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6622.svg#page6587"> </use> </svg></span></span>. <span>Si
+negligim els termes posteriors al de segon ordre tindrem l’aproximació </span>
+</div>
+
+<table class="equation" id="ref::vi1:har:Uparabola"><tr><td><svg
+class="equation" viewBox="0 -13.01 162.81 19.85"
+style="width: 16.34em; height:  2.11em;"> <use
+xlink:href="images/img6623.svg#page6588"> </use>
+</svg></td><td>(12.1)</td></tr></table>
+
+<div class="p noindent"> <span>Aquesta expressió aproxima el potencial
+<span class="inlinemath"><svg
+viewBox="0 -7.47 23.28 9.96"
+style="width:  2.34em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6624.svg#page6589"> </use> </svg></span> com una paràbola
+centrada en <span class="inlinemath"><svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6625.svg#page6590"> </use> </svg></span> (línia
+discontinua en la figura </span><a
+href="sections/section.12.1.html#ref::vi1:har:pot">12.1</a><span>)</span>.
+<span>Veiem que, a distàncies similars a la d’equilibri
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6626.svg#page6591"> </use> </svg></span>), la aproximació
+és raonablement bona</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 159.54 19.85"
+style="width: 16.01em; height:  2.11em;"> <use
+xlink:href="images/img6627.svg#page6592"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:har:haraprox"> <span>&vert;2&rang;</span> <span
+class="itshape sffamily" >Aproximació harmònica:</span> <span class="sffamily"
+>substitueix <span class="inlinemath"><svg
+viewBox="0 -7.47 23.28 9.96"
+style="width:  2.34em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6628.svg#page6593"> </use> </svg></span> pel d’un
+</span><span class="itshape sffamily" >oscil·lador harmònic</span><span
+class="sffamily" >.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 159.54 19.85"
+style="width: 16.01em; height:  2.11em;"> <use
+xlink:href="images/img6629.svg#page6594"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>L’oscil·lador harmònic té el següent potencial, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 47.11 19.85"
+style="width:  4.73em; height:  2.11em;"> <use
+xlink:href="images/img6630.svg#page6595"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6631.svg#page6596"> </use> </svg></span> és el
+desplaçament i <span class="inlinemath"><svg
+viewBox="0 -6.92 5.5 6.92"
+style="width:  0.55em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6632.svg#page6597"> </use> </svg></span> la constant de
+força de l’oscil·lador</span>. <span>Noteu que té una dependència parabòlica en
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6633.svg#page6598"> </use> </svg></span></span>. <span>Si
+ho comparem amb l’equació (</span><a
+href="sections/section.12.1.html#ref::vi1:har:Uparabola">12.1</a><span>), veiem
+que correspon a un oscil·lador harmònic amb desplaçament
+<span class="inlinemath"><svg
+viewBox="0 -6.81 50.14 8.3"
+style="width:  5.03em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6634.svg#page6599"> </use> </svg></span> i </span><span
+class="itshape" >constant de força d’equilibri</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -7.49 55.32 9.98"
+style="width:  5.55em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6635.svg#page6600"> </use> </svg></span>, </span> </div>
+
+<table class="equation" id="ref::vi1:har:AppHar"><tr><td><svg class="equation"
+viewBox="0 -13.01 139.7 19.85"
+style="width: 14.02em; height:  2.11em;"> <use
+xlink:href="images/img6636.svg#page6601"> </use>
+</svg></td><td>(12.2)</td></tr></table>
+
+<div class="p noindent"> <span>Com el terme <span class="inlinemath"><svg
+viewBox="0 -7.47 27.48 9.96"
+style="width:  2.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6637.svg#page6602"> </use> </svg></span> es constant, el
+seu efecte és desplaçar amunt o avall l’energia potencial, però sense canviar
+la física del sistema</span>. <span>Per exemple, l’eliminació d’aquest terme no
+modifica la freqüència de les transicions entre estats de l’oscil·lador
+harmònic</span>. <span>Vegeu </span><a class="sffamily small"
+href="sections/section.2.3.2.html#ref::mod:har:PlusK" >§2.3.2&vert;4&rang;</a>.
+</div>
+
+<div class="p"> <span>Aquest tractament constitueix l’essència de
+l’</span><span class="itshape" >aproximació harmònica</span><span>, que definim
+a continuació</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Aproximació harmònica
+(diatòmiques)</span></strong>. <span>L’</span><span class="itshape"
+>aproximació harmònica</span><span> consisteix en substituir la </span><span
+class="itshape" >corba d’energia potencial</span><span>
+<span class="inlinemath">exacta <svg
+viewBox="0 -7.47 23.28 9.96"
+style="width:  2.34em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6638.svg#page6603"> </use> </svg></span> d’una molècula
+diatòmica per l’energia potencial d’un </span><span class="itshape"
+>oscil·lador harmònic</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 139.7 19.85"
+style="width: 14.02em; height:  2.11em;"> <use
+xlink:href="images/img6639.svg#page6604"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">on <svg
+viewBox="0 -7.49 55.32 9.98"
+style="width:  5.55em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6640.svg#page6605"> </use> </svg></span> és la
+</span><span class="itshape" >constant de força d’equilibri</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Utilitzarem aquesta aproximació per estudiar la
+vibració de les molècules diatòmiques, i més endavant afegirem correccions per
+a millorar els resultats</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 136.44 19.85"
+style="width: 13.69em; height:  2.11em;"> <use
+xlink:href="images/img6641.svg#page6606"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Recordeu:</span>
+<span class="sffamily" >Les energies dels estats mostren un </span><span
+class="itshape sffamily" >espaiat constant.</span></summary>
+
+<div class="content"><div class="p"> <span>Sabem que els autovalors de
+l’oscil·lador harmònic vénen donats per la següent expressió, </span> </div>
+
+<table class="equation" id="ref::vi1:har:Ev"><tr><td><svg class="equation"
+viewBox="0 -14.49 150.76 24"
+style="width: 15.13em; height:  2.53em;"> <use
+xlink:href="images/img6642.svg#page6607"> </use>
+</svg></td><td>(12.3)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 8.7 5.78"
+style="width:  0.87em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6643.svg#page6608"> </use> </svg></span> és la
+</span><span class="itshape" >freqüència vibracional d’equilibri</span><span>,
+relacionada amb la constant de força <span class="inlinemath"><svg
+viewBox="0 -6.92 8.97 8.41"
+style="width:  0.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6644.svg#page6609"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -18.73 129.33 30.25"
+style="width: 12.98em; height:  3.16em;"> <use
+xlink:href="images/img6645.svg#page6610"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">(<svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6646.svg#page6611"> </use> </svg></span> és la massa
+reduïda de la molècula)</span>. <span>Un esquema de les energies dels estats de
+l’oscil·lador harmònic es mostra en la figura </span><a
+href="sections/section.12.1.html#ref::vi1:har:energies">12.2</a>. </div>
+
+<div class="figure" id="ref::vi1:har:energies">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="4.08 -221.55 218.33 215.84"
+style="width: 21.91em; height: 22.36em;"> <use
+xlink:href="images/img6647.svg#page6612"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 12.2</span>: <span>Energies dels estats
+d’un oscil·lador harmònic</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >La diferència
+d’energia entre estats consecutius és constant, <span class="inlinemath"><svg
+viewBox="0 -7.13 43.96 8.63"
+style="width:  4.41em; height:  0.99em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6648.svg#page6613"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La diferència d’energia entre dos
+estats consecutius és constant </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 261.57 24"
+style="width: 26.26em; height:  2.53em;"> <use
+xlink:href="images/img6649.svg#page6614"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >L’</span><span
+class="itshape sffamily" >energia del punt zero</span><span class="sffamily" >
+és <span class="inlinemath"><svg
+viewBox="0 -7.47 50.01 9.96"
+style="width:  5.02em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6650.svg#page6615"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’</span><span class="itshape"
+>energia del punt zero</span><span>, que és l’energia de l’estat fonamental
+<span class="inlinemath">(<svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6651.svg#page6616"> </use> </svg></span>), serà la
+següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 114.29 24"
+style="width: 11.47em; height:  2.53em;"> <use
+xlink:href="images/img6652.svg#page6617"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquest valor distint de zero contrasta amb el
+valor mínim possible de l’energia en un oscil·lador harmònic clàssic</span>:
+<span>amplitud zero, amb ambdues l’energia cinètica i l’energia potencial
+nul·les</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >valor del terme vibracional</span><span
+class="sffamily" > és <span class="inlinemath"><svg
+viewBox="0 -7.47 61.17 9.96"
+style="width:  6.14em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6653.svg#page6618"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 146.34 24"
+style="width: 14.69em; height:  2.53em;"> <use
+xlink:href="images/img6654.svg#page6619"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>En espectroscòpia, sovint ens interessa utilitzar el
+</span><span class="itshape" >nombre
+d’ona</span><span><span class="inlinemath"> <svg
+viewBox="0 -6.27 5.56 6.27"
+style="width:  0.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6655.svg#page6620"> </use> </svg></span> en comptes de
+<span class="inlinemath">l’energia <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6656.svg#page6621"> </use> </svg></span></span>. <span>La
+relació entre ambdues magnituds és la següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 34.05 20.38"
+style="width:  3.42em; height:  2.17em;"> <use
+xlink:href="images/img6657.svg#page6622"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i l’apliquem a continuació a l’energia dels
+estats vibracionals de l’Eq. (</span><a
+href="sections/section.12.1.html#ref::vi1:har:Ev">12.3</a><span>)</span>.
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Valor del terme vibracional</span></strong>.
+<span>L’energia dels estats vibracionals, expressats en nombre d’ones, pren la
+forma següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 181.47 24"
+style="width: 18.21em; height:  2.53em;"> <use
+xlink:href="images/img6658.svg#page6623"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.47 40.98 9.96"
+style="width:  4.11em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6659.svg#page6624"> </use> </svg></span></span>. <span>El
+símbol <span class="inlinemath"><svg
+viewBox="0 -7.47 20.77 9.96"
+style="width:  2.08em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6660.svg#page6625"> </use> </svg></span> representa el
+</span><span class="itshape" >valor del terme vibracional</span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 177.04 24"
+style="width: 17.77em; height:  2.53em;"> <use
+xlink:href="images/img6661.svg#page6626"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 177.04 24"
+style="width: 17.77em; height:  2.53em;"> <use
+xlink:href="images/img6662.svg#page6627"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Per a </span><span
+class="itshape sffamily" >espectroscòpia infraroja</span><span class="sffamily"
+> de vibració, la regla de selecció és <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6663.svg#page6628"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::vi1:har:mufirst"> <span>&vert;4.1&rang;</span> <span
+class="sffamily" >El moment dipolar s’escriu com una sèrie de Taylor de primer
+ordre.</span></summary>
+
+<div class="content"><div class="p"> <span>En l’aproximació harmònica, el
+moment dipolar s’escriu com una sèrie de Taylor de primer ordre, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 160.3 10.48"
+style="width: 16.09em; height:  1.17em;"> <use
+xlink:href="images/img6664.svg#page6629"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.49 29.75 9.98"
+style="width:  2.99em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6665.svg#page6630"> </use> </svg></span> és la derivada
+primera de <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6666.svg#page6631"> </use> </svg></span> en
+<span class="inlinemath"><svg
+viewBox="0 -6.81 32.27 8.3"
+style="width:  3.24em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6667.svg#page6632"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 157.03 10.48"
+style="width: 15.76em; height:  1.17em;"> <use
+xlink:href="images/img6668.svg#page6633"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:har:ReglaHarmonic"> <span>&vert;4.2&rang;</span> <span
+class="sffamily" >El moment dipolar de transició és zero llevat que
+<span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6669.svg#page6634"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a saber si la transició </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 47.05 8.36"
+style="width:  4.72em; height:  0.96em;"> <use
+xlink:href="images/img6670.svg#page6635"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>està permesa hem de calcular el corresponent
+</span><span class="itshape" >moment dipolar de transició</span><span>, </span>
+</div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.64 33.17 11.13"
+style="width:  3.33em; height:  1.24em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6671.svg#page6636"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6672.svg#page6637"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 51.84 9.96"
+style="width:  5.20em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6673.svg#page6638"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6674.svg#page6639"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.99 117.69 10.48"
+style="width: 11.81em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6675.svg#page6640"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6676.svg#page6641"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 168.5 10.48"
+style="width: 16.91em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6677.svg#page6642"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span><span class="inlinemath"><svg
+viewBox="0 -6.86 14.18 8.36"
+style="width:  1.42em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6678.svg#page6643"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 16.38 8.36"
+style="width:  1.64em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6679.svg#page6644"> </use> </svg></span> són les
+autofuncions de l’oscil·lador harmònic, i, com que són ortogonals, tindrem que
+el primer bracket s’anul·la, i ens queda </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 133.45 12.13"
+style="width: 13.39em; height:  1.34em;"> <use
+xlink:href="images/img6680.svg#page6645"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Es pot demostrar que el bracket que hi apareix
+serà zero llevat que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 85.99 8.82"
+style="width:  8.63em; height:  1.00em;"> <use
+xlink:href="images/img6681.svg#page6646"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta és la </span><span class="itshape"
+>regla de selecció</span><span> per a transicions vibracionals</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 129.02 12.13"
+style="width: 12.95em; height:  1.34em;"> <use
+xlink:href="images/img6682.svg#page6647"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >Les transicions
+en diatòmiques homonuclears estan prohibides.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a molècules diatòmiques
+homonuclears, com ara <span class="inlinemath">l’<svg
+viewBox="0 -6.86 11.44 8.36"
+style="width:  1.15em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6683.svg#page6648"> </use> </svg></span>, el moment
+dipolar <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6684.svg#page6649"> </use> </svg></span> és zero per a
+qualsevol <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6685.svg#page6650"> </use> </svg></span>, de manera que
+la quantitat <span class="inlinemath"><svg
+viewBox="0 -7.49 28.39 9.98"
+style="width:  2.85em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6686.svg#page6651"> </use> </svg></span> també ho serà,
+cosa que implica que la transició estarà prohibida encara que
+<span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6687.svg#page6652"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Compte, que allò que fa que la transició estiga prohibida
+no és <span class="inlinemath">que <svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6688.svg#page6653"> </use> </svg></span> siga zero, sinó
+que siga constant <span class="inlinemath">(<svg
+viewBox="0 -7.49 46.65 9.98"
+style="width:  4.68em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6689.svg#page6654"> </use> </svg></span>)</span>.
+<span>Per aquest motiu, trobarem molècules </span><span class="itshape"
+>poliatòmiques</span><span> apolars, com ara el <span class="inlinemath"><svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6690.svg#page6655"> </use> </svg></span>, que
+</span><span class="bfseries" >sí</span><span> experimenten transicions
+vibracionals</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="sffamily" >Recordeu:</span>
+<span class="sffamily" >La vibració correspon a la regió de
+l’infraroig.</span></summary>
+
+<div class="content"><div class="p"> <span>El fotons absorbits o emesos durant
+les transicions que canvien el component vibracional de la funció d’ona
+molecular corresponen a la regió de l’infraroig</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >A temperatures no
+gaire altes, la majoria de les molècules són a l’estat
+fonamental.</span></summary>
+
+<div class="content"><div class="p"> <span>La separació energètica entre estats
+vibracionals és molt més gran que entre estats rotacionals</span>. <span>Això
+fa que, d’acord amb la </span><span class="itshape" >termodinàmica
+estadística</span><span>, i a temperatures no massa altes, la majoria de les
+molècules seran a l’estat vibracional fonamental</span>. </div>
+
+<div class="p"> <span>En la pràctica, doncs, si prenem en compte la regla de
+selecció <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6691.svg#page6656"> </use> </svg></span>, l’única
+transició d’absorció que és produirà serà </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.27 28.23 6.27"
+style="width:  2.83em; height:  0.75em;"> <use
+xlink:href="images/img6692.svg#page6657"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta transició s’anomena </span><span
+class="itshape" >banda fonamental</span>. </div>
+
+<div class="p"> <span>Les transicions <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6693.svg#page6658"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6694.svg#page6659"> </use> </svg></span>, &hellip;,
+s’anomenen </span><span class="itshape" >bandes calentes</span><span> (una
+banda és un conjunt de ratlles espectrals), ja que només es produeixen a
+temperatures elevades</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em;"> <use
+xlink:href="images/img6695.svg#page6660"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Per a </span><span
+class="itshape sffamily" >espectroscòpia Raman</span><span class="sffamily" >,
+la regla de selecció també és <span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6696.svg#page6661"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a l’</span><span class="itshape"
+>espectroscòpia Raman</span><span>, la regla de selecció també és
+<span class="inlinemath"><svg
+viewBox="0 -7.13 39.5 7.96"
+style="width:  3.96em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6697.svg#page6662"> </use> </svg></span></span>. <span>A
+més a més, les molècules han de tindre polaritzabilitat </span><span
+class="itshape" >anisòtropa</span>. </div>
+
+<div class="p"> <span>Les molècules diatòmiques </span><span class="itshape"
+>homonuclears</span><span>, que tenen moment dipolar constant i igual a zero i
+per tant no experimenten espectroscòpia infraroja, sí poden estudiar-se
+mitjançant espectroscòpia Raman, ja que són anisòtropes</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Les transicions
+vibracionals van acompanyades de transicions rotacionals.</span></summary>
+
+<div class="content"><div class="p"> <span>En la pràctica, les transicions
+vibracionals (de infrarojos i Raman) van acompanyades de transicions
+rotacionals, la qual cosa dóna lloc a </span><span class="itshape"
+>bandes</span><span> de rotació-vibració</span>. <span>Ho estudiarem més
+endavant</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.12.1.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

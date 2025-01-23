@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Funcions d’ona, que descriuen l’estat del sistema (postulat I)</title>
+<meta name="description" content="Postulat I (mecànica quàntica): l’estat d’un
+sistema ve descrit per una funció d’ona, que depèn de les coordenades de les
+partícules i del temps.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.1.3.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.html"><span>1 Fonaments de la mecànica quàntica
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>1.3 Funcions d’onda </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img42.svg#page35"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.2.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.4.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>1.3  Funcions d’onda</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Sistema:</span>
+<span class="sffamily" >partícules que component les molècules
+estudiades.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Sistema</span></strong>. <span>Un </span><span
+class="itshape" >sistema</span><span> és la part de l’univers que va a ser
+estudiada</span>. <span>En mecànica quàntica, i en particular en química
+quàntica, un </span><span class="itshape" >sistema</span><span> és el conjunt
+de partícules (sobretot, electrons i nuclis) que componen els àtoms o molècules
+estudiades</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Exemples de sistemes</span>: <span>un àtom
+d’hidrogen (amb un electró i un nucli d’hidrogen), una molècula d’aigua (amb
+deu electrons, un nucli d’oxigen i dos nuclis d’hidrogen), dues molècules
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.47 6.86"
+style="width:  0.75em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img43.svg#page36"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.06 6.86"
+style="width:  0.71em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img44.svg#page37"> </use> </svg></span> que reaccionen l’una
+amb l’altra (amb &hellip;)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Descrivim l’estat
+d’un sistema amb una </span><span class="itshape sffamily" >funció
+d’ona.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Postulat I de la mecànica
+quàntica</span></strong>. <span>L’estat d’un sistema ve descrit </span><span
+class="itshape" >completament</span><span> per una </span><span
+class="bfseries" >funció d’ona</span><span><span class="inlinemath"> <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img45.svg#page38"> </use> </svg></span> que depèn de les
+coordenades de les partícules del sistema i del temps</span>. </div>
+
+<div class="p"> <span>Tota la informació </span><span class="itshape" >que
+podem obtindre</span><span> del sistema està continguda en la funció
+d’ona</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >La descripció que
+dóna <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img46.svg#page39"> </use> </svg></span> és completa, però no
+ens deixa saber-ho tot.</span></summary>
+
+<div class="content"><div class="p"> <span>No podem saber-ho </span><span
+class="itshape" >tot</span><span> sobre el sistema, però allò que podem saber
+hem d’extraure-ho de la funció d’ona</span>. </div>
+
+<div class="p"> <span>No obstant això, </span><span class="itshape" >la
+descripció que dóna la mecànica quàntica és completa</span>. <span>Ho
+il·lustrarem amb un exemple</span>: <span>en l’experiment de les dues
+escletxes, en quin punt exacte de la pantalla detectora impactarà
+l’electró</span>? <span>Sabem (vegeu </span><a class="sffamily small"
+href="sections/section.1.2.html#ref::pos:dua:Psi2"
+>§1.2&vert;6.2.2&rang;</a><span>) que la probabilitat que impacte en un punt és
+proporcional al valor <span class="inlinemath">de <svg
+viewBox="0 -8.11 17.25 10.6"
+style="width:  1.73em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img47.svg#page40"> </use> </svg></span> en eixe punt</span>.
+<span>Hom podria pensar que, en començar l’experiment, el lloc d’impacte de
+l’electró queda determinat, però que la descripció que dona la mecànica
+quàntica és encara deficient i no permet predir el punt exacte</span>. <span>En
+realitat, la mecànica quàntica ens diu, no només que ella no pot predir el punt
+d’impacte exacte, sinó que cap teoria més avançada podrà predir-ho mai</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >La funció d’ona
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img48.svg#page41"> </use> </svg></span> és, en general, una
+</span><span class="itshape sffamily" >funció complexa.</span></summary>
+
+<div class="content"><div class="p"> <span>S’aconsella de repassar les
+propietats dels nombres complexos, un resum de les quals podeu trobar
+en §</span><a href="sections/section.A.1.html#ref::app:mat:complexos">A.1</a>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Representarem el
+conjunt de coordenades amb <span class="inlinemath"><svg
+viewBox="0 -4.62 93.31 6.56"
+style="width:  9.37em; height:  0.78em; vertical-align: -0.25em;"> <use
+xlink:href="images/img49.svg#page42"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Utilitzarem el símbol
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img50.svg#page43"> </use> </svg></span> per designar el
+conjunt de les coordenades de totes les partícules del sistema, </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="0 -4.62 96.58 6.56"
+style="width:  9.69em; height:  0.78em;"> <use
+xlink:href="images/img51.svg#page44"> </use>
+</svg></td><td>(1.1)</td></tr></table>
+
+<div class="p noindent"> <span>Per tant, atès que la funció d’ona depèn de les
+coordenades i del temps, escriurem que </span> </div>
+
+<table class="equation"><tr><td><svg class="equation"
+viewBox="0 -7.47 52.25 9.96"
+style="width:  5.25em; height:  1.12em;"> <use
+xlink:href="images/img52.svg#page45"> </use>
+</svg></td><td>(1.2)</td></tr></table>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 49.49 9.96"
+style="width:  4.97em; height:  1.12em;"> <use
+xlink:href="images/img53.svg#page46"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::pos:fnt:multiple"> <span>&vert;6&rang;</span> <span
+class="sffamily" >Farem servir integrals múltiples definides entre funcions
+d’ona.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Integrals múltiples definides</span></strong>.
+<span>Per a dues funcions <span class="inlinemath">d’ona <svg
+viewBox="0 -6.86 10.57 8.36"
+style="width:  1.06em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img54.svg#page47"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img55.svg#page48"> </use> </svg></span>, el símbol </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 75.93 22.64"
+style="width:  7.62em; height:  2.39em;"> <use
+xlink:href="images/img56.svg#page49"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>representa una integral múltiple </span><span
+class="itshape" >definida</span><span> calculada sobre un </span><span
+class="itshape" >domini</span><span><span class="inlinemath"> <svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img57.svg#page50"> </use> </svg></span></span>. <span>El
+<span class="inlinemath">domini <svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img58.svg#page51"> </use> </svg></span> és el conjunt dels
+valors acceptables de les coordenades de les partícules del sistema</span>.
+</div>
+
+<div class="p"> <span>Per simplicitat ens referirem a l’anterior integral amb
+la notació </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 50.44 22.14"
+style="width:  5.06em; height:  2.34em;"> <use
+xlink:href="images/img59.svg#page52"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on només farem servir un símbol d’integral i
+tampoc no especificarem el <span class="inlinemath">domini <svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img60.svg#page53"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>És important no confondre el
+<span class="inlinemath">símbol <svg
+viewBox="0 -8.03 44.91 11.07"
+style="width:  4.51em; height:  1.23em; vertical-align: -0.37em;"> <use
+xlink:href="images/img61.svg#page54"> </use> </svg></span> amb una </span><span
+class="itshape" >integral indefinida</span>. <span>Il·lustrem breument, per al
+cas d’una partícula en una dimensió, la diferència entre integrals definides i
+indefinides</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 33.82 22.14"
+style="width:  3.39em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img62.svg#page55"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img63.svg#page56"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.12 123.34 9.05"
+style="width: 12.38em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img64.svg#page57"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -15.94 37.82 25.02"
+style="width:  3.80em; height:  2.63em; vertical-align: -0.97em;"> <use
+xlink:href="images/img65.svg#page58"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img66.svg#page59"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.96 116.2 10.89"
+style="width: 11.66em; height:  1.21em; vertical-align: -0.25em;"> <use
+xlink:href="images/img67.svg#page60"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>La integral indefinida és una funció
+<span class="inlinemath">d’<svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img68.svg#page61"> </use> </svg></span>, mentre que la
+definida és una constant</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >La funció d’ona ha
+de ser </span><span class="itshape sffamily" >contínua</span><span
+class="sffamily" >, </span><span class="itshape sffamily" >unívoca</span><span
+class="sffamily" > i </span><span class="itshape sffamily" >de quadrat
+integrable.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a ser matemàticament adequada,
+la funció d’ona ha de complir tres condicions</span>. </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>Ha de ser </span><span class="itshape"
+>contínua</span><span>, amb derivades parcials <span class="inlinemath">(<svg
+viewBox="1.2 -8.77 9.2 12.2"
+style="width:  0.92em; height:  1.34em; vertical-align: -0.40em;"> <use
+xlink:href="images/img69.svg#page62"> </use> </svg></span>, &hellip;) també
+contínues</span>. </div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>Ha de ser </span><span class="itshape"
+>unívoca</span><span>, és a dir, que a cada punt del espai
+<span class="inlinemath">(<svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img70.svg#page63"> </use> </svg></span>) i del temps
+<span class="inlinemath">(<svg
+viewBox="0 -6.13 3.6 6.13"
+style="width:  0.36em; height:  0.74em; vertical-align: -0.06em;"> <use
+xlink:href="images/img71.svg#page64"> </use> </svg></span>) li ha de
+correspondre un únic valor</span>. </div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>Ha de ser </span><span class="itshape" >de quadrat
+integrable</span><span>, la qual cosa vol dir que la integral </span><span
+class="itshape" >definida</span><span> per a tot l’espai del quadrat del seu
+mòdul ha de ser finita</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 120.6 22.14"
+style="width: 12.11em; height:  2.34em;"> <use
+xlink:href="images/img72.svg#page65"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(com hem explicat en </span><a class="sffamily
+small" href="sections/section.1.3.html#ref::pos:fnt:multiple"
+>§1.3&vert;6&rang;</a><span>, aquesta integral és definida)</span>. </div>
+
+</li></ol>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:fnt:norm"> <span>&vert;8&rang;</span> <span
+class="sffamily" >Les funcions d’ona es poden normalitzar.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Normalització</span></strong>. <span>Diem que una
+funció d’ona <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img73.svg#page66"> </use> </svg></span> està </span><span
+class="itshape" >normalitzada</span><span> si compleix la següent
+condició</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 62.74 22.14"
+style="width:  6.30em; height:  2.34em;"> <use
+xlink:href="images/img74.svg#page67"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.1&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img75.svg#page68"> </use> </svg></span> es pot normalitzar
+multiplicant-la per <span class="inlinemath"><svg
+viewBox="0 -12.05 56.65 18.02"
+style="width:  5.69em; height:  1.93em; vertical-align: -0.66em;"> <use
+xlink:href="images/img76.svg#page69"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si una funció d’ona
+<span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img77.svg#page70"> </use> </svg></span> (que ha de ser de
+quadrat integrable) no està normalitzada, sempre podem obtindre’n una de
+normalitzada multiplicant-la per una <span class="inlinemath">constant <svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img78.svg#page71"> </use> </svg></span> apropiada</span>:
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 115.76 30.74"
+style="width: 11.62em; height:  3.21em;"> <use
+xlink:href="images/img79.svg#page72"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La <span class="inlinemath">constant <svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img80.svg#page73"> </use> </svg></span> s’anomena la
+</span><span class="itshape" >constant de normalització</span><span>
+<span class="inlinemath">de <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img81.svg#page74"> </use> </svg></span> (com
+<span class="inlinemath"><svg
+viewBox="0 -8.11 36.72 11.15"
+style="width:  3.69em; height:  1.24em; vertical-align: -0.37em;"> <use
+xlink:href="images/img82.svg#page75"> </use> </svg></span> és una integral
+definida, <span class="inlinemath"><svg
+viewBox="0 -4.29 4.31 4.29"
+style="width:  0.43em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img83.svg#page76"> </use> </svg></span> és una
+constant)</span>. <span>Comprovem <span class="inlinemath">que <svg
+viewBox="0 -7.49 10.05 7.49"
+style="width:  1.01em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img84.svg#page77"> </use> </svg></span> sí que està
+normalitzada</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 190.26 22.14"
+style="width: 19.10em; height:  2.34em;"> <use
+xlink:href="images/img85.svg#page78"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img86.svg#page79"> </use> </svg></span> no fora de quadrat
+integrable no es podria normalitzar, perquè <span class="inlinemath"><svg
+viewBox="0 -8.11 36.72 11.15"
+style="width:  3.69em; height:  1.24em; vertical-align: -0.37em;"> <use
+xlink:href="images/img87.svg#page80"> </use> </svg></span> seria infinit i per
+<span class="inlinemath">tant <svg
+viewBox="0 -6.27 22.58 6.27"
+style="width:  2.27em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img88.svg#page81"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 54.15 7.49"
+style="width:  5.44em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img89.svg#page82"> </use> </svg></span>, cosa que no és
+físicament acceptable</span>.</div> </div>
+
+</details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;9&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >orbital</span><span class="sffamily" > és una funció
+d’ona tridimensional.</span></summary>
+
+<div class="content"><div class="p"> <span>Els anomenats </span><span
+class="itshape" >orbitals</span><span> (per exemple, els de l’àtom d’hidrogen)
+no són altra cosa que funcions d’ona tridimensionals, on
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img90.svg#page83"> </use> </svg></span> representa la
+posició d’un únic electró</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.1.3.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

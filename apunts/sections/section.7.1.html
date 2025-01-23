@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>El hamiltonià molecular té cinc components</title>
+<meta name="description" content="El hamiltonià molecular té cinc components
+(Tn, Te, Vnn, Vne, Vee). Les seus autofuncions no es poden obtindre
+exactament.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.7.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.7.html"><span>7 Introducció a l’estudi de molècules
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>7.1 Introducció </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img3345.svg#page3323"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.html"> <svg class="icon previous" viewBox="0 0
+512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section" id="ref::mol:int">  <span>7.1  Introducció</span> </h4>
+
+<details open class="foldable prop">
+<summary id="ref::mol:int:Hmol"> <span>&vert;1&rang;</span> <span
+class="sffamily" >El hamiltonià molecular té cinc components.</span></summary>
+
+<div class="content"><div class="p"> <span>Una molècula està composta
+d’electrons i nuclis</span>. <span>Si excloem les correccions relativistes, el
+hamiltonià molecular, en unitats atòmiques, té la següent expressió, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 323.71 42.5"
+style="width: 32.49em; height:  4.39em;"> <use
+xlink:href="images/img3346.svg#page3324"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on els subíndexs <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3347.svg#page3325"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img3348.svg#page3326"> </use> </svg></span> es refereixen a
+electrons i els <span class="inlinemath"><svg
+viewBox="0 -4.29 5.27 4.29"
+style="width:  0.53em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3349.svg#page3327"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.92 4.28 6.92"
+style="width:  0.43em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3350.svg#page3328"> </use> </svg></span> a nuclis</span>.
+<span>(Com la massa dels electrons és <span class="inlinemath"><svg
+viewBox="0 -6.27 4.98 6.27"
+style="width:  0.50em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3351.svg#page3329"> </use> </svg></span> en unitats
+atòmics, no hi ha apareix</span>.) <span><span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3352.svg#page3330"> </use> </svg></span> té cinc
+components, dos d’energia cinètica (dels electrons,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.6 10.88"
+style="width:  0.96em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3353.svg#page3331"> </use> </svg></span>, i dels nuclis,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 10.75 10.88"
+style="width:  1.08em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3354.svg#page3332"> </use> </svg></span>), i tres
+d’energia potencial (repulsió nucli-nucli <span class="inlinemath"><svg
+viewBox="0 -9.38 15.66 10.88"
+style="width:  1.57em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3355.svg#page3333"> </use> </svg></span>, repulsió
+electró-electró <span class="inlinemath"><svg
+viewBox="0 -9.38 13.37 10.88"
+style="width:  1.34em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3356.svg#page3334"> </use> </svg></span>, i atracció
+nucli-electró <span class="inlinemath"><svg
+viewBox="0 -9.38 14.52 10.88"
+style="width:  1.46em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3357.svg#page3335"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 320.95 42.5"
+style="width: 32.21em; height:  4.39em;"> <use
+xlink:href="images/img3358.svg#page3336"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Les autofuncions
+</span><span class="itshape sffamily" >no</span><span class="sffamily" > es
+poden obtindre exactament.</span></summary>
+
+<div class="content"><div class="p"> <span>Utilitzarem el símbol
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.14 5.78"
+style="width:  0.82em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3359.svg#page3337"> </use> </svg></span> per referir-nos
+al conjunt de coordenades electròniques, i <span class="inlinemath"><svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3360.svg#page3338"> </use> </svg></span> per al conjunt
+de les coordenades nuclears</span>: </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3361.svg#page3339"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3362.svg#page3340"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 87.01 9.96"
+style="width:  8.73em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img3363.svg#page3341"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 8.14 5.78"
+style="width:  0.82em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3364.svg#page3342"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3365.svg#page3343"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 98.86 9.96"
+style="width:  9.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img3366.svg#page3344"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p"> <span>Les autofuncions del hamiltonià molecular
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3367.svg#page3345"> </use> </svg></span>, que dependran
+tant de les coordenades electròniques com de les nuclears, s’obtindran resolent
+la següent equació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 122.33 11.87"
+style="width: 12.28em; height:  1.31em;"> <use
+xlink:href="images/img3368.svg#page3346"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>No és possible resoldre exactament aquesta
+equació</span>. <span>Part del problema és que el moviment dels electrons i
+dels nuclis està acoblat degut al terme <span class="inlinemath"><svg
+viewBox="0 -9.38 14.52 10.88"
+style="width:  1.46em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3369.svg#page3347"> </use> </svg></span></span>.
+<span>Ara bé, existeix un procediment molt precís, l’anomenada </span><span
+class="itshape" >aproximació de Born-Oppenheimer</span><span>, que ens permet,
+en certa manera, desacoblar el nuclis dels electrons</span>. <span>L’estudiarem
+a continuació</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 124.27 11.87"
+style="width: 12.47em; height:  1.31em;"> <use
+xlink:href="images/img3370.svg#page3348"> </use> </svg></span> </div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.7.1.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

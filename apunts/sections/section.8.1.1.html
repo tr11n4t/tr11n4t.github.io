@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Producte d’operacions de simetria</title>
+<meta name="description" content="El producte de dues operacions de simetria és
+la seua aplicació successiva. Les operacions de simetria no sempre commuten.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.8.1.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.8.html"><span>8 Simetria molecular </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.8.1.html"><span>8.1 Elements i operacions de simetria
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>8.1.1 Producte d’operacions de
+simetria </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4322.svg#page4298"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.1.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.1.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection" id="ref::sim:ele:producte">  <span>8.1.1  Producte
+d’operacions de simetria</span> </h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >El producte de
+dues operacions és la seva aplicació successiva.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Producte d’operacions de simetria</span></strong>.
+<span>El producte de dues operacions de simetria <span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4323.svg#page4299"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 6.68 9.38"
+style="width:  0.67em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4324.svg#page4300"> </use> </svg></span> és l’aplicació
+successiva de les dues operacions a tots els punts del cos, primer la
+<span class="inlinemath"><svg
+viewBox="0 -9.38 6.68 9.38"
+style="width:  0.67em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4325.svg#page4301"> </use> </svg></span>, i després
+<span class="inlinemath">la <svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4326.svg#page4302"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>El producte de <span class="inlinemath"><svg
+viewBox="0 -9.38 7.64 9.38"
+style="width:  0.77em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4327.svg#page4303"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 6.68 9.38"
+style="width:  0.67em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4328.svg#page4304"> </use> </svg></span> és també una
+operació de simetria que simbolitzarem per <span class="inlinemath"><svg
+viewBox="0 -9.38 14.32 9.38"
+style="width:  1.44em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4329.svg#page4305"> </use> </svg></span></span>. <span>Si
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 101.88 11.87"
+style="width: 10.23em; height:  1.31em;"> <use
+xlink:href="images/img4330.svg#page4306"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 120.88 11.87"
+style="width: 12.13em; height:  1.31em;"> <use
+xlink:href="images/img4331.svg#page4307"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>aleshores </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 119.18 11.87"
+style="width: 11.96em; height:  1.31em;"> <use
+xlink:href="images/img4332.svg#page4308"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Les operacions de
+simetria no sempre commuten.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >En general, les
+operacions de simetria no commuten, <span class="inlinemath"><svg
+viewBox="0 -9.38 41.93 11.32"
+style="width:  4.21em; height:  1.26em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4333.svg#page4309"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >Algunes
+operacions de simetria, però, sí commuten:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -9.38 59.58 10.88"
+style="width:  5.98em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4334.svg#page4310"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Un cas particular de dues operacions
+de simetria que sí commuten són la rotació al voltant d’un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4335.svg#page4311"> </use> </svg></span> i una reflexió
+respecte a un pla <span class="inlinemath"><svg
+viewBox="0 -4.29 10.36 5.78"
+style="width:  1.04em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4336.svg#page4312"> </use> </svg></span> perpendicular a
+l’eix, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 62.85 10.88"
+style="width:  6.31em; height:  1.21em;"> <use
+xlink:href="images/img4337.svg#page4313"> </use> </svg></span> </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >El producte de
+dues rotacions és una altra rotació.</span></summary>
+
+<div class="content"><div class="p"> <span>Com exemple de producte d’operacions
+de simetria considerem l’operació <span class="inlinemath"><svg
+viewBox="0 -9.38 11.09 10.88"
+style="width:  1.11em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4338.svg#page4314"> </use> </svg></span> del
+<span class="inlinemath"><svg
+viewBox="0 -6.86 17.53 8.36"
+style="width:  1.76em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4339.svg#page4315"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 22.68 10.88"
+style="width:  2.28em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4340.svg#page4316"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4341.svg#page4317"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 11.8 11.84"
+style="width:  1.19em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4342.svg#page4318"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 34.27 10.88"
+style="width:  3.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4343.svg#page4319"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4344.svg#page4320"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 36.28 11.84"
+style="width:  3.64em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4345.svg#page4321"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -9.38 11.8 12.21"
+style="width:  1.19em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img4346.svg#page4322"> </use> </svg></span> equival a una
+rotació de <span class="inlinemath"><svg
+viewBox="0 -6.86 19.03 6.86"
+style="width:  1.91em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4347.svg#page4323"> </use> </svg></span> al voltant de
+l’eix <span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4348.svg#page4324"> </use> </svg></span>, i
+<span class="inlinemath"><svg
+viewBox="0 -9.38 11.8 12.21"
+style="width:  1.19em; height:  1.35em; vertical-align: -0.34em;"> <use
+xlink:href="images/img4349.svg#page4325"> </use> </svg></span> equival a no fer
+res <span class="inlinemath">(<svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4350.svg#page4326"> </use> </svg></span>, o una rotació
+de <span class="inlinemath"><svg
+viewBox="0 -6.86 19.03 6.86"
+style="width:  1.91em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4351.svg#page4327"> </use> </svg></span> al voltant de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.09 8.3"
+style="width:  1.11em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4352.svg#page4328"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 22.68 10.88"
+style="width:  2.28em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4353.svg#page4329"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4354.svg#page4330"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 11.8 11.84"
+style="width:  1.19em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4355.svg#page4331"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 34.27 10.88"
+style="width:  3.44em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4356.svg#page4332"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.62 7.75 4.26"
+style="width:  0.78em; height:  0.58em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4357.svg#page4333"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 33.51 11.84"
+style="width:  3.36em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4358.svg#page4334"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >El producte de
+dues reflexions és <span class="inlinemath"><svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4359.svg#page4335"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 33.31 9.38"
+style="width:  3.34em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4360.svg#page4336"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a qualsevol pla de reflexió,
+l’aplicació consecutiva de dues reflexions torna qualsevol punt al seu lloc
+original, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 36.08 9.38"
+style="width:  3.62em; height:  1.06em;"> <use
+xlink:href="images/img4361.svg#page4337"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >El producte de
+dues inversions és <span class="inlinemath"><svg
+viewBox="0 -9.38 7.93 9.38"
+style="width:  0.80em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4362.svg#page4338"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="-.77 -9.38 28.85 9.38"
+style="width:  2.90em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4363.svg#page4339"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>De manera semblant, per a un centre
+d’inversió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="-.77 -9.38 31.62 9.38"
+style="width:  3.17em; height:  1.06em;"> <use
+xlink:href="images/img4364.svg#page4340"> </use> </svg></span> </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.8.1.1.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

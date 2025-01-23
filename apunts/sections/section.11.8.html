@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Substitució isotòpica | Moments d’inèrcia | Geometria
+d’equilibri</title>
+<meta name="description" content="La substitució isotòpica afecta la freqüència
+de les ratlles en un espectre rotacional i es fa servir per determinar la
+geometria d’equilibri.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.11.8.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.11.html"><span>11 Espectres de rotació de molècules
+poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>11.8 Substitució isotòpica
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img6513.svg#page6478"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.11.7.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.11.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>11.8  Substitució isotòpica</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Els isotopòlegs
+difereixen només en la composició isotòpica.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Isotopòlegs</span></strong>. <span>Els
+</span><span class="itshape" >isotopòlegs</span><span> són molècules que
+difereixen només en la seva composició isotòpica</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Per exemple, l’aigua ‘normal’
+<span class="inlinemath">(<svg
+viewBox="0 -6.86 19.69 8.36"
+style="width:  1.98em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6514.svg#page6479"> </use> </svg></span>) i l’aigua
+pesant <span class="inlinemath">(<svg
+viewBox="0 -6.86 19.83 8.36"
+style="width:  1.99em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6515.svg#page6480"> </use> </svg></span>) són
+isotopòlegs</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Per a </span><span
+class="itshape sffamily" >diatòmiques</span><span class="sffamily" >,
+l’espectre de microones dóna la distància del enllaç.</span></summary>
+
+<div class="content"><div class="p"> <span>Sabem que de l’espectre de microones
+de les molècules diatòmiques podem obtindre el moment d’inèrcia
+<span class="inlinemath">(<svg
+viewBox="0 -8.11 33.19 10.05"
+style="width:  3.33em; height:  1.13em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6516.svg#page6481"> </use> </svg></span>) de la molècula,
+cosa que ens permet aïllar la seva distància d’enllaç, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -18.4 39.18 29.98"
+style="width:  3.93em; height:  3.13em;"> <use
+xlink:href="images/img6517.svg#page6482"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 6 6.23"
+style="width:  0.60em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6518.svg#page6483"> </use> </svg></span> és la massa
+reduïda</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -18.4 36.41 29.98"
+style="width:  3.65em; height:  3.13em;"> <use
+xlink:href="images/img6519.svg#page6484"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::ro2:iso:geom"> <span>&vert;3&rang;</span> <span
+class="sffamily" >La </span><span class="itshape sffamily" >geometria
+d’equilibri</span><span class="sffamily" > no depèn de les masses
+nuclears.</span></summary>
+
+<div class="content"><div class="p"> <span>La </span><span class="itshape"
+>geometria d’equilibri</span><span> d’una molècula correspon al mínim de la
+</span><span class="itshape" >corba</span><span> (o </span><span
+class="itshape" >hipersuperfície</span><span>, per a molècules poliatòmiques)
+</span><span class="itshape" >d’energia potencial</span>. <span>Ara bé, segons
+l’aproximació de Born-Oppenheimer, la hipersuperfície d’energia potencial depèn
+de la càrrega dels nuclis, però no de la seva massa</span>. </div>
+
+<div class="p"> <span>La conclusió és la següent</span>: <span>la geometria
+d’equilibri no depèn dels isòtops que componen la molècula, i per exemple,
+l’aigua ‘normal’ <span class="inlinemath">(<svg
+viewBox="0 -6.86 19.69 8.36"
+style="width:  1.98em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6520.svg#page6485"> </use> </svg></span>) i l’aigua
+pesant <span class="inlinemath">(<svg
+viewBox="0 -6.86 19.83 8.36"
+style="width:  1.99em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6521.svg#page6486"> </use> </svg></span>) tindran la
+mateixa geometria d’equilibri</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >La </span><span
+class="itshape sffamily" >substitució isotòpica</span><span class="sffamily" >
+ens pot donar la geometria d’equilibri.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >Mètode de
+l’estructura <span class="inlinemath"><svg
+viewBox="0 -4.29 8.47 5.78"
+style="width:  0.85em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6522.svg#page6487"> </use> </svg></span>:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6523.svg#page6488"> </use> </svg></span> depèn dels
+paràmetres geomètrics.</span></summary>
+
+<div class="content"><div class="p"> <span>En el següent gràfic esquematitzem
+les posicions nuclears i respectives distàncies internuclears per a una
+molècula triatòmica </span><span class="itshape" >lineal</span><span>, </span>
+</div>
+
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="21.13 -34.62 87.66 28.59"
+style="width:  8.80em; height:  3.60em;"> <use
+xlink:href="images/img6524.svg#page6489"> </use> </svg> </span> </div>
+
+<div class="p"> <span>El moment d’inèrcia <span class="inlinemath">(<svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6525.svg#page6490"> </use> </svg></span>) d’una molècula
+triatòmica lineal pot expressar-se[<a
+href="sections/biblio.html#bib::REQUENA2004">27</a>] de la següent manera,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 174.42 11.07"
+style="width: 17.51em; height:  1.23em;"> <use
+xlink:href="images/img6526.svg#page6491"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 12.72 5.78"
+style="width:  1.28em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6527.svg#page6492"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.72 5.78"
+style="width:  1.28em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6528.svg#page6493"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.72 5.78"
+style="width:  1.28em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6529.svg#page6494"> </use> </svg></span> són les masses
+nuclears, <span class="inlinemath"><svg
+viewBox="0 -4.29 12.44 5.78"
+style="width:  1.25em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6530.svg#page6495"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.44 5.78"
+style="width:  1.25em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6531.svg#page6496"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.44 5.78"
+style="width:  1.25em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6532.svg#page6497"> </use> </svg></span> les distàncies
+internuclears, i <span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6533.svg#page6498"> </use> </svg></span> la massa total
+de la molècula, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 90.81 8.3"
+style="width:  9.12em; height:  0.95em;"> <use
+xlink:href="images/img6534.svg#page6499"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>D’acord amb el gràfic anterior ha de complir-se
+que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -5.81 67.03 7.75"
+style="width:  6.73em; height:  0.90em;"> <use
+xlink:href="images/img6535.svg#page6500"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>cosa que ens permet escriure </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 211.75 11.1"
+style="width: 21.26em; height:  1.23em;"> <use
+xlink:href="images/img6536.svg#page6501"> </use> </svg></span> </div>
+
+<div class="p"> <span>Imaginem ara que el moment d’inèrcia l’obtenim de
+l’espectre de microones de la molècula, i que, a més a més, sintetitzem una
+mostra de la mateixa molècula però utilitzant isòtops de masses diferents
+<span class="inlinemath"><svg
+viewBox="0 -7.49 12.72 10.32"
+style="width:  1.28em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img6537.svg#page6502"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -7.49 12.72 10.32"
+style="width:  1.28em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img6538.svg#page6503"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 12.72 10.32"
+style="width:  1.28em; height:  1.16em; vertical-align: -0.34em;"> <use
+xlink:href="images/img6539.svg#page6504"> </use> </svg></span></span>.
+<span>L’espectre de microones d’aquesta segona mostra ens donaria un moment
+d’inèrcia <span class="inlinemath"><svg
+viewBox="0 -7.49 7.46 7.49"
+style="width:  0.75em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6540.svg#page6505"> </use> </svg></span> diferent</span>.
+<span>Els moments d’inèrcia <span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6541.svg#page6506"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 7.46 7.49"
+style="width:  0.75em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6542.svg#page6507"> </use> </svg></span> hauran de
+complir les equacions respectives, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 15.91 6.81"
+style="width:  1.60em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6543.svg#page6508"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6544.svg#page6509"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 179.29 11.1"
+style="width: 18.00em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6545.svg#page6510"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 21 7.99"
+style="width:  2.11em; height:  0.92em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6546.svg#page6511"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6547.svg#page6512"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 179.29 11.1"
+style="width: 18.00em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6548.svg#page6513"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Noteu que les distàncies
+<span class="inlinemath"><svg
+viewBox="0 -4.29 11.01 7.14"
+style="width:  1.10em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img6549.svg#page6514"> </use> </svg></span> per a les dues
+molècules són les mateixes, ja que, com hem vist en </span><a class="sffamily
+small" href="sections/section.11.8.html#ref::ro2:iso:geom"
+>§11.8&vert;3&rang;</a><span>, la geometria d’equilibri no depèn de les masses
+nuclears</span>. <span>La resolució d’aquest sistema d’equacions ens donarà els
+valors de <span class="inlinemath"><svg
+viewBox="0 -4.29 12.44 5.78"
+style="width:  1.25em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6550.svg#page6515"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -4.29 12.44 5.78"
+style="width:  1.25em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6551.svg#page6516"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Com exemple, podem aplicar aquest mètode de substitució
+isotòpica al <span class="inlinemath"><svg
+viewBox="0 -6.86 22.14 6.86"
+style="width:  2.22em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6552.svg#page6517"> </use> </svg></span>, utilitzant com
+espècie substituïda el <span class="inlinemath"><svg
+viewBox="0 -6.86 22.28 6.86"
+style="width:  2.24em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6553.svg#page6518"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 15.91 6.81"
+style="width:  1.60em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6554.svg#page6519"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6555.svg#page6520"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 179.29 11.1"
+style="width: 18.00em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6556.svg#page6521"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 21 7.99"
+style="width:  2.11em; height:  0.92em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6557.svg#page6522"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6558.svg#page6523"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 179.29 11.1"
+style="width: 18.00em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6559.svg#page6524"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2&rang;</span> <span class="sffamily" >Mètode de
+l’estructura <span class="inlinemath"><svg
+viewBox="0 -4.29 8.25 5.78"
+style="width:  0.83em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6560.svg#page6525"> </use> </svg></span>:</span> <span
+class="sffamily" >Cada substitució posiciona un nucli.</span></summary>
+
+<div class="content"><div class="p"> <span>El </span><span class="itshape"
+>mètode de l’estructura <span class="inlinemath"><svg
+viewBox="0 -4.29 8.25 5.78"
+style="width:  0.83em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6561.svg#page6526"> </use> </svg></span></span><span>
+també es basa en la substitució isotòpica dels nuclis, però el procediment es
+diferent</span>. <span>En fem un resum per a molècules lineals</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Imaginem que la molècula està enfilada en l’eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.51 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6562.svg#page6527"> </use> </svg></span>, de manera que
+la posició de cada nucli queda especificada per la corresponent coordenada
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6563.svg#page6528"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Suposem, a més a més, que situem l’origen de coordenades
+en el centre de masses de la molècula</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Ara imaginem que fem la substitució isotòpica
+</span><span class="itshape" >d’un i només un</span><span> nucli de la
+molècula</span>: <span>el nucli <span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6564.svg#page6529"> </use> </svg></span>-èsim, de manera
+que la massa total de la molècula canviarà de <span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6565.svg#page6530"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -7.49 13.05 7.49"
+style="width:  1.31em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6566.svg#page6531"> </use> </svg></span> i el moment
+d’inèrcia de <span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6567.svg#page6532"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -7.49 7.46 7.49"
+style="width:  0.75em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6568.svg#page6533"> </use> </svg></span>, cosa que podem
+escriure com </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6569.svg#page6534"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6570.svg#page6535"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 68.81 8.81"
+style="width:  6.91em; height:  1.00em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6571.svg#page6536"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6572.svg#page6537"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.66 9.96 2.33"
+style="width:  1.00em; height:  0.49em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6573.svg#page6538"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 54.81 9.93"
+style="width:  5.50em; height:  1.12em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6574.svg#page6539"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.13 19.05 7.13"
+style="width:  1.91em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6575.svg#page6540"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.13 13.46 7.13"
+style="width:  1.35em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6576.svg#page6541"> </use> </svg></span> són els
+increment de <span class="inlinemath"><svg
+viewBox="0 -6.81 10.75 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6577.svg#page6542"> </use> </svg></span> i de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6578.svg#page6543"> </use> </svg></span></span>.
+<span>Els valors <span class="inlinemath">d’<svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6579.svg#page6544"> </use> </svg></span> i
+<span class="inlinemath">d’<svg
+viewBox="0 -7.49 7.46 7.49"
+style="width:  0.75em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6580.svg#page6545"> </use> </svg></span> podem
+obtindre’ls de l’espectre de microones de les respectives molècules</span>.
+</div>
+
+</li><li>
+
+<div class="p"> <span>El </span><span class="itshape" >mètode de l’estructura
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.25 5.78"
+style="width:  0.83em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6581.svg#page6546"> </use> </svg></span></span><span>[<a
+href="sections/biblio.html#bib::LUANA2002">34</a>] es basa en la següent
+relació, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 45.06 11.07"
+style="width:  4.52em; height:  1.23em;"> <use
+xlink:href="images/img6582.svg#page6547"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.87 66.43 21.53"
+style="width:  6.67em; height:  2.28em;"> <use
+xlink:href="images/img6583.svg#page6548"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i on <span class="inlinemath"><svg
+viewBox="0 -4.29 7.45 5.78"
+style="width:  0.75em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6584.svg#page6549"> </use> </svg></span> és el valor de
+la coordenada <span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6585.svg#page6550"> </use> </svg></span> del nucli
+substituït, però </span><span class="bfseries" >abans de fer la
+substitució</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Ara podem aïllar el valor de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 7.45 5.78"
+style="width:  0.75em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6586.svg#page6551"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -18.56 49.82 29.98"
+style="width:  5.00em; height:  3.13em;"> <use
+xlink:href="images/img6587.svg#page6552"> </use> </svg></span> </div>
+
+</li><li>
+
+<div class="p"> <span>La repetició d’aquest procés amb diferents substitucions
+isotòpiques ens donarà, una per una, les coordenades
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6588.svg#page6553"> </use> </svg></span> de tots els
+nuclis de la molècula</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>En principi, per a una molècula amb
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6589.svg#page6554"> </use> </svg></span> nuclis, hauríem
+de fer <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6590.svg#page6555"> </use> </svg></span>
+substitucions</span>. <span>Ara bé, podem estalviar-nos una substitució si
+recordem que l’origen de coordenades l’hem situat en el centre de masses, de
+manera que ha de complir-se que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -17.22 57.1 28.97"
+style="width:  5.73em; height:  3.03em;"> <use
+xlink:href="images/img6591.svg#page6556"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta relació, combinada amb les dades de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 26.25 7.64"
+style="width:  2.64em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6592.svg#page6557"> </use> </svg></span> substitucions,
+ens permetrà obtindre les coordenades <span class="inlinemath"><svg
+viewBox="0 -4.29 5.07 4.29"
+style="width:  0.51em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6593.svg#page6558"> </use> </svg></span> dels
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6594.svg#page6559"> </use> </svg></span> nuclis de la
+molècula</span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >Ambdós mètodes
+poden aplicar-se a rotors simètrics (exemple:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6595.svg#page6560"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>De manera anàloga, encara que és més
+complicat[<a href="sections/biblio.html#bib::REQUENA2004">27</a>, <a
+href="sections/biblio.html#bib::LUANA2002">34</a>], ambdós mètodes
+<span class="inlinemath">(estructura <svg
+viewBox="0 -4.29 8.47 5.78"
+style="width:  0.85em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6596.svg#page6561"> </use> </svg></span> i
+<span class="inlinemath">estructura <svg
+viewBox="0 -4.29 8.25 5.78"
+style="width:  0.83em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6597.svg#page6562"> </use> </svg></span>) poden
+aplicar-se a molècules no lineals com ara rotors simètrics</span>. <span>Per
+exemple, per a l’amoníac <span class="inlinemath"><svg
+viewBox="0 -6.86 18.92 8.36"
+style="width:  1.90em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6598.svg#page6563"> </use> </svg></span>, qualsevol
+d’aquests mètodes ens donaria la <span class="inlinemath">distància <svg
+viewBox="0 -6.86 27.12 7.69"
+style="width:  2.72em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6599.svg#page6564"> </use> </svg></span> i
+<span class="inlinemath">l’angle <svg
+viewBox="0 -6.86 46.77 7.69"
+style="width:  4.69em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6600.svg#page6565"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Per a rotors
+asimètrics, podem obtindre directament <span class="inlinemath"><svg
+viewBox="0 -6.81 8.7 8.3"
+style="width:  0.87em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6601.svg#page6566"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.3"
+style="width:  0.79em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6602.svg#page6567"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.94 8.3"
+style="width:  0.80em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6603.svg#page6568"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a </span><span class="itshape"
+>rotor asimètrics</span><span>, la complexitat i riquesa del seu espectre ens
+permet obtindre els tres moments d’inèrcia principals
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.7 8.3"
+style="width:  0.87em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6604.svg#page6569"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.3"
+style="width:  0.79em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6605.svg#page6570"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.94 8.3"
+style="width:  0.80em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6606.svg#page6571"> </use> </svg></span>, de manera que,
+amb aquestes tres dades, podem calcular la geometria d’equilibri de certes
+molècules triatòmiques, com ara el <span class="inlinemath"><svg
+viewBox="0 -6.86 17.25 8.36"
+style="width:  1.73em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6607.svg#page6572"> </use> </svg></span>, sense
+necessitar de fer cap substitució isotòpica.[<a
+href="sections/biblio.html#bib::REQUENA2004">27</a>] </span> </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.11.8.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

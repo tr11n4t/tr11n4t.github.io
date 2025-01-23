@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Mètodes OM i EV | Comparativa i millora</title>
+<meta name="description" content="Es compara l’aplicació a la molècula
+d’hidrogen dels mètodes OM i EV. Es proposen millores.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.7.5.3.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.7.html"><span>7 Introducció a l’estudi de molècules
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.7.5.html"><span>7.5 La molècula d’hidrogen
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>7.5.3 Comparativa i millora dels
+mètodes OM i EV </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img4131.svg#page4107"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.5.2.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.5.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.8.html"> <svg class="icon next" viewBox="0 0 512
+512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>7.5.3  Comparativa i millora dels mètodes OM i
+EV</span> </h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Els mètodes OM i
+EV són diferents.</span> <span class="sffamily" >Els
+compararem.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >OM té
+<span class="inlinemath"><svg
+viewBox="0 -6.86 21.55 8.36"
+style="width:  2.16em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4132.svg#page4108"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 32.73 8.36"
+style="width:  3.29em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4133.svg#page4109"> </use> </svg></span>.</span> <span
+class="sffamily" >EV, només <span class="inlinemath"><svg
+viewBox="0 -6.86 32.73 8.36"
+style="width:  3.29em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4134.svg#page4110"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Segons </span><a class="sffamily
+small" href="sections/section.7.5.1.html#ref::mol:hmo:MOIonCov"
+>§7.5.1&vert;6.2&rang;</a><span>, la funció d’ona OM té un terme iònic i un
+terme covalent, i cadascun d’ells contribueix un 50% a la funció d’ona
+total</span>. </div>
+
+<div class="p"> <span>D’altra banda, i com hem vist en </span><a
+class="sffamily small" href="sections/section.7.5.2.html#ref::mol:hmo:PsiEVCov"
+>§7.5.2&vert;3&rang;</a><span>, la funció d’ona EV només té terme
+covalent</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="sffamily" >El mètode OM no
+dissocia bé.</span> <span class="sffamily" >El EV, sí.</span></summary>
+
+<div class="content"><div class="p"> <span>El mètode OM dissocia incorrectament
+donant una superposició d’ió hidrur i protó (procedents del terme iònic) més
+dos àtoms d’hidrogen (procedents del terme covalent)</span>. </div>
+
+<div class="p"> <span>Per contra, el mètode EV, com que no té terme iònic,
+dissocia correctament per donar dos àtoms d’hidrogen</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Millorem EV
+afegint-hi un poc de component iònic.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Si la molècula
+no està dissociada, és millor una mica de terme iònic.</span></summary>
+
+<div class="content"><div class="p"> <span>La funció EV no té termes iònics, i
+això és correcte a distàncies molt grans, quan la molècula dissocia</span>.
+</div>
+
+<div class="p"> <span>D’altra banda, per a distàncies d’enllaç semblants a la
+distància d’equilibri <span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4135.svg#page4111"> </use> </svg></span>, no és
+inversemblant imaginar que, en un instant concret, els dos electrons es situen
+a prop d’un dels nuclis, de manera que una funció d’ona amb una mica de
+caràcter iònic seria més adient que no una covalent pura</span>. </div>
+
+<div class="p"> <span>Podem doncs millorar la funció EV afegint-li el terme
+iònic de manera controlada mitjançant el paràmetre (que s’ha d’optimitzar)
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.48 4.29"
+style="width:  0.55em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4136.svg#page4112"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 185.16 9.96"
+style="width: 18.59em; height:  1.12em;"> <use
+xlink:href="images/img4137.svg#page4113"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>A aquesta funció EV millorada l’anomenarem EV+
+(compte que no està normalitzada)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 182.4 9.96"
+style="width: 18.31em; height:  1.12em;"> <use
+xlink:href="images/img4138.svg#page4114"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >Per a
+<span class="inlinemath"><svg
+viewBox="0 -6.27 23.75 6.27"
+style="width:  2.38em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4139.svg#page4115"> </use> </svg></span>, EV+ equival al
+mètode EV.</span></summary>
+
+<div class="content"><div class="p"> <span>El mètode EV+ amb
+<span class="inlinemath"><svg
+viewBox="0 -6.27 23.75 6.27"
+style="width:  2.38em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4140.svg#page4116"> </use> </svg></span> és equivalent al
+mètode EV. L’única diferència entre elles és que l’expressió d’EV que hem vist
+abans estava normalitzada, mentre que EV+ no ho està</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >Per a
+<span class="inlinemath"><svg
+viewBox="0 -6.27 23.75 6.27"
+style="width:  2.38em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4141.svg#page4117"> </use> </svg></span>, EV+ equival al
+mètode OM.</span></summary>
+
+<div class="content"><div class="p"> <span>El mètode EV+ amb
+<span class="inlinemath"><svg
+viewBox="0 -6.27 23.75 6.27"
+style="width:  2.38em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4142.svg#page4118"> </use> </svg></span> és equivalent al
+mètode OM. L’única diferència entre elles és que l’expressió d’OM que hem vist
+abans estava normalitzada, mentre que EV+ no ho està</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 182.4 9.96"
+style="width: 18.31em; height:  1.12em;"> <use
+xlink:href="images/img4143.svg#page4119"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::mol:hmo:OMplus"> <span>&vert;3&rang;</span> <span
+class="sffamily" >Millorar OM afegint-hi més determinants de
+Slater.</span></summary>
+
+<div class="content"><div class="p"> <span>La funció d’ona OM pot millorar-se
+mitjançant la tècnica d’</span><span class="itshape" >interacció de
+configuracions</span><span> que hem explicat en </span><a class="sffamily
+small" href="sections/section.6.2.html#ref::ato:foc:ci"
+>§6.2&vert;6.2&rang;</a><span>, que expressa la funció d’ona com una combinació
+lineal de més d’un determinant de Slater, corresponents no només a l’estat
+fonamental sinó també a estats excitats</span>. <span>Per exemple, podem
+escriure la funció d’ona com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 148.61 10.32"
+style="width: 14.92em; height:  1.16em;"> <use
+xlink:href="images/img4144.svg#page4120"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on els orbitals <span class="inlinemath"><svg
+viewBox="0 -4.29 9.83 7.14"
+style="width:  0.99em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4145.svg#page4121"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.86 10.4 9.32"
+style="width:  1.04em; height:  1.06em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4146.svg#page4122"> </use> </svg></span> són </span>
+</div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 21.51 10.32"
+style="width:  2.16em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4147.svg#page4123"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4148.svg#page4124"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 116.48 22.77"
+style="width: 11.69em; height:  2.41em; vertical-align: -1.04em;"> <use
+xlink:href="images/img4149.svg#page4125"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 22.08 9.96"
+style="width:  2.22em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4150.svg#page4126"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4151.svg#page4127"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -13.01 119.25 22.77"
+style="width: 11.97em; height:  2.41em; vertical-align: -1.04em;"> <use
+xlink:href="images/img4152.svg#page4128"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>A aquesta funció OM millorada l’anomenarem
+OM+</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 145.84 10.32"
+style="width: 14.64em; height:  1.16em;"> <use
+xlink:href="images/img4153.svg#page4129"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Les millores a EV
+i OM (EV+ i OM+) són equivalents.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que les millores a
+EV i OM (respectivament, EV+ i OM+) són equivalents, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 69.3 9.18"
+style="width:  6.96em; height:  1.04em;"> <use
+xlink:href="images/img4154.svg#page4130"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 66.03 9.18"
+style="width:  6.63em; height:  1.04em;"> <use
+xlink:href="images/img4155.svg#page4131"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >OM+ i EV+ són
+millors que EV i OM.</span></summary>
+
+<div class="content"><div class="p"> <span>La taula </span><a
+href="sections/section.7.5.3.html#ref::mol:hmo:taulaomev">7.5</a><span> mostra
+alguns resultats calculats amb els mètodes OM i EV i les respectives
+millores</span>. </div>
+
+<div class="p"> <span>Noteu com l’energia <span class="inlinemath"><svg
+viewBox="0 -6.81 7.89 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4156.svg#page4132"> </use> </svg></span> està per damunt
+del valor de referència, cosa que és deguda al principi variacional</span>.
+<span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4157.svg#page4133"> </use> </svg></span>, en canvi, pot
+oscil·lar amunt i avall del seu valor de referència</span>. </div>
+
+<div class="table" id="ref::mol:hmo:taulaomev">
+<div class="p caption"> <span>Taula 7.5</span>: <span>Distància d’equilibri
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4158.svg#page4134"> </use> </svg></span> i energia
+potencial nuclear <span class="inlinemath"><svg
+viewBox="0 -7.47 27.48 9.96"
+style="width:  2.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4159.svg#page4135"> </use> </svg></span> calculades amb
+els mètodes OM, EV i la corresponent millora (OM+ o EV+) (en unitats atòmiques)
+per a l’estat fonamental de <span class="inlinemath">l’<svg
+viewBox="0 -6.86 11.44 8.36"
+style="width:  1.15em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4160.svg#page4136"> </use> </svg></span></span>. </div>
+
+<div class="p"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>Mètode</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4161.svg#page4137"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 27.48 9.96"
+style="width:  2.76em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img4162.svg#page4138"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>OM</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 17.71 6.27"
+style="width:  1.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4163.svg#page4139"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 35.42 7.1"
+style="width:  3.56em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4164.svg#page4140"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>EV</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 17.71 6.27"
+style="width:  1.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4165.svg#page4141"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 35.42 7.1"
+style="width:  3.56em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4166.svg#page4142"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>EV+/OM+</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 17.71 6.27"
+style="width:  1.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4167.svg#page4143"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 35.42 7.1"
+style="width:  3.56em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4168.svg#page4144"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+<tr><td class="vrule"></td>
+<td class="l">
+ <span>Referència</span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 17.71 6.27"
+style="width:  1.78em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4169.svg#page4145"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+<td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 35.42 7.1"
+style="width:  3.56em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img4170.svg#page4146"> </use> </svg></span></span>
+</td><td class="vrule"></td>
+</tr>
+<tr class="hrule">
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+<td> </td>
+<td class="vrule"> </td>
+</tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Podem afegir més
+determinants a OM+.</span></summary>
+
+<div class="content"><div class="figure" id="ref::mol:hmo:jerarquia">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="5.98 -45.71 367.74 89.82"
+style="width: 36.91em; height:  9.14em;"> <use
+xlink:href="images/img4171.svg#page4147"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 7.9</span>: <span>Jerarquia de conceptes
+utilitzada per a les autofuncions del hamiltonià molecular</span>. </div>
+
+</div>
+
+<div class="p"> <span>Com hem dit en </span><a class="sffamily small"
+href="sections/section.7.5.3.html#ref::mol:hmo:OMplus"
+>§7.5.3&vert;3&rang;</a><span>, la funció millorada OM+ és un exemple mínim de
+la tècnica d’</span><span class="itshape" >interacció de configuracions</span>.
+<span>Podem afegir-hi més determinants, la qual cosa augmentarà la qualitat del
+tractament</span>. <span>En el hipotètic límit d’infinits determinants,
+obtindríem resultats exactes</span>. <span>La jerarquia de conceptes que
+utilitza la interacció de configuracions ve esquematitzada en la
+figura </span><a
+href="sections/section.7.5.3.html#ref::mol:hmo:jerarquia">7.9</a><span>, que
+comentem a continuació</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Fem servir </span><span class="itshape" >orbitals
+atòmics</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.92 8.75 8.86"
+style="width:  0.88em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img4172.svg#page4148"> </use> </svg></span>) centrats en els
+nuclis de la molècula i similars als utilitzats en l’estudi dels àtoms</span>.
+</div>
+
+</li><li>
+
+<div class="p"> <span>Obtenim </span><span class="itshape" >orbitals
+moleculars</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.92 10.19 9.77"
+style="width:  1.02em; height:  1.10em; vertical-align: -0.35em;"> <use
+xlink:href="images/img4173.svg#page4149"> </use> </svg></span>) per combinació
+lineal d’orbitals atòmics (CLOA)</span>. <span>Són funcions monoelectròniques
+distribuïdes per tota o una gran part de la molècula</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Construïm </span><span class="itshape" >determinants de
+Slater</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.86 11.6 8.36"
+style="width:  1.16em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img4174.svg#page4150"> </use> </svg></span>) a partir dels
+orbitals moleculars</span>. <span>Els determinants són multielectrònics
+(depenen de les coordenades dels <span class="inlinemath"><svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4175.svg#page4151"> </use> </svg></span> electrons de la
+molècula) i antisimètrics</span>. <span>El determinant de energia més baixa ens
+el dona el </span><span class="itshape" >mètode de Hartree-Fock</span><span>
+(aproximat)</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Una <span class="inlinemath">autofunció <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4176.svg#page4152"> </use> </svg></span> del hamiltonià
+electrònic de la molècula pot aproximar-se amb gran precisió mitjançant una
+</span><span class="itshape" >interacció de configuracions</span><span>, que
+<span class="inlinemath">escriu <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4177.svg#page4153"> </use> </svg></span> com una
+combinació lineal de determinants de Slater, cosa que fa que també siga
+multielectrònica <span class="inlinemath">(<svg
+viewBox="0 -6.81 9.09 6.81"
+style="width:  0.91em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img4178.svg#page4154"> </use> </svg></span> electrons) i
+antisimètrica</span>. <span>Si la combinació lineal continguera un nombre
+infinit de determinants obtindríem el resultat exacte</span>. <span>En la
+pràctica ens veiem forçats a utilitzar-ne només un nombre finit</span>. </div>
+
+</li></ul>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.7.5.3.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

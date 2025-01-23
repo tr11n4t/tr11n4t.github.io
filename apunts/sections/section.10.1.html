@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Transició rotacional: canvia el factor rotacional de la funció
+d’ona</title>
+<meta name="description" content="Aproximem la funció d’ona com un producte de
+quatre factors. En una transició rotacional només canvia el factor i l’energia
+rotacionals.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.10.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.10.html"><span>10 Espectres de rotació de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>10.1 Introducció </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img5113.svg#page5080"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>10.1  Introducció</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Aproximem les
+autofuncions moleculars.</span></summary>
+
+<div class="content"><div class="p"> <span>Si recordem l’</span><span
+class="itshape" >aproximació de Born-Oppenheimer</span><span> explicada
+en §</span><a href="sections/section.7.2.html#ref::mol:bor">7.2</a><span> i
+l’estudi posterior de les </span><span class="itshape" >corbes d’energia
+potencial</span><span> que vam fer en §</span><a
+href="sections/section.7.3.html#ref::mol:cor">7.3</a><span>, podem aproximar
+una autofunció molecular com el producte de quatre factors, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 98.76 9.71"
+style="width:  9.91em; height:  1.09em;"> <use
+xlink:href="images/img5114.svg#page5081"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on cadascun dels factors representa
+respectivament la </span><span class="itshape" >translació</span><span> del
+centre de masses, la </span><span class="itshape" >rotació</span><span> de la
+molècula al voltant del centre de masses, la </span><span class="itshape"
+>vibració</span><span> molecular, i les </span><span class="itshape"
+>transicions electròniques</span><span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 13.98 8.36"
+style="width:  1.40em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5115.svg#page5082"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5116.svg#page5083"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 103.12 9.96"
+style="width: 10.35em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5117.svg#page5084"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 17.95 8.36"
+style="width:  1.80em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5118.svg#page5085"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5119.svg#page5086"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 98.83 9.96"
+style="width:  9.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5120.svg#page5087"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 18.59 8.36"
+style="width:  1.87em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5121.svg#page5088"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5122.svg#page5089"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 104.83 9.96"
+style="width: 10.52em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5123.svg#page5090"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 21.96 9.71"
+style="width:  2.20em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5124.svg#page5091"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5125.svg#page5092"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 154.76 10.32"
+style="width: 15.53em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5126.svg#page5093"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span><span class="inlinemath"><svg
+viewBox="0 -6.86 21.96 9.71"
+style="width:  2.20em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5127.svg#page5094"> </use> </svg></span>, el quart
+factor, és simplement, i d’acord amb l’aproximació de Born-Oppenheimer,
+l’autofunció del </span><span class="itshape" >hamiltonià
+electrònic</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 108 12.23"
+style="width: 10.84em; height:  1.35em;"> <use
+xlink:href="images/img5128.svg#page5095"> </use> </svg></span> </div>
+
+<div class="p"> <span>Pel que fa a la notació dels electrons i nuclis,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.14 5.78"
+style="width:  0.82em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5129.svg#page5096"> </use> </svg></span> representa les
+coordenades dels electrons <span class="inlinemath">i <svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5130.svg#page5097"> </use> </svg></span> les dels nuclis
+(vegeu §</span><a
+href="sections/section.7.1.html#ref::mol:int">7.1</a><span>)</span>.
+<span>Aquestes últimes és convenient subdividir-les en tres subconjunts de
+coordenades</span>: <span>per a la translació del centre de masses
+<span class="inlinemath"><svg
+viewBox="0 -4.29 10.58 5.78"
+style="width:  1.06em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5131.svg#page5098"> </use> </svg></span>, per a la
+rotació <span class="inlinemath"><svg
+viewBox="0 -4.29 14.55 5.78"
+style="width:  1.46em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5132.svg#page5099"> </use> </svg></span> i per a la
+<span class="inlinemath">vibració <svg
+viewBox="0 -4.29 15.2 5.78"
+style="width:  1.52em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5133.svg#page5100"> </use> </svg></span></span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 86.47 9.96"
+style="width:  8.68em; height:  1.12em;"> <use
+xlink:href="images/img5134.svg#page5101"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.86 95 9.71"
+style="width:  9.54em; height:  1.09em;"> <use
+xlink:href="images/img5135.svg#page5102"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >L’energia
+molecular tindrà quatre components.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar (vegeu §</span><a
+href="sections/section.7.3.html#ref::mol:cor">7.3</a><span>) que,
+aproximadament, l’energia <span class="inlinemath">molecular <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5136.svg#page5103"> </use> </svg></span> és la suma de
+quatre components, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 132.07 8.3"
+style="width: 13.26em; height:  0.95em;"> <use
+xlink:href="images/img5137.svg#page5104"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Els tres primers corresponen respectivament a la
+translació del centre de masses, la rotació i la vibració</span>. <span>L’últim
+component correspon al mínim de la corba (o hipersuperfície) d’energia
+potencial a què estan sotmesos els nuclis, i conté (vegeu §</span><a
+href="sections/section.7.2.html#ref::mol:bor">7.2</a><span>), no només
+<span class="inlinemath">l’autovalor <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5138.svg#page5105"> </use> </svg></span> del hamiltonià
+electrònic, sinó també la repulsió internuclear <span class="inlinemath"><svg
+viewBox="0 -9.38 15.66 10.88"
+style="width:  1.57em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5139.svg#page5106"> </use> </svg></span>, ambdós
+calculats en les posicions nuclears d’</span><span class="itshape"
+>equilibri</span><span> (on <span class="inlinemath"><svg
+viewBox="0 -4.29 42.39 7.14"
+style="width:  4.25em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5140.svg#page5107"> </use> </svg></span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -11.5 134.09 20.49"
+style="width: 13.46em; height:  2.18em;"> <use
+xlink:href="images/img5141.svg#page5108"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Les posicions nuclears d’equilibri, o
+</span><span class="itshape" >geometria d’equilibri</span><span>, corresponen
+al mínim de la corba (o hipersuperfície) d’energia potencial</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 128.8 8.3"
+style="width: 12.93em; height:  0.95em;"> <use
+xlink:href="images/img5142.svg#page5109"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >En una
+</span><span class="itshape sffamily" >transició rotacional</span><span
+class="sffamily" > només canvien <span class="inlinemath"><svg
+viewBox="0 -6.86 17.95 8.36"
+style="width:  1.80em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5143.svg#page5110"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 17.55 8.3"
+style="width:  1.76em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5144.svg#page5111"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >En una
+</span><span class="itshape sffamily" >transició rotacional</span><span
+class="sffamily" > només canvia <span class="inlinemath"><svg
+viewBox="0 -6.86 17.95 8.36"
+style="width:  1.80em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5145.svg#page5112"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Direm que una transició
+espectroscòpica és una </span><span class="itshape" >transició
+rotacional</span><span> si l’únic canvi entre l’estat inicial i l’estat final
+es produeix en el factor <span class="inlinemath"><svg
+viewBox="0 -6.86 17.95 8.36"
+style="width:  1.80em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5146.svg#page5113"> </use> </svg></span></span>.
+<span>Per exemple, per a una absorció entre l’estat
+<span class="inlinemath"><svg
+viewBox="0 -7.49 12.34 7.49"
+style="width:  1.24em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5147.svg#page5114"> </use> </svg></span> i l’estat
+<span class="inlinemath"><svg
+viewBox="0 -7.49 10.05 7.49"
+style="width:  1.01em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5148.svg#page5115"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 168.18 11.81"
+style="width: 16.88em; height:  1.30em;"> <use
+xlink:href="images/img5149.svg#page5116"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Utilitzarem la notació explicada en </span><a
+class="sffamily small" href="sections/section.9.1.html#ref::rad:con:IUPAC"
+>§9.1&vert;5&rang;</a>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 164.42 11.81"
+style="width: 16.50em; height:  1.30em;"> <use
+xlink:href="images/img5150.svg#page5117"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >En una
+</span><span class="itshape sffamily" >transició rotacional</span><span
+class="sffamily" > només canvia <span class="inlinemath"><svg
+viewBox="0 -6.81 17.55 8.3"
+style="width:  1.76em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5151.svg#page5118"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>En la transició
+<span class="inlinemath"><svg
+viewBox="0 -7.49 38.38 7.49"
+style="width:  3.85em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5152.svg#page5119"> </use> </svg></span> que acabem
+d’esmentar només canviarà el component <span class="inlinemath"><svg
+viewBox="0 -6.81 17.55 8.3"
+style="width:  1.76em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5153.svg#page5120"> </use> </svg></span> de l’energia
+molecular, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.13 16.23 7.13"
+style="width:  1.63em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5154.svg#page5121"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5155.svg#page5122"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 35.42 8.82"
+style="width:  3.56em; height:  1.00em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5156.svg#page5123"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5157.svg#page5124"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 243.85 10.63"
+style="width: 24.48em; height:  1.19em; vertical-align: -0.33em;"> <use
+xlink:href="images/img5158.svg#page5125"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5159.svg#page5126"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 51.04 10.45"
+style="width:  5.12em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5160.svg#page5127"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 58.63 8.63"
+style="width:  5.88em; height:  0.99em;"> <use
+xlink:href="images/img5161.svg#page5128"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 55.37 8.63"
+style="width:  5.56em; height:  0.99em;"> <use
+xlink:href="images/img5162.svg#page5129"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="itshape sffamily" >Espectre
+de rotació pura:</span> <span class="sffamily" >només rotació.</span></summary>
+
+<div class="content"><div class="p"> <span>Els espectres on només s’enregistren
+transicions rotacionals s’anomenen </span><span class="itshape" >espectres de
+rotació pura</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 164.42 11.81"
+style="width: 16.50em; height:  1.30em;"> <use
+xlink:href="images/img5163.svg#page5130"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Cal estudiar la
+rotació en </span><span class="itshape sffamily" >fase gasosa.</span></summary>
+
+<div class="content"><div class="p"> <span>L’estudi experimental de les
+transicions rotacionals ha de fer-se en </span><span class="itshape" >fase
+gasosa</span><span>, ja que en líquids o sòlids les col·lisions entre molècules
+dificulten o impedeixen la rotació molecular</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Les transicions
+rotacionals corresponen a la regió de </span><span class="itshape sffamily"
+>microones</span><span class="sffamily" > de l’espectre.</span></summary>
+
+<div class="content"></div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.10.1.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

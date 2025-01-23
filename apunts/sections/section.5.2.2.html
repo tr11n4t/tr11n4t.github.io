@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Mètode variacional lineal | Determinant i equació seculars</title>
+<meta name="description" content="Es particularitza el mètode variacional a una
+funció de prova que és una combinació lineal de funcions de base.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.5.2.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.5.html"><span>5 Mètodes aproximats </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.5.2.html"><span>5.2 Mètodes variacionals
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>5.2.2 Mètode variacional lineal
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img2291.svg#page2270"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.5.2.1.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.5.2.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.5.2.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection" id="ref::apr:var:lineal">  <span>5.2.2  Mètode
+variacional lineal</span> </h5>
+
+<details open class="foldable prop">
+<summary id="ref::apr:var:xilineal"> <span>&vert;1&rang;</span> <span
+class="sffamily" >En el mètode variacional lineal,
+<span class="inlinemath"><svg
+viewBox="0 -6.92 4.82 8.86"
+style="width:  0.48em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2292.svg#page2271"> </use> </svg></span> és una
+</span><span class="itshape sffamily" >funció variacional lineal</span><span
+class="sffamily" >.</span></summary>
+
+<div class="content"><div class="p"> <span>Una variant del mètode variacional
+és l’anomenat </span><span class="itshape" >mètode variacional
+lineal</span><span>, on la funció de prova és una </span><span class="itshape"
+>funció variacional lineal</span><span>, que definim a continuació</span>.
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Funció variacional lineal</span></strong>.
+<span>Una </span><span class="itshape" >funció variacional lineal</span><span>
+és una funció de prova que s’expressa com una combinació lineal de unes
+funcions <span class="inlinemath"><svg
+viewBox="0 -6.92 8.75 8.86"
+style="width:  0.88em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2293.svg#page2272"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 53.8 27.21"
+style="width:  5.40em; height:  2.85em;"> <use
+xlink:href="images/img2294.svg#page2273"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Les funcions <span class="inlinemath"><svg
+viewBox="0 -6.92 8.75 8.86"
+style="width:  0.88em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2295.svg#page2274"> </use> </svg></span> s’anomenen
+</span><span class="itshape" >funcions de base</span><span>, i els nombres
+<span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2296.svg#page2275"> </use> </svg></span> </span><span
+class="itshape" >coeficients</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Observacions</span>: </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Per simplificar, suposarem que la funció de prova
+<span class="inlinemath"><svg
+viewBox="0 -6.92 4.82 8.86"
+style="width:  0.48em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2297.svg#page2276"> </use> </svg></span> és real, cosa
+que implica que tant les funcions de base <span class="inlinemath"><svg
+viewBox="0 -6.92 8.75 8.86"
+style="width:  0.88em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2298.svg#page2277"> </use> </svg></span> com els
+coeficients <span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2299.svg#page2278"> </use> </svg></span> són
+reals</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Les funcions de base no necessàriament han de ser
+ortonormals ni ser les autofuncions de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2300.svg#page2279"> </use> </svg></span> (de fet, les
+autofuncions de <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2301.svg#page2280"> </use> </svg></span> són desconegudes
+i estem utilitzant el mètode variacional per tal de trobar-les)</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>El conjunt de funcions de base
+<span class="inlinemath"><svg
+viewBox="0 -7.47 32.12 10.42"
+style="width:  3.22em; height:  1.17em; vertical-align: -0.36em;"> <use
+xlink:href="images/img2302.svg#page2281"> </use> </svg></span> s’anomena
+</span><span class="itshape" >base</span>. <span>Abans de començar a fer un
+càlcul variacional, hem de triar una base adequada al nostre problema</span>.
+</div>
+
+</li><li>
+
+<div class="p"> <span>Per trobar la millor funció de prova hem de </span><span
+class="itshape" >optimitzar</span><span> els coeficients, cosa que vol dir que
+hem trobar el conjunt de coeficients <span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2303.svg#page2282"> </use> </svg></span> que fan que la
+energia de <span class="inlinemath"><svg
+viewBox="0 -6.92 4.82 8.86"
+style="width:  0.48em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2304.svg#page2283"> </use> </svg></span> sigui
+mínima</span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 50.53 27.21"
+style="width:  5.07em; height:  2.85em;"> <use
+xlink:href="images/img2305.svg#page2284"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Necessitarem les
+</span><span class="itshape sffamily" >integrals de superposició</span><span
+class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -6.81 12.63 9.66"
+style="width:  1.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2306.svg#page2285"> </use> </svg></span> i les del
+hamiltonià <span class="inlinemath"><svg
+viewBox="0 -6.81 14.8 9.66"
+style="width:  1.49em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2307.svg#page2286"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>El mètode variacional lineal
+requereix les següents integrals o bracets, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 12.63 9.66"
+style="width:  1.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2308.svg#page2287"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2309.svg#page2288"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 29.9 10.32"
+style="width:  3.00em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2310.svg#page2289"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 14.8 9.66"
+style="width:  1.49em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2311.svg#page2290"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2312.svg#page2291"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.38 46.19 12.23"
+style="width:  4.64em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2313.svg#page2292"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Una vegada fixada la base,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.63 9.66"
+style="width:  1.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2314.svg#page2293"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.81 14.8 9.66"
+style="width:  1.49em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2315.svg#page2294"> </use> </svg></span> són constants
+que es podem calcular abans de començar l’optimització</span>. <span>Compte,
+que en general <span class="inlinemath"><svg
+viewBox="0 -6.92 37.36 9.77"
+style="width:  3.75em; height:  1.10em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2316.svg#page2295"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 12.63 9.66"
+style="width:  1.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2317.svg#page2296"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2318.svg#page2297"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -7.47 29.9 10.32"
+style="width:  3.00em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2319.svg#page2298"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 14.8 9.66"
+style="width:  1.49em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2320.svg#page2299"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2321.svg#page2300"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.38 41.76 12.23"
+style="width:  4.19em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2322.svg#page2301"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Avaluem
+<span class="inlinemath"><svg
+viewBox="0 -7.47 18.33 9.96"
+style="width:  1.84em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2323.svg#page2302"> </use> </svg></span> per a una funció
+de prova lineal.</span></summary>
+
+<div class="content"><div class="p"> <span>Substituïm la funció variacional
+lineal que hem definit en </span><a class="sffamily small"
+href="sections/section.5.2.2.html#ref::apr:var:xilineal"
+>§5.2.2&vert;1&rang;</a><span> en <span class="inlinemath"><svg
+viewBox="0 -7.47 18.33 9.96"
+style="width:  1.84em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2324.svg#page2303"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 18.33 9.96"
+style="width:  1.84em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2325.svg#page2304"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2326.svg#page2305"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -17.92 159.28 29.5"
+style="width: 15.99em; height:  3.08em; vertical-align: -1.22em;"> <use
+xlink:href="images/img2327.svg#page2306"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2328.svg#page2307"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.2 -17.92 115.56 29.5"
+style="width: 11.60em; height:  3.08em; vertical-align: -1.22em;"> <use
+xlink:href="images/img2329.svg#page2308"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>o, utilitzant les definicions de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.63 9.66"
+style="width:  1.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2330.svg#page2309"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 14.8 9.66"
+style="width:  1.49em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2331.svg#page2310"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.55 140.36 28.13"
+style="width: 14.09em; height:  2.94em;"> <use
+xlink:href="images/img2332.svg#page2311"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(per simplificar, d’ara endavant utilitzarem el
+símbol <span class="inlinemath"><svg
+viewBox="0 -6.81 10.79 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2333.svg#page2312"> </use> </svg></span> per referir-nos
+a <span class="inlinemath"><svg
+viewBox="0 -7.47 18.33 9.96"
+style="width:  1.84em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img2334.svg#page2313"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.55 140.36 28.13"
+style="width: 14.09em; height:  2.94em;"> <use
+xlink:href="images/img2335.svg#page2314"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Hem de trobar el
+mínim:</span> <span class="sffamily" ><span class="inlinemath"><svg
+viewBox="1.2 -8.77 105.07 13.26"
+style="width: 10.55em; height:  1.45em; vertical-align: -0.51em;"> <use
+xlink:href="images/img2336.svg#page2315"> </use> </svg></span></span></summary>
+
+<div class="content"><div class="p"> <span>Els coeficients
+<span class="inlinemath"><svg
+viewBox="0 -4.29 8.72 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2337.svg#page2316"> </use> </svg></span> s’obtenen per
+minimització de <span class="inlinemath"><svg
+viewBox="0 -6.81 10.79 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2338.svg#page2317"> </use> </svg></span>, cosa que podem
+fer igualant a zero les derivades parcials de <span class="inlinemath"><svg
+viewBox="0 -6.81 10.79 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2339.svg#page2318"> </use> </svg></span> respecte a
+<span class="inlinemath">cada <svg
+viewBox="0 -4.29 8.72 5.78"
+style="width:  0.88em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2340.svg#page2319"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.2 -13.66 108.46 21.99"
+style="width: 10.89em; height:  2.33em;"> <use
+xlink:href="images/img2341.svg#page2320"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i resolent el sistema d’equacions resultant (hem
+utilitzat el subíndex <span class="inlinemath"><svg
+viewBox="0 -6.92 5.5 6.92"
+style="width:  0.55em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2342.svg#page2321"> </use> </svg></span> perquè
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2343.svg#page2322"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2344.svg#page2323"> </use> </svg></span> apareixen en la
+definició de <span class="inlinemath"><svg
+viewBox="0 -6.81 10.79 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2345.svg#page2324"> </use> </svg></span>)</span>.
+<span>Després d’unes quantes manipulacions[<a
+href="sections/biblio.html#bib::LEVINE2000">6</a>], s’arriba al següent sistema
+d’equacions lineals, </span> </div>
+
+<table class="equation" id="ref::apr:var:homoSum"><tr><td><svg class="equation"
+viewBox="0 -15.46 175.84 28.57"
+style="width: 17.65em; height:  2.99em;"> <use
+xlink:href="images/img2346.svg#page2325"> </use>
+</svg></td><td>(5.3)</td></tr></table>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 173.07 28.57"
+style="width: 17.37em; height:  2.99em;"> <use
+xlink:href="images/img2347.svg#page2326"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::apr:var:homo"> <span>&vert;5&rang;</span> <span
+class="sffamily" >Tenim un sistema d’equacions lineals </span><span
+class="itshape sffamily" >homogènies</span><span class="sffamily"
+>.</span></summary>
+
+<div class="content"><div class="p"> <span>És convenient escriure el sistema de
+equacions lineal que acabem de veure d’una manera més explícita, per tal de
+facilitar-ne la comprensió</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -31.48 324.25 58.14"
+style="width: 32.55em; height:  5.96em;"> <use
+xlink:href="images/img2348.svg#page2327"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Les incògnites d’aquest sistema són els
+coeficients <span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2349.svg#page2328"> </use> </svg></span></span>.
+<span>Les quantitats <span class="inlinemath"><svg
+viewBox="0 -6.81 14.8 9.66"
+style="width:  1.49em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2350.svg#page2329"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.63 9.66"
+style="width:  1.27em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2351.svg#page2330"> </use> </svg></span> són constants i
+conegudes</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.1&rang;</span> <span class="sffamily" >És un sistema
+d’equacions lineals </span><span class="itshape sffamily"
+>homogènies.</span></summary>
+
+<div class="content"><div class="p"> <span>Aquest sistema de equacions lineals
+és de tipus </span><span class="itshape" >homogeni</span><span>, ja que la part
+dreta de totes equacions és zero</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.2&rang;</span> <span class="sffamily" >La </span><span
+class="itshape sffamily" >solució trivial</span><span class="sffamily" > no té
+cap interès físic.</span></summary>
+
+<div class="content"><div class="p"> <span>Un sistema de equacions lineals
+homogènies sempre té, pel cap baix, un solució, l’anomenada </span><span
+class="itshape" >solució trivial</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.27 77.74 7.77"
+style="width:  7.80em; height:  0.90em;"> <use
+xlink:href="images/img2352.svg#page2331"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta solució, però, no té cap interès
+físic</span>. <span>Hem d’intentar trobar-ne d’altres</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.27 74.97 7.77"
+style="width:  7.53em; height:  0.90em;"> <use
+xlink:href="images/img2353.svg#page2332"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::apr:var:detsec"> <span>&vert;5.3&rang;</span> <span
+class="sffamily" >Hi hauran altres solucions només si el </span><span
+class="itshape sffamily" >determinant secular</span><span class="sffamily" > és
+zero.</span></summary>
+
+<div class="content"><div class="p"> <span>Un sistema de equacions lineals
+homogènies tindrà solucions diferents de la trivial únicament si el determinant
+de la matriu de coeficients és zero, és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -32.38 263.9 59.78"
+style="width: 26.49em; height:  6.12em;"> <use
+xlink:href="images/img2354.svg#page2333"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquest determinant s’anomena </span><span
+class="itshape" >determinant secular</span><span>, i l’equació que resulta
+d’igualar-lo a zero és l’</span><span class="itshape" >equació
+secular</span><span> (la incògnita en aquesta equació
+<span class="inlinemath">és <svg
+viewBox="0 -6.81 10.79 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2355.svg#page2334"> </use> </svg></span>)</span>. </div>
+
+<details open class="foldable prop">
+<summary id="ref::apr:var:indet"> <span>&vert;5.3.1&rang;</span> <span
+class="sffamily" >Un determinant secular nul implica dependència
+lineal.</span></summary>
+
+<div class="content"><div class="p"> <span>La conseqüència de fer el
+determinant secular igual a zero és que el convertim en un sistema d’equacions
+indeterminat, és a dir, que com a mínim una de les equacions és combinació
+lineal de la resta</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.4&rang;</span> <span class="sffamily" >L’</span><span
+class="itshape sffamily" >equació secular</span><span class="sffamily" > té
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2356.svg#page2335"> </use> </svg></span> solucions
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.23 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2357.svg#page2336"> </use> </svg></span>, que aproximen
+les energies.</span></summary>
+
+<div class="content"><div class="p"> <span>L’expansió del determinant secular
+dóna un polinomi en <span class="inlinemath"><svg
+viewBox="0 -6.81 10.79 6.81"
+style="width:  1.08em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2358.svg#page2337"> </use> </svg></span> d’ordre
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2359.svg#page2338"> </use> </svg></span>, de manera que
+al resoldre l’equació secular obtindrem <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2360.svg#page2339"> </use> </svg></span> arrels, arrels
+que faran que el determinant secular sigui zero</span>. <span>Aquestes arrels
+les simbolitzarem, per ordre de energia, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 71.92 8.74"
+style="width:  7.22em; height:  1.00em;"> <use
+xlink:href="images/img2361.svg#page2340"> </use> </svg></span> </div>
+
+<div class="p"> <span>Es pot demostrar que <span class="inlinemath"><svg
+viewBox="0 -6.81 12.23 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2362.svg#page2341"> </use> </svg></span> és una
+aproximació i, alhora, un límit superior a l’energia de l’estat
+<span class="inlinemath"><svg
+viewBox="0 -6.57 3.43 6.57"
+style="width:  0.35em; height:  0.78em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2363.svg#page2342"> </use> </svg></span>-èsim, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 39.45 8.3"
+style="width:  3.96em; height:  0.95em;"> <use
+xlink:href="images/img2364.svg#page2343"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 36.18 8.3"
+style="width:  3.63em; height:  0.95em;"> <use
+xlink:href="images/img2365.svg#page2344"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.5&rang;</span> <span class="sffamily" >Podem obtindre
+les autofuncions del sistema de equacions lineals.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.99 -31.48 324.25 58.14"
+style="width: 32.55em; height:  5.96em;"> <use
+xlink:href="images/img2366.svg#page2345"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.5.1&rang;</span> <span class="sffamily" >Substituïm
+cada <span class="inlinemath"><svg
+viewBox="0 -6.81 12.23 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2367.svg#page2346"> </use> </svg></span> en el sistema
+d’equacions homogènies.</span></summary>
+
+<div class="content"><div class="p"> <span>Una vegada tenim les
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2368.svg#page2347"> </use> </svg></span> solucions de
+l’equació secular, podem substituir cadascuna d’elles en el sistema d’equacions
+lineal homogènies que hem vist en </span><a class="sffamily small"
+href="sections/section.5.2.2.html#ref::apr:var:homo" >§5.2.2&vert;5&rang;</a>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.5.2&rang;</span> <span class="sffamily" >Del sistema
+substituït, eliminem una equació.</span></summary>
+
+<div class="content"><div class="p"> <span>El sistema substituït esmentat abans
+és, com hem vist en </span><a class="sffamily small"
+href="sections/section.5.2.2.html#ref::apr:var:indet"
+>§5.2.2&vert;5.3.1&rang;</a><span>, indeterminat, de manera que com a mínim una
+de les seves equacions serà combinació lineal de la resta, i no ens queda altre
+remei que eliminar-la</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.5.3&rang;</span> <span class="sffamily" >Afegim
+l’equació de normalització &hellip;</span></summary>
+
+<div class="content"><div class="p"> <span>Ara bé, si eliminem una equació,
+tindrem <span class="inlinemath"><svg
+viewBox="0 -4.29 5.98 4.29"
+style="width:  0.60em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img2369.svg#page2348"> </use> </svg></span> incògnites però
+només <span class="inlinemath"><svg
+viewBox="0 -6.27 23.14 7.1"
+style="width:  2.32em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img2370.svg#page2349"> </use> </svg></span>
+equacions</span>. <span>L’equació que ens falta la podem treure de la condició
+de normalització, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 115.83 28.57"
+style="width: 11.63em; height:  2.99em;"> <use
+xlink:href="images/img2371.svg#page2350"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 113.06 28.57"
+style="width: 11.35em; height:  2.99em;"> <use
+xlink:href="images/img2372.svg#page2351"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5.5.4&rang;</span> <span class="sffamily" >&hellip; i
+obtenim les autofuncions aproximades.</span></summary>
+
+<div class="content"><div class="p"> <span>Finalment, la resolució d’aquest
+sistema d’equacions ens donarà els coeficients <span class="inlinemath"><svg
+viewBox="0 -4.29 7.13 5.78"
+style="width:  0.72em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2373.svg#page2352"> </use> </svg></span>, coeficients que
+proporcionen una aproximació a l’autofunció d’un estat</span>. <span>Per
+exemple, si substituïm la arrel <span class="inlinemath"><svg
+viewBox="0 -6.81 13.11 9.66"
+style="width:  1.32em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2374.svg#page2353"> </use> </svg></span>, obtindrem el
+conjunt de coeficients <span class="inlinemath"><svg
+viewBox="0 -9.4 31.38 12.54"
+style="width:  3.15em; height:  1.38em; vertical-align: -0.38em;"> <use
+xlink:href="images/img2375.svg#page2354"> </use> </svg></span>, de manera que
+<span class="inlinemath"><svg
+viewBox="0 -6.86 11.45 9.71"
+style="width:  1.15em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2376.svg#page2355"> </use> </svg></span>, l’autofunció de
+l’estat <span class="inlinemath"><svg
+viewBox="0 -6.57 4.67 8.51"
+style="width:  0.47em; height:  0.97em; vertical-align: -0.25em;"> <use
+xlink:href="images/img2377.svg#page2356"> </use> </svg></span>-èsim, podrem
+aproximar-la com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 87.04 27.21"
+style="width:  8.74em; height:  2.85em;"> <use
+xlink:href="images/img2378.svg#page2357"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Es pot demostrar que, per a estats diferents,
+<span class="inlinemath"><svg
+viewBox="0 -8.85 10.57 10.34"
+style="width:  1.06em; height:  1.16em; vertical-align: -0.21em;"> <use
+xlink:href="images/img2379.svg#page2358"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -8.85 11.45 11.7"
+style="width:  1.15em; height:  1.29em; vertical-align: -0.35em;"> <use
+xlink:href="images/img2380.svg#page2359"> </use> </svg></span> són ortogonals,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.85 89.79 11.7"
+style="width:  9.01em; height:  1.29em;"> <use
+xlink:href="images/img2381.svg#page2360"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 83.78 27.21"
+style="width:  8.41em; height:  2.85em;"> <use
+xlink:href="images/img2382.svg#page2361"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.46 83.78 27.21"
+style="width:  8.41em; height:  2.85em;"> <use
+xlink:href="images/img2383.svg#page2362"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.5.2.2.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

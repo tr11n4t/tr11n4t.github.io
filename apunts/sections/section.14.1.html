@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Transicions electròniques en molècules diatòmiques</title>
+<meta name="description" content="Les transicions electròniques es produeixen
+entre corbes d’energia potencial diferent. Transicions vibròniques i
+rovibròniques.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.14.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.14.html"><span>14 Enllaç i espectroscòpia electrònica de
+molècules diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>14.1 Transicions electròniques
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img7921.svg#page7885"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.14.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.14.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.14.2.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>14.1  Transicions electròniques</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Les transicions
+electròniques van acompanyades de transicions </span><span class="itshape
+sffamily" >vibròniques</span><span class="sffamily" > i </span><span
+class="itshape sffamily" >rovibròniques.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="sffamily" >Una </span><span
+class="itshape sffamily" >transició electrònica</span><span class="sffamily" >
+és una transició entre dos estats electrònics.</span></summary>
+
+<div class="content"><div class="p"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7922.svg#page7886"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7923.svg#page7887"> </use> </svg></span> són dos estats
+electrònics d’una molècula (ambdós <span class="inlinemath"><svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7924.svg#page7888"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7925.svg#page7889"> </use> </svg></span> són autofuncions
+del hamiltonià electrònic que resulta d’aplicar l’aproximació de
+Born-Oppenheimer a la molècula), una transició espectroscòpica entre aquests
+estats, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 64.17 11.81"
+style="width:  6.44em; height:  1.30em;"> <use
+xlink:href="images/img7926.svg#page7890"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>s’anomena </span><span class="itshape"
+>transició electrònica</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 60.41 11.81"
+style="width:  6.06em; height:  1.30em;"> <use
+xlink:href="images/img7927.svg#page7891"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="itshape sffamily" >Valor
+del terme electrònic</span><span class="sffamily" >
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 9.6 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7928.svg#page7892"> </use> </svg></span>):</span> <span
+class="sffamily" >l’energia d’un estat electrònic (en nombre
+d’ona).</span></summary>
+
+<div class="content"><div class="p"> <span>En espectroscòpia sol expressar-se
+l’energia d’un estat electrònic <span class="inlinemath">(<svg
+viewBox="0 -6.81 20.24 8.3"
+style="width:  2.03em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7929.svg#page7893"> </use> </svg></span>) en unitats de
+nombre d’ona, que aleshores s’anomena </span><span class="itshape" >valor del
+terme electrònic</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.81 9.6 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7930.svg#page7894"> </use> </svg></span>)</span>.
+<span>La relació entre ambdues magnituds és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 49.28 20.38"
+style="width:  4.95em; height:  2.17em;"> <use
+xlink:href="images/img7931.svg#page7895"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 45.31 20.38"
+style="width:  4.55em; height:  2.17em;"> <use
+xlink:href="images/img7932.svg#page7896"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::el1:trn:impura"> <span>&vert;1.3&rang;</span> <span
+class="sffamily" >La llum ultraviolada-visible també pot causar transicions
+vibracionals i rotacionals.</span></summary>
+
+<div class="content"><div class="p"> <span>Una transició entre dos estats
+electrònics d’una molècula implica l’emissió o absorció de radiació
+electromagnètica de la regió ultraviolada-visible de l’espectre</span>.
+<span>Ara bé, aquesta radiació és tan energètica que pot provocar, a més de
+transicions electròniques ‘pures’, transicions vibracionals i rotacionals,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 139.24 11.81"
+style="width: 13.98em; height:  1.30em;"> <use
+xlink:href="images/img7933.svg#page7897"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 135.47 11.81"
+style="width: 13.60em; height:  1.30em;"> <use
+xlink:href="images/img7934.svg#page7898"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4&rang;</span> <span class="sffamily" >Els espectres
+V-UV tenen transicions electròniques, </span><span class="itshape sffamily"
+>vibròniques</span><span class="sffamily" > i </span><span class="itshape
+sffamily" >rovibròniques.</span></summary>
+
+<div class="content"><div class="p"> <span>Com hem raonat en </span><a
+class="sffamily small" href="sections/section.14.1.html#ref::el1:trn:impura"
+>§14.1&vert;1.3&rang;</a><span>, en un espectre visible-ultraviolat (V-UV)
+tindrem, a més de les electròniques, transicions vibracionals i
+rotacionals</span>. <span>S’anomenen transicions </span><span class="itshape"
+>vibròniques</span><span> i </span><span class="itshape" >rovibròniques</span>.
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Transicions vibròniques i
+rovibròniques</span></strong>. <span>En la transició </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 135.47 11.81"
+style="width: 13.60em; height:  1.30em;"> <use
+xlink:href="images/img7935.svg#page7899"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>d’un espectre visible-ultraviolat (V-UV) es
+produeix una transició electrònica, una vibracional i una altra rotacional,
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.49 60.41 11.31"
+style="width:  6.06em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7936.svg#page7900"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.49 53.18 10.63"
+style="width:  5.34em; height:  1.19em; vertical-align: -0.38em;"> <use
+xlink:href="images/img7937.svg#page7901"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.49 55.15 10.13"
+style="width:  5.54em; height:  1.14em; vertical-align: -0.33em;"> <use
+xlink:href="images/img7938.svg#page7902"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Direm que la transició vibracional és una
+</span><span class="itshape" >transició vibrònica</span><span> (contracció de
+‘vibracional’ i ‘electrònica’), i que la transició rotacional és una
+</span><span class="itshape" >transició rovibrònica</span><span> (contracció de
+‘rotacional’ i ‘vibrònica’)</span>. </div>
+
+</div>
+
+<div class="p"> <span>Les transicions vibròniques i rovibròniques són diferents
+de les transicions vibracionals i rotacionals que hem estudiat en temes
+anteriors</span>. <span>Mostrem, en la figura </span><a
+href="sections/section.14.1.html#ref::ele:dia:Vibronica">14.1</a><span>,
+l’esquema d’una transició vibracional i una vibrònica per a molècules
+diatòmiques</span>. <span>En la transició vibracional, l’estat inicial i final
+estan sobre la mateixa corba d’energia potencial, mentre que en la transició
+vibrònica els estats estan en corbes diferents</span>. </div>
+
+<div class="figure" id="ref::ele:dia:Vibronica">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="14.68 -276.19 215.88 262.85"
+style="width: 21.67em; height: 27.84em;"> <use
+xlink:href="images/img7939.svg#page7903"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 14.1</span>: <span>Esquema d’una transició
+</span><span class="itshape" >vibracional</span><span> (fletxa curta, dins la
+mateixa corba d’energia potencial) i d’una transició </span><span
+class="itshape" >vibrònica</span><span> (fletxa llarga, entre corbes d’energia
+potencial diferents)</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.5&rang;</span> <span class="itshape sffamily" >Terme
+espectral total</span><span class="sffamily" > <span class="inlinemath">(<svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7940.svg#page7904"> </use> </svg></span>):</span> <span
+class="sffamily" >suma dels termes electrònic, vibracional i
+rotacional.</span></summary>
+
+<div class="content"><div class="p"> <span>L’energia d’un estat molecular és la
+suma de les contribucions corresponents a l’estat electrònic, el vibracional i
+el rotacional de la molècula (podem ignorar la contribució
+translacional)</span>. </div>
+
+<div class="p"> <span>És per això que el valor del </span><span class="itshape"
+>terme espectral total</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.81 7.21 6.81"
+style="width:  0.72em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7941.svg#page7905"> </use> </svg></span>) és defineix com
+la suma del valors del terme electrònic <span class="inlinemath">(<svg
+viewBox="0 -6.81 9.6 8.3"
+style="width:  0.96em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7942.svg#page7906"> </use> </svg></span>), del
+vibracional <span class="inlinemath">(<svg
+viewBox="0 -6.81 7.83 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7943.svg#page7907"> </use> </svg></span>) i del
+rotacional <span class="inlinemath">(<svg
+viewBox="0 -6.81 7.79 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7944.svg#page7908"> </use> </svg></span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 72.23 8.3"
+style="width:  7.25em; height:  0.95em;"> <use
+xlink:href="images/img7945.svg#page7909"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 70.57 8.3"
+style="width:  7.08em; height:  0.95em;"> <use
+xlink:href="images/img7946.svg#page7910"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.6&rang;</span> <span class="sffamily" >Una transició
+electrònica presenta bandes vibracionals i rotacionals.</span></summary>
+
+<div class="content"><div class="p"> <span>La freqüència de la transició
+espectroscòpica </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 135.47 11.81"
+style="width: 13.60em; height:  1.30em;"> <use
+xlink:href="images/img7947.svg#page7911"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>vindrà donada per la diferència entre el valor
+dels termes totals corresponents als estats final i inicial, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 237.61 10.48"
+style="width: 23.85em; height:  1.17em;"> <use
+xlink:href="images/img7948.svg#page7912"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Normalment es compleix que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 156.31 10.48"
+style="width: 15.69em; height:  1.17em;"> <use
+xlink:href="images/img7949.svg#page7913"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, que l’energia necessària per causar
+una transició electrònica és, com hem raonat en </span><a class="sffamily
+small" href="sections/section.14.1.html#ref::el1:trn:impura"
+>§14.1&vert;1.3&rang;</a><span>, més que suficient per provocar també
+transicions </span><span class="itshape" >vibròniques</span><span> i
+</span><span class="itshape" >rovibròniques</span>. <span>Això causa la
+presència de </span><span class="itshape" >bandes vibracionals i
+rotacionals</span><span> en l’espectre</span>. <span>Aquestes bandes són
+conjunts de ratlles molt poc separades entre elles, corresponents a les
+transicions vibròniques i rovibròniques</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 234.84 10.48"
+style="width: 23.57em; height:  1.17em;"> <use
+xlink:href="images/img7950.svg#page7914"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 135.47 11.81"
+style="width: 13.60em; height:  1.30em;"> <use
+xlink:href="images/img7951.svg#page7915"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >La intensitat
+dependrà del </span><span class="itshape sffamily" >moment dipolar de transició
+electrònic</span><span class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7952.svg#page7916"> </use> </svg></span></span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Hem de calcular
+<span class="inlinemath"><svg
+viewBox="0 -6.81 24.5 8.3"
+style="width:  2.46em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7953.svg#page7917"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per estudiar la intensitat d’un
+espectre electrònic hem de calcular el moment dipolar de transició, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 182.97 13.51"
+style="width: 18.37em; height:  1.48em;"> <use
+xlink:href="images/img7954.svg#page7918"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -9.69 6.54 11.63"
+style="width:  0.66em; height:  1.29em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7955.svg#page7919"> </use> </svg></span> és l’operador
+moment dipolar</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 178.54 13.51"
+style="width: 17.92em; height:  1.48em;"> <use
+xlink:href="images/img7956.svg#page7920"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >L’operador
+<span class="inlinemath"><svg
+viewBox="0 -9.69 6.54 11.63"
+style="width:  0.66em; height:  1.29em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7957.svg#page7921"> </use> </svg></span> té components
+electrònics </span><span class="bfseries sffamily" >i</span><span
+class="sffamily" > nuclears.</span></summary>
+
+<div class="content"><div class="p"> <span>Aquest operador pot escriure’s com
+la suma de dos components, l’un que depèn només de les coordenades dels nuclis
+<span class="inlinemath">(<svg
+viewBox="0 -9.69 10.93 11.63"
+style="width:  1.10em; height:  1.29em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7958.svg#page7922"> </use> </svg></span>), i l’altre que
+depèn únicament de les coordenades dels electrons
+<span class="inlinemath">(<svg
+viewBox="0 -9.69 9.78 11.63"
+style="width:  0.98em; height:  1.29em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7959.svg#page7923"> </use> </svg></span>), és a dir,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 55.94 11.63"
+style="width:  5.62em; height:  1.29em;"> <use
+xlink:href="images/img7960.svg#page7924"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 52.67 11.63"
+style="width:  5.29em; height:  1.29em;"> <use
+xlink:href="images/img7961.svg#page7925"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::el1:trn:MeDef"> <span>&vert;2.3&rang;</span> <span
+class="itshape sffamily" >Moment dipolar de transició electrònic:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7962.svg#page7926"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Moment dipolar de transició electrònic
+<span class="inlinemath"><svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7963.svg#page7927"> </use> </svg></span></span></strong>.
+</div>
+
+<div class="p"> <span>El </span><span class="itshape" >moment dipolar de
+transició electrònic</span><span><span class="inlinemath"> <svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7964.svg#page7928"> </use> </svg></span> es calcula a
+partir de les funcions electròniques dels estats involucrats en la transició
+<span class="inlinemath">(<svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7965.svg#page7929"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7966.svg#page7930"> </use> </svg></span>) i es defineix
+com </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 75.43 10.32"
+style="width:  7.57em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7967.svg#page7931"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7968.svg#page7932"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.69 69.47 13.51"
+style="width:  6.97em; height:  1.48em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7969.svg#page7933"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7970.svg#page7934"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 101.43 22.14"
+style="width: 10.18em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img7971.svg#page7935"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">on <svg
+viewBox="0 -4.62 64.39 6.11"
+style="width:  6.46em; height:  0.73em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7972.svg#page7936"> </use> </svg></span> representa les
+coordenades dels nuclis <span class="inlinemath">i <svg
+viewBox="0 -4.29 8.14 5.78"
+style="width:  0.82em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7973.svg#page7937"> </use> </svg></span> les dels
+electrons</span>. </div>
+
+</div>
+
+<div class="p"> <span>Hom podria pensar que el <span class="inlinemath"><svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7974.svg#page7938"> </use> </svg></span> que acabem de
+definir hauria de dependre de totes les coordenades nuclears, tant de les
+</span><span class="itshape" >translació</span><span>
+<span class="inlinemath">(<svg
+viewBox="0 -4.29 10.58 5.78"
+style="width:  1.06em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7975.svg#page7939"> </use> </svg></span>) com de les de
+</span><span class="itshape" >rotació</span><span>
+<span class="inlinemath">(<svg
+viewBox="0 -4.29 14.55 5.78"
+style="width:  1.46em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7976.svg#page7940"> </use> </svg></span>) i </span><span
+class="itshape" >vibració</span><span> <span class="inlinemath">(<svg
+viewBox="0 -4.29 15.2 5.78"
+style="width:  1.52em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7977.svg#page7941"> </use> </svg></span>)</span>.
+<span>No obstant això, es pot demostrar (tal com passava amb les transicions
+rotacionals, vegeu </span><a class="sffamily small"
+href="sections/section.10.2.html#ref::ro1:dip:notranslation"
+>§10.2&vert;2&rang;</a><span>) que <span class="inlinemath"><svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7978.svg#page7942"> </use> </svg></span> </span><span
+class="itshape" >no</span><span> depèn de les coordenades de translació, i per
+tant només dependrà de <span class="inlinemath"><svg
+viewBox="0 -4.29 14.55 5.78"
+style="width:  1.46em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7979.svg#page7943"> </use> </svg></span> i de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 15.2 5.78"
+style="width:  1.52em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7980.svg#page7944"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 75.43 10.32"
+style="width:  7.57em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7981.svg#page7945"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7982.svg#page7946"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.69 69.47 13.51"
+style="width:  6.97em; height:  1.48em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7983.svg#page7947"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7984.svg#page7948"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 98.16 22.14"
+style="width:  9.85em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img7985.svg#page7949"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::el1:trn:prohibida"> <span>&vert;2.4&rang;</span> <span
+class="sffamily" >Si <span class="inlinemath"><svg
+viewBox="0 -6.81 50.77 9.66"
+style="width:  5.10em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img7986.svg#page7950"> </use> </svg></span>, la transició
+estarà prohibida.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 178.54 13.51"
+style="width: 17.92em; height:  1.48em;"> <use
+xlink:href="images/img7987.svg#page7951"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.69 52.67 11.63"
+style="width:  5.29em; height:  1.29em;"> <use
+xlink:href="images/img7988.svg#page7952"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Substituïm <span class="inlinemath">l’operador <svg
+viewBox="0 -9.69 10.93 11.63"
+style="width:  1.10em; height:  1.29em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7989.svg#page7953"> </use> </svg></span> en l’expressió
+de <span class="inlinemath"><svg
+viewBox="0 -6.81 24.5 8.3"
+style="width:  2.46em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7990.svg#page7954"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 24.5 8.3"
+style="width:  2.46em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7991.svg#page7955"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7992.svg#page7956"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.69 145.68 13.51"
+style="width: 14.62em; height:  1.48em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7993.svg#page7957"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="2.21 -9.69 158.93 13.51"
+style="width: 15.95em; height:  1.48em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7994.svg#page7958"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>i passem de brackets a integrals, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 24.5 8.3"
+style="width:  2.46em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7995.svg#page7959"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7996.svg#page7960"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 223.2 24"
+style="width: 22.40em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img7997.svg#page7961"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -14.49 218.73 24"
+style="width: 21.96em; height:  2.53em; vertical-align: -1.01em;"> <use
+xlink:href="images/img7998.svg#page7962"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Ara bé, les funcions electròniques
+<span class="inlinemath"><svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img7999.svg#page7963"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 21.96 11.31"
+style="width:  2.20em; height:  1.25em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8000.svg#page7964"> </use> </svg></span> són ortogonals,
+ja que són les autofuncions del hamiltonià electrònic
+<span class="inlinemath"><svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8001.svg#page7965"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.56 179.12 22.14"
+style="width: 17.98em; height:  2.34em;"> <use
+xlink:href="images/img8002.svg#page7966"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>de manera que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 263.65 24"
+style="width: 26.46em; height:  2.53em;"> <use
+xlink:href="images/img8003.svg#page7967"> </use> </svg></span> </div>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 75.43 10.32"
+style="width:  7.57em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8004.svg#page7968"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8005.svg#page7969"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -9.69 69.47 13.51"
+style="width:  6.97em; height:  1.48em; vertical-align: -0.44em;"> <use
+xlink:href="images/img8006.svg#page7970"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8007.svg#page7971"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -13.56 98.16 22.14"
+style="width:  9.85em; height:  2.34em; vertical-align: -0.92em;"> <use
+xlink:href="images/img8008.svg#page7972"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p noindent"> <span>Finalment, fent servir el moment dipolar de
+transició electrònic que hem definit en </span><a class="sffamily small"
+href="sections/section.14.1.html#ref::el1:trn:MeDef"
+>§14.1&vert;2.3&rang;</a><span>, obtenim</span>: </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 163.56 10.84"
+style="width: 16.42em; height:  1.21em;"> <use
+xlink:href="images/img8009.svg#page7973"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8010.svg#page7974"> </use> </svg></span> és zero, la
+transició estarà prohibida</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 159.13 10.84"
+style="width: 15.97em; height:  1.21em;"> <use
+xlink:href="images/img8011.svg#page7975"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 159.13 10.84"
+style="width: 15.97em; height:  1.21em;"> <use
+xlink:href="images/img8012.svg#page7976"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::el1:trn:DeltaSzero"> <span>&vert;3&rang;</span> <span
+class="sffamily" >Regla de selecció:</span> <span class="sffamily" >la
+multiplicitat </span><span class="itshape sffamily" >no</span><span
+class="sffamily" > canvia, <span class="inlinemath"><svg
+viewBox="0 -7.13 33.25 7.13"
+style="width:  3.34em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8013.svg#page7977"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>(Recordem que la </span><span
+class="itshape" >multiplicitat</span><span> és <span class="inlinemath"><svg
+viewBox="0 -6.81 28.82 7.63"
+style="width:  2.89em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img8014.svg#page7978"> </use> </svg></span>, on
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8015.svg#page7979"> </use> </svg></span> és el nombre
+quàntic associat a l’operador <span class="inlinemath"><svg
+viewBox="0 -9.38 10.65 9.38"
+style="width:  1.07em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img8016.svg#page7980"> </use> </svg></span></span>.) </div>
+
+<div class="p"> <span>El moment dipolar de transició electrònic
+<span class="inlinemath"><svg
+viewBox="0 -6.81 32.01 9.66"
+style="width:  3.21em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img8017.svg#page7981"> </use> </svg></span> és zero si es
+produeix un canvi en la multiplicitat electrònica durant la transició, cosa que
+implica que la transició està prohibida</span>. <span>La demostració és
+fàcil</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.14.1.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

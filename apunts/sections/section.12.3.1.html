@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Espectres de vibració-rotació | Diatòmiques | Infrarojos</title>
+<meta name="description" content="Es dedueix l’estructura dels espectres
+d’infrarojos deguts a la vibració-rotació de les molècules diatòmiques.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.12.3.1.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.12.html"><span>12 Espectres de vibració de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.12.3.html"><span>12.3 Espectres de vibració-rotació
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>12.3.1 Espectres d’infrarojos
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img6824.svg#page6789"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.3.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.3.html"> <svg class="icon up" viewBox="0 0
+512 512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.12.3.2.html"> <svg class="icon next" viewBox="0
+0 512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h5 class="subsection"> <span>12.3.1  Espectres d’infrarojos</span> </h5>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Generalment, les
+transicions </span><span class="itshape sffamily" >vibracionals</span><span
+class="sffamily" > inclouen transicions </span><span class="itshape sffamily"
+>rotacionals.</span></summary>
+
+<div class="content"><div class="p"> <span>Una transició vibracional entre
+<span class="inlinemath"><svg
+viewBox="0 -7.49 10.05 7.49"
+style="width:  1.01em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6825.svg#page6790"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.49 12.34 7.49"
+style="width:  1.24em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6826.svg#page6791"> </use> </svg></span> </span><span
+class="itshape" >no</span><span> és (generalment) pura, ja que implica també
+una transició rotacional, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 139.24 11.81"
+style="width: 13.98em; height:  1.30em;"> <use
+xlink:href="images/img6827.svg#page6792"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Ho il·lustrem en la figura </span><a
+href="sections/section.12.3.1.html#ref::vi1:rot:impura">12.6</a>. <span>Veiem
+que en una transició de vibració-rotació canvien tots dos nombres quàntics
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6828.svg#page6793"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6829.svg#page6794"> </use> </svg></span></span>.
+<span>(En espectroscòpia de microones, la freqüència no és suficient per
+canviar l’estat vibracional, i per això sí és possible tindre transicions
+rotacionals pures</span>.) </div>
+
+<div class="figure" id="ref::vi1:rot:impura">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="-.2 -188.37 284.57 172.38"
+style="width: 28.56em; height: 19.03em;"> <use
+xlink:href="images/img6830.svg#page6795"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 12.6</span>: <span>Comparació entre una
+hipotètica transició vibracional pura i dues transicions de
+vibració-rotació</span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 135.47 11.81"
+style="width: 13.60em; height:  1.30em;"> <use
+xlink:href="images/img6831.svg#page6796"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >L’energia dels
+estats té un component </span><span class="itshape sffamily"
+>vibracional</span><span class="sffamily" > i un altre </span><span
+class="itshape sffamily" >rotacional.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::vi1:rot:Gvib"> <span>&vert;2.1&rang;</span> <span
+class="sffamily" >La molècula estarà en un </span><span class="itshape
+sffamily" >estat vibracional</span><span class="sffamily" > amb nombre
+<span class="inlinemath">quàntic <svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6832.svg#page6797"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com hem vist, una molècula en un
+estat vibracional amb nombre quàntic <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6833.svg#page6798"> </use> </svg></span> tindrà la
+següent energia, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.52 166.16 26.03"
+style="width: 16.68em; height:  2.73em;"> <use
+xlink:href="images/img6834.svg#page6799"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on hem inclòs correccions
+d’anharmonicitat</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -16.52 161.24 26.03"
+style="width: 16.18em; height:  2.73em;"> <use
+xlink:href="images/img6835.svg#page6800"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:rot:FvJ"> <span>&vert;2.2&rang;</span> <span
+class="sffamily" >La molècula estarà en un </span><span class="itshape
+sffamily" >estat rotacional</span><span class="sffamily" > amb nombre quàntic
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6836.svg#page6801"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>A més de ser en un determinat estat
+vibracional, la molècula ocuparà un estat rotacional amb nombre quàntic
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6837.svg#page6802"> </use> </svg></span>, l’energia del
+qual és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 163.55 11.1"
+style="width: 16.42em; height:  1.23em;"> <use
+xlink:href="images/img6838.svg#page6803"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on hem inclòs la correcció per distorsió
+centrífuga</span>. </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2.1&rang;</span> <span class="sffamily" >Les constants
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6839.svg#page6804"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.52 6.81"
+style="width:  0.86em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6840.svg#page6805"> </use> </svg></span> depenen de
+l’estat vibracional.</span></summary>
+
+<div class="content"><div class="p"> <span>La </span><span class="itshape"
+>constant rotacional</span><span> i la </span><span class="itshape" >constant
+de distorsió centrífuga</span><span> no són iguals per a tots els estat
+vibracionals, de manera que les escriurem respectivament com
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.79 8.3"
+style="width:  1.18em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6841.svg#page6806"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.48 8.3"
+style="width:  1.25em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6842.svg#page6807"> </use> </svg></span>, per evidenciar
+la dependència amb l’estat vibracional <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6843.svg#page6808"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:rot:Be"> <span>&vert;2.2.2&rang;</span> <span
+class="sffamily" >La dependència en <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6844.svg#page6809"> </use> </svg></span> de la
+</span><span class="itshape sffamily" >constant rotacional</span><span
+class="sffamily" > es pot aproximar.</span></summary>
+
+<div class="content"><div class="p"> <span>La dependència en
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6845.svg#page6810"> </use> </svg></span> de la constant
+rotacional es pot aproximar amb la següent expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 101.49 24"
+style="width: 10.19em; height:  2.53em;"> <use
+xlink:href="images/img6846.svg#page6811"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6847.svg#page6812"> </use> </svg></span> és la
+</span><span class="itshape" >constant d’acoblament
+rotació-vibració</span><span> i <span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6848.svg#page6813"> </use> </svg></span> és la
+</span><span class="itshape" >constant rotacional d’equilibri</span><span>, que
+correspondria a un hipotètic estat situat en el mínim de la corba d’energia
+potencial de la molècula</span>. </div>
+
+<div class="p"> <span>Ni <span class="inlinemath"><svg
+viewBox="0 -4.29 6.41 4.29"
+style="width:  0.64em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6849.svg#page6814"> </use> </svg></span> ni
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6850.svg#page6815"> </use> </svg></span> depenen de
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6851.svg#page6816"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 97.06 24"
+style="width:  9.74em; height:  2.53em;"> <use
+xlink:href="images/img6852.svg#page6817"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2.3&rang;</span> <span class="sffamily" >La dependència
+de <span class="inlinemath"><svg
+viewBox="0 -6.81 12.48 8.3"
+style="width:  1.25em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6853.svg#page6818"> </use> </svg></span> en
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6854.svg#page6819"> </use> </svg></span> és molt
+petita.</span></summary>
+
+<div class="content"><div class="p"> <span>La dependència de la constant de
+distorsió centrífuga <span class="inlinemath"><svg
+viewBox="0 -6.81 12.48 8.3"
+style="width:  1.25em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6855.svg#page6820"> </use> </svg></span> en
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6856.svg#page6821"> </use> </svg></span> és molt petita i
+la ignorarem</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 160.29 11.1"
+style="width: 16.09em; height:  1.23em;"> <use
+xlink:href="images/img6857.svg#page6822"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:rot:SvJ"> <span>&vert;2.3&rang;</span> <span
+class="sffamily" >L’energia serà la suma dels components vibracional i
+rotacional.</span></summary>
+
+<div class="content"><div class="p"> <span>L’energia de vibració-rotació de la
+molècula serà la suma dels components vibracional i rotacional, i dependrà dels
+nombres quàntics <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6858.svg#page6823"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6859.svg#page6824"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 104.9 9.96"
+style="width: 10.53em; height:  1.12em;"> <use
+xlink:href="images/img6860.svg#page6825"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 102.13 9.96"
+style="width: 10.25em; height:  1.12em;"> <use
+xlink:href="images/img6861.svg#page6826"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Els </span><span
+class="itshape sffamily" >espectres d’infrarojos</span><span class="sffamily" >
+sempre tenen una branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6862.svg#page6827"> </use> </svg></span> i una branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6863.svg#page6828"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::vi1:rot:regles"> <span>&vert;3.1&rang;</span> <span
+class="sffamily" >Les regles de selecció són <span class="inlinemath"><svg
+viewBox="0 -7.13 72.71 9.07"
+style="width:  7.30em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6864.svg#page6829"> </use> </svg></span>, i
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6865.svg#page6830"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Les regles de selecció per a les
+transicions de vibració-rotació són una combinació de les regles de vibració i
+de les de rotació que hem vist fins ara</span>. </div>
+
+<div class="p"> <span>En particular, per a la vibració, la regla de selecció és
+<span class="inlinemath"><svg
+viewBox="0 -7.13 72.71 9.07"
+style="width:  7.30em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6866.svg#page6831"> </use> </svg></span>, mentre que per
+a la rotació és <span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6867.svg#page6832"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="itshape sffamily"
+>Banda:</span> <span class="sffamily" >conjunt de ratlles corresponents a una
+transició vibracional.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Banda</span></strong>. <span>El conjunt de ratlles
+espectrals que corresponen a una mateixa transició vibracional constitueix una
+</span><span class="itshape" >banda</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Per exemple, en la banda
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6868.svg#page6833"> </use> </svg></span> (banda
+</span><span class="itshape" >fonamental</span><span>), el nombre quàntic
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6869.svg#page6834"> </use> </svg></span> passa de
+<span class="inlinemath"><svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6870.svg#page6835"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6871.svg#page6836"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>En la figura </span><a
+href="sections/section.12.2.html#ref::vi1:anh:sobretons">12.4</a><span>
+mostraven les bandes de vibració ‘pura’ (és a dir, negligint les transicions
+rotacionals) d’una molècula diatòmica</span>. <span>Si les transicions
+rotacionals no s’ignoren, l’estructura de la banda s’enriqueix molt, com
+il·lustrem en la figura </span><a
+href="sections/section.12.3.1.html#ref::vi1:rot:espectreIR">12.7</a><span> per
+a la banda fonamental (canvi en <span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6872.svg#page6837"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6873.svg#page6838"> </use> </svg></span>)</span>. </div>
+
+<div class="figure" id="ref::vi1:rot:espectreIR">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.29 -141.73 338.23 136.28"
+style="width: 33.95em; height: 14.35em;"> <use
+xlink:href="images/img6874.svg#page6839"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 12.7</span>: <span>Esquema de la banda
+</span><span class="itshape" >fonamental</span><span> (canvi en
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.19 4.29"
+style="width:  0.52em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6875.svg#page6840"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6876.svg#page6841"> </use> </svg></span>) de l’espectre
+d’infrarojos d’una molècula diatòmica</span>. <span>Damunt de cada ratlla
+s’indica la transició rotacional <span class="inlinemath">(<svg
+viewBox="0 -7.49 35.85 7.49"
+style="width:  3.60em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6877.svg#page6842"> </use> </svg></span>) i el símbol de
+la ratlla, <span class="inlinemath"><svg
+viewBox="0 -7.49 27.1 9.98"
+style="width:  2.72em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6878.svg#page6843"> </use> </svg></span> per a la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6879.svg#page6844"> </use> </svg></span>, o
+<span class="inlinemath"><svg
+viewBox="0 -7.49 26.97 9.98"
+style="width:  2.71em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6880.svg#page6845"> </use> </svg></span> per a la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6881.svg#page6846"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>Per a la resta de bandes (</span><span class="itshape"
+>sobretons</span><span>, <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6882.svg#page6847"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6883.svg#page6848"> </use> </svg></span>, &hellip;),
+l’estructura és similar, però la intensitat de les ratlles és progressivament
+més i més feble</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.85 -127.56 304.41 122.65"
+style="width: 30.55em; height: 12.92em;"> <use
+xlink:href="images/img6884.svg#page6849"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >Les ratlles amb
+el mateix canvi en <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6885.svg#page6850"> </use> </svg></span> constitueixen
+una branca.</span></summary>
+
+<div class="content"><div class="p"> <span>Dins una </span><span
+class="itshape" >banda</span><span>, les ratlles s’agrupen en </span><span
+class="itshape" >branques</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Branca</span></strong>. <span>El conjunt de
+ratlles espectrals d’una banda que corresponen al mateix
+<span class="inlinemath">canvi (<svg
+viewBox="0 -7.13 14.78 7.13"
+style="width:  1.48em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6886.svg#page6851"> </use> </svg></span>) del nombre
+quàntic <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6887.svg#page6852"> </use> </svg></span> s’anomena
+</span><span class="itshape" >branca</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Tradicionalment, en espectroscòpia s’utilitza un
+codi de lletres per especificar el valor <span class="inlinemath">de <svg
+viewBox="0 -7.13 14.78 7.13"
+style="width:  1.48em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6888.svg#page6853"> </use> </svg></span></span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.65 188.58 24.31"
+style="width: 18.93em; height:  2.56em;"> <use
+xlink:href="images/img6889.svg#page6854"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(ordre alfabètic, amb
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6890.svg#page6855"> </use> </svg></span> corresponent a
+<span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6891.svg#page6856"> </use> </svg></span>)</span>.
+<span>Les branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6892.svg#page6857"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6893.svg#page6858"> </use> </svg></span> les veurem en
+espectroscòpia Raman</span>. </div>
+
+<div class="p"> <span>Per a referir-nos a una ratlla determinada d’una branca,
+s’especifica entre parèntesis el valor de <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6894.svg#page6859"> </use> </svg></span> per a l’estat
+inicial de rotació</span>. <span>Per exemple, <span class="inlinemath"><svg
+viewBox="0 -7.47 20.51 9.96"
+style="width:  2.06em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6895.svg#page6860"> </use> </svg></span> representa la
+ratlla corresponent a la transició rotacional <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6896.svg#page6861"> </use> </svg></span> de la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6897.svg#page6862"> </use> </svg></span>, mentre que
+<span class="inlinemath"><svg
+viewBox="0 -7.47 20.37 9.96"
+style="width:  2.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6898.svg#page6863"> </use> </svg></span> correspon a la
+<span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6899.svg#page6864"> </use> </svg></span> de la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6900.svg#page6865"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.65 188.58 24.31"
+style="width: 18.93em; height:  2.56em;"> <use
+xlink:href="images/img6901.svg#page6866"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4&rang;</span> <span class="sffamily" >El centre de la
+banda correspondria a la transició vibracional ‘pura’.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -10.54 148.15 14.08"
+style="width: 14.87em; height:  1.53em; vertical-align: -0.41em;"> <use
+xlink:href="images/img6902.svg#page6867"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 144.08 9.96"
+style="width: 14.46em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6903.svg#page6868"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>El centre de la banda de vibració-rotació correspondria,
+si això fos possible, a la freqüència de la transició vibracional pura, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 113.33 9.96"
+style="width: 11.38em; height:  1.12em;"> <use
+xlink:href="images/img6904.svg#page6869"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.81 7.83 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6905.svg#page6870"> </use> </svg></span>, com hem vist
+en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:Gvib"
+>§12.3.1&vert;2.1&rang;</a><span>, és l’energia dels estats
+vibracionals</span>. <span>El resultat ja el coneixem, el vam obtindre
+en </span><a class="sffamily small"
+href="sections/section.12.2.html#ref::vi1:anh:NuMultiple"
+>§12.2&vert;5.5&rang;</a><span> quan vam estudiar l’aproximació anharmònica,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 195.17 9.96"
+style="width: 19.59em; height:  1.12em;"> <use
+xlink:href="images/img6906.svg#page6871"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 191.9 9.96"
+style="width: 19.26em; height:  1.12em;"> <use
+xlink:href="images/img6907.svg#page6872"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.5&rang;</span> <span class="sffamily" >La majoria de
+les molècules no tenen branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6908.svg#page6873"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6909.svg#page6874"> </use> </svg></span> correspon a
+transicions amb <span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6910.svg#page6875"> </use> </svg></span> (és a dir, que
+serien vibracions pures)</span>. <span>Aquestes transicions estan prohibides
+per la regla de selecció <span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6911.svg#page6876"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:regles"
+>§12.3.1&vert;3.1&rang;</a><span>, i per això aquesta branca no apareix en
+l’espectre que hem mostrat en la figura </span><a
+href="sections/section.12.3.1.html#ref::vi1:rot:espectreIR">12.7</a>. </div>
+
+<div class="p"> <span>Ara bé, la regla de selecció
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6912.svg#page6877"> </use> </svg></span>, encara que és
+aplicable a la majoria de les molècules, té excepcions</span>: <span>per a
+molècules diatòmiques que tenen un estat electrònic amb
+<span class="inlinemath"><svg
+viewBox="0 -6.92 29.64 8.86"
+style="width:  2.98em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6913.svg#page6878"> </use> </svg></span>, la regla de
+selecció és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 97 9.07"
+style="width:  9.74em; height:  1.03em;"> <use
+xlink:href="images/img6914.svg#page6879"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquestes molècules sí tenen branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img6915.svg#page6880"> </use> </svg></span></span>.
+<span>Com exemple tenim la molècula de <span class="inlinemath"><svg
+viewBox="0 -6.86 15.22 6.86"
+style="width:  1.53em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6916.svg#page6881"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 94.23 9.07"
+style="width:  9.46em; height:  1.03em;"> <use
+xlink:href="images/img6917.svg#page6882"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:rot:nuPJ"> <span>&vert;3.6&rang;</span> <span
+class="sffamily" >La branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6918.svg#page6883"> </use> </svg></span> té
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6919.svg#page6884"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 102.13 9.96"
+style="width: 10.25em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6920.svg#page6885"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 191.9 9.96"
+style="width: 19.26em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6921.svg#page6886"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.11 160.29 10.6"
+style="width: 16.09em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6922.svg#page6887"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>La ratlla <span class="inlinemath"><svg
+viewBox="0 -7.47 22.01 9.96"
+style="width:  2.21em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6923.svg#page6888"> </use> </svg></span> de la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6924.svg#page6889"> </use> </svg></span> correspon a la
+transició de vibració-rotació següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 119.64 9.96"
+style="width: 12.01em; height:  1.12em;"> <use
+xlink:href="images/img6925.svg#page6890"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Calcularem la seva freqüència, utilitzant
+l’energia dels estats que hem vist en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:SvJ"
+>§12.3.1&vert;2.3&rang;</a><span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 33.15 9.96"
+style="width:  3.33em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6926.svg#page6891"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6927.svg#page6892"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 89.98 9.96"
+style="width:  9.03em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6928.svg#page6893"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6929.svg#page6894"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 145.03 9.96"
+style="width: 14.56em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6930.svg#page6895"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6931.svg#page6896"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 145.03 9.96"
+style="width: 14.56em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6932.svg#page6897"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6933.svg#page6898"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 103.88 9.96"
+style="width: 10.43em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6934.svg#page6899"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.27 8.89 7.77"
+style="width:  0.89em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6935.svg#page6900"> </use> </svg></span> és la freqüència
+de la vibració ‘pura’</span>. <span>Ara hi substituïm l’expressió de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 25.37 9.96"
+style="width:  2.55em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6936.svg#page6901"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:FvJ"
+>§12.3.1&vert;2.2&rang;</a><span>, però ignorant, per simplicitat, la distorsió
+centrífuga</span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 182.74 9.96"
+style="width: 18.34em; height:  1.12em;"> <use
+xlink:href="images/img6937.svg#page6902"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 179.98 9.96"
+style="width: 18.07em; height:  1.12em;"> <use
+xlink:href="images/img6938.svg#page6903"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::vi1:rot:nuRJ"> <span>&vert;3.7&rang;</span> <span
+class="sffamily" >La branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6939.svg#page6904"> </use> </svg></span> té
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img6940.svg#page6905"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La ratlla
+<span class="inlinemath"><svg
+viewBox="0 -7.47 21.87 9.96"
+style="width:  2.20em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6941.svg#page6906"> </use> </svg></span> de la branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6942.svg#page6907"> </use> </svg></span> correspon a la
+transició de vibració-rotació següent, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 119.64 9.96"
+style="width: 12.01em; height:  1.12em;"> <use
+xlink:href="images/img6943.svg#page6908"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La seva freqüència, que podem calcular de la
+mateixa manera que hem fet per a la branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6944.svg#page6909"> </use> </svg></span>, té la següent
+expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 207.51 9.96"
+style="width: 20.83em; height:  1.12em;"> <use
+xlink:href="images/img6945.svg#page6910"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 204.74 9.96"
+style="width: 20.55em; height:  1.12em;"> <use
+xlink:href="images/img6946.svg#page6911"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.8&rang;</span> <span class="sffamily" >L’espaiat entre
+ratlles de la mateixa branca és, aproximadament, <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6947.svg#page6912"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’espaiat entre ratlles de la
+mateixa branca és, aproximadament, <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6948.svg#page6913"> </use> </svg></span> (negligint la
+distorsió centrífuga i assumint <span class="inlinemath"><svg
+viewBox="0 -6.81 58.18 8.3"
+style="width:  5.84em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6949.svg#page6914"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >El mètode de
+</span><span class="itshape sffamily" >combinació de diferències</span><span
+class="sffamily" > ens dóna les </span><span class="itshape sffamily"
+>constants rotacionals.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;4.1&rang;</span> <span class="sffamily" >L’expressió de
+la freqüència de les ratlles barreja <span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6950.svg#page6915"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6951.svg#page6916"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>El valor de la </span><span
+class="itshape" >constant rotacional</span><span> <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6952.svg#page6917"> </use> </svg></span> depèn de l’estat
+vibracional en què es trobe la molècula</span>. <span>Per a una transició de
+vibració-rotació tindrem dos valors, un per a l’estat vibracional
+<span class="inlinemath"><svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6953.svg#page6918"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6954.svg#page6919"> </use> </svg></span>), i un altre per
+a <span class="inlinemath"><svg
+viewBox="0 -6.27 23.45 6.27"
+style="width:  2.35em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6955.svg#page6920"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6956.svg#page6921"> </use> </svg></span>)</span>.
+<span>Ens interessaria extreure, de l’espectre de vibració-rotació de la
+molècula, ambdós valors</span>. </div>
+
+<div class="p"> <span>Això sembla una mica complicat, ja que l’expressió de la
+freqüència de les ratlles <span class="inlinemath"><svg
+viewBox="0 -7.47 33.15 9.96"
+style="width:  3.33em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6957.svg#page6922"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 33.01 9.96"
+style="width:  3.31em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6958.svg#page6923"> </use> </svg></span> que acabem de
+veure, depèn, alhora, de <span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6959.svg#page6924"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6960.svg#page6925"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Afortunadament, existeix un mètode molt senzill, el de
+</span><span class="itshape" >combinació de diferències</span><span>, que ens
+permet aïllar les dos constants rotacionals <span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6961.svg#page6926"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6962.svg#page6927"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.2&rang;</span> <span class="sffamily" >La diferència
+entre <span class="inlinemath"><svg
+viewBox="0 -7.47 50.17 9.96"
+style="width:  5.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6963.svg#page6928"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 50.31 9.96"
+style="width:  5.05em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6964.svg#page6929"> </use> </svg></span> només depèn de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6965.svg#page6930"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Les ratlles
+<span class="inlinemath"><svg
+viewBox="0 -7.47 39.03 9.96"
+style="width:  3.92em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6966.svg#page6931"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 39.17 9.96"
+style="width:  3.93em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6967.svg#page6932"> </use> </svg></span> corresponen a
+les següents transicions, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 44.57 9.96"
+style="width:  4.47em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6968.svg#page6933"> </use> </svg></span></span>
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="19.93 -7.47 116.88 9.96"
+style="width: 11.73em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6969.svg#page6934"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 44.7 9.96"
+style="width:  4.49em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6970.svg#page6935"> </use> </svg></span></span>
+</td><td class="c">
+
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="19.93 -7.47 116.88 9.96"
+style="width: 11.73em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6971.svg#page6936"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Veiem que l’estat final per a ambdues
+transicions és el mateix</span>. </div>
+
+<div class="p"> <span>La freqüència de los dues ratlles és </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 50.17 9.96"
+style="width:  5.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6972.svg#page6937"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6973.svg#page6938"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 89.98 9.96"
+style="width:  9.03em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6974.svg#page6939"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 50.31 9.96"
+style="width:  5.05em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6975.svg#page6940"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6976.svg#page6941"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 92.75 9.96"
+style="width:  9.31em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6977.svg#page6942"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 102.13 9.96"
+style="width: 10.25em; height:  1.12em;"> <use
+xlink:href="images/img6978.svg#page6943"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>Ara restem les dues freqüències, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 276.13 11.1"
+style="width: 27.72em; height:  1.23em;"> <use
+xlink:href="images/img6979.svg#page6944"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>substituïm l’expressió de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6980.svg#page6945"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:SvJ"
+>§12.3.1&vert;2.3&rang;</a><span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 27 11.1"
+style="width:  2.71em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6981.svg#page6946"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6982.svg#page6947"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 162.19 9.96"
+style="width: 16.28em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6983.svg#page6948"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6984.svg#page6949"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 99.47 9.96"
+style="width:  9.98em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6985.svg#page6950"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 160.29 11.1"
+style="width: 16.09em; height:  1.23em;"> <use
+xlink:href="images/img6986.svg#page6951"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>i també l’expressió de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.38 8.3"
+style="width:  1.04em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6987.svg#page6952"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:FvJ"
+>§12.3.1&vert;2.2&rang;</a><span>, però ignorant, per simplicitat, la distorsió
+centrífuga, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 27 11.1"
+style="width:  2.71em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6988.svg#page6953"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6989.svg#page6954"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="1.66 -22.73 135.77 25.22"
+style="width: 13.63em; height:  2.65em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6990.svg#page6955"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6991.svg#page6956"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 151.75 11.1"
+style="width: 15.23em; height:  1.23em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6992.svg#page6957"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img6993.svg#page6958"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 51.16 9.96"
+style="width:  5.14em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6994.svg#page6959"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 222.37 11.1"
+style="width: 22.32em; height:  1.23em;"> <use
+xlink:href="images/img6995.svg#page6960"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 219.6 11.1"
+style="width: 22.04em; height:  1.23em;"> <use
+xlink:href="images/img6996.svg#page6961"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >La diferència
+entre <span class="inlinemath"><svg
+viewBox="0 -7.47 33.01 9.96"
+style="width:  3.31em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6997.svg#page6962"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 33.15 9.96"
+style="width:  3.33em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img6998.svg#page6963"> </use> </svg></span> només depèn de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img6999.svg#page6964"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>De manera anàloga a com hem fet per
+a <span class="inlinemath"><svg
+viewBox="0 -8.11 12.27 10.94"
+style="width:  1.23em; height:  1.22em; vertical-align: -0.34em;"> <use
+xlink:href="images/img7000.svg#page6965"> </use> </svg></span>, es pot
+demostrar que la diferència entre <span class="inlinemath"><svg
+viewBox="0 -7.47 33.01 9.96"
+style="width:  3.31em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7001.svg#page6966"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 33.15 9.96"
+style="width:  3.33em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7002.svg#page6967"> </use> </svg></span> només depèn de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7003.svg#page6968"> </use> </svg></span></span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 188.06 11.1"
+style="width: 18.88em; height:  1.23em;"> <use
+xlink:href="images/img7004.svg#page6969"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.61 185.29 11.1"
+style="width: 18.60em; height:  1.23em;"> <use
+xlink:href="images/img7005.svg#page6970"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="sffamily" >A partir de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7006.svg#page6971"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7007.svg#page6972"> </use> </svg></span>, podem calcular
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7008.svg#page6973"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 97.06 24"
+style="width:  9.74em; height:  2.53em;"> <use
+xlink:href="images/img7009.svg#page6974"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Si sabem la constant rotacional per a dos estats
+vibracionals (per exemple, <span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7010.svg#page6975"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.53 8.3"
+style="width:  1.16em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7011.svg#page6976"> </use> </svg></span>), aleshores
+podem aïllar, de l’expressió que hem vist en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:Be"
+>§12.3.1&vert;2.2.2&rang;</a><span>, el valor de la </span><span
+class="itshape" >constant rotacional d’equilibri</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -6.81 11.34 8.3"
+style="width:  1.14em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7012.svg#page6977"> </use> </svg></span>, que
+correspondria a un hipotètic estat situat en el mínim de la corba d’energia
+potencial de la molècula</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Podem treure, de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 20.37 9.96"
+style="width:  2.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7013.svg#page6978"> </use> </svg></span> o de
+<span class="inlinemath"><svg
+viewBox="0 -7.47 20.51 9.96"
+style="width:  2.06em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7014.svg#page6979"> </use> </svg></span>, la freqüència
+vibracional ‘pura’ <span class="inlinemath"><svg
+viewBox="0 -6.27 8.89 7.77"
+style="width:  0.89em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7015.svg#page6980"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 179.98 9.96"
+style="width: 18.07em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7016.svg#page6981"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 204.74 9.96"
+style="width: 20.55em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7017.svg#page6982"> </use> </svg></span></span>
+</td><td class="l">
+
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<div class="p"> <span>De l’expressió de la freqüències de les ratlles
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7018.svg#page6983"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7019.svg#page6984"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:nuPJ"
+>§12.3.1&vert;3.6&rang;</a><span> i </span><a class="sffamily small"
+href="sections/section.12.3.1.html#ref::vi1:rot:nuRJ"
+>§12.3.1&vert;3.7&rang;</a><span> podem obtindre </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 31.65 9.96"
+style="width:  3.18em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7020.svg#page6985"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7021.svg#page6986"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 38.08 8.3"
+style="width:  3.82em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7022.svg#page6987"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 31.51 9.96"
+style="width:  3.16em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7023.svg#page6988"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7024.svg#page6989"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 41.34 8.3"
+style="width:  4.15em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7025.svg#page6990"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>És a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 160.26 9.96"
+style="width: 16.09em; height:  1.12em;"> <use
+xlink:href="images/img7026.svg#page6991"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>D’ací podem deduir, negligint la distorsió
+centrifuga i assumint <span class="inlinemath"><svg
+viewBox="0 -6.81 58.18 8.3"
+style="width:  5.84em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7027.svg#page6992"> </use> </svg></span>, que la
+diferència <span class="inlinemath">entre <svg
+viewBox="0 -7.47 20.37 9.96"
+style="width:  2.04em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7028.svg#page6993"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -7.47 20.51 9.96"
+style="width:  2.06em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7029.svg#page6994"> </use> </svg></span> és
+<span class="inlinemath">aproximadament <svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7030.svg#page6995"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 156.99 9.96"
+style="width: 15.76em; height:  1.12em;"> <use
+xlink:href="images/img7031.svg#page6996"> </use> </svg></span> </div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.12.3.1.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Cada observable té associat un operador hermitià</title>
+<meta name="description" content="En mecànica quàntica, cada observable té
+associat un operador hermitià. Donem una recepta per a construir-ne
+l’expressió.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.1.5.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.1.html"><span>1 Fonaments de la mecànica quàntica
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>1.5 Observables </span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img350.svg#page340"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.4.2.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.1.6.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>1.5  Observables</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Un </span><span
+class="itshape sffamily" >observable</span><span class="sffamily" > és una
+propietat física del sistema que es pot mesurar.</span></summary>
+
+<div class="content"><div class="p"> <span>Exemples d’observables són la
+posició d’una partícula, la seva velocitat, el moment dipolar d’una molècula,
+la seva energia</span>. </div>
+
+<div class="p"> <span>Com a excepció, la massa i la càrrega d’una partícula,
+encara que puguin ser mesurades, es consideren </span><span class="itshape"
+>paràmetres</span><span>, ja que el seu valor és constant</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::pos:obs:postulat"> <span>&vert;2&rang;</span> <span
+class="sffamily" >La mecànica quàntica assigna un operador hermitià a cada
+observable.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Postulat II de la mecànica
+quàntica</span></strong>. <span>A cada observable <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img351.svg#page341"> </use> </svg></span> se li associa un
+operador hermitià <span class="inlinemath"><svg
+viewBox="0 -9.38 7.61 9.38"
+style="width:  0.76em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img352.svg#page342"> </use> </svg></span> de manera que les
+propietats físiques de l’observable es poden deduir de les propietats
+matemàtiques de l’operador</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::pos:obs:recepta"> <span>&vert;2.1&rang;</span> <span
+class="sffamily" >Hi ha una ‘recepta’ per a construir l’operador d’un
+observable.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Recepta per a operadors</span></strong>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Els operadors corresponents a les coordenades cartesianes
+són </span> </div>
+
+<table class="equation" id="ref::pos:obs:xyz"><tr><td><svg class="equation"
+viewBox="0 -6.86 88.84 8.8"
+style="width:  8.92em; height:  1.00em;"> <use
+xlink:href="images/img353.svg#page343"> </use>
+</svg></td><td>(1.3)</td></tr></table>
+
+</li><li>
+
+<div class="p"> <span>Els operadors corresponents als components del moment
+lineal són </span> </div>
+
+<table class="equation" id="ref::pos:obs:pxpypz"><tr><td><svg class="equation"
+viewBox="0 -13.66 148.05 22.43"
+style="width: 14.86em; height:  2.37em;"> <use
+xlink:href="images/img354.svg#page344"> </use>
+</svg></td><td>(1.4)</td></tr></table>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -8.3 37.75 10.05"
+style="width:  3.79em; height:  1.13em; vertical-align: -0.24em;"> <use
+xlink:href="images/img355.svg#page345"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -7.47 40.76 9.96"
+style="width:  4.09em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img356.svg#page346"> </use> </svg></span> és la </span><span
+class="itshape" >constant de Planck reduïda</span><span>, ‘h tallada’, o
+‘h-barra</span>.’ </div>
+
+</li><li>
+
+<div class="p"> <span>Per a qualsevol altre observable, l’operador s’obté de la
+següent manera</span>. </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>S’escriu l’expressió clàssica del observable en funció de
+les coordenades cartesianes <span class="inlinemath">(<svg
+viewBox="0 -4.29 5.69 4.29"
+style="width:  0.57em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img357.svg#page347"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.24 6.23"
+style="width:  0.53em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img358.svg#page348"> </use> </svg></span>, &hellip;) i dels
+moments lineals <span class="inlinemath">(<svg
+viewBox="0 -4.29 9.53 6.23"
+style="width:  0.96em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img359.svg#page349"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.3 7.14"
+style="width:  0.93em; height:  0.84em; vertical-align: -0.35em;"> <use
+xlink:href="images/img360.svg#page350"> </use> </svg></span>, &hellip;)</span>.
+</div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>Se substitueix cada coordenada cartesiana i cada
+component del moment lineal pel corresponent operador
+<span class="inlinemath">(<svg
+viewBox="0 -6.86 26.89 6.86"
+style="width:  2.70em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img361.svg#page351"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.86 35.06 8.8"
+style="width:  3.52em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img362.svg#page352"> </use> </svg></span>, &hellip;)</span>.
+</div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>Finalment, se simplifica tenint en compte les
+Eqs. (</span><a
+href="sections/section.1.5.html#ref::pos:obs:xyz">1.3</a><span>) i (</span><a
+href="sections/section.1.5.html#ref::pos:obs:pxpypz">1.4</a><span>)</span>.
+</div>
+
+</li></ol>
+
+</li></ul>
+
+</div>
+
+<div class="p noindent"> <span>Per conveni, els símbols dels
+<span class="inlinemath">operadors <svg
+viewBox="0 -6.86 36.94 8.8"
+style="width:  3.71em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img363.svg#page353"> </use> </svg></span> s’escriuen amb
+lletra minúscula, i tots els demés amb lletra majúscula</span>. </div>
+
+<div class="p"> <span>Il·lustrarem la construcció d’operadors amb uns quants
+exemples</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >L’operador
+energia cinètica per a una partícula és <span class="inlinemath"><svg
+viewBox="0 -10.07 55.95 13.5"
+style="width:  5.62em; height:  1.47em; vertical-align: -0.40em;"> <use
+xlink:href="images/img364.svg#page354"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Construirem l’operador energia
+cinètica (que se sol representar per <span class="inlinemath"><svg
+viewBox="0 -9.38 7.21 9.38"
+style="width:  0.72em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img365.svg#page355"> </use> </svg></span>) per a una
+partícula unidimensional amb massa <span class="inlinemath"><svg
+viewBox="0 -4.29 8.75 4.29"
+style="width:  0.88em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img366.svg#page356"> </use> </svg></span></span>. </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>L’expressió clàssica és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 39.38 21.68"
+style="width:  3.95em; height:  2.30em;"> <use
+xlink:href="images/img367.svg#page357"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>Fem la substitució <span class="inlinemath"><svg
+viewBox="0 -6.86 35.06 8.8"
+style="width:  3.52em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img368.svg#page358"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.85 39.38 21.68"
+style="width:  3.95em; height:  2.30em;"> <use
+xlink:href="images/img369.svg#page359"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>Simplifiquem utilitzant <span class="inlinemath"><svg
+viewBox="0 -8.11 50.07 10.57"
+style="width:  5.03em; height:  1.18em; vertical-align: -0.31em;"> <use
+xlink:href="images/img370.svg#page360"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 62.59 9.96"
+style="width:  6.28em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img371.svg#page361"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -15.69 189.28 25.2"
+style="width: 19.00em; height:  2.65em;"> <use
+xlink:href="images/img372.svg#page362"> </use> </svg></span> </div>
+
+</li></ol>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >L’operador
+energia potencial de l’oscil·lador harmònic és <span class="inlinemath"><svg
+viewBox="0 -9.38 42.84 12.82"
+style="width:  4.30em; height:  1.41em; vertical-align: -0.40em;"> <use
+xlink:href="images/img373.svg#page363"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Construirem ara l’operador energia
+potencial (que se sol representar per <span class="inlinemath"><svg
+viewBox="0 -9.38 8.03 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img374.svg#page364"> </use> </svg></span>) per a
+l’oscil·lador harmònic</span>. </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>L’expressió clàssica és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 47.11 19.85"
+style="width:  4.73em; height:  2.11em;"> <use
+xlink:href="images/img375.svg#page365"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>Fem la substitució <span class="inlinemath"><svg
+viewBox="0 -6.86 26.89 6.86"
+style="width:  2.70em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img376.svg#page366"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 47.11 19.85"
+style="width:  4.73em; height:  2.11em;"> <use
+xlink:href="images/img377.svg#page367"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>Simplifiquem utilitzant <span class="inlinemath"><svg
+viewBox="0 -6.86 24.67 6.86"
+style="width:  2.48em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img378.svg#page368"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 47.11 19.85"
+style="width:  4.73em; height:  2.11em;"> <use
+xlink:href="images/img379.svg#page369"> </use> </svg></span> </div>
+
+</li></ol>
+
+<div class="p noindent"> <span>Queda clar que si l’expressió clàssica d’un
+observable depèn només de les coordenades cartesianes i no dels components del
+moment lineal, aleshores l’operador és igual a l’expressió clàssica</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4&rang;</span> <span class="sffamily" >L’operador més
+important és el </span><span class="itshape sffamily" >Hamiltonià</span><span
+class="sffamily" >, <span class="inlinemath"><svg
+viewBox="0 -9.38 49.78 10.21"
+style="width:  5.00em; height:  1.15em; vertical-align: -0.14em;"> <use
+xlink:href="images/img380.svg#page370"> </use> </svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’operador més important és el
+corresponent a l’energia total del sistema</span>. <span>S’anomena </span><span
+class="itshape" >operador Hamiltonià</span><span> i es representa pel símbol
+<span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img381.svg#page371"> </use> </svg></span></span>. <span>És
+igual a la suma dels operadors </span><span class="itshape" >energia
+cinètica</span><span> <span class="inlinemath">(<svg
+viewBox="0 -9.38 7.21 9.38"
+style="width:  0.72em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img382.svg#page372"> </use> </svg></span>) i </span><span
+class="itshape" >energia potencial</span><span> <span class="inlinemath">(<svg
+viewBox="0 -9.38 8.03 9.38"
+style="width:  0.81em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img383.svg#page373"> </use> </svg></span>) del sistema,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 52.55 10.21"
+style="width:  5.28em; height:  1.15em;"> <use
+xlink:href="images/img384.svg#page374"> </use> </svg></span> </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.1.5.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

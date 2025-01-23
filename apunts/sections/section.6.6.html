@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Interacció espín-òrbita | Estructura fina | Regles de Hund</title>
+<meta name="description" content="La interacció espín-òrbita és un efecte
+relativista. Les regles de Hund ens donen el terme i nivell de menor energia.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.6.6.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.6.html"><span>6 Àtoms polielectrònics </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>6.6 Interacció espín-òrbita
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img3288.svg#page3266"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.5.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.6.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.html"> <svg class="icon next" viewBox="0 0 512
+512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>6.6  Interacció espín-òrbita</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >La interacció
+entre el camp magnètic de <span class="inlinemath"><svg
+viewBox="0 -9.64 6.92 9.64"
+style="width:  0.70em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3289.svg#page3267"> </use> </svg></span> i el de
+<span class="inlinemath"><svg
+viewBox="0 -9.64 7.43 9.64"
+style="width:  0.75em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3290.svg#page3268"> </use> </svg></span> és un efecte
+relativista.</span></summary>
+
+<div class="content"><div class="p"> <span>L’anomenada </span><span
+class="itshape" >interacció espín-òrbita</span><span> (o </span><span
+class="itshape" >acoblament espín-òrbita</span><span>) és un efecte relativista
+que representa la interacció entre el camp magnètic generat pel moment angular
+orbital i el moment magnètic de l’espín de l’electró</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >S’afegeix una
+pertorbació <span class="inlinemath"><svg
+viewBox="0 -9.38 19.83 10.88"
+style="width:  1.99em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3291.svg#page3269"> </use> </svg></span> que trenca la
+degeneració entre nivells.</span></summary>
+
+<div class="content"><div class="p"> <span>La interacció espín-òrbita s’afegeix
+com una correcció (pertorbació) <span class="inlinemath"><svg
+viewBox="0 -9.38 19.83 10.88"
+style="width:  1.99em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3292.svg#page3270"> </use> </svg></span> al hamiltonià no
+relativista</span>. <span>Per a àtoms no massa pesants, la magnitud d’aquesta
+correcció és petita i pot tractar-se mitjançant la teoria de
+pertorbacions</span>. </div>
+
+<div class="p"> <span>L’efecte de <span class="inlinemath"><svg
+viewBox="0 -9.38 19.83 10.88"
+style="width:  1.99em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3293.svg#page3271"> </use> </svg></span> és trencar la
+degeneració dels nivells d’un terme</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Per a un àtom
+hidrogenoide, <span class="inlinemath"><svg
+viewBox="0 -12.21 72.18 14.7"
+style="width:  7.25em; height:  1.60em; vertical-align: -0.31em;"> <use
+xlink:href="images/img3294.svg#page3272"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a un àtom hidrogenoide, la
+interacció espín-òrbita té la següent expressió, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -12.21 74.2 14.7"
+style="width:  7.45em; height:  1.60em;"> <use
+xlink:href="images/img3295.svg#page3273"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -4.29 4.65 4.29"
+style="width:  0.47em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3296.svg#page3274"> </use> </svg></span> és una funció
+que depèn de <span class="inlinemath"><svg
+viewBox="0 -4.29 4.77 4.29"
+style="width:  0.48em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3297.svg#page3275"> </use> </svg></span>, la distància al
+nucli</span>. <span>Com aquest efecte és petit, podem aproximar la seva
+contribució a l’energia total amb la teoria de pertorbacions</span>. <span>La
+correcció de primer ordre és, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 100.58 11.87"
+style="width: 10.10em; height:  1.31em;"> <use
+xlink:href="images/img3298.svg#page3276"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.86 15.26 6.86"
+style="width:  1.53em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3299.svg#page3277"> </use> </svg></span> és l’autofunció
+del hamiltonià no relativista <span class="inlinemath"><svg
+viewBox="0 -9.38 39.11 10.88"
+style="width:  3.92em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3300.svg#page3278"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >El producte
+escalar <span class="inlinemath"><svg
+viewBox="0 -12.21 21.4 12.21"
+style="width:  2.15em; height:  1.35em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3301.svg#page3279"> </use> </svg></span> pot expressar-se
+d’un altra manera.</span></summary>
+
+<div class="content"><div class="p"> <span>El producte
+<span class="inlinemath"><svg
+viewBox="0 -12.21 21.4 12.21"
+style="width:  2.15em; height:  1.35em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3302.svg#page3280"> </use> </svg></span> pot expressar-se
+d’una manera més convenient tenint en compte la definició
+<span class="inlinemath">de <svg
+viewBox="0 -12.21 8.16 12.21"
+style="width:  0.82em; height:  1.35em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3303.svg#page3281"> </use> </svg></span>, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 10.45 9.38"
+style="width:  1.05em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3304.svg#page3282"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3305.svg#page3283"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -12.21 115.72 18.73"
+style="width: 11.62em; height:  2.00em; vertical-align: -0.71em;"> <use
+xlink:href="images/img3306.svg#page3284"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3307.svg#page3285"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -12.21 121.93 14.15"
+style="width: 12.24em; height:  1.54em; vertical-align: -0.25em;"> <use
+xlink:href="images/img3308.svg#page3286"> </use> </svg></span></span>
+</td></tr>
+<tr> <!-- begin empty row -->
+<td class="r"> </td>
+<td class="c"> </td>
+<td class="l"> </td>
+</tr> <!-- end empty row -->
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>i, <span class="inlinemath">com <svg
+viewBox="0 -12.21 6.92 12.21"
+style="width:  0.70em; height:  1.35em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3309.svg#page3287"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -12.21 7.43 12.21"
+style="width:  0.75em; height:  1.35em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3310.svg#page3288"> </use> </svg></span> commuten,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -12.21 99.4 14.15"
+style="width:  9.98em; height:  1.54em;"> <use
+xlink:href="images/img3311.svg#page3289"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>d’on deduïm que </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 117.01 19.85"
+style="width: 11.75em; height:  2.11em;"> <use
+xlink:href="images/img3312.svg#page3290"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 112.58 19.85"
+style="width: 11.30em; height:  2.11em;"> <use
+xlink:href="images/img3313.svg#page3291"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >Per a àtoms
+polielectrònics, donarem l’expressió aproximada de l’energia.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a àtoms polielectrònics, la
+interacció espín-òrbita és més complicada que per a àtoms hidrogenoides</span>.
+<span>Ens limitarem a donar l’expressió aproximada de l’energia, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 198.17 19.85"
+style="width: 19.89em; height:  2.11em;"> <use
+xlink:href="images/img3314.svg#page3292"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3315.svg#page3293"> </use> </svg></span> és una constant,
+amb el mateix valor per a tots els nivells d’un mateix terme</span>.
+<span>Compte que <span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3316.svg#page3294"> </use> </svg></span> pot ser positiva
+o negativa</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 193.74 19.85"
+style="width: 19.45em; height:  2.11em;"> <use
+xlink:href="images/img3317.svg#page3295"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >La dependència de
+l’energia en <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3318.svg#page3296"> </use> </svg></span> causa
+l’</span><span class="itshape sffamily" >estructura fina.</span></summary>
+
+<div class="content"><div class="p"> <span>En tenir en compte la interacció
+espín-òrbita, l’energia dels nivells d’un terme comença a dependre, com hem
+vist, del nombre quàntic <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3319.svg#page3297"> </use> </svg></span>, la qual cosa fa
+que els nivells deixen de ser degenerats</span>. </div>
+
+<div class="p"> <span>Aquest desdoblament de l’energia dels nivells causa
+l’anomenada </span><span class="itshape" >estructura fina</span><span> dels
+espectres atòmics</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Un camp magnètic
+trenca la degeneració dels estats d’un nivell.</span></summary>
+
+<div class="content"><div class="p"> <span>Els estats d’un nivell corresponents
+a diferents valors de <span class="inlinemath"><svg
+viewBox="0 -6.81 14.73 8.3"
+style="width:  1.48em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3320.svg#page3298"> </use> </svg></span> estan
+degenerats</span>. <span>Aquesta degeneració pot trencar-se si apliquem un camp
+magnètic</span>. </div>
+
+<div class="p"> <span>Si <span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3321.svg#page3299"> </use> </svg></span> és el mòdul del
+camp magnètic aplicat, la correcció <span class="inlinemath"><svg
+viewBox="0 -9.38 14.64 10.88"
+style="width:  1.47em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3322.svg#page3300"> </use> </svg></span> que ha
+d’afegir-se al hamiltonià atòmic i la corresponent correcció energètica
+<span class="inlinemath"><svg
+viewBox="0 -6.81 13.71 8.3"
+style="width:  1.38em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3323.svg#page3301"> </use> </svg></span> són les següents
+</span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 14.64 10.88"
+style="width:  1.47em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3324.svg#page3302"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3325.svg#page3303"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 58.71 11.87"
+style="width:  5.89em; height:  1.31em; vertical-align: -0.31em;"> <use
+xlink:href="images/img3326.svg#page3304"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 13.71 8.3"
+style="width:  1.38em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3327.svg#page3305"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3328.svg#page3306"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.92 41.08 8.86"
+style="width:  4.12em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img3329.svg#page3307"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.92 9.42 8.86"
+style="width:  0.94em; height:  1.01em; vertical-align: -0.25em;"> <use
+xlink:href="images/img3330.svg#page3308"> </use> </svg></span> és el
+</span><span class="itshape" >magnetó de Bohr</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 49.39 19.85"
+style="width:  4.96em; height:  2.11em;"> <use
+xlink:href="images/img3331.svg#page3309"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>i <span class="inlinemath"><svg
+viewBox="0 -4.29 5.11 6.23"
+style="width:  0.51em; height:  0.74em; vertical-align: -0.25em;"> <use
+xlink:href="images/img3332.svg#page3310"> </use> </svg></span> és el
+</span><span class="itshape" >factor de Landé</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.21 179.68 23.54"
+style="width: 18.04em; height:  2.48em;"> <use
+xlink:href="images/img3333.svg#page3311"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >Les contribucions
+a <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3334.svg#page3312"> </use> </svg></span> van trencant la
+degeneració:</span> <span class="sffamily" >termes, nivells,
+estats.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -34.06 204.87 47.17"
+style="width: 20.56em; height:  4.86em;"> <use
+xlink:href="images/img3335.svg#page3313"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>En la figura </span><a
+href="sections/section.6.6.html#ref::ato:ter:TNS">6.7</a><span> representem
+esquemàticament el desdoblament d’una configuració electrònica en termes,
+nivells i estats a mesura que afegim contribucions al hamiltonià atòmic,
+l’expressió del qual hem vist en </span><a class="sffamily small"
+href="sections/section.6.2.html#ref::ato:foc:Hatoms" >§6.2&vert;1&rang;</a>.
+</div>
+
+<div class="figure" id="ref::ato:ter:TNS">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="1.76 -173.3 356.82 162.37"
+style="width: 35.82em; height: 17.51em;"> <use
+xlink:href="images/img3336.svg#page3314"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 6.7</span>: <span>Representació
+esquemàtica (no està feta a escala) de les energies dels termes, nivells i
+estats d’una configuració electrònica <span class="inlinemath"><svg
+viewBox="0 -8.11 13.96 10.05"
+style="width:  1.40em; height:  1.13em; vertical-align: -0.25em;"> <use
+xlink:href="images/img3337.svg#page3315"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;9&rang;</span> <span class="sffamily" >Les regles de Hund
+ens permeten trobar els termes i nivells de menor energia.</span></summary>
+
+<div class="content"><div class="p"> <span>Per predir quin dels termes i nivell
+procedents d’una configuració electrònica tenen la menor energia s’utilitza un
+conjunt de regles empíriques anomenades </span><span class="itshape" >regles de
+Hund</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Regles de Hund</span></strong>. </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>El terme amb la màxima multiplicitat serà el de menor
+energia</span>. </div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>Si hi ha més d’un terme amb multiplicitat màxima,
+aleshores el de menor energia serà el que tinga un
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.78 6.81"
+style="width:  0.68em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3338.svg#page3316"> </use> </svg></span> més gran</span>.
+</div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>Per a l’energia dels nivells</span>: </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Si l’ocupació de la subcapa és inferior a la mitat, el
+nivell més estable és el de menor <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3339.svg#page3317"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3340.svg#page3318"> </use> </svg></span>
+positiva)</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Si l’ocupació de la subcapa és superior a la mitat, el
+nivell més estable és el de major <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3341.svg#page3319"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3342.svg#page3320"> </use> </svg></span>
+negativa)</span>. </div>
+
+</li></ul>
+
+</li></ol>
+
+</div>
+
+<div class="p"> <span>Noteu que si l’ocupació de la subcapa és exactament la
+mitat, el terme de menor energia (màxima multiplicitat) té
+<span class="inlinemath"><svg
+viewBox="0 -6.81 25.05 6.81"
+style="width:  2.51em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3343.svg#page3321"> </use> </svg></span>, i per tant
+només hi ha un nivell</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.6.6.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

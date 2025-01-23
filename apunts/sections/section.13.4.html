@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Espectres de vibració-rotació | Molècules poliatòmiques</title>
+<meta name="description" content="S’estudien les bandes paral·leles i
+perpendiculars en molècules lineals i en rotors simètrics.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.13.4.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.13.html"><span>13 Espectres de vibració de molècules
+poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>13.4 Espectres de vibració-rotació
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img7428.svg#page7392"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.3.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.13.5.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>13.4  Espectres de vibració-rotació</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Les molècules
+lineals tenen bandes </span><span class="itshape sffamily"
+>paral·leles</span><span class="sffamily" > <span class="inlinemath">(<svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7429.svg#page7393"> </use> </svg></span>) i </span><span
+class="itshape sffamily" >perpendiculars</span><span class="sffamily" >
+<span class="inlinemath">(<svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7430.svg#page7394"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="itshape sffamily" >Banda
+paral·lela</span><span class="sffamily" > <span class="inlinemath">(<svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7431.svg#page7395"> </use> </svg></span>):</span> <span
+class="sffamily" >canvia el component de <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7432.svg#page7396"> </use> </svg></span> paral·lel a
+l’eix.</span></summary>
+
+<div class="content"><div class="p"> <span>Considerem ara el cas d’una molècula
+poliatòmica lineal</span>. <span>Sabem que en una transició vibracional permesa
+el moment dipolar permanent <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7433.svg#page7397"> </use> </svg></span> ha de canviar,
+és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 59.4 24.5"
+style="width:  5.96em; height:  2.58em;"> <use
+xlink:href="images/img7434.svg#page7398"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Si aquest canvi és paral·lel a l’eix
+internuclear, aleshores la transició espectroscòpica s’anomena </span><span
+class="itshape" >transició
+paral·lela</span><span><span class="inlinemath"> (<svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7435.svg#page7399"> </use> </svg></span>), la qual
+produirà la corresponent </span><span class="itshape" >banda
+paral·lela</span><span> en l’espectre IR de la molècula</span>. </div>
+
+<div class="p"> <span>Com exemple de transició paral·lela tenim la tensió
+asimètrica de la molècula de diòxid de carboni que hem vist en la
+figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesCOO">13.2</a>. </div>
+
+<div class="blob">
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="0 -146.23 207.06 127.09"
+style="width: 20.78em; height: 14.80em;"> <use
+xlink:href="images/img7436.svg#page7400"> </use> </svg> </span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="itshape sffamily" >Banda
+perpendicular</span><span class="sffamily" > <span class="inlinemath">(<svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7437.svg#page7401"> </use> </svg></span>):</span> <span
+class="sffamily" >canvien els components perpendiculars.</span></summary>
+
+<div class="content"><div class="p"> <span>De manera similar, si el canvi en el
+moment dipolar permanent és produeix en els components perpendiculars a l’eix
+internuclear, parlarem de </span><span class="itshape" >transicions
+perpendiculars</span><span> <span class="inlinemath">(<svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7438.svg#page7402"> </use> </svg></span>) i de les
+corresponents </span><span class="itshape" >bandes perpendiculars</span>.
+</div>
+
+<div class="p"> <span>La flexió simètrica del diòxid de carboni il·lustrat en
+la figura </span><a
+href="sections/section.13.1.html#ref::vi1:cla:ModesCOO">13.2</a><span>
+correspon a una transició perpendicular</span>. </div>
+
+<div class="blob">
+<div class="p center"><span class="picture"><svg class="picture"
+viewBox="0 -146.23 207.06 127.09"
+style="width: 20.78em; height: 14.80em;"> <use
+xlink:href="images/img7439.svg#page7403"> </use> </svg> </span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.3&rang;</span> <span class="sffamily" >Poden canviar
+els components paral·lels i perpendiculars alhora?</span> <span
+class="sffamily" >No.</span></summary>
+
+<div class="content"><div class="p"> <span>Hom podria pensar que pot haver-hi
+transicions vibracionals on canvien tant el component paral·lel de
+<span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7440.svg#page7404"> </use> </svg></span> com el
+perpendicular</span>. <span>És pot demostrar, però, que això </span><span
+class="itshape" >no</span><span> és possible</span>: <span>o canvia el
+component paral·lel o canvien els components perpendiculars</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4&rang;</span> <span class="sffamily" >Les bandes
+paral·leles <span class="inlinemath">(<svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7441.svg#page7405"> </use> </svg></span>) tenen branques
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7442.svg#page7406"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7443.svg#page7407"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.4.1&rang;</span> <span class="sffamily" >Bandes
+<span class="inlinemath"><svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7444.svg#page7408"> </use> </svg></span>:</span> <span
+class="sffamily" >la regla de selecció rotacional és
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7445.svg#page7409"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Hem vist en </span><a
+class="sffamily small"
+href="sections/section.13.3.html#ref::vi2:vib:ReglaHarmonica"
+>§13.3&vert;5&rang;</a><span> la regla de selecció per a transicions
+vibracionals</span>. <span>Ens falta considerar la rotació, ja que una
+transició vibracional va acompanyada de transicions rotacional</span>. <span>Es
+pot demostrar que la regla de selecció rotacional és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 92.83 9.96"
+style="width:  9.32em; height:  1.12em;"> <use
+xlink:href="images/img7446.svg#page7410"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4.2&rang;</span> <span class="sffamily" >Bandes
+<span class="inlinemath"><svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7447.svg#page7411"> </use> </svg></span>:</span> <span
+class="sffamily" >semblen les de les diatòmiques, amb branques
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7448.svg#page7412"> </use>
+</svg></span><span class="inlinemath"> i <svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7449.svg#page7413"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com que la regla de selecció
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7450.svg#page7414"> </use> </svg></span> és idèntica a la
+de les molècules diatòmiques, l’estructura rotacional d’una banda IR d’una
+molècula poliatòmica lineal haurà de ser similar a l’estudiada per a
+diatòmiques</span>. <span>En particular, la banda mostrarà branques
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7451.svg#page7415"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7452.svg#page7416"> </use> </svg></span>) i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7453.svg#page7417"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7454.svg#page7418"> </use> </svg></span>), però no
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7455.svg#page7419"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7456.svg#page7420"> </use> </svg></span>)</span>.
+<span>Ho il·lustrem en la figura </span><a
+href="sections/section.13.4.html#ref::vi2:rot:PR">13.6</a>. </div>
+
+<div class="figure" id="ref::vi2:rot:PR">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.29 -129.92 338.23 136.28"
+style="width: 33.95em; height: 13.80em;"> <use
+xlink:href="images/img7457.svg#page7421"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 13.6</span>: <span>Esquema d’una banda
+paral·lela <span class="inlinemath">(<svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7458.svg#page7422"> </use> </svg></span>) d’una molècula
+poliatòmica lineal</span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.09 -103.94 270.59 109.02"
+style="width: 27.16em; height: 11.06em;"> <use
+xlink:href="images/img7459.svg#page7423"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.5&rang;</span> <span class="sffamily" >Les bandes
+perpendiculars <span class="inlinemath">(<svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7460.svg#page7424"> </use> </svg></span>) tenen branques
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7461.svg#page7425"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7462.svg#page7426"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7463.svg#page7427"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.5.1&rang;</span> <span class="sffamily" >Bandes
+<span class="inlinemath"><svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7464.svg#page7428"> </use> </svg></span>:</span> <span
+class="sffamily" >la regla de selecció rotacional és
+<span class="inlinemath"><svg
+viewBox="0 -7.13 50.21 9.07"
+style="width:  5.04em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7465.svg#page7429"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Compte, que la regla de selecció per
+a bandes <span class="inlinemath">perpendiculars (<svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7466.svg#page7430"> </use> </svg></span>) és diferent de
+la de les bandes <span class="inlinemath">paral·leles (<svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7467.svg#page7431"> </use> </svg></span>)</span>.
+<span>En particular, el canvi 0 ara és permès, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 105 9.07"
+style="width: 10.54em; height:  1.03em;"> <use
+xlink:href="images/img7468.svg#page7432"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.5.2&rang;</span> <span class="sffamily" >Bandes
+<span class="inlinemath"><svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7469.svg#page7433"> </use> </svg></span>:</span> <span
+class="sffamily" >també tenen branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7470.svg#page7434"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Com per a bandes perpendiculars el
+canvi <span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7471.svg#page7435"> </use> </svg></span> és permès,
+aquestes bandes, a més de les branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7472.svg#page7436"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7473.svg#page7437"> </use> </svg></span>) i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7474.svg#page7438"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7475.svg#page7439"> </use> </svg></span>), també tindran
+branca <span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7476.svg#page7440"> </use> </svg></span>
+<span class="inlinemath">(<svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7477.svg#page7441"> </use> </svg></span>)</span>.
+<span>Ho il·lustrem en la figura </span><a
+href="sections/section.13.4.html#ref::vi2:rot:PQR">13.7</a>. </div>
+
+<div class="figure" id="ref::vi2:rot:PQR">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="4.29 -129.92 338.23 136.28"
+style="width: 33.95em; height: 13.80em;"> <use
+xlink:href="images/img7478.svg#page7442"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 13.7</span>: <span>Esquema d’una banda
+perpendicular <span class="inlinemath">(<svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7479.svg#page7443"> </use> </svg></span>) d’una molècula
+poliatòmica lineal</span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="6.09 -103.94 270.59 109.02"
+style="width: 27.16em; height: 11.06em;"> <use
+xlink:href="images/img7480.svg#page7444"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >Els rotors
+simètrics també tenen transicions </span><span class="itshape sffamily"
+>paral·leles</span><span class="sffamily" > i </span><span class="itshape
+sffamily" >perpendiculars.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >Les bandes dels
+rotors simètrics són paral·leles o perpendiculars.</span></summary>
+
+<div class="content"><div class="p"> <span>Recordeu que els rotors simètric han
+de tindre un eix <span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7481.svg#page7445"> </use> </svg></span> amb
+<span class="inlinemath"><svg
+viewBox="0 -6.27 24.24 6.66"
+style="width:  2.43em; height:  0.79em; vertical-align: -0.10em;"> <use
+xlink:href="images/img7482.svg#page7446"> </use> </svg></span> o un eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7483.svg#page7447"> </use> </svg></span> (en qualsevol
+cas, només un eix)</span>. <span>Doncs bé, es pot demostrar que les transicions
+vibracionals canvien el moment dipolar permanent, bé paral·lelament a l’eix
+<span class="inlinemath"><svg
+viewBox="0 -6.81 12.05 8.3"
+style="width:  1.21em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7484.svg#page7448"> </use> </svg></span> o
+<span class="inlinemath"><svg
+viewBox="0 -6.81 10.08 8.3"
+style="width:  1.01em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7485.svg#page7449"> </use> </svg></span>, bé
+perpendicularment</span>. <span>La situació és semblant a la vista en les
+molècules lineals, i també dóna lloc a transicions i bandes </span><span
+class="itshape" >paral·leles</span><span><span class="inlinemath"> (<svg
+viewBox="0 -7.47 4.98 9.96"
+style="width:  0.50em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7486.svg#page7450"> </use> </svg></span>) o </span><span
+class="itshape" >perpendiculars</span><span><span class="inlinemath"> (<svg
+viewBox="0 -6.92 7.75 6.92"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7487.svg#page7451"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::vi2:rot:ESimetric"> <span>&vert;2.2&rang;</span> <span
+class="sffamily" >Recordeu:</span> <span class="sffamily" >l’energia d’un rotor
+simètric depèn del nombre quàntic <span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7488.svg#page7452"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Vam veure, quan vam estudiar la
+rotació de molècules poliatòmiques, que l’energia dels estats rotacional d’un
+rotor simètric depèn de dos nombres quàntics, <span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7489.svg#page7453"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7490.svg#page7454"> </use> </svg></span></span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 269.72 24"
+style="width: 27.07em; height:  2.53em;"> <use
+xlink:href="images/img7491.svg#page7455"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 274.78 24"
+style="width: 27.58em; height:  2.53em;"> <use
+xlink:href="images/img7492.svg#page7456"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >Les bandes
+paral·leles dels rotors simètrics tenen branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7493.svg#page7457"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7494.svg#page7458"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7495.svg#page7459"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.3.1&rang;</span> <span class="sffamily" >La regla de
+selecció per a <span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7496.svg#page7460"> </use> </svg></span> és
+<span class="inlinemath"><svg
+viewBox="0 -7.13 35.74 7.13"
+style="width:  3.59em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7497.svg#page7461"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Per a les transicions paral·leles
+d’un rotor simètric, es pot demostrar que les regles de selecció rotacionals
+són les següents, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 220.08 24"
+style="width: 22.09em; height:  2.53em;"> <use
+xlink:href="images/img7498.svg#page7462"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 217.31 24"
+style="width: 21.81em; height:  2.53em;"> <use
+xlink:href="images/img7499.svg#page7463"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3.2&rang;</span> <span class="sffamily" >La freqüència
+de les ratlles no depèn massa de <span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7500.svg#page7464"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -14.49 274.78 24"
+style="width: 27.58em; height:  2.53em;"> <use
+xlink:href="images/img7501.svg#page7465"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>La regla de selecció <span class="inlinemath"><svg
+viewBox="0 -7.13 35.74 7.13"
+style="width:  3.59em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7502.svg#page7466"> </use> </svg></span> implica que
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7503.svg#page7467"> </use> </svg></span> tindrà el mateix
+valor abans i després de la transició</span>. <span>Examinant l’energia dels
+estats rotacionals que hem recordat en </span><a class="sffamily small"
+href="sections/section.13.4.html#ref::vi2:rot:ESimetric"
+>§13.4&vert;2.2&rang;</a><span>, concloem que per a
+<span class="inlinemath"><svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7504.svg#page7468"> </use> </svg></span> (per exemple) la
+freqüència de les ratlles serà aproximadament </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 78.06 20.92"
+style="width:  7.83em; height:  2.22em; vertical-align: -1.53em;"> <use
+xlink:href="images/img7505.svg#page7469"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7506.svg#page7470"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 121.04 9.96"
+style="width: 12.15em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7507.svg#page7471"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.81 7.75 4.65"
+style="width:  0.78em; height:  0.60em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7508.svg#page7472"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.47 68.76 9.96"
+style="width:  6.90em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img7509.svg#page7473"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -6.27 8.89 7.77"
+style="width:  0.89em; height:  0.90em; vertical-align: -0.21em;"> <use
+xlink:href="images/img7510.svg#page7474"> </use> </svg></span> és la freqüència
+corresponent a la vibració pura</span>. <span>Aquest resultat és només
+aproximat perquè hem suposat que les constants rotacionals
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.47 6.81"
+style="width:  0.75em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7511.svg#page7475"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 8.06 6.81"
+style="width:  0.81em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7512.svg#page7476"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.83 6.81"
+style="width:  0.79em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7513.svg#page7477"> </use> </svg></span> són les mateixes
+en els dos estats vibracionals, cosa que no és rigorosament certa</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3.3&rang;</span> <span class="sffamily" >Les bandes
+tindran branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7514.svg#page7478"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7515.svg#page7479"> </use> </svg></span>, i també branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7516.svg#page7480"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La freqüència de les ratlles que
+acabem de veure, encara que aproximada, és anàloga a la de les molècules
+diatòmiques i lineals, i per tant l’estructura de les bandes també ho
+serà</span>. <span>En particular, les bandes paral·leles dels rotors simètrics
+tindran, a més de branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7517.svg#page7481"> </use>
+</svg></span><span class="inlinemath"> (<svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7518.svg#page7482"> </use> </svg></span>) i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7519.svg#page7483"> </use>
+</svg></span><span class="inlinemath"> (<svg
+viewBox="0 -7.13 40.8 7.96"
+style="width:  4.10em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7520.svg#page7484"> </use> </svg></span>), una branca
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7521.svg#page7485"> </use> </svg></span>, ja que la regla
+de selecció <span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7522.svg#page7486"> </use> </svg></span> ara ho
+permet</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4&rang;</span> <span class="sffamily" >Les bandes
+perpendiculars no tenen branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7523.svg#page7487"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7524.svg#page7488"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7525.svg#page7489"> </use> </svg></span> ben
+definides.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;2.4.1&rang;</span> <span class="sffamily" >La regla de
+selecció per a <span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7526.svg#page7490"> </use> </svg></span> és
+<span class="inlinemath"><svg
+viewBox="0 -7.13 43.49 7.96"
+style="width:  4.37em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7527.svg#page7491"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Es pot demostrar que, per a les
+bandes perpendiculars dels rotors simètrics, les regles de selecció per a la
+rotació són les següents</span>. </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 162.88 9.07"
+style="width: 16.35em; height:  1.03em;"> <use
+xlink:href="images/img7528.svg#page7492"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 160.11 9.07"
+style="width: 16.07em; height:  1.03em;"> <use
+xlink:href="images/img7529.svg#page7493"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4.2&rang;</span> <span class="sffamily" >La freqüència
+de les ratlles depèn explícitament de <span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7530.svg#page7494"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>A diferència del que passava per a
+les bandes paral·leles, la regla de selecció <span class="inlinemath"><svg
+viewBox="0 -7.13 43.49 7.96"
+style="width:  4.37em; height:  0.92em; vertical-align: -0.14em;"> <use
+xlink:href="images/img7531.svg#page7495"> </use> </svg></span> fa que, en les
+bandes perpendiculars, la freqüència de les ratlles depengui explícitament de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7532.svg#page7496"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4.3&rang;</span> <span class="sffamily" >Hi ha una
+</span><span class="itshape sffamily" >subbanda</span><span class="sffamily" >
+amb branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7533.svg#page7497"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7534.svg#page7498"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7535.svg#page7499"> </use> </svg></span> per cada
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7536.svg#page7500"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La dependència de les freqüències en
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7537.svg#page7501"> </use> </svg></span> pren la forma de
+</span><span class="itshape" >subbandes</span><span>, una per cada valor de
+<span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7538.svg#page7502"> </use> </svg></span></span>.
+<span>Cada subbanda presenta l’estructura típica en branques
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7539.svg#page7503"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7540.svg#page7504"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7541.svg#page7505"> </use> </svg></span>, però cada una
+d’elles apareix desplaçada respecte a les altres, en una quantia que depèn del
+valor de <span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7542.svg#page7506"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4.4&rang;</span> <span class="sffamily" >La
+superposició de totes les subbandes complica l’espectre.</span></summary>
+
+<div class="content"><div class="p"> <span>L’estructura de les bandes
+perpendiculars en els rotor simètrics correspon a la superposició de totes les
+subbandes (una per cada valor de <span class="inlinemath"><svg
+viewBox="0 -6.81 9.17 6.81"
+style="width:  0.92em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7543.svg#page7507"> </use> </svg></span>), cosa que
+complica l’aspecte de l’espectre, i fa que les branques
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7544.svg#page7508"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7545.svg#page7509"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7546.svg#page7510"> </use> </svg></span> no estiguin
+massa ben definides</span>. </div>
+
+</div></details>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >Els rotors
+esfèrics </span><span class="itshape sffamily" >sí</span><span class="sffamily"
+> tenen espectre IR.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Recordeu:</span>
+<span class="sffamily" >els rotors esfèrics no tenen espectre rotacional
+pur.</span></summary>
+
+<div class="content"><div class="p"> <span>Els rotors esfèrics són apolars i
+per tant no tenen espectre rotacional pur (microones)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >Els rotors
+esfèrics </span><span class="itshape sffamily" >sí</span><span class="sffamily"
+> tenen espectre IR amb branques <span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7547.svg#page7511"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7548.svg#page7512"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7549.svg#page7513"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Ara bé, els modes normals
+</span><span class="itshape" >actius</span><span> dels rotors esfèrics sí tenen
+espectre IR, i les corresponents bandes tenen branques
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.78 6.81"
+style="width:  0.78em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7550.svg#page7514"> </use> </svg></span>,
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.88 8.74"
+style="width:  0.79em; height:  1.00em; vertical-align: -0.25em;"> <use
+xlink:href="images/img7551.svg#page7515"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 7.64 6.81"
+style="width:  0.77em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img7552.svg#page7516"> </use> </svg></span></span>. <span>La
+regla de selecció per a rotors esfèrics és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 52.97 9.07"
+style="width:  5.32em; height:  1.03em;"> <use
+xlink:href="images/img7553.svg#page7517"> </use> </svg></span> </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.13.4.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

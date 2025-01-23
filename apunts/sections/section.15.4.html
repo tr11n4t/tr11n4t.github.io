@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>El destí dels estats excitats | Diagrames de Jablonski</title>
+<meta name="description" content="Un diagrama de Jablonski il·lustra el destí
+dels estats excitats: relaxació vibracional, ..., fluorescència i
+fosforescència.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.15.4.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.15.html"><span>15 Enllaç i espectroscòpia electrònica de
+molècules poliatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>15.4 El destí dels estats excitats
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img9046.svg#page9008"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.3.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.15.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.III.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>15.4  El destí dels estats excitats</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Els estats
+electrònics excitats es desactiven per diversos mecanismes.</span></summary>
+
+<div class="content"><div class="p"> <span>La figura </span><a
+href="sections/section.15.4.html#ref::el2:jab:JablonskiDiagram">15.3</a><span>
+il·lustra quin pot ser el destí dels estats excitats de les molècules</span>.
+<span>Introduirem alguns conceptes</span>. </div>
+
+<div class="figure" id="ref::el2:jab:JablonskiDiagram">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="2.78 -141.93 346.37 138.91"
+style="width: 34.77em; height: 14.37em;"> <use
+xlink:href="images/img9047.svg#page9009"> </use> </svg></span> </div>
+
+<div class="p caption"> <span>Figura 15.3</span>: <span>Diagrama de Jablonski
+per a un sistema amb tres estats</span>: <span>l’estat fonamental
+<span class="inlinemath"><svg
+viewBox="0 -8.79 9.04 8.79"
+style="width:  0.91em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9048.svg#page9010"> </use> </svg></span> (un </span><span
+class="itshape" >singlet</span><span>), un estat excitat
+<span class="inlinemath"><svg
+viewBox="0 -8.79 7.61 8.79"
+style="width:  0.76em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9049.svg#page9011"> </use> </svg></span> (també
+</span><span class="itshape" >singlet</span><span>), i un altre estat excitat
+<span class="inlinemath"><svg
+viewBox="0 -6.27 5.27 6.27"
+style="width:  0.53em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9050.svg#page9012"> </use> </svg></span> amb
+multiplicitat diferent de la de l’estat fonamental (</span><span
+class="itshape" >triplet</span><span>)</span>. </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="itshape sffamily" >Relaxació
+vibracional:</span> <span class="sffamily" >la molècula </span><span
+class="itshape sffamily" >xoca</span><span class="sffamily" > i cau a un estat
+</span><span class="itshape sffamily" >vibracional</span><span class="sffamily"
+> inferior.</span></summary>
+
+<div class="content"><div class="p"> <span>La </span><span class="itshape"
+>relaxació vibracional</span><span> fa caure la molècula a estats vibracionals
+més baixos, però sempre dins </span><span class="itshape" >el
+mateix</span><span> estat electrònic</span>. <span>Pot produir-se de dues
+maneres</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span>Per xocs amb altres molècules, que s’emporten l’energia
+vibracional que cedeix la nostra molècula</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>En fase gasosa, on les col·lisions són poc freqüents, la
+molècula pot emetre radiació infraroja a mesura que va caient a nivells
+vibracionals més baixos</span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="itshape sffamily" >Conversió
+externa:</span> <span class="sffamily" >la molècula </span><span class="itshape
+sffamily" >xoca</span><span class="sffamily" > i cau a un estat </span><span
+class="itshape sffamily" >electrònic</span><span class="sffamily" >
+inferior.</span></summary>
+
+<div class="content"><div class="p"> <span>En la </span><span class="itshape"
+>conversió externa</span><span>, la molècula (en un estat excitat) xoca amb
+altra molècula <span class="inlinemath"><svg
+viewBox="0 -6.86 9.13 6.86"
+style="width:  0.92em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9051.svg#page9013"> </use> </svg></span> i li cedeix part
+de l’energia</span>. <span>Com a conseqüència del xoc, la nostra molècula cau a
+un estat electrònic </span><span class="itshape" >diferent</span><span>
+d’energia més baixa (per exemple, l’estat fonamental), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.79 81.97 9.62"
+style="width:  8.23em; height:  1.09em;"> <use
+xlink:href="images/img9052.svg#page9014"> </use> </svg></span> </div>
+
+<div class="p"> <span>Un cas particular seria una </span><span class="itshape"
+>reacció química</span><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -8.79 73.47 9.62"
+style="width:  7.38em; height:  1.09em;"> <use
+xlink:href="images/img9053.svg#page9015"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="itshape sffamily" >Conversió
+interna:</span> <span class="sffamily" >transforma energia electrònica en
+vibracional (</span><span class="itshape sffamily" >mateix</span><span
+class="sffamily" ><span class="inlinemath"> <svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9054.svg#page9016"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>En la </span><span class="itshape"
+>conversió interna</span><span>, la molècula, sense xocar amb cap altra
+molècula, passa a un estat vibracional d’un altre estat electrònic amb la
+</span><span class="itshape" >mateixa multiplicitat</span><span>, és a dir,
+converteix energia electrònica en energia vibracional, sense que la molècula
+perdi o guany energia, i sense canviar la multiplicitat</span>. </div>
+
+<div class="p"> <span>Alerta</span>! <span>La conversió interna és un procés
+</span><span class="itshape" >no radiatiu</span>: <span>ni s’emet ni
+s’absorbeix cap fotó</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="itshape sffamily" >Creuament
+d’intersistema:</span> <span class="sffamily" >transforma energia electrònica
+en vibracional (</span><span class="itshape sffamily" >diferent</span><span
+class="sffamily" ><span class="inlinemath"> <svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9055.svg#page9017"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>El </span><span class="itshape"
+>creuament d’intersistema</span><span> és similar a la </span><span
+class="itshape" >conversió interna</span><span>, però ara els estats
+electrònics inicial i final tenen diferent multiplicitat</span>. <span>Això fa
+que, a diferència de la conversió interna, es produeixi amb certa
+dificultat</span>. <span>Serà més important en molècules amb àtoms pesants, ja
+que aquests experimenten un acoblament espín-òrbita més intens</span>. </div>
+
+<div class="p"> <span>El creuament d’intersistema també és un procés no
+radiatiu</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="itshape sffamily"
+>Fluorescència:</span> <span class="sffamily" >emissió espontània de radiació
+(</span><span class="itshape sffamily" >mateix</span><span class="sffamily"
+><span class="inlinemath"> <svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9056.svg#page9018"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>La </span><span class="itshape"
+>fluorescència</span><span> és l’emissió espontània de radiació entre estats
+amb la mateixa multiplicitat</span>. </div>
+
+<div class="p"> <span>La fluorescència és un procés ràpid (típicament,
+<span class="inlinemath">entre <svg
+viewBox="0 -8.11 26.25 8.11"
+style="width:  2.64em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9057.svg#page9019"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -8.11 26.25 8.11"
+style="width:  2.64em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9058.svg#page9020"> </use> </svg></span>), encara que no
+tant com la relaxació vibracional, la conversió externa o la conversió
+interna</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="itshape sffamily"
+>Fosforescència:</span> <span class="sffamily" >emissió espontània de radiació
+(</span><span class="itshape sffamily" >diferent</span><span class="sffamily"
+><span class="inlinemath"> <svg
+viewBox="0 -6.81 6.68 6.81"
+style="width:  0.67em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9059.svg#page9021"> </use>
+</svg></span>).</span></summary>
+
+<div class="content"><div class="p"> <span>La fosforescència és l’emissió
+espontània de radiació entre estats amb diferent multiplicitat</span>.
+<span>Aquesta transició hauria d’estar prohibida per la regla de selecció
+<span class="inlinemath"><svg
+viewBox="0 -7.13 33.25 7.13"
+style="width:  3.34em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9060.svg#page9022"> </use> </svg></span></span>.
+<span>Això no obstant, i degut a l’acoblament espín-òrbita, la transició es
+produeix, encara que molt lentament (típicament, en intervals de segons o
+minuts)</span>. <span>Per a observar-la, ha de fer-se a baixa temperatura o en
+estat sòlid, ja que les col·lisions desactiven la fosforescència</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >Els </span><span
+class="itshape sffamily" >diagrames de Jablonski</span><span class="sffamily" >
+il·lustren el destí dels estats excitats.</span></summary>
+
+<div class="content"><div class="p"> <span>La figura </span><a
+href="sections/section.15.4.html#ref::el2:jab:JablonskiDiagram">15.3</a><span>
+il·lustra el cicle dels estat electrònics en un molècula</span>. </div>
+
+<div class="p"> <span>L’absorció d’un fotó excita la molècula des de l’estat
+fonamental <span class="inlinemath"><svg
+viewBox="0 -8.79 9.04 8.79"
+style="width:  0.91em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9061.svg#page9023"> </use> </svg></span> (singlet) a un
+nivell vibracional elevat de l’estat excitat <span class="inlinemath"><svg
+viewBox="0 -8.79 7.61 8.79"
+style="width:  0.76em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9062.svg#page9024"> </use> </svg></span>
+(singlet)</span>. <span>El diagrama mostra quatre maneres diferent de tornar al
+estat de partida</span>. </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>Conversió interna a un nivell vibracional elevat de
+<span class="inlinemath"><svg
+viewBox="0 -8.79 9.04 8.79"
+style="width:  0.91em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9063.svg#page9025"> </use> </svg></span>, seguida de
+relaxació vibracional</span>. </div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>Relaxació vibracional seguida de conversió externa a
+<span class="inlinemath"><svg
+viewBox="0 -8.79 9.04 8.79"
+style="width:  0.91em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9064.svg#page9026"> </use> </svg></span></span>. </div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>Relaxació vibracional seguida de fluorescència a
+<span class="inlinemath"><svg
+viewBox="0 -8.79 9.04 8.79"
+style="width:  0.91em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9065.svg#page9027"> </use> </svg></span></span>. </div>
+
+</li><li style="--enum-marker: '4.'">
+
+<div class="p"> <span>Creuament d’intersistema a un nivell vibracional elevat
+de l’estat electrònic <span class="inlinemath"><svg
+viewBox="0 -6.27 5.27 6.27"
+style="width:  0.53em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9066.svg#page9028"> </use> </svg></span> (triplet),
+seguit de relaxació vibracional i de fosforescència a
+<span class="inlinemath"><svg
+viewBox="0 -8.79 9.04 8.79"
+style="width:  0.91em; height:  1.00em; vertical-align: -0.06em;"> <use
+xlink:href="images/img9067.svg#page9029"> </use> </svg></span></span>. </div>
+
+</li></ol>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.15.4.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

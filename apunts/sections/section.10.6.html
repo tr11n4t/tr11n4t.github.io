@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Espectroscòpia Raman | Ratlles Stokes i anti-Stokes</title>
+<meta name="description" content="La dispersió inelàstica d’un fotó per una
+molècula és la base de l’efecte Raman. L’energia del fotó dispersat canvia.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.10.6.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.II.html"><span>II Espectroscòpia </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.10.html"><span>10 Espectres de rotació de molècules
+diatòmiques </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>10.6 Espectroscòpia Raman
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img5433.svg#page5399"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.5.html"> <svg class="icon previous"
+viewBox="0 0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.10.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.11.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section"> <span>10.6  Espectroscòpia Raman</span> </h4>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Les molècules d’un
+gas causen la </span><span class="itshape sffamily" >dispersió
+Rayleigh</span><span class="sffamily" > de la llum.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;1.1&rang;</span> <span class="itshape sffamily"
+>Dispersió:</span> <span class="sffamily" >separació d’ones de diferent
+freqüència en travessar un material.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Dispersió</span></strong>. <span>Separació de les
+ones de diferent freqüència en travessar un material</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Exemple</span>: <span>un raig de llum blanca es
+separa en els seus color constituents en travessar un prisma de vidre</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.2&rang;</span> <span class="itshape sffamily"
+>Dispersió Rayleigh:</span> <span class="sffamily" >causada pels àtoms o
+molècules.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Dispersió Rayleigh</span></strong>.
+<span>Dispersió de la llum causada per partícules molt més petites que la
+longitud d’ona de la llum, com ara els àtoms o molècules d’el medi
+(transparent) que la llum travessa</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Il·lustrem la dispersió Rayleigh en la
+figura </span><a
+href="sections/section.10.6.html#ref::ro1:ram:DisRal">10.3</a>: <span>la
+interacció d’un fotó amb una molècula el dispersa (el fa canviar de
+direcció)</span>. </div>
+
+<div class="figure" id="ref::ro1:ram:DisRal">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -47.08 115.23 48.05"
+style="width: 11.57em; height:  4.94em;"> <use
+xlink:href="images/img5434.svg#page5400"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 10.3</span>: <span>Esquema de la
+</span><span class="itshape" >dispersió Rayleigh</span><span> d’un fotó per una
+molècula <span class="inlinemath"><svg
+viewBox="0 -6.86 7.47 6.86"
+style="width:  0.75em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5435.svg#page5401"> </use> </svg></span></span>.
+<span>Abans i després de la dispersió, el fotó té la mateixa freqüència
+<span class="inlinemath"><svg
+viewBox="0 -4.29 5.56 4.29"
+style="width:  0.56em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5436.svg#page5402"> </use> </svg></span></span>. </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -47.08 115.23 48.05"
+style="width: 11.57em; height:  4.94em;"> <use
+xlink:href="images/img5437.svg#page5403"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.3&rang;</span> <span class="sffamily" >La dispersió
+Rayleigh és </span><span class="itshape sffamily" >elàstica.</span></summary>
+
+<div class="content"><div class="p"> <span>La dispersió Rayleigh és
+</span><span class="itshape" >elàstica</span><span>, cosa que significa que ni
+l’energia del fotó ni la de la molècula canvien com a conseqüència de la
+dispersió</span>. <span>El fotó experimenta, com veiem en la figura </span><a
+href="sections/section.10.6.html#ref::ro1:ram:DisRal">10.3</a><span>, un canvi
+de direcció, però la freqüència (que és proporcional a l’energia) no
+canvia</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.4&rang;</span> <span class="sffamily" >La dispersió
+Rayleigh és més intensa per a longituds d’ona petites.</span></summary>
+
+<div class="content"><div class="p"> <span>La intensitat de la dispersió
+Rayleigh és inversament proporcional a la quarta potència de la longitud d’ona
+<span class="inlinemath"><svg
+viewBox="0 -6.92 5.81 6.92"
+style="width:  0.58em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5438.svg#page5404"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 63.75 19.85"
+style="width:  6.40em; height:  2.11em;"> <use
+xlink:href="images/img5439.svg#page5405"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Això implica que la intensitat serà més gran per
+a longituds d’ona petites</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 59.79 19.85"
+style="width:  6.00em; height:  2.11em;"> <use
+xlink:href="images/img5440.svg#page5406"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1.5&rang;</span> <span class="sffamily" >La dispersió
+Rayleigh explica el color del cel.</span></summary>
+
+<div class="content"><div class="p"> <span>Els colors de la llum ‘blanca’ del
+Sol que tenen una longitud d’ona més petita (com ara el blau) experimentaran la
+dispersió Rayleigh amb major intensitat</span>. <span>Això explica el color del
+cel</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2&rang;</span> <span class="sffamily" >També pot
+produir-se la </span><span class="itshape sffamily" >dispersió
+Raman.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Dispersió Raman</span></strong>. <span>La
+</span><span class="itshape" >dispersió Raman</span><span> (o també,
+</span><span class="itshape" >efecte Raman</span><span>) és la dispersió
+</span><span class="itshape" >inelàstica</span><span> d’un fotó</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily" >La freqüència
+del fotó pot disminuir (Stokes) o augmentar (anti-Stokes).</span></summary>
+
+<div class="content"><div class="p"> <span>Que la dispersió sigui </span><span
+class="itshape" >inelàstica</span><span> vol dir que l’energia (i per tant la
+freqüència) del fotó canviarà</span>. <span>Ho il·lustrem en la
+figura </span><a
+href="sections/section.10.6.html#ref::ro1:ram:DisRam">10.4</a>. </div>
+
+<div class="figure" id="ref::ro1:ram:DisRam">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="0 -47.65 119.83 48.63"
+style="width: 12.03em; height:  5.00em;"> <use
+xlink:href="images/img5441.svg#page5407"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 10.4</span>: <span>Esquema de la
+</span><span class="itshape" >dispersió Raman</span><span> d’un fotó per una
+molècula <span class="inlinemath"><svg
+viewBox="0 -6.86 7.47 6.86"
+style="width:  0.75em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5442.svg#page5408"> </use> </svg></span></span>. <span>La
+freqüència del fotó canvia de <span class="inlinemath"><svg
+viewBox="0 -7.49 7.85 7.49"
+style="width:  0.79em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5443.svg#page5409"> </use> </svg></span> a
+<span class="inlinemath"><svg
+viewBox="0 -7.49 10.15 7.49"
+style="width:  1.02em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5444.svg#page5410"> </use> </svg></span></span>. </div>
+
+</div>
+
+<div class="p"> <span>Si el fotó perd energia, parlarem de dispersió
+</span><span class="itshape" >Stokes Raman</span>. <span>D’altra banda, si el
+fotó guanya energia es tracta d’una dispersió </span><span class="itshape"
+>anti-Stokes Raman</span><span> (si l’energia del fotó no canvia, tindrem
+simplement una dispersió Rayleigh)</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -47.65 119.83 48.63"
+style="width: 12.03em; height:  5.00em;"> <use
+xlink:href="images/img5445.svg#page5411"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="itshape sffamily"
+>Espectroscòpia Raman:</span> <span class="sffamily" >l’energia que perd el
+fotó la guanya la molècula.</span></summary>
+
+<div class="content"><div class="p"> <span>El principi de conservació de
+l’energia fa que l’energia que perd (o guanya) el fotó
+<span class="inlinemath">(<svg
+viewBox="0 -7.49 42.16 8.32"
+style="width:  4.23em; height:  0.95em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5446.svg#page5412"> </use> </svg></span>) la guanye (o
+perdi) la molècula <span class="inlinemath">(<svg
+viewBox="0 -7.13 16.23 7.13"
+style="width:  1.63em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5447.svg#page5413"> </use> </svg></span>), </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 99.84 10.48"
+style="width: 10.02em; height:  1.17em;"> <use
+xlink:href="images/img5448.svg#page5414"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 84.69 10.48"
+style="width:  8.50em; height:  1.17em;"> <use
+xlink:href="images/img5449.svg#page5415"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Aquesta variació d’energia
+<span class="inlinemath"><svg
+viewBox="0 -7.13 16.23 7.13"
+style="width:  1.63em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5450.svg#page5416"> </use> </svg></span> ha de
+correspondre a la diferencia d’energia entre dos estats moleculars, i
+constitueix la base de l’anomenada </span><span class="itshape" >Espectroscòpia
+Raman</span>. <span>En parlarem</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 81.93 10.48"
+style="width:  8.22em; height:  1.17em;"> <use
+xlink:href="images/img5451.svg#page5417"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >La dispersió
+Raman és un fenomen </span><span class="itshape sffamily" >molt
+dèbil.</span></summary>
+
+<div class="content"><div class="p"> <span>La dispersió Raman és un fenomen mol
+dèbil, i la majoria dels fotons experimenten dispersió Rayleigh</span>.
+<span>Típicament, només 1 de cada <span class="inlinemath"><svg
+viewBox="0 -8.11 13.93 8.11"
+style="width:  1.40em; height:  0.93em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5452.svg#page5418"> </use> </svg></span> fotons
+dispersats ho és per l’efecte Raman</span>. </div>
+
+<div class="p"> <span>En la pràctica, això força l’ús de fonts de llum molt
+intenses (làsers) per a poder fer espectroscòpia Raman</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.4&rang;</span> <span class="sffamily" >Compte!</span>
+<span class="sffamily" >La dispersió Raman </span><span class="itshape
+sffamily" >no</span><span class="sffamily" > és una absorció seguida d’una
+emissió.</span></summary>
+
+<div class="content"><div class="p"> <span>La dispersió Raman </span><span
+class="itshape" >no</span><span> és l’absorció d’un fotó per una molècula
+seguida de l’emissió d’un altre fotó de freqüència diferent</span>. <span>És un
+procés diferent</span>. <span>Això implica que els principis de
+l’espectroscòpia Raman són diferents dels de l’espectroscòpia de
+microones</span>. <span>En particular, les regles de selecció són
+diferents</span>. </div>
+
+</div></details>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily" >El camp elèctric
+de la radiació electromagnètica </span><span class="itshape sffamily"
+>indueix</span><span class="sffamily" > un moment dipolar.</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary> <span>&vert;3.1&rang;</span> <span class="sffamily" >Un camp elèctric
+<span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5453.svg#page5419"> </use> </svg></span> indueix un dipol
+elèctric <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5454.svg#page5420"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Encara que una molècula no tingui un
+moment dipolar </span><span class="itshape" >permanent</span><span>, la
+presència d’un camp elèctric distorsiona el ‘núvol’ electrònic de la molècula i
+pot generar un moment dipolar </span><span class="itshape" >induït</span>.
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.2&rang;</span> <span class="sffamily" >La </span><span
+class="itshape sffamily" >polaritzabilitat</span><span class="sffamily" >
+<span class="inlinemath"><svg
+viewBox="0 -4.43 7.58 4.43"
+style="width:  0.76em; height:  0.56em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5455.svg#page5421"> </use> </svg></span> quantifica la
+relació entre <span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5456.svg#page5422"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5457.svg#page5423"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La relació entre el </span><span
+class="itshape" >moment dipolar induït</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5458.svg#page5424"> </use> </svg></span> i el
+</span><span class="itshape" >camp elèctric</span><span> inductor
+<span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5459.svg#page5425"> </use> </svg></span> es quantifica
+amb l’anomenada </span><span class="itshape" >polaritzabilitat</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -4.43 7.58 4.43"
+style="width:  0.76em; height:  0.56em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5460.svg#page5426"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 37.56 11.57"
+style="width:  3.77em; height:  1.28em;"> <use
+xlink:href="images/img5461.svg#page5427"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.64 34.92 11.57"
+style="width:  3.50em; height:  1.28em;"> <use
+xlink:href="images/img5462.svg#page5428"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.3&rang;</span> <span class="sffamily" >La </span><span
+class="itshape sffamily" >polaritzabilitat</span><span class="sffamily" > és
+una matriu <span class="inlinemath"><svg
+viewBox="0 -6.27 22.14 7.1"
+style="width:  2.22em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5463.svg#page5429"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Matemàticament, la polaritzabilitat
+s’expressa com una matriu <span class="inlinemath"><svg
+viewBox="0 -6.27 22.14 7.1"
+style="width:  2.22em; height:  0.83em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5464.svg#page5430"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -20.51 115.53 36.04"
+style="width: 11.60em; height:  3.74em;"> <use
+xlink:href="images/img5465.svg#page5431"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>La relació entre <span class="inlinemath"><svg
+viewBox="0 -7.47 68.3 10.32"
+style="width:  6.85em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5466.svg#page5432"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.64 74.27 12.49"
+style="width:  7.46em; height:  1.37em; vertical-align: -0.35em;"> <use
+xlink:href="images/img5467.svg#page5433"> </use> </svg></span> queda, en forma
+matricial, com </span> </div>
+
+<table class="equation" id="ref::ro1:ram:MuMatriu"><tr><td><svg
+class="equation" viewBox="0 -20.51 185.03 36.04"
+style="width: 18.57em; height:  3.74em;"> <use
+xlink:href="images/img5468.svg#page5434"> </use>
+</svg></td><td>(10.3)</td></tr></table>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -20.51 180.6 36.04"
+style="width: 18.13em; height:  3.74em;"> <use
+xlink:href="images/img5469.svg#page5435"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.4&rang;</span> <span class="sffamily" >En general,
+<span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5470.svg#page5436"> </use> </svg></span> no és
+proporcional a <span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5471.svg#page5437"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>L’Eq. (</span><a
+href="sections/section.10.6.html#ref::ro1:ram:MuMatriu">10.3</a><span>) ens
+mostra que la relació entre <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5472.svg#page5438"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5473.svg#page5439"> </use> </svg></span> és
+complicada</span>. <span>En general, <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5474.svg#page5440"> </use> </svg></span> </span><span
+class="itshape" >no</span><span> és proporcional a
+<span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5475.svg#page5441"> </use> </svg></span>, ja que
+<span class="inlinemath"><svg
+viewBox="0 -4.43 7.58 4.43"
+style="width:  0.76em; height:  0.56em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5476.svg#page5442"> </use> </svg></span> és una matriu i
+no simplement un escalar</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3.5&rang;</span> <span class="sffamily" >Si
+<span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5477.svg#page5443"> </use> </svg></span> és proporcional
+a <span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5478.svg#page5444"> </use> </svg></span>, direm que la
+polaritzabilitat és </span><span class="itshape sffamily"
+>isòtropa.</span></summary>
+
+<div class="content"><div class="p"> <span>Malgrat tot, per a certes molècules
+amb molta simetria (com ara el metà <span class="inlinemath"><svg
+viewBox="0 -6.86 18.64 8.36"
+style="width:  1.87em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img5479.svg#page5445"> </use> </svg></span>), el moment
+dipolar induït <span class="inlinemath"><svg
+viewBox="0 -7.12 6.54 9.05"
+style="width:  0.66em; height:  1.03em; vertical-align: -0.25em;"> <use
+xlink:href="images/img5480.svg#page5446"> </use> </svg></span> és igual al camp
+elèctric <span class="inlinemath"><svg
+viewBox="0 -9.64 8.05 9.64"
+style="width:  0.81em; height:  1.09em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5481.svg#page5447"> </use> </svg></span> multiplicat per
+un escalar, cosa que implica el següent </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -20.51 214.16 36.04"
+style="width: 21.50em; height:  3.74em;"> <use
+xlink:href="images/img5482.svg#page5448"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Direm aleshores que la polaritzabilitat és
+</span><span class="itshape" >isòtropa</span>. <span>En cas contrari la
+polaritzabilitat serà </span><span class="itshape" >anisòtropa</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -20.51 209.73 36.04"
+style="width: 21.05em; height:  3.74em;"> <use
+xlink:href="images/img5483.svg#page5449"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Només les
+molècules amb polaritzabilitat </span><span class="itshape sffamily"
+>anisòtropa</span><span class="sffamily" > provoquen </span><span
+class="itshape sffamily" >dispersió Raman.</span></summary>
+
+<div class="content"></div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;5&rang;</span> <span class="sffamily" >L’espectroscòpia
+Raman es pot aplicar a la rotació de molècules </span><span class="itshape
+sffamily" >apolars.</span></summary>
+
+<div class="content"><div class="p"> <span>Totes les molècules diatòmiques
+tenen polaritzabilitat </span><span class="itshape" >anisòtropa</span><span>,
+per la qual cosa totes elles es podran estudiar mitjançant l’</span><span
+class="itshape" >espectroscòpia Raman</span>. </div>
+
+<div class="p"> <span>Això representa un avantatge davant l’espectroscòpia de
+microones, que requereix molècules polars, cosa que exclou les molècules
+diatòmiques homonuclears</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Una transició
+Raman rotacional canvia la part rotacional de la funció d’ona.</span></summary>
+
+<div class="content"><div class="p"> <span>Suposem que una molècula en un estat
+inicial <span class="inlinemath"><svg
+viewBox="0 -7.49 9.77 7.49"
+style="width:  0.98em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5484.svg#page5450"> </use> </svg></span> provoca la
+dispersió Raman d’un fotó amb freqüència inicial <span class="inlinemath"><svg
+viewBox="0 -7.49 7.85 7.49"
+style="width:  0.79em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5485.svg#page5451"> </use> </svg></span></span>.
+<span>Com a conseqüència de la dispersió, la freqüència del fotó canvia a
+<span class="inlinemath"><svg
+viewBox="0 -7.49 10.15 7.49"
+style="width:  1.02em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5486.svg#page5452"> </use> </svg></span> i l’estat de la
+molècula passa a <span class="inlinemath"><svg
+viewBox="0 -7.49 12.07 7.49"
+style="width:  1.21em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5487.svg#page5453"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 95.93 8.81"
+style="width:  9.63em; height:  1.00em;"> <use
+xlink:href="images/img5488.svg#page5454"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>En una transició rotacional, l’únic canvi en
+l’estat de la molècula es produirà en la part rotacional de la funció d’ona,
+</span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.89 55.77 12.49"
+style="width:  5.60em; height:  1.37em;"> <use
+xlink:href="images/img5489.svg#page5455"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.89 55.77 12.49"
+style="width:  5.60em; height:  1.37em;"> <use
+xlink:href="images/img5490.svg#page5456"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;7&rang;</span> <span class="sffamily" >Per a transicions
+Raman rotacionals, les regles de selecció són diferents.</span></summary>
+
+<div class="content"><div class="p"> <span>Com les transicions Raman són
+diferents de les transicions espectroscòpiques de microones, les regles de
+selecció també seran diferents</span>. </div>
+
+<div class="law">
+<div class="p"><strong><span>Regles de selecció per a transicions Raman
+rotacionals</span></strong>. <span>Per a una molècula diatòmica, la transició
+Raman rotacional </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.89 55.77 12.49"
+style="width:  5.60em; height:  1.37em;"> <use
+xlink:href="images/img5491.svg#page5457"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>només estarà permesa si es compleix la següent
+condició, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 99.29 9.93"
+style="width:  9.97em; height:  1.12em;"> <use
+xlink:href="images/img5492.svg#page5458"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p noindent"> <span>La transició <span class="inlinemath"><svg
+viewBox="0 -7.13 33.05 7.13"
+style="width:  3.32em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5493.svg#page5459"> </use> </svg></span> correspon a la
+dispersió Rayleigh <span class="inlinemath">(<svg
+viewBox="0 -7.49 31.78 7.49"
+style="width:  3.19em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5494.svg#page5460"> </use> </svg></span>) i la ignorarem,
+mentre que les transicions <span class="inlinemath"><svg
+viewBox="0 -6.81 45.62 7.63"
+style="width:  4.58em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5495.svg#page5461"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 45.62 7.63"
+style="width:  4.58em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5496.svg#page5462"> </use> </svg></span> corresponen
+respectivament a transicions Stokes <span class="inlinemath">(<svg
+viewBox="0 -7.49 31.78 7.88"
+style="width:  3.19em; height:  0.91em; vertical-align: -0.10em;"> <use
+xlink:href="images/img5497.svg#page5463"> </use> </svg></span>) i anti-Stokes
+<span class="inlinemath">(<svg
+viewBox="0 -7.49 31.78 7.88"
+style="width:  3.19em; height:  0.91em; vertical-align: -0.10em;"> <use
+xlink:href="images/img5498.svg#page5464"> </use> </svg></span>)</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8&rang;</span> <span class="sffamily" >L’espectre Raman
+rotacional té dues branques:</span> <span class="sffamily" >Stokes i
+anti-Stokes.</span></summary>
+
+<div class="content"><div class="p"> <span>Un esquema d’un espectre Raman
+rotacional es mostra en la figura </span><a
+href="sections/section.10.6.html#ref::ro1:ram:espectre">10.5</a><span>, on
+s’aprecien clarament les branques Stokes i anti-Stokes</span>. </div>
+
+<div class="figure" id="ref::ro1:ram:espectre">
+<div class="p"><span class="picture"><svg class="picture"
+viewBox="1.6 -245.67 225.54 247.3"
+style="width: 22.64em; height: 24.94em;"> <use
+xlink:href="images/img5499.svg#page5465"> </use> </svg> </span> </div>
+
+<div class="p caption"> <span>Figura 10.5</span>: <span>Esquema de l’espectre
+de rotació Raman d’una molècula diatòmica heteronuclear</span>. <span>Dalt,
+representació de les energies del rotor rígid i de les transicions Raman
+permeses</span>. <span>Baix, espectre Raman (intensitat
+<span class="inlinemath"><svg
+viewBox="0 -6.81 5.16 6.81"
+style="width:  0.52em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5500.svg#page5466"> </use> </svg></span> en funció de la
+freqüència <span class="inlinemath"><svg
+viewBox="0 -6.27 5.56 6.27"
+style="width:  0.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5501.svg#page5467"> </use> </svg></span>)</span>. </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.1&rang;</span> <span class="sffamily" >Les ratlles
+Stokes <span class="inlinemath">(<svg
+viewBox="0 -6.81 45.62 7.63"
+style="width:  4.58em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5502.svg#page5468"> </use> </svg></span>) disminueixen la
+freqüència del fotó.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 156.9 9.96"
+style="width: 15.75em; height:  1.12em;"> <use
+xlink:href="images/img5503.svg#page5469"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Assumirem el model del rotor rígid</span>. <span>La
+freqüència corresponent a la transició Stokes (foto dispersat) és </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 149.12 10.48"
+style="width: 14.97em; height:  1.17em;"> <use
+xlink:href="images/img5504.svg#page5470"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>on <span class="inlinemath"><svg
+viewBox="0 -7.49 7.85 7.49"
+style="width:  0.79em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5505.svg#page5471"> </use> </svg></span> és la freqüència
+del fotó abans de la dispersió (anomenada </span><span class="itshape"
+>freqüència excitatriu</span><span>, i que correspon a la freqüència Rayleigh)
+i <span class="inlinemath"><svg
+viewBox="0 -7.47 22.02 9.96"
+style="width:  2.21em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5506.svg#page5472"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -7.47 39.18 9.96"
+style="width:  3.93em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5507.svg#page5473"> </use> </svg></span> són els valors
+dels termes del rotor rígid amb nombres quàntics respectius
+<span class="inlinemath"><svg
+viewBox="0 -6.81 6.48 6.81"
+style="width:  0.65em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5508.svg#page5474"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 23.64 7.63"
+style="width:  2.37em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5509.svg#page5475"> </use> </svg></span></span>. </div>
+
+<div class="p"> <span>Per l’expressió de <span class="inlinemath"><svg
+viewBox="0 -7.47 22.02 9.96"
+style="width:  2.21em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5510.svg#page5476"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.10.3.html#ref::ro1:rig:FJB"
+>§10.3&vert;1.7&rang;</a><span> tindrem que </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 33.08 8.59"
+style="width:  3.32em; height:  0.98em; vertical-align: -0.29em;"> <use
+xlink:href="images/img5511.svg#page5477"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5512.svg#page5478"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 148.66 10.48"
+style="width: 14.92em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5513.svg#page5479"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5514.svg#page5480"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -8.61 160.15 12.14"
+style="width: 16.07em; height:  1.34em; vertical-align: -0.41em;"> <use
+xlink:href="images/img5515.svg#page5481"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>és a dir, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 114.59 10.48"
+style="width: 11.50em; height:  1.17em;"> <use
+xlink:href="images/img5516.svg#page5482"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 111.82 10.48"
+style="width: 11.22em; height:  1.17em;"> <use
+xlink:href="images/img5517.svg#page5483"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.2&rang;</span> <span class="sffamily" >Les ratlles
+anti-Stokes <span class="inlinemath">(<svg
+viewBox="0 -6.81 45.62 7.63"
+style="width:  4.58em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5518.svg#page5484"> </use> </svg></span>) augmenten la
+freqüència del fotó.</span></summary>
+
+<div class="content"><div class="p"> <span>De manera similar, la freqüència per
+a la transició anti-Stokes serà </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 114.59 10.48"
+style="width: 11.50em; height:  1.17em;"> <use
+xlink:href="images/img5519.svg#page5485"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 111.82 10.48"
+style="width: 11.22em; height:  1.17em;"> <use
+xlink:href="images/img5520.svg#page5486"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.3&rang;</span> <span class="sffamily" >El </span><span
+class="itshape sffamily" >desplaçament Raman</span><span class="sffamily" >
+<span class="inlinemath"><svg
+viewBox="0 -7.13 13.86 7.13"
+style="width:  1.39em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5521.svg#page5487"> </use> </svg></span> és la distància
+a la </span><span class="itshape sffamily" >freqüència excitatriu</span><span
+class="sffamily" > <span class="inlinemath"><svg
+viewBox="0 -7.49 7.85 7.49"
+style="width:  0.79em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5522.svg#page5488"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 111.82 10.48"
+style="width: 11.22em; height:  1.17em;"> <use
+xlink:href="images/img5523.svg#page5489"> </use> </svg></span> </div>
+
+</div>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 111.82 10.48"
+style="width: 11.22em; height:  1.17em;"> <use
+xlink:href="images/img5524.svg#page5490"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>El </span><span class="itshape" >desplaçament
+Raman</span><span> <span class="inlinemath">(<svg
+viewBox="0 -7.13 13.86 7.13"
+style="width:  1.39em; height:  0.84em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5525.svg#page5491"> </use> </svg></span>) es defineix com
+el valor absolut de la diferència entre la freqüència d’una ratlla determinada
+i la </span><span class="itshape" >freqüència excitatriu</span><span>
+<span class="inlinemath"><svg
+viewBox="0 -7.49 7.85 7.49"
+style="width:  0.79em; height:  0.87em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5526.svg#page5492"> </use> </svg></span></span>. <span>El
+valor respectiu del desplaçament Raman per a ratlles Stokes i anti-Stokes és el
+següent, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.13 41.38 9.45"
+style="width:  4.15em; height:  1.07em; vertical-align: -0.29em;"> <use
+xlink:href="images/img5527.svg#page5493"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5528.svg#page5494"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 117.35 10.48"
+style="width: 11.78em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5529.svg#page5495"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.13 41.38 9.45"
+style="width:  4.15em; height:  1.07em; vertical-align: -0.29em;"> <use
+xlink:href="images/img5530.svg#page5496"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5531.svg#page5497"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 120.12 10.48"
+style="width: 12.06em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5532.svg#page5498"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Veiem que, independentment de si una determinada
+transició <span class="inlinemath"><svg
+viewBox="0 -6.81 45.62 7.63"
+style="width:  4.58em; height:  0.89em; vertical-align: -0.14em;"> <use
+xlink:href="images/img5533.svg#page5499"> </use> </svg></span> és Stokes o
+anti-Stokes, el valor del desplaçament Raman és el mateix, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 212.69 9.96"
+style="width: 21.35em; height:  1.12em;"> <use
+xlink:href="images/img5534.svg#page5500"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 209.93 9.96"
+style="width: 21.07em; height:  1.12em;"> <use
+xlink:href="images/img5535.svg#page5501"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.4&rang;</span> <span class="sffamily" >El desplaçament
+Raman de la primera ratlla de cada branca és <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5536.svg#page5502"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>A partir de l’expressió del
+desplaçament Raman, concloem que per a la primera ratlla de cada branca
+(transicions <span class="inlinemath"><svg
+viewBox="0 -6.27 25.46 6.27"
+style="width:  2.56em; height:  0.75em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5537.svg#page5503"> </use> </svg></span>) el desplaçament
+és </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.13 58.69 8.63"
+style="width:  5.89em; height:  0.99em;"> <use
+xlink:href="images/img5538.svg#page5504"> </use> </svg></span> </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;8.5&rang;</span> <span class="sffamily" >L’espaiat entre
+dues ratlles consecutives de la mateixa branca és <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5539.svg#page5505"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.99 111.82 10.48"
+style="width: 11.22em; height:  1.17em;"> <use
+xlink:href="images/img5540.svg#page5506"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>La diferencia de freqüència entre dues ratlles
+consecutives de la branca Stokes és </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.29 4.04 4.29"
+style="width:  0.41em; height:  0.55em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5541.svg#page5507"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5542.svg#page5508"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.27 88.93 8.59"
+style="width:  8.93em; height:  0.98em; vertical-align: -0.29em;"> <use
+xlink:href="images/img5543.svg#page5509"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5544.svg#page5510"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -7.99 180.38 10.48"
+style="width: 18.11em; height:  1.17em; vertical-align: -0.31em;"> <use
+xlink:href="images/img5545.svg#page5511"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5546.svg#page5512"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 15.81 6.81"
+style="width:  1.59em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5547.svg#page5513"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span>Per a la branca anti-Stokes, la diferencia entre
+ratlles consecutives és també <span class="inlinemath"><svg
+viewBox="0 -6.81 13.04 6.81"
+style="width:  1.31em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img5548.svg#page5514"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.10.6.html#top"> <svg
+class="icon top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg>
+</a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>

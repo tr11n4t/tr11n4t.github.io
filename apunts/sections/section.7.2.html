@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html id="top" lang="ca" translate="no">
+<head>
+<meta charset="utf-8">
+<title>Aproximació de Born-Oppenheimer | Hamiltonians electrònic i
+nuclear</title>
+<meta name="description" content="L’estudi de les molècules en mecànica
+quàntica es fa amb l’aproximació de Born-Oppenheimer, fent servir hamiltonians
+electrònics i nuclears.">
+<base href="..">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical"
+href="https://tr11n4t.github.io/apunts/sections/section.7.2.html">
+<link rel="stylesheet" href="apunts.css">
+<script defer src="apunts.js"></script>
+</head>
+<body>
+
+<!-- Begining of SVG markup for icons -->
+<svg class="iconsdefs">
+<defs>
+
+<g id="icon-menu" fill="none" stroke="currentColor">
+<title>Menu</title>
+<path stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88
+152h336M88 256h336M88 360h336"/>
+</g>
+
+<g id="icon-contract" fill="none" stroke="currentColor">
+<title>Contract</title>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304
+416V304h112M314.2 314.23L432 432M208 96v112H96M197.8 197.77L80 80M416
+208H304V96M314.23 197.8L432 80M96 304h112v112M197.77 314.2L80 432"/>
+</g>
+
+<g id="icon-home" fill="currentColor">
+<title>Home</title>
+<path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9
+448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16
+16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/> <path
+d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16
+16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14
+8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8
+8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36
+5.63-16.86-.76-22.97z"/>
+</g>
+
+<g id="icon-previous" fill="currentColor">
+<title>Previous</title>
+<path d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48
+48 141.13 48 256zm252 108.27L169.91 256 300 147.73z"/>
+</g>
+
+<g id="icon-up" fill="currentColor">
+<title>Up one level</title>
+<path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13
+208-208S370.87 48 256 48zM147.73 300L256 169.91 364.27 300z"/>
+</g>
+
+<g id="icon-next" fill="currentColor">
+<title>Next</title>
+<path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208
+208-93.13 208-208zM212 147.73L342.09 256 212 364.27z"/>
+</g>
+
+<g id="icon-downright" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="32">
+<title>Downright</title>
+<path d="M400 352l64-64-64-64"/>
+<path d="M448 288H154c-58.76 0-106-49.33-106-108v-20"/>
+</g>
+
+<g id="icon-search" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="40">
+<title>Search</title>
+<path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09
+64z"/>
+<path d="M338.29 338.29L448 448"/>
+</g>
+
+<g id=icon-gear fill="currentColor" stroke="currentColor">
+<title>Settings</title>
+<path d="M256 176a80 80 0 1080 80 80.24 80.24 0 00-80-80zm172.72 80a165.53
+165.53 0 01-1.64 22.34l48.69 38.12a11.59 11.59 0 012.63 14.78l-46.06
+79.52a11.64 11.64 0 01-14.14 4.93l-57.25-23a176.56 176.56 0 01-38.82
+22.67l-8.56 60.78a11.93 11.93 0 01-11.51 9.86h-92.12a12 12 0
+01-11.51-9.53l-8.56-60.78A169.3 169.3 0 01151.05 393L93.8 416a11.64 11.64 0
+01-14.14-4.92L33.6 331.57a11.59 11.59 0 012.63-14.78l48.69-38.12A174.58 174.58
+0 0183.28 256a165.53 165.53 0 011.64-22.34l-48.69-38.12a11.59 11.59 0
+01-2.63-14.78l46.06-79.52a11.64 11.64 0 0114.14-4.93l57.25 23a176.56 176.56 0
+0138.82-22.67l8.56-60.78A11.93 11.93 0 01209.94 26h92.12a12 12 0 0111.51
+9.53l8.56 60.78A169.3 169.3 0 01361 119l57.2-23a11.64 11.64 0 0114.14
+4.92l46.06 79.52a11.59 11.59 0 01-2.63 14.78l-48.69 38.12a174.58 174.58 0
+011.64 22.66z"/>
+</g>
+
+<g id="icon-top" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="48">
+<title>Top</title>
+<path d="M112 244l144-144 144 144M256 120v292"/>
+</g>
+
+</defs>
+</svg>
+<!-- End of SVG markup for icons -->
+
+<header class="notfront">
+
+<details>
+<summary>
+<svg class="icon menu" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-menu"/> </svg>
+<svg class="icon contract" viewBox="0 0 512 512" stroke="currentColor"> <use
+xlink:href="#icon-contract"/> </svg>
+</summary>
+
+<nav>
+
+<ul class="breadcrumbs">
+
+<li><a href="index.html"><span>Apunts de Química Quàntica i
+Espectroscòpia</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.I.html"><span>I Química Quàntica </span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><a
+href="sections/section.7.html"><span>7 Introducció a l’estudi de molècules
+</span></a></li>
+
+<li><svg class="icon downright" viewBox="0 0 512 512"> <use
+xlink:href="#icon-downright"/> </svg><span>7.2 Aproximació de Born-Oppenheimer
+</span></li>
+
+</ul>
+
+<ul class="iconbar">
+
+<li class="logo"><a href="index.html"><span class="inlinemath"><svg
+viewBox="0 -6.86 47.19 9.3"
+style="width:  4.74em; height:  1.05em; vertical-align: -0.30em;"> <use
+xlink:href="images/img3371.svg#page3349"> </use> </svg></span></a></li>
+
+<li> <a href="index.html"> <svg class="icon home" viewBox="0 0 512 512"> <use
+xlink:href="#icon-home"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.1.html"> <svg class="icon previous" viewBox="0
+0 512 512"> <use xlink:href="#icon-previous"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.html"> <svg class="icon up" viewBox="0 0 512
+512"> <use xlink:href="#icon-up"/></svg> </a> </li>
+
+<li> <a href="sections/section.7.3.html"> <svg class="icon next" viewBox="0 0
+512 512"> <use xlink:href="#icon-next"/></svg> </a> </li>
+
+<li class="searchbar"> <details><summary>
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+</summary><form id="searchform">
+<svg class="icon search" viewBox="0 0 512 512"> <use
+xlink:href="#icon-search"/></svg>
+<input type="text" placeholder="tr11n4t.github.io/apunts" required>
+</form>
+</details>
+</li>
+
+<!-- Beginning of settings menu -->
+<li class="settings"> <details><summary>
+<svg class="icon gear" viewBox="0 0 512 512"> <use
+xlink:href="#icon-gear"/></svg>
+</summary><div>
+
+<fieldset id="foldSetting">
+  <legend>Plegar/Desplegar</legend>
+  <label>
+    <input type="radio" name="foldSetting" value="folded">
+    <span>Plegat</span>
+  </label>
+  <label>
+    <input type="radio" name="foldSetting" value="unfolded" checked>
+    <span>Desplegat</span>
+  </label>
+</fieldset>
+
+</div></details>
+</li>
+<!-- End settings menu -->
+
+</ul>
+
+</nav>
+</details>
+
+</header>
+
+<main>
+
+<h4 class="section" id="ref::mol:bor">  <span>7.2  Aproximació de
+Born-Oppenheimer</span> </h4>
+
+<div class="p center"><table class="tabular"><tbody> <!-- begin tabular-like
+environment -->
+<tr><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://commons.wikimedia.org/wiki/File:Max_Born.jpg"
+><span>commons.wikimedia</span></a><img src="images/img3372.jpg" alt="included
+image" style="width: 11.03em; height: 14.23em;"></span></span>
+</td><td class="c">
+
+</td><td class="c">
+ <span class="ttfamily tiny" ><span class="includeimg"><a
+href="https://en.wikipedia.org/wiki/File:Oppenheimer_(cropped).jpg"
+><span>commons.wikimedia</span></a><img src="images/img3373.jpg" alt="included
+image" style="width: 11.14em; height: 14.28em;"></span></span>
+</td></tr>
+<tr><td class="c">
+ <span class="footnotesize" >M. Born</span>
+</td><td class="c">
+
+</td><td class="c">
+ <span class="footnotesize" >J. R. Oppenheimer</span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;1&rang;</span> <span class="sffamily" >Com es veuen els
+electrons i els nuclis entre ells?</span></summary>
+
+<div class="content"><div class="p"> <span>Els nuclis són molt més pesants que
+els electrons, cosa que fa que els primers es moguin molt més lentament que els
+segons</span>. <span>Com a conseqüència, els nuclis, des del punt de vista dels
+electrons, sembla que estiguin parats</span>. <span>D’altra banda, els
+electrons, des del punt de vist dels nuclis, més que partícules amb una posició
+concreta, semblen les distribucions de càrrega (com ‘núvols’ de càrrega) que
+corresponen a la mitjana de les posicions electròniques</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mol:bor:Helectronic"> <span>&vert;2&rang;</span> <span
+class="sffamily" >Electrons:</span> <span class="sffamily" >un </span><span
+class="itshape sffamily" >hamiltonià electrònic</span><span class="sffamily"
+><span class="inlinemath"> <svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3374.svg#page3350"> </use> </svg></span>
+(fictici).</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 320.95 42.5"
+style="width: 32.21em; height:  4.39em;"> <use
+xlink:href="images/img3375.svg#page3351"> </use> </svg></span> </div>
+
+</div>
+
+<div class="law">
+<div class="p"><strong><span>Hamiltonià electrònic
+<span class="inlinemath"><svg
+viewBox="0 -9.38 99.61 12.23"
+style="width: 10.00em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3376.svg#page3352"> </use> </svg></span></span></strong>.
+<span>Per a una determinada posició dels nuclis <span class="inlinemath"><svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3377.svg#page3353"> </use> </svg></span>, el </span><span
+class="itshape" >hamiltonià electrònic</span><span> d’una molècula es defineix
+com </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 204.89 42.5"
+style="width: 20.57em; height:  4.39em;"> <use
+xlink:href="images/img3378.svg#page3354"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.1&rang;</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3379.svg#page3355"> </use> </svg></span> representa un
+sistema </span><span class="itshape sffamily" >fictici.</span></summary>
+
+<div class="content"><div class="p"> <span>Aquest hamiltonià representa un
+sistema </span><span class="itshape" >fictici</span><span> compost només pels
+electrons de la molècula, considerant que els nuclis estan immòbils (i per tant
+no tenen energia cinètica i la repulsió nucli-nucli és una
+constant)</span>.</div> </div>
+
+</details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.2&rang;</span> <span class="sffamily" >Per cada
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3380.svg#page3356"> </use> </svg></span> tindrem un
+<span class="inlinemath"><svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3381.svg#page3357"> </use> </svg></span>
+diferent.</span></summary>
+
+<div class="content"><div class="p"> <span>Atès que les distàncies
+<span class="inlinemath">nucli-electró <svg
+viewBox="0 -4.29 11.63 5.78"
+style="width:  1.17em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3382.svg#page3358"> </use> </svg></span> depenen de les
+coordenades <span class="inlinemath">nuclears <svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3383.svg#page3359"> </use> </svg></span>, tindrem
+<span class="inlinemath">que <svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3384.svg#page3360"> </use> </svg></span>, més que un
+operador, representa un conjunt </span><span class="itshape"
+>infinit</span><span> d’operadors, un per cada posició diferent dels
+nuclis</span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary> <span>&vert;2.3&rang;</span> <span class="sffamily" >Els nuclis
+</span><span class="itshape sffamily" >no</span><span class="sffamily" >
+compten com partícules del sistema.</span></summary>
+
+<div class="content"><div class="p"> <span>Alerta</span>! <span>El hamiltonià
+electrònic és un sistema fictici compost només pels electrons de la molècula,
+<span class="inlinemath"><svg
+viewBox="0 -9.38 76.64 12.23"
+style="width:  7.69em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3385.svg#page3361"> </use> </svg></span></span>.
+<span>Els nuclis no compten com a partícules dels sistema electrònic</span>.
+<span>La contribució dels nuclis al hamiltonià electrònic és únicament generar
+el potencial d’atracció <span class="inlinemath">nucli-electró <svg
+viewBox="0 -9.38 14.52 10.88"
+style="width:  1.46em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3386.svg#page3362"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mol:bor:Eetau"> <span>&vert;2.4&rang;</span> <span
+class="sffamily" >Autofuncions i autovalors:</span> <span class="sffamily"
+><span class="inlinemath"><svg
+viewBox="0 -7.47 39.34 10.32"
+style="width:  3.95em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3387.svg#page3363"> </use> </svg></span> i
+<span class="inlinemath"><svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3388.svg#page3364"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Les autofuncions i autovalors dels
+hamiltonià electrònic els simbolitzarem respectivament per
+<span class="inlinemath"><svg
+viewBox="0 -7.47 39.34 10.32"
+style="width:  3.95em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3389.svg#page3365"> </use> </svg></span> i per
+<span class="inlinemath"><svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3390.svg#page3366"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 108 12.23"
+style="width: 10.84em; height:  1.35em;"> <use
+xlink:href="images/img3391.svg#page3367"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>Les funcions <span class="inlinemath"><svg
+viewBox="0 -7.47 39.34 10.32"
+style="width:  3.95em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3392.svg#page3368"> </use> </svg></span> les anomenarem
+</span><span class="itshape" >funcions electròniques</span><span> i són
+funcions de les coordenades electròniques <span class="inlinemath"><svg
+viewBox="0 -4.29 8.14 5.78"
+style="width:  0.82em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3393.svg#page3369"> </use> </svg></span></span>.
+<span>Els <span class="inlinemath">autovalors <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3394.svg#page3370"> </use> </svg></span> els anomenarem
+</span><span class="itshape" >energies electròniques</span>. </div>
+
+<div class="p"> <span>Compte que, com passava amb el hamiltonià electrònic
+<span class="inlinemath"><svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3395.svg#page3371"> </use> </svg></span>, per cada valor
+de les coordenades nuclears <span class="inlinemath"><svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3396.svg#page3372"> </use> </svg></span> tindrem
+autofuncions <span class="inlinemath"><svg
+viewBox="0 -7.47 39.34 10.32"
+style="width:  3.95em; height:  1.16em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3397.svg#page3373"> </use> </svg></span> i autovalors
+<span class="inlinemath"><svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3398.svg#page3374"> </use> </svg></span>
+diferents</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 104.24 12.23"
+style="width: 10.46em; height:  1.35em;"> <use
+xlink:href="images/img3399.svg#page3375"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 200.46 42.5"
+style="width: 20.12em; height:  4.39em;"> <use
+xlink:href="images/img3400.svg#page3376"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;3&rang;</span> <span class="sffamily"
+><span class="inlinemath">Reescrivim <svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3401.svg#page3377"> </use> </svg></span> amb el
+hamiltonià electrònic.</span></summary>
+
+<div class="content"><div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 320.95 42.5"
+style="width: 32.21em; height:  4.39em;"> <use
+xlink:href="images/img3402.svg#page3378"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>Podem, utilitzant la definició de hamiltonià electrònic
+<span class="inlinemath"><svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3403.svg#page3379"> </use> </svg></span>, reescriure el
+hamiltonià molecular que hem vist en </span><a class="sffamily small"
+href="sections/section.7.1.html#ref::mol:int:Hmol"
+>§7.1&vert;1&rang;</a><span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 187.93 41.9"
+style="width: 18.86em; height:  4.33em;"> <use
+xlink:href="images/img3404.svg#page3380"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 184.17 41.9"
+style="width: 18.49em; height:  4.33em;"> <use
+xlink:href="images/img3405.svg#page3381"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4&rang;</span> <span class="sffamily" >Nuclis:</span>
+<span class="sffamily" >un </span><span class="itshape sffamily" >hamiltonià
+nuclear</span><span class="sffamily" ><span class="inlinemath"> <svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3406.svg#page3382"> </use> </svg></span>
+(fictici).</span></summary>
+
+<div class="content"><details open class="foldable prop">
+<summary id="ref::mol:bor:Vnuvol"> <span>&vert;4.1&rang;</span> <span
+class="sffamily" >El ’núvol’ crea un potencial sobre el nuclis:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3407.svg#page3383"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Si, com hem esmentat abans, els
+nuclis veuen els electrons com un núvol de càrrega, hom podria pensar que
+l’efecte d’aquest núvol podria encloure’s dins un terme d’energia potencial
+igual a la energia <span class="inlinemath">electrònica <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3408.svg#page3384"> </use> </svg></span> que hem vist
+en </span><a class="sffamily small"
+href="sections/section.7.2.html#ref::mol:bor:Eetau" >§7.2&vert;2.4&rang;</a>.
+<span>Aquesta hipòtesi pot justificar-se considerant que, si poguérem mesurar
+l’energia dels electrons (i només dels electrons), obtindríem l’autovalor del
+hamiltonià <span class="inlinemath">electrònic, <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3409.svg#page3385"> </use> </svg></span></span>. </div>
+
+</div></details>
+
+<details open class="foldable prop">
+<summary id="ref::mol:bor:Hnuclear"> <span>&vert;4.2&rang;</span> <span
+class="itshape sffamily" >Hamiltonià nuclear:</span> <span class="sffamily"
+><span class="inlinemath">substituïm <svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3410.svg#page3386"> </use> </svg></span>
+<span class="inlinemath">per <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3411.svg#page3387"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="law">
+<div class="p"><strong><span>Hamiltonià <span class="inlinemath">nuclear <svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3412.svg#page3388"> </use> </svg></span></span></strong>.
+<span>El </span><span class="itshape" >hamiltonià nuclear</span><span> d’una
+molècula s’obté quan, en el hamiltonià <span class="inlinemath">molecular <svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3413.svg#page3389"> </use> </svg></span>, la part del
+hamiltonià <span class="inlinemath">electrònic <svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3414.svg#page3390"> </use> </svg></span> és substituïda
+per l’energia <span class="inlinemath">electrònica <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3415.svg#page3391"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 217.19 12.23"
+style="width: 21.80em; height:  1.35em;"> <use
+xlink:href="images/img3416.svg#page3392"> </use> </svg></span> </div>
+
+</div>
+
+<div class="p"> <span>El hamiltonià <span class="inlinemath">nuclear <svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3417.svg#page3393"> </use> </svg></span> representa
+també, com el hamiltonià electrònic, un sistema fictici</span>. <span>Malgrat
+tot, pel raonament que hem fet en </span><a class="sffamily small"
+href="sections/section.7.2.html#ref::mol:bor:Vnuvol"
+>§7.2&vert;4.1&rang;</a><span>, veurem més endavant que ens ajudarà a aproximar
+amb molta precisió les autofuncions i autovalors del hamiltonià
+molecular</span>. </div>
+
+<div class="p"> <span>Fixeu-vos que el hamiltonià nuclear no depèn de les
+coordenades electròniques, i que l’única contribució dels electrons és a través
+de l’energia <span class="inlinemath">electrònica <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3418.svg#page3394"> </use> </svg></span>, </span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 213.92 12.23"
+style="width: 21.47em; height:  1.35em;"> <use
+xlink:href="images/img3419.svg#page3395"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.3&rang;</span> <span class="sffamily" >El potencial per
+als nuclis serà <span class="inlinemath"><svg
+viewBox="0 -9.38 88.6 12.23"
+style="width:  8.89em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3420.svg#page3396"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>El potencial total a què estaran
+sotmesos els nuclis en el hamiltonià nuclear serà la suma de l’energia de
+repulsió nucli-nucli <span class="inlinemath"><svg
+viewBox="0 -9.38 15.66 10.88"
+style="width:  1.57em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3421.svg#page3397"> </use> </svg></span> i del potencial
+del núvol <span class="inlinemath">electrònic <svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3422.svg#page3398"> </use> </svg></span> que acabem de
+conjecturar, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 151.53 41.9"
+style="width: 15.21em; height:  4.33em;"> <use
+xlink:href="images/img3423.svg#page3399"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -29.39 146.61 41.9"
+style="width: 14.72em; height:  4.33em;"> <use
+xlink:href="images/img3424.svg#page3400"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.4&rang;</span> <span class="sffamily" >Podem reescriure
+el hamiltonià nuclear amb <span class="inlinemath"><svg
+viewBox="0 -7.47 25.42 9.96"
+style="width:  2.55em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img3425.svg#page3401"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Podem reescriure el hamiltonià
+<span class="inlinemath">nuclear <svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3426.svg#page3402"> </use> </svg></span> com a suma de
+l’energia cinètica dels <span class="inlinemath">nuclis <svg
+viewBox="0 -9.38 10.75 10.88"
+style="width:  1.08em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3427.svg#page3403"> </use> </svg></span> i l’energia
+<span class="inlinemath">potencial <svg
+viewBox="0 -7.47 25.42 9.96"
+style="width:  2.55em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img3428.svg#page3404"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -28.86 144.78 40.31"
+style="width: 14.53em; height:  4.17em;"> <use
+xlink:href="images/img3429.svg#page3405"> </use> </svg></span> </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -28.86 139.35 40.31"
+style="width: 13.99em; height:  4.17em;"> <use
+xlink:href="images/img3430.svg#page3406"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;4.5&rang;</span> <span class="sffamily" >Les </span><span
+class="itshape sffamily" >funcions nuclears</span><span class="sffamily" > són
+les autofuncions de <span class="inlinemath"><svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3431.svg#page3407"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>La resolució de l’equació
+d’autovalors de <span class="inlinemath"><svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3432.svg#page3408"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 68.88 11.32"
+style="width:  6.91em; height:  1.26em;"> <use
+xlink:href="images/img3433.svg#page3409"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>ens donarà les corresponents
+<span class="inlinemath">autofuncions <svg
+viewBox="0 -6.86 12.67 8.36"
+style="width:  1.27em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3434.svg#page3410"> </use> </svg></span> i
+<span class="inlinemath">autovalors <svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3435.svg#page3411"> </use> </svg></span></span>.
+<span>Les autofuncions, que només depenen de les coordenades nuclears, </span>
+</div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 59.92 9.96"
+style="width:  6.01em; height:  1.12em;"> <use
+xlink:href="images/img3436.svg#page3412"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>s’anomenen </span><span class="itshape"
+>funcions nuclears</span>. </div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 65.61 10.88"
+style="width:  6.59em; height:  1.21em;"> <use
+xlink:href="images/img3437.svg#page3413"> </use> </svg></span> </div>
+
+</div>
+
+</div></details>
+
+<div class="blob">
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -28.86 139.35 40.31"
+style="width: 13.99em; height:  4.17em;"> <use
+xlink:href="images/img3438.svg#page3414"> </use> </svg></span> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary id="ref::mol:bor:BO"> <span>&vert;5&rang;</span> <span
+class="sffamily" >Aproximació de Born-Oppenheimer:</span> <span
+class="sffamily" ><span class="inlinemath"><svg
+viewBox="0 -6.81 33.49 8.3"
+style="width:  3.36em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3439.svg#page3415"> </use>
+</svg></span>.</span></summary>
+
+<div class="content"><div class="p"> <span>Resumint el que hem exposat fins
+ara, tenim tres hamiltonians (molecular <span class="inlinemath"><svg
+viewBox="0 -9.38 9.09 9.38"
+style="width:  0.91em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3440.svg#page3416"> </use> </svg></span>, electrònic
+<span class="inlinemath"><svg
+viewBox="0 -9.38 22.49 12.23"
+style="width:  2.26em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3441.svg#page3417"> </use> </svg></span> i nuclear
+<span class="inlinemath"><svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3442.svg#page3418"> </use> </svg></span>), les equacions
+d’autovalors dels quals escrivim a continuació, </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 16.84 9.38"
+style="width:  1.69em; height:  1.06em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3443.svg#page3419"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3444.svg#page3420"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 15.68 6.86"
+style="width:  1.57em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3445.svg#page3421"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 45.44 12.23"
+style="width:  4.56em; height:  1.35em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3446.svg#page3422"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3447.svg#page3423"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 44.52 9.71"
+style="width:  4.47em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3448.svg#page3424"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -9.38 26.38 10.88"
+style="width:  2.65em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3449.svg#page3425"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -3.8 7.75 3.8"
+style="width:  0.78em; height:  0.50em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3450.svg#page3426"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 28.72 8.36"
+style="width:  2.88em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3451.svg#page3427"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="law">
+<div class="p"><strong><span>Aproximació de Born-Oppenheimer</span></strong>.
+<span>L’aproximació de Born-Oppenheimer aproxima els
+<span class="inlinemath">autovalors <svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3452.svg#page3428"> </use> </svg></span> i les
+<span class="inlinemath">autofuncions <svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3453.svg#page3429"> </use> </svg></span> del hamiltonià
+molecular com </span> </div>
+
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3454.svg#page3430"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.81 7.75 4.65"
+style="width:  0.78em; height:  0.60em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3455.svg#page3431"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3456.svg#page3432"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3457.svg#page3433"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.81 7.75 4.65"
+style="width:  0.78em; height:  0.60em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3458.svg#page3434"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 38.89 9.71"
+style="width:  3.90em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3459.svg#page3435"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+<div class="p noindent"> <span><span class="inlinemath">on <svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3460.svg#page3436"> </use> </svg></span>
+<span class="inlinemath">i <svg
+viewBox="0 -6.86 12.67 8.36"
+style="width:  1.27em; height:  0.96em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3461.svg#page3437"> </use> </svg></span> són els
+autovalors i autofuncions del hamiltonià nuclear,
+<span class="inlinemath">i <svg
+viewBox="0 -6.86 21.96 9.71"
+style="width:  2.20em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3462.svg#page3438"> </use> </svg></span> les autofuncions
+del hamiltonià electrònic</span>. </div>
+
+</div>
+
+<div class="p noindent"> <span>Farem algunes observacions</span>. </div>
+
+<ul class="itemize"><li>
+
+<div class="p"> <span><span class="inlinemath"><svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3463.svg#page3439"> </use> </svg></span> conté també
+l’energia dels electrons, ja que el terme <span class="inlinemath"><svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3464.svg#page3440"> </use> </svg></span> està inclòs en
+<span class="inlinemath"><svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3465.svg#page3441"> </use> </svg></span></span>. </div>
+
+</li><li>
+
+<div class="p"> <span>L’aproximació es pot justificar rigorosament[<a
+href="sections/biblio.html#bib::PILAR1990">14</a>]</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Més endavant donarem dades que n’il·lustraran la gran
+qualitat</span>. </div>
+
+</li><li>
+
+<div class="p"> <span>Com més pesants siguin els nuclis, més bona serà
+l’aproximació</span>. </div>
+
+</li></ul>
+
+</div></details>
+
+<div class="blob">
+<div class="p center"><table class="eqnarraystar"><tbody> <!-- begin
+tabular-like environment -->
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 7.93 6.81"
+style="width:  0.80em; height:  0.80em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3466.svg#page3442"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.81 7.75 4.65"
+style="width:  0.78em; height:  0.60em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3467.svg#page3443"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3468.svg#page3444"> </use> </svg></span></span>
+</td></tr>
+<tr><td class="r">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 7.75 6.86"
+style="width:  0.78em; height:  0.81em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3469.svg#page3445"> </use> </svg></span></span>
+</td><td class="c">
+ <span><span class="inlinemath"><svg
+viewBox="0 -4.81 7.75 4.65"
+style="width:  0.78em; height:  0.60em; vertical-align: -0.06em;"> <use
+xlink:href="images/img3470.svg#page3446"> </use> </svg></span></span>
+</td><td class="l">
+ <span><span class="inlinemath"><svg
+viewBox="0 -6.86 35.13 9.71"
+style="width:  3.53em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3471.svg#page3447"> </use> </svg></span></span>
+</td></tr>
+</tbody></table><!-- end tabular-like environment --> </div>
+
+</div>
+
+<details open class="foldable prop">
+<summary> <span>&vert;6&rang;</span> <span class="sffamily" >Hem de resoldre
+moltes vegades la part electrònica.</span></summary>
+
+<div class="content"><div class="p"> <span>L’ús de l’aproximació de
+Born-Oppenheimer pot resumir-se en els següents punts</span>. </div>
+
+<ol class="enumerate"><li style="--enum-marker: '1.'">
+
+<div class="p"> <span>Per a cada posició dels nuclis
+<span class="inlinemath"><svg
+viewBox="0 -4.29 9.28 5.78"
+style="width:  0.93em; height:  0.70em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3472.svg#page3448"> </use> </svg></span>, resolem
+l’equació electrònica </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 104.24 12.23"
+style="width: 10.46em; height:  1.35em;"> <use
+xlink:href="images/img3473.svg#page3449"> </use> </svg></span> </div>
+
+<div class="p noindent"> <span>(bé, en la pràctica la resolem només per a
+algunes posicions dels nuclis, i per a la resta interpolem)</span>. </div>
+
+</li><li style="--enum-marker: '2.'">
+
+<div class="p"> <span>Amb tots els valors de <span class="inlinemath"><svg
+viewBox="0 -6.81 21.56 9.66"
+style="width:  2.16em; height:  1.09em; vertical-align: -0.35em;"> <use
+xlink:href="images/img3474.svg#page3450"> </use> </svg></span>, construïm el
+potencial al què estan sotmesos els nuclis, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.55 133.12 26.06"
+style="width: 13.36em; height:  2.74em;"> <use
+xlink:href="images/img3475.svg#page3451"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '3.'">
+
+<div class="p"> <span>Amb <span class="inlinemath"><svg
+viewBox="0 -7.47 25.42 9.96"
+style="width:  2.55em; height:  1.12em; vertical-align: -0.31em;"> <use
+xlink:href="images/img3476.svg#page3452"> </use> </svg></span>, construïm el
+hamiltonià nuclear </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -13.01 129.26 24.47"
+style="width: 12.97em; height:  2.58em;"> <use
+xlink:href="images/img3477.svg#page3453"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '4.'">
+
+<div class="p"> <span>Resolem l’equació d’autovalors de
+<span class="inlinemath"><svg
+viewBox="0 -9.38 13.21 10.88"
+style="width:  1.33em; height:  1.21em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3478.svg#page3454"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -9.38 68.88 11.32"
+style="width:  6.91em; height:  1.26em;"> <use
+xlink:href="images/img3479.svg#page3455"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '5.'">
+
+<div class="p"> <span>Aproximem l’energia total de la molècula com
+<span class="inlinemath">l’autovalor <svg
+viewBox="0 -6.81 12.28 8.3"
+style="width:  1.23em; height:  0.95em; vertical-align: -0.21em;"> <use
+xlink:href="images/img3480.svg#page3456"> </use> </svg></span>, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -6.81 36.76 8.3"
+style="width:  3.69em; height:  0.95em;"> <use
+xlink:href="images/img3481.svg#page3457"> </use> </svg></span> </div>
+
+</li><li style="--enum-marker: '6.'">
+
+<div class="p"> <span>Aproximem l’autofunció total de la molècula com el
+producte de l’autofunció nuclear i l’electrònica, </span> </div>
+
+<div class="p displaymath"> <span><svg class="displaymath"
+viewBox="0 -7.47 126.08 10.32"
+style="width: 12.66em; height:  1.16em;"> <use
+xlink:href="images/img3482.svg#page3458"> </use> </svg></span> </div>
+
+</li></ol>
+
+<div class="p noindent"> <span>L’aproximació de Born-Oppenheimer dóna uns
+resultats molt bons (ho quantificarem més endavant) i s’utilitza en la gran
+majoria dels càlculs mecanoquàntics moleculars</span>. </div>
+
+</div></details>
+
+</main>
+
+<footer>
+
+<div class="ccnotice"> <span><img src="images/ccbysaicon.svg" class="ccicon"
+alt="Creative Commons License Icon"> El contingut està disponible sota la
+llicència </span><a
+href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca">Atribució-CompartirIgual
+4.0</a><span> si no s’indica el contrari</span></div>
+
+</footer>
+
+<div class="back2top"><a href="sections/section.7.2.html#top"> <svg class="icon
+top" viewBox="0 0 512 512"> <use xlink:href="#icon-top"/></svg> </a></div>
+
+<!-- JS code for search bar -->
+<script>
+ document.getElementById("searchform").addEventListener("submit",
+  function(e) {
+   e.preventDefault();
+   window.location.assign(
+    "https://lite.duckduckgo.com/lite/?q=site:tr11n4t.github.io/apunts "
+    + e.currentTarget.children[1].value);
+  });
+</script>
+
+</body>
+</html>
