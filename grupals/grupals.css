@@ -135,35 +135,43 @@ div.p > span {word-spacing: normal;}
   --color-B-black: white;}
 
 /* Rules for logo */
-.logo {max-width: calc(5.0*1.5em); overflow: hidden; white-space: nowrap;
-  font-style: normal; font-variant: small-caps; font-size: calc(0.75*1.5em);
-  font-weight: bolder; text-indent: 0; height: calc(1em/0.75);
-  line-height: calc(1/0.75);}
+.logo {max-width: calc(4.0*1.4em); overflow: hidden; white-space: nowrap;
+  font-style: normal; font-variant: small-caps; font-size: calc(0.70*1.4em);
+  font-weight: bolder; text-indent: 0; height: calc(1em/0.70);
+  line-height: calc(1/0.70); word-spacing: normal;}
 .logo > a {display: inline-block; padding: 0 0.5em; text-decoration: none;}
 .logo > a:link, .logo > a:visited {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
-.logo > a:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  .logo > a:hover {color: var(--color-B-white);
+    background-color: var(--color-B-gray);}
+}
 
 /* Rules for SVG icons */
 svg.iconsdefs {display: none;}
-svg.icon {width: 1.5em;}
+svg.icon {width: 1.4em;}
 
 /* Rules for icon bar */
 ul.iconbar {margin: 0; display: flex; flex-wrap: wrap; justify-content: center;
-  height: 2em; color: var(--color-B-black);
-  background-color: var(--color-B-white);}
-ul.iconbar {width: calc(100% - 1.5em);}
+  color: var(--color-B-black); background-color: var(--color-B-white);}
+ul.iconbar {width: calc(100% - 1.4em);}
 header.front ul.iconbar {width: 100%;}
-ul.iconbar > li {display: inline-block; margin-right: 0.8em;}
-ul.iconbar > li:first-child {margin-left: 0; margin-right: auto;}
-ul.iconbar > li:last-child {margin-right: auto;}
-ul.iconbar > li:not(.logo) > a {display: inline-block; line-height: 0;}
-ul.iconbar > li:not(.logo) a:link,
-  ul.iconbar > li:not(.logo) a:visited {color: var(--color-B-gray);
+ul.iconbar > li {display: inline-block; text-indent: 0; margin-right: 0.8em;}
+header.front ul.iconbar > li:last-child {margin-right: 0.5em;}
+header.front ul.iconbar > li:first-child,
+  header.notfront ul.iconbar > li:first-child {margin-right: auto;}
+header.notfront ul.iconbar > li:nth-child(5) {margin-right: auto;}
+ul.iconbar > li > details {text-indent: 0}
+ul.iconbar > li > details > summary {display: inline-block;}
+/* Hide <summary>’s marker for <details> in icon bar */
+  ul.iconbar > li > details > summary {list-style: none;}
+  ul.iconbar > li > details > summary::-webkit-details-marker {display: none}
+ul.iconbar svg.icon {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
-ul.iconbar > li:not(.logo) a:hover {color: var(--color-B-white);
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  ul.iconbar svg.icon:hover {color: var(--color-B-white);
   background-color: var(--color-B-gray);}
+}
 
 /* Common CSS rules for headers (both front and notfront pages) */
 header {position: -webkit-sticky; position: sticky; top: 0; right: 0;
@@ -178,21 +186,11 @@ div.figure > div.displaymath > span > svg {font-size: 0.8em;}
 footer {margin-top: 1em;}
 .logo {font-variant: normal;}
 
-/* Rule for center alignment */
-.center {text-indent: 0em; text-align: center;}
-
 /* Rule for LARGE text size */
 .LARGE {font-size: 157%;}
 
 /* Rule for large text size */
 .large {font-size: 117%;}
-
-/* Rule for non-indented text */
-.noindent {text-indent: 0em;}
-
-/* Rule for ‘section’ separator */
-.sectionsep {height: 0.2em; color: var(--color-A-black); background-color:
-var(--color-A-black);}
 
 /* Directive for roman bold upright font */
 @font-face{
@@ -202,8 +200,20 @@ var(--color-A-black);}
   font-style: normal;
 }
 
-/* Rule for boldface series */
-.bfseries {font-weight: bolder;}
+/* Rules for ’\maketitle’ command */
+h1.title, address.author, div.date {text-indent: 0; word-spacing: normal;
+  text-align: center; font-style: normal; margin-bottom: 0.5em;
+  color: var(--color-A-black); background-color: var(--color-A-white);}
+h1.title {font-weight: bold;}
+address.author, div.date {font-weight: normal;}
+
+/* Rule for ‘section’ separator */
+.sectionsep {height: 0.2em; color: var(--color-A-black); background-color:
+var(--color-A-black);}
+
+/* Rule for ‘section’ headers */
+h2.section {text-indent: 0; font-weight: bold; font-size: 117%;
+  line-height: 1.2; margin: 0 0 calc(100em / 117) 0; word-spacing: normal;}
 
 /* Rule for ‘question’ and ‘answer’ environments */
 details.question > summary,
@@ -251,6 +261,9 @@ div.displaymath > span:first-child {text-indent: 0em; text-align: center;
   padding-bottom: calc(0.5em - var(--scrollbar-padding));}
 div.displaymath > span > svg {vertical-align: middle; fill: currentColor;}
 
+/* Rule for non-indented text */
+.noindent {text-indent: 0em;}
+
 /* Rule for inline ‘math’ */
 .inlinemath {white-space: nowrap; fill: currentColor;}
 
@@ -261,6 +274,9 @@ ol.enumerate > li::marker {content: var(--enum-marker);}
 
 /* Rule for underlined text */
 .underline {text-decoration: underline;}
+
+/* Rule for center alignment */
+.center {text-indent: 0em; text-align: center;}
 
 /* Rules for ‘eqnarray*’ environments */
 table.eqnarraystar {vertical-align: middle; border-collapse: collapse;
@@ -327,6 +343,9 @@ table.tabular > tbody > tr.hrule + tr.hrule > td { border-top: 0px;
   border-bottom: 1px solid; height: 1px; }
 table.tabular > tbody > tr.hrule > td.noline {border-top: 1px none; }
 
+/* Rule for boldface series */
+.bfseries {font-weight: bolder;}
+
 /* Rules for ‘itemize’ environments */
 ul.itemize {text-indent: 0em; margin-left: 1.3em; margin-right: 0;}
 ul.itemize > li {padding-left: 0.5em;}
@@ -344,9 +363,6 @@ div.p > span:only-child.picture {
   white-space: nowrap; padding-bottom: var(--scrollbar-padding);
   box-sizing: border-box;}
 
-/* Rule for tiny text size */
-.tiny {font-size: 68%;}
-
 /* Rules for ‘notice’ in collection */
 footer > div {border: black 2px solid; padding: 0.5em;
   text-align: center;}
@@ -354,7 +370,7 @@ footer > div {border: black 2px solid; padding: 0.5em;
 /* Rules for footers and ’back2top’ */
 html {height: 100%;}
 body {grid-template-rows: auto 1fr auto; min-height:100%;}
-footer {padding-bottom: 1.5em;}
+footer {padding-bottom: 1.4em;}
 div.back2top {line-height: 0;}
 div.back2top > a {display: block;}
 
@@ -368,5 +384,7 @@ div.back2top {text-indent: 0; position: sticky; bottom: 0; place-self: end;
 footer + div.back2top {grid-row: 1 / span 4;}
 div.back2top svg.top {color: var(--hoverable-fgcolor);
   background-color: var(--hoverable-bgcolor)}
-div.back2top svg.top:hover {color: var(--hoverable-bgcolor);
-  background-color: var(--hoverable-fgcolor)}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  div.back2top svg.top:hover {color: var(--hoverable-bgcolor);
+    background-color: var(--hoverable-fgcolor)}
+}
