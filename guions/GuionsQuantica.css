@@ -135,35 +135,43 @@ div.p > span {word-spacing: normal;}
   --color-B-black: white;}
 
 /* Rules for logo */
-.logo {max-width: calc(5.0*1.5em); overflow: hidden; white-space: nowrap;
-  font-style: normal; font-variant: small-caps; font-size: calc(0.75*1.5em);
-  font-weight: bolder; text-indent: 0; height: calc(1em/0.75);
-  line-height: calc(1/0.75);}
+.logo {max-width: calc(4.0*1.4em); overflow: hidden; white-space: nowrap;
+  font-style: normal; font-variant: small-caps; font-size: calc(0.70*1.4em);
+  font-weight: bolder; text-indent: 0; height: calc(1em/0.70);
+  line-height: calc(1/0.70); word-spacing: normal;}
 .logo > a {display: inline-block; padding: 0 0.5em; text-decoration: none;}
 .logo > a:link, .logo > a:visited {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
-.logo > a:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  .logo > a:hover {color: var(--color-B-white);
+    background-color: var(--color-B-gray);}
+}
 
 /* Rules for SVG icons */
 svg.iconsdefs {display: none;}
-svg.icon {width: 1.5em;}
+svg.icon {width: 1.4em;}
 
 /* Rules for icon bar */
 ul.iconbar {margin: 0; display: flex; flex-wrap: wrap; justify-content: center;
-  height: 2em; color: var(--color-B-black);
-  background-color: var(--color-B-white);}
-ul.iconbar {width: calc(100% - 1.5em);}
+  color: var(--color-B-black); background-color: var(--color-B-white);}
+ul.iconbar {width: calc(100% - 1.4em);}
 header.front ul.iconbar {width: 100%;}
-ul.iconbar > li {display: inline-block; margin-right: 0.8em;}
-ul.iconbar > li:first-child {margin-left: 0; margin-right: auto;}
-ul.iconbar > li:last-child {margin-right: auto;}
-ul.iconbar > li:not(.logo) > a {display: inline-block; line-height: 0;}
-ul.iconbar > li:not(.logo) a:link,
-  ul.iconbar > li:not(.logo) a:visited {color: var(--color-B-gray);
+ul.iconbar > li {display: inline-block; text-indent: 0; margin-right: 0.8em;}
+header.front ul.iconbar > li:last-child {margin-right: 0.5em;}
+header.front ul.iconbar > li:first-child,
+  header.notfront ul.iconbar > li:first-child {margin-right: auto;}
+header.notfront ul.iconbar > li:nth-child(5) {margin-right: auto;}
+ul.iconbar > li > details {text-indent: 0}
+ul.iconbar > li > details > summary {display: inline-block;}
+/* Hide <summary>’s marker for <details> in icon bar */
+  ul.iconbar > li > details > summary {list-style: none;}
+  ul.iconbar > li > details > summary::-webkit-details-marker {display: none}
+ul.iconbar svg.icon {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
-ul.iconbar > li:not(.logo) a:hover {color: var(--color-B-white);
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  ul.iconbar svg.icon:hover {color: var(--color-B-white);
   background-color: var(--color-B-gray);}
+}
 
 /* Common CSS rules for headers (both front and notfront pages) */
 header {position: -webkit-sticky; position: sticky; top: 0; right: 0;
@@ -178,17 +186,26 @@ div.figure > div.displaymath > span > svg {font-size: 0.8em;}
 footer {margin-top: 1em;}
 .logo {font-variant: normal;}
 
-/* Rule for center alignment */
-.center {text-indent: 0em; text-align: center;}
-
 /* Rule for LARGE text size */
 .LARGE {font-size: 157%;}
 
 /* Rule for large text size */
 .large {font-size: 117%;}
 
-/* Rule for non-indented text */
-.noindent {text-indent: 0em;}
+/* Directive for roman bold upright font */
+@font-face{
+  font-family: "MLModern Serif";
+  src: url("fonts/mlmbx10.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Rules for ’\maketitle’ command */
+h1.title, address.author, div.date {text-indent: 0; word-spacing: normal;
+  text-align: center; font-style: normal; margin-bottom: 0.5em;
+  color: var(--color-A-black); background-color: var(--color-A-white);}
+h1.title {font-weight: bold;}
+address.author, div.date {font-weight: normal;}
 
 /* Custom properties for table of contents */
 nav.toc {--toc-font-size: 1em; --toc-width: calc(100% - 2*var(--small-length));
@@ -208,13 +225,17 @@ nav.toc > details {margin: 0.5em;}
 nav.toc summary {padding:0.2em 0.5em; display: inline-block; width: 100%;
   box-sizing: border-box; font-weight: normal; color: var(--color-B-gray);
   border: 1px solid var(--color-B-gray);}
-nav.toc summary:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);
-  border: 1px solid var(--color-B-gray);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  nav.toc summary:hover {color: var(--color-B-white);
+    background-color: var(--color-B-gray);
+    border: 1px solid var(--color-B-gray);}
+}
 nav.toc > details > summary {color: var(--color-B-black);
   border: 0; font-weight: bolder; padding-left:0;}
-nav.toc > details > summary:hover {color: var(--color-B-black);
-  background-color: var(--color-B-white); border: 0;}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  nav.toc > details > summary:hover {color: var(--color-B-black);
+    background-color: var(--color-B-white); border: 0;}
+}
 nav.toc details > summary > svg {float: right; width: 1em;
   margin: 0.1em 0 0 1em; cursor: pointer;}
 nav.toc details:not([open]) > summary > svg.fold,
@@ -223,23 +244,29 @@ nav.toc ul {margin: 0; margin-left: var(--toc-indent); text-indent: 0;
   list-style-type: none;}
 nav.toc > details > ul {margin-left: 0;}
 nav.toc a {word-spacing: normal;}
-nav.toc a:link, nav.toc a:visited, nav.toc a:hover
+nav.toc a:link, nav.toc a:visited
   {color: var(--color-B-gray);}
-nav.toc details > summary:hover a:link,
-  nav.toc details > summary:hover a:visited,
-  nav.toc details > summary:hover a:hover {color: var(--color-B-white);
-  background-color: var(--color-B-gray);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  nav.toc details > summary:hover a:link,
+    nav.toc details > summary:hover a:visited,
+    nav.toc details > summary:hover a:hover {color: var(--color-B-white);
+      background-color: var(--color-B-gray);}
+}
 
 /* Default rules for links */
 div.p a {word-spacing: normal;}
 a {text-decoration: underline; text-decoration-thickness: 0.07em;
   text-underline-offset: 2.5px;}
 a:link, a:visited {color: var(--color-A-gray);}
-a:hover {color: var(--color-A-dark);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  a:hover {color: var(--color-A-dark);}
+}
 a:active {color: var(--color-A-light);}
 header a:link, header a:visited, nav.toc a:link, nav.toc a:visited {
   color: var(--color-B-gray);}
-header a:hover, nav.toc a:hover {color: var(--color-B-dark);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  header a:hover, nav.toc a:hover {color: var(--color-B-dark);}
+}
 header a:active, nav.toc a:active {color: var(--color-B-light);}
 
 /* Rule for inline ‘math’ */
@@ -250,7 +277,7 @@ header.notfront > details > nav {display: flex; width: 100%;
   flex-direction: column-reverse;}
 header.notfront > details {height: 0; overflow-y: visible; text-indent: 0;
   padding: 0 0.5em 0 0;}
-header.notfront > details[open] {height: calc(100% - 1em); overflow-y: hidden;
+header.notfront > details[open] {height: calc(100% - 1em);
   color: var(--color-B-black); background-color: var(--color-B-white);
   margin: 0 0 calc(1em - 1px) 0; border-style: solid;
   border-color: var(--color-B-black); border-width: 0 0 1px 0;}
@@ -266,12 +293,15 @@ header.notfront > details > summary > svg.contract {color: var(--color-B-gray);
   background-color: var(--color-B-white);}
 header.notfront > details:not([open]) > summary > svg.contract,
   header.notfront > details[open] > summary > svg.menu {display: none;}
-header.notfront > details > summary > svg.contract:hover {
-  color: var(--color-B-white); background-color: var(--color-B-gray);}
-header.notfront > details > summary > svg.menu:hover {
-  color: var(--hoverable-bgcolor); background-color: var(--hoverable-fgcolor);}
-header.notfront > details > summary > svg.contract:hover,
-  header.notfront > details > summary > svg.menu:hover {cursor: pointer;}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  header.notfront > details > summary > svg.contract:hover {
+    color: var(--color-B-white); background-color: var(--color-B-gray);}
+  header.notfront > details > summary > svg.menu:hover {
+    color: var(--hoverable-bgcolor); background-color:
+var(--hoverable-fgcolor);}
+  header.notfront > details > summary > svg.contract:hover,
+    header.notfront > details > summary > svg.menu:hover {cursor: pointer;}
+}
 
 /* CSS variables for breadcrumbs */
 ul.breadcrumbs {--breadcrumbs-font-size: 1.0em;}
@@ -293,19 +323,24 @@ ul.breadcrumbs > li:first-child > *:first-child,
   ul.breadcrumbs > li:not(:first-child) > *:nth-child(2) {padding-left: 0.2em;}
 ul.breadcrumbs > li > *:last-child {padding-right: 0.2em;}
 ul.breadcrumbs a:link, ul.breadcrumbs a:visited {color: var(--color-B-gray);}
-ul.breadcrumbs a:hover {color: var(--color-B-dark);}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  ul.breadcrumbs a:hover {color: var(--color-B-dark);}
+}
 ul.breadcrumbs a:active {color: var(--color-B-light);}
 
-/* Directive for roman bold upright font */
-@font-face{
-  font-family: "MLModern Serif";
-  src: url("fonts/mlmbx10.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
+/* Rule for ‘section’ headers */
+h2.section {text-indent: 0; font-weight: bold; font-size: 117%;
+  line-height: 1.2; margin: 0 0 calc(100em / 117) 0; word-spacing: normal;}
+
+/* Rule for non-indented text */
+.noindent {text-indent: 0em;}
 
 /* Rule for boldface series */
 .bfseries {font-weight: bolder;}
+
+/* Rule for ‘subsection’ headers */
+h3.subsection {text-indent: 0; font-weight: bold; font-size: 100%;
+  line-height: 1.2; margin: 0 0 calc(100em / 100) 0; word-spacing: normal;}
 
 /* Directive for roman medium italic font */
 @font-face{
@@ -328,8 +363,10 @@ div.back2top {text-indent: 0; position: sticky; bottom: 0; place-self: end;
 footer + div.back2top {grid-row: 1 / span 4;}
 div.back2top svg.top {color: var(--hoverable-fgcolor);
   background-color: var(--hoverable-bgcolor)}
-div.back2top svg.top:hover {color: var(--hoverable-bgcolor);
-  background-color: var(--hoverable-fgcolor)}
+@media (hover: hover) {/* Rules applied when "hover" is supported */
+  div.back2top svg.top:hover {color: var(--hoverable-bgcolor);
+    background-color: var(--hoverable-fgcolor)}
+}
 
 /* Rules for ‘equation’ environment */
 table.equation {vertical-align: middle;
@@ -344,6 +381,9 @@ table.equation tr td + td {text-align: right; width: 0; padding-left: 0.5em;
 table.equation + div.p:not(.noindent) {margin-top: 2em;}
 table.equation > tbody {display: table; width: 100%;}
 table.equation > tbody svg.equation {max-width: none; fill: currentColor;}
+
+/* Rule for center alignment */
+.center {text-indent: 0em; text-align: center;}
 
 /* Rules for ‘eqnarray’ environments */
 table.eqnarray {vertical-align: middle; border-collapse: collapse;
@@ -379,6 +419,10 @@ ol.enumerate > li::marker {content: var(--enum-marker);}
 /* Rule for ‘subsection’ separator */
 .subsectionsep {height: 0.1em; color: var(--color-A-black); background-color:
 var(--color-A-black);}
+
+/* Rule for ‘subsubsection’ headers */
+h4.subsubsection {text-indent: 0; font-weight: bold; font-size: 100%;
+  line-height: 1.2; margin: 0 0 1em 0; word-spacing: normal;}
 
 /* Rule for ‘caption’ */
 .caption {font-size: 90%; text-align: var(--text-align)}
@@ -433,6 +477,18 @@ table.eqnarraystar > tbody > tr > td.r {text-align: right; }
 table.eqnarraystar > tbody > tr > td span.inlinemath > svg {height: auto;
   vertical-align: middle;}
 div.p.eqnarraystar {text-indent: 0; text-align: center; margin-bottom: 0.5em;}
+
+/* Rule for ‘displaymath’ environment */
+div.displaymath {margin-bottom: 0.5em; padding-left: 0; padding-right: 0;
+  text-indent: 0; text-align: center;
+  /* Allow horizontal scroll bar */
+  display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden;
+  white-space: nowrap; padding-bottom: var(--scrollbar-padding);
+  box-sizing: border-box;}
+div.displaymath > span:first-child {text-indent: 0em; text-align: center;
+  display: inline-block;
+  padding-bottom: calc(0.5em - var(--scrollbar-padding));}
+div.displaymath > span > svg {vertical-align: middle; fill: currentColor;}
 
 /* Rules for vertical rules in ‘tabular’ environments */
 table.tabular > tbody > tr > td.vrule {padding: 0.0em;
