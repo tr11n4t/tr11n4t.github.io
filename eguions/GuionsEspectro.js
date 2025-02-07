@@ -3,9 +3,168 @@
 *********************************************************************/
 "use strict";
 
-/*--------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
+  'settings' library
+-----------------------------------------------------------------------------*/
+
+// This library provides the necessary code for handling the settings of a web
+// page.  Examples of settings could be the text size, background and
+// foreground colors, ...
+
+// For each setting, the web page should contain a set of 'radio buttons' that
+// act as a frontend to the JavaScript code underneath.  The HTML code for
+// this frontend should be structured as in this example:
+//
+//   <fieldset id="SettingID">
+//     <legend>Setting Description</legend>
+//     <label>
+//       <input type="radio" name="SettingID" value="value1">
+//       <span>Value 1</span>
+//     </label>
+//     <label>
+//       <input type="radio" name="SettingID" value="value2 checked>
+//       <span>Value 2</span>
+//     </label>
+//       ...
+//   </fieldset>
+//
+// The code is contained in namespace 'sttngs$', with the following
+// public members:
+//
+//   -- Class 'sttngs$.Setting', for storing the state of a setting.
+//   -- Helper 'sttngs$.updateFrontend()' updates the HTML frontend
+//   -- Helper 'sttngs$.addHandler()' adds a handler to the HTML frontend
+//   -- Helper 'sttngs$.editAtags() edits the (relative) <a> tags to reflect
+//      the setting state
+//   -- Helper 'sttngs$.onchangeSetting()' is a handler for change events in
+//      the HTML frontend.
+
+// Namespace `sttngs$'.  Members should be invoked as 'sttngs$.member'
+let sttngs$ = (function() {
+
+    //.........................................................................
+    // Private members of namespace
+    //.........................................................................
+
+    // Class implementing a toggle switch (the implementation is private, but
+    // public access will be granted later)
+    class Setting {
+
+        // Constructor.
+        // The current state is obtained from a search parameter in the URL.
+        // - 'id' is the 'id' attribute of the HTML '<fieldset>' element
+        //   acting as a frontend (see example above).  It is also used for
+        //   the name of the search parameter in the URL and for the 'name'
+        //   attribute of the '<input>' elements implementing the radio
+        //   buttons.
+        constructor(id) {
+
+            // Save the ID and the default state
+            this.id_ = id;
+
+            // Set 'this.def_' to the last resort default state.
+            // The default state will be used when the state is not specified
+            // in the URL.
+            {
+                // First, we set 'this.def_' to the "folded" state
+                this.def_ = "folded";
+
+                // Next, we try to get the default state from the HTML frontend
+                let fe = document.getElementById(this.id_);
+                if (fe) {
+                    let ins = fe.getElementsByTagName("input");
+                    for (let i of ins)
+                        if (i.checked) this.def_ = i.value;
+                }
+            }
+
+            // Set the state from URL
+            const sp = new URL(window.location).searchParams.get(this.id_);
+            this.state_ = (sp) ? sp : this.def_;
+
+            // Update the HTML frontend
+            sttngs$.updateFrontend(this);
+
+            // Edit the (relative) <a> tags in the document
+            sttngs$.editAtags(this);
+        }
+    }
+
+    //.........................................................................
+    // Public members of namespace
+    //.........................................................................
+
+    return {
+
+        // Grant access to the 'Setting' class
+        Setting: Setting,
+
+        // Update the HTML frontend
+        updateFrontend: function(setting) {
+            let fe = document.getElementById(setting.id_);
+            if (fe) {
+                let ins = fe.getElementsByTagName("input");
+                for (let i of ins)
+                    i.checked = (i.value == setting.state_) ? true : false;
+            }
+        },
+
+        // Method that adds a handler for change events on the HTML frontend
+        addHandler: function(setting, handler) {
+            let fe = document.getElementById(setting.id_);
+            if (fe) fe.addEventListener("change", handler, false);
+        },
+
+        // Edit <a> tags to include the setting state, as a search parameter,
+        // in their 'href' attribute.  Only relative tags will be dealt with.
+        editAtags: function(setting) {
+            let atags = document.getElementsByTagName("a");
+            for (let atag of atags) {
+
+                // Only relative URLs will be changed
+                if (new URL(document.baseURI).origin ==
+                    new URL(atag.href, document.baseURI).origin) {
+
+                    // This is a relative URL
+                    let url = new URL(atag.href);
+
+                    // Set the parameter or remove it, according to the ID
+                    if (setting.state_ == setting.def_)
+                        url.searchParams.delete(setting.id_);
+                    else
+                        url.searchParams.set(setting.id_, setting.state_);
+
+                    // Set the 'href' attribute in the <a>
+                    atag.href = url.toString();
+                }
+            }
+        },
+
+        // Handler for a 'change' event on the HTML frontend
+        onchangeSetting: function(event) {
+
+            // Prevent default behavior and bubbling up
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Set the state from the 'value' attributes of the HTML frontend
+            let ins = event.currentTarget.getElementsByTagName("input");
+            for (let i of ins) {
+                if (i.checked) {
+                    this.state_ = i.value;
+                    break;
+                }
+            }
+
+            // Edit <a> tags to reflect change in state
+            sttngs$.editAtags(this);
+        }
+    };
+})();
+
+/*-----------------------------------------------------------------------------
   `unfolder' library
---------------------------------------------------------------------*/
+-----------------------------------------------------------------------------*/
 
 // This library provides the necessary code for unfolding/folding the content
 // of certaing elements in the document tree.  All the code is contained in
@@ -41,6 +200,9 @@ let ufld$ = (function() {
     // Prefix used for the 'id' attribute of foldable elements
     let IDPREFIX;
 
+    // ID of the fold/unfold toggle switch
+    let SWITCHID;
+
     // State class for foldable elements
     class FoldState {
 
@@ -53,6 +215,13 @@ let ufld$ = (function() {
                 // Valid state.  Use it to initialize the fold state
                 for (let key of Object.keys(history.state))
                     this[key] = history.state[key];
+
+                // Update the fold/unfold toggle switch frontend
+                sttngs$.updateFrontend(this.switch_);
+
+                // Edit <a> tags to reflect current toggle switch state
+                sttngs$.editAtags(this.switch_);
+
             } else {
 
                 // No valid state in history.  Fresh fold state
@@ -62,6 +231,9 @@ let ufld$ = (function() {
 
                 // Foldable having the focus
                 this.focus_ = undefined;
+
+                // Initialize the fold/unfold toggle switch
+                this.switch_ = new sttngs$.Setting(SWITCHID);
 
                 // If the URL has a hash, do the following: see if
                 // there is an element with ID equal to hash, and if
@@ -94,6 +266,9 @@ let ufld$ = (function() {
                     }
                 }
             }
+
+            // Add handler for change events on the fold/unfold toggle switch
+            sttngs$.addHandler(this.switch_, onchangeSwitch.bind(this));
         }
 
         // Add ID attributes to all foldables
@@ -127,14 +302,34 @@ let ufld$ = (function() {
         // Update the fold state from the focused and unfolded foldables
         update() {
 
-            // Update unfolded foldables
-            const ufld = document.getElementsByClassName
-            (`${FOLDABLE} unfolded`);
-            this.unfolded_ = [...ufld].map(e => e.id);
+            // Get the focused foldable, if any, and update focus state
+            let fcs = document.getElementsByClassName(`${FOLDABLE} focus`)[0];
+            this.focus_ = (fcs) ? fcs.id : undefined;
 
-            // Update the focused foldable
-            let fel = document.getElementsByClassName(`${FOLDABLE} focus`)[0];
-            this.focus_ = (fel) ? fel.id : undefined;
+            // Update unfolded foldables
+            if (this.switch_.state_ == "unfolded") {
+
+                // Toggle switch in "unfolded" state.  Unfold everything
+                const ufld =
+                      document.getElementsByClassName(`${FOLDABLE} unfolded`);
+                this.unfolded_ = [...ufld].map(e => e.id);
+
+            } else {
+
+                // Toggle switch in "folded" state.  Fold everything
+                this.unfolded_ = [];
+
+                // Unfold focused foldable and its foldable ancestors
+                while (fcs) {
+
+                    // If the current element is a foldable, unfold it
+                    if (fcs.classList.contains(FOLDABLE))
+                        this.unfolded_.push(fcs.id);
+
+                    // Prepare for the next ancestor's level
+                    fcs = fcs.parentElement;
+                }
+            }
         }
 
         // Render the page according to the fold state
@@ -142,11 +337,15 @@ let ufld$ = (function() {
 
             // Traverse all foldables, folding them and setting their content
             // "overflow" to 'hidden'
-            const fld = document.getElementsByClassName(FOLDABLE)
+            const fld = document.getElementsByClassName(FOLDABLE);
             for (let e of fld)
             {
-                e.classList.remove("unfolded");
-                e.lastElementChild.style.overflow = 'hidden';
+                if (this.switch_.state_ == "folded") {
+                    e.classList.remove("unfolded");
+                    e.lastElementChild.style.overflow = 'hidden';
+                } else {
+                    e.classList.add("unfolded");
+                }
             }
 
             // Unfold the required foldables while making their upstream
@@ -234,6 +433,19 @@ let ufld$ = (function() {
             // Assign the new URL
             window.location.assign(event.currentTarget.href);
         }
+    }
+
+    // Handler for 'click' on the toggle switch element
+    function onchangeSwitch(event) {
+
+        // Invoke the handler from the 'sttngs$' namespace
+        sttngs$.onchangeSetting.bind(this.switch_)(event);
+
+        // Update the fold state from the focused and unfolded foldables
+        this.update();
+
+        // Invoke the renderizer to re-render the page
+        this.render();
     }
 
     // Handler for 'popstate' events (for instance, clicking the back button)
@@ -387,9 +599,9 @@ let ufld$ = (function() {
 
         }
 
-        //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
         // Main body of `initFoldable(el)
-        //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
         // No transitions when first loading
         el.classList.add("notransition");
@@ -408,9 +620,9 @@ let ufld$ = (function() {
         el.addEventListener("click", unfoldHandler, false);
     }
 
-    //................................................................
+    //.........................................................................
     // Public members of namespace
-    //................................................................
+    //.........................................................................
 
     return {
 
@@ -425,6 +637,9 @@ let ufld$ = (function() {
 
             // Initialize the 'id' attribute prefix
             IDPREFIX = IDprefix;
+
+            // Initialize the ID of the fold/unfold toggle switch
+            SWITCHID = "foldSetting";
 
             // Set the ID attribute of all foldable elements
             FoldState.identify();
